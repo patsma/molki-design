@@ -1,0 +1,30 @@
+@import "typography";
+@import "colors";
+
+
+
+.text-animation-1 {
+  overflow: hidden;
+  position: relative;
+
+  .line-group-text-1 {
+    position: relative;
+    overflow: hidden;
+
+    .line-container-text-1 {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .text-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+    }
+  }
+}
+

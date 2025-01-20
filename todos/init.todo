@@ -3,6 +3,12 @@ Project Molki Design
 ✔ Setup boilerplate @done(25-01-19 03:46)
 ✔ Clean all components besides header and hero @done(25-01-20 02:38)
 ✔ Clean unused assets and styles @done(25-01-20 02:53)
+✔ Add local configuration @done(25-01-20 03:08)
+✔ Fix SplitText mobile animaiton retrigger @done(25-01-20 03:08)
+
+✔ Export as much as possible from figma @done(25-01-20 03:49)
+✔ Add Basic button system @done(25-01-20 03:50)
+- Fix smooth scroller between pages
 - Import Grid System from DIFJ
 - Prepare tailwind config for colors
 - Add Nuxt UI buttons? only if easy

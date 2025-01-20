@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@hypernym/nuxt-gsap", "@pinia/nuxt"],
+  devServer: {
+    host: "0.0.0.0",
+    port: 3000,
+  },
   // postcss: {
   //     plugins: {
   //         tailwindcss: {},

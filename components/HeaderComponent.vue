@@ -54,10 +54,16 @@ if (process.client) {
             </button>
           </li>
           <li class="nav__item">
-            <NuxtLink to="/" class="nav__link">Contact</NuxtLink>
+            <NuxtLink to="/buttons" class="nav__link">Buttons</NuxtLink>
           </li>
         </ul>
-        <div class="nav__contact ibmplex-400 w-28">Button</div>
+        <div>
+          <button
+            class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
     </nav>
   </header>

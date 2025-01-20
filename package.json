@@ -1,6 +1,15 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "molki-design",
+  "author": "Patryk Smakosz",
+  "version": "0.0.1",
+  "description": "Molki Design",
+  "license": "MIT",
+  "authorUrl": "https://tastysites.pl",
+  "bugs": {
+    "url": "https://github.com/patryksmakosz/molki-design/issues"
+  },
+"private": true,
+
   "type": "module",
   "scripts": {
     "build": "nuxt build",

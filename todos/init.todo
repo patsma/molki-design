@@ -2,3 +2,8 @@ Project Molki Design
 
 ✔ Setup boilerplate @done(25-01-19 03:46)
 ✔ Clean all components besides header and hero @done(25-01-20 02:38)
+✔ Clean unused assets and styles @done(25-01-20 02:53)
+- Import Grid System from DIFJ
+- Prepare tailwind config for colors
+- Add Nuxt UI buttons? only if easy
+- generate a strategy and prepare a detailed plan for the project 

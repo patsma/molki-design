@@ -62,7 +62,7 @@ watch(() => route.path, handlePageTransition);
 </script>
 
 <template>
-  <div>
+  <div class="content-grid">
     <HeaderComponent />
     <Loader />
     <div ref="wrapper" id="smooth-wrapper" class="min-h-screen">

@@ -9,7 +9,9 @@ Project Molki Design
 ✔ Export as much as possible from figma @done(25-01-20 03:49)
 ✔ Add Basic button system @done(25-01-20 03:50)
 ✔ Fix smooth scroller between pages @started(25-01-20 04:00) @done(25-01-20 04:07) @lasted(7m1s)
-- Import Grid System from DIFJ
-- Prepare tailwind config for colors
-- Add Nuxt UI buttons? only if easy
+✔ Import Grid System from DIFJ @started(25-01-20 04:13) @done(25-01-20 04:31) @lasted(18m58s)
+✔ Prepare tailwind config for colors @done(25-01-20 04:32)
+✘ Add Nuxt UI buttons? only if easy @cancelled(25-01-20 04:32)
+
+- Prepare basic header and footer @started(25-01-20 04:36)
 - generate a strategy and prepare a detailed plan for the project 

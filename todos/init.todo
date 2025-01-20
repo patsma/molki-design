@@ -15,7 +15,8 @@ Project Molki Design
 
 ✔ Prepare basic header @started(25-01-20 04:36) @done(25-01-20 05:09) @lasted(33m21s)
 
-- Ensure hero component is using the correct content-grid @started(25-01-20 05:16)
+✔ Ensure hero component is using the correct content-grid @started(25-01-20 05:50) @done(25-01-20 05:50) @lasted(31s)
+✔ Add basic custom loader @started(25-01-20 05:57) @done(25-01-20 06:05) @lasted(8m12s)
 - Ensure all GSAP work using the module 
 - Ensure all GSAP animations are reusable
 

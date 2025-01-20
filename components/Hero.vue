@@ -16,12 +16,12 @@ onMounted(() => {
 <template>
   <section class="full-width relative min-h-screen w-full">
     <!-- Full width background container -->
-    <div class="relative bg-teal-200">
+    <div class="relative">
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0">
-        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
         <img
-          src="/placeholder.jpg"
+          src="/heroHome.jpg"
           alt=""
           class="h-full w-full object-cover"
           aria-hidden="true"
@@ -37,17 +37,19 @@ onMounted(() => {
       <div
         class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100"
       >
-        <div class="breakout1 content-end pb-24">
+        <div
+          class="breakout1 content-end justify-center items-center justify-items-center pb-24"
+        >
           <!-- Title with GSAP effect class -->
           <h1
-            class="js--text-effect-101 max-w-4xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl"
+            class="js--text-effect-101 max-w-4xl text-4xl font-bold leading-snug text-center md:text-5xl lg:text-6xl"
           >
             {{ title }}
           </h1>
           <!-- Subtitle -->
-          <p class="max-w-2xl text-lg md:text-xl">
+          <h2 class="max-w-2xl text-lg md:text-3xl">
             {{ subtitle }}
-          </p>
+          </h2>
           <!-- CTA Button -->
           <div class="mt-8">
             <button

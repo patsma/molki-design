@@ -1,22 +1,10 @@
 <template>
-  <div class="loader-group relative z-50 h-full w-full">
-    <div
-      class="loader"
-      style="
-        background-image: radial-gradient(
-          circle,
-          #ffc8c4,
-          rgb(247, 247, 247),
-          rgb(245, 248, 245)
-        );
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        z-index: 10;
-        animation: fade-in-out 2s infinite linear;
-        transform: scale(1);
-      "
-    ></div>
+  <div
+    class="loader-group bg-secondary grid justify-center absolute z-50 h-screen w-full"
+  >
+    <div class="loader grid">
+      <LoaderLogo class="w-80" />
+    </div>
   </div>
 </template>
 <style>

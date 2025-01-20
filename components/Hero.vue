@@ -29,8 +29,8 @@ onMounted(() => {
       </div>
 
       <!-- SVG Accent Shape -->
-      <div class="absolute bottom-0 left-0 w-full overflow-hidden">
-        <!-- Place For SVG Path -->
+      <div class="absolute bottom-0 left-0 overflow-hidden">
+        <HeroPath class="h-screen" />
       </div>
 
       <!-- Content Container -->

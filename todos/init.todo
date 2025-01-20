@@ -17,6 +17,7 @@ Project Molki Design
 
 ✔ Ensure hero component is using the correct content-grid @started(25-01-20 05:50) @done(25-01-20 05:50) @lasted(31s)
 ✔ Add basic custom loader @started(25-01-20 05:57) @done(25-01-20 06:05) @lasted(8m12s)
+✔ Add Hero path accent @done(25-01-20 06:16)
 - Ensure all GSAP work using the module 
 - Ensure all GSAP animations are reusable
 

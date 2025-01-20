@@ -14,163 +14,21 @@ $w3840-up: "print, screen and (min-width: 3800px)"; // 4K UHD
 
   --transition: 0.3s all ease-out;
 
-  --color-black: black;
-  --color-white: white;
-  --color-red: #98002e;
-  --color-blue: #00aced;
-  --color-yellow: #f5d916;
-  --color-green: #0fd181;
-  --color-gray: #cfd1d2;
-  --color-gray2: #eff0f0;
-  --color-gray3: #6d6e71;
-  --color-gray4: #a5a7aa;
-  --color-gray5: #babcbe;
-  --color-gray6: #d3d2d2;
-  --color-gray7: #f5f5f5;
-  --color-icon: #98002e;
 
-  --shadow: 0.5rem 0.5rem 2.375rem 0.1875rem rgba(66, 68, 90, 1);
-  --shadow2: 0.5rem 0.5rem 2.375rem 0.1875rem rgba(66, 68, 90, 0.3);
 
-  --color-text: var(--color-black);
-  --filter-text: var(--filter-black);
-  --color-bg: var(--color-white);
-  --color-title: var(--color-text);
-  --color-cta: var(--color-red);
-  --filter-cta: var(--filter-red);
-  --color-link: var(--color-red);
-  --color-primary-button: var(--color-white);
-  --color-primary-hover-button: var(--color-red);
-  --bg-primary-button: var(--color-red);
-  --bg-primary-hover-button: var(--color-white);
-  --color-secondary-button: var(--color-white);
-  --color-secondary-hover-button: var(--color-black);
-  --bg-secondary-button: var(--color-black);
-  --bg-secondary-hover-button: var(--color-white);
-  --color-text-select: var(--color-black);
-  --color-text-select-bg: var(--color-blue);
-  --color-description: var(--color-gray);
-  --color-label: var(--color-gray);
-  --color-input-bg: var(--color-gray7);
-  --color-input-border: var(--color-gray7);
-  --color-input-text: var(--color-black);
-  --color-input-placeholder: var(--color-gray4);
-  --color-input-focus: var(--color-red);
-  --color-scrollbar: var(--color-yellow);
-  --color-disabled: var(--color-gray);
-  --color-error: var(--color-red);
-  --color-warning: var(--color-yellow);
-  --color-success: var(--color-green);
-  --icon-background-fill: var(--color-white);
-  --icon-shape-fill: var(--color-red);
+
+  --color-primary: #B76246;
+  --color-primary-light: #D0835F;
+  --color-primary-dark: #A65339;
+  
+  --color-secondary: #3E5777;
+  --color-secondary-dark: #262222;
+  
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-200: #F9F5F2;
+  --color-neutral-300: #F7EEE6;
+  --color-neutral-400: #E6E4DF;
+  --color-neutral-500: #D9D9D9;
+  --color-neutral-600: #363434;
 }
 
-.bg-dark-theme {
-  color: var(--color-white);
-  --color-text: var(--color-white);
-  --title-underline: var(--color-red);
-  --color-secondary-button: var(--color-black);
-  --color-secondary-hover-button: var(--color-white);
-  --bg-secondary-button: var(--color-white);
-  --bg-secondary-hover-button: var(--color-black);
-  --color-icon: var(--color-white);
-  --filter-text: var(--filter-white);
-  --color-text-select: var(--color-white);
-  --color-text-select-bg: var(--color-yellow);
-  --color-cta: var(--color-white);
-  --filter-cta: var(--filter-white);
-  --color-title: var(--color-white);
-  --color-input-bg: var(--color-gray7);
-  --color-input-border: var(--color-red);
-  --color-input-text: var(--color-black);
-  --icon-background-fill: var(--color-white);
-  --icon-shape-fill: var(--color-red);
-}
-
-.bg-light-theme {
-  color: var(--color-black);
-  --color-text: var(--color-black);
-  --color-icon: var(--color-red);
-
-  --title-underline: var(--color-red);
-  --filter-text: var(--filter-black);
-  --color-text-select: var(--color-black);
-  --color-text-select-bg: var(--color-blue);
-  --color-cta: var(--color-red);
-  --filter-cta: var(--filter-red);
-  --color-title: var(--color-text);
-  --color-input-bg: var(--color-gray7);
-  --color-input-border: var(--color-red);
-  --color-input-text: var(--color-black);
-  --icon-background-fill: var(--color-white);
-  --icon-shape-fill: var(--color-red);
-}
-.bg-gray-theme {
-  color: var(--color-black);
-  --color-text: var(--color-black);
-  --color-icon: var(--color-red);
-
-  --title-underline: var(--color-black);
-  --filter-text: var(--filter-black);
-  --color-text-select: var(--color-black);
-  --color-text-select-bg: var(--color-blue);
-  --color-cta: var(--color-red);
-  --filter-cta: var(--filter-red);
-  --color-title: var(--color-red);
-  --color-input-bg: var(--color-gray7);
-  --color-input-border: var(--color-red);
-  --color-input-text: var(--color-black);
-  --icon-background-fill: var(--color-white);
-  --icon-shape-fill: var(--color-red);
-}
-
-.bg-accent-theme {
-  color: var(--color-white);
-  --color-text: var(--color-white);
-  --color-link: var(--color-white);
-  --title-underline: var(--color-black);
-  --color-icon: var(--color-white);
-
-  --color-primary-button: var(--color-white);
-  --color-primary-hover-button: var(--color-black);
-  --bg-primary-button: var(--color-black);
-  --bg-primary-hover-button: var(--color-white);
-
-  --color-secondary-button: var(--color-black);
-  --color-secondary-hover-button: var(--color-white);
-  --bg-secondary-button: var(--color-white);
-  --bg-secondary-hover-button: var(--color-black);
-
-  --filter-text: var(--filter-black);
-  --color-text-select: var(--color-black);
-  --color-text-select-bg: var(--color-blue);
-  --color-cta: var(--colo);
-  --filter-cta: var(--filter-red);
-  --color-title: var(--color-text);
-  --color-input-bg: var(--color-gray7);
-  --color-input-border: var(--color-black);
-  --color-input-text: var(--color-black);
-  --color-input-focus: var(--color-black);
-  --icon-background-fill: var(--color-white);
-  --icon-shape-fill: var(--color-red);
-}
-
-.underline--accent {
-  --title-underline: var(--color-black);
-}
-
-$colors: (
-  "black": var(--color-black),
-  "white": var(--color-white),
-  "gray": var(--color-gray),
-  "gray2": var(--color-gray2),
-  "gray3": var(--color-gray3),
-  "gray4": var(--color-gray4),
-  "gray5": var(--color-gray5),
-  "gray6": var(--color-gray6),
-  "gray7": var(--color-gray7),
-  "red": var(--color-red),
-  "blue": var(--color-blue),
-  "yellow": var(--color-yellow),
-  "green": var(--color-green),
-);

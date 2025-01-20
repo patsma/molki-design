@@ -5,16 +5,20 @@
   align-items: center;
 
   &__item {
+    padding:  0.5rem;
     position: relative;
     
     // Submenu container
     &-submenu {
+     padding: 1rem 1rem;
       position: absolute;
+      display: grid;
+      gap: 1rem;
       top: 100%;
       left: 0;
       min-width: 200px;
-      background: var(--color-bg);
-      padding: 0.5rem 0;
+      background: var(--color-neutral-100);
+
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
@@ -37,7 +41,7 @@
     gap: 0.5rem;
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-secondary);
     transition: color 0.3s ease;
 
     &:hover {

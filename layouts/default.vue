@@ -6,7 +6,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 const { $gsap } = useNuxtApp();
 useHead({
-  title: "Morten Portfolio",
+  title: "Molki Design",
 });
 
 const wrapper = ref(null);

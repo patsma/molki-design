@@ -2,7 +2,7 @@
 const menuItems = [
   {
     label: "O NAS",
-    link: "#",
+    link: "/buttons",
     children: [{ label: "NASZ TEAM", link: "#nasz-team" }],
   },
   {

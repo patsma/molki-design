@@ -31,6 +31,8 @@ body {
 .headroom {
   will-change: all;
   transition: all 200ms linear;
+  background-color: rgba(255, 255, 255, 1);
+
 
   &--pinned {
     transform: translateY(0%);

@@ -62,16 +62,14 @@ watch(() => route.path, handlePageTransition);
 </script>
 
 <template>
-  <div class="content-grid">
-    <div class="full-width">
-      <HeaderComponent />
-      <Loader />
-      <div ref="wrapper" id="smooth-wrapper" class="min-h-screen">
-        <div ref="content" id="smooth-content">
-          <NuxtPage />
-          <div class="spacer w-full h-screen bg-red-400"></div>
-          <div class="spacer w-full h-screen bg-teal-400"></div>
-        </div>
+  <div>
+    <HeaderComponent />
+    <Loader />
+    <div ref="wrapper" id="smooth-wrapper" class="min-h-screen">
+      <div ref="content" id="smooth-content">
+        <NuxtPage />
+        <div class="spacer w-full h-screen bg-red-400"></div>
+        <div class="spacer w-full h-screen bg-teal-400"></div>
       </div>
     </div>
   </div>

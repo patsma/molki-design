@@ -30,7 +30,7 @@ if (process.client) {
 
 <template>
   <header class="content-grid">
-    <nav class="full-width grid nav fixed z-40 top-4 w-full">
+    <nav class="full-width grid nav fixed z-40 py-4 w-full bg-white">
       <div
         class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
       >

@@ -28,31 +28,31 @@ if (process.client) {
 </script>
 
 <template>
-  <header>
-    <nav class="nav fixed z-40 top-4 w-full grid grid-cols-12">
+  <header class="content-grid">
+    <nav class="full-width grid nav fixed z-40 top-4 w-full">
       <div
-        class="nav__wrapper col-start-2 col-end-12 grid grid-flow-col items-center justify-between"
+        class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
       >
-        <!-- Logo -->
-        <div class="nav__logo">
-          <NuxtLink
-            to="/"
-            class="text-xs leading-[100%] tracking-[-0.03125rem]"
-          >
-            Molki
-          </NuxtLink>
-        </div>
-
-        <!-- Main Menu -->
-        <MainMenu />
-
-        <!-- Theme Toggle -->
-        <div class="flex items-center gap-4">
-          <button
-            class="rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-          >
-            Umów konsultację
-          </button>
+        <div class="breakout1 justify-between grid grid-flow-col">
+          <!-- Logo -->
+          <div class="nav__logo">
+            <NuxtLink
+              to="/"
+              class="text-xs leading-[100%] tracking-[-0.03125rem]"
+            >
+              Molki
+            </NuxtLink>
+          </div>
+          <!-- Main Menu -->
+          <MainMenu />
+          <!-- Theme Toggle -->
+          <div class="grid justify-end">
+            <button
+              class="rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            >
+              Umów konsultację
+            </button>
+          </div>
         </div>
       </div>
     </nav>

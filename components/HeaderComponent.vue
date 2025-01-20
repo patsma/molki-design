@@ -8,6 +8,7 @@ import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import useHeadroom from "~/composables/useHeadroom";
 // import ThemeToggleSVG from "~/components/ThemeToggleSVG.vue";
 import MainMenu from "~/components/MainMenu.vue";
+import Logo from "~/components/Logo.vue";
 
 const isClient = ref(false);
 
@@ -35,12 +36,9 @@ if (process.client) {
       >
         <div class="breakout1 justify-between grid grid-flow-col">
           <!-- Logo -->
-          <div class="nav__logo">
-            <NuxtLink
-              to="/"
-              class="text-xs leading-[100%] tracking-[-0.03125rem]"
-            >
-              Molki
+          <div class="nav__logo w-32">
+            <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
+              <Logo />
             </NuxtLink>
           </div>
           <!-- Main Menu -->

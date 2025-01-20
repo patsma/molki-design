@@ -16,4 +16,15 @@ export default defineNuxtConfig({
           : false, // disable cssnano when not in production
     },
   },
+  app: {
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+      onBeforeEnter: () => {
+        if (process.client) {
+          window.scrollTo(0, 0);
+        }
+      },
+    },
+  },
 });

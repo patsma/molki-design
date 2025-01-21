@@ -34,7 +34,7 @@ onUnmounted(() => {
       >
         <div class="breakout1 justify-between grid grid-flow-col">
           <!-- Logo -->
-          <div class="nav__logo w-32">
+          <div class="nav__logo w-32 relative z-50">
             <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
               <Logo />
             </NuxtLink>
@@ -47,7 +47,7 @@ onUnmounted(() => {
 
           <!-- Mobile Menu Button -->
           <button
-            class="hamburger md:hidden grid items-center"
+            class="hamburger md:hidden grid items-center relative z-50"
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
             @click="menuStore.toggleMenu"
             aria-label="Toggle Menu"
@@ -67,10 +67,7 @@ onUnmounted(() => {
           </div>
         </div>
         <!-- Mobile Menu Overlay -->
-        <div
-          class="mobile-menu fixed inset-0 bg-white z-30"
-          :class="{ 'is-visible': menuStore.isMobileMenuOpen }"
-        >
+        <div class="mobile-menu fixed inset-0 bg-white z-30">
           <div class="content-grid h-full pt-24 px-6 overflow-y-auto">
             <MainMenu :is-mobile="true" />
             <div class="mt-8 pb-8">
@@ -133,12 +130,5 @@ onUnmounted(() => {
 
 .mobile-menu {
   will-change: transform, opacity;
-  visibility: hidden; // Initial state
-  pointer-events: none;
-
-  &.is-visible {
-    visibility: visible;
-    pointer-events: auto;
-  }
 }
 </style>

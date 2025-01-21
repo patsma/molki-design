@@ -3,78 +3,61 @@ import { defineStore } from "pinia";
 export const useMenuStore = defineStore("menu", {
   state: () => ({
     isMobileMenuOpen: false,
-    isAnimationInitialized: false,
     mobileMenuTimeline: null as gsap.core.Timeline | null,
   }),
 
   actions: {
     initAnimation($gsap: any) {
-      if (!process.client || this.isAnimationInitialized) return;
+      console.log("Initializing menu animation");
+      if (!process.client) return;
 
       const menu = document.querySelector(".mobile-menu");
       const menuItems = document.querySelectorAll(
         ".mobile-menu .nav-menu__item"
       );
 
-      // Set initial states
+      // Initial state
       $gsap.set(menu, {
+        display: "none",
         xPercent: 100,
-        autoAlpha: 0,
+        opacity: 0,
       });
 
       $gsap.set(menuItems, {
+        opacity: 0,
         x: 50,
-        autoAlpha: 0,
       });
 
-      this.mobileMenuTimeline = $gsap.timeline({
-        paused: true,
-        defaults: {
-          ease: "power3.inOut",
-          duration: 0.6,
-        },
-      });
-
-      this.mobileMenuTimeline
+      this.mobileMenuTimeline = $gsap
+        .timeline({ paused: true })
         .to(menu, {
+          display: "block",
           xPercent: 0,
-          autoAlpha: 1,
-          duration: 0.5,
+          opacity: 1,
+          duration: 0.4,
           ease: "power2.out",
         })
         .to(
           menuItems,
           {
+            opacity: 1,
             x: 0,
-            autoAlpha: 1,
-            stagger: 0.1,
-            duration: 0.4,
-            ease: "power2.out",
+            stagger: 0.05,
+            duration: 0.3,
           },
-          "-=0.3"
+          "-=0.2"
         );
-
-      this.isAnimationInitialized = true;
     },
 
     toggleMenu() {
+      console.log("Toggle menu");
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
       if (this.isMobileMenuOpen) {
-        document.body.style.overflow = "hidden";
         this.mobileMenuTimeline?.play();
       } else {
-        document.body.style.overflow = "";
         this.mobileMenuTimeline?.reverse();
       }
-    },
-
-    cleanup() {
-      if (this.mobileMenuTimeline) {
-        this.mobileMenuTimeline.kill();
-        this.mobileMenuTimeline = null;
-      }
-      this.isAnimationInitialized = false;
     },
   },
 });

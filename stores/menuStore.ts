@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 export const useMenuStore = defineStore("menu", {
   state: () => ({
@@ -47,17 +48,75 @@ export const useMenuStore = defineStore("menu", {
           },
           "-=0.2"
         );
+
+      // Watch for route changes
+      const route = useRoute();
+      watch(
+        () => route.path,
+        () => {
+          if (this.isMobileMenuOpen) {
+            this.closeMenu();
+          }
+        }
+      );
     },
 
     toggleMenu() {
-      console.log("Toggle menu");
+      console.log("Toggle menu called");
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
-      if (this.isMobileMenuOpen) {
-        this.mobileMenuTimeline?.play();
-      } else {
-        this.mobileMenuTimeline?.reverse();
+      if (!this.mobileMenuTimeline) {
+        console.warn("Timeline not initialized");
+        return;
       }
+
+      if (this.isMobileMenuOpen) {
+        document.body.style.overflow = "hidden";
+        this.mobileMenuTimeline.play();
+      } else {
+        document.body.style.overflow = "";
+        this.mobileMenuTimeline.reverse();
+      }
+    },
+
+    closeMenu() {
+      if (!this.isMobileMenuOpen) return;
+
+      this.isMobileMenuOpen = false;
+      document.body.style.overflow = "";
+      this.mobileMenuTimeline?.reverse();
+    },
+
+    async handleMenuItemClick(link: string, router: any) {
+      const smoother = ScrollSmoother.get();
+
+      if (link.startsWith("#")) {
+        if (this.isMobileMenuOpen) {
+          await this.closeMenu();
+          await new Promise((resolve) => setTimeout(resolve, 400));
+        }
+
+        if (smoother) {
+          smoother.scrollTo(link, {
+            duration: 1,
+            ease: "power2.inOut",
+            offset: -100,
+          });
+        }
+      } else {
+        if (this.isMobileMenuOpen) {
+          await this.closeMenu();
+        }
+        await router.push(link);
+      }
+    },
+
+    cleanup() {
+      if (this.mobileMenuTimeline) {
+        this.mobileMenuTimeline.kill();
+        this.mobileMenuTimeline = null;
+      }
+      document.body.style.overflow = "";
     },
   },
 });

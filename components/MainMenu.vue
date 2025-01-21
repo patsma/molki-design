@@ -1,10 +1,13 @@
-<script setup>
-defineProps({
-  isMobile: {
-    type: Boolean,
-    default: false,
-  },
-});
+<script setup lang="ts">
+import { useMenuStore } from "@/stores/menuStore";
+import { useRouter } from "vue-router";
+
+const props = defineProps<{
+  isMobile: boolean;
+}>();
+
+const menuStore = useMenuStore();
+const router = useRouter();
 
 const menuItems = [
   {
@@ -38,18 +41,24 @@ const menuItems = [
     link: "#blog",
   },
 ];
+
+const handleClick = async (event: MouseEvent, link: string) => {
+  event.preventDefault();
+  await menuStore.handleMenuItemClick(link, router);
+};
 </script>
 
 <template>
-  <nav class="nav-menu" :class="{ mobile: isMobile }">
+  <nav class="nav-menu" :class="{ mobile: props.isMobile }">
     <div v-for="item in menuItems" :key="item.label" class="nav-menu__item">
-      <NuxtLink
-        :to="item.link"
+      <a
+        :href="item.link"
         class="nav-menu__link"
         :class="{ 'nav-menu__link--has-children': item.children }"
+        @click="(e) => handleClick(e, item.link)"
       >
         {{ item.label }}
-      </NuxtLink>
+      </a>
 
       <div v-if="item.children" class="nav-menu__item-submenu">
         <NuxtLink
@@ -57,6 +66,7 @@ const menuItems = [
           :key="child.label"
           :to="child.link"
           class="nav-menu__link"
+          @click="(e) => handleClick(e, child.link)"
         >
           {{ child.label }}
         </NuxtLink>

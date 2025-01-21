@@ -49,7 +49,12 @@ onUnmounted(() => {
           <button
             class="hamburger md:hidden grid items-center relative z-50"
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
-            @click="menuStore.toggleMenu"
+            @click.prevent="
+              () => {
+                console.log('Hamburger clicked');
+                menuStore.toggleMenu();
+              }
+            "
             aria-label="Toggle Menu"
           >
             <span></span>

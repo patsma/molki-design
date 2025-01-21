@@ -1,12 +1,10 @@
 import { onMounted, onUnmounted, ref } from "vue";
-import gsap from "gsap";
+import { useNuxtApp } from "#app";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
 export default function useTextEffect(selector, enableScrollTrigger = false) {
-  if (process.client) {
-    gsap.registerPlugin(ScrollTrigger, SplitText);
-  }
+  const { $gsap, $ScrollTrigger, $SplitText } = useNuxtApp();
   const textEffect1Timelines = ref([]);
   const selectedTextRef = ref([]); // Ref to store the NodeList
 
@@ -44,7 +42,7 @@ export default function useTextEffect(selector, enableScrollTrigger = false) {
           mySplitText.revert();
         }
 
-        mySplitText = new SplitText(element, { type: "words" });
+        mySplitText = new $SplitText(element, { type: "words" });
         const words = mySplitText.words;
 
         // element.querySelectorAll('.line-group-text-1').forEach(el => el.remove());
@@ -85,7 +83,7 @@ export default function useTextEffect(selector, enableScrollTrigger = false) {
           }
         });
 
-        tl = gsap.timeline({
+        tl = $gsap.timeline({
           paused: true,
           scrollTrigger: enableScrollTrigger
             ? {

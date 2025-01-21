@@ -17,4 +17,22 @@ export default defineNuxtConfig({
       },
     },
   },
+  gsap: {
+    // Enable composables
+    composables: true,
+
+    // Extra plugins
+    extraPlugins: {
+      scrollTrigger: true,
+      // Note: ScrollSmoother is not an official extra plugin
+      // We'll need to handle it differently
+    },
+
+    // Club plugins (premium)
+    clubPlugins: {
+      morphSvg: true, // Note the lowercase 'svg'
+      splitText: true,
+      scrollSmoother: true, // Add ScrollSmoother as a club plugin
+    },
+  },
 });

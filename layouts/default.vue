@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-const { $gsap } = useNuxtApp();
+const { $gsap, $ScrollTrigger, $ScrollSmoother } = useNuxtApp();
 useHead({
   title: "Molki Design",
 });
@@ -16,19 +16,21 @@ let smoother = null;
 // Initialize ScrollSmoother
 const initSmoother = async () => {
   if (!process.client) return;
-
   await nextTick();
 
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // Register ScrollTrigger first as ScrollSmoother depends on it
+  $gsap.registerPlugin($ScrollTrigger);
 
-  smoother = ScrollSmoother.create({
-    wrapper: wrapper.value,
-    content: content.value,
-    smooth: 1,
-    effects: true,
-    normalizeScroll: true,
-    ignoreMobileResize: true,
-  });
+  if ($ScrollSmoother) {
+    smoother = $ScrollSmoother.create({
+      wrapper: wrapper.value,
+      content: content.value,
+      smooth: 1,
+      effects: true,
+      normalizeScroll: true,
+      ignoreMobileResize: true,
+    });
+  }
 };
 
 // Handle page transitions
@@ -43,17 +45,21 @@ const handlePageTransition = async () => {
 onMounted(() => {
   initSmoother();
   const loaderGroup = document.querySelector(".loader-group");
-  loaderGroup.classList.add("loader-group--hidden");
-  setTimeout(() => {
-    loaderGroup.remove();
-  }, 200);
+  if (loaderGroup) {
+    loaderGroup.classList.add("loader-group--hidden");
+    setTimeout(() => {
+      loaderGroup.remove();
+    }, 200);
+  }
 });
 
 onUnmounted(() => {
   if (smoother) {
     smoother.kill();
   }
-  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  if ($ScrollTrigger) {
+    $ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  }
 });
 
 // Watch for route changes

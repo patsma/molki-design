@@ -10,22 +10,19 @@ import useHeadroom from "~/composables/useHeadroom";
 import MainMenu from "~/components/MainMenu.vue";
 import Logo from "~/components/Logo.vue";
 
+const { $gsap, $SplitText, $MorphSVGPlugin } = useNuxtApp();
 const isClient = ref(false);
 
-const { initHeadroom, destroyHeadroom } = useHeadroom(".nav");
-const { $gsap } = useNuxtApp();
+const { initHeadroom } = useHeadroom(".nav");
 
 onMounted(() => {
-  MorphSVGPlugin.convertToPath(
-    "circle, rect, ellipse, line, polygon, polyline"
-  );
-  initHeadroom();
+  if (process.client) {
+    $MorphSVGPlugin.convertToPath(
+      "circle, rect, ellipse, line, polygon, polyline"
+    );
+    initHeadroom();
+  }
 });
-
-if (process.client) {
-  isClient.value = true; // Set to true only on client-side
-  $gsap.registerPlugin(SplitText, MorphSVGPlugin);
-}
 </script>
 
 <template>

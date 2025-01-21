@@ -12,13 +12,13 @@ Project Molki Design
 ✔ Import Grid System from DIFJ @started(25-01-20 04:13) @done(25-01-20 04:31) @lasted(18m58s)
 ✔ Prepare tailwind config for colors @done(25-01-20 04:32)
 ✘ Add Nuxt UI buttons? only if easy @cancelled(25-01-20 04:32)
-
 ✔ Prepare basic header @started(25-01-20 04:36) @done(25-01-20 05:09) @lasted(33m21s)
-
 ✔ Ensure hero component is using the correct content-grid @started(25-01-20 05:50) @done(25-01-20 05:50) @lasted(31s)
 ✔ Add basic custom loader @started(25-01-20 05:57) @done(25-01-20 06:05) @lasted(8m12s)
 ✔ Add Hero path accent @done(25-01-20 06:16)
-- Ensure all GSAP work using the module 
-- Ensure all GSAP animations are reusable
+✔ Ensure all GSAP work using the module @done(25-01-21 03:14)
+✘ Ensure all GSAP animations are reusable - we will create simpler ones @cancelled(25-01-21 03:15)
 
-- generate a strategy and prepare a detailed plan for the project 
+✔ generate a strategy and prepare a detailed plan for the project @done(25-01-21 03:21)
+- Build mobile header
+- Adjust Hero  

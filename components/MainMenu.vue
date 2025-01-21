@@ -1,4 +1,11 @@
 <script setup>
+defineProps({
+  isMobile: {
+    type: Boolean,
+    default: false,
+  },
+});
+
 const menuItems = [
   {
     label: "O NAS",
@@ -34,7 +41,7 @@ const menuItems = [
 </script>
 
 <template>
-  <nav class="nav-menu">
+  <nav class="nav-menu" :class="{ mobile: isMobile }">
     <div v-for="item in menuItems" :key="item.label" class="nav-menu__item">
       <NuxtLink
         :to="item.link"

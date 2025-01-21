@@ -17,7 +17,7 @@ const menuItems = [
   },
   {
     label: "PROJEKT WNĘTRZA",
-    link: "#",
+    link: "#spacer1",
     children: [
       { label: "REALIZACJE", link: "#projekty-realizacje" },
       { label: "CENNIK", link: "#cennik-projekt" },

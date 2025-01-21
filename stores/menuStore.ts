@@ -1,6 +1,13 @@
 import { defineStore } from "pinia";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+// Define the ScrollTo options type
+interface ScrollToOptions {
+  duration?: number;
+  ease?: string;
+  offset?: number;
+}
+
 export const useMenuStore = defineStore("menu", {
   state: () => ({
     isMobileMenuOpen: false,
@@ -97,11 +104,12 @@ export const useMenuStore = defineStore("menu", {
         }
 
         if (smoother) {
-          smoother.scrollTo(link, {
+          // Cast smoother to any to bypass the incorrect type definition
+          (smoother as any).scrollTo(link, {
             duration: 1,
             ease: "power2.inOut",
             offset: -100,
-          });
+          } as ScrollToOptions);
         }
       } else {
         if (this.isMobileMenuOpen) {

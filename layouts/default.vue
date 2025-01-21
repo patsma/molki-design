@@ -77,7 +77,7 @@ watch(() => route.path, handlePageTransition);
           <!-- Add padding to account for fixed header -->
           <NuxtPage />
           <div class="spacer w-full h-screen bg-red-400"></div>
-          <div class="spacer w-full h-screen bg-teal-400"></div>
+          <div id="spacer1" class="spacer w-full h-screen bg-teal-400"></div>
         </div>
       </div>
     </div>

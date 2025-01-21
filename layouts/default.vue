@@ -3,8 +3,12 @@ import { onMounted, onUnmounted, ref, nextTick } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useMenuStore } from "@/stores/menuStore";
+import { useAnimationStore } from "@/stores/animationStore";
+import { useScrollHeader } from "~/composables/useScrollHeader";
 
-const { $gsap, $ScrollTrigger, $ScrollSmoother } = useNuxtApp();
+const { $gsap, $ScrollTrigger, $ScrollSmoother, $MorphSVGPlugin } =
+  useNuxtApp();
 useHead({
   title: "Molki Design",
 });
@@ -12,6 +16,8 @@ useHead({
 const wrapper = ref(null);
 const content = ref(null);
 let smoother = null;
+const menuStore = useMenuStore();
+const { initScrollHeader, cleanup } = useScrollHeader(".nav");
 
 // Initialize ScrollSmoother
 const initSmoother = async () => {
@@ -43,6 +49,13 @@ const handlePageTransition = async () => {
 };
 
 onMounted(() => {
+  if (process.client) {
+    $MorphSVGPlugin.convertToPath(
+      "circle, rect, ellipse, line, polygon, polyline"
+    );
+    initScrollHeader();
+    menuStore.initAnimation($gsap);
+  }
   initSmoother();
   const loaderGroup = document.querySelector(".loader-group");
   if (loaderGroup) {
@@ -60,6 +73,8 @@ onUnmounted(() => {
   if ($ScrollTrigger) {
     $ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }
+  cleanup();
+  menuStore.cleanup();
 });
 
 // Watch for route changes
@@ -69,10 +84,11 @@ watch(() => route.path, handlePageTransition);
 
 <template>
   <div>
-    <HeaderComponent />
     <Loader />
     <div ref="wrapper" id="smooth-wrapper" class="min-h-screen">
       <div ref="content" id="smooth-content">
+        <HeaderComponent />
+
         <div class="pt-20">
           <!-- Add padding to account for fixed header -->
           <NuxtPage />

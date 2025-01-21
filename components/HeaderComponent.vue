@@ -3,20 +3,20 @@ import { onMounted, onUnmounted } from "vue";
 import { useMenuStore } from "@/stores/menuStore";
 import { useAnimationStore } from "@/stores/animationStore";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-import useHeadroom from "~/composables/useHeadroom";
+// import useHeadroom from "~/composables/useHeadroom";
 import MainMenu from "~/components/MainMenu.vue";
 import Logo from "~/components/Logo.vue";
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 const menuStore = useMenuStore();
-const { initHeadroom } = useHeadroom(".nav");
+// const { initHeadroom } = useHeadroom(".nav");
 
 onMounted(() => {
   if (process.client) {
     $MorphSVGPlugin.convertToPath(
       "circle, rect, ellipse, line, polygon, polyline"
     );
-    initHeadroom();
+    // initHeadroom();
     menuStore.initAnimation($gsap);
   }
 });
@@ -28,7 +28,7 @@ onUnmounted(() => {
 
 <template>
   <header class="content-grid">
-    <nav class="full-width grid nav fixed z-40 py-4 w-full bg-white">
+    <nav class="full-width grid absolute nav z-40 py-4 w-full bg-white">
       <div
         class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
       >
@@ -72,7 +72,7 @@ onUnmounted(() => {
           </div>
         </div>
         <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu fixed inset-0 bg-white z-30">
+        <div class="mobile-menu inset-0 bg-white z-30">
           <div class="content-grid h-full pt-24 px-6 overflow-y-auto">
             <MainMenu :is-mobile="true" />
             <div class="mt-8 pb-8">

@@ -52,11 +52,13 @@ onMounted(() => {
           </h2>
           <!-- CTA Button -->
           <div class="mt-8">
-            <button
+            <NuxtLink
+              to="/buttons"
               class="rounded-md bg-primary px-8 py-3 text-base font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label="Rozpocznij projekt"
             >
               Rozpocznij projekt
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>

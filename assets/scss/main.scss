@@ -28,28 +28,6 @@ body {
   overflow-x: hidden;
 }
 
-.headroom {
-  will-change: all;
-  transition: all 200ms linear;
-  background-color: rgba(255, 255, 255, 1);
-
-
-  &--pinned {
-    transform: translateY(0%);
-  }
-
-  &--not-top {
-    transform: translateY(0%);
-    top: 0;
-    //background: var(--color-bg);
-    background-color: rgba(255, 255, 255, 1);
-
-  }
-
-  &--unpinned {
-    transform: translateY(-100%);
-  }
-}
 
 
 

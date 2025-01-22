@@ -20,6 +20,12 @@ Project Molki Design
 ✘ Ensure all GSAP animations are reusable - we will create simpler ones @cancelled(25-01-21 03:15)
 
 ✔ generate a strategy and prepare a detailed plan for the project @done(25-01-21 03:21)
-- Refactor headroom to use GSAP and scroll smoother / trigger
-- Build mobile header
+✔ Refactor headroom to use GSAP and scroll smoother / trigger @done(25-01-21 05:24)
+✔ Build mobile header @done(25-01-21 05:24)
+
+✔ Ensure mobile experience is smooth and works on all devices @started(25-01-22 01:04) @done(25-01-22 02:58) @lasted(1h54m39s)
+✔ Ensure smooth scroll works while changing pages @done(25-01-22 02:58)
+- Headroom funcionality too sensitive on mobile, more debounce @started(25-01-22 02:59)
+
+- Fix mobile menu position, styles 
 - Adjust Hero  

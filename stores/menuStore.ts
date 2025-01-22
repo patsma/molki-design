@@ -27,13 +27,13 @@ export const useMenuStore = defineStore("menu", {
       // Initial state
       $gsap.set(menu, {
         display: "none",
-        xPercent: 100,
+        xPercent: 0,
         opacity: 0,
       });
 
       $gsap.set(menuItems, {
         opacity: 0,
-        x: 50,
+        y: 20,
       });
 
       this.mobileMenuTimeline = $gsap
@@ -49,7 +49,7 @@ export const useMenuStore = defineStore("menu", {
           menuItems,
           {
             opacity: 1,
-            x: 0,
+            y: 0,
             stagger: 0.05,
             duration: 0.3,
           },
@@ -78,7 +78,7 @@ export const useMenuStore = defineStore("menu", {
       }
 
       if (this.isMobileMenuOpen) {
-        document.body.style.overflow = "hidden";
+        // document.body.style.overflow = "hidden";
         this.mobileMenuTimeline.play();
       } else {
         document.body.style.overflow = "";

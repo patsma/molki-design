@@ -5,6 +5,26 @@
 @import "components/menu";
 $phone: 768px;
 
+// html, body {
+//   height: 100%;
+//   overflow: hidden; /* Prevent native scrolling */
+// }
+
+// #smooth-wrapper {
+//   height: 100%;
+//   overflow: hidden; /* GSAP handles scrolling */
+// }
+
+// #smooth-content {
+//   height: auto;
+// }
+// html, body {
+//   overscroll-behavior: none;
+//   -webkit-overflow-scrolling: none;
+// }
+// #smooth-content {
+//   will-change: transform;
+// }
 
 * {
   box-sizing: border-box;

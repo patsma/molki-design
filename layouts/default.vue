@@ -1,12 +1,6 @@
 <script setup>
-import { onMounted, onUnmounted, ref, nextTick } from "vue";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useMenuStore } from "@/stores/menuStore";
-import { useAnimationStore } from "@/stores/animationStore";
 import { useScrollHeader } from "~/composables/useScrollHeader";
-
 const { $gsap, $ScrollTrigger, $ScrollSmoother, $MorphSVGPlugin } =
   useNuxtApp();
 useHead({

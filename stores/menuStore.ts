@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { gsap } from "gsap";
 
 // Define the ScrollTo options type
 interface ScrollToOptions {
@@ -12,10 +13,12 @@ export const useMenuStore = defineStore("menu", {
   state: () => ({
     isMobileMenuOpen: false,
     mobileMenuTimeline: null as gsap.core.Timeline | null,
+    gsapInstance: null as typeof gsap | null,
   }),
 
   actions: {
-    initAnimation($gsap: any) {
+    initAnimation($gsap: typeof gsap) {
+      this.gsapInstance = $gsap;
       console.log("Initializing menu animation");
       if (!process.client) return;
 
@@ -94,22 +97,64 @@ export const useMenuStore = defineStore("menu", {
       this.mobileMenuTimeline?.reverse();
     },
 
-    async handleMenuItemClick(link: string, router: any) {
+    async handleMenuItemClick(link: string, router: any, event?: Event) {
+      event?.preventDefault();
+
+      console.log("🎯 Handling menu item click:", link);
       const smoother = ScrollSmoother.get();
+      console.log("🔍 Smoother instance:", smoother);
 
       if (link.startsWith("#")) {
         if (this.isMobileMenuOpen) {
+          console.log("📱 Closing mobile menu before scroll");
           await this.closeMenu();
           await new Promise((resolve) => setTimeout(resolve, 400));
         }
 
-        if (smoother) {
-          // Cast smoother to any to bypass the incorrect type definition
-          (smoother as any).scrollTo(link, {
-            duration: 1,
-            ease: "power2.inOut",
-            offset: -100,
-          } as ScrollToOptions);
+        const target = document.querySelector(link);
+        if (!target) {
+          console.warn("🚫 Target element not found:", link);
+          return;
+        }
+
+        console.log("🎯 Target element:", target);
+        console.log("🔄 Starting scroll animation");
+
+        if (smoother && this.gsapInstance) {
+          console.log("Using ScrollSmoother for animation");
+
+          try {
+            const bounds = target.getBoundingClientRect();
+            const scrollTop = smoother.scrollTop();
+            const targetY = scrollTop + bounds.top - 100;
+
+            console.log("📏 Calculated scroll position:", targetY);
+            console.log("⏱️ Animation duration:", 2);
+
+            this.gsapInstance.to(smoother, {
+              scrollTop: targetY,
+              duration: 2,
+              ease: "power3.inOut",
+              overwrite: true,
+              onStart: () => console.log("🎬 Animation starting"),
+              onUpdate: () => console.log("⏱️ Progress:", smoother.scrollTop()),
+              onComplete: () => console.log("✅ Animation complete"),
+            });
+
+            console.log("🎬 Scroll animation initiated");
+          } catch (error) {
+            console.error("Failed to scroll:", error);
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        } else {
+          console.log("Using native smooth scroll");
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }
       } else {
         if (this.isMobileMenuOpen) {

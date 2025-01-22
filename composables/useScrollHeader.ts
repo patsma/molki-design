@@ -1,11 +1,13 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ref } from "vue";
 
 export const useScrollHeader = (selector: string) => {
   const { $gsap, $ScrollTrigger, $ScrollSmoother } = useNuxtApp();
   let headerTrigger: ScrollTrigger | null = null;
   let headerAnimation: gsap.core.Timeline | null = null;
+  const headerHeight = ref(0);
 
   const initScrollHeader = () => {
     console.log("🚀 Initializing ScrollHeader");
@@ -13,6 +15,18 @@ export const useScrollHeader = (selector: string) => {
 
     const header = document.querySelector(selector);
     if (!header) return;
+
+    // Only measure height if it hasn't been set yet
+    if (headerHeight.value === 0) {
+      headerHeight.value = header.getBoundingClientRect().height;
+      console.log("📏 Initial header height:", headerHeight.value);
+    }
+
+    // Ensure header has correct height before pinning
+    gsap.set(header, {
+      height: headerHeight.value,
+      clearProps: "all", // Clear all other properties
+    });
 
     // Pin the header
     headerTrigger = $ScrollTrigger.create({
@@ -22,6 +36,10 @@ export const useScrollHeader = (selector: string) => {
       end: "bottom top",
       pin: true,
       pinSpacing: false,
+      onRefresh: () => {
+        // Ensure header maintains correct height during refresh
+        gsap.set(header, { height: headerHeight.value });
+      },
     });
 
     // Create hide/show animation
@@ -46,9 +64,9 @@ export const useScrollHeader = (selector: string) => {
         const direction = self.direction;
 
         // Show/hide header based on scroll direction
-        if (direction > 0 && velocity > 15 && scrollTop > 100) {
+        if (direction > 0 && velocity > 15 && scrollTop > headerHeight.value) {
           headerAnimation?.play();
-        } else if (direction < 0 || scrollTop < 100) {
+        } else if (direction < 0 || scrollTop < headerHeight.value) {
           headerAnimation?.reverse();
         }
       },
@@ -64,10 +82,12 @@ export const useScrollHeader = (selector: string) => {
       headerAnimation.kill();
       headerAnimation = null;
     }
+    // Don't reset headerHeight as we want to maintain it between route changes
   };
 
   return {
     initScrollHeader,
     cleanup,
+    headerHeight, // Expose height for potential use elsewhere
   };
 };

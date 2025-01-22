@@ -25,7 +25,8 @@ Project Molki Design
 
 ✔ Ensure mobile experience is smooth and works on all devices @started(25-01-22 01:04) @done(25-01-22 02:58) @lasted(1h54m39s)
 ✔ Ensure smooth scroll works while changing pages @done(25-01-22 02:58)
-- Headroom funcionality too sensitive on mobile, more debounce @started(25-01-22 02:59)
+✔ Headroom funcionality too sensitive on mobile, more debounce @started(25-01-22 02:59) @done(25-01-22 03:35) @lasted(36m26s)
 
+- Ensure scroll to plays smoothly while user clicks on links
 - Fix mobile menu position, styles 
 - Adjust Hero  

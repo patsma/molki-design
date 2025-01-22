@@ -85,12 +85,25 @@ watch(() => route.path, handlePageTransition);
       <div ref="content" id="smooth-content">
         <HeaderComponent />
 
-        <div class="pt-20">
+        <div class="">
           <!-- Add padding to account for fixed header -->
           <NuxtPage />
-          <div class="spacer w-full h-screen bg-red-400" data-speed="0.8"></div>
+          <div class="spacer w-full h-screen bg-red-400" data-speed="1.1"></div>
+          <div
+            class="spacer w-full h-screen bg-teal-400"
+            data-speed="1.2"
+          ></div>
+          <div class="spacer w-full h-screen bg-red-400" data-speed="1.1"></div>
+          <div
+            class="spacer w-full h-screen bg-teal-400"
+            data-speed="1.2"
+          ></div>
           <div
             id="spacer1"
+            class="spacer w-full h-screen bg-red-400"
+            data-speed="1.1"
+          ></div>
+          <div
             class="spacer w-full h-screen bg-teal-400"
             data-speed="1.2"
           ></div>

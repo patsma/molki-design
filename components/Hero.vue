@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="full-width relative min-h-screen w-full">
+  <section class="full-width relative min-h-[100dvh] w-full">
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
@@ -38,6 +38,7 @@ onMounted(() => {
         class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100"
       >
         <div
+          data-speed="1.25"
           class="breakout1 content-end justify-center items-center justify-items-center pb-24"
         >
           <!-- Title with GSAP effect class -->

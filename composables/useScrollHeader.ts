@@ -57,7 +57,7 @@ export const useScrollHeader = (selector: string) => {
       end: "max",
       onUpdate: (self) => {
         const now = Date.now();
-        if (now - lastCheck < 200) return;
+        if (now - lastCheck < 400) return;
         lastCheck = now;
 
         const smoother = $ScrollSmoother.get();

@@ -8,7 +8,7 @@ export const useScrollHeader = (selector: string) => {
   let headerTrigger: ScrollTrigger | null = null;
   let headerAnimation: gsap.core.Timeline | null = null;
   const headerHeight = ref(0);
-
+  let lastCheck = 0;
   const initScrollHeader = () => {
     console.log("🚀 Initializing ScrollHeader");
     if (!process.client) return;
@@ -56,18 +56,20 @@ export const useScrollHeader = (selector: string) => {
       start: 0,
       end: "max",
       onUpdate: (self) => {
+        const now = Date.now();
+        if (now - lastCheck < 200) return;
+        lastCheck = now;
+
         const smoother = $ScrollSmoother.get();
         if (!smoother) return;
 
-        const velocity = Math.abs(smoother.getVelocity());
         const scrollTop = smoother.scrollTop();
         const direction = self.direction;
 
-        // Show/hide header based on scroll direction
-        if (direction > 0 && velocity > 15 && scrollTop > headerHeight.value) {
-          headerAnimation?.play();
-        } else if (direction < 0 || scrollTop < headerHeight.value) {
-          headerAnimation?.reverse();
+        if (direction > 0 && scrollTop > headerHeight.value) {
+          gsap.to(header, { yPercent: -100, duration: 0.3 });
+        } else if (direction < 0) {
+          gsap.to(header, { yPercent: 0, duration: 0.3 });
         }
       },
     });

@@ -12,7 +12,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
     // Kill all ScrollTriggers except header pin
     ScrollTrigger.getAll().forEach((trigger) => {
       // Check if this is the header pin trigger
-      const isHeaderTrigger = trigger.vars.trigger?.classList?.contains("nav");
+      const triggerElement = trigger.vars.trigger as Element;
+      const isHeaderTrigger = triggerElement?.classList?.contains("nav");
       if (!isHeaderTrigger) {
         trigger.kill();
       }

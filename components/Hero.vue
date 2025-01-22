@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="full-width relative min-h-[100dvh] w-full">
+  <section class="full-width relative min-h-[100vh] w-full">
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->

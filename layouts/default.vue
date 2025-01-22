@@ -37,11 +37,20 @@ const initSmoother = async () => {
 
 // Handle page transitions
 const handlePageTransition = async () => {
+  // Kill existing instances
   if (smoother) {
+    smoother.scrollTop(0); // Use smoother's method
     smoother.kill();
   }
+  cleanup(); // Clean up header triggers
+
+  // Wait for DOM update
   await nextTick();
-  initSmoother();
+
+  // Initialize in correct order
+  await initSmoother();
+  await nextTick();
+  initScrollHeader();
 };
 
 onMounted(() => {
@@ -88,12 +97,12 @@ watch(() => route.path, handlePageTransition);
         <div class="">
           <!-- Add padding to account for fixed header -->
           <NuxtPage />
-          <div class="spacer w-full h-screen bg-red-400" data-speed="1.1"></div>
+          <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
           <div
             class="spacer w-full h-screen bg-teal-400"
             data-speed="1.2"
           ></div>
-          <div class="spacer w-full h-screen bg-red-400" data-speed="1.1"></div>
+          <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
           <div
             class="spacer w-full h-screen bg-teal-400"
             data-speed="1.2"
@@ -101,7 +110,7 @@ watch(() => route.path, handlePageTransition);
           <div
             id="spacer1"
             class="spacer w-full h-screen bg-red-400"
-            data-speed="1.1"
+            data-speed="1.5"
           ></div>
           <div
             class="spacer w-full h-screen bg-teal-400"

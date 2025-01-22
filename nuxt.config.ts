@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       mode: "out-in",
       onBeforeEnter: () => {
         if (process.client) {
-          window.scrollTo(0, 0);
+          // window.scrollTo(0, 0);
         }
       },
     },

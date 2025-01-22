@@ -2,26 +2,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 export default defineNuxtRouteMiddleware((to, from) => {
-  if (process.client) {
-    // Kill existing ScrollSmoother instance
+  if (process.client && to.path !== from.path) {
+    // Kill all instances on route change
     const currentSmoother = ScrollSmoother.get();
     if (currentSmoother) {
+      currentSmoother.scrollTop(0); // Use smoother's method instead of window.scrollTo
       currentSmoother.kill();
     }
 
-    // Kill all ScrollTriggers except header pin
-    ScrollTrigger.getAll().forEach((trigger) => {
-      // Check if this is the header pin trigger
-      const triggerElement = trigger.vars.trigger as Element;
-      const isHeaderTrigger = triggerElement?.classList?.contains("nav");
-      if (!isHeaderTrigger) {
-        trigger.kill();
-      }
-    });
-
-    // Clear scroll position if navigating to a new page
-    if (to.path !== from.path) {
-      window.scrollTo(0, 0);
-    }
+    // Kill ALL ScrollTriggers without exceptions
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }
 });

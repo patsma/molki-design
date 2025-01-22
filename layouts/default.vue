@@ -31,10 +31,12 @@ const initSmoother = async () => {
     smoother = $ScrollSmoother.create({
       wrapper: wrapper.value,
       content: content.value,
-      smooth: 1,
-      effects: true,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
+      smooth: 1, // Smoothness level (higher is smoother, default is 1)
+      effects: true, // Enables ScrollTrigger-based effects
+      normalizeScroll: true, // Normalizes scrolling behavior
+      touchMultiplier: 2, // Adjusts the scroll speed on touch devices
+      ignoreMobileResize: true, // Prevents resizing issues on iOS Safari
+      preventDefault: true,
     });
   }
 };

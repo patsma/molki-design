@@ -37,20 +37,33 @@ const initSmoother = async () => {
 
 // Handle page transitions
 const handlePageTransition = async () => {
-  // Kill existing instances
+  console.log("🔄 Layout: Starting page transition");
+
   if (smoother) {
-    smoother.scrollTop(0); // Use smoother's method
+    console.log("🛑 Layout: Cleaning up old smoother");
+    smoother.scrollTop(0);
     smoother.kill();
   }
-  cleanup(); // Clean up header triggers
+  cleanup();
 
-  // Wait for DOM update
+  // Use multiple nextTicks to ensure proper DOM updates
   await nextTick();
+  console.log("1️⃣ Layout: First tick completed");
 
-  // Initialize in correct order
   await initSmoother();
+  console.log("🎨 Layout: Smoother initialized");
+
   await nextTick();
+  console.log("2️⃣ Layout: Second tick completed");
+
+  // Refresh effects immediately after second tick
+  if (smoother) {
+    console.log("✨ Layout: Refreshing scroll effects");
+    smoother.effects("[data-speed], [data-lag]");
+  }
+
   initScrollHeader();
+  console.log("📍 Layout: Header initialized");
 };
 
 onMounted(() => {

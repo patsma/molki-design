@@ -35,4 +35,7 @@ export default defineNuxtConfig({
       scrollSmoother: true, // Add ScrollSmoother as a club plugin
     },
   },
+  router: {
+    middleware: ["scroll-effects"],
+  },
 });

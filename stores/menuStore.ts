@@ -160,7 +160,7 @@ export const useMenuStore = defineStore("menu", {
         if (this.isMobileMenuOpen) {
           await this.closeMenu();
         }
-        await router.push(link);
+        await navigateTo(link);
       }
     },
 

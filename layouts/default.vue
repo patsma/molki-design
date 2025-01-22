@@ -13,57 +13,30 @@ let smoother = null;
 const menuStore = useMenuStore();
 const { initScrollHeader, cleanup } = useScrollHeader(".nav");
 
-// Initialize ScrollSmoother
-const initSmoother = async () => {
-  if (!process.client) return;
-  await nextTick();
-
-  // Register ScrollTrigger first as ScrollSmoother depends on it
-  $gsap.registerPlugin($ScrollTrigger);
-
-  if ($ScrollSmoother) {
-    smoother = $ScrollSmoother.create({
-      wrapper: wrapper.value,
-      content: content.value,
-      smooth: 1, // Smoothness level (higher is smoother, default is 1)
-      effects: true, // Enables ScrollTrigger-based effects
-      normalizeScroll: true, // Normalizes scrolling behavior
-      touchMultiplier: 2, // Adjusts the scroll speed on touch devices
-      ignoreMobileResize: true, // Prevents resizing issues on iOS Safari
-      preventDefault: true,
-    });
-  }
-};
-
 // Handle page transitions
 const handlePageTransition = async () => {
   console.log("🔄 Layout: Starting page transition");
-
-  if (smoother) {
-    console.log("🛑 Layout: Cleaning up old smoother");
-    smoother.scrollTop(0);
-    smoother.kill();
-  }
   cleanup();
-
-  // Use multiple nextTicks to ensure proper DOM updates
   await nextTick();
-  console.log("1️⃣ Layout: First tick completed");
-
-  await initSmoother();
-  console.log("🎨 Layout: Smoother initialized");
-
-  await nextTick();
-  console.log("2️⃣ Layout: Second tick completed");
-
-  // Refresh effects immediately after second tick
-  if (smoother) {
-    console.log("✨ Layout: Refreshing scroll effects");
-    smoother.effects("[data-speed], [data-lag]");
-  }
-
   initScrollHeader();
-  console.log("📍 Layout: Header initialized");
+};
+
+const initSmoother = async () => {
+  if (!process.client) return;
+
+  // Register plugins first
+  $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother);
+
+  console.log("🎯 Layout: Initial ScrollSmoother setup");
+  smoother = $ScrollSmoother.create({
+    wrapper: wrapper.value,
+    content: content.value,
+    smooth: 1,
+    effects: true,
+    normalizeScroll: true,
+    touchMultiplier: 2,
+    ignoreMobileResize: true,
+  });
 };
 
 onMounted(() => {
@@ -73,8 +46,8 @@ onMounted(() => {
     );
     initScrollHeader();
     menuStore.initAnimation($gsap);
+    initSmoother();
   }
-  initSmoother();
   const loaderGroup = document.querySelector(".loader-group");
   if (loaderGroup) {
     loaderGroup.classList.add("loader-group--hidden");
@@ -103,34 +76,11 @@ watch(() => route.path, handlePageTransition);
 <template>
   <div>
     <Loader />
-    <div ref="wrapper" id="smooth-wrapper" class="min-h-screen">
-      <div ref="content" id="smooth-content">
-        <HeaderComponent />
-
-        <div class="">
-          <!-- Add padding to account for fixed header -->
-          <NuxtPage />
-          <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
-          <div
-            class="spacer w-full h-screen bg-teal-400"
-            data-speed="1.2"
-          ></div>
-          <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
-          <div
-            class="spacer w-full h-screen bg-teal-400"
-            data-speed="1.2"
-          ></div>
-          <div
-            id="spacer1"
-            class="spacer w-full h-screen bg-red-400"
-            data-speed="1.5"
-          ></div>
-          <div
-            class="spacer w-full h-screen bg-teal-400"
-            data-speed="1.2"
-          ></div>
-        </div>
+    <GSAPScrollSmoother>
+      <HeaderComponent />
+      <div class="">
+        <NuxtPage />
       </div>
-    </div>
+    </GSAPScrollSmoother>
   </div>
 </template>

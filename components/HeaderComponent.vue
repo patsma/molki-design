@@ -32,22 +32,11 @@ onUnmounted(() => {
       <div
         class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
       >
-        <div class="breakout1 justify-between grid grid-flow-col">
-          <!-- Logo -->
-          <div class="nav__logo w-32 relative z-50">
-            <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
-              <Logo />
-            </NuxtLink>
-          </div>
-
-          <!-- Desktop Menu -->
-          <div class="hidden md:block">
-            <MainMenu :is-mobile="false" />
-          </div>
-
-          <!-- Mobile Menu Button -->
+        <div
+          class="breakout1 items-center md:justify-between grid grid-cols-[1fr_2fr_1fr]"
+        >
           <button
-            class="hamburger md:hidden grid items-center relative z-50"
+            class="hamburger content-center md:hidden grid items-center relative z-50"
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
             @click.prevent="
               () => {
@@ -61,6 +50,18 @@ onUnmounted(() => {
             <span></span>
             <span></span>
           </button>
+          <!-- Logo -->
+          <div class="nav__logo w-32 justify-self-center grid relative z-50">
+            <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
+              <Logo />
+            </NuxtLink>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:block">
+            <MainMenu :is-mobile="false" />
+          </div>
+          <!-- Mobile Menu Button -->
 
           <!-- CTA Button (Desktop) -->
           <div class="hidden md:grid justify-end">

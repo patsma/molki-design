@@ -28,6 +28,7 @@ Project Molki Design
 ✔ Headroom funcionality too sensitive on mobile, more debounce @started(25-01-22 02:59) @done(25-01-22 03:35) @lasted(36m26s)
 
 ✔ Ensure scroll to plays smoothly while user clicks on links @done(25-01-22 05:12)
-- Ensure data-speed is working on route change
-- Fix mobile menu position, styles 
+✔ Ensure data-speed is working on route change @done(25-01-22 06:29)
+✔ Fix mobile menu position, styles @done(25-01-23 02:28)
+- Refactor desktop menu to be smarter 
 - Adjust Hero  

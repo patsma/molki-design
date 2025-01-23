@@ -1,15 +1,11 @@
 <script setup>
 import { onMounted, onUnmounted } from "vue";
 import { useMenuStore } from "@/stores/menuStore";
-import { useAnimationStore } from "@/stores/animationStore";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-// import useHeadroom from "~/composables/useHeadroom";
 import MainMenu from "~/components/MainMenu.vue";
 import Logo from "~/components/Logo.vue";
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 const menuStore = useMenuStore();
-// const { initHeadroom } = useHeadroom(".nav");
 
 onMounted(() => {
   if (process.client) {
@@ -33,10 +29,10 @@ onUnmounted(() => {
         class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
       >
         <div
-          class="breakout1 items-center md:justify-between grid grid-cols-[1fr_2fr_1fr]"
+          class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]"
         >
           <button
-            class="hamburger content-center md:hidden grid items-center relative z-50"
+            class="hamburger content-center xl:hidden grid items-center relative z-50"
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
             @click.prevent="
               () => {
@@ -51,20 +47,22 @@ onUnmounted(() => {
             <span></span>
           </button>
           <!-- Logo -->
-          <div class="nav__logo w-32 justify-self-center grid relative z-50">
+          <div
+            class="nav__logo w-32 justify-self-center md:justify-self-start grid relative z-50"
+          >
             <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
               <Logo />
             </NuxtLink>
           </div>
 
           <!-- Desktop Menu -->
-          <div class="hidden md:block">
+          <div class="hidden xl:grid">
             <MainMenu :is-mobile="false" />
           </div>
           <!-- Mobile Menu Button -->
 
           <!-- CTA Button (Desktop) -->
-          <div class="hidden md:grid justify-end">
+          <div class="hidden xl:grid justify-end">
             <button
               class="rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
@@ -72,17 +70,19 @@ onUnmounted(() => {
             </button>
           </div>
         </div>
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu inset-0 bg-white z-30">
-          <div class="content-grid h-full pt-24 px-6 overflow-y-auto">
-            <MainMenu :is-mobile="true" />
-            <div class="mt-8 pb-8">
-              <button
-                class="w-full rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              >
-                Umów konsultację
-              </button>
-            </div>
+      </div>
+      <!-- Mobile Menu Overlay -->
+      <div
+        class="mobile-menu top-0 absolute w-full h-screen inset-0 bg-white z-30"
+      >
+        <div class="content-grid h-full pt-24 px-6 overflow-y-auto">
+          <MainMenu :is-mobile="true" />
+          <div class="mt-8 pb-8">
+            <button
+              class="w-full rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            >
+              Umów konsultację
+            </button>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@
     </div>
 
     <!-- Secondary Buttons -->
-    <div data-speed="1.5" class="space-y-4">
+    <div class="space-y-4">
       <h2 class="text-2xl font-semibold">Secondary Buttons</h2>
       <div class="flex flex-wrap gap-4">
         <!-- Default Secondary -->

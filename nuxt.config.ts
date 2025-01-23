@@ -53,52 +53,61 @@ export default defineNuxtConfig({
         provider: "none",
         src: [
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrGFuG6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-Thin.woff2",
             weight: 100,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrEFuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-ExtraLight.woff2",
             weight: 200,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrHbuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-Light.woff2",
             weight: 300,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrGFuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-Regular.woff2",
             weight: 400,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrG3uW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-Medium.woff2",
             weight: 500,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrCZuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-SemiBold.woff2",
             weight: 600,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrFZuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-Bold.woff2",
             weight: 700,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrEZuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-ExtraBold.woff2",
             weight: 800,
             style: "normal",
+            format: "woff2",
           },
           {
-            url: "http://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrEiuW6OChXtf4qS.ttf",
+            path: "/fonts/spartan/woff2/Spartan-Black.woff2",
             weight: 900,
             style: "normal",
-          }
-        ]
-      }
+            format: "woff2",
+          },
+        ],
+      },
     ],
   },
 });

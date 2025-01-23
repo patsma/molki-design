@@ -41,24 +41,25 @@ onMounted(() => {
           data-speed="1.25"
           class="breakout1 content-end justify-center items-center justify-items-center pb-24"
         >
+          <!-- js--text-effect-101 -->
           <!-- Title with GSAP effect class -->
           <h1
-            class="js--text-effect-101 max-w-4xl text-4xl font-bold leading-snug text-center md:text-5xl lg:text-6xl"
+            class="h1 font-spartan font-bold leading-snug text-center tracking-widest"
           >
             {{ title }}
           </h1>
           <!-- Subtitle -->
-          <h2 class="max-w-2xl text-lg md:text-3xl">
+          <h2 class="h2 font-normal tracking-widest">
             {{ subtitle }}
           </h2>
           <!-- CTA Button -->
-          <div class="mt-8">
+          <div class="mt-8 uppercase">
             <NuxtLink
               to="/buttons"
-              class="rounded-md bg-primary px-8 py-3 text-base font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              class="rounded-md bg-primary px-8 py-3 text-base font-extrabold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Rozpocznij projekt"
             >
-              Rozpocznij projekt
+              Umów konsultację
             </NuxtLink>
           </div>
         </div>

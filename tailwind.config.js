@@ -16,6 +16,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
+        spartan: ["Spartan", "sans-serif"],
       },
       colors: {
         primary: {
@@ -49,11 +50,15 @@ export default {
         "6xl": ["3.75rem", { lineHeight: "1.16" }],
       },
       fontWeight: {
+        thin: "100",
+        extralight: "200",
         light: "300",
         normal: "400",
         medium: "500",
         semibold: "600",
         bold: "700",
+        extrabold: "800",
+        black: "900",
       },
     },
   },

@@ -32,7 +32,7 @@ Project Molki Design
 ✔ Fix mobile menu position, styles @done(25-01-23 02:28)
 ✔ Refactor desktop menu to be smarter @done(25-01-23 02:55)
 
-- Add proper font-family to the project
-- Add Nuxt Fonts module
+✔ Add proper font-family to the project @done(25-01-23 03:39)
+✔ Add Nuxt Fonts module @done(25-01-23 03:39)
 - Settup proper styling for hero
 - Adjust Hero  

@@ -8,8 +8,7 @@
   "bugs": {
     "url": "https://github.com/patryksmakosz/molki-design/issues"
   },
-"private": true,
-
+  "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
@@ -21,6 +20,7 @@
   "devDependencies": {
     "@hypernym/nuxt-gsap": "^2.4.2",
     "@nuxt/devtools": "latest",
+    "@nuxt/fonts": "^0.10.3",
     "@nuxtjs/tailwindcss": "^6.9.4",
     "nuxt": "^3.8.1",
     "vue": "^3.3.8",

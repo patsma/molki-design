@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@hypernym/nuxt-gsap", "@pinia/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@hypernym/nuxt-gsap",
+    "@pinia/nuxt",
+    "@nuxt/fonts",
+  ],
   devServer: {
     host: "0.0.0.0",
     port: 3000,
@@ -34,5 +39,15 @@ export default defineNuxtConfig({
       splitText: true,
       scrollSmoother: true, // Add ScrollSmoother as a club plugin
     },
+  },
+  fonts: {
+    families: [
+      {
+        name: "Montserrat",
+        provider: "google",
+        weights: [300, 400, 500, 600, 700],
+        styles: ["normal", "italic"],
+      },
+    ],
   },
 });

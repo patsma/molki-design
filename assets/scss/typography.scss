@@ -1,0 +1,42 @@
+// Base typography styles
+body {
+  @apply font-sans text-base font-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+}
+
+h2, .h2 {
+  @apply text-3xl font-bold md:text-4xl;
+}
+
+h3, .h3 {
+  @apply text-2xl font-semibold md:text-3xl;
+}
+
+h4, .h4 {
+  @apply text-xl font-semibold md:text-2xl;
+}
+
+h5, .h5 {
+  @apply text-lg font-medium md:text-xl;
+}
+
+h6, .h6 {
+  @apply text-base font-medium md:text-lg;
+}
+
+p {
+  @apply text-base leading-relaxed;
+}
+
+.text-small {
+  @apply text-sm leading-normal;
+}
+
+.text-tiny {
+  @apply text-xs leading-normal;
+}

@@ -1,30 +1,38 @@
 <template>
-  <div
-    class="loader-group bg-secondary grid justify-center absolute z-50 h-screen w-full"
-  >
-    <div class="loader grid">
-      <LoaderLogo class="w-80" />
+  <Transition name="fade">
+    <div
+      v-if="!loaderStore.isHidden"
+      class="loader-group bg-secondary grid justify-center fixed z-50 h-screen w-full"
+      :class="{ 'loader-group--hidden': !loaderStore.isLoading }"
+    >
+      <div class="loader grid">
+        <LoaderLogo class="w-40" />
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
+
+<script setup lang="ts">
+import { useLoaderStore } from '~/stores/loaderStore';
+
+const loaderStore = useLoaderStore();
+</script>
+
 <style>
 .loader-group {
-  transition: 0.3s all ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .loader-group--hidden {
   opacity: 0;
+  pointer-events: none;
 }
 
-@keyframes fade-in-out {
-  0% {
-    transform: scale(1.8);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.8);
-  }
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

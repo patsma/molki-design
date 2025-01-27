@@ -1,21 +1,22 @@
 <script setup>
-import { useMenuStore } from "@/stores/menuStore";
-import { useScrollHeader } from "~/composables/useScrollHeader";
-const { $gsap, $ScrollTrigger, $ScrollSmoother, $MorphSVGPlugin } =
-  useNuxtApp();
+import { useLoaderStore } from '~/stores/loaderStore';
+import { useMenuStore } from '@/stores/menuStore';
+import { useScrollHeader } from '~/composables/useScrollHeader';
+const { $gsap, $ScrollTrigger, $ScrollSmoother, $MorphSVGPlugin } = useNuxtApp();
 useHead({
-  title: "Molki Design",
+  title: 'Molki Design',
 });
 
 const wrapper = ref(null);
 const content = ref(null);
 let smoother = null;
 const menuStore = useMenuStore();
-const { initScrollHeader, cleanup } = useScrollHeader(".nav");
+const { initScrollHeader, cleanup } = useScrollHeader('.nav');
+const loaderStore = useLoaderStore();
 
 // Handle page transitions
 const handlePageTransition = async () => {
-  console.log("🔄 Layout: Starting page transition");
+  console.log('🔄 Layout: Starting page transition');
   cleanup();
   await nextTick();
   initScrollHeader();
@@ -27,7 +28,7 @@ const initSmoother = async () => {
   // Register plugins first
   $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother);
 
-  console.log("🎯 Layout: Initial ScrollSmoother setup");
+  console.log('🎯 Layout: Initial ScrollSmoother setup');
   smoother = $ScrollSmoother.create({
     wrapper: wrapper.value,
     content: content.value,
@@ -39,22 +40,29 @@ const initSmoother = async () => {
   });
 };
 
+// Initialize all required functionality
+const initializeApp = async () => {
+  if (!process.client) return;
+
+  try {
+    await Promise.all([
+      $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline'),
+      initScrollHeader(),
+      menuStore.initAnimation($gsap),
+      initSmoother(),
+    ]);
+
+    // Mark loading as complete after all initializations
+    loaderStore.finishLoading();
+  } catch (error) {
+    console.error('Failed to initialize app:', error);
+    // Still hide loader even if there's an error
+    loaderStore.finishLoading();
+  }
+};
+
 onMounted(() => {
-  if (process.client) {
-    $MorphSVGPlugin.convertToPath(
-      "circle, rect, ellipse, line, polygon, polyline"
-    );
-    initScrollHeader();
-    menuStore.initAnimation($gsap);
-    initSmoother();
-  }
-  const loaderGroup = document.querySelector(".loader-group");
-  if (loaderGroup) {
-    loaderGroup.classList.add("loader-group--hidden");
-    setTimeout(() => {
-      loaderGroup.remove();
-    }, 200);
-  }
+  initializeApp();
 });
 
 onUnmounted(() => {

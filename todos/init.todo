@@ -42,6 +42,7 @@ Project Molki Design
  ✔ Basic structure @done(25-01-23 05:15)
  ✔ Add separator line @done(25-01-27 15:33)
  ✔ Add proper colors to menu hamburger @done(25-01-27 15:44)
+ - Ensure proper styling of menu dropdown items
  - Ensure items in menu are highlighted depending on the page position
  
 ✔ 2.	Hero @done(25-01-23 05:13)

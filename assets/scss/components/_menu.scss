@@ -33,24 +33,35 @@
   }
 
   &__item {
-    padding: 0.5rem;
+    padding: 1rem 0;
     position: relative;
     
     // Submenu container
     &-submenu {
-     padding: 1rem 1rem;
+     padding: 0.5rem 1rem;
       position: absolute;
       display: grid;
-      gap: 1rem;
-      top: 170%;
+      // gap: 1rem;
+      top: 120%;
       left: 0;
       min-width: 200px;
       background: var(--color-neutral-100);
-
+      overflow: hidden;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
+
+      > * {
+        padding: 0.5rem 0;
+      }
+      // not last item
+      > :not(:last-child) {
+        border-bottom: 0.175rem solid;
+        border-image: linear-gradient(to right, #b76246, #d0835f, #a04225) 1;
+
+
+      }
     }
 
     // Show submenu on hover

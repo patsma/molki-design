@@ -59,7 +59,7 @@ onUnmounted(() => {
           <div class="hidden xl:grid">
             <MainMenu :is-mobile="false" />
             <div
-              class="w-full h-[2px] bg-gradient-to-r from-[#B76246] via-[#D0835F] to-[#A04225]"
+              class="w-full h-[0.175rem] relative z-50 bg-gradient-to-r from-[#B76246] via-[#D0835F] to-[#A04225]"
             ></div>
           </div>
           <!-- Mobile Menu Button -->

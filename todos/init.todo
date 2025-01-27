@@ -43,7 +43,8 @@ Project Molki Design
  ✔ Add separator line @done(25-01-27 15:33)
  ✔ Add proper colors to menu hamburger @done(25-01-27 15:44)
  ✔ Ensure proper styling of menu dropdown items @done(25-01-27 16:17)
- - Add mobile toggle dropdown
+ ✔ Add mobile toggle dropdown @done(25-01-27 18:05)
+ - Restore desktop hover dropdown styles
  - Ensure items in menu are highlighted depending on the page position
  
 ✔ 2.	Hero @done(25-01-23 05:13)

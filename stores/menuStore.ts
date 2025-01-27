@@ -14,13 +14,19 @@ export const useMenuStore = defineStore('menu', {
     isMobileMenuOpen: false,
     mobileMenuTimeline: null as gsap.core.Timeline | null,
     gsapInstance: null as typeof gsap | null,
+    activeDropdownId: null as string | null,
+    dropdownTimelines: new Map<string, gsap.core.Timeline>(),
   }),
 
   actions: {
     initAnimation($gsap: typeof gsap) {
+      console.log('🎨 Initializing animations');
       this.gsapInstance = $gsap;
-      console.log('Initializing menu animation');
-      if (!process.client) return;
+
+      if (!process.client) {
+        console.warn('⚠️ Not running on client side, skipping animation init');
+        return;
+      }
 
       const menu = document.querySelector('.mobile-menu');
       const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
@@ -67,6 +73,89 @@ export const useMenuStore = defineStore('menu', {
           }
         }
       );
+
+      this.initDropdownTimelines();
+    },
+
+    initDropdownTimelines() {
+      if (!this.gsapInstance || !process.client) return;
+
+      this.dropdownTimelines.forEach((tl) => tl.kill());
+      this.dropdownTimelines.clear();
+
+      document.querySelectorAll('.nav-menu.mobile .nav-menu__item').forEach((item, index) => {
+        const submenu = item.querySelector('.nav-menu__item-submenu');
+        const arrow = item.querySelector('.dropdown-arrow');
+
+        if (!submenu || !arrow) return;
+
+        const dropdownId = `dropdown-${index}`;
+
+        // First, measure the content height
+        this.gsapInstance.set(submenu, {
+          display: 'grid',
+          maxHeight: 'none',
+          height: 'auto',
+          opacity: 0,
+          visibility: 'hidden',
+        });
+
+        const contentHeight = (submenu as HTMLElement).offsetHeight;
+        console.log(`📏 Content height for ${dropdownId}:`, contentHeight);
+
+        // Set initial state
+        this.gsapInstance.set(submenu, {
+          display: 'grid',
+          maxHeight: 0,
+          height: 'auto', // Keep auto height
+          opacity: 0,
+          visibility: 'visible',
+        });
+
+        const tl = this.gsapInstance
+          .timeline({
+            paused: true,
+            defaults: { duration: 0.7, ease: 'power2.inOut' },
+          })
+          .to(submenu, {
+            maxHeight: '50vh',
+            opacity: 1,
+            immediateRender: false,
+          })
+          .to(
+            arrow,
+            {
+              rotation: 90,
+              ease: 'power2.out',
+            },
+            0
+          );
+
+        this.dropdownTimelines.set(dropdownId, tl);
+      });
+    },
+
+    toggleDropdown(itemIndex: number) {
+      const dropdownId = `dropdown-${itemIndex}`;
+      const timeline = this.dropdownTimelines.get(dropdownId);
+
+      if (!timeline) return;
+
+      // Close active dropdown if it's different from the current one
+      if (this.activeDropdownId && this.activeDropdownId !== dropdownId) {
+        const activeTimeline = this.dropdownTimelines.get(this.activeDropdownId);
+        activeTimeline?.reverse();
+        this.activeDropdownId = null;
+      }
+
+      // Toggle current dropdown
+      if (timeline.progress() === 0 || timeline.reversed()) {
+        timeline.play();
+        this.activeDropdownId = dropdownId;
+      } else {
+        timeline.reverse();
+        this.activeDropdownId = null;
+      }
     },
 
     toggleMenu() {
@@ -95,8 +184,20 @@ export const useMenuStore = defineStore('menu', {
       this.mobileMenuTimeline?.reverse();
     },
 
-    async handleMenuItemClick(link: string, router: any, event?: Event) {
+    async handleMenuItemClick(link: string, router: any, event?: Event, hasChildren = false) {
       event?.preventDefault();
+
+      // Handle mobile dropdown toggle first
+      if (this.isMobileMenuOpen && hasChildren) {
+        const targetElement = event?.target as HTMLElement;
+        const parentItem = targetElement.closest('.nav-menu__item');
+        const submenu = parentItem?.querySelector('.nav-menu__item-submenu');
+
+        if (submenu) {
+          await this.toggleDropdown(itemIndex);
+          return; // Prevent navigation for parent items with children
+        }
+      }
 
       console.log('🎯 Handling menu item click:', link);
       const smoother = ScrollSmoother.get();
@@ -163,10 +264,14 @@ export const useMenuStore = defineStore('menu', {
     },
 
     cleanup() {
+      console.log('🧹 Cleaning up store');
       if (this.mobileMenuTimeline) {
         this.mobileMenuTimeline.kill();
         this.mobileMenuTimeline = null;
       }
+      this.dropdownTimelines.forEach((timeline) => timeline.kill());
+      this.dropdownTimelines.clear();
+      this.activeDropdownId = null;
       document.body.style.overflow = '';
     },
   },

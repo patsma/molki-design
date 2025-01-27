@@ -67,9 +67,7 @@ onUnmounted(() => {
         </div>
       </div>
       <!-- Mobile Menu Overlay -->
-      <div
-        class="mobile-menu !grid content-grid top-0 absolute w-full h-screen inset-0 bg-white z-30"
-      >
+      <div class="mobile-menu content-grid top-0 absolute w-full h-screen inset-0 bg-white z-30">
         <div class="h-full pt-24 breakout1 overflow-y-auto">
           <MainMenu :is-mobile="true" />
           <div class="mt-8 pb-8">

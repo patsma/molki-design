@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useMenuStore } from "@/stores/menuStore";
-import { useRouter } from "vue-router";
+import { useMenuStore } from '@/stores/menuStore';
+import { useRouter } from 'vue-router';
 
 const props = defineProps<{
   isMobile: boolean;
@@ -11,46 +11,56 @@ const router = useRouter();
 
 const menuItems = [
   {
-    label: "O NAS",
-    link: "/buttons",
-    children: [{ label: "NASZ TEAM", link: "#nasz-team" }],
+    label: 'O NAS',
+    link: '/buttons',
+    children: [{ label: 'NASZ TEAM', link: '#nasz-team' }],
   },
   {
-    label: "PROJEKT WNĘTRZA",
-    link: "#spacer1",
+    label: 'PROJEKT WNĘTRZA',
+    link: '#spacer1',
     children: [
-      { label: "REALIZACJE", link: "#projekty-realizacje" },
-      { label: "CENNIK", link: "#cennik-projekt" },
+      { label: 'REALIZACJE', link: '#projekty-realizacje' },
+      { label: 'CENNIK', link: '#cennik-projekt' },
     ],
   },
   {
-    label: "REMONT POD KLUCZ",
-    link: "#",
+    label: 'REMONT POD KLUCZ',
+    link: '#',
     children: [
-      { label: "REALIZACJE", link: "#remont-pod-klucz-realizacje" },
-      { label: "CENNIK", link: "#remonty-cennik" },
+      { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
+      { label: 'CENNIK', link: '#remonty-cennik' },
     ],
   },
   {
-    label: "DLA BIZNESU",
-    link: "#",
-    children: [{ label: "REALIZACJE", link: "#realizacje-dla-biznesu" }],
+    label: 'DLA BIZNESU',
+    link: '#',
+    children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
   },
   {
-    label: "BLOG",
-    link: "#blog",
+    label: 'BLOG',
+    link: '#blog',
   },
 ];
 
 const handleClick = async (event: MouseEvent, link: string) => {
   event.preventDefault();
-  await menuStore.handleMenuItemClick(link, router);
+  if (!props.isMobile || link.startsWith('#')) {
+    await menuStore.handleMenuItemClick(link, router, event, false);
+  }
+};
+
+const handleArrowClick = (event: MouseEvent, index: number) => {
+  event.preventDefault();
+  event.stopPropagation();
+  if (props.isMobile) {
+    menuStore.toggleDropdown(index);
+  }
 };
 </script>
 
 <template>
   <nav class="nav-menu" :class="{ mobile: props.isMobile }">
-    <div v-for="item in menuItems" :key="item.label" class="nav-menu__item">
+    <div v-for="(item, index) in menuItems" :key="item.label" class="nav-menu__item">
       <a
         :href="item.link"
         class="nav-menu__link"
@@ -58,6 +68,11 @@ const handleClick = async (event: MouseEvent, link: string) => {
         @click="(e) => handleClick(e, item.link)"
       >
         {{ item.label }}
+        <span
+          v-if="item.children"
+          class="dropdown-arrow"
+          @click="(e) => handleArrowClick(e, index)"
+        />
       </a>
 
       <div v-if="item.children" class="nav-menu__item-submenu">

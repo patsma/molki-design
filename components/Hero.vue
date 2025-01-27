@@ -35,11 +35,11 @@ onMounted(() => {
 
       <!-- Content Container -->
       <div
-        class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100"
+        class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100 pb-32"
       >
         <div
-          data-speed="1.25"
-          class="breakout1 content-end justify-center items-center justify-items-center pb-24 grid gap-8"
+          data-speed="1.15"
+          class="breakout1 content-end justify-center items-center justify-items-center grid gap-8"
         >
           <!-- js--text-effect-101 -->
           <!-- Title with GSAP effect class -->
@@ -55,10 +55,10 @@ onMounted(() => {
             </h2>
           </div>
           <!-- CTA Button -->
-          <div class="mt-8 uppercase">
+          <div class="uppercase grid">
             <NuxtLink
               to="/buttons"
-              class="rounded-md bg-primary px-8 py-5 text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              class="rounded-md bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Rozpocznij projekt"
             >
               Umów konsultację

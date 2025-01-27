@@ -34,5 +34,32 @@ Project Molki Design
 
 ✔ Add proper font-family to the project @done(25-01-23 03:39)
 ✔ Add Nuxt Fonts module @done(25-01-23 03:39)
-- Settup proper styling for hero
-- Adjust Hero  
+✔ Settup proper styling for hero @done(25-01-23 05:10)
+✔ Adjust Hero @done(25-01-23 05:10)
+
+
+☐ 1.	Header
+ ✔ Basic structure @done(25-01-23 05:15)
+ ✔ Add separator line @done(25-01-27 15:33)
+ ✔ Add proper colors to menu hamburger @done(25-01-27 15:44)
+ - Ensure items in menu are highlighted depending on the page position
+ 
+✔ 2.	Hero @done(25-01-23 05:13)
+3.	Hero Slider – O Nas
+4.	Hero Projects – Projekty Wnętrza
+5.	Icon Grid
+6.	Column Grid
+7.	Hero – Remont
+8.	Item Card
+9.	Title and Paragraph
+10.	Column Grid 2
+11.	Services Table
+12.	Square Grid
+13.	Banner Pricing
+14.	Info Pricing
+15.	Square Grid Item
+16.	Hero Form
+17.	Pre Footer
+18.	Footer
+19.	Slider Before After
+20.	Column Grid 3 – Pricing

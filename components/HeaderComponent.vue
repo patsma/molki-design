@@ -12,7 +12,7 @@ onMounted(() => {
     $MorphSVGPlugin.convertToPath(
       "circle, rect, ellipse, line, polygon, polyline"
     );
-    // initHeadroom();
+
     menuStore.initAnimation($gsap);
   }
 });
@@ -24,7 +24,7 @@ onUnmounted(() => {
 
 <template>
   <header class="content-grid">
-    <nav class="full-width grid absolute nav z-40 py-4 w-full bg-white">
+    <nav class="full-width grid absolute nav h-24 z-40 py-4 w-full bg-white">
       <div
         class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
       >
@@ -58,6 +58,9 @@ onUnmounted(() => {
           <!-- Desktop Menu -->
           <div class="hidden xl:grid">
             <MainMenu :is-mobile="false" />
+            <div
+              class="w-full h-[2px] bg-gradient-to-r from-[#B76246] via-[#D0835F] to-[#A04225]"
+            ></div>
           </div>
           <!-- Mobile Menu Button -->
 
@@ -102,7 +105,7 @@ onUnmounted(() => {
     position: absolute;
     height: 2px;
     width: 100%;
-    background: var(--color-secondary);
+    background: linear-gradient(to right, #b76246, #d0835f, #a04225);
     transition: 0.25s ease-in-out;
 
     &:nth-child(1) {

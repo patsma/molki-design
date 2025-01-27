@@ -23,6 +23,7 @@
     "@nuxt/fonts": "^0.10.3",
     "@nuxtjs/tailwindcss": "^6.9.4",
     "@prettier/plugin-pug": "^3.2.0",
+    "@vueuse/nuxt": "^12.5.0",
     "autoprefixer": "^10.4.20",
     "nuxt": "^3.8.1",
     "postcss": "^8.5.1",

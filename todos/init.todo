@@ -44,9 +44,11 @@ Project Molki Design
  ✔ Add proper colors to menu hamburger @done(25-01-27 15:44)
  ✔ Ensure proper styling of menu dropdown items @done(25-01-27 16:17)
  ✔ Add mobile toggle dropdown @done(25-01-27 18:05)
- - Restore desktop hover dropdown styles
+ ✔ Restore desktop hover dropdown styles @done(25-01-27 18:52)
+
  - Ensure items in menu are highlighted depending on the page position
- 
+ - Refactor to Refs
+
 ✔ 2.	Hero @done(25-01-23 05:13)
 3.	Hero Slider – O Nas
 4.	Hero Projects – Projekty Wnętrza

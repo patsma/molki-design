@@ -1,39 +1,35 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { ref } from "vue";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ref } from 'vue';
+import { useElementBounding } from '@vueuse/core';
 
-export const useScrollHeader = (selector: string) => {
-  const { $gsap, $ScrollTrigger, $ScrollSmoother } = useNuxtApp();
+export const useScrollHeader = () => {
+  const headerRef = ref<HTMLElement | null>(null);
+  const { height: headerHeight } = useElementBounding(headerRef);
+
   let headerTrigger: ScrollTrigger | null = null;
   let headerAnimation: gsap.core.Timeline | null = null;
-  const headerHeight = ref(0);
   let lastCheck = 0;
+
   const initScrollHeader = () => {
-    console.log("🚀 Initializing ScrollHeader");
-    if (!process.client) return;
+    console.log('🚀 Initializing ScrollHeader');
+    if (!process.client || !headerRef.value) return;
 
-    const header = document.querySelector(selector);
-    if (!header) return;
-
-    // Only measure height if it hasn't been set yet
-    if (headerHeight.value === 0) {
-      headerHeight.value = header.getBoundingClientRect().height;
-      console.log("📏 Initial header height:", headerHeight.value);
-    }
+    const header = headerRef.value;
 
     // Ensure header has correct height before pinning
     gsap.set(header, {
       height: headerHeight.value,
-      clearProps: "all", // Clear all other properties
+      clearProps: 'all', // Clear all other properties
     });
 
     // Pin the header
-    headerTrigger = $ScrollTrigger.create({
+    headerTrigger = ScrollTrigger.create({
       trigger: header,
-      start: "top top",
-      endTrigger: "html",
-      end: "bottom top",
+      start: 'top top',
+      endTrigger: 'html',
+      end: 'bottom top',
       pin: true,
       pinSpacing: false,
       onRefresh: () => {
@@ -43,24 +39,20 @@ export const useScrollHeader = (selector: string) => {
     });
 
     // Create hide/show animation
-    headerAnimation = $gsap
+    headerAnimation = gsap
       .timeline({ paused: true })
-      .fromTo(
-        header,
-        { yPercent: 0 },
-        { yPercent: -100, duration: 0.3, ease: "power3.inOut" }
-      );
+      .fromTo(header, { yPercent: 0 }, { yPercent: -100, duration: 0.3, ease: 'power3.inOut' });
 
     // Create scroll listener
-    $ScrollTrigger.create({
+    ScrollTrigger.create({
       start: 0,
-      end: "max",
+      end: 'max',
       onUpdate: (self) => {
         const now = Date.now();
         if (now - lastCheck < 400) return;
         lastCheck = now;
 
-        const smoother = $ScrollSmoother.get();
+        const smoother = ScrollSmoother.get();
         if (!smoother) return;
 
         const scrollTop = smoother.scrollTop();
@@ -84,12 +76,12 @@ export const useScrollHeader = (selector: string) => {
       headerAnimation.kill();
       headerAnimation = null;
     }
-    // Don't reset headerHeight as we want to maintain it between route changes
   };
 
   return {
+    headerRef,
+    headerHeight,
     initScrollHeader,
     cleanup,
-    headerHeight, // Expose height for potential use elsewhere
   };
 };

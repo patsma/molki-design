@@ -3,26 +3,30 @@ import { onMounted, onUnmounted } from 'vue';
 import { useMenuStore } from '@/stores/menuStore';
 import MainMenu from '~/components/MainMenu.vue';
 import Logo from '~/components/Logo.vue';
+import { useScrollHeader } from '@/composables/useScrollHeader';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 const menuStore = useMenuStore();
+const { headerRef, initScrollHeader, cleanup } = useScrollHeader();
 
 onMounted(() => {
   if (process.client) {
     $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline');
 
     menuStore.initAnimation($gsap);
+    initScrollHeader();
   }
 });
 
 onUnmounted(() => {
   menuStore.cleanup();
+  cleanup();
 });
 </script>
 
 <template>
   <header class="content-grid">
-    <nav class="full-width grid absolute nav h-24 z-40 py-4 w-full bg-white">
+    <nav ref="headerRef" class="full-width grid absolute nav h-24 z-40 py-4 w-full bg-white">
       <div class="nav__wrapper content-grid grid grid-flow-col items-center justify-between">
         <div class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]">
           <button

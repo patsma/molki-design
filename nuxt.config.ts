@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@hypernym/nuxt-gsap",
     "@pinia/nuxt",
     "@nuxt/fonts",
+    "@vueuse/nuxt",
   ],
   devServer: {
     host: "0.0.0.0",

@@ -1,6 +1,6 @@
-import { defineStore } from "pinia";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { gsap } from "gsap";
+import { defineStore } from 'pinia';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { gsap } from 'gsap';
 
 // Define the ScrollTo options type
 interface ScrollToOptions {
@@ -9,7 +9,7 @@ interface ScrollToOptions {
   offset?: number;
 }
 
-export const useMenuStore = defineStore("menu", {
+export const useMenuStore = defineStore('menu', {
   state: () => ({
     isMobileMenuOpen: false,
     mobileMenuTimeline: null as gsap.core.Timeline | null,
@@ -19,44 +19,42 @@ export const useMenuStore = defineStore("menu", {
   actions: {
     initAnimation($gsap: typeof gsap) {
       this.gsapInstance = $gsap;
-      console.log("Initializing menu animation");
+      console.log('Initializing menu animation');
       if (!process.client) return;
 
-      const menu = document.querySelector(".mobile-menu");
-      const menuItems = document.querySelectorAll(
-        ".mobile-menu .nav-menu__item"
-      );
+      const menu = document.querySelector('.mobile-menu');
+      const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
 
       // Initial state
       $gsap.set(menu, {
-        display: "none",
+        display: 'none',
         xPercent: 0,
         opacity: 0,
       });
 
       $gsap.set(menuItems, {
-        opacity: 0,
+        autoAlpha: 0,
         y: 20,
       });
 
       this.mobileMenuTimeline = $gsap
         .timeline({ paused: true })
         .to(menu, {
-          display: "block",
+          display: 'grid',
           xPercent: 0,
           opacity: 1,
           duration: 0.4,
-          ease: "power2.out",
+          ease: 'power2.out',
         })
         .to(
           menuItems,
           {
-            opacity: 1,
+            autoAlpha: 1,
             y: 0,
             stagger: 0.05,
             duration: 0.3,
           },
-          "-=0.2"
+          '-=0.2'
         );
 
       // Watch for route changes
@@ -72,11 +70,11 @@ export const useMenuStore = defineStore("menu", {
     },
 
     toggleMenu() {
-      console.log("Toggle menu called");
+      console.log('Toggle menu called');
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
       if (!this.mobileMenuTimeline) {
-        console.warn("Timeline not initialized");
+        console.warn('Timeline not initialized');
         return;
       }
 
@@ -84,7 +82,7 @@ export const useMenuStore = defineStore("menu", {
         // document.body.style.overflow = "hidden";
         this.mobileMenuTimeline.play();
       } else {
-        document.body.style.overflow = "";
+        document.body.style.overflow = '';
         this.mobileMenuTimeline.reverse();
       }
     },
@@ -93,67 +91,67 @@ export const useMenuStore = defineStore("menu", {
       if (!this.isMobileMenuOpen) return;
 
       this.isMobileMenuOpen = false;
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
       this.mobileMenuTimeline?.reverse();
     },
 
     async handleMenuItemClick(link: string, router: any, event?: Event) {
       event?.preventDefault();
 
-      console.log("🎯 Handling menu item click:", link);
+      console.log('🎯 Handling menu item click:', link);
       const smoother = ScrollSmoother.get();
-      console.log("🔍 Smoother instance:", smoother);
+      console.log('🔍 Smoother instance:', smoother);
 
-      if (link.startsWith("#")) {
+      if (link.startsWith('#')) {
         if (this.isMobileMenuOpen) {
-          console.log("📱 Closing mobile menu before scroll");
+          console.log('📱 Closing mobile menu before scroll');
           await this.closeMenu();
           await new Promise((resolve) => setTimeout(resolve, 400));
         }
 
         const target = document.querySelector(link);
         if (!target) {
-          console.warn("🚫 Target element not found:", link);
+          console.warn('🚫 Target element not found:', link);
           return;
         }
 
-        console.log("🎯 Target element:", target);
-        console.log("🔄 Starting scroll animation");
+        console.log('🎯 Target element:', target);
+        console.log('🔄 Starting scroll animation');
 
         if (smoother && this.gsapInstance) {
-          console.log("Using ScrollSmoother for animation");
+          console.log('Using ScrollSmoother for animation');
 
           try {
             const bounds = target.getBoundingClientRect();
             const scrollTop = smoother.scrollTop();
             const targetY = scrollTop + bounds.top - 100;
 
-            console.log("📏 Calculated scroll position:", targetY);
-            console.log("⏱️ Animation duration:", 2);
+            console.log('📏 Calculated scroll position:', targetY);
+            console.log('⏱️ Animation duration:', 2);
 
             this.gsapInstance.to(smoother, {
               scrollTop: targetY,
               duration: 2,
-              ease: "power3.inOut",
+              ease: 'power3.inOut',
               overwrite: true,
-              onStart: () => console.log("🎬 Animation starting"),
-              onUpdate: () => console.log("⏱️ Progress:", smoother.scrollTop()),
-              onComplete: () => console.log("✅ Animation complete"),
+              onStart: () => console.log('🎬 Animation starting'),
+              onUpdate: () => console.log('⏱️ Progress:', smoother.scrollTop()),
+              onComplete: () => console.log('✅ Animation complete'),
             });
 
-            console.log("🎬 Scroll animation initiated");
+            console.log('🎬 Scroll animation initiated');
           } catch (error) {
-            console.error("Failed to scroll:", error);
+            console.error('Failed to scroll:', error);
             target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
+              behavior: 'smooth',
+              block: 'start',
             });
           }
         } else {
-          console.log("Using native smooth scroll");
+          console.log('Using native smooth scroll');
           target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
       } else {
@@ -169,7 +167,7 @@ export const useMenuStore = defineStore("menu", {
         this.mobileMenuTimeline.kill();
         this.mobileMenuTimeline = null;
       }
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     },
   },
 });

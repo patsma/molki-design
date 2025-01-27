@@ -1,17 +1,15 @@
 <script setup>
-import { onMounted, onUnmounted } from "vue";
-import { useMenuStore } from "@/stores/menuStore";
-import MainMenu from "~/components/MainMenu.vue";
-import Logo from "~/components/Logo.vue";
+import { onMounted, onUnmounted } from 'vue';
+import { useMenuStore } from '@/stores/menuStore';
+import MainMenu from '~/components/MainMenu.vue';
+import Logo from '~/components/Logo.vue';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 const menuStore = useMenuStore();
 
 onMounted(() => {
   if (process.client) {
-    $MorphSVGPlugin.convertToPath(
-      "circle, rect, ellipse, line, polygon, polyline"
-    );
+    $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline');
 
     menuStore.initAnimation($gsap);
   }
@@ -25,12 +23,8 @@ onUnmounted(() => {
 <template>
   <header class="content-grid">
     <nav class="full-width grid absolute nav h-24 z-40 py-4 w-full bg-white">
-      <div
-        class="nav__wrapper content-grid grid grid-flow-col items-center justify-between"
-      >
-        <div
-          class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]"
-        >
+      <div class="nav__wrapper content-grid grid grid-flow-col items-center justify-between">
+        <div class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]">
           <button
             class="hamburger content-center xl:hidden grid items-center relative z-50"
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
@@ -47,9 +41,7 @@ onUnmounted(() => {
             <span></span>
           </button>
           <!-- Logo -->
-          <div
-            class="nav__logo w-32 justify-self-center md:justify-self-start grid relative z-50"
-          >
+          <div class="nav__logo w-32 justify-self-center md:justify-self-start grid relative z-50">
             <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
               <Logo />
             </NuxtLink>
@@ -76,9 +68,9 @@ onUnmounted(() => {
       </div>
       <!-- Mobile Menu Overlay -->
       <div
-        class="mobile-menu top-0 absolute w-full h-screen inset-0 bg-white z-30"
+        class="mobile-menu !grid content-grid top-0 absolute w-full h-screen inset-0 bg-white z-30"
       >
-        <div class="content-grid h-full pt-24 px-6 overflow-y-auto">
+        <div class="h-full pt-24 breakout1 overflow-y-auto">
           <MainMenu :is-mobile="true" />
           <div class="mt-8 pb-8">
             <button

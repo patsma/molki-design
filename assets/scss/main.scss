@@ -47,19 +47,13 @@ body {
   overflow-x: hidden;
 }
 
-
-
-
-
-
-
-.nav__item:not(#themeSwitch){
+.nav__item:not(#themeSwitch) {
   display: grid;
   align-content: center;
   position: relative;
   transition: opacity 0.3s ease-in-out;
 
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -69,24 +63,19 @@ body {
     background-color: var(--color-text);
     transition: width 0.3s ease-in-out;
   }
-  &:hover{
+  &:hover {
     opacity: 0.6;
-
   }
-  &:hover::before{
+  &:hover::before {
     width: 100%;
   }
 }
 
-
-
-
 .center-screen {
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
-
 
 .text-animation-1 {
   overflow: hidden;

@@ -1,10 +1,10 @@
 <script setup>
-import useTextEffect from "~/composables/useTextEffect";
+import useTextEffect from '~/composables/useTextEffect';
 
-const { textEffect1Timelines } = useTextEffect(".js--text-effect-101", false);
+const { textEffect1Timelines } = useTextEffect('.js--text-effect-101', false);
 
-const title = ref("UMÓW SPOTKANIE");
-const subtitle = ref("Z PROJEKTANTKĄ");
+const title = ref('UMÓW SPOTKANIE');
+const subtitle = ref('Z PROJEKTANTKĄ');
 
 onMounted(() => {
   if (textEffect1Timelines.value && textEffect1Timelines.value.length > 0) {
@@ -20,12 +20,7 @@ onMounted(() => {
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0">
         <div class="absolute inset-0 bg-black/30"></div>
-        <img
-          src="/heroHome.jpg"
-          alt=""
-          class="h-full w-full object-cover"
-          aria-hidden="true"
-        />
+        <img src="/heroHome.jpg" alt="" class="h-full w-full object-cover" aria-hidden="true" />
       </div>
 
       <!-- SVG Accent Shape -->
@@ -34,9 +29,7 @@ onMounted(() => {
       </div>
 
       <!-- Content Container -->
-      <div
-        class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100 pb-32"
-      >
+      <div class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100 pb-32">
         <div
           data-speed="1.15"
           class="breakout1 content-end justify-center items-center justify-items-center grid gap-8"

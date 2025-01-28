@@ -46,9 +46,13 @@ Project Molki Design
  ✔ Add mobile toggle dropdown @done(25-01-27 18:05)
  ✔ Restore desktop hover dropdown styles @done(25-01-27 18:52)
 
- - Fix mobile menu click to page
+ ✔ Fix mobile menu click to page @done(25-01-28 08:16)
+ - Add proper dropdown arrow
  - Ensure items in menu are highlighted depending on the page position
- - Refactor to Refs
+ ✘ Refactor to Refs @cancelled(25-01-28 08:16)
+
+
+
 
 ✔ 2.	Hero @done(25-01-23 05:13)
 3.	Hero Slider – O Nas

@@ -44,7 +44,7 @@ const menuItems = [
 
 const handleClick = async (event: MouseEvent, link: string, hasChildren = false, index: number) => {
   event.preventDefault();
-  
+
   // Don't do anything for parent items with '#' link on mobile
   if (props.isMobile && hasChildren && link === '#') {
     return;

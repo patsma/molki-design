@@ -30,6 +30,7 @@ export const useMenuStore = defineStore('menu', {
 
       const menu = document.querySelector('.mobile-menu');
       const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
+      const menuButton = document.querySelector('.mobile-menu-button');
 
       // Initial state
       $gsap.set(menu, {
@@ -38,7 +39,7 @@ export const useMenuStore = defineStore('menu', {
         opacity: 0,
       });
 
-      $gsap.set(menuItems, {
+      $gsap.set([menuItems, menuButton], {
         autoAlpha: 0,
         y: 20,
       });
@@ -53,7 +54,7 @@ export const useMenuStore = defineStore('menu', {
           ease: 'power2.out',
         })
         .to(
-          menuItems,
+          [menuItems, menuButton],
           {
             autoAlpha: 1,
             y: 0,

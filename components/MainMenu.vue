@@ -14,7 +14,6 @@ const menuItems = [
   {
     label: 'O NAS',
     link: '/buttons',
-    children: [{ label: 'NASZ TEAM', link: '/buttons' }],
   },
   {
     label: 'PROJEKT WNĘTRZA',

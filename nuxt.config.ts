@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxt/fonts",
     "@vueuse/nuxt",
+    "@nuxt/image",
   ],
   devServer: {
     host: "0.0.0.0",

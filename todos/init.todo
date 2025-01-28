@@ -47,7 +47,7 @@ Project Molki Design
  ✔ Restore desktop hover dropdown styles @done(25-01-27 18:52)
 
  ✔ Fix mobile menu click to page @done(25-01-28 08:16)
- - Add proper dropdown arrow
+ ✔ Add proper dropdown arrow @done(25-01-28 08:56)
  - Ensure items in menu are highlighted depending on the page position
  ✘ Refactor to Refs @cancelled(25-01-28 08:16)
 

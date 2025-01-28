@@ -21,6 +21,7 @@
     "@hypernym/nuxt-gsap": "^2.4.2",
     "@nuxt/devtools": "latest",
     "@nuxt/fonts": "^0.10.3",
+    "@nuxt/image": "^1.9.0",
     "@nuxtjs/tailwindcss": "^6.9.4",
     "@prettier/plugin-pug": "^3.2.0",
     "@vueuse/nuxt": "^12.5.0",

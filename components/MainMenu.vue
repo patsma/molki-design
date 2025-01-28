@@ -17,7 +17,7 @@ const menuItems = [
   },
   {
     label: 'PROJEKT WNĘTRZA',
-    link: '#spacer1',
+    link: '/#spacer1',
     children: [
       { label: 'REALIZACJE', link: '#projekty-realizacje' },
       { label: 'CENNIK', link: '#cennik-projekt' },
@@ -25,7 +25,7 @@ const menuItems = [
   },
   {
     label: 'REMONT POD KLUCZ',
-    link: '#',
+    link: '/buttons/#spacer2',
     children: [
       { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
       { label: 'CENNIK', link: '#remonty-cennik' },

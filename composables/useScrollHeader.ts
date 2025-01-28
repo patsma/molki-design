@@ -4,6 +4,11 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ref } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 
+// Create a shared state outside the composable
+const sharedState = {
+  activeSection: ref<string | null>(null),
+};
+
 export const useScrollHeader = () => {
   const headerRef = ref<HTMLElement | null>(null);
   const { height: headerHeight } = useElementBounding(headerRef);
@@ -65,6 +70,42 @@ export const useScrollHeader = () => {
         }
       },
     });
+
+    const sections = document.querySelectorAll('[data-section]');
+    sections.forEach((section) => {
+      if (!section.id) return;
+
+      ScrollTrigger.create({
+        markers: true,
+        trigger: section,
+        start: 'top 60%',
+        end: 'bottom 40%',
+        onEnter: () => {
+          sharedState.activeSection.value = section.id;
+          console.log(`➡️ Entered section: ${section.id}`);
+          console.log('🔥 Active section is now:', sharedState.activeSection.value);
+        },
+        onEnterBack: () => {
+          sharedState.activeSection.value = section.id;
+          console.log(`⬅️ Entered back section: ${section.id}`);
+          console.log('🔥 Active section is now:', sharedState.activeSection.value);
+        },
+        onLeave: () => {
+          if (sharedState.activeSection.value === section.id) {
+            sharedState.activeSection.value = null;
+            console.log(`⬇️ Left section: ${section.id}`);
+            console.log('🔥 Active section cleared');
+          }
+        },
+        onLeaveBack: () => {
+          if (sharedState.activeSection.value === section.id) {
+            sharedState.activeSection.value = null;
+            console.log(`⬆️ Left back section: ${section.id}`);
+            console.log('🔥 Active section cleared');
+          }
+        },
+      });
+    });
   };
 
   const cleanup = () => {
@@ -81,6 +122,7 @@ export const useScrollHeader = () => {
   return {
     headerRef,
     headerHeight,
+    activeSection: sharedState.activeSection,
     initScrollHeader,
     cleanup,
   };

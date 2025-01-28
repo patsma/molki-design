@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useMenuStore } from '@/stores/menuStore';
 import { useRouter } from 'vue-router';
+import { useScrollHeader } from '@/composables/useScrollHeader';
 import DropdownArrow from './DropdownArrow.vue';
+import { watch, onMounted } from 'vue';
 
 const props = defineProps<{
   isMobile: boolean;
@@ -9,6 +11,7 @@ const props = defineProps<{
 
 const menuStore = useMenuStore();
 const router = useRouter();
+const { activeSection } = useScrollHeader();
 
 const menuItems = [
   {
@@ -33,7 +36,7 @@ const menuItems = [
   },
   {
     label: 'DLA BIZNESU',
-    link: '#',
+    link: '/#spacer3',
     children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
   },
   {
@@ -59,6 +62,35 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
     menuStore.toggleDropdown(index);
   }
 };
+
+// Debug initial value
+onMounted(() => {
+  if (process.client) {
+    console.log('🔍 MainMenu - Initial Active Section:', activeSection.value);
+  }
+});
+
+// Add a helper function
+const normalizeLink = (link: string) => {
+  return link.replace('/#', '').replace('#', '').replace('/', '');
+};
+
+// Update the watch for debugging
+watch(activeSection, (newVal) => {
+  console.log('🔍 MainMenu - Active Section changed:', newVal);
+
+  // Find menu item that should be active
+  const activeItem = menuItems.find((item) => newVal === normalizeLink(item.link));
+
+  if (activeItem) {
+    console.log('🎯 Should activate menu item:', {
+      label: activeItem.label,
+      link: activeItem.link,
+      normalizedLink: normalizeLink(activeItem.link),
+      activeSection: newVal,
+    });
+  }
+});
 </script>
 
 <template>
@@ -66,8 +98,13 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
     <div v-for="(item, index) in menuItems" :key="item.label" class="nav-menu__item">
       <a
         :href="item.link"
-        class="nav-menu__link"
-        :class="{ 'nav-menu__link--has-children': item.children }"
+        :class="[
+          'nav-menu__link',
+          {
+            'nav-menu__link--has-children': item.children,
+            'nav-menu__link--active': activeSection === normalizeLink(item.link),
+          },
+        ]"
         @click="(e) => handleClick(e, item.link, !!item.children, index)"
       >
         {{ item.label }}
@@ -84,6 +121,7 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
           :key="child.label"
           :to="child.link"
           class="nav-menu__link"
+          :class="{ 'nav-menu__link--active': activeSection === child.link.replace('#', '') }"
           @click="(e) => handleClick(e, child.link, false, index)"
         >
           {{ child.label }}

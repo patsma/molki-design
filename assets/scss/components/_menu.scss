@@ -91,6 +91,9 @@
     &:hover {
       color: var(--color-primary);
     }
+    &--active {
+      color: var(--color-primary);
+    }
 
     &--has-children {
       .dropdown-arrow {

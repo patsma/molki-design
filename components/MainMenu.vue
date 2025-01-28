@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useMenuStore } from '@/stores/menuStore';
 import { useRouter } from 'vue-router';
+import DropdownArrow from './DropdownArrow.vue';
 
 const props = defineProps<{
   isMobile: boolean;
@@ -55,8 +56,6 @@ const handleClick = async (event: MouseEvent, link: string, hasChildren = false,
 };
 
 const handleArrowClick = (event: MouseEvent, index: number) => {
-  event.preventDefault();
-  event.stopPropagation(); // Important to prevent parent click
   if (props.isMobile) {
     menuStore.toggleDropdown(index);
   }
@@ -73,9 +72,9 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
         @click="(e) => handleClick(e, item.link, !!item.children, index)"
       >
         {{ item.label }}
-        <span
+        <DropdownArrow
           v-if="item.children"
-          class="dropdown-arrow"
+          :is-active="menuStore.activeDropdownId === `dropdown-${index}`"
           @click="(e) => handleArrowClick(e, index)"
         />
       </a>

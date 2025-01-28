@@ -88,7 +88,7 @@ export const useMenuStore = defineStore('menu', {
         const submenu = item.querySelector('.nav-menu__item-submenu');
         const arrow = item.querySelector('.dropdown-arrow');
 
-        if (!submenu || !arrow) return;
+        if (!submenu || !arrow || !this.gsapInstance) return;
 
         const dropdownId = `dropdown-${index}`;
 

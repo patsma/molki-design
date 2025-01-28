@@ -13,7 +13,7 @@ const menuItems = [
   {
     label: 'O NAS',
     link: '/buttons',
-    children: [{ label: 'NASZ TEAM', link: '#nasz-team' }],
+    children: [{ label: 'NASZ TEAM', link: '/buttons' }],
   },
   {
     label: 'PROJEKT WNĘTRZA',
@@ -42,16 +42,21 @@ const menuItems = [
   },
 ];
 
-const handleClick = async (event: MouseEvent, link: string) => {
+const handleClick = async (event: MouseEvent, link: string, hasChildren = false, index: number) => {
   event.preventDefault();
-  if (!props.isMobile || link.startsWith('#')) {
-    await menuStore.handleMenuItemClick(link, router, event, false);
+  
+  // Don't do anything for parent items with '#' link on mobile
+  if (props.isMobile && hasChildren && link === '#') {
+    return;
   }
+
+  // Only handle navigation, not dropdown toggling
+  await menuStore.handleMenuItemClick(link, router, event);
 };
 
 const handleArrowClick = (event: MouseEvent, index: number) => {
   event.preventDefault();
-  event.stopPropagation();
+  event.stopPropagation(); // Important to prevent parent click
   if (props.isMobile) {
     menuStore.toggleDropdown(index);
   }
@@ -65,7 +70,7 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
         :href="item.link"
         class="nav-menu__link"
         :class="{ 'nav-menu__link--has-children': item.children }"
-        @click="(e) => handleClick(e, item.link)"
+        @click="(e) => handleClick(e, item.link, !!item.children, index)"
       >
         {{ item.label }}
         <span
@@ -81,7 +86,7 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
           :key="child.label"
           :to="child.link"
           class="nav-menu__link"
-          @click="(e) => handleClick(e, child.link)"
+          @click="(e) => handleClick(e, child.link, false, index)"
         >
           {{ child.label }}
         </NuxtLink>

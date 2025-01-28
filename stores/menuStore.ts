@@ -184,24 +184,11 @@ export const useMenuStore = defineStore('menu', {
       this.mobileMenuTimeline?.reverse();
     },
 
-    async handleMenuItemClick(link: string, router: any, event?: Event, hasChildren = false) {
+    async handleMenuItemClick(link: string, router: any, event?: Event) {
       event?.preventDefault();
-
-      // Handle mobile dropdown toggle first
-      if (this.isMobileMenuOpen && hasChildren) {
-        const targetElement = event?.target as HTMLElement;
-        const parentItem = targetElement.closest('.nav-menu__item');
-        const submenu = parentItem?.querySelector('.nav-menu__item-submenu');
-
-        if (submenu) {
-          await this.toggleDropdown(itemIndex);
-          return; // Prevent navigation for parent items with children
-        }
-      }
 
       console.log('🎯 Handling menu item click:', link);
       const smoother = ScrollSmoother.get();
-      console.log('🔍 Smoother instance:', smoother);
 
       if (link.startsWith('#')) {
         if (this.isMobileMenuOpen) {
@@ -255,7 +242,7 @@ export const useMenuStore = defineStore('menu', {
             block: 'start',
           });
         }
-      } else {
+      } else if (link !== '#') {
         if (this.isMobileMenuOpen) {
           await this.closeMenu();
         }

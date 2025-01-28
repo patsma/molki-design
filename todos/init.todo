@@ -46,6 +46,7 @@ Project Molki Design
  ✔ Add mobile toggle dropdown @done(25-01-27 18:05)
  ✔ Restore desktop hover dropdown styles @done(25-01-27 18:52)
 
+ - Fix mobile menu click to page
  - Ensure items in menu are highlighted depending on the page position
  - Refactor to Refs
 

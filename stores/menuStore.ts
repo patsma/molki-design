@@ -224,7 +224,7 @@ export const useMenuStore = defineStore('menu', {
               ease: 'power3.inOut',
               overwrite: true,
               onStart: () => console.log('🎬 Animation starting'),
-              onUpdate: () => console.log('⏱️ Progress:', smoother.scrollTop()),
+              // onUpdate: () => console.log('⏱️ Progress:', smoother.scrollTop()),
               onComplete: () => console.log('✅ Animation complete'),
             });
 

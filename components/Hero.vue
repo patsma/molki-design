@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="full-width relative min-h-[100vh] w-full">
+  <section class="full-width relative min-h-[10dvh] w-full">
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
@@ -25,9 +25,8 @@ onMounted(() => {
           alt="Interior design hero background"
           class="h-full w-full object-cover"
           loading="eager"
-          placeholder
           format="webp"
-          quality="90"
+          quality="70"
           aria-hidden="true"
         />
       </div>
@@ -48,7 +47,7 @@ onMounted(() => {
           <div
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
-            <h1 class="h1-style font-semibold">
+            <h1 class="h1-style js--text-effect-101 font-semibold">
               {{ title }}
             </h1>
             <!-- Subtitle -->

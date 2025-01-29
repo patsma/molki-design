@@ -1,75 +1,79 @@
-Project Molki Design
+# Project Molki Design
 
-✔ Setup boilerplate @done(25-01-19 03:46)
-✔ Clean all components besides header and hero @done(25-01-20 02:38)
-✔ Clean unused assets and styles @done(25-01-20 02:53)
-✔ Add local configuration @done(25-01-20 03:08)
-✔ Fix SplitText mobile animaiton retrigger @done(25-01-20 03:08)
+## Initial Setup
+- [x] Setup boilerplate @done(25-01-19 03:46)
+- [x] Clean all components besides header and hero @done(25-01-20 02:38)
+- [x] Clean unused assets and styles @done(25-01-20 02:53)
+- [x] Add local configuration @done(25-01-20 03:08)
+- [x] Fix SplitText mobile animation retrigger @done(25-01-20 03:08)
 
-✔ Export as much as possible from figma @done(25-01-20 03:49)
-✔ Add Basic button system @done(25-01-20 03:50)
-✔ Fix smooth scroller between pages @started(25-01-20 04:00) @done(25-01-20 04:07) @lasted(7m1s)
-✔ Import Grid System from DIFJ @started(25-01-20 04:13) @done(25-01-20 04:31) @lasted(18m58s)
-✔ Prepare tailwind config for colors @done(25-01-20 04:32)
-✘ Add Nuxt UI buttons? only if easy @cancelled(25-01-20 04:32)
-✔ Prepare basic header @started(25-01-20 04:36) @done(25-01-20 05:09) @lasted(33m21s)
-✔ Ensure hero component is using the correct content-grid @started(25-01-20 05:50) @done(25-01-20 05:50) @lasted(31s)
-✔ Add basic custom loader @started(25-01-20 05:57) @done(25-01-20 06:05) @lasted(8m12s)
-✔ Add Hero path accent @done(25-01-20 06:16)
-✔ Ensure all GSAP work using the module @done(25-01-21 03:14)
-✘ Ensure all GSAP animations are reusable - we will create simpler ones @cancelled(25-01-21 03:15)
+## Core Functionality
+- [x] Export assets from Figma @done(25-01-20 03:49)
+- [x] Add basic button system @done(25-01-20 03:50)
+- [x] Fix smooth scroller between pages @started(25-01-20 04:00) @done(25-01-20 04:07) @lasted(7m1s)
+- [x] Import grid system from DIFJ @started(25-01-20 04:13) @done(25-01-20 04:31) @lasted(18m58s)
+- [x] Prepare Tailwind config for colors @done(25-01-20 04:32)
 
-✔ generate a strategy and prepare a detailed plan for the project @done(25-01-21 03:21)
-✔ Refactor headroom to use GSAP and scroll smoother / trigger @done(25-01-21 05:24)
-✔ Build mobile header @done(25-01-21 05:24)
+- [ ] Add Nuxt UI buttons? (cancelled) @cancelled(25-01-20 04:32)
 
-✔ Ensure mobile experience is smooth and works on all devices @started(25-01-22 01:04) @done(25-01-22 02:58) @lasted(1h54m39s)
-✔ Ensure smooth scroll works while changing pages @done(25-01-22 02:58)
-✔ Headroom funcionality too sensitive on mobile, more debounce @started(25-01-22 02:59) @done(25-01-22 03:35) @lasted(36m26s)
+## Header Implementation
+- [x] Prepare basic header @started(25-01-20 04:36) @done(25-01-20 05:09) @lasted(33m21s)
+- [x] Build mobile header @done(25-01-21 05:24)
+- [x] Refactor headroom to use GSAP and scroll smoother/trigger @done(25-01-21 05:24)
 
-✔ Ensure scroll to plays smoothly while user clicks on links @done(25-01-22 05:12)
-✔ Ensure data-speed is working on route change @done(25-01-22 06:29)
-✔ Fix mobile menu position, styles @done(25-01-23 02:28)
-✔ Refactor desktop menu to be smarter @done(25-01-23 02:55)
+## Hero Component
+- [x] Ensure hero component uses correct content-grid @started(25-01-20 05:50) @done(25-01-20 05:50) @lasted(31s)
+- [x] Add hero path accent @done(25-01-20 06:16)
+- [x] Setup proper styling for hero @done(25-01-23 05:10)
+- [x] Adjust hero @done(25-01-23 05:10)
 
-✔ Add proper font-family to the project @done(25-01-23 03:39)
-✔ Add Nuxt Fonts module @done(25-01-23 03:39)
-✔ Settup proper styling for hero @done(25-01-23 05:10)
-✔ Adjust Hero @done(25-01-23 05:10)
+## GSAP Integration
+- [x] Ensure all GSAP work using the module @done(25-01-21 03:14)
+- [ ] Ensure all GSAP animations are reusable (cancelled) @cancelled(25-01-21 03:15)
 
+## Mobile Experience
+- [x] Ensure mobile experience is smooth and works on all devices @started(25-01-22 01:04) @done(25-01-22 02:58) @lasted(1h54m39s)
+- [x] Headroom functionality too sensitive on mobile, add debounce @started(25-01-22 02:59) @done(25-01-22 03:35) @lasted(36m26s)
+- [x] Fix mobile menu position and styles @done(25-01-23 02:28)
 
-☐ 1.	Header
- ✔ Basic structure @done(25-01-23 05:15)
- ✔ Add separator line @done(25-01-27 15:33)
- ✔ Add proper colors to menu hamburger @done(25-01-27 15:44)
- ✔ Ensure proper styling of menu dropdown items @done(25-01-27 16:17)
- ✔ Add mobile toggle dropdown @done(25-01-27 18:05)
- ✔ Restore desktop hover dropdown styles @done(25-01-27 18:52)
+## Navigation & Scrolling
+- [x] Ensure smooth scroll works while changing pages @done(25-01-22 02:58)
+- [x] Ensure scroll-to plays smoothly on link clicks @done(25-01-22 05:12)
+- [x] Ensure data-speed works on route change @done(25-01-22 06:29)
 
- ✔ Fix mobile menu click to page @done(25-01-28 08:16)
- ✔ Add proper dropdown arrow @done(25-01-28 08:56)
- - Ensure items in menu are highlighted depending on the page position
- ✘ Refactor to Refs @cancelled(25-01-28 08:16)
+## Typography
+- [x] Add proper font-family to project @done(25-01-23 03:39)
+- [x] Add Nuxt Fonts module @done(25-01-23 03:39)
 
+## Header Refinements
+- [x] Basic structure @done(25-01-23 05:15)
+- [x] Add separator line @done(25-01-27 15:33)
+- [x] Add proper colors to menu hamburger @done(25-01-27 15:44)
+- [x] Ensure proper styling of menu dropdown items @done(25-01-27 16:17)
+- [x] Add mobile toggle dropdown @done(25-01-27 18:05)
+- [x] Restore desktop hover dropdown styles @done(25-01-27 18:52)
+- [x] Fix mobile menu click to page @done(25-01-28 08:16)
+- [x] Add proper dropdown arrow @done(25-01-28 08:56)
+- [ ] Ensure menu items are highlighted based on page position (cancelled) @cancelled(25-01-29 09:46)
+- [ ] Refactor to Refs (cancelled) @cancelled(25-01-28 08:16)
 
-
-
-✔ 2.	Hero @done(25-01-23 05:13)
-3.	Hero Slider – O Nas
-4.	Hero Projects – Projekty Wnętrza
-5.	Icon Grid
-6.	Column Grid
-7.	Hero – Remont
-8.	Item Card
-9.	Title and Paragraph
-10.	Column Grid 2
-11.	Services Table
-12.	Square Grid
-13.	Banner Pricing
-14.	Info Pricing
-15.	Square Grid Item
-16.	Hero Form
-17.	Pre Footer
-18.	Footer
-19.	Slider Before After
-20.	Column Grid 3 – Pricing
+## Component Roadmap
+1. [x] Hero @done(25-01-23 05:13)
+2. Hero Slider - O Nas
+3. Hero Projects - Projekty Wnętrza
+4. Icon Grid
+5. Column Grid
+6. Hero - Remont
+7. Item Card
+8. Title and Paragraph
+9. Column Grid 2
+10. Services Table
+11. Square Grid
+12. Banner Pricing
+13. Info Pricing
+14. Square Grid Item
+15. Hero Form
+16. Pre Footer
+17. Footer
+18. Slider Before After
+19. Column Grid 3 - Pricing

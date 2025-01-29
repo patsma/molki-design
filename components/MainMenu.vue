@@ -25,7 +25,7 @@ const menuItems = [
   },
   {
     label: 'REMONT POD KLUCZ',
-    link: '#',
+    link: '/content',
     children: [
       { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
       { label: 'CENNIK', link: '#remonty-cennik' },
@@ -68,13 +68,13 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
         :href="item.link"
         class="nav-menu__link"
         :class="{ 'nav-menu__link--has-children': item.children }"
-        @click="(e) => handleClick(e, item.link, !!item.children, index)"
+        @click="(e: MouseEvent) => handleClick(e, item.link, !!item.children, index)"
       >
         {{ item.label }}
         <DropdownArrow
           v-if="item.children"
           :is-active="menuStore.activeDropdownId === `dropdown-${index}`"
-          @click="(e) => handleArrowClick(e, index)"
+          @click="(e: MouseEvent) => handleArrowClick(e, index)"
         />
       </a>
 
@@ -84,7 +84,7 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
           :key="child.label"
           :to="child.link"
           class="nav-menu__link"
-          @click="(e) => handleClick(e, child.link, false, index)"
+          @click="(e: MouseEvent) => handleClick(e, child.link, false, index)"
         >
           {{ child.label }}
         </NuxtLink>

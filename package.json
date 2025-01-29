@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@hypernym/nuxt-gsap": "^2.4.2",
+    "@nuxt/content": "^3.0.1",
     "@nuxt/devtools": "latest",
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/image": "^1.9.0",

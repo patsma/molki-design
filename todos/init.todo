@@ -56,6 +56,7 @@
 - [x] Add proper dropdown arrow @done(25-01-28 08:56)
 - [ ] Ensure menu items are highlighted based on page position (cancelled) @cancelled(25-01-29 09:46)
 - [ ] Refactor to Refs (cancelled) @cancelled(25-01-28 08:16)
+✔ [ ] Fix typescript build error add basic content module @done(25-01-29 12:19)
 
 ## Component Roadmap
 1. [x] Hero @done(25-01-23 05:13)

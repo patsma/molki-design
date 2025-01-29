@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FrameCorner from './FrameCorner.vue';
 interface TeamMember {
   name: string;
   role: string;
@@ -19,14 +20,14 @@ const teamData = {
       'Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania.',
       'Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać projekty, z których możemy być dumni.',
     ],
-    image: '/team/team-full.jpg',
+    image: '/heroHome.jpg',
   },
   members: [
     {
       name: 'Anna Kowalska',
       role: 'Główna Projektantka',
       description: 'Z pasją do designu i wieloletnim doświadczeniem w projektowaniu wnętrz...',
-      image: '/team/designer.jpg',
+      image: '/heroHome.jpg',
       achievements: [
         { title: '150+', subtitle: 'Zrealizowanych Projektów' },
         { title: '10 lat', subtitle: 'Doświadczenia' },

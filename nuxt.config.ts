@@ -36,6 +36,13 @@ declare module '@nuxt/schema' {
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  typescript: {
+    strict: true,
+    typeCheck: false,
+    shim: false,
+  },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@hypernym/nuxt-gsap',
@@ -45,10 +52,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
   ],
+
   devServer: {
     host: '0.0.0.0',
     port: 3000,
   },
+
   app: {
     pageTransition: {
       name: 'page',
@@ -60,6 +69,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   gsap: {
     // Enable composables
     composables: true,
@@ -78,6 +88,7 @@ export default defineNuxtConfig({
       scrollSmoother: true, // Add ScrollSmoother as a club plugin
     },
   },
+
   fonts: {
     families: [
       {
@@ -148,6 +159,7 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   content: {
     documentDriven: true,
     markdown: {
@@ -157,4 +169,13 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
+  compatibilityDate: '2025-01-29',
 });

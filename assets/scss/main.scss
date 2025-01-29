@@ -1,8 +1,8 @@
-@import "settings";
-@import "typography";
-@import "colors";
-@import "layout";
-@import "components/menu";
+@use "settings";
+@use "typography";
+@use "colors";
+@use "layout";
+@use "components/menu";
 $phone: 768px;
 
 // html, body {

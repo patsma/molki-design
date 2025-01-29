@@ -62,11 +62,6 @@ export default defineNuxtConfig({
     pageTransition: {
       name: 'page',
       mode: 'out-in',
-      onBeforeEnter: () => {
-        if (process.client) {
-          // window.scrollTo(0, 0);
-        }
-      },
     },
   },
 

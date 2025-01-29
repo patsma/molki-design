@@ -1,21 +1,15 @@
+@use "settings";
+
 .content-grid {
   --padding-inline: 1.5rem;
   --content-max-width: 90vw;
   --breakout-max-width: 95vw;
 
   /* Breakout sizes for multiple indentation levels */
-  --breakout-size1: calc(
-    (var(--breakout-max-width) - var(--content-max-width)) / 4
-  );
-  --breakout-size2: calc(
-    (var(--breakout-max-width) - var(--content-max-width)) / 3
-  );
-  --breakout-size3: calc(
-    (var(--breakout-max-width) - var(--content-max-width)) / 2
-  );
-  --breakout-size4: calc(
-    (var(--breakout-max-width) - var(--content-max-width))
-  );
+  --breakout-size1: calc((var(--breakout-max-width) - var(--content-max-width)) / 4);
+  --breakout-size2: calc((var(--breakout-max-width) - var(--content-max-width)) / 3);
+  --breakout-size3: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+  --breakout-size4: calc((var(--breakout-max-width) - var(--content-max-width)));
 
   display: grid;
   grid-template-columns:
@@ -24,10 +18,7 @@
     [breakout-start2] minmax(0, var(--breakout-size2))
     [breakout-start3] minmax(0, var(--breakout-size3))
     [breakout-start4] minmax(0, var(--breakout-size4))
-    [content-start] min(
-      100% - (var(--padding-inline) * 2),
-      var(--content-max-width)
-    )
+    [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width))
     [content-end]
     minmax(0, var(--breakout-size4)) [breakout-end4]
     minmax(0, var(--breakout-size3)) [breakout-end3]
@@ -36,12 +27,12 @@
     minmax(var(--padding-inline), 1fr) [full-width-end];
 
   /* Based on https://ryanmulligan.dev/blog/layout-breakouts/  */
-  @media #{$w1024-up} {
+  @media #{settings.$w1024-up} {
     --padding-inline: 2.5rem;
     --content-max-width: 80vw;
     --breakout-max-width: 95vw;
   }
-  @media #{$w2048-up} {
+  @media #{settings.$w2048-up} {
     --padding-inline: 3.5rem;
     --content-max-width: 75vw;
     --breakout-max-width: 90vw;

@@ -6,4 +6,4 @@ This is a test page using Nuxt Content.
 
 - Easy to use
 - Markdown support
-- Vue components
+- asd

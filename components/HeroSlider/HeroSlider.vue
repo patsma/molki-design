@@ -42,36 +42,43 @@ const teamData = {
 <template>
   <div class="hero-slider">
     <!-- Team Intro Section -->
-    <section class="min-h-screen relative">
-      <div class="relative">
-        <!-- Background image with overlay -->
-        <div class="absolute w-full h-full inset-0 z-0">
-          <div class="absolute inset-0 bg-black/30"></div>
-          <NuxtImg
-            :src="teamData.intro.image"
-            alt="Molki Design Team"
-            class="h-full w-full object-cover"
-            loading="eager"
-            placeholder
-            format="webp"
-            quality="90"
-          />
+    <section class="min-h-screen relative flex flex-col">
+      <div class="relative flex-1 flex flex-col">
+        <!-- Title Section - ~10% -->
+        <div class="content-grid relative z-10 py-8 md:py-12">
+          <div class="breakout1">
+            <h2 class="h2-style font-semibold text-primary">
+              {{ teamData.intro.title }}
+            </h2>
+          </div>
         </div>
 
-        <!-- Content Container -->
-        <div class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100">
-          <div class="breakout1 grid gap-12 py-24">
-            <!-- Title Section -->
+        <!-- Image Section - ~60% -->
+        <div class="relative flex-1 min-h-[70vh]">
+          <div class="absolute w-full h-full inset-0 z-0">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <NuxtImg
+              :src="teamData.intro.image"
+              alt="Molki Design Team"
+              class="h-full w-full object-cover"
+              loading="eager"
+              placeholder
+              format="webp"
+              quality="90"
+            />
+          </div>
+        </div>
+
+        <!-- Description Section - remaining space -->
+        <div class="content-grid relative z-10 py-12 md:py-16 bg-neutral-100">
+          <div class="breakout1">
             <div class="relative">
               <FrameCorner position="top-left" />
-              <h1 class="h1-style font-semibold text-center mb-12">
-                {{ teamData.intro.title }}
-              </h1>
-              <div class="grid gap-6 max-w-3xl mx-auto">
+              <div class="space-y-6 px-8 py-12">
                 <p
                   v-for="(paragraph, index) in teamData.intro.description"
                   :key="index"
-                  class="text-center body-large"
+                  class="text-xl md:text-2xl leading-relaxed text-neutral-800"
                 >
                   {{ paragraph }}
                 </p>

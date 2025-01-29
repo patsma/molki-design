@@ -1,14 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import useTextEffect from '~/composables/useTextEffect';
+
+interface CTA {
+  text: string;
+  link: string;
+}
+
+interface HeroData {
+  title: string;
+  subtitle: string;
+  image: string;
+  cta: CTA;
+}
+
+defineProps<{
+  data: HeroData;
+}>();
 
 const { textEffect1Timelines } = useTextEffect('.js--text-effect-101', false);
 
-const title = ref('UMÓW SPOTKANIE');
-const subtitle = ref('Z PROJEKTANTKĄ');
-
 onMounted(() => {
   if (textEffect1Timelines.value && textEffect1Timelines.value.length > 0) {
-    textEffect1Timelines.value[0].play(); // Play the first timeline
+    textEffect1Timelines.value[0].play();
   }
 });
 </script>
@@ -21,7 +34,7 @@ onMounted(() => {
       <div class="absolute w-full h-full inset-0 z-0">
         <div class="absolute inset-0 bg-black/30"></div>
         <NuxtImg
-          src="/heroHome.jpg"
+          :src="data.image"
           alt="Interior design hero background"
           class="h-full w-full object-cover"
           loading="eager"
@@ -49,21 +62,21 @@ onMounted(() => {
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
             <h1 class="h1-style font-semibold">
-              {{ title }}
+              {{ data.title }}
             </h1>
             <!-- Subtitle -->
             <h2 class="h2-style font-normal">
-              {{ subtitle }}
+              {{ data.subtitle }}
             </h2>
           </div>
           <!-- CTA Button -->
           <div class="uppercase grid">
             <NuxtLink
-              to="/buttons"
+              :to="data.cta.link"
               class="rounded-md bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Rozpocznij projekt"
             >
-              Umów konsultację
+              {{ data.cta.text }}
             </NuxtLink>
           </div>
         </div>

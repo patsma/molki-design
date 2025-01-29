@@ -1,5 +1,5 @@
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const { $gsap, $ScrollTrigger, $ScrollSmoother } = nuxtApp;
@@ -9,9 +9,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     // Register plugins
     $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother);
 
-    console.log("🎨 Plugin: Creating ScrollSmoother");
-    const wrapper = document.querySelector("#smooth-wrapper");
-    const content = document.querySelector("#smooth-content");
+    // console.log("🎨 Plugin: Creating ScrollSmoother");
+    const wrapper = document.querySelector('#smooth-wrapper');
+    const content = document.querySelector('#smooth-content');
 
     if (wrapper && content) {
       scrollSmoother = $ScrollSmoother.create({
@@ -25,25 +25,25 @@ export default defineNuxtPlugin((nuxtApp) => {
       });
 
       // Initialize effects
-      const elements = document.querySelectorAll("[data-speed], [data-lag]");
-      console.log(`📊 Plugin: Found ${elements.length} effect elements`);
-      scrollSmoother.effects("[data-speed], [data-lag]", {});
+      const elements = document.querySelectorAll('[data-speed], [data-lag]');
+      // console.log(`📊 Plugin: Found ${elements.length} effect elements`);
+      scrollSmoother.effects('[data-speed], [data-lag]', {});
     }
   };
 
   const resetEffects = () => {
     if (!scrollSmoother) return;
 
-    console.log("🔄 Plugin: Resetting effects");
-    const elements = document.querySelectorAll("[data-speed]");
+    // console.log("🔄 Plugin: Resetting effects");
+    const elements = document.querySelectorAll('[data-speed]');
     elements.forEach((el) => {
       $gsap.set(el, {
-        clearProps: "transform,willChange",
+        clearProps: 'transform,willChange',
       });
     });
 
     $ScrollTrigger.refresh(true);
-    scrollSmoother.effects("[data-speed], [data-lag]", true);
+    scrollSmoother.effects('[data-speed], [data-lag]', true);
   };
 
   // Initialize on plugin load
@@ -52,8 +52,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   }
 
   // Handle page transitions
-  nuxtApp.hook("page:transition:finish", () => {
-    console.log("📄 Plugin: Page transition finished");
+  nuxtApp.hook('page:transition:finish', () => {
+    // console.log("📄 Plugin: Page transition finished");
     if (scrollSmoother) {
       scrollSmoother.scrollTop(0);
       resetEffects();
@@ -61,9 +61,9 @@ export default defineNuxtPlugin((nuxtApp) => {
   });
 
   // Cleanup on app unmount
-  nuxtApp.hook("app:unmount", () => {
+  nuxtApp.hook('app:unmount', () => {
     if (scrollSmoother) {
-      console.log("🧹 Plugin: Cleaning up ScrollSmoother");
+      // console.log("🧹 Plugin: Cleaning up ScrollSmoother");
       scrollSmoother.kill();
     }
   });

@@ -24,6 +24,9 @@ declare module '@nuxt/schema' {
     };
     content?: {
       documentDriven?: boolean;
+      experimental?: {
+        clientDB: boolean;
+      };
       markdown?: {
         toc?: {
           depth?: number;
@@ -157,6 +160,9 @@ export default defineNuxtConfig({
 
   content: {
     documentDriven: true,
+    experimental: {
+      clientDB: true,
+    },
     markdown: {
       toc: {
         depth: 3,

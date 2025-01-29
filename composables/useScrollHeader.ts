@@ -13,7 +13,7 @@ export const useScrollHeader = () => {
   let lastCheck = 0;
 
   const initScrollHeader = () => {
-    console.log('🚀 Initializing ScrollHeader');
+    // console.log('🚀 Initializing ScrollHeader');
     if (!process.client || !headerRef.value) return;
 
     const header = headerRef.value;

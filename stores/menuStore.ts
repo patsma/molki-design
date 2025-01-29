@@ -20,11 +20,11 @@ export const useMenuStore = defineStore('menu', {
 
   actions: {
     initAnimation($gsap: typeof gsap) {
-      console.log('🎨 Initializing animations');
+      // console.log('🎨 Initializing animations');
       this.gsapInstance = $gsap;
 
       if (!process.client) {
-        console.warn('⚠️ Not running on client side, skipping animation init');
+        // console.warn('⚠️ Not running on client side, skipping animation init');
         return;
       }
 
@@ -102,7 +102,7 @@ export const useMenuStore = defineStore('menu', {
         });
 
         const contentHeight = (submenu as HTMLElement).offsetHeight;
-        console.log(`📏 Content height for ${dropdownId}:`, contentHeight);
+        // console.log(`📏 Content height for ${dropdownId}:`, contentHeight);
 
         // Set initial state
         this.gsapInstance.set(submenu, {
@@ -160,11 +160,11 @@ export const useMenuStore = defineStore('menu', {
     },
 
     toggleMenu() {
-      console.log('Toggle menu called');
+      // console.log('Toggle menu called');
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
       if (!this.mobileMenuTimeline) {
-        console.warn('Timeline not initialized');
+        // console.warn('Timeline not initialized');
         return;
       }
 
@@ -188,56 +188,56 @@ export const useMenuStore = defineStore('menu', {
     async handleMenuItemClick(link: string, router: any, event?: Event) {
       event?.preventDefault();
 
-      console.log('🎯 Handling menu item click:', link);
+      // console.log('🎯 Handling menu item click:', link);
       const smoother = ScrollSmoother.get();
 
       if (link.startsWith('#')) {
         if (this.isMobileMenuOpen) {
-          console.log('📱 Closing mobile menu before scroll');
+          // console.log('📱 Closing mobile menu before scroll');
           await this.closeMenu();
           await new Promise((resolve) => setTimeout(resolve, 400));
         }
 
         const target = document.querySelector(link);
         if (!target) {
-          console.warn('🚫 Target element not found:', link);
+          // console.warn('🚫 Target element not found:', link);
           return;
         }
 
-        console.log('🎯 Target element:', target);
-        console.log('🔄 Starting scroll animation');
+        // console.log('🎯 Target element:', target);
+        // console.log('🔄 Starting scroll animation');
 
         if (smoother && this.gsapInstance) {
-          console.log('Using ScrollSmoother for animation');
+          // console.log('Using ScrollSmoother for animation');
 
           try {
             const bounds = target.getBoundingClientRect();
             const scrollTop = smoother.scrollTop();
             const targetY = scrollTop + bounds.top - 100;
 
-            console.log('📏 Calculated scroll position:', targetY);
-            console.log('⏱️ Animation duration:', 2);
+            // console.log('📏 Calculated scroll position:', targetY);
+            // console.log('⏱️ Animation duration:', 2);
 
             this.gsapInstance.to(smoother, {
               scrollTop: targetY,
               duration: 2,
               ease: 'power3.inOut',
               overwrite: true,
-              onStart: () => console.log('🎬 Animation starting'),
-              onUpdate: () => console.log('⏱️ Progress:', smoother.scrollTop()),
-              onComplete: () => console.log('✅ Animation complete'),
+              // onStart: () => console.log('🎬 Animation starting'),
+              // onUpdate: () => console.log('⏱️ Progress:', smoother.scrollTop()),
+              // onComplete: () => console.log('✅ Animation complete'),
             });
 
-            console.log('🎬 Scroll animation initiated');
+            // console.log('🎬 Scroll animation initiated');
           } catch (error) {
-            console.error('Failed to scroll:', error);
+            // console.error('Failed to scroll:', error);
             target.scrollIntoView({
               behavior: 'smooth',
               block: 'start',
             });
           }
         } else {
-          console.log('Using native smooth scroll');
+          // console.log('Using native smooth scroll');
           target.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
@@ -252,7 +252,7 @@ export const useMenuStore = defineStore('menu', {
     },
 
     cleanup() {
-      console.log('🧹 Cleaning up store');
+      // console.log('🧹 Cleaning up store');
       if (this.mobileMenuTimeline) {
         this.mobileMenuTimeline.kill();
         this.mobileMenuTimeline = null;

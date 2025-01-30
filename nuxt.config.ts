@@ -55,7 +55,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/mdc',
-    '@nuxthq/studio'
   ],
 
   devServer: {
@@ -161,6 +160,9 @@ export default defineNuxtConfig({
   },
 
   content: {
+    preview: {
+      api: 'https://api.nuxt.studio',
+    },
     documentDriven: true,
     markdown: {
       toc: {

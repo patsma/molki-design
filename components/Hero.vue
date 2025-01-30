@@ -20,15 +20,17 @@ onMounted(() => {
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0">
         <div class="absolute inset-0 bg-black/30"></div>
-        <NuxtImg
-          src="/heroHome.jpg"
-          alt="Interior design hero background"
-          class="h-full w-full object-cover"
-          loading="eager"
-          format="webp"
-          quality="70"
-          aria-hidden="true"
-        />
+        <slot name="heroImage">
+          <!-- Default image -->
+          <NuxtImg
+            src="/heroHome.jpg"
+            alt="Interior design hero background"
+            class="h-full w-full object-cover"
+            loading="eager"
+            format="webp"
+            quality="70"
+          />
+        </slot>
       </div>
 
       <!-- SVG Accent Shape -->

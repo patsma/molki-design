@@ -1,4 +1,4 @@
-::Hero
+::hero
 #title
 Umów spotkanie
 
@@ -9,11 +9,9 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-::NuxtImg{src="placeholder.jpg" alt="Custom hero description" class="h-full w-full object-cover" loading="eager" format="webp" quality="70"}
+:nuxt-img{.h-full.w-full.object-cover alt="Molki Design Nuxt" format="webp" loading="eager" quality="70" src="/heroHome.jpg"}
 ::
 
-::
-
-::HeroSlider
+::hero-slider
 The content of the card
 ::

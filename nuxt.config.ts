@@ -37,6 +37,9 @@ declare module '@nuxt/schema' {
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  routeRules: {
+    '/': { prerender: true },
+  },
   typescript: {
     strict: true,
     typeCheck: false,

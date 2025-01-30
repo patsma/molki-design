@@ -1,3 +1,8 @@
-# My Second Page
+::Hero
+#title
+Umów spotkanie
+::
 
-Here is some content.
+::HeroSlider
+The content of the card
+::

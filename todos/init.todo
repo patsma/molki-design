@@ -61,9 +61,9 @@
 1. [x] Hero @done(25-01-23 05:13)
 ✔ 2. Hero Slider - O Nas @started(25-01-29 10:09) @done(25-01-29 11:28) @lasted(1h19m44s)
 ✔ Fix scroll smoother duplicates @started(25-01-30 10:02) @done(25-01-30 10:09) @lasted(7m37s)
-- Go through nuxt content documentation @started(25-01-30 10:09)
-- Add most basic nuxt content to a page
-
+✔ Go through nuxt content documentation @started(25-01-30 10:09) @done(25-01-30 10:51) @lasted(42m46s)
+✔ Add most basic nuxt content to a page @done(25-01-30 10:49)
+✔ Dig deeper in docs of nuxt content @started(25-01-30 11:36) @done(25-01-30 12:17) @lasted(41m20s)
 - Change NuxtImg to not be blurred
 - Add Simple Parallax to NuxtImg
 - Style Hero Slider

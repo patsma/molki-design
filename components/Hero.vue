@@ -47,9 +47,10 @@ onMounted(() => {
           <div
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
-            <h1 class="h1-style font-semibold">
-              {{ title }}
+            <h1 class="h1-style font-semibold uppercase" v-if="$slots.title">
+              <slot name="title" mdc-unwrap="p" />
             </h1>
+
             <!-- Subtitle -->
             <h2 class="h2-style font-normal">
               {{ subtitle }}

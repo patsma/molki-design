@@ -61,10 +61,8 @@ const teamData = {
               :src="teamData.intro.image"
               alt="Molki Design Team"
               class="h-full w-full object-cover"
-              loading="eager"
-              placeholder
               format="webp"
-              quality="90"
+              quality="70"
             />
           </div>
         </div>

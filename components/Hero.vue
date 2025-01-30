@@ -49,23 +49,25 @@ onMounted(() => {
           <div
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
+            <!-- Title -->
             <h1 class="h1-style font-semibold uppercase" v-if="$slots.title">
               <slot name="title" mdc-unwrap="p" />
             </h1>
 
             <!-- Subtitle -->
-            <h2 class="h2-style font-normal">
-              {{ subtitle }}
+            <h2 class="h2-style font-normal uppercase" v-if="$slots.subtitle">
+              <slot name="subtitle" mdc-unwrap="p" />
             </h2>
           </div>
           <!-- CTA Button -->
           <div class="uppercase grid">
             <NuxtLink
+              v-if="$slots.cta"
               to="/buttons"
               class="rounded-md bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Rozpocznij projekt"
             >
-              Umów konsultację
+              <slot name="cta" mdc-unwrap="p" />
             </NuxtLink>
           </div>
         </div>

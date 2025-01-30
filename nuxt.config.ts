@@ -55,6 +55,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/mdc',
+    '@nuxthq/studio'
   ],
 
   devServer: {

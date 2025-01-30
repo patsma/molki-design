@@ -25,9 +25,8 @@ onMounted(() => {
           alt="Interior design hero background"
           class="h-full w-full object-cover"
           loading="eager"
-          placeholder
           format="webp"
-          quality="90"
+          quality="70"
           aria-hidden="true"
         />
       </div>

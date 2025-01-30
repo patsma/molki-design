@@ -28,7 +28,7 @@ const initSmoother = async () => {
   // Register plugins first
   $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother);
 
-  console.log('🎯 Layout: Initial ScrollSmoother setup');
+  // console.log('🎯 Layout: Initial ScrollSmoother setup');
   smoother = $ScrollSmoother.create({
     wrapper: wrapper.value,
     content: content.value,

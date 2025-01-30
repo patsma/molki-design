@@ -1,9 +1,3 @@
-# Welcome to My Site
+# My Second Page
 
-This is a test page using Nuxt Content.
-
-## Features
-
-- Easy to use
-- Markdown support
-- Vue components
+Here is some content.

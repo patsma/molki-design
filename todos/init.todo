@@ -60,6 +60,14 @@
 ## Component Roadmap
 1. [x] Hero @done(25-01-23 05:13)
 ✔ 2. Hero Slider - O Nas @started(25-01-29 10:09) @done(25-01-29 11:28) @lasted(1h19m44s)
+✔ Fix scroll smoother duplicates @started(25-01-30 10:02) @done(25-01-30 10:09) @lasted(7m37s)
+- Go through nuxt content documentation @started(25-01-30 10:09)
+- Add most basic nuxt content to a page
+
+- Change NuxtImg to not be blurred
+- Add Simple Parallax to NuxtImg
+- Style Hero Slider
+- Proceed to next component
 3. Hero Projects - Projekty Wnętrza
 4. Icon Grid
 5. Column Grid

@@ -1,5 +1,5 @@
 <template>
-  <div class="parallax-wrapper h-full" data-speed="auto">
+  <div class="parallax-wrapper" data-speed="auto">
     <NuxtImg
       :src="src"
       :alt="alt"
@@ -8,7 +8,7 @@
       :format="format"
       :quality="quality"
       :loading="loading"
-      class="parallax-content"
+      class="parallax-content h-[150%]"
       v-bind="$attrs"
     />
   </div>
@@ -28,3 +28,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.parallax-wrapper {
+  height: 120%;
+}
+</style>

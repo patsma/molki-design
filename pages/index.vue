@@ -6,7 +6,7 @@
         <template #subtitle> z projektantką </template>
         <template #cta> umów konsultację </template>
       </Hero>
-      <div class="grid h-[55vh] w-full overflow-hidden">
+      <div class="grid h-[55vh] overflow-hidden">
         <ParallaxImg
           src="/placeholder.jpg"
           alt="Full width parallax"
@@ -18,7 +18,7 @@
       <ContentRenderer v-if="home" :value="home" />
       <div v-else>Home not found</div>
 
-      <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
+      <div class="spacer w-full h-screen bg-red-400"></div>
       <div class="spacer w-full h-screen bg-teal-400" data-speed="1.2"></div>
       <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
       <div class="spacer w-full h-screen bg-teal-400" data-speed="1.2"></div>

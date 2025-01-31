@@ -18,17 +18,15 @@ onMounted(() => {
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
-      <div class="absolute w-full h-full inset-0 z-0">
+      <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
         <div class="absolute inset-0 bg-black/30"></div>
         <slot name="heroImage">
           <!-- Default image -->
-          <NuxtImg
+          <ParallaxImg
             src="/heroHome.jpg"
-            alt="Interior design hero background"
-            class="h-full w-full object-cover"
-            loading="eager"
+            alt="Full width parallax"
+            class="h-full w-full"
             format="webp"
-            quality="70"
           />
         </slot>
       </div>

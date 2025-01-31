@@ -1,0 +1,13 @@
+.parallax-wrapper {
+  @apply relative overflow-hidden h-full;
+
+  &[data-speed="auto"] {
+    will-change: transform;
+  }
+
+  .parallax-content {
+    @apply absolute w-full h-[160%] object-cover;
+    bottom: 0;
+    will-change: transform;
+  }
+}

@@ -8,7 +8,7 @@
       :format="format"
       :quality="quality"
       :loading="loading"
-      class="parallax-content h-[150%]"
+      class="parallax-content"
       v-bind="$attrs"
     />
   </div>

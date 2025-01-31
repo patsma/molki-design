@@ -2,18 +2,16 @@
   <div class="content-grid pt-20">
     <h1 class="text-4xl font-bold my-8">Button Examples</h1>
     <ButtonExamples />
-    <Hero />
-    <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
-
-    <div class="grid w-full h-screen">
+    <div class="grid h-[55vh] w-full overflow-hidden">
       <ParallaxImg
         src="/placeholder.jpg"
-        alt="Parallax Test"
+        alt="Full width parallax"
         class="h-full w-full"
         format="webp"
-        loading="lazy"
       />
     </div>
+    <Hero />
+    <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
 
     <div class="spacer w-full h-screen bg-teal-400" data-speed="1.2"></div>
     <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>

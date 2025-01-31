@@ -66,7 +66,8 @@
 ✔ Dig deeper in docs of nuxt content @started(25-01-30 11:36) @done(25-01-30 12:17) @lasted(41m20s)
 ✔ Change NuxtImg to not be blurred @done(25-01-30 15:19)
 ✔ Ensure Nuxt Content works on Netlify @done(25-01-30 15:20)
-- Actually add content to the page using nuxt content
+✔ Actually add content to the page using nuxt content @done(25-01-31 10:43)
+✔ Shorten menu items and add contact item @done(25-01-31 10:49)
 - Add Simple Parallax to NuxtImg
 - Style Hero Slider
 - Proceed to next component

@@ -16,7 +16,7 @@ const menuItems = [
     link: '/buttons',
   },
   {
-    label: 'PROJEKT WNĘTRZA',
+    label: 'PROJEKT',
     link: '#spacer1',
     children: [
       { label: 'REALIZACJE', link: '#projekty-realizacje' },
@@ -24,7 +24,7 @@ const menuItems = [
     ],
   },
   {
-    label: 'REMONT POD KLUCZ',
+    label: 'REMONT+',
     link: '/content',
     children: [
       { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
@@ -32,12 +32,16 @@ const menuItems = [
     ],
   },
   {
-    label: 'DLA BIZNESU',
+    label: 'BIZNES',
     link: '#',
     children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
   },
   {
     label: 'BLOG',
+    link: '#blog',
+  },
+  {
+    label: 'KONTAKT',
     link: '#blog',
   },
 ];

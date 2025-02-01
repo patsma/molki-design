@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="full-width relative min-h-[100vh] w-full">
+  <section class="full-width data-scroll-section relative min-h-[100vh] w-full">
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
@@ -48,17 +48,38 @@ onMounted(() => {
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
             <!-- Title -->
-            <h1 class="h1-style font-semibold uppercase" v-if="$slots.title">
+            <h1
+              class="h1-style font-semibold uppercase opacity-0"
+              data-scroll-item
+              data-scroll-animation="fadeUp"
+              data-scroll-duration="1"
+              data-scroll-order="1"
+              data-scroll-position="+=1"
+              v-if="$slots.title"
+            >
               <slot name="title" mdc-unwrap="p" />
             </h1>
 
             <!-- Subtitle -->
-            <h2 class="h2-style font-normal uppercase" v-if="$slots.subtitle">
+            <h2
+              class="h2-style font-normal uppercase opacity-0"
+              data-scroll-item
+              data-scroll-animation="fadeUp"
+              data-scroll-duration="1"
+              data-scroll-order="2"
+              v-if="$slots.subtitle"
+            >
               <slot name="subtitle" mdc-unwrap="p" />
             </h2>
           </div>
           <!-- CTA Button -->
-          <div class="uppercase grid">
+          <div
+            class="uppercase grid opacity-0"
+            data-scroll-item
+            data-scroll-animation="fadeUp"
+            data-scroll-duration="1"
+            data-scroll-order="3"
+          >
             <NuxtLink
               v-if="$slots.cta"
               to="/buttons"

@@ -1,13 +1,13 @@
 <template>
   <div class="content-grid">
     <div class="full-width">
-      <Hero>
+      <Hero data-scroll-section>
         <template #title> umów spotkanie </template>
         <template #subtitle> z projektantką </template>
         <template #cta> umów konsultację </template>
       </Hero>
 
-      <HeroSlider />
+      <HeroSlider  />
       <ContentRenderer v-if="home" :value="home" />
       <div v-else>Home not found</div>
 

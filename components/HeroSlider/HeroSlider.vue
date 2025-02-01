@@ -45,9 +45,15 @@ const teamData = {
     <section class="min-h-screen relative flex flex-col">
       <div class="relative flex-1 flex flex-col">
         <!-- Title Section - ~10% -->
-        <div class="content-grid relative z-10 py-8 md:py-12">
+        <div data-scroll-section class="content-grid relative z-10 py-8 md:py-12">
           <div class="breakout1">
-            <h2 class="h2-style font-semibold text-primary">
+            <h2
+              class="h2-style font-semibold text-primary"
+              data-scroll-item
+              data-scroll-animation="fadeUp"
+              data-scroll-duration="1"
+              data-scroll-position="+=0.5"
+            >
               {{ teamData.intro.title }}
             </h2>
           </div>
@@ -68,20 +74,38 @@ const teamData = {
         </div>
 
         <!-- Description Section - remaining space -->
-        <div class="content-grid relative z-10 py-12 md:py-16 bg-neutral-100">
+        <div class="content-grid relative z-10 py-12 md:py-16 bg-neutral-100" data-scroll-section>
           <div class="breakout1">
             <div class="relative">
-              <FrameCorner position="top-left" />
+              <FrameCorner
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="0.8"
+                data-scroll-independent="true"
+                data-scroll-start="top center"
+                position="top-left"
+              />
               <div class="space-y-6 px-8 py-12">
                 <p
+                  data-scroll-stagger-group
+                  data-scroll-animation="fadeUp"
+                  data-scroll-duration="0.8"
+                  data-scroll-stagger="0.2"
                   v-for="(paragraph, index) in teamData.intro.description"
                   :key="index"
-                  class="text-xl md:text-2xl leading-relaxed text-neutral-800"
+                  class="text-xl md:text-2xl leading-relaxed text-neutral-800 opacity-0"
                 >
                   {{ paragraph }}
                 </p>
               </div>
-              <FrameCorner position="bottom-right" />
+              <FrameCorner
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="0.8"
+                data-scroll-independent="true"
+                data-scroll-start="top center"
+                position="bottom-right"
+              />
             </div>
           </div>
         </div>
@@ -95,18 +119,51 @@ const teamData = {
       class="min-h-screen bg-neutral-100"
     >
       <div class="content-grid py-24">
-        <div class="breakout1 grid md:grid-cols-2 gap-12">
+        <div class="breakout1 grid md:grid-cols-2 gap-12" data-scroll-section>
           <!-- Text Column -->
           <div class="grid content-center gap-8">
             <div class="grid gap-4">
-              <h2 class="h2-style font-semibold">{{ member.name }}</h2>
-              <p class="text-primary font-medium">{{ member.role }}</p>
-              <p class="body-large">{{ member.description }}</p>
+              <h2
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="1"
+                data-scroll-order="1"
+                data-scroll-delay="0.5"
+                data-scroll-position="+=1"
+                class="h2-style font-semibold"
+              >
+                {{ member.name }}
+              </h2>
+              <p
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="1"
+                data-scroll-order="2"
+                class="text-primary font-medium"
+              >
+                {{ member.role }}
+              </p>
+              <p
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="1"
+                data-scroll-order="3"
+                class="body-large"
+              >
+                {{ member.description }}
+              </p>
             </div>
           </div>
 
           <!-- Image Column -->
-          <div class="relative">
+          <div
+            class="relative"
+            data-scroll-item
+            data-scroll-animation="fadeIn"
+            data-scroll-order="1"
+            data-scroll-duration="1.5"
+            data-scroll-position="+=1"
+          >
             <div class="relative aspect-[3/4] overflow-hidden">
               <ParallaxImg
                 src="/heroHome.jpg"
@@ -121,9 +178,13 @@ const teamData = {
         </div>
 
         <!-- Achievements Grid -->
-        <div class="breakout1 mt-16">
+        <div class="breakout1 mt-16" data-scroll-section>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div
+              data-scroll-stagger-group
+              data-scroll-animation="fadeUp"
+              data-scroll-duration="0.8"
+              data-scroll-stagger="0.2"
               v-for="achievement in member.achievements"
               :key="achievement.title"
               class="relative p-8 text-center"

@@ -25,7 +25,7 @@ onMounted(() => {
           <ParallaxImg
             src="/heroHome.jpg"
             alt="Full width parallax"
-            class="h-full w-full"
+            class="h-full w-full object-cover"
             format="webp"
           />
         </slot>

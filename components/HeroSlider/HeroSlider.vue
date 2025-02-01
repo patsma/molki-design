@@ -54,15 +54,15 @@ const teamData = {
         </div>
 
         <!-- Image Section - ~60% -->
-        <div class="relative flex-1 min-h-[70vh]">
+        <div class="relative flex-1 min-h-[70vh] overflow-hidden">
           <div class="absolute w-full h-full inset-0 z-0">
             <div class="absolute inset-0 bg-black/30"></div>
-            <NuxtImg
-              :src="teamData.intro.image"
-              alt="Molki Design Team"
+
+            <ParallaxImg
+              src="/heroHome.jpg"
+              alt="Full width parallax"
               class="h-full w-full object-cover"
               format="webp"
-              quality="70"
             />
           </div>
         </div>
@@ -108,13 +108,13 @@ const teamData = {
           <!-- Image Column -->
           <div class="relative">
             <div class="relative aspect-[3/4] overflow-hidden">
-              <NuxtImg
-                :src="member.image"
-                :alt="member.name"
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Full width parallax"
                 class="h-full w-full object-cover"
                 format="webp"
-                quality="90"
               />
+
               <HeroPath class="absolute bottom-0 left-0 h-full opacity-50" />
             </div>
           </div>

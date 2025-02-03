@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative min-h-[100vh] w-full">
+  <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
@@ -49,7 +49,7 @@ onMounted(() => {
           >
             <!-- Title -->
             <h1
-              class="h1-style font-semibold uppercase opacity-0"
+              class="h1-style font-semibold uppercase"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
@@ -62,7 +62,7 @@ onMounted(() => {
 
             <!-- Subtitle -->
             <h2
-              class="h2-style font-normal uppercase opacity-0"
+              class="h2-style font-normal uppercase"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
@@ -74,7 +74,7 @@ onMounted(() => {
           </div>
           <!-- CTA Button -->
           <div
-            class="uppercase grid opacity-0"
+            class="uppercase grid"
             data-scroll-item
             data-scroll-animation="fadeUp"
             data-scroll-duration="1"

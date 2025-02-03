@@ -13,6 +13,10 @@ Umów konsultację
 ::
 ::
 
+::hero-slider
+::
+::
+
 ::team-member
 #name
 Anna Kowalska

@@ -35,6 +35,18 @@ const teamData = {
         { title: '25+', subtitle: 'Nagród Branżowych' },
       ],
     },
+    {
+      name: 'Jan Nowak',
+      role: 'Projektant Wnętrz',
+      description: 'Z pasją do designu i wieloletnim doświadczeniem w projektowaniu wnętrz...',
+      image: '/heroHome.jpg',
+      achievements: [
+        { title: '100+', subtitle: 'Zrealizowanych Projektów' },
+        { title: '8 lat', subtitle: 'Doświadczenia' },
+        { title: '95%', subtitle: 'Zadowolonych Klientów' },
+        { title: '15+', subtitle: 'Nagród Branżowych' },
+      ],
+    },
   ],
 };
 </script>
@@ -44,7 +56,7 @@ const teamData = {
     <!-- Team Intro Section -->
     <section class="min-h-screen relative flex flex-col">
       <div class="relative flex-1 flex flex-col">
-        <!-- Title Section - ~10% -->
+
         <div data-scroll-section class="content-grid relative z-10 py-8 md:py-12">
           <div class="breakout1">
             <h2
@@ -59,7 +71,7 @@ const teamData = {
           </div>
         </div>
 
-        <!-- Image Section - ~60% -->
+
         <div class="relative flex-1 min-h-[70vh] overflow-hidden">
           <div class="absolute w-full h-full inset-0 z-0">
             <div class="absolute inset-0 bg-black/30"></div>

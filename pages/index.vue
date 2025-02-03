@@ -7,7 +7,34 @@
         <template #cta> umów konsultację </template>
       </Hero>
 
-      <HeroSlider  />
+      <HeroTeam>
+        <template #title> POZNAJ ZESPÓŁ MOLKI DESIGN! </template>
+
+        <template #heroImage>
+          <ParallaxImg src="/heroHome.jpg" class="h-full w-full object-cover" format="webp" />
+        </template>
+
+        <template #description-0> Od 2019 roku Molki Design, z siedzibą w Gdańsku... </template>
+
+        <template #description-1> Nasz zespół to grupa pasjonatów... </template>
+      </HeroTeam>
+
+      <TeamMember>
+        <template #name>Anna Kowalska</template>
+        <template #role>Główna Projektantka</template>
+        <template #description> Z pasją do designu i wieloletnim doświadczeniem... </template>
+
+        <template #image>
+          <ParallaxImg src="/heroHome.jpg" class="h-full w-full object-cover" format="webp" />
+        </template>
+
+        <template #achievement-0-title>150+</template>
+        <template #achievement-0-subtitle>Projektów</template>
+
+        <template #achievement-1-title>10 lat</template>
+        <template #achievement-1-subtitle>Doświadczenia</template>
+      </TeamMember>
+
       <ContentRenderer v-if="home" :value="home" />
       <div v-else>Home not found</div>
 
@@ -25,64 +52,6 @@
       <div class="spacer w-full h-screen bg-teal-400"></div>
       <div id="spacer1" class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
       <div class="spacer w-full h-screen bg-teal-400"></div>
-
-      <!-- Animation Test Section -->
-      <section data-scroll-section class="py-20">
-        <!-- FadeIn with custom duration -->
-        <h2
-          data-scroll-item
-          data-scroll-animation="fadeIn"
-          data-scroll-duration="1.2"
-          class="text-4xl mb-12"
-        >
-          Our Services
-        </h2>
-
-        <!-- FadeUp with stagger group -->
-        <div
-          data-scroll-stagger-group
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="0.8"
-          data-scroll-stagger="0.2"
-          class="grid grid-cols-3 gap-8"
-        >
-          <div class="p-6 bg-white/10 backdrop-blur-lg rounded-lg">
-            <h3 class="text-xl mb-4">Web Design</h3>
-            <p>Custom digital experiences</p>
-          </div>
-          <div class="p-6 bg-white/10 backdrop-blur-lg rounded-lg">
-            <h3 class="text-xl mb-4">Branding</h3>
-            <p>Visual identity systems</p>
-          </div>
-          <div class="p-6 bg-white/10 backdrop-blur-lg rounded-lg">
-            <h3 class="text-xl mb-4">Strategy</h3>
-            <p>Data-driven decisions</p>
-          </div>
-        </div>
-
-        <!-- SplitText animation -->
-        <p
-          data-scroll-item
-          data-scroll-animation="splitText"
-          data-scroll-duration="1.5"
-          class="text-lg mt-20 max-w-2xl mx-auto"
-        >
-          Transforming ideas into <u>digital experiences</u> that captivate and engage.
-        </p>
-
-        <!-- Independent animation -->
-        <div
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="0.8"
-          data-scroll-independent="true"
-          data-scroll-start="top center"
-          class="mt-20 p-8 bg-primary/20 rounded-xl"
-        >
-          <h3 class="text-xl mb-4">Special Offer</h3>
-          <p>Limited time consultation package</p>
-        </div>
-      </section>
     </div>
   </div>
 </template>
@@ -90,6 +59,9 @@
 <script setup lang="ts">
 import Hero from '~/components/Hero.vue';
 import ParallaxImg from '~/components/ParallaxImg.vue';
+import HeroTeam from '~/components/Hero/HeroTeam.vue';
+import TeamMember from '~/components/Hero/TeamMember.vue';
+
 const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first());
 
 useSeoMeta({
@@ -97,4 +69,14 @@ useSeoMeta({
   description: home.value?.description,
 });
 console.log(home.value?.title);
+
+// Move teamData here or to a separate composable
+const teamData = {
+  intro: {
+    /*...*/
+  },
+  members: [
+    /*...*/
+  ],
+};
 </script>

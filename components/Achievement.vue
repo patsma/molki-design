@@ -7,7 +7,9 @@ import FrameCorner from '~/components/FrameCorner.vue';
     class="relative p-8 text-center"
     data-scroll-stagger-group
     data-scroll-animation="fadeUp"
+    data-scroll-order="4"
     data-scroll-duration="0.8"
+    data-scroll-position="+=1"
     data-scroll-stagger="0.2"
   >
     <FrameCorner position="top-left" class="scale-75" />

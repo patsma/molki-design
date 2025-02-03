@@ -38,20 +38,7 @@
       <ContentRenderer v-if="home" :value="home" />
       <div v-else>Home not found</div>
 
-      <div class="spacer w-full h-screen bg-red-400"></div>
-      <div class="grid h-[55vh] overflow-hidden">
-        <ParallaxImg
-          src="/placeholder.jpg"
-          alt="Full width parallax"
-          class="h-full w-full"
-          format="webp"
-        />
-      </div>
-      <div class="spacer w-full h-screen bg-teal-400"></div>
-      <div class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
-      <div class="spacer w-full h-screen bg-teal-400"></div>
-      <div id="spacer1" class="spacer w-full h-screen bg-red-400" data-speed="1.5"></div>
-      <div class="spacer w-full h-screen bg-teal-400"></div>
+      <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
     </div>
   </div>
 </template>

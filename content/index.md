@@ -37,15 +37,15 @@ Główna Projektantka
 Z pasją do designu i wieloletnim doświadczeniem...
 
 #image
-::parallax-img{src="/anna.jpg" class="h-full w-full object-cover" format="webp"}
+::parallax-img{src="/heroHome.jpg" class="h-full w-full object-cover" format="webp"}
 
 #achievement-0-title
-150+
+1500+
 #achievement-0-subtitle
 Projektów
 
 #achievement-1-title
-10 lat
+100 lat
 #achievement-1-subtitle
 Doświadczenia
 ::

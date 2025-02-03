@@ -49,7 +49,7 @@ onMounted(() => {
           >
             <!-- Title -->
             <h1
-              class="h1-style font-semibold uppercase"
+              class="h1-style font-semibold uppercase opacity-0"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
@@ -62,7 +62,7 @@ onMounted(() => {
 
             <!-- Subtitle -->
             <h2
-              class="h2-style font-normal uppercase"
+              class="h2-style font-normal uppercase opacity-0"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
@@ -74,7 +74,7 @@ onMounted(() => {
           </div>
           <!-- CTA Button -->
           <div
-            class="uppercase grid"
+            class="uppercase grid opacity-0"
             data-scroll-item
             data-scroll-animation="fadeUp"
             data-scroll-duration="1"

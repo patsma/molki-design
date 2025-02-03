@@ -2,6 +2,14 @@
   <div class="content-grid">
     <div class="full-width">
       <Hero>
+        <template #heroImage>
+          <ParallaxImg
+            src="/heroHome.jpg"
+            alt="Full width parallax"
+            class="h-full w-full object-cover"
+            format="webp"
+          />
+        </template>
         <template #title> umów spotkanie </template>
         <template #subtitle> z projektantką </template>
         <template #cta> umów konsultację </template>
@@ -18,23 +26,11 @@
           />
         </template>
         <template #description>
-          <p
-            data-scroll-stagger-group
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="0.8"
-            data-scroll-stagger="0.2"
-            class="text-xl md:text-2xl leading-relaxed text-neutral-800 opacity-0"
-          >
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
             Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując
             kreatywne rozwiązania, które przekraczają oczekiwania.
           </p>
-          <p
-            data-scroll-stagger-group
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="0.8"
-            data-scroll-stagger="0.2"
-            class="text-xl md:text-2xl leading-relaxed text-neutral-800 opacity-0"
-          >
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
             Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać
             projekty, z których możemy być dumni.
           </p>

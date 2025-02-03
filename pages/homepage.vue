@@ -7,6 +7,40 @@
         <template #cta> umów konsultację </template>
       </Hero>
 
+      <HeroTeam>
+        <template #title>POZNAJ ZESPÓŁ MOLKI DESIGN!</template>
+        <template #image>
+          <ParallaxImg
+            src="/heroHome.jpg"
+            alt="Full width parallax"
+            class="h-full w-full object-cover"
+            format="webp"
+          />
+        </template>
+        <template #description>
+          <p
+            data-scroll-stagger-group
+            data-scroll-animation="fadeUp"
+            data-scroll-duration="0.8"
+            data-scroll-stagger="0.2"
+            class="text-xl md:text-2xl leading-relaxed text-neutral-800 opacity-0"
+          >
+            Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując
+            kreatywne rozwiązania, które przekraczają oczekiwania.
+          </p>
+          <p
+            data-scroll-stagger-group
+            data-scroll-animation="fadeUp"
+            data-scroll-duration="0.8"
+            data-scroll-stagger="0.2"
+            class="text-xl md:text-2xl leading-relaxed text-neutral-800 opacity-0"
+          >
+            Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać
+            projekty, z których możemy być dumni.
+          </p>
+        </template>
+      </HeroTeam>
+
       <TeamMember>
         <template #name>Anna Kowalska</template>
         <template #role>Główna Projektantka</template>
@@ -48,6 +82,7 @@
 
 <script setup lang="ts">
 import Hero from '~/components/Hero.vue';
+import HeroTeam from '~/components/HeroTeam.vue';
 import TeamMember from '~/components/TeamMember.vue';
 import Achievement from '~/components/Achievement.vue';
 </script>

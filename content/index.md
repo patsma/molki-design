@@ -13,8 +13,18 @@ Umów konsultację
 ::
 ::
 
-::hero-slider
+::hero-team
+#title
+POZNAJ ZESPÓŁ MOLKI DESIGN!
+
+#image
+::parallax-img{src="/heroHome.jpg" alt="Full width parallax" class="h-full w-full object-cover" format="webp"}
 ::
+
+#description
+Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania.
+
+Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać projekty, z których możemy być dumni.
 ::
 
 ::team-member

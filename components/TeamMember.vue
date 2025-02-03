@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroPath from '~/components/HeroPath.vue';
+import FrameCorner from '~/components/FrameCorner.vue';
 </script>
 
 <template>
@@ -58,10 +59,28 @@ import HeroPath from '~/components/HeroPath.vue';
       </div>
 
       <!-- Achievements Grid -->
-      <div v-if="$slots.achievements" class="breakout1 mt-16">
+      <div v-if="$slots.achievements" class="breakout1 mt-16 relative p-8">
+        <FrameCorner
+          data-scroll-item
+          data-scroll-animation="fadeUp"
+          data-scroll-duration="0.8"
+          data-scroll-independent="true"
+          data-scroll-start="top center"
+          position="top-left"
+          class="scale-75"
+        />
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <slot name="achievements" />
         </div>
+        <FrameCorner
+          data-scroll-item
+          data-scroll-animation="fadeUp"
+          data-scroll-duration="0.8"
+          data-scroll-independent="true"
+          data-scroll-start="top center"
+          position="bottom-right"
+          class="scale-75"
+        />
       </div>
     </div>
   </section>

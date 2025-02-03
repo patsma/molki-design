@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FrameCorner from './FrameCorner.vue';
+import FrameCorner from '~/components/FrameCorner.vue';
 interface TeamMember {
   name: string;
   role: string;

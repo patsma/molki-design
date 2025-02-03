@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import HeroSlider from '~/components/HeroSlider/HeroSlider.vue';
+import HeroSlider from '~/components/HeroSlider.vue';
 </script>

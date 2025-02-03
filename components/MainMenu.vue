@@ -25,7 +25,7 @@ const menuItems = [
   },
   {
     label: 'REMONT+',
-    link: '/content',
+    link: '/homepage',
     children: [
       { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
       { label: 'CENNIK', link: '#remonty-cennik' },

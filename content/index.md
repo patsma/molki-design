@@ -13,5 +13,3 @@ Umów konsultację
 ::
 
 ::hero-slider
-The content of the card
-::

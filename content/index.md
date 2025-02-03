@@ -31,7 +31,7 @@ POZNAJ ZESPÓŁ MOLKI DESIGN!
   alt: Full width parallax
   class: h-full w-full object-cover
   format: webp
-  src: /heroHome.jpg
+  src: /heroAbout.jpg
   ---
   :::
 

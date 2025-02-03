@@ -16,5 +16,5 @@ useSeoMeta({
   title: home.value?.title,
   description: home.value?.description,
 });
-console.log(home.value?.body);
+// console.log(home.value?.body);
 </script>

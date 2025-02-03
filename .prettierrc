@@ -15,6 +15,13 @@
         "singleQuote": false,
         "tabWidth": 2
       }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown",
+        "proseWrap": "preserve"
+      }
     }
   ]
 }

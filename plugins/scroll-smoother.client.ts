@@ -7,6 +7,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = nuxtApp;
   const { isMobile } = useMobileDetection();
   let scrollSmoother = null;
+  let animationContext = null;
 
   // Register GSAP effects
   const registerEffects = () => {
@@ -100,72 +101,78 @@ export default defineNuxtPlugin((nuxtApp) => {
     const DEFAULT_TOGGLE_ACTIONS = 'play none none none';
     const GLOBAL_OVERLAP = '-=0.5';
 
-    document.querySelectorAll('[data-scroll-section]').forEach((section) => {
-      // console.log('📍 Found scroll section:', section);
-      const sectionStart = section.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
-      const sectionEnd = section.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
-      const sectionToggleActions =
-        section.getAttribute('data-scroll-toggle') || DEFAULT_TOGGLE_ACTIONS;
+    const ctx = $gsap.context(() => {
+      document.querySelectorAll('[data-scroll-section]').forEach((section) => {
+        // console.log('📍 Found scroll section:', section);
+        const sectionStart = section.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
+        const sectionEnd = section.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
+        const sectionToggleActions =
+          section.getAttribute('data-scroll-toggle') || DEFAULT_TOGGLE_ACTIONS;
 
-      const tl = $gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: sectionStart,
-          end: sectionEnd,
-          toggleActions: sectionToggleActions,
-          markers: false, // Set to true for debugging
-        },
-      });
+        const tl = $gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: sectionStart,
+            end: sectionEnd,
+            toggleActions: sectionToggleActions,
+            markers: false, // Set to true for debugging
+          },
+        });
 
-      const items = section.querySelectorAll('[data-scroll-item], [data-scroll-stagger-group]');
-      const orderedItems = Array.from(items).sort((a, b) => {
-        return (
-          parseInt(a.getAttribute('data-scroll-order') || '0') -
-          parseInt(b.getAttribute('data-scroll-order') || '0')
-        );
-      });
+        const items = section.querySelectorAll('[data-scroll-item], [data-scroll-stagger-group]');
+        const orderedItems = Array.from(items).sort((a, b) => {
+          return (
+            parseInt(a.getAttribute('data-scroll-order') || '0') -
+            parseInt(b.getAttribute('data-scroll-order') || '0')
+          );
+        });
 
-      orderedItems.forEach((item, index) => {
-        // console.log(
-        //   '🔄 Processing item:',
-        //   item,
-        //   'Animation type:',
-        //   item.getAttribute('data-scroll-animation')
-        // );
-        const isIndependent = item.getAttribute('data-scroll-independent') === 'true';
-        const animationType = item.getAttribute('data-scroll-animation') || 'fadeUp';
-        const duration = parseFloat(item.getAttribute('data-scroll-duration')) || 0.5;
-        const stagger = parseFloat(item.getAttribute('data-scroll-stagger')) || 0.1;
-        const delay = parseFloat(item.getAttribute('data-scroll-delay')) || 0;
+        orderedItems.forEach((item, index) => {
+          // console.log(
+          //   '🔄 Processing item:',
+          //   item,
+          //   'Animation type:',
+          //   item.getAttribute('data-scroll-animation')
+          // );
+          const isIndependent = item.getAttribute('data-scroll-independent') === 'true';
+          const animationType = item.getAttribute('data-scroll-animation') || 'fadeUp';
+          const duration = parseFloat(item.getAttribute('data-scroll-duration')) || 0.5;
+          const stagger = parseFloat(item.getAttribute('data-scroll-stagger')) || 0.1;
+          const delay = parseFloat(item.getAttribute('data-scroll-delay')) || 0;
 
-        if (isIndependent) {
-          const itemStart = item.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
-          const itemEnd = item.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
-          const itemToggleActions =
-            item.getAttribute('data-scroll-toggle') || DEFAULT_TOGGLE_ACTIONS;
+          if (isIndependent) {
+            const itemStart = item.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
+            const itemEnd = item.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
+            const itemToggleActions =
+              item.getAttribute('data-scroll-toggle') || DEFAULT_TOGGLE_ACTIONS;
 
-          const independentTL = $gsap.timeline({
-            scrollTrigger: {
-              trigger: item,
-              start: itemStart,
-              end: itemEnd,
-              toggleActions: itemToggleActions,
-              markers: false,
-            },
-          });
+            const independentTL = $gsap.timeline({
+              scrollTrigger: {
+                trigger: item,
+                start: itemStart,
+                end: itemEnd,
+                toggleActions: itemToggleActions,
+                markers: false,
+              },
+            });
 
-          const animation = $gsap.effects[animationType](item, { duration, stagger });
-          independentTL.add(animation, delay);
-        } else {
-          const position = index === 0 ? 0 : GLOBAL_OVERLAP;
-          const animation = $gsap.effects[animationType](item, { duration, stagger });
-          tl.add(animation, position + delay);
-        }
+            const animation = $gsap.effects[animationType](item, { duration, stagger });
+            independentTL.add(animation, delay);
+          } else {
+            const position = index === 0 ? 0 : GLOBAL_OVERLAP;
+            const animation = $gsap.effects[animationType](item, { duration, stagger });
+            tl.add(animation, position + delay);
+          }
+        });
       });
     });
+    return ctx;
   };
 
   const initScrollSmoother = () => {
+    if (window.__gsap_init) return;
+    window.__gsap_init = true;
+
     console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
     $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother, $SplitText);
     registerEffects();
@@ -174,12 +181,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     $ScrollTrigger.defaults({ markers: false });
     $ScrollTrigger.config({ limitCallbacks: true });
 
-    // Skip ScrollSmoother on mobile
     if (isMobile.value) {
-      console.log('📱 Mobile detected - skipping ScrollSmoother');
+      console.log('📱 Mobile detected - initializing native scroll');
+      animationContext = initSectionAnimations();
       $gsap.delayedCall(0.1, () => {
-        initSectionAnimations();
-        $ScrollTrigger.refresh();
+        $ScrollTrigger.refresh(true);
+        window.scrollTo(0, 0);
       });
       return;
     }
@@ -230,22 +237,18 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Handle page transitions
   nuxtApp.hook('page:transition:finish', () => {
     console.log('🔄 [14] Page transition finished');
-    if (scrollSmoother) {
-      console.log('📜 Resetting scroll position');
-      scrollSmoother.scrollTop(0);
-      resetEffects();
+    resetEffects();
 
-      $gsap.delayedCall(0.2, () => {
-        console.log('🔄 [15] Re-initializing animations post-transition');
-        initSectionAnimations();
-        $ScrollTrigger.refresh();
-        console.log('✅ [16] Transition animations complete');
-      });
-    }
+    $gsap.delayedCall(0.2, () => {
+      console.log('🔄 [15] Re-initializing animations post-transition');
+      animationContext = initSectionAnimations();
+      $ScrollTrigger.refresh();
+    });
   });
 
   // Cleanup on app unmount
   nuxtApp.hook('app:unmount', () => {
+    delete window.__gsap_init;
     if (scrollSmoother) {
       // console.log('🧹 Plugin: Cleaning up ScrollSmoother');
       scrollSmoother.kill();

@@ -50,14 +50,16 @@ const initializeApp = async () => {
     await Promise.all([
       $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline'),
       menuStore.initAnimation($gsap),
-      isMobile.value ? initMobileHeader() : initSmoother(),
     ]);
 
-    // Mark loading as complete after all initializations
+    // Mobile header handled in useScrollHeader composable
+    if (!isMobile.value) {
+      await initSmoother();
+    }
+
     loaderStore.finishLoading();
   } catch (error) {
     console.error('Failed to initialize app:', error);
-    // Still hide loader even if there's an error
     loaderStore.finishLoading();
   }
 };

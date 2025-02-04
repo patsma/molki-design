@@ -13,7 +13,14 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
   const { isMobile } = useMobileDetection();
 
+  // Add check for initial load
+  if (window.__gsap_first_load) {
+    window.__gsap_first_load = false;
+    return;
+  }
+
   try {
+    window.__gsap_first_load = true;
     const currentSmoother = ScrollSmoother.get();
     if (currentSmoother) {
       // console.log("📜 Middleware: Resetting smoother");
@@ -35,10 +42,14 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       currentSmoother.effects('[data-speed], [data-lag]', true);
     }
 
-    // Add mobile-compatible reset for all devices
-    const elements = document.querySelectorAll('[data-speed], [data-scroll-item]');
+    // Expand element selection
+    const elements = document.querySelectorAll(
+      '[data-speed], [data-scroll-item], [data-scroll-section]'
+    );
     elements.forEach((el) => {
-      gsap.set(el, { clearProps: 'transform,willChange,opacity' });
+      gsap.set(el, {
+        clearProps: 'transform,willChange,opacity,y,x,scale',
+      });
     });
 
     await nextTick();

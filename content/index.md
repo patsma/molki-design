@@ -41,19 +41,28 @@ Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dos
 ::
 
 ::team-member
+#section-title
+POZNAJMY SIĘ!
+
 #name
-Anna Kowalska
+Wioletta Retko
 
 #role
-Główna Projektantka
+Prezes Zarządu
 
 #description
-Z pasją do designu i wieloletnim doświadczeniem w projektowaniu wnętrz...
+::p
+Uwielbiam organizować i nadzorować złożone projekty. Codziennie dbam o to, by każdy etap realizacji przebiegał zgodnie z planem, a każdy detal był dopracowany do perfekcji.
+::
+
+::p
+Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przestrzeni, by były one zarówno piękne, jak i praktyczne. To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
+::
 
 #image
   :::parallax-img
   ---
-  alt: Anna Kowalska
+  alt: Wioletta Retko - Prezes Zarządu
   class: h-full w-full object-cover
   format: webp
   src: /heroHome.jpg

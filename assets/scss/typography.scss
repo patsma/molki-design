@@ -1,6 +1,6 @@
 // Base typography styles
 body {
-  @apply text-base;
+  @apply text-base text-text-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,5 +49,5 @@ body {
 
 // Default paragraph style
 p {
-  @apply body-default;
+  @apply body-default text-text-primary;
 }

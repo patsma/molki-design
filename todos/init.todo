@@ -78,8 +78,8 @@
 ✔ Ensure all components work with Nuxt Content @done(25-02-03 16:19)
 ✔ Refactor Hero Slider to slots @done(25-02-03 17:28)
 ✔ Ensure there is no smooth scroll on mobile but we have basic scroll animation @done(25-02-04 15:34)
-- Page transition glitch - we need to set scroll position to 0 before the page changes
-- Style TeamMember text section
+✔ Page transition glitch - we need to set scroll position to 0 before the page changes @done(25-02-04 20:38)
+- Style TeamMember text section @started(25-02-04 20:38)
 - Proceed to next component
 3. Hero Projects - Projekty Wnętrza
 4. Icon Grid

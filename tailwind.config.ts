@@ -37,6 +37,9 @@ export default {
           500: '#D9D9D9',
           600: '#363434',
         },
+        text: {
+          primary: '#503D32',
+        },
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],

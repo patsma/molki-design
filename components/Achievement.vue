@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="relative p-8 text-center"
+    class="relative p-4 md:p-8 text-center"
     data-scroll-stagger-group
     data-scroll-animation="fadeUp"
     data-scroll-duration="0.8"

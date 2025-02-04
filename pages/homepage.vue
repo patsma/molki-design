@@ -38,10 +38,19 @@
       </HeroTeam>
 
       <TeamMember>
-        <template #name>Anna Kowalska</template>
-        <template #role>Główna Projektantka</template>
+        <template #section-title>POZNAJMY SIĘ!</template>
+        <template #name>Wioletta Retko</template>
+        <template #role>Prezes Zarządu</template>
         <template #description>
-          Z pasją do designu i wieloletnim doświadczeniem w projektowaniu wnętrz...
+          <p class="mb-6">
+            Uwielbiam organizować i nadzorować złożone projekty. Codziennie dbam o to, by każdy etap
+            realizacji przebiegał zgodnie z planem, a każdy detal był dopracowany do perfekcji.
+          </p>
+          <p>
+            Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przestrzeni, by
+            były one zarówno piękne, jak i praktyczne. To pozwala mi rozwijać zespół i osiągać
+            lepsze rezultaty.
+          </p>
         </template>
         <template #image>
           <ParallaxImg

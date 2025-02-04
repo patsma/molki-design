@@ -46,8 +46,9 @@ import FrameCorner from '~/components/FrameCorner.vue';
               <div
                 data-scroll-item
                 data-scroll-animation="fadeUp"
-                data-scroll-duration="0.8"
-                data-scroll-start="top center"
+                data-scroll-duration="1"
+                data-scroll-independent="true"
+                data-scroll-start="top bottom"
                 v-if="$slots.description"
                 class="space-y-6 px-8 py-12 text-xl md:text-2xl leading-relaxed text-neutral-800"
               >

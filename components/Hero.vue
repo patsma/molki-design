@@ -41,7 +41,7 @@
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
               data-scroll-order="1"
-              data-scroll-position="+=1"
+              data-scroll-delay="0.725"
               v-if="$slots.title"
             >
               <slot name="title" mdc-unwrap="p" />

@@ -2,10 +2,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { SplitText } from 'gsap/SplitText';
 import { useMobileDetection } from '~/composables/useMobileDetection';
+import { useLoaderStore } from '@/stores/loaderStore';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = nuxtApp;
   const { isMobile } = useMobileDetection();
+  const loaderStore = useLoaderStore();
   let scrollSmoother = null;
   let animationContext = null;
 
@@ -230,24 +232,73 @@ export default defineNuxtPlugin((nuxtApp) => {
     initScrollSmoother();
   }
 
-  // Handle page transitions
-  nuxtApp.hook('page:transition:finish', () => {
-    console.log('🔄 [14] Page transition finished');
-    resetEffects();
+  // Update the transition hooks with better timing
+  nuxtApp.hook('page:start', () => {
+    console.log('🔄 [1] Page transition starting');
+    if (!process.client) return;
 
-    $gsap.delayedCall(0.2, () => {
-      console.log('🔄 [15] Re-initializing animations post-transition');
-      animationContext = initSectionAnimations();
-      $ScrollTrigger.refresh();
+    // Show loader immediately and hide content
+    loaderStore.startLoading();
+
+    // Handle ScrollSmoother after a small delay
+    $gsap.delayedCall(0.1, () => {
+      if (scrollSmoother && !isMobile.value) {
+        console.log('🔄 [2] Freezing ScrollSmoother');
+        scrollSmoother.paused(true);
+        $gsap.set(scrollSmoother, { scrollTop: 0 });
+      }
     });
   });
 
-  // Cleanup on app unmount
+  nuxtApp.hook('page:transition:finish', () => {
+    console.log('🔄 [3] Page transition finished');
+    if (!process.client) return;
+
+    const transitionTL = $gsap.timeline({
+      onComplete: () => {
+        console.log('🔄 [6] All transitions complete, hiding loader');
+        $gsap.delayedCall(0.2, () => {
+          loaderStore.finishLoading();
+        });
+      },
+    });
+
+    // Reset ScrollSmoother first
+    if (scrollSmoother && !isMobile.value) {
+      transitionTL.add(() => {
+        scrollSmoother.scrollTop(0);
+        scrollSmoother.paused(false);
+      });
+    }
+
+    // Then handle animations with shorter delays
+    transitionTL
+      .add(() => {
+        console.log('🔄 [4] Resetting effects and initializing animations');
+        if (animationContext) {
+          animationContext.revert();
+        }
+        resetEffects();
+        animationContext = initSectionAnimations();
+      }, '+=0.1')
+      .add(() => {
+        console.log('🔄 [5] Refreshing ScrollTrigger');
+        $ScrollTrigger.refresh(true);
+      }, '+=0.1');
+
+    if (isMobile.value) {
+      window.scrollTo(0, 0);
+    }
+  });
+
+  // Keep your existing cleanup code
   nuxtApp.hook('app:unmount', () => {
     delete window.__gsap_init;
     if (scrollSmoother) {
-      // console.log('🧹 Plugin: Cleaning up ScrollSmoother');
       scrollSmoother.kill();
+    }
+    if (animationContext) {
+      animationContext.revert();
     }
   });
 

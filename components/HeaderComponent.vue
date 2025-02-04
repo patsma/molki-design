@@ -11,6 +11,7 @@ const { headerRef, initScrollHeader, cleanup } = useScrollHeader();
 
 onMounted(() => {
   if (process.client) {
+    console.log('🎯 HeaderComponent mounted, headerRef:', headerRef.value);
     $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline');
 
     menuStore.initAnimation($gsap);

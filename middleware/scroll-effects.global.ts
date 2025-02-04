@@ -1,6 +1,7 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import gsap from 'gsap';
+import { useMobileDetection } from '~/composables/useMobileDetection';
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   // console.log("🎯 GlobalMiddleware: Called");
@@ -9,6 +10,10 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     // console.log("⚡ Middleware: Skipping - server side");
     return;
   }
+
+  const { isMobile } = useMobileDetection();
+
+  if (isMobile.value) return;
 
   try {
     const currentSmoother = ScrollSmoother.get();

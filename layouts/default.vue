@@ -2,6 +2,7 @@
 import { useLoaderStore } from '~/stores/loaderStore';
 import { useMenuStore } from '@/stores/menuStore';
 import { useScrollHeader } from '~/composables/useScrollHeader';
+import { useMobileDetection } from '~/composables/useMobileDetection';
 const { $gsap, $ScrollTrigger, $ScrollSmoother, $MorphSVGPlugin } = useNuxtApp();
 useHead({
   title: 'Molki Design',
@@ -13,6 +14,7 @@ let smoother = null;
 const menuStore = useMenuStore();
 const { initScrollHeader, cleanup } = useScrollHeader('.nav');
 const loaderStore = useLoaderStore();
+const { isMobile } = useMobileDetection();
 
 // Handle page transitions
 const handlePageTransition = async () => {
@@ -23,7 +25,7 @@ const handlePageTransition = async () => {
 };
 
 const initSmoother = async () => {
-  if (!process.client) return;
+  if (!process.client || isMobile.value) return;
 
   // Register plugins first
   $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother);
@@ -47,9 +49,8 @@ const initializeApp = async () => {
   try {
     await Promise.all([
       $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline'),
-      initScrollHeader(),
       menuStore.initAnimation($gsap),
-      initSmoother(),
+      isMobile.value ? initMobileHeader() : initSmoother(),
     ]);
 
     // Mark loading as complete after all initializations
@@ -59,6 +60,19 @@ const initializeApp = async () => {
     // Still hide loader even if there's an error
     loaderStore.finishLoading();
   }
+};
+
+// Mobile-specific header setup
+const initMobileHeader = () => {
+  $gsap.registerPlugin($ScrollTrigger);
+  $ScrollTrigger.create({
+    trigger: '.nav',
+    start: 'top top',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  });
 };
 
 onMounted(() => {

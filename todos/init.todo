@@ -77,6 +77,7 @@
 ✔ Split HeroSlider to TeamMember component @done(25-02-03 16:19)
 ✔ Ensure all components work with Nuxt Content @done(25-02-03 16:19)
 ✔ Refactor Hero Slider to slots @done(25-02-03 17:28)
+- Ensure there is no smooth scroll on mobile but we have basic scroll animation
 - Style TeamMember text section
 - Proceed to next component
 3. Hero Projects - Projekty Wnętrza

@@ -1,9 +1,11 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { SplitText } from 'gsap/SplitText';
+import { useMobileDetection } from '~/composables/useMobileDetection';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = nuxtApp;
+  const { isMobile } = useMobileDetection();
   let scrollSmoother = null;
 
   // Register GSAP effects
@@ -92,12 +94,14 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   const initSectionAnimations = () => {
+    console.log('🎯 Initializing section animations');
     const DEFAULT_SCROLL_START = 'top 80%';
     const DEFAULT_SCROLL_END = 'bottom 20%';
     const DEFAULT_TOGGLE_ACTIONS = 'play none none none';
     const GLOBAL_OVERLAP = '-=0.5';
 
     document.querySelectorAll('[data-scroll-section]').forEach((section) => {
+      console.log('📍 Found scroll section:', section);
       const sectionStart = section.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
       const sectionEnd = section.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
       const sectionToggleActions =
@@ -122,6 +126,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       });
 
       orderedItems.forEach((item, index) => {
+        console.log(
+          '🔄 Processing item:',
+          item,
+          'Animation type:',
+          item.getAttribute('data-scroll-animation')
+        );
         const isIndependent = item.getAttribute('data-scroll-independent') === 'true';
         const animationType = item.getAttribute('data-scroll-animation') || 'fadeUp';
         const duration = parseFloat(item.getAttribute('data-scroll-duration')) || 0.5;
@@ -156,13 +166,30 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   const initScrollSmoother = () => {
+    console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
     $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother, $SplitText);
     registerEffects();
 
+    // Always register ScrollTrigger for animations
+    $ScrollTrigger.defaults({ markers: false });
+    $ScrollTrigger.config({ limitCallbacks: true });
+
+    // Skip ScrollSmoother on mobile
+    if (isMobile.value) {
+      console.log('📱 Mobile detected - skipping ScrollSmoother');
+      $gsap.delayedCall(0.1, () => {
+        initSectionAnimations();
+        $ScrollTrigger.refresh();
+      });
+      return;
+    }
+
+    // Desktop setup
     const wrapper = document.querySelector('#smooth-wrapper');
     const content = document.querySelector('#smooth-content');
 
     if (wrapper && content) {
+      console.log('🖥️ Creating ScrollSmoother instance');
       scrollSmoother = $ScrollSmoother.create({
         wrapper,
         content,

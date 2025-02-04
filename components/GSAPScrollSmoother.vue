@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
-// Component now only handles markup structure
-// All ScrollSmoother logic is handled by the plugin
+import { ref, onMounted } from 'vue';
+const wrapper = ref(null);
+const content = ref(null);
 </script>

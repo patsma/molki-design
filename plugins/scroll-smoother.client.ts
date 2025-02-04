@@ -177,10 +177,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother, $SplitText);
     registerEffects();
 
-    // Always register ScrollTrigger for animations
-    $ScrollTrigger.defaults({ markers: false });
-    $ScrollTrigger.config({ limitCallbacks: true });
-
     if (isMobile.value) {
       console.log('📱 Mobile detected - initializing native scroll');
       animationContext = initSectionAnimations();

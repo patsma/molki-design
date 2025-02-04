@@ -1,17 +1,4 @@
-<script setup>
-import useTextEffect from '~/composables/useTextEffect';
-
-const { textEffect1Timelines } = useTextEffect('.js--text-effect-101', false);
-
-const title = ref('UMÓW SPOTKANIE');
-const subtitle = ref('Z PROJEKTANTKĄ');
-
-onMounted(() => {
-  if (textEffect1Timelines.value && textEffect1Timelines.value.length > 0) {
-    textEffect1Timelines.value[0].play(); // Play the first timeline
-  }
-});
-</script>
+<script setup></script>
 
 <template>
   <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>

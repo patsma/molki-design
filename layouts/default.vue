@@ -24,24 +24,6 @@ const handlePageTransition = async () => {
   initScrollHeader();
 };
 
-const initSmoother = async () => {
-  if (!process.client || isMobile.value) return;
-
-  // Register plugins first
-  $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother);
-
-  // console.log('🎯 Layout: Initial ScrollSmoother setup');
-  smoother = $ScrollSmoother.create({
-    wrapper: wrapper.value,
-    content: content.value,
-    smooth: 1,
-    effects: true,
-    normalizeScroll: true,
-    touchMultiplier: 2,
-    ignoreMobileResize: true,
-  });
-};
-
 // Initialize all required functionality
 const initializeApp = async () => {
   if (!process.client) return;
@@ -52,11 +34,6 @@ const initializeApp = async () => {
       menuStore.initAnimation($gsap),
     ]);
 
-    // Mobile header handled in useScrollHeader composable
-    if (!isMobile.value) {
-      await initSmoother();
-    }
-
     loaderStore.finishLoading();
   } catch (error) {
     console.error('Failed to initialize app:', error);
@@ -64,24 +41,8 @@ const initializeApp = async () => {
   }
 };
 
-// Mobile-specific header setup
-const initMobileHeader = () => {
-  // $gsap.registerPlugin($ScrollTrigger);
-};
-
 onMounted(() => {
   initializeApp();
-});
-
-onUnmounted(() => {
-  if (smoother) {
-    smoother.kill();
-  }
-  if ($ScrollTrigger) {
-    $ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  }
-  cleanup();
-  menuStore.cleanup();
 });
 
 // Watch for route changes

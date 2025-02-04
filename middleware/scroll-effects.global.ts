@@ -13,8 +13,6 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
   const { isMobile } = useMobileDetection();
 
-  if (isMobile.value) return;
-
   try {
     const currentSmoother = ScrollSmoother.get();
     if (currentSmoother) {
@@ -34,6 +32,19 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       // Reapply effects
       await nextTick();
       ScrollTrigger.refresh(true);
+      currentSmoother.effects('[data-speed], [data-lag]', true);
+    }
+
+    // Add mobile-compatible reset for all devices
+    const elements = document.querySelectorAll('[data-speed], [data-scroll-item]');
+    elements.forEach((el) => {
+      gsap.set(el, { clearProps: 'transform,willChange,opacity' });
+    });
+
+    await nextTick();
+    ScrollTrigger.refresh(true);
+
+    if (currentSmoother) {
       currentSmoother.effects('[data-speed], [data-lag]', true);
     }
   } catch (error) {

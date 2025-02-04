@@ -85,16 +85,22 @@ export const useScrollHeader = () => {
   };
 
   const initMobileHeader = () => {
-    console.log('📱 Setting up mobile header');
+    console.log('📱 Initializing mobile header');
     const header = headerRef.value;
     if (!header) {
       console.warn('⚠️ Header element not found');
       return;
     }
 
-    gsap.set(header, { clearProps: 'all' });
+    // Same setup as desktop
+    gsap.set(header, {
+      top: 0,
+      height: headerHeight.value,
+      clearProps: 'all',
+    });
 
-    const trigger = ScrollTrigger.create({
+    // Same pin configuration
+    headerTrigger = ScrollTrigger.create({
       trigger: header,
       start: 'top top',
       endTrigger: 'html',
@@ -102,14 +108,34 @@ export const useScrollHeader = () => {
       pin: true,
       pinSpacing: false,
       onRefresh: () => {
-        console.log('🔄 Refreshing header height:', headerHeight.value);
         gsap.set(header, { height: headerHeight.value });
       },
-      onEnter: () => console.log('Header trigger entered'),
-      onLeave: () => console.log('Header trigger left'),
     });
 
-    console.log('📌 Created ScrollTrigger for header:', trigger);
+    // Same animation timeline
+    headerAnimation = gsap
+      .timeline({ paused: true })
+      .fromTo(header, { yPercent: 0 }, { yPercent: -100, duration: 0.3, ease: 'power3.inOut' });
+
+    // Modified scroll listener without ScrollSmoother
+    ScrollTrigger.create({
+      start: 0,
+      end: 'max',
+      onUpdate: (self) => {
+        const now = Date.now();
+        if (now - lastCheck < 400) return;
+        lastCheck = now;
+
+        const scrollTop = window.scrollY; // Use native scroll position
+        const direction = self.direction;
+
+        if (direction > 0 && scrollTop > headerHeight.value) {
+          headerAnimation?.play();
+        } else if (direction < 0) {
+          headerAnimation?.reverse();
+        }
+      },
+    });
   };
 
   const cleanup = () => {

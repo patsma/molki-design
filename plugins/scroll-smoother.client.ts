@@ -101,7 +101,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const GLOBAL_OVERLAP = '-=0.5';
 
     document.querySelectorAll('[data-scroll-section]').forEach((section) => {
-      console.log('📍 Found scroll section:', section);
+      // console.log('📍 Found scroll section:', section);
       const sectionStart = section.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
       const sectionEnd = section.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
       const sectionToggleActions =
@@ -126,12 +126,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       });
 
       orderedItems.forEach((item, index) => {
-        console.log(
-          '🔄 Processing item:',
-          item,
-          'Animation type:',
-          item.getAttribute('data-scroll-animation')
-        );
+        // console.log(
+        //   '🔄 Processing item:',
+        //   item,
+        //   'Animation type:',
+        //   item.getAttribute('data-scroll-animation')
+        // );
         const isIndependent = item.getAttribute('data-scroll-independent') === 'true';
         const animationType = item.getAttribute('data-scroll-animation') || 'fadeUp';
         const duration = parseFloat(item.getAttribute('data-scroll-duration')) || 0.5;
@@ -229,14 +229,17 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Handle page transitions
   nuxtApp.hook('page:transition:finish', () => {
+    console.log('🔄 [14] Page transition finished');
     if (scrollSmoother) {
+      console.log('📜 Resetting scroll position');
       scrollSmoother.scrollTop(0);
       resetEffects();
 
-      // Re-init animations after transition
       $gsap.delayedCall(0.2, () => {
+        console.log('🔄 [15] Re-initializing animations post-transition');
         initSectionAnimations();
         $ScrollTrigger.refresh();
+        console.log('✅ [16] Transition animations complete');
       });
     }
   });

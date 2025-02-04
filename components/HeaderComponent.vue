@@ -27,7 +27,7 @@ onUnmounted(() => {
 
 <template>
   <header class="content-grid">
-    <nav ref="headerRef" class="full-width grid absolute nav h-24 z-40 py-4 w-full bg-white">
+    <nav ref="headerRef" class="full-width grid absolute nav h-24 z-40 top-0 py-4 w-full bg-white">
       <div class="nav__wrapper content-grid grid grid-flow-col items-center justify-between">
         <div class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]">
           <button

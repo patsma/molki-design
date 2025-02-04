@@ -64,15 +64,7 @@ const initializeApp = async () => {
 
 // Mobile-specific header setup
 const initMobileHeader = () => {
-  $gsap.registerPlugin($ScrollTrigger);
-  $ScrollTrigger.create({
-    trigger: '.nav',
-    start: 'top top',
-    endTrigger: 'html',
-    end: 'bottom top',
-    pin: true,
-    pinSpacing: false,
-  });
+  // $gsap.registerPlugin($ScrollTrigger);
 };
 
 onMounted(() => {

@@ -2,12 +2,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { SplitText } from 'gsap/SplitText';
 import { useMobileDetection } from '~/composables/useMobileDetection';
+import { useLoaderStore } from '@/stores/loaderStore';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = nuxtApp;
   const { isMobile } = useMobileDetection();
   let scrollSmoother = null;
   let animationContext = null;
+
+  // Early in the plugin, get access to the loader store
+  const loaderStore = useLoaderStore();
 
   // Register GSAP effects
   const registerEffects = () => {
@@ -95,7 +99,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   const initSectionAnimations = () => {
-    console.log('🎯 Initializing section animations');
+    // console.log('🎯 Initializing section animations');
     const DEFAULT_SCROLL_START = 'top 80%';
     const DEFAULT_SCROLL_END = 'bottom 20%';
     const DEFAULT_TOGGLE_ACTIONS = 'play none none none';
@@ -173,12 +177,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (window.__gsap_init) return;
     window.__gsap_init = true;
 
-    console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
+    // console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
     $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother, $SplitText);
     registerEffects();
 
     if (isMobile.value) {
-      console.log('📱 Mobile detected - initializing native scroll');
+      // console.log('📱 Mobile detected - initializing native scroll');
       animationContext = initSectionAnimations();
       $gsap.delayedCall(0.1, () => {
         $ScrollTrigger.refresh(true);
@@ -230,16 +234,61 @@ export default defineNuxtPlugin((nuxtApp) => {
     initScrollSmoother();
   }
 
-  // Handle page transitions
-  nuxtApp.hook('page:transition:finish', () => {
-    console.log('🔄 [14] Page transition finished');
-    resetEffects();
+  // Update the transition hooks
+  nuxtApp.hook('page:start', () => {
+    console.log('🔄 [1] Page transition starting');
+    if (!process.client) return;
 
-    $gsap.delayedCall(0.2, () => {
-      console.log('🔄 [15] Re-initializing animations post-transition');
-      animationContext = initSectionAnimations();
-      $ScrollTrigger.refresh();
-    });
+    loaderStore.startLoading();
+
+    if (scrollSmoother) {
+      const tl = $gsap.timeline();
+
+      tl.add(() => {
+        console.log('🔄 [2] Freezing ScrollSmoother');
+        scrollSmoother.paused(true);
+      })
+        .set('#smooth-content', { visibility: 'hidden' })
+        .set(scrollSmoother, {
+          scrollTop: 0,
+          overwrite: true,
+          onComplete: () => console.log('🔄 [3] Scroll position reset'),
+        });
+    }
+  });
+
+  // After new page transition finishes
+  nuxtApp.hook('page:transition:finish', () => {
+    console.log('🔄 [8] Page transition animation finished');
+    if (!process.client) return;
+
+    if (scrollSmoother) {
+      console.log('🔄 [9] Resetting ScrollSmoother state');
+
+      const tl = $gsap.timeline({
+        onComplete: () => {
+          console.log('🔄 [12] Animation sequence complete, hiding loader');
+          loaderStore.finishLoading();
+        },
+      });
+
+      tl.add(() => {
+        scrollSmoother.scrollTop(0);
+        scrollSmoother.paused(false);
+      })
+        .add(() => {
+          resetEffects();
+          animationContext = initSectionAnimations();
+          $ScrollTrigger.refresh(true);
+        })
+        .set('#smooth-content', { visibility: 'visible' }, '+=0.1')
+        .add(() => {
+          $ScrollTrigger.refresh(true);
+        }, '+=0.1');
+    } else {
+      $gsap.set('#smooth-content', { visibility: 'visible' });
+      loaderStore.finishLoading();
+    }
   });
 
   // Cleanup on app unmount

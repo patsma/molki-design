@@ -14,7 +14,6 @@ Umów konsultację
   alt: Custom hero description MD file
   class: h-full w-full object-cover
   format: webp
-  loading: eager
   quality: "70"
   src: heroHome.jpg
   ---

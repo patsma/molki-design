@@ -6,6 +6,7 @@
           <ParallaxImg
             src="/heroHome.jpg"
             alt="Full width parallax"
+            loading="eager"
             class="h-full w-full object-cover"
             format="webp"
           />

@@ -29,7 +29,7 @@ onUnmounted(() => {
   <header class="content-grid">
     <nav
       ref="headerRef"
-      class="full-width grid absolute nav h-16 md:h-24 z-40 top-0 py-1 md:py-4 w-full bg-white"
+      class="full-width grid absolute nav h-16 md:h-24 z-50 top-0 py-1 md:py-4 w-full bg-white"
     >
       <div class="nav__wrapper content-grid grid grid-flow-col items-center justify-between">
         <div class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]">
@@ -75,7 +75,9 @@ onUnmounted(() => {
         </div>
       </div>
       <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu content-grid top-0 absolute w-full h-screen inset-0 bg-white z-30">
+      <div
+        class="mobile-menu content-grid top-0 absolute w-full h-screen inset-0 bg-white z-30 opacity-0"
+      >
         <div class="h-full pt-24 breakout1 overflow-y-auto">
           <MainMenu :is-mobile="true" />
           <div class="mt-8 pb-8 mobile-menu-button">

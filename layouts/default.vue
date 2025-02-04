@@ -35,9 +35,10 @@ onMounted(() => {
 
 <template>
   <div>
-    <Loader />
     <GSAPScrollSmoother>
       <HeaderComponent />
+      <Loader />
+
       <div class="">
         <NuxtPage />
       </div>

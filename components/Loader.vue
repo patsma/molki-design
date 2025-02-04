@@ -2,7 +2,7 @@
   <Transition name="fade">
     <div
       v-if="!loaderStore.isHidden"
-      class="loader-group bg-secondary grid justify-center fixed z-50 h-screen w-full"
+      class="loader-group bg-secondary grid justify-center fixed z-40 h-screen w-full"
       :class="{ 'loader-group--hidden': !loaderStore.isLoading }"
     >
       <div class="loader grid">

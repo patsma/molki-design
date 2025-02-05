@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup lang="ts">
+defineProps<{
+  ctaLink?: string;
+}>();
+</script>
 
 <template>
   <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>
@@ -69,7 +73,7 @@
           >
             <NuxtLink
               v-if="$slots.cta"
-              to="/buttons"
+              :to="ctaLink || '/'"
               class="rounded-md bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Rozpocznij projekt"
             >

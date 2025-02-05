@@ -1,4 +1,4 @@
-::hero
+::hero{ctaLink="/buttons"}
 #title
 Umów spotkanie
 
@@ -101,4 +101,29 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
   #subtitle
   Nagród Branżowych
   :::
+::
+
+::hero-interior{ctaLink="/buttons"}
+#heroImage
+  :::parallax-img
+  ---
+  alt: Interior design showcase
+  class: h-full w-full object-cover
+  format: webp
+  src: /heroHome.jpg
+  ---
+  :::
+
+#cta
+ZOBACZ NASZE REALIZACJE
+
+#title
+PROJEKT WNĘTRZA
+
+#content
+Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu.
+
+Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania.
+
+Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::

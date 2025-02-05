@@ -49,51 +49,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       defaults: { duration: 0.5, stagger: 0 },
       extendTimeline: true,
     });
-
-    $gsap.registerEffect({
-      name: 'splitText',
-      effect: (targets, config) => {
-        const targetElement = targets instanceof Element ? targets : targets[0];
-        if (!targetElement) return;
-
-        const split = new $SplitText(targetElement, { type: 'chars' });
-        const tl = $gsap.timeline({
-          onComplete: () => {
-            if (config.revertOnComplete) split.revert(true);
-          },
-        });
-
-        const durationPerChar = config.duration || 1;
-        const staggerPerChar = config.stagger || 0.05;
-        const totalChars = split.chars.length;
-
-        tl.from(
-          split.chars,
-          {
-            opacity: 0,
-            y: 20,
-            duration: durationPerChar,
-            ease: 'power2.out',
-            stagger: staggerPerChar,
-          },
-          0
-        );
-
-        const uElement = targetElement.querySelector('u');
-        if (uElement) {
-          tl.fromTo(
-            uElement,
-            { '--underline-scale': 0 },
-            { '--underline-scale': 1, duration: durationPerChar, ease: 'sine.out' },
-            0.1
-          );
-        }
-
-        return tl;
-      },
-      defaults: { duration: 1, stagger: 0.05, revertOnComplete: false },
-      extendTimeline: true,
-    });
   };
 
   const initSectionAnimations = () => {
@@ -257,7 +212,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const transitionTL = $gsap.timeline({
       onComplete: () => {
         console.log('🔄 [6] All transitions complete, hiding loader');
-        $gsap.delayedCall(0.2, () => {
+        $gsap.delayedCall(0.3, () => {
           loaderStore.finishLoading();
         });
       },

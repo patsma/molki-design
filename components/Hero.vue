@@ -33,8 +33,6 @@ defineProps<{
           data-speed="1.15"
           class="breakout1 content-end justify-center items-center justify-items-center grid gap-8"
         >
-          <!-- js--text-effect-101 -->
-          <!-- Title with GSAP effect class -->
           <div
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >

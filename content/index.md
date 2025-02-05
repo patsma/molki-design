@@ -285,7 +285,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:ruler-combined
+    name: ic:baseline-airport-shuttle
     customClass: w-16 h-16 text-primary mx-auto mb-4
     ---
     ::::

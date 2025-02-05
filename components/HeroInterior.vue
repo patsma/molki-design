@@ -51,7 +51,7 @@ defineProps<{
 
         <!-- Text Box -->
         <div
-          class="full-width-content bg-[#E6E4DF]/90 relative mb-24"
+          class="full-width-content bg-neutral-400/90 relative mb-24"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"

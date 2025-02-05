@@ -58,7 +58,7 @@
 - [ ] Refactor to Refs (cancelled) @cancelled(25-01-28 08:16)
 
 ## Component Roadmap
-1. [x] Hero @done(25-01-23 05:13)
+- [x] Hero @done(25-01-23 05:13)
 ✔ 2. Hero Slider - O Nas @started(25-01-29 10:09) @done(25-01-29 11:28) @lasted(1h19m44s)
 ✔ Fix scroll smoother duplicates @started(25-01-30 10:02) @done(25-01-30 10:09) @lasted(7m37s)
 ✔ Go through nuxt content documentation @started(25-01-30 10:09) @done(25-01-30 10:51) @lasted(42m46s)
@@ -82,20 +82,20 @@
 ✔ Style TeamMember text section @started(25-02-04 20:38) @done(25-02-04 22:29) @lasted(1h51m10s)
 ✔ Proceed to next component @done(25-02-05 10:32)
 ✔ Home interior styling @started(25-02-05 10:32) @done(25-02-05 10:52) @lasted(20m3s)
-- Hero Projects - Projekty Wnętrza @started(25-02-05 11:52)
-4. Icon Grid
-5. Column Grid
-6. Hero - Remont
-7. Item Card
-8. Title and Paragraph
-9. Column Grid 2
-10. Services Table
-11. Square Grid
-12. Banner Pricing
-13. Info Pricing
-14. Square Grid Item
-15. Hero Form
-16. Pre Footer
-17. Footer
-18. Slider Before After
-19. Column Grid 3 - Pricing
+✔ Hero Projects - Projekty Wnętrza @started(25-02-05 11:52) @done(25-02-05 12:29) @lasted(37m35s)
+- Icon Grid @started(25-02-05 13:58)
+- Column Grid
+- Hero - Remont
+- Item Card
+- Title and Paragraph
+- Column Grid 2
+- Services Table
+- Square Grid
+- Banner Pricing
+- Info Pricing
+- Square Grid Item
+- Hero Form
+- Pre Footer
+- Footer
+- Slider Before After
+- Column Grid 3 - Pricing

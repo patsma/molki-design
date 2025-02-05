@@ -151,7 +151,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 #features
   :::feature
   #icon
-  <Icon name="uil:hard-hat" class="w-12 h-12 text-primary mx-auto mb-4" />
+    :::icon-block
+    ---
+    name: uil:hard-hat
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
   
   #text
   PROFESJONALNE EKIPY REMONTOWE
@@ -159,7 +164,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-  <Icon name="uil:users-alt" class="w-12 h-12 text-primary mx-auto mb-4" />
+    :::icon-block
+    ---
+    name: uil:users-alt
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
   
   #text
   OPIEKA KOORDYNATORA REMONTU
@@ -167,7 +177,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-  <Icon name="uil:money-stack" class="w-12 h-12 text-primary mx-auto mb-4" />
+    :::icon-block
+    ---
+    name: uil:money-stack
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
   
   #text
   REALIZACJA ZGODNA Z BUDŻETEM
@@ -175,7 +190,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-  <Icon name="uil:wallet" class="w-12 h-12 text-primary mx-auto mb-4" />
+    :::icon-block
+    ---
+    name: uil:wallet
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
   
   #text
   TRANSPARENTNE I RZETELNE WYCENY
@@ -183,7 +203,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-  <Icon name="uil:percentage" class="w-12 h-12 text-primary mx-auto mb-4" />
+    :::icon-block
+    ---
+    name: uil:percentage
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
   
   #text
   NIŻSZY PODATEK - TYLKO 8% VAT
@@ -191,7 +216,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-  <Icon name="uil:head-side" class="w-12 h-12 text-primary mx-auto mb-4" />
+    :::icon-block
+    ---
+    name: uil:head-side
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
   
   #text
   MY PRACUJEMY, TY ODPOCZYWASZ

@@ -110,7 +110,7 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
   alt: Interior design showcase
   class: h-full w-full object-cover
   format: webp
-  src: /heroHome.jpg
+  src: /heroInterior.jpg
   ---
   :::
 

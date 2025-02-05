@@ -15,37 +15,11 @@
         <template #cta> umów konsultację </template>
       </Hero>
 
-      <HeroInterior>
-        <template #heroImage>
-          <ParallaxImg
-            src="/heroHome.jpg"
-            alt="Interior design showcase"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
-        </template>
-        <template #cta>ZOBACZ NASZE REALIZACJE</template>
-        <template #title>PROJEKT WNĘTRZA</template>
-        <template #content>
-          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
-            Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem
-            oparta na komunikacji, szacunku i zaufaniu.
-          </p>
-          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
-            Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią
-            wysłuchania.
-          </p>
-          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
-            Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
-          </p>
-        </template>
-      </HeroInterior>
-
       <HeroTeam>
         <template #title>POZNAJ ZESPÓŁ MOLKI DESIGN!</template>
         <template #image>
           <ParallaxImg
-            src="/heroHome.jpg"
+            src="/heroAbout.jpg"
             alt="Full width parallax"
             class="h-full w-full object-cover"
             format="webp"
@@ -105,7 +79,31 @@
           </Achievement>
         </template>
       </TeamMember>
-
+      <HeroInterior>
+        <template #heroImage>
+          <ParallaxImg
+            src="/heroInterior.jpg"
+            alt="Interior design showcase"
+            class="h-full w-full object-cover"
+            format="webp"
+          />
+        </template>
+        <template #cta>ZOBACZ NASZE REALIZACJE</template>
+        <template #title>PROJEKT WNĘTRZA</template>
+        <template #content>
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
+            Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem
+            oparta na komunikacji, szacunku i zaufaniu.
+          </p>
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
+            Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią
+            wysłuchania.
+          </p>
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
+            Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
+          </p>
+        </template>
+      </HeroInterior>
       <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
     </div>
   </div>

@@ -24,12 +24,12 @@ defineProps<{
       </div>
 
       <!-- SVG Accent Shape -->
-      <div class="absolute bottom-0 left-0 overflow-hidden">
+      <div class="absolute top-1/2 -left-10 overflow-hidden">
         <HeroPath class="h-screen" />
       </div>
 
       <!-- Content Container -->
-      <div class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100">
+      <div class="full-width w-full relative z-10 grid min-h-screen content-end gap-y-8">
         <!-- Center Button with Line -->
         <div
           class="relative w-full h-full grid place-items-center"
@@ -38,28 +38,28 @@ defineProps<{
           data-scroll-duration="1"
         >
           <!-- Decorator Line -->
-          <div class="absolute w-full h-[1px] bg-neutral-100/50"></div>
+          <div class="absolute w-screen h-[0.15rem] bg-primary"></div>
 
           <!-- Button -->
           <NuxtLink
             v-if="$slots.cta"
-            class="relative rounded-md bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
-            <slot name="cta" />
+            <slot name="cta" mdc-unwrap="p" />
           </NuxtLink>
         </div>
 
         <!-- Text Box -->
         <div
-          class="breakout1 relative -mt-48 mb-24"
+          class="full-width-content bg-[#E6E4DF]/90 relative mb-24"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
           data-scroll-independent="true"
           data-scroll-start="top bottom"
         >
-          <div class="bg-[#E6E4DF]/90 p-8 md:p-12 lg:p-16">
-            <div class="max-w-4xl mx-auto">
+          <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
+            <div class="breakout1">
               <!-- Title -->
               <h2
                 v-if="$slots.title"
@@ -68,7 +68,7 @@ defineProps<{
                 data-scroll-animation="fadeUp"
                 data-scroll-duration="1"
               >
-                <slot name="title" />
+                <slot name="title" mdc-unwrap="p" />
               </h2>
 
               <!-- Paragraphs -->

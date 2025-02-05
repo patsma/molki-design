@@ -80,7 +80,8 @@
 ✔ Ensure there is no smooth scroll on mobile but we have basic scroll animation @done(25-02-04 15:34)
 ✔ Page transition glitch - we need to set scroll position to 0 before the page changes @done(25-02-04 20:38)
 ✔ Style TeamMember text section @started(25-02-04 20:38) @done(25-02-04 22:29) @lasted(1h51m10s)
-- Proceed to next component
+✔ Proceed to next component @done(25-02-05 10:32)
+✔ Home interior styling @started(25-02-05 10:32) @done(25-02-05 10:52) @lasted(20m3s)
 3. Hero Projects - Projekty Wnętrza
 4. Icon Grid
 5. Column Grid

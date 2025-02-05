@@ -143,6 +143,25 @@
           </div>
         </template>
       </HeroProjects>
+
+      <IconGrid title="Poznaj etapy Procesu Projektowania">
+        <IconGridItem icon="uil:users-alt" title="SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ" />
+        <IconGridItem icon="uil:ruler-combined" title="INWENTARYZACJA POMIESZCZEŃ" />
+        <IconGridItem icon="uil:palette" title="DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ" />
+        <IconGridItem icon="uil:ruler-combined" title="RYSOWANIE PROJEKTU" />
+        <IconGridItem icon="uil:ruler-combined" title="WYBÓR MEBLI I DODATKÓW" />
+        <IconGridItem icon="uil:swatchbook" title="DOBÓR MATERIAŁÓW" />
+        <IconGridItem icon="uil:image-check" title="PRZEDSTAWIENIE WIZUALIZACJI" />
+        <IconGridItem
+          icon="uil:file-check-alt"
+          title="PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW"
+        />
+        <IconGridItem
+          icon="uil:check-circle"
+          title="DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU"
+        />
+      </IconGrid>
+
       <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
     </div>
   </div>
@@ -155,4 +174,6 @@ import HeroTeam from '~/components/HeroTeam.vue';
 import TeamMember from '~/components/TeamMember.vue';
 import Achievement from '~/components/Achievement.vue';
 import HeroProjects from '~/components/HeroProjects.vue';
+import IconGrid from '~/components/IconGrid.vue';
+import IconGridItem from '~/components/IconGridItem.vue';
 </script>

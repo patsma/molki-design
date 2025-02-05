@@ -144,22 +144,74 @@
         </template>
       </HeroProjects>
 
-      <IconGrid title="Poznaj etapy Procesu Projektowania">
-        <IconGridItem icon="uil:users-alt" title="SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ" />
-        <IconGridItem icon="uil:ruler-combined" title="INWENTARYZACJA POMIESZCZEŃ" />
-        <IconGridItem icon="uil:palette" title="DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ" />
-        <IconGridItem icon="uil:ruler-combined" title="RYSOWANIE PROJEKTU" />
-        <IconGridItem icon="uil:ruler-combined" title="WYBÓR MEBLI I DODATKÓW" />
-        <IconGridItem icon="uil:swatchbook" title="DOBÓR MATERIAŁÓW" />
-        <IconGridItem icon="uil:image-check" title="PRZEDSTAWIENIE WIZUALIZACJI" />
-        <IconGridItem
-          icon="uil:file-check-alt"
-          title="PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW"
-        />
-        <IconGridItem
-          icon="uil:check-circle"
-          title="DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU"
-        />
+      <IconGrid>
+        <template #title>Poznaj etapy Procesu Projektowania</template>
+        <template #items>
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:users-alt" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:ruler-combined" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>INWENTARYZACJA POMIESZCZEŃ</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:palette" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:ruler-combined" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>RYSOWANIE PROJEKTU</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:ruler-combined" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>WYBÓR MEBLI I DODATKÓW</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:swatchbook" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>DOBÓR MATERIAŁÓW</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:image-check" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>PRZEDSTAWIENIE WIZUALIZACJI</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:file-check-alt" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text>PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW</template>
+          </IconGridItem>
+
+          <IconGridItem>
+            <template #icon>
+              <Icon name="uil:check-circle" class="w-16 h-16 text-primary mx-auto mb-4" />
+            </template>
+            <template #text
+              >DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU</template
+            >
+          </IconGridItem>
+        </template>
       </IconGrid>
 
       <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>

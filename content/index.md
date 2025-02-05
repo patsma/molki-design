@@ -127,3 +127,73 @@ Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i 
 
 Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::
+
+::hero-projects{ctaLink="/buttons"}
+#heroImage
+  :::parallax-img
+  ---
+  alt: Our projects showcase
+  class: h-full w-full object-cover
+  format: webp
+  src: /heroAbout.jpg
+  ---
+  :::
+
+#cta
+ZOBACZ WIĘCEJ
+
+#title
+Od projektu do realizacji - czyli Remont pod Klucz
+
+#subtitle
+Wybierz wariant dopasowany do Twoich potrzeb
+
+#features
+  :::feature
+  #icon
+  <Icon name="uil:hard-hat" class="w-12 h-12 text-primary mx-auto mb-4" />
+  
+  #text
+  PROFESJONALNE EKIPY REMONTOWE
+  :::
+
+  :::feature
+  #icon
+  <Icon name="uil:users-alt" class="w-12 h-12 text-primary mx-auto mb-4" />
+  
+  #text
+  OPIEKA KOORDYNATORA REMONTU
+  :::
+
+  :::feature
+  #icon
+  <Icon name="uil:money-stack" class="w-12 h-12 text-primary mx-auto mb-4" />
+  
+  #text
+  REALIZACJA ZGODNA Z BUDŻETEM
+  :::
+
+  :::feature
+  #icon
+  <Icon name="uil:wallet" class="w-12 h-12 text-primary mx-auto mb-4" />
+  
+  #text
+  TRANSPARENTNE I RZETELNE WYCENY
+  :::
+
+  :::feature
+  #icon
+  <Icon name="uil:percentage" class="w-12 h-12 text-primary mx-auto mb-4" />
+  
+  #text
+  NIŻSZY PODATEK - TYLKO 8% VAT
+  :::
+
+  :::feature
+  #icon
+  <Icon name="uil:head-side" class="w-12 h-12 text-primary mx-auto mb-4" />
+  
+  #text
+  MY PRACUJEMY, TY ODPOCZYWASZ
+  :::
+::

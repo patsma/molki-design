@@ -227,3 +227,117 @@ Wybierz wariant dopasowany do Twoich potrzeb
   MY PRACUJEMY, TY ODPOCZYWASZ
   :::
 ::
+
+::icon-grid
+#title
+Poznaj etapy Procesu Projektowania
+
+#items
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:users-alt
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:ruler-combined
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  INWENTARYZACJA POMIESZCZEŃ
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:ruler-combined
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:ruler-combined
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  RYSOWANIE PROJEKTU
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:ruler-combined
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  WYBÓR MEBLI I DODATKÓW
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:swatchbook
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  DOBÓR MATERIAŁÓW
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:image-check
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  PRZEDSTAWIENIE WIZUALIZACJI
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:file-check-alt
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    name: uil:check-circle
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    ---
+    ::::
+  #text
+  DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU
+  :::
+::

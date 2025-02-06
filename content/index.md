@@ -12,15 +12,8 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-  :::parallax-img
-  ---
-  alt: Custom hero description MD file
-  class: h-full w-full object-cover
-  format: webp
-  quality: "70"
-  src: heroHome.jpg
-  ---
-  :::
+  ::parallax-img{.h-full.w-full.object-cover src="heroHome.jpg" alt="Custom hero description MD file" format="webp" quality="70"}
+  ::
 ::
 
 ::hero-team

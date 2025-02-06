@@ -1,3 +1,5 @@
+<NuxtImg src="/heroHome.jpg" alt="Test image" class="w-full h-full object-cover" format="webp" />
+
 ::hero
 ---
 cta-link: /buttons
@@ -21,7 +23,7 @@ Umów konsultację
   src: heroHome.jpg
   ---
   :::
-::
+
 
 ::hero-team
 #title

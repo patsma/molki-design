@@ -12,14 +12,7 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-  :::parallax-img
-  ---
-  alt: Test image
-  class: w-full h-full object-cover
-  format: webp
-  src: /heroHome.jpg
-  ---
-  :::
+ :parallax-img{src="/heroHome.jpg" alt="Test image" class="w-full h-full object-cover"}
 ::
 
 ::hero-team
@@ -436,4 +429,3 @@ Wybierz wariant dopasowany do Twoich potrzeb
   :::
 ::
 
-:nuxt-img{src="/heroHome.jpg" alt="Test image" class="w-full h-full object-cover"}

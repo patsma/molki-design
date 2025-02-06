@@ -192,4 +192,11 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-29',
+
+  hooks: {
+    'components:extend': (components) => {
+      const globals = components.filter((c) => ['ParallaxImg'].includes(c.pascalName));
+      globals.forEach((c) => (c.global = true));
+    },
+  },
 });

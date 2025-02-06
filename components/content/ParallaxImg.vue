@@ -3,8 +3,6 @@
     <NuxtImg
       :src="src"
       :alt="alt"
-      :width="width"
-      :height="height"
       :format="format"
       :quality="quality"
       :loading="loading"
@@ -14,20 +12,16 @@
   </div>
 </template>
 
-<script>
-export default {
-  inheritAttrs: false,
-  props: {
-    src: { type: String, required: true },
-    alt: { type: String, default: '' },
-    width: [String, Number],
-    height: [String, Number],
-    format: String,
-    quality: [String, Number],
-    loading: String,
-  },
-};
+<script setup>
+defineProps({
+  src: { type: String, required: true },
+  alt: { type: String, default: '' },
+  format: { type: String, default: 'webp' },
+  quality: { type: [String, Number], default: 70 },
+  loading: { type: String, default: 'lazy' },
+});
 </script>
+
 <style lang="scss">
 .parallax-wrapper {
   height: 120%;

@@ -79,6 +79,7 @@
           </Achievement>
         </template>
       </TeamMember>
+
       <HeroInterior>
         <template #heroImage>
           <ParallaxImg
@@ -104,64 +105,6 @@
           </p>
         </template>
       </HeroInterior>
-      <ProjectGrid ctaLink="/projects">
-        <template #title>Od Koncepcji do Realizacji</template>
-        <template #subtitle
-          >Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość</template
-        >
-
-        <template #projects>
-          <ProjectGridItem to="/projects/functional">
-            <template #image>
-              <ParallaxImg
-                src="/heroHome.jpg"
-                alt="Projekt Funkcjonalny"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                format="webp"
-              />
-            </template>
-            <template #title>Projekt Funkcjonalny</template>
-            <template #description>
-              to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i
-              praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
-            </template>
-          </ProjectGridItem>
-
-          <ProjectGridItem to="/projects/execution">
-            <template #image>
-              <ParallaxImg
-                src="/heroHome.jpg"
-                alt="Projekt Wykonawczy"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                format="webp"
-              />
-            </template>
-            <template #title>Projekt Wykonawczy</template>
-            <template #description>
-              dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które
-              umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
-            </template>
-          </ProjectGridItem>
-
-          <ProjectGridItem to="/projects/consultation">
-            <template #image>
-              <ParallaxImg
-                src="/heroHome.jpg"
-                alt="Porada Projektowa"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                format="webp"
-              />
-            </template>
-            <template #title>Porada Projektowa</template>
-            <template #description>
-              to spotkanie, podczas którego nasza projektantka wnętrz doradzi, jakie rozwiązania
-              najlepiej pasują do Twojej przestrzeni i potrzeb.
-            </template>
-          </ProjectGridItem>
-        </template>
-
-        <template #cta>UMÓW KONSULTACJĘ</template>
-      </ProjectGrid>
 
       <IconGrid>
         <template #title>Poznaj etapy Procesu Projektowania</template>
@@ -232,6 +175,65 @@
           </IconGridItem>
         </template>
       </IconGrid>
+
+      <ProjectGrid ctaLink="/projects">
+        <template #title>Od Koncepcji do Realizacji</template>
+        <template #subtitle
+          >Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość</template
+        >
+
+        <template #projects>
+          <ProjectGridItem to="/projects/functional">
+            <template #image>
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Projekt Funkcjonalny"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                format="webp"
+              />
+            </template>
+            <template #title>Projekt Funkcjonalny</template>
+            <template #description>
+              to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i
+              praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
+            </template>
+          </ProjectGridItem>
+
+          <ProjectGridItem to="/projects/execution">
+            <template #image>
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Projekt Wykonawczy"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                format="webp"
+              />
+            </template>
+            <template #title>Projekt Wykonawczy</template>
+            <template #description>
+              dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które
+              umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
+            </template>
+          </ProjectGridItem>
+
+          <ProjectGridItem to="/projects/consultation">
+            <template #image>
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Porada Projektowa"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                format="webp"
+              />
+            </template>
+            <template #title>Porada Projektowa</template>
+            <template #description>
+              to spotkanie, podczas którego nasza projektantka wnętrz doradzi, jakie rozwiązania
+              najlepiej pasują do Twojej przestrzeni i potrzeb.
+            </template>
+          </ProjectGridItem>
+        </template>
+
+        <template #cta>UMÓW KONSULTACJĘ</template>
+      </ProjectGrid>
 
       <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
     </div>

@@ -103,129 +103,26 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
   :::
 ::
 
-::hero-interior{ctaLink="/buttons"}
+::hero-interior{ctaLink="/projects"}
 #heroImage
   :::parallax-img
   ---
+  src: /heroInterior.jpg
   alt: Interior design showcase
   class: h-full w-full object-cover
   format: webp
-  src: /heroInterior.jpg
   ---
   :::
-
 #cta
 ZOBACZ NASZE REALIZACJE
-
 #title
 PROJEKT WNĘTRZA
-
 #content
 Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu.
 
 Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania.
 
 Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
-::
-
-::hero-projects{ctaLink="/buttons"}
-#heroImage
-  :::parallax-img
-  ---
-  alt: Our projects showcase
-  class: h-full w-full object-cover
-  format: webp
-  src: /heroAbout.jpg
-  ---
-  :::
-
-#cta
-ZOBACZ WIĘCEJ
-
-#title
-Od projektu do realizacji - czyli Remont pod Klucz
-
-#subtitle
-Wybierz wariant dopasowany do Twoich potrzeb
-
-#features
-  :::feature
-  #icon
-    :::icon-block
-    ---
-    name: uil:hard-hat
-    customClass: w-12 h-12 text-primary mx-auto mb-4
-    ---
-    :::
-  
-  #text
-  PROFESJONALNE EKIPY REMONTOWE
-  :::
-
-  :::feature
-  #icon
-    :::icon-block
-    ---
-    name: uil:users-alt
-    customClass: w-12 h-12 text-primary mx-auto mb-4
-    ---
-    :::
-  
-  #text
-  OPIEKA KOORDYNATORA REMONTU
-  :::
-
-  :::feature
-  #icon
-    :::icon-block
-    ---
-    name: uil:money-stack
-    customClass: w-12 h-12 text-primary mx-auto mb-4
-    ---
-    :::
-  
-  #text
-  REALIZACJA ZGODNA Z BUDŻETEM
-  :::
-
-  :::feature
-  #icon
-    :::icon-block
-    ---
-    name: uil:wallet
-    customClass: w-12 h-12 text-primary mx-auto mb-4
-    ---
-    :::
-  
-  #text
-  TRANSPARENTNE I RZETELNE WYCENY
-  :::
-
-  :::feature
-  #icon
-    :::icon-block
-    ---
-    name: uil:percentage
-    customClass: w-12 h-12 text-primary mx-auto mb-4
-    ---
-    :::
-  
-  #text
-  NIŻSZY PODATEK - TYLKO 8% VAT
-  :::
-
-  :::feature
-  #icon
-    :::icon-block
-    ---
-    name: uil:head-side
-    customClass: w-12 h-12 text-primary mx-auto mb-4
-    ---
-    :::
-  
-  #text
-  MY PRACUJEMY, TY ODPOCZYWASZ
-  :::
 ::
 
 ::icon-grid
@@ -339,5 +236,168 @@ Poznaj etapy Procesu Projektowania
     ::::
   #text
   DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU
+  :::
+::
+
+::project-grid{ctaLink="/projects"}
+#title
+Od Koncepcji do Realizacji
+
+#subtitle
+Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
+
+#projects
+  :::project-grid-item{to="/projects/functional"}
+  #image
+    ::::parallax-img
+    ---
+    src: /heroHome.jpg
+    alt: Projekt Funkcjonalny
+    class: h-full w-full object-cover transition-transform duration-300 group-hover:scale-110
+    format: webp
+    ---
+    ::::
+  #title
+  Projekt Funkcjonalny
+  
+  #description
+  to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
+  :::
+
+  :::project-grid-item{to="/projects/execution"}
+  #image
+    ::::parallax-img
+    ---
+    src: /heroHome.jpg
+    alt: Projekt Wykonawczy
+    class: h-full w-full object-cover transition-transform duration-300 group-hover:scale-110
+    format: webp
+    ---
+    ::::
+  #title
+  Projekt Wykonawczy
+  
+  #description
+  dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
+  :::
+
+  :::project-grid-item{to="/projects/consultation"}
+  #image
+    ::::parallax-img
+    ---
+    src: /heroHome.jpg
+    alt: Porada Projektowa
+    class: h-full w-full object-cover transition-transform duration-300 group-hover:scale-110
+    format: webp
+    ---
+    ::::
+  #title
+  Porada Projektowa
+  
+  #description
+  to spotkanie, podczas którego nasza projektantka wnętrz doradzi, jakie rozwiązania najlepiej pasują do Twojej przestrzeni i potrzeb.
+  :::
+
+#cta
+UMÓW KONSULTACJĘ
+::
+
+::hero-projects{ctaLink="/buttons"}
+#heroImage
+  :::parallax-img
+  ---
+  alt: Our projects showcase
+  class: h-full w-full object-cover
+  format: webp
+  src: /heroAbout.jpg
+  ---
+  :::
+
+#cta
+ZOBACZ WIĘCEJ
+
+#title
+Od projektu do realizacji - czyli Remont pod Klucz
+
+#subtitle
+Wybierz wariant dopasowany do Twoich potrzeb
+
+#features
+  :::feature
+  #icon
+    :::icon-block
+    ---
+    name: uil:hard-hat
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
+  
+  #text
+  PROFESJONALNE EKIPY REMONTOWE
+  :::
+
+  :::feature
+  #icon
+    :::icon-block
+    ---
+    name: uil:users-alt
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
+  
+  #text
+  OPIEKA KOORDYNATORA REMONTU
+  :::
+
+  :::feature
+  #icon
+    :::icon-block
+    ---
+    name: uil:money-stack
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
+  
+  #text
+  REALIZACJA ZGODNA Z BUDŻETEM
+  :::
+
+  :::feature
+  #icon
+    :::icon-block
+    ---
+    name: uil:wallet
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
+  
+  #text
+  TRANSPARENTNE I RZETELNE WYCENY
+  :::
+
+  :::feature
+  #icon
+    :::icon-block
+    ---
+    name: uil:percentage
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
+  
+  #text
+  NIŻSZY PODATEK - TYLKO 8% VAT
+  :::
+
+  :::feature
+  #icon
+    :::icon-block
+    ---
+    name: uil:head-side
+    customClass: w-12 h-12 text-primary mx-auto mb-4
+    ---
+    :::
+  
+  #text
+  MY PRACUJEMY, TY ODPOCZYWASZ
   :::
 ::

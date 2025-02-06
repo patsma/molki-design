@@ -12,15 +12,8 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-  :::parallax-img
-  ---
-  alt: Custom hero description MD file
-  class: h-full w-full object-cover
-  format: webp
-  quality: "70"
-  src: heroHome.jpg
-  ---
-  :::
+  ::parallax-img{src="/heroHome.jpg" alt="Custom hero description MD file" class="h-full w-full object-cover" format="webp" quality="70"}
+  ::
 ::
 
 ::hero-team
@@ -28,14 +21,8 @@ Umów konsultację
 POZNAJ ZESPÓŁ MOLKI DESIGN!
 
 #image
-  :::parallax-img
-  ---
-  alt: Full width parallax
-  class: h-full w-full object-cover
-  format: webp
-  src: /heroAbout.jpg
-  ---
-  :::
+  ::parallax-img{src="/heroAbout.jpg" alt="Full width parallax" class="h-full w-full object-cover" format="webp"}
+  ::
 
 #description
 Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania.
@@ -59,14 +46,8 @@ Uwielbiam organizować i nadzorować złożone projekty. Codziennie dbam o to, b
 Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przestrzeni, by były one zarówno piękne, jak i praktyczne. To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
 
 #image
-  :::parallax-img
-  ---
-  alt: Wioletta Retko - Prezes Zarządu
-  class: h-full w-full object-cover
-  format: webp
-  src: /heroHome.jpg
-  ---
-  :::
+  ::parallax-img{src="/heroHome.jpg" alt="Wioletta Retko - Prezes Zarządu" class="h-full w-full object-cover" format="webp"}
+  ::
 
 #achievements
   :::achievement
@@ -107,14 +88,8 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
 cta-link: /projects
 ---
 #heroImage
-  :::parallax-img
-  ---
-  alt: Interior design showcase
-  class: h-full w-full object-cover
-  format: webp
-  src: /heroInterior.jpg
-  ---
-  :::
+  ::parallax-img{src="/heroInterior.jpg" alt="Interior design showcase" class="h-full w-full object-cover" format="webp"}
+  ::
 
 #cta
 ZOBACZ NASZE REALIZACJE
@@ -137,12 +112,12 @@ Poznaj etapy Procesu Projektowania
 #items
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:users-alt
     ---
-    ::::
+    ::
   
   #text
   SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
@@ -150,12 +125,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:ruler-combined
     ---
-    ::::
+    ::
   
   #text
   INWENTARYZACJA POMIESZCZEŃ
@@ -163,12 +138,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:ruler-combined
     ---
-    ::::
+    ::
   
   #text
   DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ
@@ -176,12 +151,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:ruler-combined
     ---
-    ::::
+    ::
   
   #text
   RYSOWANIE PROJEKTU
@@ -189,12 +164,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: ic:baseline-airport-shuttle
     ---
-    ::::
+    ::
   
   #text
   WYBÓR MEBLI I DODATKÓW
@@ -202,12 +177,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:swatchbook
     ---
-    ::::
+    ::
   
   #text
   DOBÓR MATERIAŁÓW
@@ -215,12 +190,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:image-check
     ---
-    ::::
+    ::
   
   #text
   PRZEDSTAWIENIE WIZUALIZACJI
@@ -228,12 +203,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:file-check-alt
     ---
-    ::::
+    ::
   
   #text
   PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW
@@ -241,12 +216,12 @@ Poznaj etapy Procesu Projektowania
 
   :::icon-grid-item
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
     name: uil:check-circle
     ---
-    ::::
+    ::
   
   #text
   DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU
@@ -269,15 +244,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   to: /projects/functional
   ---
   #image
-    ::::parallax-img
-    ---
-    alt: Projekt Funkcjonalny
-    class: h-full w-full object-cover transition-transform duration-300
-      group-hover:scale-110
-    format: webp
-    src: /heroHome.jpg
-    ---
-    ::::
+    ::parallax-img{src="/heroHome.jpg" alt="Projekt Funkcjonalny" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" format="webp"}
+    ::
   
   #title
   Projekt Funkcjonalny
@@ -291,15 +259,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   to: /projects/execution
   ---
   #image
-    ::::parallax-img
-    ---
-    alt: Projekt Wykonawczy
-    class: h-full w-full object-cover transition-transform duration-300
-      group-hover:scale-110
-    format: webp
-    src: /heroHome.jpg
-    ---
-    ::::
+    ::parallax-img{src="/heroHome.jpg" alt="Projekt Wykonawczy" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" format="webp"}
+    ::
   
   #title
   Projekt Wykonawczy
@@ -313,15 +274,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   to: /projects/consultation
   ---
   #image
-    ::::parallax-img
-    ---
-    alt: Porada Projektowa
-    class: h-full w-full object-cover transition-transform duration-300
-      group-hover:scale-110
-    format: webp
-    src: /heroHome.jpg
-    ---
-    ::::
+    ::parallax-img{src="/heroHome.jpg" alt="Porada Projektowa" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" format="webp"}
+    ::
   
   #title
   Porada Projektowa
@@ -339,14 +293,8 @@ UMÓW KONSULTACJĘ
 cta-link: /buttons
 ---
 #heroImage
-  :::parallax-img
-  ---
-  alt: Our projects showcase
-  class: h-full w-full object-cover
-  format: webp
-  src: /heroAbout.jpg
-  ---
-  :::
+  ::parallax-img{src="/heroAbout.jpg" alt="Our projects showcase" class="h-full w-full object-cover" format="webp"}
+  ::
 
 #cta
 ZOBACZ WIĘCEJ
@@ -360,12 +308,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 #features
   :::feature
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-12 h-12 text-primary mx-auto mb-4
     name: uil:hard-hat
     ---
-    ::::
+    ::
   
   #text
   PROFESJONALNE EKIPY REMONTOWE
@@ -373,12 +321,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-12 h-12 text-primary mx-auto mb-4
     name: uil:users-alt
     ---
-    ::::
+    ::
   
   #text
   OPIEKA KOORDYNATORA REMONTU
@@ -386,12 +334,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-12 h-12 text-primary mx-auto mb-4
     name: uil:money-stack
     ---
-    ::::
+    ::
   
   #text
   REALIZACJA ZGODNA Z BUDŻETEM
@@ -399,12 +347,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-12 h-12 text-primary mx-auto mb-4
     name: uil:wallet
     ---
-    ::::
+    ::
   
   #text
   TRANSPARENTNE I RZETELNE WYCENY
@@ -412,12 +360,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-12 h-12 text-primary mx-auto mb-4
     name: uil:percentage
     ---
-    ::::
+    ::
   
   #text
   NIŻSZY PODATEK - TYLKO 8% VAT
@@ -425,12 +373,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    ::::icon-block
+    ::icon-block
     ---
     customClass: w-12 h-12 text-primary mx-auto mb-4
     name: uil:head-side
     ---
-    ::::
+    ::
   
   #text
   MY PRACUJEMY, TY ODPOCZYWASZ

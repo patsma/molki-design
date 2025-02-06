@@ -12,8 +12,8 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-  ::parallax-img{src="/heroHome.jpg" alt="Custom hero description MD file" class="h-full w-full object-cover" format="webp" quality="70"}
-  ::
+  :parallax-img{src="/heroHome.jpg" alt="Custom hero description MD file" class="h-full w-full object-cover" format="webp" quality="70"}
+  :
 ::
 
 ::hero-team
@@ -50,37 +50,37 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
   ::
 
 #achievements
-  :::achievement
+  ::achievement
   #title
   150+
   
   #subtitle
   Zrealizowanych Projektów
-  :::
+  ::
 
-  :::achievement
+  ::achievement
   #title
   10 lat
   
   #subtitle
   Doświadczenia
-  :::
+  ::
 
-  :::achievement
+  ::achievement
   #title
   98%
   
   #subtitle
   Zadowolonych Klientów
-  :::
+  ::
 
-  :::achievement
+  ::achievement
   #title
   25+
   
   #subtitle
   Nagród Branżowych
-  :::
+  ::
 ::
 
 ::hero-interior
@@ -110,7 +110,7 @@ Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 Poznaj etapy Procesu Projektowania
 
 #items
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -121,9 +121,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -134,9 +134,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   INWENTARYZACJA POMIESZCZEŃ
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -147,9 +147,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -160,9 +160,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   RYSOWANIE PROJEKTU
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -173,9 +173,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   WYBÓR MEBLI I DODATKÓW
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -186,9 +186,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   DOBÓR MATERIAŁÓW
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -199,9 +199,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   PRZEDSTAWIENIE WIZUALIZACJI
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -212,9 +212,9 @@ Poznaj etapy Procesu Projektowania
   
   #text
   PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW
-  :::
+  ::
 
-  :::icon-grid-item
+  ::icon-grid-item
   #icon
     ::icon-block
     ---
@@ -225,7 +225,7 @@ Poznaj etapy Procesu Projektowania
   
   #text
   DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU
-  :::
+  ::
 ::
 
 ::project-grid
@@ -239,7 +239,7 @@ Od Koncepcji do Realizacji
 Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
 #projects
-  :::project-grid-item
+  ::project-grid-item
   ---
   to: /projects/functional
   ---
@@ -252,9 +252,9 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   
   #description
   to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
-  :::
+  ::
 
-  :::project-grid-item
+  ::project-grid-item
   ---
   to: /projects/execution
   ---
@@ -267,9 +267,9 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   
   #description
   dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
-  :::
+  ::
 
-  :::project-grid-item
+  ::project-grid-item
   ---
   to: /projects/consultation
   ---
@@ -282,7 +282,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   
   #description
   to spotkanie, podczas którego nasza projektantka wnętrz doradzi, jakie rozwiązania najlepiej pasują do Twojej przestrzeni i potrzeb.
-  :::
+  ::
 
 #cta
 UMÓW KONSULTACJĘ
@@ -306,7 +306,7 @@ Od projektu do realizacji - czyli Remont pod Klucz
 Wybierz wariant dopasowany do Twoich potrzeb
 
 #features
-  :::feature
+  ::feature
   #icon
     ::icon-block
     ---
@@ -317,9 +317,9 @@ Wybierz wariant dopasowany do Twoich potrzeb
   
   #text
   PROFESJONALNE EKIPY REMONTOWE
-  :::
+  ::
 
-  :::feature
+  ::feature
   #icon
     ::icon-block
     ---
@@ -330,9 +330,9 @@ Wybierz wariant dopasowany do Twoich potrzeb
   
   #text
   OPIEKA KOORDYNATORA REMONTU
-  :::
+  ::
 
-  :::feature
+  ::feature
   #icon
     ::icon-block
     ---
@@ -343,9 +343,9 @@ Wybierz wariant dopasowany do Twoich potrzeb
   
   #text
   REALIZACJA ZGODNA Z BUDŻETEM
-  :::
+  ::
 
-  :::feature
+  ::feature
   #icon
     ::icon-block
     ---
@@ -356,9 +356,9 @@ Wybierz wariant dopasowany do Twoich potrzeb
   
   #text
   TRANSPARENTNE I RZETELNE WYCENY
-  :::
+  ::
 
-  :::feature
+  ::feature
   #icon
     ::icon-block
     ---
@@ -369,9 +369,9 @@ Wybierz wariant dopasowany do Twoich potrzeb
   
   #text
   NIŻSZY PODATEK - TYLKO 8% VAT
-  :::
+  ::
 
-  :::feature
+  ::feature
   #icon
     ::icon-block
     ---
@@ -382,7 +382,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
   
   #text
   MY PRACUJEMY, TY ODPOCZYWASZ
-  :::
+  ::
 ::
 
 ::nuxt-img{src="/heroHome.jpg" alt="Test image" class="w-full h-full object-cover" format="webp"}

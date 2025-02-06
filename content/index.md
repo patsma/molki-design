@@ -12,7 +12,14 @@ Z projektantką
 Umów konsultację
 
 #heroImage
- :parallax-img{.w-full.h-full.object-cover alt="Test image" format="webp" src="/heroHome.jpg"}
+  :::parallax-img
+  ---
+  alt: Test image
+  class: w-full h-full object-cover
+  format: webp
+  src: /heroHome.jpg
+  ---
+  :::
 ::
 
 ::hero-team
@@ -428,5 +435,3 @@ Wybierz wariant dopasowany do Twoich potrzeb
   MY PRACUJEMY, TY ODPOCZYWASZ
   :::
 ::
-
-

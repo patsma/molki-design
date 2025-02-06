@@ -1,4 +1,7 @@
-::hero{ctaLink="/buttons"}
+::hero
+---
+cta-link: /buttons
+---
 #title
 Umów spotkanie
 
@@ -51,13 +54,9 @@ Wioletta Retko
 Prezes Zarządu
 
 #description
-::p
 Uwielbiam organizować i nadzorować złożone projekty. Codziennie dbam o to, by każdy etap realizacji przebiegał zgodnie z planem, a każdy detal był dopracowany do perfekcji.
-::
 
-::p
 Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przestrzeni, by były one zarówno piękne, jak i praktyczne. To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
-::
 
 #image
   :::parallax-img
@@ -103,20 +102,26 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
   :::
 ::
 
-::hero-interior{ctaLink="/projects"}
+::hero-interior
+---
+cta-link: /projects
+---
 #heroImage
   :::parallax-img
   ---
-  src: /heroInterior.jpg
   alt: Interior design showcase
   class: h-full w-full object-cover
   format: webp
+  src: /heroInterior.jpg
   ---
   :::
+
 #cta
 ZOBACZ NASZE REALIZACJE
+
 #title
 PROJEKT WNĘTRZA
+
 #content
 Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu.
 
@@ -134,10 +139,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:users-alt
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:users-alt
     ---
     ::::
+  
   #text
   SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
   :::
@@ -146,10 +152,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:ruler-combined
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:ruler-combined
     ---
     ::::
+  
   #text
   INWENTARYZACJA POMIESZCZEŃ
   :::
@@ -158,10 +165,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:ruler-combined
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:ruler-combined
     ---
     ::::
+  
   #text
   DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ
   :::
@@ -170,10 +178,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:ruler-combined
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:ruler-combined
     ---
     ::::
+  
   #text
   RYSOWANIE PROJEKTU
   :::
@@ -182,10 +191,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: ic:baseline-airport-shuttle
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: ic:baseline-airport-shuttle
     ---
     ::::
+  
   #text
   WYBÓR MEBLI I DODATKÓW
   :::
@@ -194,10 +204,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:swatchbook
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:swatchbook
     ---
     ::::
+  
   #text
   DOBÓR MATERIAŁÓW
   :::
@@ -206,10 +217,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:image-check
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:image-check
     ---
     ::::
+  
   #text
   PRZEDSTAWIENIE WIZUALIZACJI
   :::
@@ -218,10 +230,11 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:file-check-alt
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:file-check-alt
     ---
     ::::
+  
   #text
   PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW
   :::
@@ -230,16 +243,20 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    name: uil:check-circle
     customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:check-circle
     ---
     ::::
+  
   #text
   DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU
   :::
 ::
 
-::project-grid{ctaLink="/projects"}
+::project-grid
+---
+cta-link: /projects
+---
 #title
 Od Koncepcji do Realizacji
 
@@ -247,16 +264,21 @@ Od Koncepcji do Realizacji
 Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
 #projects
-  :::project-grid-item{to="/projects/functional"}
+  :::project-grid-item
+  ---
+  to: /projects/functional
+  ---
   #image
     ::::parallax-img
     ---
-    src: /heroHome.jpg
     alt: Projekt Funkcjonalny
-    class: h-full w-full object-cover transition-transform duration-300 group-hover:scale-110
+    class: h-full w-full object-cover transition-transform duration-300
+      group-hover:scale-110
     format: webp
+    src: /heroHome.jpg
     ---
     ::::
+  
   #title
   Projekt Funkcjonalny
   
@@ -264,16 +286,21 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
   :::
 
-  :::project-grid-item{to="/projects/execution"}
+  :::project-grid-item
+  ---
+  to: /projects/execution
+  ---
   #image
     ::::parallax-img
     ---
-    src: /heroHome.jpg
     alt: Projekt Wykonawczy
-    class: h-full w-full object-cover transition-transform duration-300 group-hover:scale-110
+    class: h-full w-full object-cover transition-transform duration-300
+      group-hover:scale-110
     format: webp
+    src: /heroHome.jpg
     ---
     ::::
+  
   #title
   Projekt Wykonawczy
   
@@ -281,16 +308,21 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
   :::
 
-  :::project-grid-item{to="/projects/consultation"}
+  :::project-grid-item
+  ---
+  to: /projects/consultation
+  ---
   #image
     ::::parallax-img
     ---
-    src: /heroHome.jpg
     alt: Porada Projektowa
-    class: h-full w-full object-cover transition-transform duration-300 group-hover:scale-110
+    class: h-full w-full object-cover transition-transform duration-300
+      group-hover:scale-110
     format: webp
+    src: /heroHome.jpg
     ---
     ::::
+  
   #title
   Porada Projektowa
   
@@ -302,7 +334,10 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 UMÓW KONSULTACJĘ
 ::
 
-::hero-projects{ctaLink="/buttons"}
+::hero-projects
+---
+cta-link: /buttons
+---
 #heroImage
   :::parallax-img
   ---
@@ -325,12 +360,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 #features
   :::feature
   #icon
-    :::icon-block
+    ::::icon-block
     ---
-    name: uil:hard-hat
     customClass: w-12 h-12 text-primary mx-auto mb-4
+    name: uil:hard-hat
     ---
-    :::
+    ::::
   
   #text
   PROFESJONALNE EKIPY REMONTOWE
@@ -338,12 +373,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    :::icon-block
+    ::::icon-block
     ---
-    name: uil:users-alt
     customClass: w-12 h-12 text-primary mx-auto mb-4
+    name: uil:users-alt
     ---
-    :::
+    ::::
   
   #text
   OPIEKA KOORDYNATORA REMONTU
@@ -351,12 +386,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    :::icon-block
+    ::::icon-block
     ---
-    name: uil:money-stack
     customClass: w-12 h-12 text-primary mx-auto mb-4
+    name: uil:money-stack
     ---
-    :::
+    ::::
   
   #text
   REALIZACJA ZGODNA Z BUDŻETEM
@@ -364,12 +399,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    :::icon-block
+    ::::icon-block
     ---
-    name: uil:wallet
     customClass: w-12 h-12 text-primary mx-auto mb-4
+    name: uil:wallet
     ---
-    :::
+    ::::
   
   #text
   TRANSPARENTNE I RZETELNE WYCENY
@@ -377,12 +412,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    :::icon-block
+    ::::icon-block
     ---
-    name: uil:percentage
     customClass: w-12 h-12 text-primary mx-auto mb-4
+    name: uil:percentage
     ---
-    :::
+    ::::
   
   #text
   NIŻSZY PODATEK - TYLKO 8% VAT
@@ -390,12 +425,12 @@ Wybierz wariant dopasowany do Twoich potrzeb
 
   :::feature
   #icon
-    :::icon-block
+    ::::icon-block
     ---
-    name: uil:head-side
     customClass: w-12 h-12 text-primary mx-auto mb-4
+    name: uil:head-side
     ---
-    :::
+    ::::
   
   #text
   MY PRACUJEMY, TY ODPOCZYWASZ

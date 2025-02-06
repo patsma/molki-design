@@ -234,6 +234,45 @@
 
         <template #cta>UMÓW KONSULTACJĘ</template>
       </ProjectGrid>
+      <HeroProjects>
+        <template #heroImage>
+          <ParallaxImg
+            src="/heroAbout.jpg"
+            alt="Our projects showcase"
+            class="h-full w-full object-cover"
+            format="webp"
+          />
+        </template>
+        <template #cta>ZOBACZ WIĘCEJ</template>
+        <template #title>Od projektu do realizacji - czyli Remont pod Klucz</template>
+        <template #subtitle>Wybierz wariant dopasowany do Twoich potrzeb</template>
+        <template #features>
+          <div class="text-center">
+            <Icon name="uil:hard-hat" class="w-12 h-12 text-primary mx-auto mb-4" />
+            <p class="text-lg font-medium text-neutral-800">PROFESJONALNE EKIPY REMONTOWE</p>
+          </div>
+          <div class="text-center">
+            <Icon name="uil:users-alt" class="w-12 h-12 text-primary mx-auto mb-4" />
+            <p class="text-lg font-medium text-neutral-800">OPIEKA KOORDYNATORA REMONTU</p>
+          </div>
+          <div class="text-center">
+            <Icon name="uil:money-stack" class="w-12 h-12 text-primary mx-auto mb-4" />
+            <p class="text-lg font-medium text-neutral-800">REALIZACJA ZGODNA Z BUDŻETEM</p>
+          </div>
+          <div class="text-center">
+            <Icon name="uil:wallet" class="w-12 h-12 text-primary mx-auto mb-4" />
+            <p class="text-lg font-medium text-neutral-800">TRANSPARENTNE I RZETELNE WYCENY</p>
+          </div>
+          <div class="text-center">
+            <Icon name="uil:percentage" class="w-12 h-12 text-primary mx-auto mb-4" />
+            <p class="text-lg font-medium text-neutral-800">NIŻSZY PODATEK - TYLKO 8% VAT</p>
+          </div>
+          <div class="text-center">
+            <Icon name="uil:head-side" class="w-12 h-12 text-primary mx-auto mb-4" />
+            <p class="text-lg font-medium text-neutral-800">MY PRACUJEMY, TY ODPOCZYWASZ</p>
+          </div>
+        </template>
+      </HeroProjects>
 
       <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
     </div>

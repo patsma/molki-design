@@ -104,45 +104,64 @@
           </p>
         </template>
       </HeroInterior>
-      <HeroProjects>
-        <template #heroImage>
-          <ParallaxImg
-            src="/heroAbout.jpg"
-            alt="Our projects showcase"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
+      <ProjectGrid ctaLink="/projects">
+        <template #title>Od Koncepcji do Realizacji</template>
+        <template #subtitle
+          >Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość</template
+        >
+
+        <template #projects>
+          <ProjectGridItem to="/projects/functional">
+            <template #image>
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Projekt Funkcjonalny"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                format="webp"
+              />
+            </template>
+            <template #title>Projekt Funkcjonalny</template>
+            <template #description>
+              to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i
+              praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
+            </template>
+          </ProjectGridItem>
+
+          <ProjectGridItem to="/projects/execution">
+            <template #image>
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Projekt Wykonawczy"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                format="webp"
+              />
+            </template>
+            <template #title>Projekt Wykonawczy</template>
+            <template #description>
+              dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które
+              umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
+            </template>
+          </ProjectGridItem>
+
+          <ProjectGridItem to="/projects/consultation">
+            <template #image>
+              <ParallaxImg
+                src="/heroHome.jpg"
+                alt="Porada Projektowa"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                format="webp"
+              />
+            </template>
+            <template #title>Porada Projektowa</template>
+            <template #description>
+              to spotkanie, podczas którego nasza projektantka wnętrz doradzi, jakie rozwiązania
+              najlepiej pasują do Twojej przestrzeni i potrzeb.
+            </template>
+          </ProjectGridItem>
         </template>
-        <template #cta>ZOBACZ WIĘCEJ</template>
-        <template #title>Od projektu do realizacji - czyli Remont pod Klucz</template>
-        <template #subtitle>Wybierz wariant dopasowany do Twoich potrzeb</template>
-        <template #features>
-          <div class="text-center">
-            <Icon name="uil:hard-hat" class="w-12 h-12 text-primary mx-auto mb-4" />
-            <p class="text-lg font-medium text-neutral-800">PROFESJONALNE EKIPY REMONTOWE</p>
-          </div>
-          <div class="text-center">
-            <Icon name="uil:users-alt" class="w-12 h-12 text-primary mx-auto mb-4" />
-            <p class="text-lg font-medium text-neutral-800">OPIEKA KOORDYNATORA REMONTU</p>
-          </div>
-          <div class="text-center">
-            <Icon name="uil:money-stack" class="w-12 h-12 text-primary mx-auto mb-4" />
-            <p class="text-lg font-medium text-neutral-800">REALIZACJA ZGODNA Z BUDŻETEM</p>
-          </div>
-          <div class="text-center">
-            <Icon name="uil:wallet" class="w-12 h-12 text-primary mx-auto mb-4" />
-            <p class="text-lg font-medium text-neutral-800">TRANSPARENTNE I RZETELNE WYCENY</p>
-          </div>
-          <div class="text-center">
-            <Icon name="uil:percentage" class="w-12 h-12 text-primary mx-auto mb-4" />
-            <p class="text-lg font-medium text-neutral-800">NIŻSZY PODATEK - TYLKO 8% VAT</p>
-          </div>
-          <div class="text-center">
-            <Icon name="uil:head-side" class="w-12 h-12 text-primary mx-auto mb-4" />
-            <p class="text-lg font-medium text-neutral-800">MY PRACUJEMY, TY ODPOCZYWASZ</p>
-          </div>
-        </template>
-      </HeroProjects>
+
+        <template #cta>UMÓW KONSULTACJĘ</template>
+      </ProjectGrid>
 
       <IconGrid>
         <template #title>Poznaj etapy Procesu Projektowania</template>
@@ -225,7 +244,8 @@ import HeroInterior from '~/components/HeroInterior.vue';
 import HeroTeam from '~/components/HeroTeam.vue';
 import TeamMember from '~/components/TeamMember.vue';
 import Achievement from '~/components/Achievement.vue';
-import HeroProjects from '~/components/HeroProjects.vue';
+import ProjectGrid from '~/components/ProjectGrid.vue';
+import ProjectGridItem from '~/components/ProjectGridItem.vue';
 import IconGrid from '~/components/IconGrid.vue';
 import IconGridItem from '~/components/IconGridItem.vue';
 </script>

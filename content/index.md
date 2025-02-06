@@ -435,3 +435,5 @@ Wybierz wariant dopasowany do Twoich potrzeb
   MY PRACUJEMY, TY ODPOCZYWASZ
   :::
 ::
+
+:nuxt-img{src="/heroHome.jpg" alt="Test image" class="w-full h-full object-cover"}

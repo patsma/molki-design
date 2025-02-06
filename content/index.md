@@ -12,7 +12,7 @@ Z projektantką
 Umów konsultację
 
 #heroImage
- :nuxt-img{.w-full.h-full.object-cover alt="Test image" format="webp" src="/heroHome.jpg"}
+ :parallax-img{.w-full.h-full.object-cover alt="Test image" format="webp" src="/heroHome.jpg"}
 ::
 
 ::hero-team

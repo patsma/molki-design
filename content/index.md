@@ -12,15 +12,7 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-  :::parallax-img
-  ---
-  alt: Custom hero description MD file
-  class: h-full w-full object-cover
-  format: webp
-  quality: "70"
-  src: /heroHome.jpg
-  ---
-  :::
+ :nuxt-img{.w-full.h-full.object-cover alt="Test image" format="webp" src="/heroHome.jpg"}
 ::
 
 ::hero-team
@@ -437,4 +429,4 @@ Wybierz wariant dopasowany do Twoich potrzeb
   :::
 ::
 
-:nuxt-img{.w-full.h-full.object-cover alt="Test image" format="webp" src="/heroHome.jpg"}
+

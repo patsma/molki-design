@@ -3,12 +3,14 @@
     <div class="full-width">
       <Hero>
         <template #heroImage>
-          <ParallaxImg
-            src="/heroHome.jpg"
-            alt="Full width parallax"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroHome.jpg"
+              alt="Full width parallax"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
         </template>
         <template #title> umów spotkanie </template>
         <template #subtitle> z projektantką </template>
@@ -18,12 +20,14 @@
       <HeroTeam>
         <template #title>POZNAJ ZESPÓŁ MOLKI DESIGN!</template>
         <template #image>
-          <ParallaxImg
-            src="/heroAbout.jpg"
-            alt="Full width parallax"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroAbout.jpg"
+              alt="Full width parallax"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
         </template>
         <template #description>
           <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
@@ -53,12 +57,14 @@
           </p>
         </template>
         <template #image>
-          <ParallaxImg
-            src="/heroHome.jpg"
-            alt="Anna Kowalska"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroHome.jpg"
+              alt="Anna Kowalska"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
         </template>
         <template #achievements>
           <Achievement>
@@ -82,12 +88,14 @@
 
       <HeroInterior>
         <template #heroImage>
-          <ParallaxImg
-            src="/heroInterior.jpg"
-            alt="Interior design showcase"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroInterior.jpg"
+              alt="Interior design showcase"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
         </template>
         <template #cta>ZOBACZ NASZE REALIZACJE</template>
         <template #title>PROJEKT WNĘTRZA</template>
@@ -185,12 +193,14 @@
         <template #projects>
           <ProjectGridItem to="/projects/functional">
             <template #image>
-              <ParallaxImg
-                src="/heroHome.jpg"
-                alt="Projekt Funkcjonalny"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                format="webp"
-              />
+              <ParallaxImg>
+                <nuxt-img
+                  src="/heroHome.jpg"
+                  alt="Projekt Funkcjonalny"
+                  class="parallax-content transition-transform duration-300 group-hover:scale-110"
+                  format="webp"
+                />
+              </ParallaxImg>
             </template>
             <template #title>Projekt Funkcjonalny</template>
             <template #description>
@@ -201,12 +211,14 @@
 
           <ProjectGridItem to="/projects/execution">
             <template #image>
-              <ParallaxImg
-                src="/heroHome.jpg"
-                alt="Projekt Wykonawczy"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                format="webp"
-              />
+              <ParallaxImg>
+                <nuxt-img
+                  src="/heroHome.jpg"
+                  alt="Projekt Wykonawczy"
+                  class="parallax-content transition-transform duration-300 group-hover:scale-110"
+                  format="webp"
+                />
+              </ParallaxImg>
             </template>
             <template #title>Projekt Wykonawczy</template>
             <template #description>
@@ -217,12 +229,14 @@
 
           <ProjectGridItem to="/projects/consultation">
             <template #image>
-              <ParallaxImg
-                src="/heroHome.jpg"
-                alt="Porada Projektowa"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                format="webp"
-              />
+              <ParallaxImg>
+                <nuxt-img
+                  src="/heroHome.jpg"
+                  alt="Porada Projektowa"
+                  class="parallax-content transition-transform duration-300 group-hover:scale-110"
+                  format="webp"
+                />
+              </ParallaxImg>
             </template>
             <template #title>Porada Projektowa</template>
             <template #description>
@@ -236,12 +250,14 @@
       </ProjectGrid>
       <HeroProjects>
         <template #heroImage>
-          <ParallaxImg
-            src="/heroAbout.jpg"
-            alt="Our projects showcase"
-            class="h-full w-full object-cover"
-            format="webp"
-          />
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroAbout.jpg"
+              alt="Our projects showcase"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
         </template>
         <template #cta>ZOBACZ WIĘCEJ</template>
         <template #title>Od projektu do realizacji - czyli Remont pod Klucz</template>

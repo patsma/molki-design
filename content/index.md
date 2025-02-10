@@ -12,9 +12,13 @@ Z projektantką
 Umów konsultację
 
 #heroImage
-  :::parallax-img{.w-full.h-full.object-cover alt="Test image"}
-  :nuxt-img{alt="Nice Apartament" src="/heroHome.jpg"}
-  :::
+  ::parallax-img
+  ---
+  alt: Test image
+  class: w-full h-full object-cover
+  ---
+  ![heroHome.jpg](/heroHome.jpg)
+  ::
 
   :::hero-team
   #title

@@ -88,7 +88,7 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
 
 ::hero-interior
 ---
-cta-link: /projects
+cta-link: /buttons
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -109,9 +109,132 @@ Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i 
 Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::
 
+::icon-grid
+#title
+Poznaj etapy Procesu Projektowania
+
+#items
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:users-alt
+    ---
+    ::::
+  
+  #text
+  SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:ruler-combined
+    ---
+    ::::
+  
+  #text
+  INWENTARYZACJA POMIESZCZEŃ
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:palette
+    ---
+    ::::
+  
+  #text
+  DOBÓR INDYWIDUALNYCH ROZWIĄZAŃ
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:ruler-combined
+    ---
+    ::::
+  
+  #text
+  RYSOWANIE PROJEKTU
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:ruler-combined
+    ---
+    ::::
+  
+  #text
+  WYBÓR MEBLI I DODATKÓW
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:swatchbook
+    ---
+    ::::
+  
+  #text
+  DOBÓR MATERIAŁÓW
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:image-check
+    ---
+    ::::
+  
+  #text
+  PRZEDSTAWIENIE WIZUALIZACJI
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:file-check-alt
+    ---
+    ::::
+  
+  #text
+  PRZEKAZANIE PROJEKTU Z OPISAMI I LISTĄ ZAKUPÓW
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:check-circle
+    ---
+    ::::
+  
+  #text
+  DECYZJA O REALIZACJI W OPARCIU O SZCZEGÓŁOWY KOSZTORYS REMONTU
+  :::
+::
+
 ::project-grid
 ---
-cta-link: /projects
+cta-link: /buttons
 ---
 #title
 Od Koncepcji do Realizacji
@@ -122,7 +245,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 #projects
   :::project-grid-item
   ---
-  to: /projects/functional
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -138,7 +261,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /projects/execution
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -154,7 +277,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /projects/consultation
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -189,4 +312,77 @@ Od projektu do realizacji - czyli Remont pod Klucz
 
 #subtitle
 Wybierz wariant dopasowany do Twoich potrzeb
+
+#features
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:hard-hat
+    ---
+    ::::
+  #text
+  PROFESJONALNE EKIPY REMONTOWE
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:users-alt
+    ---
+    ::::
+  #text
+  OPIEKA KOORDYNATORA REMONTU
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:money-stack
+    ---
+    ::::
+  #text
+  REALIZACJA ZGODNA Z BUDŻETEM
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:wallet
+    ---
+    ::::
+  #text
+  TRANSPARENTNE I RZETELNE WYCENY
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:percentage
+    ---
+    ::::
+  #text
+  NIŻSZY PODATEK - TYLKO 8% VAT
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: uil:head-side
+    ---
+    ::::
+  #text
+  MY PRACUJEMY, TY ODPOCZYWASZ
+  :::
 ::

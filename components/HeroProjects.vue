@@ -6,13 +6,16 @@ defineProps<{
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>
+  <section
+    class="full-width data-scroll-section relative min-h-[100vh] w-full overflow-hidden"
+    data-scroll-section
+  >
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
         <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <slot name="heroImage">
+        <slot name="heroImage" mdc-unwrap="p">
           <!-- Default image -->
           <ParallaxImg
             src="/heroProjects.jpg"

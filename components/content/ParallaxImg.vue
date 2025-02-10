@@ -1,6 +1,6 @@
 <template>
   <div class="parallax-wrapper" data-speed="auto">
-    <slot>
+    <slot mdc-unwrap="p">
       <!-- This will be replaced by the editor's image -->
     </slot>
   </div>

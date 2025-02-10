@@ -1,3 +1,11 @@
+---
+title: Molki Design
+description: Lorem Ipsum
+seo:
+  title: Molki Design
+  description: Lorem Ipsum
+---
+
 ::hero
 ---
 cta-link: /buttons
@@ -322,6 +330,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     name: uil:hard-hat
     ---
     ::::
+  
   #text
   PROFESJONALNE EKIPY REMONTOWE
   :::
@@ -334,6 +343,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     name: uil:users-alt
     ---
     ::::
+  
   #text
   OPIEKA KOORDYNATORA REMONTU
   :::
@@ -346,6 +356,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     name: uil:money-stack
     ---
     ::::
+  
   #text
   REALIZACJA ZGODNA Z BUDŻETEM
   :::
@@ -358,6 +369,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     name: uil:wallet
     ---
     ::::
+  
   #text
   TRANSPARENTNE I RZETELNE WYCENY
   :::
@@ -370,6 +382,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     name: uil:percentage
     ---
     ::::
+  
   #text
   NIŻSZY PODATEK - TYLKO 8% VAT
   :::
@@ -382,6 +395,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     name: uil:head-side
     ---
     ::::
+  
   #text
   MY PRACUJEMY, TY ODPOCZYWASZ
   :::

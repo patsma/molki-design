@@ -53,37 +53,37 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
   :::
 
 #achievements
-  ::achievement
+  :::achievement
   #title
   150+
   
   #subtitle
   Zrealizowanych Projektów
-  ::
+  :::
 
-  ::achievement
+  :::achievement
   #title
   10 lat
   
   #subtitle
   Doświadczenia
-  ::
+  :::
 
-  ::achievement
+  :::achievement
   #title
   98%
   
   #subtitle
   Zadowolonych Klientów
-  ::
+  :::
 
-  ::achievement
+  :::achievement
   #title
   25+
   
   #subtitle
   Nagród Branżowych
-  ::
+  :::
 ::
 
 ::hero-interior
@@ -120,44 +120,53 @@ Od Koncepcji do Realizacji
 Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
 #projects
-  ::project-grid-item{to="/projects/functional"}
+  :::project-grid-item
+  ---
+  to: /projects/functional
+  ---
   #image
-    :::parallax-img{.w-full.h-full.object-cover}
+    ::::parallax-img{.w-full.h-full.object-cover}
     ![Projekt Funkcjonalny](/heroHome.jpg)
-    :::
+    ::::
   
   #title
   Projekt Funkcjonalny
   
   #description
   to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
-  ::
+  :::
 
-  ::project-grid-item{to="/projects/execution"}
+  :::project-grid-item
+  ---
+  to: /projects/execution
+  ---
   #image
-    :::parallax-img{.w-full.h-full.object-cover}
+    ::::parallax-img{.w-full.h-full.object-cover}
     ![Projekt Wykonawczy](/heroHome.jpg)
-    :::
+    ::::
   
   #title
   Projekt Wykonawczy
   
   #description
   dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe.
-  ::
+  :::
 
-  ::project-grid-item{to="/projects/consultation"}
+  :::project-grid-item
+  ---
+  to: /projects/consultation
+  ---
   #image
-    :::parallax-img{.w-full.h-full.object-cover}
+    ::::parallax-img{.w-full.h-full.object-cover}
     ![Porada Projektowa](/heroHome.jpg)
-    :::
+    ::::
   
   #title
   Porada Projektowa
   
   #description
   to spotkanie, podczas którego nasza projektantka wnętrz doradzi.
-  ::
+  :::
 
 #cta
 UMÓW KONSULTACJĘ

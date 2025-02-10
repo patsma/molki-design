@@ -1,14 +1,8 @@
 <template>
   <div class="parallax-wrapper" data-speed="auto">
-    <NuxtImg
-      :src="src"
-      :alt="alt"
-      :format="format"
-      :quality="quality"
-      :loading="loading"
-      class="parallax-content"
-      v-bind="$attrs"
-    />
+    <slot>
+      <!-- This will be replaced by the editor's image -->
+    </slot>
   </div>
 </template>
 
@@ -25,5 +19,11 @@ defineProps({
 <style lang="scss">
 .parallax-wrapper {
   height: 120%;
+}
+
+:deep(.parallax-content) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

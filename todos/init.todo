@@ -85,9 +85,9 @@
 ✔ Hero Projects - Projekty Wnętrza @started(25-02-05 11:52) @done(25-02-05 12:29) @lasted(37m35s)
 ✔ Icon Grid @started(25-02-05 13:58) @done(25-02-05 15:04) @lasted(1h6m14s)
 ✔ Column Grid / Project Grid @done(25-02-06 12:04)
-- Ensure Parallax Img is editable in Nuxt Studio
-- Hero - Remont
-- Item Card
+✔ Ensure Parallax Img is editable in Nuxt Studio @done(25-02-10 17:49)
+✔ Hero - Remont @done(25-02-10 17:50)
+✔ Item Card @started(25-02-11 13:51) @done(25-02-11 14:10) @lasted(19m32s)
 - Title and Paragraph
 - Column Grid 2
 - Services Table

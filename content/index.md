@@ -401,6 +401,19 @@ Wybierz wariant dopasowany do Twoich potrzeb
   :::
 ::
 
+
+::title-section
+---
+hasBackground: true
+---
+#title
+Bezstresowy Remont od A do Z
+
+#subtitle
+Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
+::
+
+
 ::item-card
 ---
 title: Your Title Here

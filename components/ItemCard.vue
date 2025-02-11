@@ -1,8 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  title?: string;
-  link?: string;
-  linkText?: string;
+  ctaLink?: string;
 }>();
 </script>
 
@@ -41,11 +39,8 @@ defineProps<{
     >
       <div class="w-full">
         <!-- Title -->
-        <h3
-          v-if="$slots.title || title"
-          class="text-2xl md:text-3xl font-semibold text-primary mb-4"
-        >
-          <slot mdc-unwrap="p" name="title">{{ title }}</slot>
+        <h3 v-if="$slots.title" class="text-2xl md:text-3xl font-semibold text-primary mb-4">
+          <slot mdc-unwrap="p" name="title"></slot>
         </h3>
 
         <!-- Content -->
@@ -55,11 +50,11 @@ defineProps<{
 
         <!-- Link -->
         <NuxtLink
-          v-if="$slots.link || link"
-          :to="link || '/'"
+          v-if="$slots.cta"
+          :to="ctaLink || '/'"
           class="inline-block text-primary font-medium hover:text-primary-dark transition-colors duration-200"
         >
-          <slot mdc-unwrap="p" name="link">{{ linkText }}</slot>
+          <slot mdc-unwrap="p" name="cta"></slot>
         </NuxtLink>
       </div>
     </div>

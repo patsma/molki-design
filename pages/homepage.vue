@@ -289,6 +289,33 @@
           </div>
         </template>
       </HeroProjects>
+      <HeroBusiness>
+        <template #heroImage>
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroInterior.jpg"
+              alt="Interior design showcase"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
+        </template>
+        <template #cta>ZOBACZ NASZE REALIZACJE</template>
+        <template #title>PROJEKT WNĘTRZA</template>
+        <template #content>
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
+            Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem
+            oparta na komunikacji, szacunku i zaufaniu.
+          </p>
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
+            Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią
+            wysłuchania.
+          </p>
+          <p class="text-xl md:text-2xl leading-relaxed text-neutral-800">
+            Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
+          </p>
+        </template>
+      </HeroBusiness>
 
       <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
     </div>
@@ -305,4 +332,5 @@ import ProjectGrid from '~/components/ProjectGrid.vue';
 import ProjectGridItem from '~/components/ProjectGridItem.vue';
 import IconGrid from '~/components/IconGrid.vue';
 import IconGridItem from '~/components/IconGridItem.vue';
+import HeroBusiness from '~/components/HeroBusiness.vue';
 </script>

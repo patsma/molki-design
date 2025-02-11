@@ -6,19 +6,16 @@ defineProps<{
 </script>
 
 <template>
-  <section
-    class="full-width data-scroll-section relative min-h-[100vh] w-full overflow-hidden"
-    data-scroll-section
-  >
+  <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
         <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <slot name="heroImage" mdc-unwrap="p">
+        <slot name="heroImage">
           <!-- Default image -->
           <ParallaxImg
-            src="/heroProjects.jpg"
+            src="/heroInterior.jpg"
             alt="Full width parallax"
             class="h-full w-full object-cover"
             format="webp"
@@ -64,37 +61,25 @@ defineProps<{
         >
           <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
             <div class="breakout1">
-              <!-- Title and Subtitle -->
-              <div class="text-center mb-16">
-                <h2
-                  v-if="$slots.title"
-                  class="h2-style font-semibold text-primary mb-4"
-                  data-scroll-item
-                  data-scroll-animation="fadeUp"
-                  data-scroll-duration="1"
-                >
-                  <slot name="title" mdc-unwrap="p" />
-                </h2>
-                <p
-                  v-if="$slots.subtitle"
-                  class="text-xl md:text-2xl text-neutral-800"
-                  data-scroll-item
-                  data-scroll-animation="fadeUp"
-                  data-scroll-duration="1"
-                >
-                  <slot name="subtitle" mdc-unwrap="p" />
-                </p>
-              </div>
-
-              <!-- Features Grid -->
-              <div
-                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
-                v-if="$slots.features"
+              <!-- Title -->
+              <h2
+                v-if="$slots.title"
+                class="h2-style font-semibold text-primary mb-8"
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="1"
               >
-                <slot name="features">
-                  <!-- Default features -->
-                  <Feature v-for="i in 6" :key="i" icon="uil:check-circle" :text="`Feature ${i}`" />
-                </slot>
+                <slot name="title" mdc-unwrap="p" />
+              </h2>
+
+              <!-- Paragraphs -->
+              <div
+                class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800"
+                data-scroll-item
+                data-scroll-animation="fadeUp"
+                data-scroll-duration="1"
+              >
+                <slot name="content" />
               </div>
             </div>
           </div>
@@ -103,3 +88,14 @@ defineProps<{
     </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+.hero-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+</style>

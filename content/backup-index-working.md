@@ -416,10 +416,11 @@ Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 
 ::item-card
 ---
-title: Your Title Here
-link: /your-link
-linkText: Read More
+ctaLink: /buttons
 ---
+#title
+Lorem ipsum dolor sit amet
+
 #image
   :::parallax-img{.w-full.h-full.object-cover}
   ![Card Image](/heroHome.jpg)
@@ -428,6 +429,6 @@ linkText: Read More
 #content
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-#link
+#cta
 Discover More →
 ::

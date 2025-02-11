@@ -43,6 +43,7 @@ defineProps<{
           <!-- Button -->
           <NuxtLink
             v-if="$slots.cta"
+            :to="ctaLink || '/'"
             class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             <slot name="cta" mdc-unwrap="p" />

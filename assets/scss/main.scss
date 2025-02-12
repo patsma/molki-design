@@ -40,12 +40,13 @@ svg {
 }
 
 body {
-  background-color: var(--color-bg);
+  // background-color: var(--color-bg);
   color: var(--color-text);
   width: 100%;
   min-height: 100vh;
   min-height: 200dvh;
   overflow-x: hidden;
+  background-color: var(--color-neutral-200);
 }
 
 .nav__item:not(#themeSwitch) {

@@ -455,3 +455,67 @@ Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i 
 
 Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::
+
+
+::project-grid
+---
+cta-link: /buttons
+---
+#title
+Od Koncepcji do Realizacji
+
+#subtitle
+Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
+
+#projects
+  :::project-grid-item
+  ---
+  to: /buttons
+  ---
+  #image
+    ::::parallax-img{.w-full.h-full.object-cover}
+    ![Projekt Funkcjonalny](/heroHome.jpg)
+    ::::
+  
+  #title
+  Projekt Funkcjonalny
+  
+  #description
+  to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
+  :::
+
+  :::project-grid-item
+  ---
+  to: /buttons
+  ---
+  #image
+    ::::parallax-img{.w-full.h-full.object-cover}
+    ![Projekt Wykonawczy](/heroHome.jpg)
+    ::::
+  
+  #title
+  Projekt Wykonawczy
+  
+  #description
+  dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe.
+  :::
+
+  :::project-grid-item
+  ---
+  to: /buttons
+  ---
+  #image
+    ::::parallax-img{.w-full.h-full.object-cover}
+    ![Porada Projektowa](/heroHome.jpg)
+    ::::
+  
+  #title
+  Porada Projektowa
+  
+  #description
+  to spotkanie, podczas którego nasza projektantka wnętrz doradzi.
+  :::
+
+#cta
+UMÓW KONSULTACJĘ
+::

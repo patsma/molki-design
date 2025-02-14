@@ -1,5 +1,48 @@
 <script setup lang="ts">
-// We'll add props and logic later
+interface ServiceItem {
+  name: string;
+  basicFunc: boolean;
+  premiumFunc: boolean;
+  basicExec: boolean;
+  premiumExec: boolean;
+}
+
+defineProps<{
+  services?: ServiceItem[];
+  infoText?: string;
+}>();
+
+// Default services if none provided
+const defaultServices = [
+  {
+    name: 'Inwentaryzacja',
+    basicFunc: true,
+    premiumFunc: true,
+    basicExec: true,
+    premiumExec: true,
+  },
+  {
+    name: 'Wyburzenia/zabudowy ścian',
+    basicFunc: true,
+    premiumFunc: true,
+    basicExec: true,
+    premiumExec: true,
+  },
+  {
+    name: 'Układ funkcjonalny z opisami',
+    basicFunc: true,
+    premiumFunc: true,
+    basicExec: true,
+    premiumExec: true,
+  },
+  {
+    name: 'Lista zakupów (materiałów, mebli, dodatków)',
+    basicFunc: true,
+    premiumFunc: false,
+    basicExec: true,
+    premiumExec: true,
+  },
+];
 </script>
 
 <template>
@@ -48,82 +91,47 @@
             </thead>
             <!-- Body -->
             <tbody>
-              <tr class="border-b border-neutral-400">
-                <td class="p-4 bg-neutral-200 font-medium">Inwentaryzacja</td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
+              <tr
+                v-for="service in services || defaultServices"
+                :key="service.name"
+                class="border-b border-neutral-400"
+              >
+                <td class="p-4 bg-neutral-200 font-medium">{{ service.name }}</td>
+                <td class="p-4 text-center align-middle h-18">
                   <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
+                    <Icon
+                      :name="service.basicFunc ? 'uil:check' : 'uil:times'"
+                      class="w-6 h-6"
+                      :class="service.basicFunc ? 'text-primary' : 'text-neutral-500'"
+                    />
                   </div>
                 </td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
+                <td class="p-4 text-center align-middle h-18">
                   <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
+                    <Icon
+                      :name="service.premiumFunc ? 'uil:check' : 'uil:times'"
+                      class="w-6 h-6"
+                      :class="service.premiumFunc ? 'text-primary' : 'text-neutral-500'"
+                    />
                   </div>
                 </td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
+                <td class="p-4 text-center align-middle h-18">
                   <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
+                    <Icon
+                      :name="service.basicExec ? 'uil:check' : 'uil:times'"
+                      class="w-6 h-6"
+                      :class="service.basicExec ? 'text-primary' : 'text-neutral-500'"
+                    />
                   </div>
                 </td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
+                <td class="p-4 text-center align-middle h-18">
                   <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
+                    <Icon
+                      :name="service.premiumExec ? 'uil:check' : 'uil:times'"
+                      class="w-6 h-6"
+                      :class="service.premiumExec ? 'text-primary' : 'text-neutral-500'"
+                    />
                   </div>
-                </td>
-              </tr>
-              <tr class="border-b border-neutral-400">
-                <td class="p-4 bg-neutral-200 font-medium">Wyburzenia/zabudowy ścian</td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
-                  </div>
-                </td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
-                  </div>
-                </td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
-                  </div>
-                </td>
-                <td class="p-4 text-center align-middle h-[4.5rem]">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon name="uil:check" class="w-6 h-6 text-primary" />
-                  </div>
-                </td>
-              </tr>
-              <tr class="border-b border-neutral-400">
-                <td class="p-4 bg-neutral-200 font-medium">Układ funkcjonalny z opisami</td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
-                </td>
-              </tr>
-              <tr class="border-b border-neutral-400">
-                <td class="p-4 bg-neutral-200 font-medium">
-                  Lista zakupów (materiałów, mebli, dodatków)
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:times" class="w-6 h-6 text-neutral-500 mx-auto" />
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
-                </td>
-                <td class="p-4 text-center">
-                  <Icon name="uil:check" class="w-6 h-6 text-primary mx-auto" />
                 </td>
               </tr>
             </tbody>
@@ -131,7 +139,10 @@
         </div>
 
         <!-- Info Text -->
-        <p class="text-sm text-neutral-600 mt-4">
+        <p v-if="infoText" class="text-sm text-neutral-600 mt-4">
+          {{ infoText }}
+        </p>
+        <p v-else class="text-sm text-neutral-600 mt-4">
           **powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek
           VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto,
           niezależnie od ilości projektowanych pomieszczeń.

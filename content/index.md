@@ -519,3 +519,47 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 #cta
 UMÓW KONSULTACJĘ
 ::
+
+::title-section
+---
+hasBackground: false
+---
+#title
+Cennik Usług Projektowych
+
+#subtitle
+Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoich potrzeb i budżetu.
+::
+
+::services-table
+---
+services:
+  - name: Inwentaryzacja
+    basicFunc: true
+    premiumFunc: true
+    basicExec: true
+    premiumExec: true
+  - name: Wyburzenia/zabudowy ścian
+    basicFunc: true
+    premiumFunc: true
+    basicExec: true
+    premiumExec: true
+  - name: Układ funkcjonalny z opisami
+    basicFunc: true
+    premiumFunc: true
+    basicExec: true
+    premiumExec: true
+  - name: Lista zakupów (materiałów, mebli, dodatków)
+    basicFunc: true
+    premiumFunc: true
+    basicExec: true
+    premiumExec: true
+  - name: Przyłącza wodno-kanalizacyjne
+    basicFunc: false
+    premiumFunc: false
+    basicExec: true
+    premiumExec: true
+
+infoText: powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
+---
+::

@@ -91,49 +91,7 @@ const defaultServices = [
             </thead>
             <!-- Body -->
             <tbody>
-              <tr
-                v-for="service in services || defaultServices"
-                :key="service.name"
-                class="border-b border-neutral-400"
-              >
-                <td class="p-4 bg-neutral-200 font-medium">{{ service.name }}</td>
-                <td class="p-4 text-center align-middle h-18">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon
-                      :name="service.basicFunc ? 'uil:check' : 'uil:times'"
-                      class="w-6 h-6"
-                      :class="service.basicFunc ? 'text-primary' : 'text-neutral-500'"
-                    />
-                  </div>
-                </td>
-                <td class="p-4 text-center align-middle h-18">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon
-                      :name="service.premiumFunc ? 'uil:check' : 'uil:times'"
-                      class="w-6 h-6"
-                      :class="service.premiumFunc ? 'text-primary' : 'text-neutral-500'"
-                    />
-                  </div>
-                </td>
-                <td class="p-4 text-center align-middle h-18">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon
-                      :name="service.basicExec ? 'uil:check' : 'uil:times'"
-                      class="w-6 h-6"
-                      :class="service.basicExec ? 'text-primary' : 'text-neutral-500'"
-                    />
-                  </div>
-                </td>
-                <td class="p-4 text-center align-middle h-18">
-                  <div class="flex items-center justify-center h-full">
-                    <Icon
-                      :name="service.premiumExec ? 'uil:check' : 'uil:times'"
-                      class="w-6 h-6"
-                      :class="service.premiumExec ? 'text-primary' : 'text-neutral-500'"
-                    />
-                  </div>
-                </td>
-              </tr>
+              <slot name="services" />
             </tbody>
           </table>
         </div>

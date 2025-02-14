@@ -1,0 +1,28 @@
+<script setup lang="ts">
+defineProps<{
+  name: string;
+  basicFunc?: boolean;
+  premiumFunc?: boolean;
+  basicExec?: boolean;
+  premiumExec?: boolean;
+}>();
+</script>
+
+<template>
+  <tr class="border-b border-neutral-400">
+    <td class="p-4 bg-neutral-200 font-medium">{{ name }}</td>
+    <td
+      v-for="(value, key) in { basicFunc, premiumFunc, basicExec, premiumExec }"
+      :key="key"
+      class="p-4 text-center align-middle h-18"
+    >
+      <div class="flex items-center justify-center h-full">
+        <Icon
+          :name="value ? 'uil:check' : 'uil:times'"
+          class="w-6 h-6"
+          :class="value ? 'text-primary' : 'text-neutral-500'"
+        />
+      </div>
+    </td>
+  </tr>
+</template>

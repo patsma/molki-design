@@ -33,7 +33,7 @@ const menuItems = [
   },
   {
     label: 'BIZNES',
-    link: '#',
+    link: '/isolation',
     children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
   },
   {

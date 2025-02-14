@@ -1,10 +1,15 @@
 ---
 title: Molki Design
-description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia, Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz domów, mieszkań i wnętrz komercyjnych
-
+description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
+  Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres
+  usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz
+  domów, mieszkań i wnętrz komercyjnych
 seo:
   title: Molki Design
-  description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia, Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz domów, mieszkań i wnętrz komercyjnych
+  description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
+    Trójmiasto, Polska – molki design to studio projektowe oferujące pełen
+    zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu
+    wnętrz domów, mieszkań i wnętrz komercyjnych
 ---
 
 ::hero
@@ -402,7 +407,6 @@ Wybierz wariant dopasowany do Twoich potrzeb
   :::
 ::
 
-
 ::title-section
 ---
 hasBackground: true
@@ -413,7 +417,6 @@ Bezstresowy Remont od A do Z
 #subtitle
 Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 ::
-
 
 ::item-card
 ---
@@ -456,7 +459,6 @@ Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i 
 
 Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::
-
 
 ::project-grid
 ---
@@ -539,21 +541,51 @@ infoText: powyższe kwoty podane są w wartości netto...
 #services
   :::service-table-row
   ---
-  name: Inwentaryzacja
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
   ---
   :::
 
   :::service-table-row
   ---
-  name: Wyburzenia/zabudowy ścian
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
   ---
   :::
 ::

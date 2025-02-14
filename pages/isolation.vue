@@ -1,7 +1,7 @@
 <template>
   <div class="content-grid py-20">
     <div class="spacer w-full h-[25vh] bg-red-400"></div>
-    <h1>Izolacja</h1>
+    <ServicesTable />
     <div class="spacer w-full h-[250vh] bg-teal-400"></div>
   </div>
 </template>

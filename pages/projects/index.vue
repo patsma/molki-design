@@ -10,7 +10,7 @@
         <SquareGridItem
           v-for="project in projects"
           :key="project.id"
-          :to="project.meta.path"
+          :to="`/projects/${project.number}`"
           :number="project.number"
           :title="project.title"
           :location="project.location"

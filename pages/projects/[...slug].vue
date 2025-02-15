@@ -2,17 +2,18 @@
 import { queryCollection } from '#imports';
 
 const route = useRoute();
-const { data } = await useAsyncData(`content-${route.path}`, () =>
+
+// Proper path construction with collection prefix
+const fullPath = `/projects/${route.params.slug.join('/')}`;
+
+const { data, error } = await useAsyncData(`project-${route.path}`, () =>
   queryCollection('projects')
-    .where({
-      _file: route.params.slug.join('/'), // Match the file path
-    })
+    .path(fullPath) // Use the path() method correctly
     .first()
 );
 
-// Debug output
-console.log('Route path:', route.path);
 console.log('Project data:', data.value);
+if (error.value) console.error('Query error:', error.value);
 </script>
 
 <template>
@@ -29,7 +30,6 @@ console.log('Project data:', data.value);
         <ContentRenderer :value="data" />
       </div>
     </div>
-    <!-- Debug output -->
-    <pre v-else class="p-4">{{ route.path }}</pre>
+    <pre v-else class="p-4">Loading...</pre>
   </main>
 </template>

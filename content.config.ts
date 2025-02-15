@@ -9,6 +9,7 @@ export default defineContentConfig({
         exclude: ['**/.!(navigation.yml)'],
       },
       schema: z.object({
+        path: z.string().optional(),
         title: z.string(),
         location: z.string(),
         year: z.string(), // Since we're using it as a string in our markdown

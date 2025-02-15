@@ -9,8 +9,8 @@
       <template #items>
         <SquareGridItem
           v-for="project in projects"
-          :key="project._id"
-          :to="`/projects/${project._file}`"
+          :key="project.id"
+          :to="project.meta.path"
           :number="project.number"
           :title="project.title"
           :location="project.location"

@@ -1,9 +1,11 @@
 ---
-title: Projekt wnętrza mieszkania
-location: Gdańsk
-year: 2023
+title: "Projekt wnętrza mieszkania"
+location: "Gdańsk"
+year: "2023"
 number: "01"
-cover: /heroHome.jpg
+cover: "/heroHome.jpg"
 ---
 
-Project content goes here... 
+# Projekt wnętrza mieszkania
+
+Content goes here... 

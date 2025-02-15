@@ -29,6 +29,7 @@ declare module '@nuxt/schema' {
           depth?: number;
           searchDepth?: number;
         };
+        anchorLinks?: boolean;
       };
     };
   }
@@ -181,6 +182,7 @@ export default defineNuxtConfig({
         depth: 3,
         searchDepth: 3,
       },
+      anchorLinks: false,
     },
   },
 

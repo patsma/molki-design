@@ -1,0 +1,18 @@
+---
+title: Apartament nad morzem
+location: Sopot
+year: 2023
+number: "02"
+cover: /heroHome.jpg
+---
+
+# Apartament nad morzem
+
+::title-section
+#title
+Szczegóły Projektu
+#subtitle
+Nowoczesny apartament z widokiem na morze
+::
+
+Treść projektu... 

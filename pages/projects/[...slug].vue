@@ -2,12 +2,12 @@
 import { queryCollection } from '#imports';
 
 const route = useRoute();
-const { data } = await useAsyncData(
-  `content-${route.path}`,
-  () =>
-    queryCollection('projects') // Changed from queryContent to queryCollection
-      .path(route.path) // Changed from where() to path()
-      .first() // Changed from findOne() to first()
+const { data } = await useAsyncData(`content-${route.path}`, () =>
+  queryCollection('projects')
+    .where({
+      _file: route.params.slug.join('/'), // Match the file path
+    })
+    .first()
 );
 
 // Debug output

@@ -9,8 +9,8 @@
       <template #items>
         <SquareGridItem
           v-for="project in projects"
-          :key="project._path"
-          :to="project._path"
+          :key="project._id"
+          :to="`/projects/${project._file}`"
           :number="project.number"
           :title="project.title"
           :location="project.location"
@@ -29,10 +29,9 @@
 import { queryCollection } from '#imports';
 
 const { data: projects, error } = await useAsyncData('projects', () =>
-  queryCollection('projects').order('year', 'DESC').order('title', 'ASC').all()
+  queryCollection('projects').order('number', 'ASC').all()
 );
 
 // Debug output
 console.log('Projects data:', projects.value);
-console.log('Query error:', error.value);
 </script>

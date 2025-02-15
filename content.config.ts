@@ -5,7 +5,7 @@ export default defineContentConfig({
     projects: defineCollection({
       type: 'document',
       source: {
-        include: '**/*.md',
+        include: 'projects/*.md',
         exclude: ['**/.!(navigation.yml)'],
       },
       schema: z.object({

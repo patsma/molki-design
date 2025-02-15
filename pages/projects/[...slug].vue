@@ -7,9 +7,7 @@ const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
 
 const { data, error } = await useAsyncData(`project-${route.path}`, () =>
-  queryCollection('projects')
-    .path(fullPath) // Use the path() method correctly
-    .first()
+  queryCollection('projects').where('slug', '=', route.params.slug).first()
 );
 
 console.log('Project data:', data.value);

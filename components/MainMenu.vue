@@ -19,7 +19,7 @@ const menuItems = [
     label: 'PROJEKT',
     link: '/#spacer1',
     children: [
-      { label: 'REALIZACJE', link: '#projekty-realizacje' },
+      { label: 'REALIZACJE', link: '/projects' },
       { label: 'CENNIK', link: '#cennik-projekt' },
     ],
   },

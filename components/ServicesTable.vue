@@ -50,7 +50,7 @@ const defaultServices = [
     <div class="content-grid">
       <div class="breakout1">
         <!-- Table Container with horizontal scroll for mobile -->
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto" data-scroll-item data-scroll-animation="fadeUp">
           <table class="w-full border-collapse">
             <!-- Header -->
             <thead>

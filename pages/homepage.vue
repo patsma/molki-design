@@ -358,6 +358,38 @@
 
         <template #cta>UMÓW KONSULTACJĘ</template>
       </ProjectGrid>
+      <ServicesTable>
+        <template #services>
+          <ServiceTableRow
+            name="Inwentaryzacja"
+            :basicFunc="true"
+            :premiumFunc="true"
+            :basicExec="true"
+            :premiumExec="true"
+          />
+          <ServiceTableRow
+            name="Wyburzenia/zabudowy ścian"
+            :basicFunc="true"
+            :premiumFunc="true"
+            :basicExec="true"
+            :premiumExec="true"
+          />
+          <ServiceTableRow
+            name="Układ funkcjonalny z opisami"
+            :basicFunc="true"
+            :premiumFunc="true"
+            :basicExec="true"
+            :premiumExec="true"
+          />
+          <ServiceTableRow
+            name="Lista zakupów (materiałów, mebli, dodatków)"
+            :basicFunc="true"
+            :premiumFunc="false"
+            :basicExec="true"
+            :premiumExec="true"
+          />
+        </template>
+      </ServicesTable>
     </div>
   </div>
 </template>

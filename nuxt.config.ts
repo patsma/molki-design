@@ -57,6 +57,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/mdc',
     '@nuxt/icon',
+    'nuxt-swiper',
   ],
 
   devServer: {

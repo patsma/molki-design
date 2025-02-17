@@ -46,7 +46,7 @@ body {
   min-height: 100vh;
   min-height: 200dvh;
   overflow-x: hidden;
-  background-color: var(--color-neutral-200);
+  // background-color: var(--color-neutral-200);
 }
 
 .nav__item:not(#themeSwitch) {
@@ -106,4 +106,113 @@ body {
 p {
   font-size: inherit;
   line-height: inherit;
+}
+
+swiper-container {
+  @apply w-full h-full;
+}
+
+swiper-slide {
+  @apply w-full h-full;
+}
+
+swiper-container::part(pagination) {
+  @apply bottom-4;
+}
+
+swiper-container::part(bullet) {
+  @apply bg-white opacity-50;
+}
+
+swiper-container::part(bullet-active) {
+  @apply bg-white opacity-100;
+}
+
+/* Prose Styling */
+.prose {
+  @apply text-neutral-800;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold mb-6 mt-8;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold mb-4 mt-8;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold mb-3 mt-6;
+}
+
+.prose p {
+  @apply text-xl leading-relaxed mb-4;
+}
+
+.prose ul {
+  list-style: unset;
+  @apply my-4 space-y-2;
+}
+
+.prose ol {
+  list-style: unset;
+  @apply my-4 space-y-2 list-decimal;
+}
+
+.prose li {
+  list-style: unset;
+  @apply text-xl leading-relaxed ml-4;
+}
+
+.prose a {
+  @apply text-primary hover:text-primary-dark transition-colors duration-200 font-semibold;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic my-4;
+}
+
+.prose code {
+  @apply bg-neutral-100 rounded px-1.5 py-0.5 text-base font-mono;
+}
+
+.prose pre {
+  @apply bg-neutral-900 text-white p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose img {
+  @apply rounded-lg shadow-lg my-6;
+}
+
+.prose table {
+  @apply w-full my-6;
+}
+
+.prose table th {
+  @apply bg-neutral-100 p-2 text-left font-bold;
+}
+
+.prose table td {
+  @apply border-t border-neutral-200 p-2;
+}
+
+.prose hr {
+  @apply my-8 border-neutral-200;
+}
+
+/* Dark mode adjustments if needed */
+.dark .prose {
+  @apply text-neutral-200;
+}
+
+.dark .prose a {
+  @apply text-primary-light hover:text-primary;
+}
+
+.dark .prose code {
+  @apply bg-neutral-800 text-neutral-200;
+}
+
+.dark .prose blockquote {
+  @apply border-primary-light;
 }

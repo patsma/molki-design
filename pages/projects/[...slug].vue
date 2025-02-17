@@ -22,7 +22,7 @@ const ctaLink = computed(() => {
   if (data.value?.slug) return `/projects/${data.value.slug}`;
 
   // Final fallback
-  return '/contact';
+  return '/projects';
 });
 
 const swiperRef = ref(null);
@@ -42,34 +42,38 @@ useSwiper(swiperRef, {
   <main>
     <div v-if="data" class="content-grid py-24">
       <div class="breakout1">
-        <!-- Project Images Swiper -->
-        <div class="mb-16 aspect-video overflow-hidden rounded-lg">
-          <ClientOnly>
-            <swiper-container ref="swiperRef" :loop="true" :pagination="true" class="w-full h-full">
-              <swiper-slide
-                v-for="(image, index) in data.images"
-                :key="index"
-                class="w-full h-full"
-              >
-                <nuxt-img
-                  :src="image"
-                  :alt="`${data.title} - Image ${index + 1}`"
-                  class="w-full h-full object-cover"
-                  format="webp"
-                />
-              </swiper-slide>
-            </swiper-container>
-          </ClientOnly>
-        </div>
-
         <!-- Project Header -->
-        <div class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
+        <div class="mb-16 grid grid-cols-1 md:grid-cols-6 gap-8">
+          <div class="col-span-4">
             <div class="text-6xl font-bold text-primary mb-4">{{ data.number }}</div>
             <h1 class="h1-style text-primary mb-4">{{ data.title }}</h1>
             <div class="text-xl text-neutral-600">{{ data.location }} | {{ data.year }}</div>
+            <!-- Project Images Swiper -->
+            <div class="aspect-video overflow-hidden rounded-lg">
+              <ClientOnly>
+                <swiper-container
+                  ref="swiperRef"
+                  :loop="true"
+                  :pagination="true"
+                  class="w-full h-full"
+                >
+                  <swiper-slide
+                    v-for="(image, index) in data.images"
+                    :key="index"
+                    class="w-full h-full"
+                  >
+                    <nuxt-img
+                      :src="image"
+                      :alt="`${data.title} - Image ${index + 1}`"
+                      class="w-full h-full object-cover"
+                      format="webp"
+                    />
+                  </swiper-slide>
+                </swiper-container>
+              </ClientOnly>
+            </div>
           </div>
-          <div class="flex flex-col justify-between">
+          <div class="grid justify-between content-start col-span-2">
             <p class="text-xl text-neutral-800">{{ data.description }}</p>
             <NuxtLink
               :to="ctaLink"

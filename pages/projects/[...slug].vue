@@ -1,6 +1,6 @@
 <script setup>
 import { queryCollection } from '#imports';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
@@ -8,6 +8,22 @@ const fullPath = `/projects/${route.params.slug.join('/')}`;
 const { data, error } = await useAsyncData(`project-${route.path}`, () =>
   queryCollection('projects').where('slug', '=', route.params.slug).first()
 );
+
+// Debug output
+console.log('Project data:', data.value);
+console.log('CTA Link:', data.value?.ctaLink);
+
+// Computed property for CTA link with proper fallback chain
+const ctaLink = computed(() => {
+  // First try the explicit ctaLink from the markdown
+  if (data.value?.ctaLink) return data.value.ctaLink;
+
+  // If not set, try to construct from the project data
+  if (data.value?.slug) return `/projects/${data.value.slug}`;
+
+  // Final fallback
+  return '/contact';
+});
 
 const swiperRef = ref(null);
 
@@ -55,7 +71,11 @@ useSwiper(swiperRef, {
           </div>
           <div class="flex flex-col justify-between">
             <p class="text-xl text-neutral-800">{{ data.description }}</p>
-            <NuxtLink :to="data.ctaLink" class="btn btn-primary mt-8 self-start">
+            <NuxtLink
+              :to="ctaLink"
+              class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label="Zobacz więcej"
+            >
               {{ data.ctaText || 'ZOBACZ WIĘCEJ' }}
             </NuxtLink>
           </div>

@@ -19,6 +19,7 @@ export default defineContentConfig({
         description: z.string(),
         images: z.array(z.string()).optional(),
         ctaText: z.string().default('ZOBACZ WIĘCEJ'),
+        ctaLink: z.string().default('/contact'),
       }),
     }),
     content: defineCollection({

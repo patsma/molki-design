@@ -1,3 +1,22 @@
+<script setup lang="ts">
+const { data: projects } = await useAsyncData('isolation-projects', () =>
+  queryCollection('projects').order('number', 'ASC').all()
+);
+import Hero from '~/components/Hero.vue';
+import HeroInterior from '~/components/HeroInterior.vue';
+import HeroTeam from '~/components/HeroTeam.vue';
+import HeroProjects from '~/components/HeroProjects.vue';
+import TeamMember from '~/components/TeamMember.vue';
+import Achievement from '~/components/Achievement.vue';
+import ProjectGrid from '~/components/ProjectGrid.vue';
+import ProjectGridItem from '~/components/ProjectGridItem.vue';
+import IconGrid from '~/components/IconGrid.vue';
+import IconGridItem from '~/components/IconGridItem.vue';
+import HeroBusiness from '~/components/HeroBusiness.vue';
+import ItemCard from '~/components/ItemCard.vue';
+import TitleSection from '~/components/TitleSection.vue';
+</script>
+
 <template>
   <div class="content-grid">
     <div class="full-width">
@@ -390,22 +409,22 @@
           />
         </template>
       </ServicesTable>
+      <SquareGrid v-if="projects?.length">
+        <template #title>Nasze Realizacje</template>
+        <template #subtitle>Zobacz nasze najnowsze projekty</template>
+        <template #items>
+          <SquareGridItem
+            v-for="project in projects"
+            :key="project.id"
+            :to="`/projects/${project.slug}`"
+            :number="project.number"
+            :title="project.title"
+            :location="project.location"
+            :year="project.year"
+            :image="project.cover"
+          />
+        </template>
+      </SquareGrid>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import Hero from '~/components/Hero.vue';
-import HeroInterior from '~/components/HeroInterior.vue';
-import HeroTeam from '~/components/HeroTeam.vue';
-import HeroProjects from '~/components/HeroProjects.vue';
-import TeamMember from '~/components/TeamMember.vue';
-import Achievement from '~/components/Achievement.vue';
-import ProjectGrid from '~/components/ProjectGrid.vue';
-import ProjectGridItem from '~/components/ProjectGridItem.vue';
-import IconGrid from '~/components/IconGrid.vue';
-import IconGridItem from '~/components/IconGridItem.vue';
-import HeroBusiness from '~/components/HeroBusiness.vue';
-import ItemCard from '~/components/ItemCard.vue';
-import TitleSection from '~/components/TitleSection.vue';
-</script>

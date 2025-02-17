@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <tr class="border-b border-neutral-400">
-    <td class="p-4 bg-neutral-200 font-medium">{{ name }}</td>
+    <td class="p-4 font-medium">{{ name }}</td>
     <td
       v-for="(value, key) in { basicFunc, premiumFunc, basicExec, premiumExec }"
       :key="key"

@@ -55,7 +55,7 @@ const defaultServices = [
             <!-- Header -->
             <thead>
               <tr>
-                <th class="p-4 bg-neutral-200"></th>
+                <th class="p-4"></th>
                 <th
                   colspan="2"
                   class="p-4 text-center bg-primary-light text-neutral-100 rounded-tl-2xl rounded-tr-2xl"
@@ -70,7 +70,7 @@ const defaultServices = [
                 </th>
               </tr>
               <tr class="border-b border-neutral-400">
-                <th class="p-4 bg-neutral-200"></th>
+                <th class="p-4"></th>
                 <th class="p-4 text-center bg-primary-light text-neutral-100">
                   <div class="font-semibold">Podstawowy</div>
                   <div class="text-sm mt-1">od 60 zł/m²</div>

@@ -4,6 +4,7 @@ import { ref, computed } from 'vue';
 
 const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
+const swiperRef = ref(null);
 
 const { data } = await useAsyncData(`project-${route.path}`, () =>
   queryCollection('projects').where('slug', '=', route.params.slug).first()
@@ -17,17 +18,6 @@ const ctaLink = computed(() => {
   if (data.value?.ctaLink) return data.value.ctaLink;
   if (data.value?.slug) return `/projects/${data.value.slug}`;
   return '/projects';
-});
-
-const swiperRef = ref(null);
-
-useSwiper(swiperRef, {
-  effect: 'slide',
-  autoplay: {
-    delay: 1000,
-    disableOnInteraction: false,
-  },
-  pagination: false,
 });
 </script>
 
@@ -61,6 +51,10 @@ useSwiper(swiperRef, {
                   ref="swiperRef"
                   :loop="true"
                   :pagination="true"
+                  :autoplay="{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }"
                   class="w-full h-full"
                 >
                   <swiper-slide

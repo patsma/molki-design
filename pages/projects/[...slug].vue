@@ -5,29 +5,22 @@ import { ref, computed } from 'vue';
 const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
 
-const { data, error } = await useAsyncData(`project-${route.path}`, () =>
+const { data } = await useAsyncData(`project-${route.path}`, () =>
   queryCollection('projects').where('slug', '=', route.params.slug).first()
 );
 
 // Debug output
 console.log('Project data:', data.value);
-console.log('CTA Link:', data.value?.ctaLink);
+console.log('Markdown content:', data.value?.meta?.body?.value);
 
-// Computed property for CTA link with proper fallback chain
 const ctaLink = computed(() => {
-  // First try the explicit ctaLink from the markdown
   if (data.value?.ctaLink) return data.value.ctaLink;
-
-  // If not set, try to construct from the project data
   if (data.value?.slug) return `/projects/${data.value.slug}`;
-
-  // Final fallback
   return '/projects';
 });
 
 const swiperRef = ref(null);
 
-// Initialize swiper with options
 useSwiper(swiperRef, {
   effect: 'slide',
   autoplay: {
@@ -87,7 +80,13 @@ useSwiper(swiperRef, {
             </div>
           </div>
           <div class="grid">
-            <p class="text-xl text-neutral-800">{{ data.description }}</p>
+            <article class="prose prose-xl max-w-none">
+              <ContentRenderer
+                v-if="data?.meta?.body"
+                :value="{ body: data.meta.body }"
+                :excerpt="false"
+              />
+            </article>
           </div>
         </div>
       </div>
@@ -115,5 +114,91 @@ swiper-container::part(bullet) {
 
 swiper-container::part(bullet-active) {
   @apply bg-white opacity-100;
+}
+
+/* Prose Styling */
+.prose {
+  @apply text-neutral-800;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold mb-6 mt-8;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold mb-4 mt-8;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold mb-3 mt-6;
+}
+
+.prose p {
+  @apply text-xl leading-relaxed mb-4;
+}
+
+.prose ul {
+  @apply my-4 space-y-2;
+}
+
+.prose ol {
+  @apply my-4 space-y-2 list-decimal;
+}
+
+.prose li {
+  @apply text-xl leading-relaxed ml-4;
+}
+
+.prose a {
+  @apply text-primary hover:text-primary-dark transition-colors duration-200 font-semibold;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic my-4;
+}
+
+.prose code {
+  @apply bg-neutral-100 rounded px-1.5 py-0.5 text-base font-mono;
+}
+
+.prose pre {
+  @apply bg-neutral-900 text-white p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose img {
+  @apply rounded-lg shadow-lg my-6;
+}
+
+.prose table {
+  @apply w-full my-6;
+}
+
+.prose table th {
+  @apply bg-neutral-100 p-2 text-left font-bold;
+}
+
+.prose table td {
+  @apply border-t border-neutral-200 p-2;
+}
+
+.prose hr {
+  @apply my-8 border-neutral-200;
+}
+
+/* Dark mode adjustments if needed */
+.dark .prose {
+  @apply text-neutral-200;
+}
+
+.dark .prose a {
+  @apply text-primary-light hover:text-primary;
+}
+
+.dark .prose code {
+  @apply bg-neutral-800 text-neutral-200;
+}
+
+.dark .prose blockquote {
+  @apply border-primary-light;
 }
 </style>

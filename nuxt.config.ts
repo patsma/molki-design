@@ -202,4 +202,11 @@ export default defineNuxtConfig({
       globals.forEach((c) => (c.global = true));
     },
   },
+
+  swiper: {
+    // Swiper options
+    prefix: 'Swiper',
+    styleLang: 'css',
+    modules: ['navigation', 'pagination', 'autoplay'],
+  },
 });

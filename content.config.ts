@@ -9,12 +9,16 @@ export default defineContentConfig({
         exclude: ['**/.!(navigation.yml)'],
       },
       schema: z.object({
-        slug: z.string().optional(),
+        slug: z.string(),
         title: z.string(),
+        subtitle: z.string().optional(),
         location: z.string(),
         year: z.string(),
         number: z.string(),
         cover: z.string(),
+        description: z.string(),
+        images: z.array(z.string()).optional(),
+        ctaText: z.string().default('ZOBACZ WIĘCEJ'),
       }),
     }),
     content: defineCollection({

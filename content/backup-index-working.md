@@ -1,9 +1,15 @@
 ---
 title: Molki Design
-description: Lorem Ipsum
+description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
+  Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres
+  usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz
+  domów, mieszkań i wnętrz komercyjnych
 seo:
   title: Molki Design
-  description: Lorem Ipsum
+  description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
+    Trójmiasto, Polska – molki design to studio projektowe oferujące pełen
+    zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu
+    wnętrz domów, mieszkań i wnętrz komercyjnych
 ---
 
 ::hero
@@ -401,7 +407,6 @@ Wybierz wariant dopasowany do Twoich potrzeb
   :::
 ::
 
-
 ::title-section
 ---
 hasBackground: true
@@ -412,7 +417,6 @@ Bezstresowy Remont od A do Z
 #subtitle
 Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 ::
-
 
 ::item-card
 ---
@@ -455,7 +459,6 @@ Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i 
 
 Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::
-
 
 ::project-grid
 ---
@@ -518,4 +521,79 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
 #cta
 UMÓW KONSULTACJĘ
+::
+
+::title-section
+---
+hasBackground: false
+---
+#title
+Cennik Usług Projektowych
+
+#subtitle
+Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoich potrzeb i budżetu.
+::
+
+::services-table
+---
+infoText: powyższe kwoty podane są w wartości netto...
+---
+#services
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+::
+
+::square-grid
+#title
+Nasze Realizacje
+
+#subtitle
+Zobacz nasze najnowsze projekty
 ::

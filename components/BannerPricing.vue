@@ -6,7 +6,6 @@ interface PricingOption {
 
 defineProps<{
   options?: PricingOption[];
-  infoText?: string;
 }>();
 
 // Default pricing options if none provided
@@ -80,12 +79,12 @@ const defaultOptions = [
       <div class="breakout1">
         <!-- Info Text -->
         <p
-          v-if="$slots.infoText || infoText"
+          v-if="$slots.infoText"
           class="text-sm text-neutral-600 mt-8"
           data-scroll-item
           data-scroll-animation="fadeUp"
         >
-          <slot name="infoText" mdc-unwrap="p">{{ infoText }}</slot>
+          <slot name="infoText" mdc-unwrap="p" />
         </p>
       </div>
     </div>

@@ -31,24 +31,37 @@ const swiperRef = ref(null);
 useSwiper(swiperRef, {
   effect: 'slide',
   autoplay: {
-    delay: 5000,
+    delay: 1000,
     disableOnInteraction: false,
   },
-  pagination: true,
+  pagination: false,
 });
 </script>
 
 <template>
   <main>
-    <div v-if="data" class="content-grid py-24">
+    <div v-if="data" class="content-grid py-32">
       <div class="breakout1">
-        <!-- Project Header -->
-        <div class="mb-16 grid grid-cols-1 md:grid-cols-6 gap-8">
-          <div class="col-span-4">
-            <div class="text-6xl font-bold text-primary mb-4">{{ data.number }}</div>
-            <h1 class="h1-style text-primary mb-4">{{ data.title }}</h1>
-            <div class="text-xl text-neutral-600">{{ data.location }} | {{ data.year }}</div>
-            <!-- Project Images Swiper -->
+        <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center pb-14">
+          <div class="grid grid-flow-col justify-start gap-8">
+            <div class="text-6xl font-bold text-primary">{{ data.number }}</div>
+            <div class="grid">
+              <h1 class="h3-style text-primary">{{ data.title }}</h1>
+              <div class="text-xl text-neutral-600">{{ data.location }} | {{ data.year }}</div>
+            </div>
+          </div>
+          <div class="grid text-center">
+            <NuxtLink
+              :to="ctaLink"
+              class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label="Zobacz więcej"
+            >
+              {{ data.ctaText || 'ZOBACZ WIĘCEJ' }}
+            </NuxtLink>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8">
+          <div class="grid">
             <div class="aspect-video overflow-hidden rounded-lg">
               <ClientOnly>
                 <swiper-container
@@ -73,20 +86,10 @@ useSwiper(swiperRef, {
               </ClientOnly>
             </div>
           </div>
-          <div class="grid justify-between content-start col-span-2">
+          <div class="grid">
             <p class="text-xl text-neutral-800">{{ data.description }}</p>
-            <NuxtLink
-              :to="ctaLink"
-              class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              aria-label="Zobacz więcej"
-            >
-              {{ data.ctaText || 'ZOBACZ WIĘCEJ' }}
-            </NuxtLink>
           </div>
         </div>
-
-        <!-- Project Content -->
-        <ContentRenderer :value="data" />
       </div>
     </div>
     <pre v-else class="p-4">Loading...</pre>

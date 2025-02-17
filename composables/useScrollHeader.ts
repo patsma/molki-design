@@ -15,7 +15,7 @@ export const useScrollHeader = () => {
   let lastCheck = 0;
 
   const initScrollHeader = () => {
-    console.log('🎯 Initializing scroll header');
+    // console.log('🎯 Initializing scroll header');
     if (!process.client || !headerRef.value) {
       console.log('⚠️ Header initialization skipped:', {
         isClient: process.client,
@@ -25,12 +25,12 @@ export const useScrollHeader = () => {
     }
 
     if (isMobile.value) {
-      console.log('📱 Initializing mobile header');
+      // console.log('📱 Initializing mobile header');
       initMobileHeader();
       return;
     }
 
-    console.log('🖥️ Initializing desktop header');
+    // console.log('🖥️ Initializing desktop header');
     // Ensure header has correct height before pinning
     gsap.set(headerRef.value, {
       height: headerHeight.value,
@@ -85,7 +85,7 @@ export const useScrollHeader = () => {
   };
 
   const initMobileHeader = () => {
-    console.log('📱 Initializing mobile header');
+    // console.log('📱 Initializing mobile header');
     const header = headerRef.value;
     if (!header) {
       console.warn('⚠️ Header element not found');

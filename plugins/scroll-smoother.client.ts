@@ -52,7 +52,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   const initSectionAnimations = () => {
-    console.log('🎯 Initializing section animations');
+    // console.log('🎯 Initializing section animations');
     const DEFAULT_SCROLL_START = 'top 80%';
     const DEFAULT_SCROLL_END = 'bottom 20%';
     const DEFAULT_TOGGLE_ACTIONS = 'play none none none';
@@ -130,12 +130,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (window.__gsap_init) return;
     window.__gsap_init = true;
 
-    console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
+    // console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
     $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother, $SplitText);
     registerEffects();
 
     if (isMobile.value) {
-      console.log('📱 Mobile detected - initializing native scroll');
+      // console.log('📱 Mobile detected - initializing native scroll');
       animationContext = initSectionAnimations();
       $gsap.delayedCall(0.1, () => {
         $ScrollTrigger.refresh(true);
@@ -149,7 +149,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const content = document.querySelector('#smooth-content');
 
     if (wrapper && content) {
-      console.log('🖥️ Creating ScrollSmoother instance');
+      // console.log('🖥️ Creating ScrollSmoother instance');
       scrollSmoother = $ScrollSmoother.create({
         wrapper,
         content,

@@ -11,7 +11,7 @@ const { headerRef, initScrollHeader, cleanup } = useScrollHeader();
 
 onMounted(() => {
   if (process.client) {
-    console.log('🎯 HeaderComponent mounted, headerRef:', headerRef.value);
+    // console.log('🎯 HeaderComponent mounted, headerRef:', headerRef.value);
     $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline');
 
     menuStore.initAnimation($gsap);
@@ -38,7 +38,7 @@ onUnmounted(() => {
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
             @click.prevent="
               () => {
-                console.log('Hamburger clicked');
+                // console.log('Hamburger clicked');
                 menuStore.toggleMenu();
               }
             "

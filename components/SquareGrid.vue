@@ -3,6 +3,10 @@ defineProps<{
   title?: string;
   subtitle?: string;
 }>();
+
+const { data: projects } = await useAsyncData('projects-grid', () =>
+  queryCollection('projects').order('number', 'ASC').all()
+);
 </script>
 
 <template>
@@ -38,7 +42,19 @@ defineProps<{
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
         >
-          <slot name="items" />
+          <template v-if="projects?.length">
+            <SquareGridItem
+              v-for="project in projects"
+              :key="project._id"
+              :to="`/projects/${project.slug}`"
+              :number="project.number"
+              :title="project.title"
+              :location="project.location"
+              :year="project.year"
+              :image="project.cover"
+            />
+          </template>
+          <slot name="items" v-else />
         </div>
       </div>
     </div>

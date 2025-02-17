@@ -589,3 +589,11 @@ infoText: powyższe kwoty podane są w wartości netto...
   ---
   :::
 ::
+
+::square-grid
+#title
+Nasze Realizacje
+
+#subtitle
+Zobacz nasze najnowsze projekty
+::

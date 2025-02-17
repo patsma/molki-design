@@ -43,14 +43,14 @@
       </template>
 
       <template #options>
-        <div class="text-center p-8 bg-white rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-primary mb-4">Porada Projektowa</h3>
-          <p class="text-2xl font-bold text-neutral-800">600 zł</p>
-        </div>
-        <div class="text-center p-8 bg-white rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-primary mb-4">Porada Projektowa z dokumentacją</h3>
-          <p class="text-2xl font-bold text-neutral-800">1 200 zł</p>
-        </div>
+        <PricingOption>
+          <template #title>Porada Projektowa</template>
+          <template #price>600 zł</template>
+        </PricingOption>
+        <PricingOption>
+          <template #title>Porada Projektowa z dokumentacją</template>
+          <template #price>1 200 zł</template>
+        </PricingOption>
       </template>
 
       <template #infoText>

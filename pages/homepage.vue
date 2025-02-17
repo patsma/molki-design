@@ -15,6 +15,8 @@ import IconGridItem from '~/components/IconGridItem.vue';
 import HeroBusiness from '~/components/HeroBusiness.vue';
 import ItemCard from '~/components/ItemCard.vue';
 import TitleSection from '~/components/TitleSection.vue';
+import BannerPricing from '~/components/BannerPricing.vue';
+import PricingOption from '~/components/PricingOption.vue';
 </script>
 
 <template>
@@ -425,6 +427,44 @@ import TitleSection from '~/components/TitleSection.vue';
           />
         </template>
       </SquareGrid>
+
+      <BannerPricing>
+        <template #title>Nowe Pomysły na Twoje Wnętrze</template>
+
+        <template #description>
+          <p>
+            Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego
+            projektu? Skorzystaj z naszej Porady Projektowej.
+          </p>
+        </template>
+
+        <template #image>
+          <ParallaxImg>
+            <nuxt-img
+              src="/heroInterior.jpg"
+              alt="Interior Design Consultation"
+              class="parallax-content"
+              format="webp"
+            />
+          </ParallaxImg>
+        </template>
+
+        <template #options>
+          <PricingOption>
+            <template #title>Porada Projektowa</template>
+            <template #price>600 zł</template>
+          </PricingOption>
+          <PricingOption>
+            <template #title>Porada Projektowa z dokumentacją</template>
+            <template #price>1 200 zł</template>
+          </PricingOption>
+        </template>
+
+        <template #infoText>
+          Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po
+          indywidualnej wycenie
+        </template>
+      </BannerPricing>
     </div>
   </div>
 </template>

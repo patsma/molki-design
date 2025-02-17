@@ -57,15 +57,17 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
 
 #options
   :::pricing-option
-  ---
-  title: "Porada Projektowa"
-  price: "600 zł"
-  ---
+  #title
+  Porada Projektowa
+  
+  #price
+  600 zł
   :::
   :::pricing-option
-  ---
-  title: "Porada Projektowa z dokumentacją"
-  price: "1 200 zł"
-  ---
+  #title
+  Porada Projektowa z dokumentacją
+  
+  #price
+  1 200 zł
   :::
 ::

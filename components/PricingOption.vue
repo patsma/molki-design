@@ -1,10 +1,3 @@
-<script setup lang="ts">
-defineProps<{
-  title: string;
-  price: string;
-}>();
-</script>
-
 <template>
   <div class="text-center">
     <div class="p-8 bg-primary md:border-r border-white/40">

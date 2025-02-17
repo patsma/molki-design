@@ -1,24 +1,5 @@
 <script setup lang="ts">
-interface PricingOption {
-  title: string;
-  price: string;
-}
-
-defineProps<{
-  options?: PricingOption[];
-}>();
-
-// Default pricing options if none provided
-const defaultOptions = [
-  {
-    title: 'Porada Projektowa',
-    price: '600 zł',
-  },
-  {
-    title: 'Porada Projektowa z dokumentacją',
-    price: '1 200 zł',
-  },
-];
+// No props needed anymore since we're using slots exclusively
 </script>
 
 <template>
@@ -62,17 +43,7 @@ const defaultOptions = [
           data-scroll-item
           data-scroll-animation="fadeUp"
         >
-          <template v-if="$slots.options">
-            <slot name="options" mdc-unwrap="p" />
-          </template>
-          <template v-else>
-            <PricingOption
-              v-for="option in options || defaultOptions"
-              :key="option.title"
-              :title="option.title"
-              :price="option.price"
-            />
-          </template>
+          <slot name="options" mdc-unwrap="p" />
         </div>
       </div>
 

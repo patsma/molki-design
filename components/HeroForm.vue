@@ -3,10 +3,21 @@
 defineProps<{
   ctaLink?: string;
 }>();
+
+defineSlots<{
+  heroImage?: (props: {}) => any;
+  title?: (props: { mdcUnwrap: string }) => any;
+  description?: (props: { mdcUnwrap: string }) => any;
+  submitText?: (props: {}) => any;
+  infoText?: (props: {}) => any;
+}>();
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>
+  <section
+    class="full-width data-scroll-section relative min-h-[100vh] w-full overflow-hidden"
+    data-scroll-section
+  >
     <div class="relative">
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
@@ -28,7 +39,7 @@ defineProps<{
       </div>
 
       <!-- Content Container -->
-      <div class="full-width w-full relative z-10 grid min-h-screen content-end gap-y-8">
+      <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8">
         <div class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16">
           <!-- Left Column: Form Section -->
           <div
@@ -68,7 +79,7 @@ defineProps<{
             >
               <input type="hidden" name="form-name" value="contact" />
 
-              <div v-if="$slots.name || true">
+              <div>
                 <label for="name" class="block text-sm font-medium text-neutral-700">Imię</label>
                 <input
                   type="text"
@@ -80,7 +91,7 @@ defineProps<{
                 />
               </div>
 
-              <div v-if="$slots.email || true">
+              <div>
                 <label for="email" class="block text-sm font-medium text-neutral-700">E-mail</label>
                 <input
                   type="email"
@@ -92,7 +103,7 @@ defineProps<{
                 />
               </div>
 
-              <div v-if="$slots.message || true">
+              <div>
                 <label for="message" class="block text-sm font-medium text-neutral-700"
                   >Wiadomość</label
                 >
@@ -110,7 +121,7 @@ defineProps<{
                 type="submit"
                 class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
-                <slot name="submitText">Wyślij wiadomość</slot>
+                <slot name="submitText" mdc-unwrap="p">Wyślij wiadomość</slot>
               </button>
             </form>
           </div>
@@ -122,18 +133,16 @@ defineProps<{
         <!-- Info Text Section -->
         <div
           v-if="$slots.infoText"
-          class="full-width-content bg-neutral-400 relative"
+          class="breakout1 mb-16"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
           data-scroll-independent="true"
           data-scroll-start="top bottom"
         >
-          <div class="py-8 md:py-12 content-grid">
-            <div class="breakout1">
-              <div class="text-xl md:text-2xl leading-relaxed text-neutral-800">
-                <slot name="infoText" />
-              </div>
+          <div class="py-8 md:py-12">
+            <div class="text-xl md:text-2xl leading-relaxed text-white">
+              <slot name="infoText" mdc-unwrap="p" />
             </div>
           </div>
         </div>

@@ -179,6 +179,7 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
     },
+    documentDriven: true,
     renderer: {
       anchorLinks: false,
     },

@@ -31,6 +31,9 @@ declare module '@nuxt/schema' {
         };
         anchorLinks?: boolean;
       };
+      renderer?: {
+        anchorLinks: boolean;
+      };
     };
   }
 }
@@ -175,6 +178,9 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: 'https://api.nuxt.studio',
+    },
+    renderer: {
+      anchorLinks: false,
     },
   },
 

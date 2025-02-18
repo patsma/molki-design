@@ -70,9 +70,8 @@ Dodatkowe usługi projektowe
 
 #content
  
- # Konsultacja przedprojektowa - 190 zł/h
- Here's a [link to our process](/buttons) that [shows](/projects) how we work.
- Dodatkowe Usługi - wyceny indywidualne
+ ## Konsultacja przedprojektowa - 190 zł/h
+ ### Dodatkowe Usługi - wyceny indywidualne
 
 - Projekty niestandardowe, konsultacje z zakresu sztuki
 - Doradztwo w zakresie wyboru materiałów i mebli

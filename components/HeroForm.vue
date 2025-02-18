@@ -24,12 +24,12 @@ const handleSubmit = async (event: Event) => {
 
   try {
     const form = event.target as HTMLFormElement;
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
-    const response = await fetch('/', {
+    const response = await fetch(form.action, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data as any).toString(),
+      body: new URLSearchParams(formData as any).toString(),
     });
 
     if (response.ok) {
@@ -105,11 +105,11 @@ const handleSubmit = async (event: Event) => {
               name="contact"
               method="POST"
               data-netlify="true"
-              action="/buttons"
               class="space-y-6"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
+              @submit="handleSubmit"
             >
               <!-- This hidden input is required for Netlify Forms -->
               <input type="hidden" name="form-name" value="contact" />
@@ -144,6 +144,7 @@ const handleSubmit = async (event: Event) => {
                   required
                   class="mt-2 w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="Twoje imię"
+                  :disabled="isSubmitting"
                 />
               </div>
 
@@ -156,6 +157,7 @@ const handleSubmit = async (event: Event) => {
                   required
                   class="mt-2 w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="twoj@email.com"
+                  :disabled="isSubmitting"
                 />
               </div>
 
@@ -170,14 +172,17 @@ const handleSubmit = async (event: Event) => {
                   rows="4"
                   class="mt-2 w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="Twoja wiadomość..."
+                  :disabled="isSubmitting"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                :disabled="isSubmitting"
               >
-                <slot name="submitText" mdc-unwrap="p">Wyślij wiadomość</slot>
+                <span v-if="isSubmitting">Wysyłanie...</span>
+                <slot v-else name="submitText" mdc-unwrap="p">Wyślij wiadomość</slot>
               </button>
             </form>
           </div>

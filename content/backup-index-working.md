@@ -631,3 +631,23 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
 Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
 ::
 
+
+::info-pricing
+#title
+Dodatkowe usługi projektowe
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Interior Design Services](/heroInterior.jpg)
+  :::
+
+#content
+ 
+ ## Konsultacja przedprojektowa - 190 zł/h
+ ### Dodatkowe Usługi - wyceny indywidualne
+
+- Projekty niestandardowe, konsultacje z zakresu sztuki
+- Doradztwo w zakresie wyboru materiałów i mebli
+- Realizacja i Nadzór Autorski
+- Inwentaryzacja bez projektu
+::

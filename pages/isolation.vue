@@ -1,31 +1,23 @@
 <template>
-  <div class="content-grid py-20">
-    <InfoPricing>
-      <template #title>Dodatkowe usługi projektowe</template>
+  <div>
+    <HeroForm>
+      <template #title> Skontaktuj się z nami </template>
 
-      <template #image>
+      <template #description>
+        Wypełnij formularz, a my skontaktujemy się z Tobą jak najszybciej.
+      </template>
+
+      <template #heroImage>
         <ParallaxImg>
-          <nuxt-img
-            src="/heroInterior.jpg"
-            alt="Interior Design Services"
-            class="w-full h-full object-cover"
-            format="webp"
-          />
+          <nuxt-img src="/heroHome.jpg" alt="Contact us" class="parallax-content" format="webp" />
         </ParallaxImg>
       </template>
 
-      <template #content>
-        <h3>Konsultacja przedprojektowa - 190 zł/h</h3>
-
-        <h4>Dodatkowe Usługi - wyceny indywidualne</h4>
-        <ul>
-          <li>Projekty niestandardowe, konsultacje z zakresu sztuki</li>
-          <li>Doradztwo w zakresie wyboru materiałów i mebli</li>
-          <li>Realizacja i Nadzór Autorski</li>
-          <li>Inwentaryzacja bez projektu</li>
-        </ul>
+      <template #infoText>
+        Wszystkie przesłane dane są chronione zgodnie z naszą polityką prywatności. Odpowiemy na
+        Twoją wiadomość w ciągu 24 godzin.
       </template>
-    </InfoPricing>
+    </HeroForm>
   </div>
 </template>
 

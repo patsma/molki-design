@@ -104,13 +104,14 @@ const handleSubmit = async (event: Event) => {
             <form
               name="contact"
               method="POST"
-              netlify
+              data-netlify="true"
+              action="/buttons"
               class="space-y-6"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
-              @submit="handleSubmit"
             >
+              <!-- This hidden input is required for Netlify Forms -->
               <input type="hidden" name="form-name" value="contact" />
 
               <!-- Form Status Messages -->
@@ -143,7 +144,6 @@ const handleSubmit = async (event: Event) => {
                   required
                   class="mt-2 w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="Twoje imię"
-                  :disabled="isSubmitting"
                 />
               </div>
 
@@ -156,7 +156,6 @@ const handleSubmit = async (event: Event) => {
                   required
                   class="mt-2 w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="twoj@email.com"
-                  :disabled="isSubmitting"
                 />
               </div>
 
@@ -171,17 +170,14 @@ const handleSubmit = async (event: Event) => {
                   rows="4"
                   class="mt-2 w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="Twoja wiadomość..."
-                  :disabled="isSubmitting"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                :disabled="isSubmitting"
+                class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
-                <span v-if="isSubmitting">Wysyłanie...</span>
-                <slot v-else name="submitText" mdc-unwrap="p">Wyślij wiadomość</slot>
+                <slot name="submitText" mdc-unwrap="p">Wyślij wiadomość</slot>
               </button>
             </form>
           </div>

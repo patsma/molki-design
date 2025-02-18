@@ -598,7 +598,6 @@ Nasze Realizacje
 Zobacz nasze najnowsze projekty
 ::
 
-
 ::banner-pricing
 #title
 Nowe Pomysły na Twoje Wnętrze
@@ -619,6 +618,7 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
   #price
   600 zł
   :::
+
   :::pricing-option
   #title
   Porada Projektowa z dokumentacją
@@ -631,7 +631,6 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
 Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
 ::
 
-
 ::info-pricing
 #title
 Dodatkowe usługi projektowe
@@ -642,9 +641,9 @@ Dodatkowe usługi projektowe
   :::
 
 #content
- 
- ## Konsultacja przedprojektowa - 190 zł/h
- ### Dodatkowe Usługi - wyceny indywidualne
+## Konsultacja przedprojektowa - 190 zł/h
+
+### Dodatkowe Usługi - wyceny indywidualne
 
 - Projekty niestandardowe, konsultacje z zakresu sztuki
 - Doradztwo w zakresie wyboru materiałów i mebli

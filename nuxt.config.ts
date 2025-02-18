@@ -55,7 +55,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image',
     '@nuxt/content',
-    '@nuxtjs/mdc',
     '@nuxt/icon',
     'nuxt-swiper',
   ],
@@ -177,14 +176,6 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
     },
-    documentDriven: true,
-    markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 3,
-      },
-      anchorLinks: false,
-    },
   },
 
   postcss: {
@@ -195,13 +186,6 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-29',
-
-  hooks: {
-    'components:extend': (components) => {
-      const globals = components.filter((c) => ['ParallaxImg'].includes(c.pascalName));
-      globals.forEach((c) => (c.global = true));
-    },
-  },
 
   swiper: {
     // Swiper options

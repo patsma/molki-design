@@ -41,7 +41,7 @@ defineProps<{
     <!-- Content -->
     <div class="absolute inset-x-0 bottom-0 p-6">
       <div
-        class="transform translate-y-[150%] transition-transform duration-300 group-hover:translate-y-0"
+        class="transform md:translate-y-[150%] transition-transform duration-300 md:group-hover:translate-y-0"
       >
         <h3 class="text-xl font-semibold text-white mb-2">{{ title }}</h3>
         <div class="text-sm text-white/80">{{ location }} | {{ year }}</div>

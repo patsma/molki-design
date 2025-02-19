@@ -1,23 +1,35 @@
 <template>
   <div>
-    <HeroForm>
-      <template #title> Skontaktuj się z nami </template>
-
-      <template #description>
-        Wypełnij formularz, a my skontaktujemy się z Tobą jak najszybciej.
+    <PreFooter>
+      <template #title>Nasze oddziały</template>
+      <template #backgroundImage>
+        <ParallaxImg src="/heroHome.jpg" alt="Pre-footer background" />
       </template>
 
-      <template #heroImage>
-        <ParallaxImg>
-          <nuxt-img src="/heroHome.jpg" alt="Contact us" class="parallax-content" format="webp" />
-        </ParallaxImg>
+      <!-- Left Company -->
+      <template #leftCompanyTitle>Warszawa</template>
+      <template #leftCompanySubtitle>Centrala</template>
+      <template #leftCompanyText>
+        ul. Przykładowa 123<br />
+        00-000 Warszawa
       </template>
 
-      <template #infoText>
-        Wszystkie przesłane dane są chronione zgodnie z naszą polityką prywatności. Odpowiemy na
-        Twoją wiadomość w ciągu 24 godzin.
+      <!-- Right Company -->
+      <template #rightCompanyTitle>Kraków</template>
+      <template #rightCompanySubtitle>Oddział</template>
+      <template #rightCompanyText>
+        ul. Przykładowa 456<br />
+        30-000 Kraków
       </template>
-    </HeroForm>
+
+      <!-- Contact Section -->
+      <template #contactTitle>Skontaktuj się z nami</template>
+      <template #contactInfo>
+        <p>Tel: +48 123 456 789</p>
+        <p>Email: kontakt@firma.pl</p>
+        <p>Godziny otwarcia:<br />Pon-Pt: 9:00 - 17:00</p>
+      </template>
+    </PreFooter>
   </div>
 </template>
 

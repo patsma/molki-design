@@ -9,11 +9,52 @@ interface ScrollToOptions {
   offset?: number;
 }
 
+interface MenuItem {
+  label: string;
+  link: string;
+  children?: MenuItem[];
+}
+
 export const useMenuStore = defineStore('menu', {
   state: () => ({
     isMobileMenuOpen: false,
     mobileMenuTimeline: null as gsap.core.Timeline | null,
     gsapInstance: null as typeof gsap | null,
+    menuItems: [
+      {
+        label: 'O NAS',
+        link: '/buttons',
+      },
+      {
+        label: 'PROJEKT',
+        link: '/#spacer1',
+        children: [
+          { label: 'REALIZACJE', link: '/projects' },
+          { label: 'CENNIK', link: '#cennik-projekt' },
+        ],
+      },
+      {
+        label: 'REMONT+',
+        link: '/homepage',
+        children: [
+          { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
+          { label: 'CENNIK', link: '#remonty-cennik' },
+        ],
+      },
+      {
+        label: 'BIZNES',
+        link: '/isolation',
+        children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
+      },
+      {
+        label: 'BLOG',
+        link: '#blog',
+      },
+      {
+        label: 'KONTAKT',
+        link: '#blog',
+      },
+    ] as MenuItem[],
     activeDropdownId: null as string | null,
     dropdownTimelines: new Map<string, gsap.core.Timeline>(),
   }),
@@ -102,13 +143,12 @@ export const useMenuStore = defineStore('menu', {
         });
 
         const contentHeight = (submenu as HTMLElement).offsetHeight;
-        // console.log(`📏 Content height for ${dropdownId}:`, contentHeight);
 
         // Set initial state
         this.gsapInstance.set(submenu, {
           display: 'grid',
           maxHeight: 0,
-          height: 'auto', // Keep auto height
+          height: 'auto',
           opacity: 0,
           visibility: 'visible',
         });
@@ -142,14 +182,12 @@ export const useMenuStore = defineStore('menu', {
 
       if (!timeline) return;
 
-      // Close active dropdown if it's different from the current one
       if (this.activeDropdownId && this.activeDropdownId !== dropdownId) {
         const activeTimeline = this.dropdownTimelines.get(this.activeDropdownId);
         activeTimeline?.reverse();
         this.activeDropdownId = null;
       }
 
-      // Toggle current dropdown
       if (timeline.progress() === 0 || timeline.reversed()) {
         timeline.play();
         this.activeDropdownId = dropdownId;
@@ -160,7 +198,6 @@ export const useMenuStore = defineStore('menu', {
     },
 
     toggleMenu() {
-      // console.log('Toggle menu called');
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
       if (!this.mobileMenuTimeline) {
@@ -169,98 +206,40 @@ export const useMenuStore = defineStore('menu', {
       }
 
       if (this.isMobileMenuOpen) {
-        // document.body.style.overflow = "hidden";
         this.mobileMenuTimeline.play();
       } else {
-        document.body.style.overflow = '';
         this.mobileMenuTimeline.reverse();
       }
     },
 
     closeMenu() {
       if (!this.isMobileMenuOpen) return;
-
       this.isMobileMenuOpen = false;
-      document.body.style.overflow = '';
       this.mobileMenuTimeline?.reverse();
     },
 
-    async handleMenuItemClick(link: string, router: any, event?: Event) {
-      event?.preventDefault();
+    async handleMenuItemClick(link: string, router: any, event: MouseEvent) {
+      // Close mobile menu if open
+      if (this.isMobileMenuOpen) {
+        this.closeMenu();
+      }
 
-      // console.log('🎯 Handling menu item click:', link);
-      const smoother = ScrollSmoother.get();
-
+      // Handle hash links
       if (link.startsWith('#')) {
-        if (this.isMobileMenuOpen) {
-          // console.log('📱 Closing mobile menu before scroll');
-          await this.closeMenu();
-          await new Promise((resolve) => setTimeout(resolve, 400));
-        }
-
-        const target = document.querySelector(link);
-        if (!target) {
-          console.warn('🚫 Target element not found:', link);
-          return;
-        }
-
-        // console.log('🎯 Target element:', target);
-        // console.log('🔄 Starting scroll animation');
-
-        if (smoother && this.gsapInstance) {
-          // console.log('Using ScrollSmoother for animation');
-
-          try {
-            const bounds = target.getBoundingClientRect();
-            const scrollTop = smoother.scrollTop();
-            const targetY = scrollTop + bounds.top - 100;
-
-            // console.log('📏 Calculated scroll position:', targetY);
-            // console.log('⏱️ Animation duration:', 2);
-
-            this.gsapInstance.to(smoother, {
-              scrollTop: targetY,
-              duration: 2,
-              ease: 'power3.inOut',
-              overwrite: true,
-              // onStart: () => console.log('🎬 Animation starting'),
-              // onUpdate: () => console.log('⏱️ Progress:', smoother.scrollTop()),
-              // onComplete: () => console.log('✅ Animation complete'),
-            });
-
-            // console.log('🎬 Scroll animation initiated');
-          } catch (error) {
-            console.error('Failed to scroll:', error);
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-          }
-        } else {
-          // console.log('Using native smooth scroll');
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
+        event.preventDefault();
+        const element = document.querySelector(link);
+        if (element) {
+          const smoother = ScrollSmoother.get();
+          smoother?.scrollTo(element, {
+            duration: 1,
+            ease: 'power2.inOut',
           });
         }
-      } else if (link !== '#') {
-        if (this.isMobileMenuOpen) {
-          await this.closeMenu();
-        }
-        await navigateTo(link);
+        return;
       }
-    },
 
-    cleanup() {
-      // console.log('🧹 Cleaning up store');
-      if (this.mobileMenuTimeline) {
-        this.mobileMenuTimeline.kill();
-        this.mobileMenuTimeline = null;
-      }
-      this.dropdownTimelines.forEach((timeline) => timeline.kill());
-      this.dropdownTimelines.clear();
-      this.activeDropdownId = null;
-      document.body.style.overflow = '';
+      // Handle regular navigation
+      await router.push(link);
     },
   },
 });

@@ -10,42 +10,6 @@ const props = defineProps<{
 const menuStore = useMenuStore();
 const router = useRouter();
 
-const menuItems = [
-  {
-    label: 'O NAS',
-    link: '/buttons',
-  },
-  {
-    label: 'PROJEKT',
-    link: '/#spacer1',
-    children: [
-      { label: 'REALIZACJE', link: '/projects' },
-      { label: 'CENNIK', link: '#cennik-projekt' },
-    ],
-  },
-  {
-    label: 'REMONT+',
-    link: '/homepage',
-    children: [
-      { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
-      { label: 'CENNIK', link: '#remonty-cennik' },
-    ],
-  },
-  {
-    label: 'BIZNES',
-    link: '/isolation',
-    children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
-  },
-  {
-    label: 'BLOG',
-    link: '#blog',
-  },
-  {
-    label: 'KONTAKT',
-    link: '#blog',
-  },
-];
-
 const handleClick = async (event: MouseEvent, link: string, hasChildren = false, index: number) => {
   event.preventDefault();
 
@@ -67,7 +31,7 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
 
 <template>
   <nav class="nav-menu" :class="{ mobile: props.isMobile }">
-    <div v-for="(item, index) in menuItems" :key="item.label" class="nav-menu__item">
+    <div v-for="(item, index) in menuStore.menuItems" :key="item.label" class="nav-menu__item">
       <a
         :href="item.link"
         class="nav-menu__link"

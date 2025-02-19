@@ -50,15 +50,65 @@ Pon-Pt: 9:00 - 17:00
   :::logo{class="w-48"}
   :::
 
+#menuTitle
+Menu
+
+#menuItems
+- O NAS
+- PROJEKT
+- REMONT+
+- BIZNES
+- BLOG
+- KONTAKT
+
+#sponsorsTitle
+Sponsorujemy:
+
 #sponsors
   :::logo{class="w-32"}
   :::
 
+
+#certificationsTitle
+Nasze Certyfikaty:
+
 #certifications
   :::logo{class="w-32"}
   :::
+  
+#contactTitle
+Dane kontaktowe:
+
+#contactAddress
+ul. Heweliusza 11/811,  
+80-890 Gdańsk
+
+#contactEmail
+kontakt@molki.pl
+
+#contactPhone
++48 572 323 207
+
+#membershipsTitle
+Należymy do:
 
 #memberships
   :::logo{class="w-32"}
   :::
+ 
+#socialTitle
+Bądź na bieżąco:
+
+#socialLinks
+- linkedin: https://linkedin.com
+- instagram: https://instagram.com
+- facebook: https://facebook.com
+
+#copyrightText
+molki.design.pl © 2024  
+Wszelkie prawa zastrzeżone.
+
+#privacyText
+/ prywatność / ciasteczka /  
+klauzula RODO
 ::

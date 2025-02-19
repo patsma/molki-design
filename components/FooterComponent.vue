@@ -8,12 +8,12 @@ const currentYear = new Date().getFullYear();
 const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
 const secondHalf = menuStore.menuItems.slice(Math.ceil(menuStore.menuItems.length / 2));
 
-// Define slots with proper TypeScript types
+// Define slots with proper TypeScript types for both MDC and regular slots
 defineSlots<{
-  logo?: (props: { class?: string }) => any;
-  sponsors?: (props: { class?: string }) => any;
-  certifications?: (props: { class?: string }) => any;
-  memberships?: (props: { class?: string }) => any;
+  logo?: (props: { mdcUnwrap?: string; class?: string }) => any;
+  sponsors?: (props: { mdcUnwrap?: string; class?: string }) => any;
+  certifications?: (props: { mdcUnwrap?: string; class?: string }) => any;
+  memberships?: (props: { mdcUnwrap?: string; class?: string }) => any;
   contactAddress?: (props: { mdcUnwrap?: string }) => any;
   contactEmail?: (props: { mdcUnwrap?: string }) => any;
   contactPhone?: (props: { mdcUnwrap?: string }) => any;
@@ -71,7 +71,7 @@ defineSlots<{
           <!-- Column 3: Second Half of Menu + Certifications -->
           <div class="h-full flex flex-col justify-between">
             <h4 class="text-sm font-bold text-primary"></h4>
-            <nav class="space-y-4">
+            <nav class="space-y-2">
               <NuxtLink
                 v-for="item in secondHalf"
                 :key="item.label"

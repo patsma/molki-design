@@ -47,65 +47,66 @@ Pon-Pt: 9:00 - 17:00
 
 ::footer-component
 #logo
-  :::logo{class="w-64"}
-  :::
-
-#menuTitle
-Menu
-
-#sponsorsTitle
-Sponsorujemy:
+<div class="grid place-items-center">
+  <Logo class="w-64" />
+</div>
 
 #sponsors
-  :::logo{class="w-32"}
-  :::
-  :::logo{class="w-32"}
-  :::
-
-#certificationsTitle
-Nasze Certyfikaty:
+<div class="grid grid-cols-2 gap-4">
+  <Logo class="w-32" />
+  <Logo class="w-32" />
+</div>
 
 #certifications
-  :::logo{class="w-32"}
-  :::
-  :::logo{class="w-32"}
-  :::
-
-#contactTitle
-Dane kontaktowe:
-
-#contactAddress
-ul. Heweliusza 11/811,  
-80-890 Gdańsk
-
-#contactEmail
-kontakt@molki.pl
-
-#contactPhone
-+48 572 323 207
-
-#membershipsTitle
-Należymy do:
+<div class="grid grid-cols-2 gap-4">
+  <Logo class="w-32" />
+  <Logo class="w-32" />
+</div>
 
 #memberships
-  :::logo{class="w-32"}
-  :::
-  :::logo{class="w-32"}
-  :::
+<div class="grid grid-cols-2 gap-4">
+  <Logo class="w-32" />
+  <Logo class="w-32" />
+</div>
 
-#socialTitle
-Bądź na bieżąco:
+#contactAddress
+<div class="text-neutral-600">
+  ul. Heweliusza 11/811,  
+  80-890 Gdańsk
+</div>
+
+#contactEmail
+<div class="text-neutral-600">
+  kontakt@molki.pl
+</div>
+
+#contactPhone
+<div class="text-neutral-600">
+  +48 572 323 207
+</div>
 
 #socialLinks
-- linkedin: https://linkedin.com
-- instagram: https://instagram.com
-- facebook: https://facebook.com
+<div class="flex space-x-4">
+  <a href="https://linkedin.com" target="_blank" class="text-primary hover:text-primary-dark">
+    <Icon name="uil:linkedin" class="w-6 h-6" />
+  </a>
+  <a href="https://instagram.com" target="_blank" class="text-primary hover:text-primary-dark">
+    <Icon name="uil:instagram" class="w-6 h-6" />
+  </a>
+  <a href="https://facebook.com" target="_blank" class="text-primary hover:text-primary-dark">
+    <Icon name="uil:facebook" class="w-6 h-6" />
+  </a>
+</div>
 
 #copyrightText
-molki.design.pl © 2024  
-Wszelkie prawa zastrzeżone.
+<div class="text-neutral-500">
+  molki.design.pl © 2024  
+  Wszelkie prawa zastrzeżone.
+</div>
 
 #privacyText
-/ prywatność / ciasteczka /  
-klauzula RODO
+<div class="text-neutral-500">
+  / prywatność / ciasteczka /  
+  klauzula RODO
+</div>
 ::

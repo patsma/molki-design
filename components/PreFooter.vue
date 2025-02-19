@@ -104,8 +104,11 @@ defineSlots<{
           data-scroll-duration="1"
         >
           <!-- Contact Information -->
-          <div class="space-y-6">
-            <h3 v-if="$slots.contactTitle" class="text-xl font-semibold pb-4 border-gradient">
+          <div class="space-y-6 max-w-xs">
+            <h3
+              v-if="$slots.contactTitle"
+              class="text-xl text-primary font-semibold pb-4 border-gradient"
+            >
               <slot name="contactTitle" mdc-unwrap="p" />
             </h3>
             <div v-if="$slots.contactInfo" class="prose prose-lg max-w-none">
@@ -115,7 +118,7 @@ defineSlots<{
 
           <!-- Contact Form -->
           <ClientOnly>
-            <ContactForm 
+            <ContactForm
               class="p-8"
               data-scroll-item
               data-scroll-animation="fadeUp"
@@ -133,7 +136,7 @@ defineSlots<{
 
 <style scoped>
 .border-gradient {
-  border-bottom: 0.1rem solid;
+  border-bottom: 0.2rem solid;
   border-image: linear-gradient(to right, #b76246, #d0835f, #a04225) 1;
 }
 </style>

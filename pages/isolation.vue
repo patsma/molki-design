@@ -3,10 +3,18 @@
     <PreFooter>
       <template #title>Nasze oddziały</template>
       <template #backgroundImage>
-        <ParallaxImg src="/heroHome.jpg" alt="Pre-footer background" />
+        <ParallaxImg
+          src="/preFooterBg.jpg"
+          alt="Pre-footer background"
+          class="w-full h-full object-cover"
+          format="webp"
+        />
       </template>
 
       <!-- Left Company -->
+      <template #leftCompanyLogo>
+        <Logo class="w-full max-w-[200px]" />
+      </template>
       <template #leftCompanyTitle>Warszawa</template>
       <template #leftCompanySubtitle>Centrala</template>
       <template #leftCompanyText>
@@ -15,6 +23,9 @@
       </template>
 
       <!-- Right Company -->
+      <template #rightCompanyLogo>
+        <Logo class="w-full max-w-[200px]" />
+      </template>
       <template #rightCompanyTitle>Kraków</template>
       <template #rightCompanySubtitle>Oddział</template>
       <template #rightCompanyText>
@@ -33,4 +44,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: 'default',
+});
+</script>

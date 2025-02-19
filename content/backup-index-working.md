@@ -680,7 +680,7 @@ Nasze oddziały
   :::
 
 #leftCompanyLogo
-  :::logo{class="w-full max-w-[200px]"}
+  :::logo{class="w-full max-w-xl"}
   :::
 
 #leftCompanyTitle
@@ -694,7 +694,7 @@ ul. Przykładowa 123
 00-000 Warszawa
 
 #rightCompanyLogo
-  :::logo{class="w-full max-w-[200px]"}
+  :::logo{class="w-full max-w-xl"}
   :::
 
 #rightCompanyTitle

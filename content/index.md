@@ -680,7 +680,7 @@ Nasze oddziały
   :::
 
 #leftCompanyLogo
-  :::logo{.w-full.max-w-[200px]}
+  :::logo{class="w-full max-w-xl"}
   :::
 
 #leftCompanyTitle
@@ -690,25 +690,29 @@ Warszawa
 Centrala
 
 #leftCompanyText
-ul. Przykładowa 123\:br00-000 Warszawa
+ul. Przykładowa 123  
+00-000 Warszawa
 
 #rightCompanyLogo
-  :::logo{.w-full.max-w-[200px]}
+  :::logo{class="w-full max-w-xl"}
   :::
 
 #rightCompanyTitle
 Kraków
 
 #rightCompanySubtitle
-- Oddział
-- Testowy**Tekst** *Lorem*
+Oddział
 
 #rightCompanyText
-ul. Przykładowa 456\:br30-000 Kraków
+ul. Przykładowa 456  
+30-000 Kraków
 
 #contactTitle
 Skontaktuj się z nami
 
 #contactInfo
-Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-Pt: 9:00 - 17:00
+Tel: +48 123 456 789  
+Email: kontakt@firma.pl  
+Godziny otwarcia:  
+Pon-Pt: 9:00 - 17:00
 ::

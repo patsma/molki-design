@@ -1,9 +1,10 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 import { useMobileDetection } from '~/composables/useMobileDetection';
+import { useDebounceFn } from '@vueuse/core';
 
 export const useScrollHeader = () => {
   const headerRef = ref<HTMLElement | null>(null);
@@ -14,8 +15,20 @@ export const useScrollHeader = () => {
   let headerAnimation: gsap.core.Timeline | null = null;
   let lastCheck = 0;
 
+  const updateHeaderHeight = () => {
+    if (!headerRef.value) return;
+    gsap.set(headerRef.value, {
+      height: headerHeight.value,
+      clearProps: 'all',
+    });
+    headerTrigger?.refresh();
+  };
+
+  const handleResize = useDebounceFn(() => {
+    updateHeaderHeight();
+  }, 100);
+
   const initScrollHeader = () => {
-    // console.log('🎯 Initializing scroll header');
     if (!process.client || !headerRef.value) {
       console.log('⚠️ Header initialization skipped:', {
         isClient: process.client,
@@ -24,18 +37,16 @@ export const useScrollHeader = () => {
       return;
     }
 
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
     if (isMobile.value) {
-      // console.log('📱 Initializing mobile header');
       initMobileHeader();
       return;
     }
 
-    // console.log('🖥️ Initializing desktop header');
-    // Ensure header has correct height before pinning
-    gsap.set(headerRef.value, {
-      height: headerHeight.value,
-      clearProps: 'all', // Clear all other properties
-    });
+    // Initial height setup
+    updateHeaderHeight();
 
     // Pin the header
     headerTrigger = ScrollTrigger.create({
@@ -45,10 +56,7 @@ export const useScrollHeader = () => {
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-      onRefresh: () => {
-        // Ensure header maintains correct height during refresh
-        gsap.set(headerRef.value, { height: headerHeight.value });
-      },
+      onRefresh: updateHeaderHeight,
     });
 
     // Create hide/show animation
@@ -85,19 +93,14 @@ export const useScrollHeader = () => {
   };
 
   const initMobileHeader = () => {
-    // console.log('📱 Initializing mobile header');
     const header = headerRef.value;
     if (!header) {
       console.warn('⚠️ Header element not found');
       return;
     }
 
-    // Same setup as desktop
-    gsap.set(header, {
-      top: 0,
-      height: headerHeight.value,
-      clearProps: 'all',
-    });
+    // Initial height setup
+    updateHeaderHeight();
 
     // Same pin configuration
     headerTrigger = ScrollTrigger.create({
@@ -107,9 +110,7 @@ export const useScrollHeader = () => {
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-      onRefresh: () => {
-        gsap.set(header, { height: headerHeight.value });
-      },
+      onRefresh: updateHeaderHeight,
     });
 
     // Same animation timeline
@@ -126,7 +127,7 @@ export const useScrollHeader = () => {
         if (now - lastCheck < 400) return;
         lastCheck = now;
 
-        const scrollTop = window.scrollY; // Use native scroll position
+        const scrollTop = window.scrollY;
         const direction = self.direction;
 
         if (direction > 0 && scrollTop > headerHeight.value) {
@@ -147,6 +148,7 @@ export const useScrollHeader = () => {
       headerAnimation.kill();
       headerAnimation = null;
     }
+    window.removeEventListener('resize', handleResize);
   };
 
   return {

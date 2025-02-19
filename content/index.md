@@ -47,66 +47,48 @@ Pon-Pt: 9:00 - 17:00
 
 ::footer-component
 #logo
-<div class="grid place-items-center">
-  <Logo class="w-64" />
-</div>
+  ::logo{class="w-64"}
+  ::
 
 #sponsors
-<div class="grid grid-cols-2 gap-4">
-  <Logo class="w-32" />
-  <Logo class="w-32" />
-</div>
+  ::icon-block{name="uil:building" class="w-32"}
+  ::
+ 
 
 #certifications
-<div class="grid grid-cols-2 gap-4">
-  <Logo class="w-32" />
-  <Logo class="w-32" />
-</div>
+  ::icon-block{name="uil:building" class="w-32"}
+  ::
+
 
 #memberships
-<div class="grid grid-cols-2 gap-4">
-  <Logo class="w-32" />
-  <Logo class="w-32" />
-</div>
+ ::icon-block{name="uil:building" class="w-32"}
+  ::
+ 
+
 
 #contactAddress
-<div class="text-neutral-600">
-  ul. Heweliusza 11/811,  
-  80-890 Gdańsk
-</div>
+ul. Heweliusza 11/811,  
+80-890 Gdańsk
 
 #contactEmail
-<div class="text-neutral-600">
-  kontakt@molki.pl
-</div>
+kontakt@molki.pl
 
 #contactPhone
-<div class="text-neutral-600">
-  +48 572 323 207
-</div>
++48 572 323 207
 
 #socialLinks
-<div class="flex space-x-4">
-  <a href="https://linkedin.com" target="_blank" class="text-primary hover:text-primary-dark">
-    <Icon name="uil:linkedin" class="w-6 h-6" />
-  </a>
-  <a href="https://instagram.com" target="_blank" class="text-primary hover:text-primary-dark">
-    <Icon name="uil:instagram" class="w-6 h-6" />
-  </a>
-  <a href="https://facebook.com" target="_blank" class="text-primary hover:text-primary-dark">
-    <Icon name="uil:facebook" class="w-6 h-6" />
-  </a>
-</div>
+  ::icon-block{name="uil:linkedin" class="w-6 h-6 text-primary hover:text-primary-dark"}
+  ::
+  ::icon-block{name="uil:instagram" class="w-6 h-6 text-primary hover:text-primary-dark"}
+  ::
+  ::icon-block{name="uil:facebook" class="w-6 h-6 text-primary hover:text-primary-dark"}
+  ::
 
 #copyrightText
-<div class="text-neutral-500">
-  molki.design.pl © 2024  
-  Wszelkie prawa zastrzeżone.
-</div>
+molki.design.pl © 2024  
+Wszelkie prawa zastrzeżone.
 
 #privacyText
-<div class="text-neutral-500">
-  / prywatność / ciasteczka /  
-  klauzula RODO
-</div>
+/ prywatność / ciasteczka /  
+klauzula RODO
 ::

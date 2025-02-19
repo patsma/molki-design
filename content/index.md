@@ -47,19 +47,11 @@ Pon-Pt: 9:00 - 17:00
 
 ::footer-component
 #logo
-  :::logo{class="w-48"}
+  :::logo{class="w-64"}
   :::
 
 #menuTitle
 Menu
-
-#menuItems
-- O NAS
-- PROJEKT
-- REMONT+
-- BIZNES
-- BLOG
-- KONTAKT
 
 #sponsorsTitle
 Sponsorujemy:
@@ -67,7 +59,8 @@ Sponsorujemy:
 #sponsors
   :::logo{class="w-32"}
   :::
-
+  :::logo{class="w-32"}
+  :::
 
 #certificationsTitle
 Nasze Certyfikaty:
@@ -75,7 +68,9 @@ Nasze Certyfikaty:
 #certifications
   :::logo{class="w-32"}
   :::
-  
+  :::logo{class="w-32"}
+  :::
+
 #contactTitle
 Dane kontaktowe:
 
@@ -95,7 +90,9 @@ Należymy do:
 #memberships
   :::logo{class="w-32"}
   :::
- 
+  :::logo{class="w-32"}
+  :::
+
 #socialTitle
 Bądź na bieżąco:
 

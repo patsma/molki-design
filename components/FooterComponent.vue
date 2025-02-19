@@ -8,15 +8,15 @@ const currentYear = new Date().getFullYear();
 const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
 const secondHalf = menuStore.menuItems.slice(Math.ceil(menuStore.menuItems.length / 2));
 
-// Define slots with proper TypeScript types (removed menuItems related slots)
+// Define slots with proper TypeScript types
 defineSlots<{
-  logo?: (props: { mdcUnwrap?: string }) => any;
-  sponsors?: (props: { mdcUnwrap?: string }) => any;
-  certifications?: (props: { mdcUnwrap?: string }) => any;
+  logo?: (props: { class?: string }) => any;
+  sponsors?: (props: { class?: string }) => any;
+  certifications?: (props: { class?: string }) => any;
+  memberships?: (props: { class?: string }) => any;
   contactAddress?: (props: { mdcUnwrap?: string }) => any;
   contactEmail?: (props: { mdcUnwrap?: string }) => any;
   contactPhone?: (props: { mdcUnwrap?: string }) => any;
-  memberships?: (props: { mdcUnwrap?: string }) => any;
   socialLinks?: (props: { mdcUnwrap?: string }) => any;
   copyrightText?: (props: { mdcUnwrap?: string }) => any;
   privacyText?: (props: { mdcUnwrap?: string }) => any;
@@ -24,8 +24,8 @@ defineSlots<{
 </script>
 
 <template>
-  <footer class="bg-neutral-100" data-scroll-section>
-    <div class="content-grid py-16">
+  <footer class="bg-neutral-100">
+    <div class="content-grid py-16" data-scroll-section>
       <div class="breakout1">
         <div
           class="grid grid-cols-1 md:grid-cols-5 gap-x-8 gap-y-16"
@@ -62,7 +62,7 @@ defineSlots<{
                 </NuxtLink>
               </nav>
             </div>
-            <div class="pt-8 border-t border-neutral-200">
+            <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Sponsorujemy:</h4>
               <slot name="sponsors" />
             </div>
@@ -70,7 +70,8 @@ defineSlots<{
 
           <!-- Column 3: Second Half of Menu + Certifications -->
           <div class="h-full flex flex-col justify-between">
-            <nav class="space-y-2">
+            <h4 class="text-sm font-bold text-primary"></h4>
+            <nav class="space-y-4">
               <NuxtLink
                 v-for="item in secondHalf"
                 :key="item.label"
@@ -80,7 +81,7 @@ defineSlots<{
                 {{ item.label }}
               </NuxtLink>
             </nav>
-            <div class="pt-8 border-t border-neutral-200">
+            <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Nasze Certyfikaty:</h4>
               <slot name="certifications" />
             </div>
@@ -109,7 +110,7 @@ defineSlots<{
                 </div>
               </div>
             </div>
-            <div class="pt-8 border-t border-neutral-200">
+            <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Należymy do:</h4>
               <slot name="memberships" />
             </div>

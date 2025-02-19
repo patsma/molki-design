@@ -230,10 +230,13 @@ export const useMenuStore = defineStore('menu', {
         const element = document.querySelector(link);
         if (element) {
           const smoother = ScrollSmoother.get();
-          smoother?.scrollTo(element, {
-            duration: 1,
-            ease: 'power2.inOut',
-          });
+          smoother?.scrollTo(
+            element as any,
+            {
+              duration: 1,
+              ease: 'power2.inOut',
+            } as any
+          );
         }
         return;
       }

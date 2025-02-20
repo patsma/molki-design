@@ -55,7 +55,6 @@ onMounted(() => {
         ref="swiperRef"
         class="w-full h-full"
         :loop="true"
-        :effect="'fade'"
         :pagination="true"
         :autoplay="{
           delay: 3000,

@@ -108,4 +108,6 @@
 ✔ Slider Before After @started(25-02-20 09:56) @done(25-02-20 11:27) @lasted(1h31m43s)
 
 - Column Grid 3 - Pricing
+- Fix footer hydration, proper images slots, maybe ensure we can have custom icons there 
+- Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Blog?

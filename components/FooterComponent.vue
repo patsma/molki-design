@@ -64,7 +64,7 @@ defineSlots<{
             </div>
             <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Sponsorujemy:</h4>
-              <slot name="sponsors" />
+              <slot name="sponsors" mdc-unwrap="p" />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ defineSlots<{
             </nav>
             <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Nasze Certyfikaty:</h4>
-              <slot name="certifications" />
+              <slot name="certifications" mdc-unwrap="p" />
             </div>
           </div>
 
@@ -112,7 +112,7 @@ defineSlots<{
             </div>
             <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Należymy do:</h4>
-              <slot name="memberships" />
+              <slot name="memberships" mdc-unwrap="p" />
             </div>
           </div>
 

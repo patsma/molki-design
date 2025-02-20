@@ -720,20 +720,20 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
 
 #sponsors
   :::sponsor-logos
-  ![Sponsor 1](/sponsor1.png)
-  ![Sponsor 2](/sponsor2.png)
+  ![Sponsor 1](/favicon.svg){.w-16.h-16}
+  ![Sponsor 2](/favicon.svg){.w-16.h-16}
   :::
 
 #certifications
   :::certification-logos
-  ![Certification 1](/cert1.png)
-  ![Certification 2](/cert2.png)
+  ![Certification 1](/favicon.svg){.w-16.h-16}
+  ![Certification 2](/favicon.svg){.w-16.h-16}
   :::
 
 #memberships
   :::membership-logos
-  ![Membership 1](/member1.png)
-  ![Membership 2](/member2.png)
+  ![Membership 1](/favicon.svg){.w-16.h-16}
+  ![Membership 2](/favicon.svg){.w-16.h-16}
   :::
 
 #contactAddress

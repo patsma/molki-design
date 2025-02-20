@@ -712,3 +712,50 @@ Skontaktuj się z nami
 #contactInfo
 Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-Pt: 9:00 - 17:00
 ::
+
+
+::footer-component
+#logo
+  :::logo{.w-48}
+  :::
+
+#sponsors
+  :::sponsor-logos
+  ![Sponsor 1](/favicon.svg){.w-16.h-16}
+  ![Sponsor 2](/favicon.svg){.w-16.h-16}
+  :::
+
+#certifications
+  :::certification-logos
+  ![Certification 1](/favicon.svg){.w-16.h-16}
+  ![Certification 2](/favicon.svg){.w-16.h-16}
+  :::
+
+#memberships
+  :::membership-logos
+  ![Membership 1](/favicon.svg){.w-16.h-16}
+  ![Membership 2](/favicon.svg){.w-16.h-16}
+  :::
+
+#contactAddress
+ul. Heweliusza 11/811,<br />80-890 Gdańsk
+
+#contactEmail
+[kontakt@molki.pl](mailto:kontakt@molki.pl)
+
+#contactPhone
+[+48 572 323 207](tel:+48572323207)
+
+#socialLinks
+  :::social-icons
+  [LinkedIn](https://linkedin.com){icon="uil:linkedin"}
+  [Instagram](https://instagram.com){icon="uil:instagram"}
+  [Facebook](https://facebook.com){icon="uil:facebook"}
+  :::
+
+#copyrightText
+molki.design.pl © {{ currentYear }}<br />Wszelkie prawa zastrzeżone.<br />/ prywatność / ciasteczka /<br />klauzula RODO
+
+#privacyText
+[Polityka prywatności](/privacy)
+::

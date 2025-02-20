@@ -15,11 +15,13 @@ register();
 interface Props {
   ctaText?: string;
   ctaLink?: string;
+  images?: string[];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   ctaText: 'UMÓW KONSULTACJĘ',
   ctaLink: '/buttons',
+  images: () => [],
 });
 
 const slots = useSlots() as Slots;
@@ -39,25 +41,9 @@ const handleNextSlide = () => {
 };
 
 onMounted(() => {
-  // Initialize Swiper
-  nextTick(() => {
-    if (swiperRef.value) {
-      const swiperParams = {
-        loop: true,
-        autoplay: {
-          delay: 1000,
-          disableOnInteraction: false,
-        },
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true,
-        },
-      };
-
-      Object.assign(swiperRef.value, swiperParams);
-      swiperRef.value.initialize();
-    }
-  });
+  if (swiperRef.value) {
+    swiperRef.value.initialize();
+  }
 });
 </script>
 
@@ -65,10 +51,35 @@ onMounted(() => {
   <div class="relative h-screen w-full">
     <!-- Slider Container -->
     <ClientOnly>
-      <swiper-container ref="swiperRef" class="w-full h-full">
+      <swiper-container
+        ref="swiperRef"
+        class="w-full h-full"
+        :loop="true"
+        :effect="'fade'"
+        :pagination="true"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: false,
+        }"
+      >
+        <!-- Handle slot-based slides -->
         <template v-if="slots['slides-0']">
           <swiper-slide v-for="index in 2" :key="`slide-${index - 1}`" class="w-full h-full">
             <slot :name="`slides-${index - 1}`" />
+          </swiper-slide>
+        </template>
+        <!-- Handle image-based slides -->
+        <template v-else>
+          <swiper-slide v-for="(image, index) in images" :key="index" class="w-full h-full">
+            <parallax-img class="w-full h-full object-cover">
+              <nuxt-img
+                :src="image"
+                :alt="`Slide ${index + 1}`"
+                format="webp"
+                loading="eager"
+                class="w-full h-full object-cover"
+              />
+            </parallax-img>
           </swiper-slide>
         </template>
       </swiper-container>

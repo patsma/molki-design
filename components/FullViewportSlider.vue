@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle';
-import { onMounted, ref, useSlots } from 'vue';
+import { onMounted, ref, useSlots, type Slots } from 'vue';
+
+interface SwiperElement extends HTMLElement {
+  swiper?: {
+    slidePrev: () => void;
+    slideNext: () => void;
+  };
+  initialize: () => void;
+}
 
 register();
 
@@ -14,8 +22,8 @@ const props = withDefaults(defineProps<Props>(), {
   ctaLink: '/buttons',
 });
 
-const slots = useSlots();
-const swiperRef = ref(null);
+const slots = useSlots() as Slots;
+const swiperRef = ref<SwiperElement | null>(null);
 
 // Custom navigation methods
 const handlePrevSlide = () => {

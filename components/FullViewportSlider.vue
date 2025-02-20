@@ -12,7 +12,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   ctaText: 'UMÓW KONSULTACJĘ',
-  ctaLink: '/contact',
+  ctaLink: '/buttons',
 });
 
 const swiperRef = ref(null);

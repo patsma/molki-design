@@ -1,10 +1,9 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 import { useMobileDetection } from '~/composables/useMobileDetection';
-import { useDebounceFn } from '@vueuse/core';
 
 export const useScrollHeader = () => {
   const headerRef = ref<HTMLElement | null>(null);
@@ -15,40 +14,8 @@ export const useScrollHeader = () => {
   let headerAnimation: gsap.core.Timeline | null = null;
   let lastCheck = 0;
 
-  const updateHeaderHeight = () => {
-    if (!headerRef.value) return;
-
-    // Get the current header height before any changes
-    const currentHeight = headerRef.value.offsetHeight;
-
-    // Clear any existing inline styles that might affect height
-    gsap.set(headerRef.value, { clearProps: 'height' });
-
-    // Get the natural height after clearing props
-    const newHeight = headerRef.value.offsetHeight;
-
-    // Only update if the height actually changed
-    if (currentHeight !== newHeight) {
-      gsap.set(headerRef.value, { height: newHeight });
-
-      // Only refresh ScrollTrigger if we're not on mobile or if the height difference is significant
-      if (!isMobile.value || Math.abs(currentHeight - newHeight) > 10) {
-        headerTrigger?.refresh();
-      }
-    }
-  };
-
-  const handleResize = useDebounceFn(() => {
-    // Only update if we're not on mobile or if the resize isn't from mobile UI (keyboard, address bar, etc.)
-    if (
-      !isMobile.value ||
-      Math.abs(window.innerHeight - document.documentElement.clientHeight) > 100
-    ) {
-      updateHeaderHeight();
-    }
-  }, 250);
-
   const initScrollHeader = () => {
+    // console.log('🎯 Initializing scroll header');
     if (!process.client || !headerRef.value) {
       console.log('⚠️ Header initialization skipped:', {
         isClient: process.client,
@@ -57,16 +24,18 @@ export const useScrollHeader = () => {
       return;
     }
 
-    // Add resize listener
-    window.addEventListener('resize', handleResize);
-
     if (isMobile.value) {
+      // console.log('📱 Initializing mobile header');
       initMobileHeader();
       return;
     }
 
-    // Initial height setup
-    updateHeaderHeight();
+    // console.log('🖥️ Initializing desktop header');
+    // Ensure header has correct height before pinning
+    gsap.set(headerRef.value, {
+      height: headerHeight.value,
+      clearProps: 'all', // Clear all other properties
+    });
 
     // Pin the header
     headerTrigger = ScrollTrigger.create({
@@ -76,7 +45,10 @@ export const useScrollHeader = () => {
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-      onRefresh: updateHeaderHeight,
+      onRefresh: () => {
+        // Ensure header maintains correct height during refresh
+        gsap.set(headerRef.value, { height: headerHeight.value });
+      },
     });
 
     // Create hide/show animation
@@ -113,14 +85,19 @@ export const useScrollHeader = () => {
   };
 
   const initMobileHeader = () => {
+    // console.log('📱 Initializing mobile header');
     const header = headerRef.value;
     if (!header) {
       console.warn('⚠️ Header element not found');
       return;
     }
 
-    // Initial height setup
-    updateHeaderHeight();
+    // Same setup as desktop
+    gsap.set(header, {
+      top: 0,
+      height: headerHeight.value,
+      clearProps: 'all',
+    });
 
     // Same pin configuration
     headerTrigger = ScrollTrigger.create({
@@ -130,7 +107,9 @@ export const useScrollHeader = () => {
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-      onRefresh: updateHeaderHeight,
+      onRefresh: () => {
+        gsap.set(header, { height: headerHeight.value });
+      },
     });
 
     // Same animation timeline
@@ -147,7 +126,7 @@ export const useScrollHeader = () => {
         if (now - lastCheck < 400) return;
         lastCheck = now;
 
-        const scrollTop = window.scrollY;
+        const scrollTop = window.scrollY; // Use native scroll position
         const direction = self.direction;
 
         if (direction > 0 && scrollTop > headerHeight.value) {
@@ -168,7 +147,6 @@ export const useScrollHeader = () => {
       headerAnimation.kill();
       headerAnimation = null;
     }
-    window.removeEventListener('resize', handleResize);
   };
 
   return {

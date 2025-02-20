@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, useSlots } from 'vue';
 
 register();
 
 interface Props {
-  images: string[];
   ctaText?: string;
   ctaLink?: string;
 }
@@ -15,39 +14,42 @@ const props = withDefaults(defineProps<Props>(), {
   ctaLink: '/buttons',
 });
 
+const slots = useSlots();
 const swiperRef = ref(null);
 
 // Custom navigation methods
 const handlePrevSlide = () => {
-  if (swiperRef.value) {
+  if (swiperRef.value?.swiper) {
     swiperRef.value.swiper.slidePrev();
   }
 };
 
 const handleNextSlide = () => {
-  if (swiperRef.value) {
+  if (swiperRef.value?.swiper) {
     swiperRef.value.swiper.slideNext();
   }
 };
 
 onMounted(() => {
   // Initialize Swiper
-  if (swiperRef.value) {
-    const swiperParams = {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-    };
+  nextTick(() => {
+    if (swiperRef.value) {
+      const swiperParams = {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
+      };
 
-    Object.assign(swiperRef.value, swiperParams);
-    swiperRef.value.initialize();
-  }
+      Object.assign(swiperRef.value, swiperParams);
+      swiperRef.value.initialize();
+    }
+  });
 });
 </script>
 
@@ -56,15 +58,11 @@ onMounted(() => {
     <!-- Slider Container -->
     <ClientOnly>
       <swiper-container ref="swiperRef" class="w-full h-full">
-        <swiper-slide v-for="(image, index) in images" :key="index" class="w-full h-full">
-          <nuxt-img
-            :src="image"
-            :alt="`Slide image ${index + 1}`"
-            class="w-full h-full object-cover"
-            format="webp"
-            loading="eager"
-          />
-        </swiper-slide>
+        <template v-if="slots['slides-0']">
+          <swiper-slide v-for="index in 2" :key="`slide-${index - 1}`" class="w-full h-full">
+            <slot :name="`slides-${index - 1}`" />
+          </swiper-slide>
+        </template>
       </swiper-container>
     </ClientOnly>
 
@@ -102,7 +100,7 @@ onMounted(() => {
           :to="ctaLink"
           class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
-          {{ ctaText }}
+          <slot name="cta" mdc-unwrap="p">{{ ctaText }}</slot>
         </NuxtLink>
       </div>
     </div>

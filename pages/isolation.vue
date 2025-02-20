@@ -11,6 +11,7 @@
           <nuxt-img src="/heroAbout.jpg" alt="Slide 2" format="webp" loading="eager" />
         </parallax-img>
       </template>
+      <template #cta> UMÓW KONSULTACJĘ </template>
     </FullViewportSlider>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <PricingGrid>
       <template #backgroundImage>
         <ParallaxImg class="w-full h-full object-cover">
-          <nuxt-img src="/pricingBg.jpg" alt="Pricing background" format="webp" loading="lazy" />
+          <nuxt-img src="/heroHome.jpg" alt="Pricing background" format="webp" loading="lazy" />
         </ParallaxImg>
       </template>
 
@@ -47,6 +47,12 @@
           <li>Szpachlowanie</li>
           <!-- Add more features -->
         </ul>
+      </template>
+
+      <template #infoText>
+        *Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych
+        metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego
+        stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
       </template>
     </PricingGrid>
     <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>

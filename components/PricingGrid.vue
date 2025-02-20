@@ -14,6 +14,7 @@ defineSlots<{
   premiumTitle?: (props: { mdcUnwrap: string }) => any;
   premiumPrice?: (props: { mdcUnwrap: string }) => any;
   premiumFeatures?: (props: {}) => any;
+  infoText?: (props: {}) => any;
 }>();
 </script>
 
@@ -45,7 +46,7 @@ defineSlots<{
       </TitleSection>
 
       <!-- Pricing Grid -->
-      <div class="content-grid py-16">
+      <div class="content-grid pb-24">
         <div
           class="breakout1 grid md:grid-cols-3 gap-8"
           data-scroll-item
@@ -107,6 +108,20 @@ defineSlots<{
                 <slot name="premiumFeatures" />
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Info Text -->
+        <div class="breakout1">
+          <div
+            v-if="$slots.infoText"
+            class="mt-12 w-full text-sm text-neutral-600 mx-auto"
+            data-scroll-item
+            data-scroll-animation="fadeUp"
+            data-scroll-duration="1"
+            data-scroll-delay="0.2"
+          >
+            <slot name="infoText" mdc-unwrap="p" />
           </div>
         </div>
       </div>

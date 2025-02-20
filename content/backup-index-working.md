@@ -688,6 +688,16 @@ ctaLink: /buttons
 UMÓW KONSULTACJĘ
 ::
 
+::full-viewport-slider
+---
+ctaLink: /buttons
+ctaText: UMÓW KONSULTACJĘ
+images:
+  - /heroHome.jpg
+  - /heroAbout.jpg
+---
+::
+
 ::pre-footer
 #title
 Nasze oddziały

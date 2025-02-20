@@ -17,16 +17,36 @@ export const useScrollHeader = () => {
 
   const updateHeaderHeight = () => {
     if (!headerRef.value) return;
-    gsap.set(headerRef.value, {
-      height: headerHeight.value,
-      clearProps: 'all',
-    });
-    headerTrigger?.refresh();
+
+    // Get the current header height before any changes
+    const currentHeight = headerRef.value.offsetHeight;
+
+    // Clear any existing inline styles that might affect height
+    gsap.set(headerRef.value, { clearProps: 'height' });
+
+    // Get the natural height after clearing props
+    const newHeight = headerRef.value.offsetHeight;
+
+    // Only update if the height actually changed
+    if (currentHeight !== newHeight) {
+      gsap.set(headerRef.value, { height: newHeight });
+
+      // Only refresh ScrollTrigger if we're not on mobile or if the height difference is significant
+      if (!isMobile.value || Math.abs(currentHeight - newHeight) > 10) {
+        headerTrigger?.refresh();
+      }
+    }
   };
 
   const handleResize = useDebounceFn(() => {
-    updateHeaderHeight();
-  }, 100);
+    // Only update if we're not on mobile or if the resize isn't from mobile UI (keyboard, address bar, etc.)
+    if (
+      !isMobile.value ||
+      Math.abs(window.innerHeight - document.documentElement.clientHeight) > 100
+    ) {
+      updateHeaderHeight();
+    }
+  }, 250);
 
   const initScrollHeader = () => {
     if (!process.client || !headerRef.value) {

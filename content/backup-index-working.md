@@ -688,6 +688,54 @@ ctaLink: /buttons
 UMÓW KONSULTACJĘ
 ::
 
+
+::pricing-grid
+#backgroundImage
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Pre-footer background](/heroHome.jpg)
+  :::
+
+#title
+Wybierz Swoje Wymarzone Wykończenie
+
+#subtitle
+Odkryj Pakiety Remontowe Dostosowane do Twoich Potrzeb i Stylu Życia
+
+#basicTitle
+BASIC
+
+#basicPrice
+1190 zł/m²
+
+#basicFeatures
+- Rozbiórki i zabezpieczenia
+- Instalacje zgodnie z projektem
+- Szpachlowanie
+
+#comfortTitle
+COMFORT
+
+#comfortPrice
+1590 zł/m²
+
+#comfortFeatures
+- Rozbiórki i zabezpieczenia
+- Instalacje zgodnie z projektem
+- Szpachlowanie
+
+
+#premiumTitle
+PREMIUM
+
+#premiumPrice
+2490 zł/m²
+
+#premiumFeatures
+- Rozbiórki i zabezpieczenia
+- Instalacje zgodnie z projektem
+- Szpachlowanie
+:: 
+
 ::pre-footer
 #title
 Nasze oddziały

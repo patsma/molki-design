@@ -43,5 +43,6 @@ onMounted(() => {
         <NuxtPage />
       </div>
     </GSAPScrollSmoother>
+    <HubspotChat />
   </div>
 </template>

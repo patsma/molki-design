@@ -230,6 +230,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       hubspotPortalId: process.env.HUBSPOT_PORTAL_ID,
+      isDev: process.env.NODE_ENV !== 'production',
     },
   },
 });

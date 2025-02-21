@@ -825,10 +825,10 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
   :::
 
 #contactAddress
-ul. Heweliusza 11/811,:br80-890 Gdańsk
+ul. Heweliusza 11/811,\:br80-890 Gdańsk
 
 #contactEmail
-<kontakt@molki.pl>{.text-neutral-600.hover:text-primary}
+<kontakt@molki.pl>{.text-neutral-600.hover\:text-primary}
 
 #contactPhone
 [+48 572 323 207](tel:+48572323207){.text-neutral-600.hover:text-primary}

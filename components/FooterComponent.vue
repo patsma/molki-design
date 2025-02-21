@@ -2,11 +2,23 @@
 import { useMenuStore } from '@/stores/menuStore';
 
 const menuStore = useMenuStore();
-const currentYear = new Date().getFullYear();
+const year = new Date().getFullYear();
 
 // Get menu items directly from store and split them
 const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
 const secondHalf = menuStore.menuItems.slice(Math.ceil(menuStore.menuItems.length / 2));
+
+// Make year available to slots
+const slotData = {
+  currentYear: year,
+};
+
+defineProps({
+  currentYear: {
+    type: Number,
+    default: () => new Date().getFullYear(),
+  },
+});
 
 // Define slots with proper MDC unwrap for markdown compatibility
 defineSlots<{

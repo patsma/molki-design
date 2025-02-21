@@ -88,6 +88,7 @@ defineSlots<{
 
           <!-- Column 3: Second Half of Menu + Certifications -->
           <div class="h-full flex flex-col justify-between">
+            <h4 class="text-sm font-bold text-primary"></h4>
             <nav class="space-y-2">
               <NuxtLink
                 v-for="item in secondHalf"

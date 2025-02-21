@@ -722,7 +722,6 @@ COMFORT
 - Instalacje zgodnie z projektem
 - Szpachlowanie
 
-
 #premiumTitle
 PREMIUM
 
@@ -735,8 +734,8 @@ PREMIUM
 - Szpachlowanie
 
 #infoText
-*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
-:: 
+\*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
+::
 
 ::pre-footer
 #title
@@ -781,80 +780,98 @@ Skontaktuj się z nami
 Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-Pt: 9:00 - 17:00
 ::
 
-
 ::footer-component
 #logo
   :::logo{.w-48}
   :::
 
 #sponsors
-  :::div{class="flex gap-4"}
-    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
-      ::::
-    :::
-    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
-      ::::
-    :::
+  :::div{.flex.gap-4}
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+      :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:building"}
+      :::::
+    ::::
+  
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+      :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:building"}
+      :::::
+    ::::
   :::
 
 #certifications
-  :::div{class="flex gap-4"}
-    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:check-circle" customClass="w-16 h-16 text-primary"}
-      ::::
-    :::
-    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:check-circle" customClass="w-16 h-16 text-primary"}
-      ::::
-    :::
+  :::div{.flex.gap-4}
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+      :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:check-circle"}
+      :::::
+    ::::
+  
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+      :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:check-circle"}
+      :::::
+    ::::
   :::
 
 #memberships
-  :::div{class="flex gap-4"}
-    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:users-alt" customClass="w-16 h-16 text-primary"}
-      ::::
-    :::
-    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:users-alt" customClass="w-16 h-16 text-primary"}
-      ::::
-    :::
+  :::div{.flex.gap-4}
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+      :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:users-alt"}
+      :::::
+    ::::
+  
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+      :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:users-alt"}
+      :::::
+    ::::
   :::
 
 #contactAddress
-ul. Heweliusza 11/811,<br />80-890 Gdańsk
+ul. Heweliusza 11/811,\:br80-890 Gdańsk
 
 #contactEmail
-[kontakt@molki.pl](mailto:kontakt@molki.pl){class="text-neutral-600 hover:text-primary"}
+[mail@molki.pl](mailto:mail@molki.pl){.text-neutral-600.hover:text-primary}
 
 #contactPhone
-[+48 572 323 207](tel:+48572323207){class="text-neutral-600 hover:text-primary"}
+[+48 572 323 207](tel:+48572323207){.text-neutral-600.hover:text-primary}
 
 #socialLinks
-  :::div{class="flex space-x-4"}
-    :::nuxt-link{to="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:linkedin" customClass="w-6 h-6 text-primary"}
-      ::::
-    :::
-    :::nuxt-link{to="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:instagram" customClass="w-6 h-6 text-primary"}
-      ::::
-    :::
-    :::nuxt-link{to="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors"}
-      ::::icon-block{name="uil:facebook" customClass="w-6 h-6 text-primary"}
-      ::::
-    :::
+  :::div{.flex.space-x-4}
+    ::::nuxt-link
+    ---
+    class: text-primary hover:text-primary-dark transition-colors
+    rel: noopener,noreferrer
+    target: _blank
+    to: https://linkedin.com
+    ---
+      :::::icon-block{custom-class="w-6 h-6 text-primary" name="uil:linkedin"}
+      :::::
+    ::::
+  
+    ::::nuxt-link
+    ---
+    class: text-primary hover:text-primary-dark transition-colors
+    rel: noopener,noreferrer
+    target: _blank
+    to: https://instagram.com
+    ---
+      :::::icon-block{custom-class="w-6 h-6 text-primary" name="uil:instagram"}
+      :::::
+    ::::
+  
+    ::::nuxt-link
+    ---
+    class: text-primary hover:text-primary-dark transition-colors
+    rel: noopener,noreferrer
+    target: _blank
+    to: https://facebook.com
+    ---
+      :::::icon-block{custom-class="w-6 h-6 text-primary" name="uil:facebook"}
+      :::::
+    ::::
   :::
 
 #copyrightText
-:::p{class="text-neutral-500"}
-Wszelkie prawa zastrzeżone /
-[prywatność i ciasteczka]{.hover:text-primary .transition-colors to="/privacy"} /
-[klauzula RODO]{.hover:text-primary .transition-colors to="/rodo"}
-:::
+Wszelkie prawa zastrzeżone / [prywatność i ciasteczka](prywatnosc-i-ciasteczka){class="hover:text-primary.transition-colors"} / [klauzula RODO](klauzula-rodo){class="hover:text-primary.transition-colors"}
 
 #privacyText
-[Polityka prywatności]{class="hover:text-primary"}
+[Polityka prywatności]{.hover:text-primary}
 ::

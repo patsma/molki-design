@@ -788,42 +788,73 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
   :::
 
 #sponsors
-  :::sponsor-logos
-  ![Sponsor 1](/favicon.svg){.w-16.h-16}
-  ![Sponsor 2](/favicon.svg){.w-16.h-16}
+  :::div{class="flex gap-4"}
+    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
+      ::::
+    :::
+    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
+      ::::
+    :::
   :::
 
 #certifications
-  :::certification-logos
-  ![Certification 1](/favicon.svg){.w-16.h-16}
-  ![Certification 2](/favicon.svg){.w-16.h-16}
+  :::div{class="flex gap-4"}
+    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:check-circle" customClass="w-16 h-16 text-primary"}
+      ::::
+    :::
+    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:check-circle" customClass="w-16 h-16 text-primary"}
+      ::::
+    :::
   :::
 
 #memberships
-  :::membership-logos
-  ![Membership 1](/favicon.svg){.w-16.h-16}
-  ![Membership 2](/favicon.svg){.w-16.h-16}
+  :::div{class="flex gap-4"}
+    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:users-alt" customClass="w-16 h-16 text-primary"}
+      ::::
+    :::
+    :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:users-alt" customClass="w-16 h-16 text-primary"}
+      ::::
+    :::
   :::
 
 #contactAddress
 ul. Heweliusza 11/811,<br />80-890 Gdańsk
 
 #contactEmail
-[kontakt@molki.pl](mailto:kontakt@molki.pl)
+[kontakt@molki.pl](mailto:kontakt@molki.pl){class="text-neutral-600 hover:text-primary"}
 
 #contactPhone
-[+48 572 323 207](tel:+48572323207)
+[+48 572 323 207](tel:+48572323207){class="text-neutral-600 hover:text-primary"}
 
 #socialLinks
-  :::social-icons
-  [LinkedIn](https://linkedin.com){icon="uil:linkedin"}
-  [Instagram](https://instagram.com){icon="uil:instagram"}
-  [Facebook](https://facebook.com){icon="uil:facebook"}
+  :::div{class="flex space-x-4"}
+    :::nuxt-link{to="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:linkedin" customClass="w-6 h-6 text-primary"}
+      ::::
+    :::
+    :::nuxt-link{to="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:instagram" customClass="w-6 h-6 text-primary"}
+      ::::
+    :::
+    :::nuxt-link{to="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors"}
+      ::::icon-block{name="uil:facebook" customClass="w-6 h-6 text-primary"}
+      ::::
+    :::
   :::
 
 #copyrightText
-molki.design.pl © {{ currentYear }}<br />Wszelkie prawa zastrzeżone.<br />/ prywatność / ciasteczka /<br />klauzula RODO
+:::p{class="text-neutral-500"}
+Wszelkie prawa zastrzeżone /
+[prywatność i ciasteczka]{.hover:text-primary .transition-colors to="/privacy"} /
+[klauzula RODO]{.hover:text-primary .transition-colors to="/rodo"}
+:::
 
 #privacyText
-[Polityka prywatności](/privacy)
+[Polityka prywatności]{class="hover:text-primary"}
 ::

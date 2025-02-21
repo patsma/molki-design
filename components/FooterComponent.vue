@@ -2,23 +2,20 @@
 import { useMenuStore } from '@/stores/menuStore';
 
 const menuStore = useMenuStore();
-const year = new Date().getFullYear();
 
 // Get menu items directly from store and split them
 const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
 const secondHalf = menuStore.menuItems.slice(Math.ceil(menuStore.menuItems.length / 2));
 
-// Make year available to slots
-const slotData = {
-  currentYear: year,
-};
-
-defineProps({
-  currentYear: {
-    type: Number,
-    default: () => new Date().getFullYear(),
-  },
-});
+// Expose year as a prop with a default computed value
+const props = withDefaults(
+  defineProps<{
+    year?: number;
+  }>(),
+  {
+    year: () => new Date().getFullYear(),
+  }
+);
 
 // Define slots with proper MDC unwrap for markdown compatibility
 defineSlots<{
@@ -181,27 +178,17 @@ defineSlots<{
                 </slot>
               </div>
               <div class="text-xs text-neutral-500 space-y-2">
+                <p class="text-neutral-500">molki.design.pl © {{ props.year }}</p>
                 <slot name="copyrightText" mdc-unwrap="p">
-                  <p>molki.design.pl © {{ currentYear }}</p>
-                  <p>Wszelkie prawa zastrzeżone.</p>
-                  <p class="space-x-1">
-                    <NuxtLink
-                      to="/"
-                      class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
-                      >prywatność</NuxtLink
-                    >
-                    <span>/</span>
-                    <NuxtLink
-                      to="/"
-                      class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
-                      >ciasteczka</NuxtLink
-                    >
-                    <span>/</span>
-                    <NuxtLink
-                      to="/"
-                      class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
-                      >klauzula RODO</NuxtLink
-                    >
+                  <p class="text-neutral-500">
+                    Wszelkie prawa zastrzeżone /
+                    <NuxtLink to="/privacy" class="hover:text-primary transition-colors">
+                      prywatność i ciasteczka
+                    </NuxtLink>
+                    /
+                    <NuxtLink to="/rodo" class="hover:text-primary transition-colors">
+                      klauzula RODO
+                    </NuxtLink>
                   </p>
                 </slot>
               </div>

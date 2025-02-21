@@ -200,4 +200,36 @@ export default defineNuxtConfig({
     styleLang: 'css',
     modules: ['navigation', 'pagination', 'autoplay'],
   },
+
+  plugins: ['~/plugins/hubspot.client.ts'],
+
+  nitro: {
+    routeRules: {
+      '/**': {
+        headers: {
+          'Content-Security-Policy': [
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+            '*.hs-scripts.com',
+            '*.hubspot.com',
+            '*.hscollectedforms.net',
+            '*.usemessages.com',
+            '*.hs-analytics.net',
+            '*.hs-banner.com',
+            'js-eu1.hs-scripts.com',
+            'js-eu1.hscollectedforms.net',
+            'js-eu1.usemessages.com',
+            'js-eu1.hs-analytics.net',
+            'js-eu1.hs-banner.com',
+          ].join(' '),
+        },
+      },
+    },
+  },
+
+  // Add runtimeConfig
+  runtimeConfig: {
+    public: {
+      hubspotPortalId: process.env.HUBSPOT_PORTAL_ID,
+    },
+  },
 });

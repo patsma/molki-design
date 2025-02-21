@@ -110,7 +110,13 @@
 ✔ Column Grid 3 - Pricing @started(25-02-20 15:39) @done(25-02-20 16:53) @lasted(1h14m21s)
 
 
-- Fix footer hydration, proper images slots, maybe ensure we can have custom icons there @started(25-02-21 01:14)
+✔ Fix footer hydration, proper images slots, maybe ensure we can have custom icons there @started(25-02-21 01:14) @done(25-02-21 02:49) @lasted(1h35m21s)
+
+
+- Prepare a structure for the project, ask AI for detailed plan
+
+
+
 - Add custom icons folder and test it
 
 - Fix scroll to implementation to trigger after page load finishes

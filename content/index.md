@@ -1,6 +1,6 @@
 ---
 title: Molki Design
-description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
+description: Projekty wnętrz i Porady projektow e | Gdańsk Sopot Gdynia,
   Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres
   usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz
   domów, mieszkań i wnętrz komercyjnych
@@ -787,7 +787,7 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
 
 #sponsors
   :::div{.flex.gap-4}
-    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/"}
+    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/buttons"}
       :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:building"}
       :::::
     ::::
@@ -825,13 +825,15 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
   :::
 
 #contactAddress
-ul. Heweliusza 11/811,\:br80-890 Gdańsk
+ul. Heweliusza 11/811
+:br
+80-890 Gdańsk
 
 #contactEmail
-[mail@molki.pl](mailto:mail@molki.pl){.text-neutral-600.hover:text-primary}
+[mail@molki.pl](mailto:mail@molki.pl){.text-neutral-600.hover:text-primary.transition-colors}
 
 #contactPhone
-[+48 572 323 207](tel:+48572323207){.text-neutral-600.hover:text-primary}
+[+48 572 323 207](tel:+48572323207){.text-neutral-600.hover:text-primary.transition-colors}
 
 #socialLinks
   :::div{.flex.space-x-4}
@@ -870,8 +872,7 @@ ul. Heweliusza 11/811,\:br80-890 Gdańsk
   :::
 
 #copyrightText
-Wszelkie prawa zastrzeżone / [prywatność i ciasteczka](prywatnosc-i-ciasteczka){class="hover:text-primary.transition-colors"} / [klauzula RODO](klauzula-rodo){class="hover:text-primary.transition-colors"}
+Wszelkie prawa zastrzeżone / [prywatność i ciasteczka](buttons){.text-neutral-500.hover:text-primary.transition-colors} / [klauzula RODO](buttons){.text-neutral-500.hover:text-primary.transition-colors}
 
-#privacyText
-[Polityka prywatności]{.hover:text-primary}
+
 ::

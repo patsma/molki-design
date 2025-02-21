@@ -107,7 +107,13 @@
 
 ✔ Slider Before After @started(25-02-20 09:56) @done(25-02-20 11:27) @lasted(1h31m43s)
 
-- Column Grid 3 - Pricing @started(25-02-20 16:39)
-- Fix footer hydration, proper images slots, maybe ensure we can have custom icons there 
+✔ Column Grid 3 - Pricing @started(25-02-20 15:39) @done(25-02-20 16:53) @lasted(1h14m21s)
+
+
+- Fix footer hydration, proper images slots, maybe ensure we can have custom icons there @started(25-02-21 01:14)
+- Add custom icons folder and test it
+
+- Fix scroll to implementation to trigger after page load finishes
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
+- Add primary color to menu item if current page is the same as the link
 - Blog?

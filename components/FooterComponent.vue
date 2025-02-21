@@ -8,18 +8,18 @@ const currentYear = new Date().getFullYear();
 const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
 const secondHalf = menuStore.menuItems.slice(Math.ceil(menuStore.menuItems.length / 2));
 
-// Define slots with proper TypeScript types for both MDC and regular slots
+// Define slots with proper MDC unwrap for markdown compatibility
 defineSlots<{
-  logo?: (props: { mdcUnwrap?: string; class?: string }) => any;
-  sponsors?: (props: { mdcUnwrap?: string; class?: string }) => any;
-  certifications?: (props: { mdcUnwrap?: string; class?: string }) => any;
-  memberships?: (props: { mdcUnwrap?: string; class?: string }) => any;
-  contactAddress?: (props: { mdcUnwrap?: string }) => any;
-  contactEmail?: (props: { mdcUnwrap?: string }) => any;
-  contactPhone?: (props: { mdcUnwrap?: string }) => any;
-  socialLinks?: (props: { mdcUnwrap?: string }) => any;
-  copyrightText?: (props: { mdcUnwrap?: string }) => any;
-  privacyText?: (props: { mdcUnwrap?: string }) => any;
+  logo?: (props: { mdcUnwrap: 'p' }) => any;
+  sponsors?: (props: { mdcUnwrap: 'p' }) => any;
+  certifications?: (props: { mdcUnwrap: 'p' }) => any;
+  memberships?: (props: { mdcUnwrap: 'p' }) => any;
+  contactAddress?: (props: { mdcUnwrap: 'p' }) => any;
+  contactEmail?: (props: { mdcUnwrap: 'p' }) => any;
+  contactPhone?: (props: { mdcUnwrap: 'p' }) => any;
+  socialLinks?: (props: { mdcUnwrap: 'p' }) => any;
+  copyrightText?: (props: { mdcUnwrap: 'p' }) => any;
+  privacyText?: (props: { mdcUnwrap: 'p' }) => any;
 }>();
 </script>
 
@@ -41,7 +41,7 @@ defineSlots<{
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
             >
-              <slot name="logo">
+              <slot name="logo" mdc-unwrap="p">
                 <Logo class="w-48" />
               </slot>
             </div>
@@ -70,7 +70,6 @@ defineSlots<{
 
           <!-- Column 3: Second Half of Menu + Certifications -->
           <div class="h-full flex flex-col justify-between">
-            <h4 class="text-sm font-bold text-primary"></h4>
             <nav class="space-y-2">
               <NuxtLink
                 v-for="item in secondHalf"
@@ -94,19 +93,25 @@ defineSlots<{
               <div class="space-y-2">
                 <div class="flex items-start space-x-2">
                   <Icon name="uil:map-marker" class="w-5 h-5 text-primary mt-1" />
-                  <p class="text-neutral-600">ul. Heweliusza 11/811,<br />80-890 Gdańsk</p>
+                  <slot name="contactAddress" mdc-unwrap="p">
+                    <p class="text-neutral-600">ul. Heweliusza 11/811,<br />80-890 Gdańsk</p>
+                  </slot>
                 </div>
                 <div class="flex items-center space-x-2">
                   <Icon name="uil:envelope" class="w-5 h-5 text-primary" />
-                  <a href="mailto:kontakt@molki.pl" class="text-neutral-600 hover:text-primary">
-                    kontakt@molki.pl
-                  </a>
+                  <slot name="contactEmail" mdc-unwrap="p">
+                    <a href="mailto:kontakt@molki.pl" class="text-neutral-600 hover:text-primary">
+                      kontakt@molki.pl
+                    </a>
+                  </slot>
                 </div>
                 <div class="flex items-center space-x-2">
                   <Icon name="uil:phone" class="w-5 h-5 text-primary" />
-                  <a href="tel:+48572323207" class="text-neutral-600 hover:text-primary">
-                    +48 572 323 207
-                  </a>
+                  <slot name="contactPhone" mdc-unwrap="p">
+                    <a href="tel:+48572323207" class="text-neutral-600 hover:text-primary">
+                      +48 572 323 207
+                    </a>
+                  </slot>
                 </div>
               </div>
             </div>
@@ -121,24 +126,28 @@ defineSlots<{
             <div class="space-y-8">
               <div>
                 <h4 class="text-sm font-bold text-primary mb-4">Bądź na bieżąco:</h4>
-                <div class="flex space-x-4">
-                  <a
-                    v-for="social in ['linkedin', 'instagram', 'facebook']"
-                    :key="social"
-                    :href="`https://${social}.com`"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary hover:text-primary-dark transition-colors"
-                  >
-                    <Icon :name="`uil:${social}`" class="w-6 h-6" />
-                  </a>
-                </div>
+                <slot name="socialLinks" mdc-unwrap="p">
+                  <div class="flex space-x-4">
+                    <a
+                      v-for="social in ['linkedin', 'instagram', 'facebook']"
+                      :key="social"
+                      :href="`https://${social}.com`"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:text-primary-dark transition-colors"
+                    >
+                      <Icon :name="`uil:${social}`" class="w-6 h-6" />
+                    </a>
+                  </div>
+                </slot>
               </div>
               <div class="text-xs text-neutral-500 space-y-2">
-                <p>molki.design.pl © {{ currentYear }}</p>
-                <p>Wszelkie prawa zastrzeżone.</p>
-                <p>/ prywatność / ciasteczka /</p>
-                <p>klauzula RODO</p>
+                <slot name="copyrightText" mdc-unwrap="p">
+                  <p>molki.design.pl © {{ currentYear }}</p>
+                  <p>Wszelkie prawa zastrzeżone.</p>
+                  <p>/ prywatność / ciasteczka /</p>
+                  <p>klauzula RODO</p>
+                </slot>
               </div>
             </div>
           </div>

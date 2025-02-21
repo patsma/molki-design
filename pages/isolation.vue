@@ -1,60 +1,61 @@
 <template>
   <div>
-    <PricingGrid>
-      <template #backgroundImage>
-        <ParallaxImg class="w-full h-full object-cover">
-          <nuxt-img src="/heroHome.jpg" alt="Pricing background" format="webp" loading="lazy" />
-        </ParallaxImg>
+    <FooterComponent>
+      <template #logo>
+        <Logo class="w-48" />
       </template>
 
-      <template #title> Wybierz Swoje Wymarzone Wykończenie </template>
-
-      <template #subtitle>
-        Odkryj Pakiety Remontowe Dostosowane do Twoich Potrzeb i Stylu Życia
+      <template #sponsors>
+        <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+        <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
       </template>
 
-      <!-- Basic Plan -->
-      <template #basicTitle>BASIC</template>
-      <template #basicPrice>1190 zł/m²</template>
-      <template #basicFeatures>
-        <ul>
-          <li>Rozbiórki i zabezpieczenia</li>
-          <li>Instalacje zgodnie z projektem</li>
-          <li>Szpachlowanie</li>
-          <!-- Add more features -->
-        </ul>
+      <template #certifications>
+        <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+        <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
       </template>
 
-      <!-- Comfort Plan -->
-      <template #comfortTitle>COMFORT</template>
-      <template #comfortPrice>1590 zł/m²</template>
-      <template #comfortFeatures>
-        <ul>
-          <li>Rozbiórki i zabezpieczenia</li>
-          <li>Instalacje zgodnie z projektem</li>
-          <li>Szpachlowanie</li>
-          <!-- Add more features -->
-        </ul>
+      <template #memberships>
+        <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+        <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
       </template>
 
-      <!-- Premium Plan -->
-      <template #premiumTitle>PREMIUM</template>
-      <template #premiumPrice>2490 zł/m²</template>
-      <template #premiumFeatures>
-        <ul>
-          <li>Rozbiórki i zabezpieczenia</li>
-          <li>Instalacje zgodnie z projektem</li>
-          <li>Szpachlowanie</li>
-          <!-- Add more features -->
-        </ul>
+      <template #contactAddress>
+        <p class="text-neutral-600">ul. Example 123,<br />00-000 City</p>
       </template>
 
-      <template #infoText>
-        *Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych
-        metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego
-        stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
+      <template #contactEmail>
+        <a href="mailto:contact@example.com" class="text-neutral-600 hover:text-primary">
+          contact@example.com
+        </a>
       </template>
-    </PricingGrid>
+
+      <template #contactPhone>
+        <a href="tel:+48123456789" class="text-neutral-600 hover:text-primary"> +48 123 456 789 </a>
+      </template>
+
+      <template #socialLinks>
+        <div class="flex space-x-4">
+          <IconBlock name="uil:linkedin" customClass="w-6 h-6 text-primary" />
+          <IconBlock name="uil:instagram" customClass="w-6 h-6 text-primary" />
+          <IconBlock name="uil:facebook" customClass="w-6 h-6 text-primary" />
+        </div>
+      </template>
+
+      <template #copyrightText>
+        <p>Company Name © {{ new Date().getFullYear() }}</p>
+        <p>Wszelkie prawa zastrzeżone.</p>
+        <p>
+          <NuxtLink to="/" class="hover:text-primary">prywatność</NuxtLink> /
+          <NuxtLink to="/" class="hover:text-primary">ciasteczka</NuxtLink> /
+          <NuxtLink to="/" class="hover:text-primary">klauzula RODO</NuxtLink>
+        </p>
+      </template>
+
+      <template #privacyText>
+        <NuxtLink to="/" class="hover:text-primary"> Polityka prywatności </NuxtLink>
+      </template>
+    </FooterComponent>
     <div id="spacer1" class="spacer w-full h-screen bg-red-400"></div>
   </div>
 </template>

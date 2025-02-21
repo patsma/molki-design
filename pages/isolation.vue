@@ -6,18 +6,36 @@
       </template>
 
       <template #sponsors>
-        <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
-        <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+        <div class="flex gap-4">
+          <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+            <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+          </NuxtLink>
+          <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+            <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+          </NuxtLink>
+        </div>
       </template>
 
       <template #certifications>
-        <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
-        <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+        <div class="flex gap-4">
+          <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+            <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+          </NuxtLink>
+          <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+            <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+          </NuxtLink>
+        </div>
       </template>
 
       <template #memberships>
-        <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
-        <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+        <div class="flex gap-4">
+          <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+            <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+          </NuxtLink>
+          <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+            <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+          </NuxtLink>
+        </div>
       </template>
 
       <template #contactAddress>
@@ -36,9 +54,16 @@
 
       <template #socialLinks>
         <div class="flex space-x-4">
-          <IconBlock name="uil:linkedin" customClass="w-6 h-6 text-primary" />
-          <IconBlock name="uil:instagram" customClass="w-6 h-6 text-primary" />
-          <IconBlock name="uil:facebook" customClass="w-6 h-6 text-primary" />
+          <NuxtLink
+            v-for="social in ['linkedin', 'instagram', 'facebook']"
+            :key="social"
+            :to="`https://${social}.com`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary hover:text-primary-dark transition-colors"
+          >
+            <IconBlock :name="`uil:${social}`" customClass="w-6 h-6 text-primary" />
+          </NuxtLink>
         </div>
       </template>
 

@@ -1,4 +1,3 @@
-
 ::hero
 ---
 cta-link: /buttons
@@ -24,9 +23,13 @@ Umów konsultację
   :::
 
 #sponsors
-  :::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
+  :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+    ::::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
+    ::::
   :::
-  :::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
+  :::nuxt-link{to="/" class="text-primary hover:text-primary-dark transition-colors"}
+    ::::icon-block{name="uil:building" customClass="w-16 h-16 text-primary"}
+    ::::
   :::
 
 #certifications

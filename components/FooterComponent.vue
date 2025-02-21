@@ -64,7 +64,16 @@ defineSlots<{
             </div>
             <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Sponsorujemy:</h4>
-              <slot name="sponsors" mdc-unwrap="p" />
+              <slot name="sponsors" mdc-unwrap="p">
+                <div class="flex gap-4">
+                  <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                    <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+                  </NuxtLink>
+                  <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                    <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+                  </NuxtLink>
+                </div>
+              </slot>
             </div>
           </div>
 
@@ -82,7 +91,16 @@ defineSlots<{
             </nav>
             <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Nasze Certyfikaty:</h4>
-              <slot name="certifications" mdc-unwrap="p" />
+              <slot name="certifications" mdc-unwrap="p">
+                <div class="flex gap-4">
+                  <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                    <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+                  </NuxtLink>
+                  <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                    <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+                  </NuxtLink>
+                </div>
+              </slot>
             </div>
           </div>
 
@@ -117,7 +135,16 @@ defineSlots<{
             </div>
             <div class="pt-8 border-neutral-200">
               <h4 class="text-sm font-bold text-primary mb-4">Należymy do:</h4>
-              <slot name="memberships" mdc-unwrap="p" />
+              <slot name="memberships" mdc-unwrap="p">
+                <div class="flex gap-4">
+                  <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                    <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+                  </NuxtLink>
+                  <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                    <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+                  </NuxtLink>
+                </div>
+              </slot>
             </div>
           </div>
 
@@ -128,16 +155,16 @@ defineSlots<{
                 <h4 class="text-sm font-bold text-primary mb-4">Bądź na bieżąco:</h4>
                 <slot name="socialLinks" mdc-unwrap="p">
                   <div class="flex space-x-4">
-                    <a
+                    <NuxtLink
                       v-for="social in ['linkedin', 'instagram', 'facebook']"
                       :key="social"
-                      :href="`https://${social}.com`"
+                      :to="`https://${social}.com`"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="text-primary hover:text-primary-dark transition-colors"
                     >
-                      <Icon :name="`uil:${social}`" class="w-6 h-6" />
-                    </a>
+                      <IconBlock :name="`uil:${social}`" customClass="w-6 h-6 text-primary" />
+                    </NuxtLink>
                   </div>
                 </slot>
               </div>
@@ -145,8 +172,11 @@ defineSlots<{
                 <slot name="copyrightText" mdc-unwrap="p">
                   <p>molki.design.pl © {{ currentYear }}</p>
                   <p>Wszelkie prawa zastrzeżone.</p>
-                  <p>/ prywatność / ciasteczka /</p>
-                  <p>klauzula RODO</p>
+                  <p>
+                    <NuxtLink to="/" class="hover:text-primary">prywatność</NuxtLink> /
+                    <NuxtLink to="/" class="hover:text-primary">ciasteczka</NuxtLink> /
+                    <NuxtLink to="/" class="hover:text-primary">klauzula RODO</NuxtLink>
+                  </p>
                 </slot>
               </div>
             </div>

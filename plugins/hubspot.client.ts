@@ -8,7 +8,7 @@ export default defineNuxtPlugin(() => {
       script: [
         {
           id: 'hs-script-loader',
-          src: `//js-eu1.hs-scripts.com/${config.public.hubspotPortalId}.js`,
+          src: `//js-eu1.hs-scripts.com/144440300.js`,
           defer: true,
           async: true,
           onload: () => {

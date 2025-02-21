@@ -70,10 +70,24 @@
       <template #copyrightText>
         <p>Company Name © {{ new Date().getFullYear() }}</p>
         <p>Wszelkie prawa zastrzeżone.</p>
-        <p>
-          <NuxtLink to="/" class="hover:text-primary">prywatność</NuxtLink> /
-          <NuxtLink to="/" class="hover:text-primary">ciasteczka</NuxtLink> /
-          <NuxtLink to="/" class="hover:text-primary">klauzula RODO</NuxtLink>
+        <p class="space-x-1">
+          <NuxtLink
+            to="/"
+            class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
+            >prywatność</NuxtLink
+          >
+          <span>/</span>
+          <NuxtLink
+            to="/"
+            class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
+            >ciasteczka</NuxtLink
+          >
+          <span>/</span>
+          <NuxtLink
+            to="/"
+            class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
+            >klauzula RODO</NuxtLink
+          >
         </p>
       </template>
 

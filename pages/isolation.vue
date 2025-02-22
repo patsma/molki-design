@@ -1,5 +1,43 @@
 <template>
   <div>
+    <!-- HubSpot Form Section -->
+    <section class="content-grid py-24">
+      <div class="content">
+        <h2 class="text-3xl font-bold mb-8">Skontaktuj się z nami</h2>
+
+        <!-- Debug Info (only in development) -->
+        <div v-if="isDev" class="mb-4 p-4 bg-gray-100 rounded-lg text-sm">
+          <p class="font-semibold mb-2">HubSpot Form Debug Info:</p>
+          <p>Form ID: 451093eb-38a4-4af8-ac3e-b1f50a824b47</p>
+          <p>Portal ID: {{ config.public.hubspotPortalId }}</p>
+          <p>Script Status: {{ hubspotFormStatus }}</p>
+          <button
+            @click="checkHubspotStatus"
+            class="mt-2 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Check Status
+          </button>
+        </div>
+
+        <!-- HubSpot Form -->
+        <ClientOnly>
+          <HubspotForm
+            formId="451093eb-38a4-4af8-ac3e-b1f50a824b47"
+            region="eu1"
+            @load="handleFormLoad"
+            @error="handleFormError"
+          />
+          <template #fallback>
+            <div class="animate-pulse">
+              <div class="h-12 bg-gray-200 rounded mb-4"></div>
+              <div class="h-12 bg-gray-200 rounded mb-4"></div>
+              <div class="h-12 bg-gray-200 rounded"></div>
+            </div>
+          </template>
+        </ClientOnly>
+      </div>
+    </section>
+
     <FooterComponent>
       <template #logo>
         <Logo class="w-48" />
@@ -103,4 +141,72 @@
 definePageMeta({
   layout: 'default',
 });
+
+const config = useRuntimeConfig();
+const isDev = config.public.isDev;
+const hubspotFormStatus = ref('Initializing...');
+
+const checkHubspotStatus = () => {
+  if (process.client) {
+    hubspotFormStatus.value = window.hbspt
+      ? 'HubSpot Forms SDK Loaded'
+      : 'HubSpot Forms SDK Not Found';
+    console.log('HubSpot Form Debug:', {
+      hbsptExists: !!window.hbspt,
+      portalId: config.public.hubspotPortalId,
+      formId: '451093eb-38a4-4af8-ac3e-b1f50a824b47',
+      domain: window.location.hostname,
+    });
+  }
+};
+
+const handleFormLoad = () => {
+  hubspotFormStatus.value = 'Form Loaded Successfully';
+  console.log('HubSpot form loaded successfully');
+};
+
+const handleFormError = (error: any) => {
+  hubspotFormStatus.value = `Error: ${error}`;
+  console.error('HubSpot form error:', error);
+};
+
+// Check initial status
+onMounted(() => {
+  if (isDev) {
+    setTimeout(checkHubspotStatus, 2000); // Check after 2 seconds to allow script to load
+  }
+});
 </script>
+
+<style scoped>
+/* Add any custom form styles here */
+:deep(.hubspot-form-container) {
+  @apply max-w-2xl mx-auto;
+}
+
+:deep(.hs-form) {
+  @apply space-y-4;
+}
+
+:deep(.hs-form input[type='text']),
+:deep(.hs-form input[type='email']),
+:deep(.hs-form textarea) {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+:deep(.hs-form-required) {
+  @apply text-red-500;
+}
+
+:deep(.hs-error-msg) {
+  @apply text-red-500 text-sm mt-1;
+}
+
+:deep(.hs-submit .actions) {
+  @apply mt-6;
+}
+
+:deep(.hs-button) {
+  @apply bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-dark transition-colors duration-200;
+}
+</style>

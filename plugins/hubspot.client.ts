@@ -1,3 +1,18 @@
+// TypeScript declarations for HubSpot
+declare global {
+  interface Window {
+    HubSpotConversations: {
+      widget: {
+        load: (config: { loadImmediately: boolean; inlineEmbedSelector: string }) => void;
+        status: () => string;
+        refresh: () => void;
+        open: () => void;
+      };
+      on: (event: string, callback: (payload?: any) => void) => void;
+    };
+  }
+}
+
 // Client-side only plugin for HubSpot
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig();

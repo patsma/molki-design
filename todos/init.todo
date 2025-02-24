@@ -70,10 +70,8 @@
 ✔ Shorten menu items and add contact item @done(25-01-31 10:49)
 ✔ Add Simple Parallax to NuxtImg @started(25-01-31 12:56) @done(25-01-31 13:10) @lasted(54m34s)
 ✔ Add ParallaxImg component and test it with .md files @done(25-01-31 13:44)
-
 ✔ Try to add on scroll animation from DIFJ @started(25-02-01 12:13) @done(25-02-01 12:38) @lasted(25m16s)
 ✔ Implement basic on scroll animations to current components @done(25-02-01 16:52)
-
 ✔ Split HeroSlider to TeamMember component @done(25-02-03 16:19)
 ✔ Ensure all components work with Nuxt Content @done(25-02-03 16:19)
 ✔ Refactor Hero Slider to slots @done(25-02-03 17:28)
@@ -89,37 +87,34 @@
 ✔ Hero - Remont @done(25-02-10 17:50)
 ✔ Item Card @started(25-02-11 13:51) @done(25-02-11 14:10) @lasted(19m32s)
 ✔ Title and Paragraph @done(25-02-11 15:55)
-
 ✔ Hero Business @started(25-02-11 16:21) @done(25-02-11 17:21) @lasted(1h13s)
 ✘ Column Grid 2 @cancelled(25-02-11 17:37)
-
 ✔ Services Table @done(25-02-15 01:38)
-
 ✔ Square Grid @done(25-02-17 14:36)
 ✔ Square Grid Item @started(25-02-17 14:36) @done(25-02-17 22:24) @lasted(7h48m28s)
 ✔ Banner Pricing @started(25-02-17 23:20) @done(25-02-18 00:13) @lasted(53m49s)
 ✔ Info Pricing @started(25-02-18 12:52) @done(25-02-18 14:40) @lasted(1h48m21s)
 ✔ Hero Form @done(25-02-19 12:30)
 ✔ Pre Footer and refactor form to be separate component @started(25-02-19 12:30) @done(25-02-19 13:22) @lasted(52m14s)
-
 ✔ Ensure project item names are visible on mobile @started(25-02-19 13:27) @done(25-02-19 13:32) @lasted(5m57s)
 ✔ Footer @started(25-02-19 16:02) @done(25-02-20 09:51) @lasted(17h49m54s)
-
 ✔ Slider Before After @started(25-02-20 09:56) @done(25-02-20 11:27) @lasted(1h31m43s)
-
 ✔ Column Grid 3 - Pricing @started(25-02-20 15:39) @done(25-02-20 16:53) @lasted(1h14m21s)
-
-
 ✔ Fix footer hydration, proper images slots, maybe ensure we can have custom icons there @started(25-02-21 01:14) @done(25-02-21 02:49) @lasted(1h35m21s)
+✔ Fix scroll to implementation to trigger after page load finishes (seeems it's working after build) @done(25-02-23 15:45)
+✔ Prepare a structure for the project, ask AI for detailed plan @done(25-02-23 15:44)
 
-
-- Prepare a structure for the project, ask AI for detailed plan
-
-
-
+- Add Nuxt SEO module
+- Add sitemap generation 
+- Ensure we can edit menu items in nuxt studio
+- Ensure we can edit and add pages in nuxt studio
 - Add custom icons folder and test it
+- Add more HeroPath components variants - refactor so we can use different shapes
+- Add drawing animation to HeroPath partials
 
-- Fix scroll to implementation to trigger after page load finishes
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link
+
+- Add Trello board for the project
+- Add proper tasks to trello board
 - Blog?

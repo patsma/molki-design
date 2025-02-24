@@ -104,8 +104,8 @@
 ✔ Fix scroll to implementation to trigger after page load finishes (seeems it's working after build) @done(25-02-23 15:45)
 ✔ Prepare a structure for the project, ask AI for detailed plan @done(25-02-23 15:44)
 
-- Add Nuxt SEO module @started(25-02-24 15:56)
-- Add sitemap generation 
+✔ Add Nuxt SEO module @started(25-02-24 15:56) @done(25-02-24 21:47) @lasted(5h51m2s)
+- Add sitemap generation @started(25-02-24 21:47)
 - Ensure we can edit menu items in nuxt studio
 - Ensure we can edit and add pages in nuxt studio
 - Add custom icons folder and test it

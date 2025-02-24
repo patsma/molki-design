@@ -50,7 +50,19 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@hypernym/nuxt-gsap', '@pinia/nuxt', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/content', '@nuxt/icon', 'nuxt-swiper', '@nuxtjs/seo'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss',
+    '@hypernym/nuxt-gsap',
+    '@pinia/nuxt',
+    '@nuxt/fonts',
+    '@vueuse/nuxt',
+    '@nuxt/image',
+    '@nuxt/icon',
+    'nuxt-swiper',
+    '@nuxtjs/seo',
+  ],
 
   devServer: {
     host: '0.0.0.0',
@@ -224,5 +236,10 @@ export default defineNuxtConfig({
       hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '', // Provide empty string as fallback
       isDev: process.env.NODE_ENV !== 'production',
     },
+  },
+
+  site: {
+    url: 'https://molki-design-2025.netlify.app',
+    name: 'Molki Design',
   },
 });

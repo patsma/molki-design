@@ -50,17 +50,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@hypernym/nuxt-gsap',
-    '@pinia/nuxt',
-    '@nuxt/fonts',
-    '@vueuse/nuxt',
-    '@nuxt/image',
-    '@nuxt/content',
-    '@nuxt/icon',
-    'nuxt-swiper',
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@hypernym/nuxt-gsap', '@pinia/nuxt', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/content', '@nuxt/icon', 'nuxt-swiper', '@nuxtjs/seo'],
 
   devServer: {
     host: '0.0.0.0',

@@ -104,7 +104,7 @@
 ✔ Fix scroll to implementation to trigger after page load finishes (seeems it's working after build) @done(25-02-23 15:45)
 ✔ Prepare a structure for the project, ask AI for detailed plan @done(25-02-23 15:44)
 
-- Add Nuxt SEO module
+- Add Nuxt SEO module @started(25-02-24 15:56)
 - Add sitemap generation 
 - Ensure we can edit menu items in nuxt studio
 - Ensure we can edit and add pages in nuxt studio
@@ -115,6 +115,9 @@
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link
 
+- Prepare a documentation
+- Prepaer a list of missing details
+- Create proper milestones
 - Add Trello board for the project
 - Add proper tasks to trello board
 - Blog?

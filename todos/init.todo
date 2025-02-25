@@ -105,7 +105,9 @@
 ✔ Prepare a structure for the project, ask AI for detailed plan @done(25-02-23 15:44)
 
 ✔ Add Nuxt SEO module @started(25-02-24 15:56) @done(25-02-24 21:47) @lasted(5h51m2s)
-- Add sitemap generation @started(25-02-24 21:47)
+✔ Add sitemap generation @started(25-02-24 21:47) @done(25-02-24 22:53) @lasted(1h6m21s)
+
+- Ensure we have local nuxt content https://content.nuxt.com/docs/studio/debug#clone-your-repository-on-local
 - Ensure we can edit menu items in nuxt studio
 - Ensure we can edit and add pages in nuxt studio
 - Add custom icons folder and test it
@@ -115,7 +117,7 @@
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link
 
-- Prepare a documentation
+✔ Prepare a documentation @done(25-02-25 15:38)
 - Prepaer a list of missing details
 - Create proper milestones
 - Add Trello board for the project

@@ -34,6 +34,13 @@ declare module '@nuxt/schema' {
       renderer?: {
         anchorLinks: boolean;
       };
+      experimental?: {
+        clientDB: boolean;
+        stripQueryParameters: boolean;
+      };
+      navigation?: {
+        fields: string[];
+      };
     };
   }
 }
@@ -43,6 +50,10 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/**': {
+      prerender: true,
+      index: false,
+    },
   },
   typescript: {
     strict: true,
@@ -206,6 +217,11 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/hubspot.client.ts'],
 
   nitro: {
+    prerender: {
+      crawlLinks: true,
+      ignore: ['/api', '/studio'],
+      routes: ['/'],
+    },
     routeRules: {
       '/**': {
         headers: {

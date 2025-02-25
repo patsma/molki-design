@@ -8,7 +8,7 @@ const { data: page } = await useAsyncData('page-' + route.path, () => {
 
 <template>
   <div :class="page?.meta?.pageClass">
-    <ContentRenderer v-if="page" :value="page" class="prose" />
+    <ContentRenderer v-if="page" :value="page" class="" />
     <div v-else>Page not found</div>
   </div>
 </template>

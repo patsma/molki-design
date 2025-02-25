@@ -6,32 +6,31 @@ const { data: page } = await useAsyncData('page-' + route.path, () => {
 });
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found yet', fatal: true });
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
-// Use type assertion to access custom frontmatter properties
-interface PageMeta {
-  pageClass?: string;
-  maxWidth?: 'narrow' | 'medium' | 'full';
-}
-
-// Set the page class if specified in frontmatter
-const pageClass = computed(() => (page.value as unknown as PageMeta)?.pageClass || '');
-const contentWidth = computed(() => {
-  const meta = page.value as unknown as PageMeta;
-  if (meta?.maxWidth === 'narrow') {
-    return 'max-w-3xl mx-auto px-4';
-  } else if (meta?.maxWidth === 'medium') {
-    return 'max-w-5xl mx-auto px-4';
+// Add page-specific class and container width
+onMounted(() => {
+  if (route.path === '/todo') {
+    document.body.classList.add('todo-page');
   }
-  return 'full-width';
+
+  return () => {
+    if (route.path === '/todo') {
+      document.body.classList.remove('todo-page');
+    }
+  };
 });
+
+// Determine if this is the todo page
+const isTodoPage = computed(() => route.path === '/todo');
 </script>
 
 <template>
-  <div :class="['content-grid', pageClass]">
-    <div :class="contentWidth">
-      <ContentRenderer class="prose prose-lg max-w-none my-8" v-if="page" :value="page" />
+  <div class="content-page">
+    <!-- Apply narrow width only to todo page -->
+    <div :class="[isTodoPage ? 'max-w-3xl mx-auto px-6 py-6 bg-white rounded-lg shadow-md' : '']">
+      <ContentRenderer v-if="page" :value="page" class="prose" />
       <div v-else>Page not found</div>
     </div>
   </div>
@@ -42,15 +41,5 @@ const contentWidth = computed(() => {
   background-color: #f9f9f9;
   padding-top: 2rem;
   padding-bottom: 4rem;
-}
-
-.todo-page .prose h1 {
-  color: var(--color-primary);
-  margin-bottom: 2rem;
-}
-
-.todo-page .prose h2 {
-  margin-top: 2rem;
-  color: var(--color-secondary);
 }
 </style>

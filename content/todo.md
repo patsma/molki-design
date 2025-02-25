@@ -13,11 +13,6 @@ This page tracks our progress toward website completion. Last updated: {{ new Da
 ::ProgressCounter{:content="$doc.body"}
 ::
 
-## Progress Overview
-- ✅ Completed: 14 items
-- 🟡 In Progress: 5 items
-- ❌ Not Started: 19 items
-
 ## 1. Content Management  
 - ✅ Core pages structure (Home, Projects, Services)  
 - 🟡 **Menu Management**  

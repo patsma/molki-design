@@ -1,7 +1,7 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
-// Accept the entire document body as a prop
+// Accept the document body as a prop
 const props = defineProps({
   content: {
     type: String,
@@ -9,25 +9,38 @@ const props = defineProps({
   },
 });
 
-// Count occurrences of each emoji
-const completedCount = computed(() => {
-  return (props.content.match(/✅/g) || []).length;
-});
+// Use refs for counts since we'll calculate them after mount
+const completedCount = ref(0);
+const inProgressCount = ref(0);
+const notStartedCount = ref(0);
 
-const inProgressCount = computed(() => {
-  return (props.content.match(/🟡/g) || []).length;
-});
-
-const notStartedCount = computed(() => {
-  return (props.content.match(/❌/g) || []).length;
-});
-
+// Calculate total count and percent complete
 const totalCount = computed(() => {
   return completedCount.value + inProgressCount.value + notStartedCount.value;
 });
 
 const percentComplete = computed(() => {
   return Math.round((completedCount.value / totalCount.value) * 100) || 0;
+});
+
+// Get the full document content - we'll count manually after mount
+onMounted(() => {
+  // Give time for content to render
+  setTimeout(() => {
+    // Count emoji directly from the DOM
+    const allItems = document.querySelectorAll('.prose li');
+
+    allItems.forEach((item) => {
+      const text = item.textContent;
+      if (text.includes('✅')) {
+        completedCount.value++;
+      } else if (text.includes('🟡')) {
+        inProgressCount.value++;
+      } else if (text.includes('❌')) {
+        notStartedCount.value++;
+      }
+    });
+  }, 500);
 });
 </script>
 

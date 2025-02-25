@@ -1,4 +1,3 @@
-
 ::hero-projects
 ---
 cta-link: /buttons
@@ -96,6 +95,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
   MY PRACUJEMY, TY ODPOCZYWASZ
   :::
 ::
+
 ::square-grid
 #title
 Nasze Realizacje
@@ -156,4 +156,3 @@ Dodatkowe usługi projektowe
 - Realizacja i Nadzór Autorski
 - Inwentaryzacja bez projektu
 ::
-

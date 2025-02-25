@@ -787,7 +787,11 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
 
 #sponsors
   :::div{.flex.gap-4}
-    ::::nuxt-link{.text-primary.hover:text-primary-dark.transition-colors to="/buttons"}
+    ::::nuxt-link
+    ---
+    class: text-primary hover:text-primary-dark transition-colors
+    to: /buttons
+    ---
       :::::icon-block{custom-class="w-16 h-16 text-primary" name="uil:building"}
       :::::
     ::::
@@ -826,11 +830,13 @@ Tel: +48 123 456 789\:brEmail: [kontakt@firma.pl](/)\:brGodziny otwarcia::brPon-
 
 #contactAddress
 ul. Heweliusza 11/811
+
 :br
+
 80-890 Gdańsk
 
 #contactEmail
-[mail@molki.pl](mailto:mail@molki.pl){.text-neutral-600.hover:text-primary.transition-colors}
+<mail@molki.pl>{.text-neutral-600.hover:text-primary.transition-colors}
 
 #contactPhone
 [+48 572 323 207](tel:+48572323207){.text-neutral-600.hover:text-primary.transition-colors}
@@ -873,6 +879,4 @@ ul. Heweliusza 11/811
 
 #copyrightText
 Wszelkie prawa zastrzeżone / [prywatność i ciasteczka](buttons){.text-neutral-500.hover:text-primary.transition-colors} / [klauzula RODO](buttons){.text-neutral-500.hover:text-primary.transition-colors}
-
-
 ::

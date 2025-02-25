@@ -27,19 +27,8 @@ const isTodoPage = computed(() => route.path === '/todo');
 </script>
 
 <template>
-  <div class="content-page">
-    <!-- Apply narrow width only to todo page -->
-    <div :class="[isTodoPage ? 'max-w-3xl mx-auto px-6 py-6 bg-white rounded-lg shadow-md' : '']">
-      <ContentRenderer v-if="page" :value="page" class="prose" />
-      <div v-else>Page not found</div>
-    </div>
+  <div :class="page?.meta?.pageClass">
+    <ContentRenderer v-if="page" :value="page" class="prose" />
+    <div v-else>Page not found</div>
   </div>
 </template>
-
-<style>
-.todo-page {
-  background-color: #f9f9f9;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-</style>

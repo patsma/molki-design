@@ -2,8 +2,7 @@
 title: Project Progress Tracker
 description: Track the progress of Molki Design website development
 layout: default
-pageClass: todo-page
-maxWidth: narrow
+pageClass: max-w-3xl mx-auto px-6 py-24 bg-white
 ---
 
 # Molki Design - Launch Checklist

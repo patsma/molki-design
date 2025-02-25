@@ -48,11 +48,11 @@ export const useMenuStore = defineStore('menu', {
       },
       {
         label: 'BLOG',
-        link: '#blog',
+        link: '/todo',
       },
       {
         label: 'KONTAKT',
-        link: '#blog',
+        link: '/o-nas',
       },
     ] as MenuItem[],
     activeDropdownId: null as string | null,

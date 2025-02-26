@@ -1,7 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 
-// Accept the document body as a prop
 const props = defineProps({
   content: {
     type: String,
@@ -9,12 +8,11 @@ const props = defineProps({
   },
 });
 
-// Use refs for counts since we'll calculate them after mount
 const completedCount = ref(0);
 const inProgressCount = ref(0);
 const notStartedCount = ref(0);
 
-// Calculate total count and percent complete
+// Oblicz sumę i procent ukończenia
 const totalCount = computed(() => {
   return completedCount.value + inProgressCount.value + notStartedCount.value;
 });
@@ -23,11 +21,11 @@ const percentComplete = computed(() => {
   return Math.round((completedCount.value / totalCount.value) * 100) || 0;
 });
 
-// Get the full document content - we'll count manually after mount
+// Pobierz pełną treść dokumentu - będziemy liczyć ręcznie po zamontowaniu
 onMounted(() => {
-  // Give time for content to render
+  // Daj czas na wyrenderowanie treści
   setTimeout(() => {
-    // Count emoji directly from the DOM
+    // Zlicz emoji bezpośrednio z DOM
     const allItems = document.querySelectorAll('.prose li');
 
     allItems.forEach((item) => {
@@ -46,7 +44,7 @@ onMounted(() => {
 
 <template>
   <div class="progress-stats p-4 bg-neutral-300 rounded-lg my-6">
-    <h3 class="text-lg font-semibold mb-2">Current Progress: {{ percentComplete }}% Complete</h3>
+    <h3 class="text-lg font-semibold mb-2">Aktualny Postęp: {{ percentComplete }}% Ukończono</h3>
 
     <div class="grid grid-cols-3 gap-4 mb-4">
       <div class="bg-green-100 p-3 rounded">
@@ -54,7 +52,7 @@ onMounted(() => {
           <span class="text-xl">✅</span>
           <span class="font-bold text-lg">{{ completedCount }}</span>
         </div>
-        <div class="text-sm">Completed</div>
+        <div class="text-sm">Ukończone</div>
       </div>
 
       <div class="bg-yellow-100 p-3 rounded">
@@ -62,7 +60,7 @@ onMounted(() => {
           <span class="text-xl">🟡</span>
           <span class="font-bold text-lg">{{ inProgressCount }}</span>
         </div>
-        <div class="text-sm">In Progress</div>
+        <div class="text-sm">W Trakcie</div>
       </div>
 
       <div class="bg-red-100 p-3 rounded">
@@ -70,7 +68,7 @@ onMounted(() => {
           <span class="text-xl">❌</span>
           <span class="font-bold text-lg">{{ notStartedCount }}</span>
         </div>
-        <div class="text-sm">Not Started</div>
+        <div class="text-sm">Nie Rozpoczęte</div>
       </div>
     </div>
 

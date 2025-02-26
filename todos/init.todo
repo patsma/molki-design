@@ -109,7 +109,8 @@
 
 - Ensure we have local nuxt content https://content.nuxt.com/docs/studio/debug#clone-your-repository-on-local
 - Ensure we can edit menu items in nuxt studio
-- Ensure we can edit and add pages in nuxt studio
+- Ensure we can edit footer in nuxt studio
+✔ Ensure we can edit and add pages in nuxt studio @done(25-02-25 20:43)
 - Add custom icons folder and test it
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Add drawing animation to HeroPath partials

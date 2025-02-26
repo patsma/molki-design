@@ -1,110 +1,122 @@
 ---
-title: Project Progress Tracker
-description: Track the progress of Molki Design website development
+title: Monitor Postępu Projektu
+description: Śledzenie postępu rozwoju strony Molki Design
 layout: default
 pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
 ---
 
-# Molki Design - Launch Checklist
+# Molki Design - Lista Kontrolna Przed Uruchomieniem
 
-This page tracks our progress toward website completion. Last updated: {{ new Date().toLocaleDateString() }}
+Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 
 ::progress-counter{:content="$doc.body"}
 ::
 
-## 1. Content Management
+## 1. Zarządzanie Treścią
 
-- ✅ Core pages structure (Home, Projects, Services)
-- 🟡 **Menu Management**
-  - ✅ Menu links structure
-  - ❌ Edit menu via Nuxt Studio interface
-- ❌ **Footer Management**
-  - ❌ Create footer as editable MD file in CMS
-  - ❌ Contact info editable via Nuxt Studio
-  - ❌ Social links manageable via CMS
-- ✅ Copyright year automation
-- ❌ **Page Management**
-  - ❌ Enable adding new pages via Nuxt Studio
-  - ❌ Page template for CMS-created content
+- ✅ Struktura głównych stron (Strona główna, Projekty, Usługi)
+- 🟡 **Zarządzanie Menu**
+  - ❌ Edycja menu przez interfejs Nuxt Studio
+- ❌ **Zarządzanie Stopką**
+  - ❌ Utworzenie stopki jako edytowalnego pliku MD w CMS
+  - ❌ Dane kontaktowe edytowalne przez Nuxt Studio
+  - ❌ Linki społecznościowe zarządzane przez CMS
+- ✅ Automatyzacja roku w prawach autorskich
+- ✅ **Zarządzanie Stronami**
+  - ✅ Możliwość dodawania nowych stron przez Nuxt Studio
+  - ✅ Szablon strony dla treści tworzonych w CMS
 
-## 2. Project Showcase
+- ✅ **Zarządzanie Realizacjami**
+  - ✅ Możliwość dodawania nowych realizacji przez Nuxt Studio
+  - ✅ Szablon realizacji dla treści tworzonych w CMS
 
-- ✅ Project template
-- ✅ Image gallery with parallax
-- ✅ Basic project filtering
+- ❌ **Wprowadzone tresci**
 
-## 3. SEO & Marketing
+## 2. Prezentacja Projektów/Realizacji
 
-- ✅ Automatic sitemap generation
-- 🟡 **SEO Final Checks**:
-  - ✅ Page titles
-  - ❌ Alt text for all images
-  - ❌ Google Search Console verification
-  - ❌ robots.txt configuration
-- ❌ **Analytics Integration**
+- ✅ Szablon realizacji
+
+
+
+## 3. SEO i Marketing
+
+- ✅ Automatyczne generowanie mapy strony
+- 🟡 **Końcowe Sprawdzenie SEO**:
+  - ✅ Tytuły stron
+  - ❌ Tekst alternatywny dla wszystkich obrazów
+  - ❌ Weryfikacja Google Search Console
+  - ❌ Konfiguracja robots.txt
+- ❌ **Integracja Analityki**
   - ❌ Google Analytics 4
   - ❌ Google Tag Manager
 
-## 4. Legal Requirements
+## 4. Wymogi Prawne
 
-- ❌ Cookie consent banner (Need: Design + Text)
-- ❌ Privacy Policy page (Need: Content from client)
-- ❌ GDPR-compliant data handling setup
+- ❌ Baner zgody na pliki cookie (Potrzebne: Projekt + Tekst)
+- ❌ Strona Polityki Prywatności (Potrzebne: Treść od klienta)
+- ❌ Konfiguracja zgodna z RODO
 
-## 5. Technical Setup
+## 5. Konfiguracja Techniczna
 
-- ✅ Netlify hosting ready
-- 🟡 **Domain Configuration**:
-  - ❌ Final A-record update
-- ✅ Image optimization
-- 🟡 **Custom Icons**:
-  - ✅ Basic social icons
-  - ❌ Custom decorative icons from design
-- ❌ Favicons for all devices/browsers
+- ✅ Hosting Netlify gotowy
+- 🟡 **Konfiguracja Domeny**:
+  - ❌ Finalna aktualizacja rekordu A
+- ✅ Optymalizacja obrazów
+- 🟡 **Niestandardowe Ikony**:
+  - ✅ Podstawowe ikony społecznościowe
+  - ❌ Niestandardowe ikony dekoracyjne z projektu
+- ❌ Favicony dla wszystkich urządzeń/przeglądarek
 
-## 6. Design Polish
+## 6. Dopracowanie Designu
 
-- ✅ Core animations (smooth scroll, parallax)
-- ✅ Button hover effects
-- ✅ Loading screen transition
-- ✅ Mobile menu animation
-- ❌ **Custom Lines Animation** (From Figma design)
-- ✅ Form validation messages styling
+- ✅ Podstawowe animacje (płynne przewijanie, parallax)
+- ✅ Efekty hover na przyciskach
+- ✅ Animacja ekranu ładowania
+- ✅ Animacja menu mobilnego
+- ❌ **Animacja Niestandardowych Linii** (Z projektu Figma)
+- ✅ Stylizacja komunikatów walidacji formularza
 
-## 7. Quality Assurance
+## 7. Kontrola Jakości
 
-- 🟡 **Cross-browser Testing**:
+- 🟡 **Testy Międzyprzeglądarkowe**:
   - ❌ Chrome/Firefox/Safari/Edge
-  - ❌ Mobile browsers
-- ❌ 404 Error page (Design needed)
-- ✅ Form submission test
-- ❌ Performance optimization final pass
-- ❌ Spelling and grammar check
+  - ❌ Przeglądarki mobilne
+- ❌ Strona błędu 404 (Potrzebny projekt)
+- ✅ Test wysyłania formularza
+- ❌ Końcowa optymalizacja wydajności
+- ❌ Sprawdzenie pisowni i gramatyki
 
-## Developer Priority List
+## Lista Priorytetów Developera
 
-1. Custom icons implementation
-2. CMS integration for:
-   - Menu links editing
-   - Footer content management
-   - New page creation
-3. Custom line animations
-4. Bug fixes
-5. 404 page (pending design)
+1. Implementacja niestandardowych ikon
+2. Integracja CMS dla:
+   - Edycji linków menu
+   - Zarządzania treścią stopki
+   - Tworzenia nowych stron
+3. Animacje niestandardowych linii
+4. Poprawki błędów
+5. Strona 404 (oczekiwanie na projekt)
 
-## Client Actions Needed
+## Wymagane Działania Klienta
 
-1. Privacy policy content
-2. Cookie policy text
-3. 404 page design approval
-4. Final content review
+1. Treść polityki prywatności
+2. Tekst polityki cookie
+3. Zatwierdzenie projektu strony 404
+4. Dodanie treści
+5. Końcowy przegląd treści
+6. Zatwierdzenie wszystkich integracji:
+  - Google Analytics, Google Tag Manager, HubSpot itd
+7. Potwierdzenie wszystkich funkcjonalnosci 
+  - formularze kontaktowe - na jakie adresy email itd
 
-## Launch Timeline
 
-- Technical completion: 5-7 work days
-- Client review period: 3 days
-- Final launch: 1 day after approval
+
+## Harmonogram Uruchomienia
+
+- Ukończenie techniczne: 14-21 dni roboczych
+- Okres przeglądu przez klienta: 3 dni
+- Finalne uruchomienie: 1 dzień po zatwierdzeniu
 
 ---
 
-*Note: This page is for internal tracking only. Update items by editing the markdown file in the content directory.*
+*Uwaga: Ta strona służy tylko do wewnętrznego śledzenia postępu. Aktualizuj elementy edytując plik todo.md w katalogu content.*

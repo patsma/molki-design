@@ -18,9 +18,8 @@ export interface MenuItem {
 
 export const useMenuStore = defineStore('menu', {
   state: () => {
-    // Get menu items from app config
     const appConfig = useAppConfig();
-    const configMenuItems = appConfig.menu?.items || [];
+    const configMenuItems = appConfig.navigation?.menu?.items || [];
 
     return {
       isMobileMenuOpen: false,

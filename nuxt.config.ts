@@ -47,6 +47,16 @@ declare module '@nuxt/schema' {
         api?: string;
         dev?: boolean;
       };
+      api?: {
+        baseURL?: string;
+      };
+      studio?: {
+        apiURL?: string;
+      };
+    };
+    swiper?: {
+      enableComposables?: boolean;
+      bundled?: boolean;
     };
   }
 }
@@ -205,6 +215,17 @@ export default defineNuxtConfig({
     renderer: {
       anchorLinks: false,
     },
+    // Add studio configuration
+    studio: {
+      apiURL: 'https://api.nuxt.studio',
+    },
+    api: {
+      baseURL: '/api/_content',
+    },
+    experimental: {
+      clientDB: true,
+      stripQueryParameters: true,
+    },
   },
 
   postcss: {
@@ -216,11 +237,10 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-01-29',
 
+  // Fix the swiper configuration
   swiper: {
-    // Swiper options
-    prefix: 'Swiper',
-    styleLang: 'css',
-    modules: ['navigation', 'pagination', 'autoplay'],
+    enableComposables: true,
+    bundled: true,
   },
 
   plugins: ['~/plugins/hubspot.client.ts'],

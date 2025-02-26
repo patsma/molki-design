@@ -41,6 +41,12 @@ declare module '@nuxt/schema' {
       navigation?: {
         fields: string[];
       };
+      preview?: {
+        port?: number;
+        host?: string;
+        api?: string;
+        dev?: boolean;
+      };
     };
   }
 }
@@ -189,10 +195,13 @@ export default defineNuxtConfig({
   },
 
   content: {
+    documentDriven: true,
     preview: {
       api: 'https://api.nuxt.studio',
+      port: 3000,
+      host: '0.0.0.0',
+      dev: true,
     },
-    documentDriven: true,
     renderer: {
       anchorLinks: false,
     },

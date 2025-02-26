@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { gsap } from 'gsap';
+import { useAppConfig } from '#imports';
 
 // Define the ScrollTo options type
 interface ScrollToOptions {
@@ -9,55 +10,27 @@ interface ScrollToOptions {
   offset?: number;
 }
 
-interface MenuItem {
+export interface MenuItem {
   label: string;
   link: string;
   children?: MenuItem[];
 }
 
 export const useMenuStore = defineStore('menu', {
-  state: () => ({
-    isMobileMenuOpen: false,
-    mobileMenuTimeline: null as gsap.core.Timeline | null,
-    gsapInstance: null as typeof gsap | null,
-    menuItems: [
-      {
-        label: 'O NAS',
-        link: '/buttons',
-      },
-      {
-        label: 'PROJEKT',
-        link: '/#spacer1',
-        children: [
-          { label: 'REALIZACJE', link: '/projects' },
-          { label: 'CENNIK', link: '#cennik-projekt' },
-        ],
-      },
-      {
-        label: 'REMONT+',
-        link: '/homepage',
-        children: [
-          { label: 'REALIZACJE', link: '#remont-pod-klucz-realizacje' },
-          { label: 'CENNIK', link: '#remonty-cennik' },
-        ],
-      },
-      {
-        label: 'BIZNES',
-        link: '/isolation',
-        children: [{ label: 'REALIZACJE', link: '#realizacje-dla-biznesu' }],
-      },
-      {
-        label: 'BLOG',
-        link: '/todo',
-      },
-      {
-        label: 'KONTAKT',
-        link: '/o-nas',
-      },
-    ] as MenuItem[],
-    activeDropdownId: null as string | null,
-    dropdownTimelines: new Map<string, gsap.core.Timeline>(),
-  }),
+  state: () => {
+    // Get menu items from app config
+    const appConfig = useAppConfig();
+    const configMenuItems = appConfig.menu?.items || [];
+
+    return {
+      isMobileMenuOpen: false,
+      mobileMenuTimeline: null as gsap.core.Timeline | null,
+      gsapInstance: null as typeof gsap | null,
+      menuItems: configMenuItems as MenuItem[],
+      activeDropdownId: null as string | null,
+      dropdownTimelines: new Map<string, gsap.core.Timeline>(),
+    };
+  },
 
   actions: {
     initAnimation($gsap: typeof gsap) {

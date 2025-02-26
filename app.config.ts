@@ -38,4 +38,9 @@ export default defineAppConfig({
       },
     ],
   },
+
+  // Basic studio configuration
+  studio: {
+    title: 'Molki Design',
+  },
 });

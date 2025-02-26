@@ -46,7 +46,6 @@ declare module '@nuxt/schema' {
         host?: string;
         api?: string;
         dev?: boolean;
-        appConfigTransformer?: string;
       };
       api?: {
         baseURL?: string;
@@ -212,12 +211,10 @@ export default defineNuxtConfig({
       port: 3000,
       host: '0.0.0.0',
       dev: true,
-      appConfigTransformer: './transformers/app-config.ts',
     },
     renderer: {
       anchorLinks: false,
     },
-    // Add studio configuration
     studio: {
       apiURL: 'https://api.nuxt.studio',
     },

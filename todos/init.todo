@@ -106,11 +106,23 @@
 
 ✔ Add Nuxt SEO module @started(25-02-24 15:56) @done(25-02-24 21:47) @lasted(5h51m2s)
 ✔ Add sitemap generation @started(25-02-24 21:47) @done(25-02-24 22:53) @lasted(1h6m21s)
-
-- Ensure we have local nuxt content https://content.nuxt.com/docs/studio/debug#clone-your-repository-on-local
-- Ensure we can edit menu items in nuxt studio
-- Ensure we can edit footer in nuxt studio
+✔ Ensure we have local nuxt content https://content.nuxt.com/docs/studio/debug#clone-your-repository-on-local @done(25-02-27 11:13)
+✔ Prepare a documentation @done(25-02-25 15:38)
 ✔ Ensure we can edit and add pages in nuxt studio @done(25-02-25 20:43)
+✔ Prepaer a list of missing details @started(25-02-25 17:55) @done(25-02-25 18:40) @lasted(45m48s)
+
+
+
+✔ Ensure we can edit menu items in nuxt studio @done(25-02-27 11:15)
+- Ensure we can edit menu items in nuxt studio in pleasant visual way @started(25-02-27 11:16)
+
+
+
+
+
+
+
+- Ensure we can edit footer in nuxt studio
 - Add custom icons folder and test it
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Add drawing animation to HeroPath partials
@@ -118,8 +130,6 @@
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link
 
-✔ Prepare a documentation @done(25-02-25 15:38)
-✔ Prepaer a list of missing details @started(25-02-25 17:55) @done(25-02-25 18:40) @lasted(45m48s)
 - Create proper milestones
 - Add Trello board for the project
 - Add proper tasks to trello board

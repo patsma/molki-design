@@ -5,46 +5,58 @@ export default defineNuxtSchema({
     navigation: group({
       title: 'Navigation',
       description: 'Configure website navigation',
+      icon: 'i-mdi-menu',
       fields: {
-        menu: field({
-          type: 'object',
-          title: 'Menu',
-          description: 'Main navigation menu',
-          properties: {
-            items: {
+        menu: group({
+          title: 'Menu Configuration',
+          description: 'Settings for the main menu',
+          fields: {
+            items: field({
               type: 'array',
               title: 'Menu Items',
-              items: {
+              description: 'Main navigation links',
+              default: [],
+              arrayItems: {
                 type: 'object',
-                properties: {
-                  label: {
+                fields: {
+                  label: field({
                     type: 'string',
-                    title: 'Label',
-                  },
-                  link: {
+                    title: 'Menu Label',
+                    description: 'Display text for the menu item',
+                    default: 'New Item',
+                  }),
+                  link: field({
                     type: 'string',
-                    title: 'Link',
-                  },
-                  children: {
+                    title: 'Menu Link',
+                    description: 'URL path for the menu item',
+                    default: '/',
+                  }),
+                  children: field({
                     type: 'array',
                     title: 'Submenu Items',
-                    items: {
+                    description: 'Dropdown menu items (optional)',
+                    default: [],
+                    arrayItems: {
                       type: 'object',
-                      properties: {
-                        label: {
+                      fields: {
+                        label: field({
                           type: 'string',
-                          title: 'Label',
-                        },
-                        link: {
+                          title: 'Submenu Label',
+                          description: 'Display text for the submenu item',
+                          default: 'New Submenu Item',
+                        }),
+                        link: field({
                           type: 'string',
-                          title: 'Link',
-                        },
+                          title: 'Submenu Link',
+                          description: 'URL path for the submenu item',
+                          default: '/',
+                        }),
                       },
                     },
-                  },
+                  }),
                 },
               },
-            },
+            }),
           },
         }),
       },
@@ -52,10 +64,12 @@ export default defineNuxtSchema({
     studio: group({
       title: 'Studio',
       description: 'Studio configuration',
+      icon: 'i-mdi-cog',
       fields: {
         title: field({
           type: 'string',
           title: 'Site Title',
+          description: 'Title displayed in browser tab and headers',
           default: 'Molki Design',
         }),
       },

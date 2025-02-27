@@ -113,7 +113,9 @@ export default defineNuxtConfig({
       mode: 'out-in',
     },
   },
-
+  icon: {
+    provider: 'iconify',
+  },
   gsap: {
     // Enable composables
     composables: true,
@@ -285,5 +287,12 @@ export default defineNuxtConfig({
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
+  },
+
+  studio: {
+    // Force cache invalidation on each page load
+    devtools: {
+      enabled: true,
+    },
   },
 });

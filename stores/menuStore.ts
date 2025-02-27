@@ -19,7 +19,7 @@ export interface MenuItem {
 export const useMenuStore = defineStore('menu', {
   state: () => {
     const appConfig = useAppConfig();
-    const configMenuItems = appConfig.navigation?.menu?.items || [];
+    const configMenuItems = appConfig.navigation?.main?.items || [];
 
     return {
       isMobileMenuOpen: false,

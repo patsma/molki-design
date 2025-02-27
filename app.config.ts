@@ -1,7 +1,6 @@
 export default defineAppConfig({
-  // Navigation configuration
   navigation: {
-    menu: {
+    main: {
       items: [
         {
           label: 'Strona główna',
@@ -40,8 +39,6 @@ export default defineAppConfig({
       ],
     },
   },
-
-  // Studio configuration
   studio: {
     title: 'Molki Design',
   },

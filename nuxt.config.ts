@@ -37,6 +37,7 @@ declare module '@nuxt/schema' {
       experimental?: {
         clientDB: boolean;
         stripQueryParameters: boolean;
+        advancedEditing: boolean;
       };
       navigation?: {
         fields: string[];
@@ -219,6 +220,9 @@ export default defineNuxtConfig({
     },
     studio: {
       apiURL: 'https://api.nuxt.studio',
+      experimental: {
+        advancedEditing: true,
+      },
     },
     api: {
       baseURL: '/api/_content',

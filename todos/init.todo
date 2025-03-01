@@ -115,14 +115,17 @@
 
 ✔ Ensure we can edit menu items in nuxt studio @done(25-02-27 11:15)
 ✘ Ensure we can edit menu items in nuxt studio in pleasant visual way @started(25-02-27 11:16) @cancelled(25-02-27 12:21) @wasted(1h5m)
-- Copy working nuxt ui pro example repo https://github.com/nuxt-ui-pro/docs/tree/v3
+✔ Copy working nuxt ui pro example repo https://github.com/nuxt-ui-pro/docs/tree/v3 @done(25-03-01 21:06)
 
 
 
 
 
 
-- Ensure we can edit footer in nuxt studio
+✔ Ensure we can edit footer in nuxt studio @done(25-03-01 21:06)
+- Move footer out of the content to data
+ 
+
 - Add custom icons folder and test it
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Add drawing animation to HeroPath partials

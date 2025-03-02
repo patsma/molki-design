@@ -116,24 +116,18 @@
 ✔ Ensure we can edit menu items in nuxt studio @done(25-02-27 11:15)
 ✘ Ensure we can edit menu items in nuxt studio in pleasant visual way @started(25-02-27 11:16) @cancelled(25-02-27 12:21) @wasted(1h5m)
 ✔ Copy working nuxt ui pro example repo https://github.com/nuxt-ui-pro/docs/tree/v3 @done(25-03-01 21:06)
-
-
-
-
-
-
 ✔ Ensure we can edit footer in nuxt studio @done(25-03-01 21:06)
-- Move footer out of the content to data
- 
+✔ Move footer out of the content to data @done(25-03-01 21:28)
+✔ Add MCP server for console logs @done(25-03-02 15:42)
 
 - Add custom icons folder and test it
-- Add more HeroPath components variants - refactor so we can use different shapes
+- Implement content, add all from figma 
+- Add cookies banner
+- Add OG Images
+- Divide into pages
+- Add custom lines
 - Add drawing animation to HeroPath partials
-
+- Add more HeroPath components variants - refactor so we can use different shapes
+- Blog template
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
-- Add primary color to menu item if current page is the same as the link
-
-- Create proper milestones
-- Add Trello board for the project
-- Add proper tasks to trello board
-- Blog?
+- Add primary color to menu item if current page is the same as the link?

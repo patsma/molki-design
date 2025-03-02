@@ -115,7 +115,6 @@ export default defineNuxtConfig({
     },
   },
   icon: {
-    provider: 'iconify',
     customCollections: [
       {
         prefix: 'fig',

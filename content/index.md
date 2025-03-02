@@ -132,8 +132,8 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:users-alt
+    customClass: w-20 h-20 text-primary mx-auto mb-4
+    name: fig:decyzja
     ---
     ::::
   
@@ -145,7 +145,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:ruler-combined
     ---
     ::::
@@ -158,7 +158,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:palette
     ---
     ::::
@@ -171,7 +171,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:ruler-combined
     ---
     ::::
@@ -184,7 +184,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:ruler-combined
     ---
     ::::
@@ -197,7 +197,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:swatchbook
     ---
     ::::
@@ -210,7 +210,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:image-check
     ---
     ::::
@@ -223,7 +223,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:file-check-alt
     ---
     ::::
@@ -236,7 +236,7 @@ Poznaj etapy Procesu Projektowania
   #icon
     ::::icon-block
     ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
+    customClass: w-20 h-20 text-primary mx-auto mb-4
     name: uil:check-circle
     ---
     ::::

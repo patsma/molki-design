@@ -116,6 +116,12 @@ export default defineNuxtConfig({
   },
   icon: {
     provider: 'iconify',
+    customCollections: [
+      {
+        prefix: 'fig',
+        dir: './assets/icons/figma',
+      },
+    ],
   },
   gsap: {
     // Enable composables

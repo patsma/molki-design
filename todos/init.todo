@@ -120,7 +120,9 @@
 ✔ Move footer out of the content to data @done(25-03-01 21:28)
 ✔ Add MCP server for console logs @done(25-03-02 15:42)
 
-- Add custom icons folder and test it
+✔ Add custom icons folder and test it @started(25-03-02 16:00) @done(25-03-02 16:31) @lasted(31m50s)
+- Add all icons from figma to the folder
+- Implement all Icons
 - Implement content, add all from figma 
 - Add cookies banner
 - Add OG Images

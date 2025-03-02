@@ -133,7 +133,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: fig:decyzja
+    name: fig:spotkanie-zapoznawcze
     ---
     ::::
   
@@ -146,7 +146,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:ruler-combined
+    name: fig:inwentaryzacja-pomieszczen
     ---
     ::::
   
@@ -159,7 +159,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:palette
+    name: fig:dobor-indywidualnych-rozwiazan
     ---
     ::::
   
@@ -172,7 +172,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:ruler-combined
+    name: fig:rysowanie-projektu
     ---
     ::::
   
@@ -185,7 +185,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:ruler-combined
+    name: fig:wybor-mebli
     ---
     ::::
   
@@ -198,7 +198,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:swatchbook
+    name: fig:dobor-materialow
     ---
     ::::
   
@@ -211,7 +211,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:image-check
+    name: fig:przedstawienie-wizualizacji
     ---
     ::::
   
@@ -224,7 +224,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:file-check-alt
+    name: fig:przekazanie-projektu
     ---
     ::::
   
@@ -237,7 +237,7 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: uil:check-circle
+    name: fig:decyzja
     ---
     ::::
   

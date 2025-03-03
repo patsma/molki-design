@@ -99,10 +99,7 @@ onMounted(() => {
           <template #sponsors>
             <div class="flex gap-4">
               <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
-              </NuxtLink>
-              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+                <IconBlock name="fig:club01" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>
           </template>
@@ -110,10 +107,10 @@ onMounted(() => {
           <template #certifications>
             <div class="flex gap-4">
               <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+                <IconBlock name="fig:cert01" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
               <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+                <IconBlock name="fig:cert02" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>
           </template>
@@ -121,10 +118,7 @@ onMounted(() => {
           <template #memberships>
             <div class="flex gap-4">
               <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
-              </NuxtLink>
-              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+                <IconBlock name="fig:cert03" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>
           </template>
@@ -155,7 +149,7 @@ onMounted(() => {
                 rel="noopener noreferrer"
                 class="text-primary hover:text-primary-dark transition-colors"
               >
-                <IconBlock :name="`uil:${social}`" customClass="w-6 h-6 text-primary" />
+                <IconBlock :name="`fig:${social}`" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>
           </template>

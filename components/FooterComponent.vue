@@ -120,13 +120,13 @@ defineSlots<{
               <h4 class="text-sm font-bold text-primary">Dane kontaktowe:</h4>
               <div class="space-y-2">
                 <div class="flex items-start space-x-2">
-                  <Icon name="uil:map-marker" class="w-5 h-5 text-primary mt-1" />
+                  <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
                   <slot name="contactAddress" mdc-unwrap="p">
                     <p class="text-neutral-600">ul. Heweliusza 11/811,<br />80-890 Gdańsk</p>
                   </slot>
                 </div>
                 <div class="flex items-center space-x-2">
-                  <Icon name="uil:envelope" class="w-5 h-5 text-primary" />
+                  <Icon name="fig:envelope" class="w-10 h-10 text-primary" />
                   <slot name="contactEmail" mdc-unwrap="p">
                     <a href="mailto:kontakt@molki.pl" class="text-neutral-600 hover:text-primary">
                       kontakt@molki.pl
@@ -134,7 +134,7 @@ defineSlots<{
                   </slot>
                 </div>
                 <div class="flex items-center space-x-2">
-                  <Icon name="uil:phone" class="w-5 h-5 text-primary" />
+                  <Icon name="fig:phone" class="w-10 h-10 text-primary" />
                   <slot name="contactPhone" mdc-unwrap="p">
                     <a href="tel:+48572323207" class="text-neutral-600 hover:text-primary">
                       +48 572 323 207

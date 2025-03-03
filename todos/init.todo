@@ -123,11 +123,11 @@
 ✔ Add custom icons folder and test it @started(25-03-02 16:00) @done(25-03-02 16:31) @lasted(31m50s)
 ✔ Add all icons from figma to the folder @started(25-03-02 20:46) @done(25-03-02 21:13) @lasted(27m)
 
-- Implement all Icons @started(25-03-03 11:29)
+✔ Implement all Icons @started(25-03-03 11:29) @done(25-03-03 12:37) @lasted(1h8m3s)
 
 
 
-- Implement content, add all from figma 
+- Implement all team members content @started(25-03-03 12:40)
 - Add cookies banner
 - Add OG Images
 - Divide into pages

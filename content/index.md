@@ -439,17 +439,12 @@ Oferujemy profesjonalne projektowanie wnętrz oraz kompleksowe remonty pod klucz
 ---
 cta-link: /buttons
 ---
-#title
-Od Koncepcji do Realizacji
-
-#subtitle
-Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
 #projects
   :::project-grid-item
   ---
   to: /buttons
-  aspectRatio: 1.15
+  aspectRatio: 0.95
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -460,17 +455,19 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   Projekty i Wizualizacje
   
   #description
-  Profesjonalna prezentacja nieruchomości – przyciąga więcej potencjalnych klientów, zwiększając wartość i atrakcyjność oferty.
+  **Profesjonalna prezentacja nieruchomości** – przyciąga więcej potencjalnych klientów, zwiększając wartość i atrakcyjność oferty.
+  :br
 
-  Dopasowanie wnętrza do oczekiwań rynku – projektowanie zgodne z aktualnymi trendami zwiększa szanse na szybszą sprzedaż lub wynajem.
+  **Dopasowanie wnętrza do oczekiwań rynku** – projektowanie zgodne z aktualnymi trendami zwiększa szanse na szybszą sprzedaż lub wynajem.
+  :br
 
-  Lepsza promocja inwestycji – realistyczne wizualizacje pomagają wyróżnić się na tle konkurencji i podnieść prestiż nieruchomości.
+  **Lepsza promocja inwestycji** – realistyczne wizualizacje pomagają wyróżnić się na tle konkurencji i podnieść prestiż nieruchomości.
   :::
 
   :::project-grid-item
   ---
   to: /buttons
-  aspectRatio: 1.15
+  aspectRatio: 0.95
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -481,17 +478,17 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   Projekty i Wizualizacje
   
   #description
-  Oszczędność czasu i stresu – pełna obsługa od projektu do realizacji, bez potrzeby angażowania się w prace remontowe.
-
-Zwiększenie wartości nieruchomości – kompleksowe remonty podnoszą standard wnętrza, co pozwala uzyskać wyższą cenę przy sprzedaży lub wynajmie.
-
-Przyciągnięcie wymagających klientów – gotowe do użytku wnętrza są bardziej atrakcyjne dla inwestorów i najemców poszukujących komfortu.
+  **Oszczędność czasu i stresu** – pełna obsługa od projektu do realizacji, bez potrzeby angażowania się w prace remontowe.
+:br
+**Zwiększenie wartości nieruchomości** – kompleksowe remonty podnoszą standard wnętrza, co pozwala uzyskać wyższą cenę przy sprzedaży lub wynajmie.
+:br
+**Przyciągnięcie wymagających klientów** – gotowe do użytku wnętrza są bardziej atrakcyjne dla inwestorów i najemców poszukujących komfortu.
   :::
 
   :::project-grid-item
   ---
   to: /buttons
-  aspectRatio: 1.15
+  aspectRatio: 0.95
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -502,11 +499,11 @@ Przyciągnięcie wymagających klientów – gotowe do użytku wnętrza są bard
 Home Staging
   
   #description
-  Szybsza sprzedaż lub wynajem – profesjonalnie zaaranżowane wnętrze wzbudza większe zainteresowanie i skraca czas na rynku.
-
-Maksymalizacja zysku – niewielka inwestycja w odświeżenie wnętrza zwiększa jego wartość i pozwala uzyskać wyższą cenę.
-
-Lepsze pierwsze wrażenie – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
+  **Szybsza sprzedaż lub wynajem** – profesjonalnie zaaranżowane wnętrze wzbudza większe zainteresowanie i skraca czas na rynku.
+:br
+**Maksymalizacja zysku** – niewielka inwestycja w odświeżenie wnętrza zwiększa jego wartość i pozwala uzyskać wyższą cenę.
+:br
+**Lepsze pierwsze wrażenie** – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
   :::
 
 #cta

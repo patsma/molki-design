@@ -30,7 +30,7 @@
         <slot name="title" mdc-unwrap="p" />
       </h3>
       <div class="text-neutral-700">
-        <slot name="description" mdc-unwrap="p" />
+        <slot name="description" />
       </div>
 
       <!-- Mobile-only button -->

@@ -523,7 +523,7 @@ Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoic
 
 ::services-table
 ---
-infoText: powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
+infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń."
 ---
 #services
   :::service-table-row
@@ -677,24 +677,18 @@ infoText: powyższe kwoty podane są w wartości netto, do ostatecznej wyceny na
   :::
 ::
 
-::square-grid
-#title
-Nasze Realizacje
 
-#subtitle
-Zobacz nasze najnowsze projekty
-::
 
 ::banner-pricing
 #title
 Nowe Pomysły na Twoje Wnętrze
 
 #description
-Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej Porady Projektowej.
+Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](/buttons) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Consultation](/heroInterior.jpg)
+  ![Interior Design Consultation](/heroPricing.jpg)
   :::
 
 #options
@@ -724,18 +718,22 @@ Dodatkowe usługi projektowe
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/heroInterior.jpg)
+  ![Interior Design Services](/uslugiProjektowe.jpg)
   :::
 
 #content
-## Konsultacja przedprojektowa - 190 zł/h
+**Konsultacja przedprojektowa** - 190 zł/h
+:br
+:br
+:br
+<span class="text-primary">**Dodatkowe Usługi**</span> - wyceny indywidualne
+ 
 
-### Dodatkowe Usługi - wyceny indywidualne
-
-- Projekty niestandardowe, konsultacje z zakresu sztuki
-- Doradztwo w zakresie wyboru materiałów i mebli
-- Realizacja i Nadzór Autorski
-- Inwentaryzacja bez projektu
+- **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – 
+prosimy o kontakt w celu omówienia szczegółów i wyceny.
+- **Doradztwo w zakresie wyboru materiałów i mebli** – stawka godzinowa
+- **Realizacja i Nadzór Autorski** – wyceny indywidualne
+- **Inwentaryzacja bez projektu** – wyceny indywidualne
 ::
 
 ::hero-form

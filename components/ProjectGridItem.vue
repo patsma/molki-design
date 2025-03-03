@@ -8,7 +8,7 @@
     data-scroll-stagger="0.2"
   >
     <!-- Image with Overlay -->
-    <div class="relative aspect-[4/3] overflow-hidden">
+    <div class="relative overflow-hidden">
       <div
         class="absolute inset-0 bg-primary/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
       ></div>

@@ -194,7 +194,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Funkcjonalny](/heroHome.jpg)
+    ![Projekt Funkcjonalny](/gridItem1.jpg)
     ::::
   
   #title
@@ -209,8 +209,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   to: /buttons
   ---
   #image
-    ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Wykonawczy](/heroHome.jpg)
+    ::::parallax-img{.w-full.h-full.object-cover]}
+    ![Projekt Wykonawczy](/gridItem2.jpg)
     ::::
   
   #title
@@ -226,7 +226,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Porada Projektowa](/heroHome.jpg)
+    ![Porada Projektowa](/gridItem3.jpg)
     ::::
   
   #title
@@ -246,7 +246,7 @@ cta-link: /buttons
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Our projects showcase](/heroAbout.jpg)
+  ![Our projects showcase](/heroProjects.jpg)
   :::
 
 #cta
@@ -708,7 +708,7 @@ ctaLink: /buttons
 #slides-0
   :::parallax-img{.w-full.h-full.object-cover}
   ![Slide 1](/heroHome.jpg)
-  :::
+  ::: 
 
 #slides-1
   :::parallax-img{.w-full.h-full.object-cover}

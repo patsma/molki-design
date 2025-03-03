@@ -190,8 +190,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 #projects
   :::project-grid-item
   ---
-  to: /buttons
   aspectRatio: 0.75
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -207,8 +207,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /buttons
   aspectRatio: 0.75
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -224,8 +224,8 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /buttons
   aspectRatio: 0.75
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -371,7 +371,6 @@ Podstawowy remont wnętrza – Idealne rozwiązanie dla tych, którzy szukają s
 Sprawdź i dowiedz się wiecej.
 ::
 
-
 ::item-card
 ---
 ctaLink: /buttons
@@ -385,12 +384,11 @@ COMFORT
   :::
 
 #content
-Komfortowy standard wykończenia – Ten pakiet łączy w sobie funkcjonalność i estetykę na wyższym poziomie, z możliwością większej personalizacji. Wybierając Comfort, zyskujesz wnętrze dopracowane pod kątem detali, które idealnie odpowiada Twoim potrzebom i stylowi życia. 
+Komfortowy standard wykończenia – Ten pakiet łączy w sobie funkcjonalność i estetykę na wyższym poziomie, z możliwością większej personalizacji. Wybierając Comfort, zyskujesz wnętrze dopracowane pod kątem detali, które idealnie odpowiada Twoim potrzebom i stylowi życia.
 
 #cta
 Sprawdź i dowiedz się wiecej.
 ::
-
 
 ::item-card
 ---
@@ -405,18 +403,16 @@ PREMIUM
   :::
 
 #content
-Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń. 
+Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń.
 
 #cta
 Sprawdź i dowiedz się wiecej.
 ::
 
-
-
 ::hero-business
 ---
-cta-link: /buttons
 hasBackground: false
+cta-link: /buttons
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -430,7 +426,7 @@ ZOBACZ NASZE REALIZACJE
 DLA BIZNESU
 
 #content
-Czy chcesz zwiększyć wartość swojej nieruchomości i maksymalizować zyski ze sprzedaży lub wynajmu? 
+Czy chcesz zwiększyć wartość swojej nieruchomości i maksymalizować zyski ze sprzedaży lub wynajmu?
 
 Oferujemy profesjonalne projektowanie wnętrz oraz kompleksowe remonty pod klucz, które sprawią, że Twoje inwestycje staną się bardziej atrakcyjne na rynku. Nasze usługi podnoszą standardy nieruchomości, przyciągając więcej potencjalnych nabywców i najemców.
 ::
@@ -439,12 +435,11 @@ Oferujemy profesjonalne projektowanie wnętrz oraz kompleksowe remonty pod klucz
 ---
 cta-link: /buttons
 ---
-
 #projects
   :::project-grid-item
   ---
-  to: /buttons
   aspectRatio: 0.95
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -456,18 +451,20 @@ cta-link: /buttons
   
   #description
   **Profesjonalna prezentacja nieruchomości** – przyciąga więcej potencjalnych klientów, zwiększając wartość i atrakcyjność oferty.
+  
   :br
-
+  
   **Dopasowanie wnętrza do oczekiwań rynku** – projektowanie zgodne z aktualnymi trendami zwiększa szanse na szybszą sprzedaż lub wynajem.
+  
   :br
-
+  
   **Lepsza promocja inwestycji** – realistyczne wizualizacje pomagają wyróżnić się na tle konkurencji i podnieść prestiż nieruchomości.
   :::
 
   :::project-grid-item
   ---
-  to: /buttons
   aspectRatio: 0.95
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -479,16 +476,20 @@ cta-link: /buttons
   
   #description
   **Oszczędność czasu i stresu** – pełna obsługa od projektu do realizacji, bez potrzeby angażowania się w prace remontowe.
-:br
-**Zwiększenie wartości nieruchomości** – kompleksowe remonty podnoszą standard wnętrza, co pozwala uzyskać wyższą cenę przy sprzedaży lub wynajmie.
-:br
-**Przyciągnięcie wymagających klientów** – gotowe do użytku wnętrza są bardziej atrakcyjne dla inwestorów i najemców poszukujących komfortu.
+  
+  :br
+  
+  **Zwiększenie wartości nieruchomości** – kompleksowe remonty podnoszą standard wnętrza, co pozwala uzyskać wyższą cenę przy sprzedaży lub wynajmie.
+  
+  :br
+  
+  **Przyciągnięcie wymagających klientów** – gotowe do użytku wnętrza są bardziej atrakcyjne dla inwestorów i najemców poszukujących komfortu.
   :::
 
   :::project-grid-item
   ---
-  to: /buttons
   aspectRatio: 0.95
+  to: /buttons
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -496,14 +497,18 @@ cta-link: /buttons
     ::::
   
   #title
-Home Staging
+  Home Staging
   
   #description
   **Szybsza sprzedaż lub wynajem** – profesjonalnie zaaranżowane wnętrze wzbudza większe zainteresowanie i skraca czas na rynku.
-:br
-**Maksymalizacja zysku** – niewielka inwestycja w odświeżenie wnętrza zwiększa jego wartość i pozwala uzyskać wyższą cenę.
-:br
-**Lepsze pierwsze wrażenie** – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
+  
+  :br
+  
+  **Maksymalizacja zysku** – niewielka inwestycja w odświeżenie wnętrza zwiększa jego wartość i pozwala uzyskać wyższą cenę.
+  
+  :br
+  
+  **Lepsze pierwsze wrażenie** – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
   :::
 
 #cta
@@ -523,161 +528,162 @@ Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoic
 
 ::services-table
 ---
-infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń."
+infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
+  należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna
+  kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych
+  pomieszczeń."
 ---
 #services
   :::service-table-row
   ---
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
   name: Inwentaryzacja
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
   name: Wyburzenia/zabudowy ścian
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
   name: Układ funkcjonalny z opisami
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
   name: Lista zakupów (materiałów, mebli, dodatków)
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Przyłącza wodno-kanalizacyjne
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Przyłącza do ogrzewania
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Projekt elektryki
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Projekt oświetlenia
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Projekt podłóg
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Projekt listew przypodłogowych, sztukaterii i karniszy
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Projekt sufitów (malowanie+dodatki)
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: false
   basicExec: true
+  basicFunc: false
   premiumExec: true
+  premiumFunc: false
   name: Projekt malowania ścian
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: true
-  premiumFunc: true
   basicExec: true
+  basicFunc: true
   premiumExec: true
+  premiumFunc: true
   name: Układ mebli na wymiar
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: true
   basicExec: false
+  basicFunc: false
   premiumExec: true
+  premiumFunc: true
   name: Projekt w 3D
   ---
   :::
 
   :::service-table-row
   ---
-  basicFunc: false
-  premiumFunc: true
   basicExec: false
+  basicFunc: false
   premiumExec: true
+  premiumFunc: true
   name: Fotorealistyczne wizualizacje
   ---
   :::
 ::
-
-
 
 ::banner-pricing
 #title
@@ -723,14 +729,16 @@ Dodatkowe usługi projektowe
 
 #content
 **Konsultacja przedprojektowa** - 190 zł/h
-:br
-:br
-:br
-<span class="text-primary">**Dodatkowe Usługi**</span> - wyceny indywidualne
- 
 
-- **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – 
-prosimy o kontakt w celu omówienia szczegółów i wyceny.
+:br
+
+:br
+
+:br
+
+[**Dodatkowe Usługi**]{.text-primary} - wyceny indywidualne
+
+- **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – prosimy o kontakt w celu omówienia szczegółów i wyceny.
 - **Doradztwo w zakresie wyboru materiałów i mebli** – stawka godzinowa
 - **Realizacja i Nadzór Autorski** – wyceny indywidualne
 - **Inwentaryzacja bez projektu** – wyceny indywidualne
@@ -762,7 +770,7 @@ ctaLink: /buttons
 #slides-0
   :::parallax-img{.w-full.h-full.object-cover}
   ![Slide 1](/heroHome.jpg)
-  ::: 
+  :::
 
 #slides-1
   :::parallax-img{.w-full.h-full.object-cover}

@@ -333,7 +333,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:hard-hat
+    name: fig:profesjonalne-ekipy
     ---
     ::::
   
@@ -346,7 +346,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:users-alt
+    name: fig:opieka-koordynatora
     ---
     ::::
   
@@ -359,7 +359,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:money-stack
+    name: fig:realizacja-zgodna
     ---
     ::::
   
@@ -372,7 +372,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:wallet
+    name: fig:transparentne-wyceny
     ---
     ::::
   
@@ -385,7 +385,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:percentage
+    name: fig:nizszy-podatek
     ---
     ::::
   
@@ -398,7 +398,7 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::icon-block
     ---
     customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:head-side
+    name: fig:odpoczywasz
     ---
     ::::
   

@@ -50,7 +50,7 @@ onMounted(() => {
           <template #backgroundImage>
             <ParallaxImg>
               <nuxt-img
-                src="/heroAbout.jpg"
+                src="/heroFooter.jpg"
                 alt="Full width parallax"
                 class="parallax-content"
                 format="webp"

@@ -745,7 +745,7 @@ Wypełnij formularz, a my skontaktujemy się z Tobą jak najszybciej.
 
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Contact Background](/heroHome.jpg)
+  ![Contact Background](/heroPrefooter.jpg)
   :::
 
 #submitText

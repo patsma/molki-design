@@ -23,7 +23,7 @@ defineSlots<{
   <section class="full-width data-scroll-section relative w-full py-24" data-scroll-section>
     <!-- Background with overlay -->
     <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
-      <div class="absolute inset-0 bg-white/80 z-10"></div>
+      <div class="absolute inset-0 bg-white/90 z-10"></div>
       <slot name="backgroundImage">
         <!-- Default background image -->
         <ParallaxImg

@@ -51,7 +51,9 @@ defineSlots<{
               data-scroll-duration="1"
             >
               <slot name="logo" mdc-unwrap="p">
-                <Logo class="w-48" />
+                <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                  <IconBlock name="fig:molki-logo-design" customClass="w-16 h-16 text-primary" />
+                </NuxtLink>
               </slot>
             </div>
           </div>
@@ -71,7 +73,7 @@ defineSlots<{
                 </NuxtLink>
               </nav>
             </div>
-            <div class="pt-8 border-neutral-200">
+            <div class="pt-8 border-neutral-200 flex items-center">
               <h4 class="text-sm font-bold text-primary mb-4">Sponsorujemy:</h4>
               <slot name="sponsors" mdc-unwrap="p">
                 <div class="flex gap-4">
@@ -99,7 +101,7 @@ defineSlots<{
                 {{ item.label }}
               </NuxtLink>
             </nav>
-            <div class="pt-8 border-neutral-200">
+            <div class="pt-8 border-neutral-200 flex items-center">
               <h4 class="text-sm font-bold text-primary mb-4">Nasze Certyfikaty:</h4>
               <slot name="certifications" mdc-unwrap="p">
                 <div class="flex gap-4">
@@ -143,7 +145,7 @@ defineSlots<{
                 </div>
               </div>
             </div>
-            <div class="pt-8 border-neutral-200">
+            <div class="pt-8 border-neutral-200 flex items-center">
               <h4 class="text-sm font-bold text-primary mb-4">Należymy do:</h4>
               <slot name="memberships" mdc-unwrap="p">
                 <div class="flex gap-4">

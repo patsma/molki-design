@@ -59,7 +59,9 @@ onMounted(() => {
           </template>
 
           <template #leftCompanyLogo>
-            <Logo class="w-full max-w-[200px]" />
+            <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <IconBlock name="fig:molki-logo-akademia" customClass="h-60 w-60 text-primary" />
+            </NuxtLink>
           </template>
 
           <template #leftCompanyTitle>Warszawa</template>
@@ -69,7 +71,9 @@ onMounted(() => {
           <template #leftCompanyText>ul. Przykładowa 123<br />00-000 Warszawa</template>
 
           <template #rightCompanyLogo>
-            <Logo class="w-full max-w-[200px]" />
+            <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <IconBlock name="fig:molki-logo-invest" customClass="h-60 w-60 text-primary" />
+            </NuxtLink>
           </template>
 
           <template #rightCompanyTitle>Kraków</template>
@@ -93,7 +97,9 @@ onMounted(() => {
 
         <FooterComponent>
           <template #logo>
-            <Logo class="w-48" />
+            <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <IconBlock name="fig:molki-logo-design" customClass="w-60 h-60 text-primary" />
+            </NuxtLink>
           </template>
 
           <template #sponsors>

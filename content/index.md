@@ -357,41 +357,82 @@ Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 ctaLink: /buttons
 ---
 #title
-Lorem ipsum dolor sit amet
+BASIC
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Card Image](/heroHome.jpg)
+  ![Card Image](/itemCard1.jpg)
   :::
 
 #content
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Podstawowy remont wnętrza – Idealne rozwiązanie dla tych, którzy szukają solidnego, funkcjonalnego i estetycznego wykończenia bez zbędnych dodatków. Oferujemy pełen zakres prac remontowych, które zapewnią świeżość i wygodę Twojej przestrzeni w korzystnej cenie.
 
 #cta
-Discover More →
+Sprawdź i dowiedz się wiecej.
 ::
+
+
+::item-card
+---
+ctaLink: /buttons
+---
+#title
+COMFORT
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Card Image](/itemCard2.jpg)
+  :::
+
+#content
+Komfortowy standard wykończenia – Ten pakiet łączy w sobie funkcjonalność i estetykę na wyższym poziomie, z możliwością większej personalizacji. Wybierając Comfort, zyskujesz wnętrze dopracowane pod kątem detali, które idealnie odpowiada Twoim potrzebom i stylowi życia. 
+
+#cta
+Sprawdź i dowiedz się wiecej.
+::
+
+
+::item-card
+---
+ctaLink: /buttons
+---
+#title
+PREMIUM
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Card Image](/itemCard3.jpg)
+  :::
+
+#content
+Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń. 
+
+#cta
+Sprawdź i dowiedz się wiecej.
+::
+
+
 
 ::hero-business
 ---
 cta-link: /buttons
+hasBackground: false
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior design showcase](/heroInterior.jpg)
+  ![Interior design showcase](/heroBusiness.jpg)
   :::
 
 #cta
 ZOBACZ NASZE REALIZACJE
 
 #title
-PROJEKT WNĘTRZA
+DLA BIZNESU
 
 #content
-Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu.
+Czy chcesz zwiększyć wartość swojej nieruchomości i maksymalizować zyski ze sprzedaży lub wynajmu? 
 
-Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania.
-
-Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
+Oferujemy profesjonalne projektowanie wnętrz oraz kompleksowe remonty pod klucz, które sprawią, że Twoje inwestycje staną się bardziej atrakcyjne na rynku. Nasze usługi podnoszą standardy nieruchomości, przyciągając więcej potencjalnych nabywców i najemców.
 ::
 
 ::project-grid
@@ -408,52 +449,64 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
-  aspectRatio: 1.5
+  aspectRatio: 1.15
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Funkcjonalny](/heroHome.jpg)
+    ![Projekt Funkcjonalny](/gridItem4.jpg)
     ::::
   
   #title
-  Projekt Funkcjonalny
+  Projekty i Wizualizacje
   
   #description
-  to dokładny plan, który przygotujemy dla Ciebie, aby Twoja przestrzeń była wygodna i praktyczna, uwzględniając ergonomię oraz Twoje potrzeby.
+  Profesjonalna prezentacja nieruchomości – przyciąga więcej potencjalnych klientów, zwiększając wartość i atrakcyjność oferty.
+
+  Dopasowanie wnętrza do oczekiwań rynku – projektowanie zgodne z aktualnymi trendami zwiększa szanse na szybszą sprzedaż lub wynajem.
+
+  Lepsza promocja inwestycji – realistyczne wizualizacje pomagają wyróżnić się na tle konkurencji i podnieść prestiż nieruchomości.
   :::
 
   :::project-grid-item
   ---
   to: /buttons
-  aspectRatio: 1.5
+  aspectRatio: 1.15
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Wykonawczy](/heroHome.jpg)
+    ![Projekt Wykonawczy](/gridItem5.jpg)
     ::::
   
   #title
-  Projekt Wykonawczy
+  Projekty i Wizualizacje
   
   #description
-  dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe.
+  Oszczędność czasu i stresu – pełna obsługa od projektu do realizacji, bez potrzeby angażowania się w prace remontowe.
+
+Zwiększenie wartości nieruchomości – kompleksowe remonty podnoszą standard wnętrza, co pozwala uzyskać wyższą cenę przy sprzedaży lub wynajmie.
+
+Przyciągnięcie wymagających klientów – gotowe do użytku wnętrza są bardziej atrakcyjne dla inwestorów i najemców poszukujących komfortu.
   :::
 
   :::project-grid-item
   ---
   to: /buttons
-  aspectRatio: 1.5
+  aspectRatio: 1.15
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Porada Projektowa](/heroHome.jpg)
+    ![Porada Projektowa](/gridItem6.jpg)
     ::::
   
   #title
-  Porada Projektowa
+Home Staging
   
   #description
-  to spotkanie, podczas którego nasza projektantka wnętrz doradzi.
+  Szybsza sprzedaż lub wynajem – profesjonalnie zaaranżowane wnętrze wzbudza większe zainteresowanie i skraca czas na rynku.
+
+Maksymalizacja zysku – niewielka inwestycja w odświeżenie wnętrza zwiększa jego wartość i pozwala uzyskać wyższą cenę.
+
+Lepsze pierwsze wrażenie – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
   :::
 
 #cta

@@ -1,8 +1,14 @@
 <script setup lang="ts">
 // Define props for the component
-defineProps<{
-  ctaLink?: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    ctaLink?: string;
+    hasBackground?: boolean;
+  }>(),
+  {
+    hasBackground: true,
+  }
+);
 </script>
 
 <template>
@@ -52,7 +58,7 @@ defineProps<{
 
         <!-- Text Box -->
         <div
-          class="full-width-content bg-neutral-400 relative"
+          :class="['full-width-content relative', hasBackground ? 'bg-neutral-400' : 'bg-white']"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"

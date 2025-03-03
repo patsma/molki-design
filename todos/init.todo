@@ -129,9 +129,11 @@
 
 ✔ Implement all team members content @started(25-03-03 12:40) @done(25-03-03 12:59) @lasted(19m51s)
 ✔ Add Table content and move about us components to about us page @started(25-03-03 13:34) @done(25-03-03 13:57) @lasted(23m12s)
+✔ Refactor ProjectGridItem to use aspect ratio from props @done(25-03-03 14:27)
 
 - Add proper images and texts top to bottom @started(25-03-03 14:00)
-✔ Refactor ProjectGridItem to use aspect ratio from props @done(25-03-03 14:27)
+
+- Add Missing Bussines section
 - Add cookies banner
 - Add OG Images
 - Divide into pages

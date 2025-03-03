@@ -18,7 +18,7 @@ defineProps<{
     >
       <div class="flex items-center justify-center h-full">
         <Icon
-          :name="value ? 'uil:check' : 'uil:times'"
+          :name="value ? 'fig:checked' : 'fig:crossed'"
           class="w-6 h-6"
           :class="value ? 'text-primary' : 'text-neutral-500'"
         />

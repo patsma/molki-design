@@ -1,158 +1,367 @@
-::hero-projects
 ---
-cta-link: /buttons
+title: Molki Design O Nas
+description: Projekty wnętrz i Porady projektow e | Gdańsk Sopot Gdynia,
+  Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres
+  usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz
+  domów, mieszkań i wnętrz komercyjnych
+seo:
+  title: Molki Design SEO
+  description: SEO Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
+    Trójmiasto, Polska – molki design to studio projektowe oferujące pełen
+    zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu
+    wnętrz domów, mieszkań i wnętrz komercyjnych
 ---
-#heroImage
+
+::hero-team
+#title
+POZNAJ ZESPÓŁ MOLKI DESIGN!
+
+#image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Our projects showcase](/heroAbout.jpg)
+  ![Full width parallax](/heroAbout.jpg)
   :::
-
-#cta
-ZOBACZ WIĘCEJ
-
-#title
-Od projektu do realizacji - czyli Remont pod Klucz
-
-#subtitle
-Wybierz wariant dopasowany do Twoich potrzeb
-
-#features
-  :::icon-grid-item
-  #icon
-    ::::icon-block
-    ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:hard-hat
-    ---
-    ::::
-  
-  #text
-  PROFESJONALNE EKIPY REMONTOWE
-  :::
-
-  :::icon-grid-item
-  #icon
-    ::::icon-block
-    ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:users-alt
-    ---
-    ::::
-  
-  #text
-  OPIEKA KOORDYNATORA REMONTU
-  :::
-
-  :::icon-grid-item
-  #icon
-    ::::icon-block
-    ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:money-stack
-    ---
-    ::::
-  
-  #text
-  REALIZACJA ZGODNA Z BUDŻETEM
-  :::
-
-  :::icon-grid-item
-  #icon
-    ::::icon-block
-    ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:wallet
-    ---
-    ::::
-  
-  #text
-  TRANSPARENTNE I RZETELNE WYCENY
-  :::
-
-  :::icon-grid-item
-  #icon
-    ::::icon-block
-    ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:percentage
-    ---
-    ::::
-  
-  #text
-  NIŻSZY PODATEK - TYLKO 8% VAT
-  :::
-
-  :::icon-grid-item
-  #icon
-    ::::icon-block
-    ---
-    customClass: w-16 h-16 text-primary mx-auto mb-4
-    name: uil:head-side
-    ---
-    ::::
-  
-  #text
-  MY PRACUJEMY, TY ODPOCZYWASZ
-  :::
-::
-
-::square-grid
-#title
-Nasze Realizacje
-
-#subtitle
-Zobacz nasze najnowsze projekty
-::
-
-::banner-pricing
-#title
-Nowe Pomysły na Twoje Wnętrze
 
 #description
-Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej Porady Projektowej.
+Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania.
 
-#image
-  :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Consultation](/heroInterior.jpg)
-  :::
-
-#options
-  :::pricing-option
-  #title
-  Porada Projektowa
-  
-  #price
-  600 zł
-  :::
-
-  :::pricing-option
-  #title
-  Porada Projektowa z dokumentacją
-  
-  #price
-  1 200 zł
-  :::
-
-#infoText
-Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
+Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać projekty, z których możemy być dumni.
 ::
 
-::info-pricing
-#title
-Dodatkowe usługi projektowe
+::team-member
+#section-title
+POZNAJMY SIĘ!
+
+#name
+Wioletta Retko
+
+#role
+Prezes Zarządu
+
+#description
+Uwielbiam organizować i nadzorować złożone projekty. 
+
+Codziennie dbam o to, by każdy etap realizacji przebiegał zgodnie z planem, a każdy detal był dopracowany do perfekcji.
+
+Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przestrzeni, by były one zarówno piękne, jak i praktyczne.
+
+To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/heroInterior.jpg)
+  ![Wioletta Retko - Prezes Zarządu](/team/wioletta-retko.jpg)
   :::
 
-#content
-## Konsultacja przedprojektowa - 190 zł/h
+#achievements
+  :::achievement
+  #title
+  150+
+  
+  #subtitle
+  Zrealizowanych Projektów
+  :::
 
-### Dodatkowe Usługi - wyceny indywidualne
+  :::achievement
+  #title
+  10 lat
+  
+  #subtitle
+  Doświadczenia
+  :::
 
-- Projekty niestandardowe, konsultacje z zakresu sztuki
-- Doradztwo w zakresie wyboru materiałów i mebli
-- Realizacja i Nadzór Autorski
-- Inwentaryzacja bez projektu
+  :::achievement
+  #title
+  98%
+  
+  #subtitle
+  Zadowolonych Klientów
+  :::
+
+  :::achievement
+  #title
+  25+
+  
+  #subtitle
+  Nagród Branżowych
+  :::
+::
+::team-member
+#section-title
+POZNAJMY SIĘ!
+
+#name
+Tomasz Godyński
+
+#role
+Prezes Zarządu
+
+#description
+Optymalizacja procesów i wdrażanie automatyzacji to mój konik.
+
+Uwielbiam dopracowywać układy funkcjonalne oraz rozwiązania technologiczne, aby przyszli mieszkańcy mogli cieszyć się przestrzeniami, które są nie tylko estetyczne, ale też maksymalnie komfortowe.
+
+To pozwala nam skalować nasze działania i osiągać coraz lepsze wyniki.
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Tomasz Godyński - Prezes Zarządu](/team/tomasz-godynski.jpg)
+  :::
+
+#achievements
+  :::achievement
+  #title
+  +5 LAT
+  
+  #subtitle
+  Doświadczenia w projektowaniu wnętrz
+  :::
+
+  :::achievement
+  #title
+  +12345m²
+  
+  #subtitle
+  Wykończonych domów i mieszkań
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zrealizowanych projektów
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zadowolonych klientów
+  :::
+::
+
+::team-member
+#section-title
+POZNAJMY SIĘ!
+
+#name
+Martyna Kwiecińska
+
+#role
+Projektantka wnętrz
+
+#description
+Projektowanie wnętrz to moja pasja. 
+
+Projektując, dopasowuję każde wnętrze indywidualnie do potrzeb klienta, aby stworzyć przestrzenie, które idealnie odpowiadają ich oczekiwaniom.
+
+Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą oko i są praktyczne w codziennym użytkowaniu.
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Martyna Kwiecińska - Główna Projektantka](/team/martyna-kwiecinska.jpg)
+  :::
+
+#achievements
+  :::achievement
+  #title
+  +5 LAT
+  
+  #subtitle
+  Doświadczenia w projektowaniu wnętrz
+  :::
+
+  :::achievement
+  #title
+  +12345m²
+  
+  #subtitle
+  Wykończonych domów i mieszkań
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zrealizowanych projektów
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zadowolonych klientów
+  :::
+::
+
+
+
+::team-member
+#section-title
+POZNAJMY SIĘ!
+
+#name
+Anna Kwiatek
+
+#role
+Kierownik ds. administracji
+
+#description
+Na co dzień zajmuję się wszystkim, co związane z administracją – od faktur, przez dokumenty, aż po organizację pracy w biurze.
+
+Dbam o to, żeby wszystko było dopięte na ostatni guzik, dzięki czemu reszta zespołu może w pełni skupić się na kreatywnych zadaniach.
+
+Lubię, kiedy wszystko działa sprawnie i bez niespodzianek!
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Anna Kwiatek - Kierownik ds. administracji](/team/anna-kwiatek.jpg)
+  :::
+
+#achievements
+  :::achievement
+  #title
+  +5 LAT
+  
+  #subtitle
+  Doświadczenia w projektowaniu wnętrz
+  :::
+
+  :::achievement
+  #title
+  +12345m²
+  
+  #subtitle
+  Wykończonych domów i mieszkań
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zrealizowanych projektów
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zadowolonych klientów
+  :::
+::
+
+::team-member
+#section-title
+POZNAJMY SIĘ!
+
+#name
+Agata Rybka
+
+#role
+Asystentka Zarządu
+
+#description
+Zajmuję się Tobą i Twoimi potrzebami podczas naszej współpracy, dbając, byś czuł się wysłuchany i zrozumiany.
+
+Dla mnie kluczowe jest, żeby oferta, którą przygotuję, była idealnie dopasowana do Twoich potrzeb.
+
+Możesz liczyć na otwartą komunikację i miłą atmosferę – zawsze dbam o to, by nasza współpraca była nie tylko profesjonalna, ale też przyjemna.
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Agata Rybka - Asystentka Zarządu](/team/agata-rybka.jpg)
+  :::
+
+#achievements
+  :::achievement
+  #title
+  +5 LAT
+  
+  #subtitle
+  Doświadczenia w projektowaniu wnętrz
+  :::
+
+  :::achievement
+  #title
+  +12345m²
+  
+  #subtitle
+  Wykończonych domów i mieszkań
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zrealizowanych projektów
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zadowolonych klientów
+  :::
+::
+
+::team-member
+#section-title
+POZNAJMY SIĘ!
+
+#name
+Patryk Bartelik
+
+#role
+Spec. ds. Zarządzania Najmem
+
+#description
+Moim priorytetem jest zapewnienie spokoju właścicielom nieruchomości i komfortu najemcom.
+
+Dbam o weryfikację najemców, kontakt z właścicielami oraz kompleksową opiekę nad nieruchomościami.
+
+Wszystkie zadania wykonuję z pełnym zaangażowaniem i serdecznym uśmiechem.
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Patryk Bartelik - Spec. ds. Zarządzania Najmem](/team/patryk-bartelik.jpg)
+  :::
+
+#achievements
+  :::achievement
+  #title
+  +5 LAT
+  
+  #subtitle
+  Doświadczenia w projektowaniu wnętrz
+  :::
+
+  :::achievement
+  #title
+  +12345m²
+  
+  #subtitle
+  Wykończonych domów i mieszkań
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zrealizowanych projektów
+  :::
+
+  :::achievement
+  #title
+  +12345
+  
+  #subtitle
+  Zadowolonych klientów
+  :::
 ::

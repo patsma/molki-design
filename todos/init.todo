@@ -131,7 +131,7 @@
 ✔ Add Table content and move about us components to about us page @started(25-03-03 13:34) @done(25-03-03 13:57) @lasted(23m12s)
 
 - Add proper images and texts top to bottom @started(25-03-03 14:00)
-
+✔ Refactor ProjectGridItem to use aspect ratio from props @done(25-03-03 14:27)
 - Add cookies banner
 - Add OG Images
 - Divide into pages

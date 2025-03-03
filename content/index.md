@@ -191,6 +191,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
+  aspectRatio: 0.75
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -207,9 +208,10 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
+  aspectRatio: 0.75
   ---
   #image
-    ::::parallax-img{.w-full.h-full.object-cover]}
+    ::::parallax-img{.w-full.h-full.object-cover}
     ![Projekt Wykonawczy](/gridItem2.jpg)
     ::::
   
@@ -223,6 +225,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
+  aspectRatio: 0.75
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -405,6 +408,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
+  aspectRatio: 1.5
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -421,6 +425,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
+  aspectRatio: 1.5
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -437,6 +442,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   to: /buttons
+  aspectRatio: 1.5
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

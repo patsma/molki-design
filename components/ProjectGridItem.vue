@@ -9,10 +9,19 @@
   >
     <!-- Image with Overlay -->
     <div class="relative overflow-hidden">
+      <!-- Aspect ratio container -->
       <div
-        class="absolute inset-0 bg-primary/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
-      ></div>
-      <slot name="image" />
+        class="relative overflow-hidden"
+        :style="{ paddingBottom: aspectRatio ? `${(1 / aspectRatio) * 100}%` : '75%' }"
+      >
+        <div
+          class="absolute inset-0 bg-primary/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
+        ></div>
+        <!-- Image slot with absolute positioning -->
+        <div class="absolute inset-0">
+          <slot name="image" />
+        </div>
+      </div>
     </div>
 
     <!-- Content -->
@@ -37,5 +46,6 @@
 <script setup lang="ts">
 defineProps<{
   to: string;
+  aspectRatio?: number; // width/height ratio (e.g., 16/9 = 1.78, 4/3 = 1.33, 1/1 = 1)
 }>();
 </script>

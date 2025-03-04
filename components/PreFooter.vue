@@ -17,6 +17,15 @@ defineSlots<{
   contactTitle?: (props: { mdcUnwrap: string }) => any;
   contactInfo?: (props: { mdcUnwrap: string }) => any;
 }>();
+
+// Form event handlers
+const handleFormLoad = () => {
+  console.log('HubSpot form loaded successfully');
+};
+
+const handleFormError = (error: any) => {
+  console.error('HubSpot form error:', error);
+};
 </script>
 
 <template>

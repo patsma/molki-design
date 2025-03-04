@@ -133,12 +133,46 @@
 
 ✔ Add proper images top to bottom @started(25-03-03 14:00) @done(25-03-04 11:02) @lasted(2h)
 
-- Add missing text top to botton @started(25-03-04 11:15)
+✔ Add missing text top tobotton @started(25-03-04 11:15) @done(25-03-04 11:45) @lasted(30m1s)
+
+✔ Insert proper information to Footer @started(25-03-04 11:50) @done(25-03-04 11:59) @lasted(9m36s)
+✔ Add HubSpot Form Footer @started(25-03-04 11:59) @done(25-03-04 12:56) @lasted(57m42s)
 
 - Add Missing Bussines section
-- Add cookies banner
-- Add OG Images
+- Tidy up the order of elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - Divide into pages
+- Add cookies banner
+- Add Proper links
+- Add OG Images
 - Add custom lines
 - Add drawing animation to HeroPath partials
 - Add more HeroPath components variants - refactor so we can use different shapes

@@ -116,17 +116,21 @@ defineSlots<{
             </div>
           </div>
 
-          <!-- Contact Form -->
+          <!-- HubSpot Form -->
           <ClientOnly>
-            <ContactForm
-              class="p-8"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
-            >
-              <template #title>Skontaktuj się z nami</template>
-              <template #description>Wypełnij formularz, a my skontaktujemy się z Tobą.</template>
-            </ContactForm>
+            <HubspotForm
+              formId="451093eb-38a4-4af8-ac3e-b1f50a824b47"
+              region="eu1"
+              @load="handleFormLoad"
+              @error="handleFormError"
+            />
+            <template #fallback>
+              <div class="animate-pulse">
+                <div class="h-12 bg-gray-200 rounded mb-4"></div>
+                <div class="h-12 bg-gray-200 rounded mb-4"></div>
+                <div class="h-12 bg-gray-200 rounded"></div>
+              </div>
+            </template>
           </ClientOnly>
         </div>
       </div>

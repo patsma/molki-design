@@ -140,7 +140,7 @@
 - Divide into pages @started(25-03-04 12:59)
 ✔ O Nas @done(25-03-04 13:06)
 ✔ Projekty Wnetrza @done(25-03-04 13:03)
-☐ Remont Pod Klucz
+✔ Remont Pod Klucz @done(25-03-04 13:15)
 ☐ Dla Biznesu
 ☐ Blog
 ☐ Kontakt
@@ -148,6 +148,7 @@
 ☐ Realizacje
 
 
+- Add Just full width CTA Button section?
 - Add Missing Bussines section
 - Tidy up the order of elements
 

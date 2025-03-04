@@ -11,30 +11,52 @@ export default defineAppConfig({
           link: '/o-nas',
         },
         {
-          label: 'Usługi',
-          link: '/uslugi',
+          label: 'Projekt Wnętrza',
+          link: '/projekt-wnetrza',
+        },
+        {
+          label: 'Remont Pod Klucz',
+          link: '/remont-pod-klucz',
+        },
+        {
+          label: 'Dla Biznesu',
+          link: '/dla-biznesu',
+        },
+        {
+          label: 'Blog',
+          link: '/blog',
+        },
+        {
+          label: 'Kontakt',
+          link: '/kontakt',
+        },
+        {
+          label: 'Cenniki',
+          link: '/cenniki',
           children: [
             {
-              label: 'Projektowanie wnętrz',
-              link: '/uslugi/projektowanie-wnetrz',
+              label: 'Cennik Remontów pod Klucz',
+              link: '/cenniki/remonty-pod-klucz',
             },
             {
-              label: 'Wizualizacje 3D',
-              link: '/uslugi/wizualizacje-3d',
-            },
-            {
-              label: 'Nadzór projektowy',
-              link: '/uslugi/nadzor-projektowy',
+              label: 'Cennik Projektowania Wnętrz',
+              link: '/cenniki/projektowanie-wnetrz',
             },
           ],
         },
         {
           label: 'Realizacje',
-          link: '/nasze-realizacje',
-        },
-        {
-          label: 'Kontakt',
-          link: '/kontakt',
+          link: '/realizacje',
+          children: [
+            {
+              label: 'Realizacje Projektów Wnętrz',
+              link: '/realizacje/projekty-wnetrz',
+            },
+            {
+              label: 'Projekty i Remonty dla Biznesu',
+              link: '/realizacje/dla-biznesu',
+            },
+          ],
         },
       ],
     },

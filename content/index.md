@@ -749,7 +749,10 @@ Dodatkowe usługi projektowe
 Skontaktuj się z nami
 
 #description
-Wypełnij formularz, a my skontaktujemy się z Tobą jak najszybciej.
+Ciekawi Cię temat projektowania wnętrz? Chcesz poznać najnowsze trendy, uzyskać porady i inspiracje?
+:br
+:br
+Zapisz się do naszego newslettera i bądź ze wszystkim na bieżąco!
 
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -760,7 +763,7 @@ Wypełnij formularz, a my skontaktujemy się z Tobą jak najszybciej.
 Wyślij wiadomość
 
 #infoText
-Wszystkie przesłane dane są chronione zgodnie z naszą polityką prywatności.
+Firma MOLKI Sp. z o.o. wykorzystuje dane kontaktowe użytkownika, aby informować go o produktach i usługach. W każdej chwili można zrezygnować z otrzymywania tych powiadomień. Aby uzyskać więcej informacji na temat sposobu rezygnacji z subskrypcji, naszych zasad ochrony prywatności oraz tego, w jaki sposób zobowiązujemy się do ochrony i poszanowania prywatności, należy zapoznać się z naszą Polityką Prywatności.
 ::
 
 ::full-viewport-slider

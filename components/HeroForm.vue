@@ -71,7 +71,7 @@ defineSlots<{
           data-scroll-start="top bottom"
         >
           <div class="py-8 md:py-12">
-            <div class="text-xl md:text-2xl leading-relaxed text-white">
+            <div class="text-sm leading-relaxed text-white">
               <slot name="infoText" mdc-unwrap="p" />
             </div>
           </div>

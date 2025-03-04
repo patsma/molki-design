@@ -133,7 +133,7 @@
 
 ✔ Add proper images top to bottom @started(25-03-03 14:00) @done(25-03-04 11:02) @lasted(2h)
 
-- Add missing text top to botton
+- Add missing text top to botton @started(25-03-04 11:15)
 
 - Add Missing Bussines section
 - Add cookies banner
@@ -146,3 +146,12 @@
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link?
 - Ensure new pages have space for header - so the titles aren't cut off
+- Newsletter?
+- Faficon
+- Web manifest
+- Add proper favicon
+- Add proper og images
+- Add canonical url
+- Add RSS feed
+- Check sitemap
+- Robots.txt

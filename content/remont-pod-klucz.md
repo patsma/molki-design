@@ -1,4 +1,3 @@
-
 ::hero-projects
 ---
 cta-link: /buttons
@@ -163,4 +162,15 @@ Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów ofer
 
 #cta
 Sprawdź i dowiedz się wiecej.
+::
+
+::FullWidthButton
+---
+to: "/kontakt"
+color: "primary"
+background: "neutral-400"
+padding: "py-20"
+animate: true
+---
+UMÓW KONSULTACJĘ
 ::

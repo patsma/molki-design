@@ -35,25 +35,9 @@ defineProps<{
         </div>
 
         <!-- Center Button with Line -->
-        <div class="grid">
-          <div
-            v-if="$slots.cta"
-            class="relative w-full h-full grid place-items-center"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-          >
-            <!-- Decorator Line -->
-            <div class="absolute w-screen h-[0.15rem] bg-primary"></div>
-            <!-- Button -->
-            <NuxtLink
-              :to="ctaLink || '/'"
-              class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            >
-              <slot name="cta" mdc-unwrap="p" />
-            </NuxtLink>
-          </div>
-        </div>
+        <FullWidthButton v-if="$slots.cta" :to="ctaLink || '/'">
+          <slot name="cta" mdc-unwrap="p" />
+        </FullWidthButton>
       </div>
     </div>
   </section>

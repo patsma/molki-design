@@ -3,43 +3,29 @@ export default defineAppConfig({
     main: {
       items: [
         {
-          label: 'Strona główna',
-          link: '/',
-        },
-        {
-          label: 'O nas',
-          link: '/o-nas',
-        },
-        {
-          label: 'Projekt Wnętrza',
-          link: '/projekt-wnetrza',
-        },
-        {
-          label: 'Remont Pod Klucz',
-          link: '/remont-pod-klucz',
-        },
-        {
-          label: 'Dla Biznesu',
-          link: '/dla-biznesu',
-        },
-        {
-          label: 'Blog',
-          link: '/blog',
-        },
-        {
-          label: 'Kontakt',
-          link: '/kontakt',
+          label: 'Usługi',
+          link: '#',
+          children: [
+            {
+              label: 'Projekt Wnętrza',
+              link: '/projekt-wnetrza',
+            },
+            {
+              label: 'Remont Pod Klucz',
+              link: '/remont-pod-klucz',
+            },
+            {
+              label: 'Dla Biznesu',
+              link: '/dla-biznesu',
+            },
+          ],
         },
         {
           label: 'Cenniki',
           link: '/cenniki',
           children: [
             {
-              label: 'Cennik Remontów pod Klucz',
-              link: '/cenniki/remonty-pod-klucz',
-            },
-            {
-              label: 'Cennik Projektowania Wnętrz',
+              label: 'Projektowanie Wnętrz',
               link: '/cenniki/projektowanie-wnetrz',
             },
           ],
@@ -49,14 +35,26 @@ export default defineAppConfig({
           link: '/realizacje',
           children: [
             {
-              label: 'Realizacje Projektów Wnętrz',
+              label: 'Projekty Wnętrz',
               link: '/realizacje/projekty-wnetrz',
             },
             {
-              label: 'Projekty i Remonty dla Biznesu',
+              label: 'Dla Biznesu',
               link: '/realizacje/dla-biznesu',
             },
           ],
+        },
+        {
+          label: 'O nas',
+          link: '/o-nas',
+        },
+        {
+          label: 'Blog',
+          link: '/blog',
+        },
+        {
+          label: 'Kontakt',
+          link: '/kontakt',
         },
       ],
     },

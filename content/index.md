@@ -784,7 +784,7 @@ UMÓW KONSULTACJĘ
 ::pricing-grid
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![pricing background](/heroHome.jpg)
+  ![pricing background](/heroPricingGrid.jpg)
   :::
 
 #title
@@ -803,6 +803,15 @@ BASIC
 - Rozbiórki i zabezpieczenia
 - Instalacje zgodnie z projektem
 - Szpachlowanie
+- Zabudowy k-g standardowe
+- Malowanie jednolite
+- Podłoga – panele laminowane lub gres
+- Listwy przypodłogowe laminowane
+- Montaż drzwi – przylgowe
+- Montaż WC – kompakt lub budżetowy stelaż
+- Montaż armatury
+- Izolacja przeciwwilgociowa
+- Sprzątanie poremontowe
 
 #comfortTitle
 COMFORT
@@ -814,6 +823,15 @@ COMFORT
 - Rozbiórki i zabezpieczenia
 - Instalacje zgodnie z projektem
 - Szpachlowanie
+- Zabudowy k-g standardowe
+- Malowanie łączenie kolorów
+- Podłoga panele laminowane, deska warstwowa drewniana lub gres
+- Listwy przypodłogowe – duroplast lub mdf
+- Montaż drzwi – przylgowe lub bezprzylgowe
+- Montaż WC – stelaż podtynkowy wc
+- Montaż armatury
+- Izolacja przeciwwilgociowa
+- Sprzątanie poremontowe
 
 #premiumTitle
 PREMIUM
@@ -825,6 +843,15 @@ PREMIUM
 - Rozbiórki i zabezpieczenia
 - Instalacje zgodnie z projektem
 - Szpachlowanie
+- Zabudowy k-g z dodatkowym wygłuszeniem
+- Malowanie łączenie kolorów, sztukaterie
+- Podłoga – deska warstwowa drewniana, panele winylowe, wykładzina, gres
+- Listwy przypodłogowe mdf
+- Montaż drzwi – bezprzylgowe lub ukryte
+- Montaż WC – stelaż podtynkowy wc
+- Montaż armatury
+- Izolacja przeciwwilgociowa
+- Sprzątanie poremontowe
 
 #infoText  
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.

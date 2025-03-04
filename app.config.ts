@@ -30,7 +30,7 @@ export default defineAppConfig({
         },
         {
           label: 'Realizacje',
-          link: '/realizacje',
+          link: '/nasze-realizacje',
         },
         {
           label: 'Kontakt',

@@ -5,9 +5,9 @@ slug: projekt-wnetrza-mieszkania
 location: Gdańsk
 year: "2023"
 number: "01"
-cover: /heroHome.jpg
+cover: /projectItem1.jpg
 images:
-  - /heroHome.jpg
+  - /projectItem2.jpg
   - /heroAbout.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /projects

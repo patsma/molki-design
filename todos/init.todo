@@ -131,7 +131,9 @@
 ✔ Add Table content and move about us components to about us page @started(25-03-03 13:34) @done(25-03-03 13:57) @lasted(23m12s)
 ✔ Refactor ProjectGridItem to use aspect ratio from props @done(25-03-03 14:27)
 
-- Add proper images and texts top to bottom @started(25-03-03 14:00)
+✔ Add proper images top to bottom @started(25-03-03 14:00) @done(25-03-04 11:02) @lasted(2h)
+
+- Add missing text top to botton
 
 - Add Missing Bussines section
 - Add cookies banner
@@ -143,3 +145,4 @@
 - Blog template
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link?
+- Ensure new pages have space for header - so the titles aren't cut off

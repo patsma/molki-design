@@ -826,6 +826,6 @@ PREMIUM
 - Instalacje zgodnie z projektem
 - Szpachlowanie
 
-#infoText
+#infoText  
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::

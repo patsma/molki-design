@@ -1,9 +1,6 @@
 <template>
   <main>
-    <TitleSection>
-      <template #title>Blog</template>
-      <template #subtitle>Najnowsze artykuły i porady</template>
-    </TitleSection>
+    <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="3" />
 
     <SquareGrid contentType="blog" orderBy="date" orderDirection="DESC">
       <template #item="{ item }">

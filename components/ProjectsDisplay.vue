@@ -21,20 +21,22 @@ const { data: projects } = await useAsyncData('projects-display', async () => {
         <!-- Title and Subtitle -->
         <div class="text-center mb-16">
           <h2
+            v-if="$slots.title"
             class="h2-style font-semibold text-primary mb-4"
             data-scroll-item
             data-scroll-animation="fadeUp"
             data-scroll-duration="1"
           >
-            Nasze Realizacje
+            <slot name="title" mdc-unwrap="p" />
           </h2>
           <p
+            v-if="$slots.subtitle"
             class="text-xl md:text-2xl text-neutral-800"
             data-scroll-item
             data-scroll-animation="fadeUp"
             data-scroll-duration="1"
           >
-            Zobacz nasze najnowsze projekty
+            <slot name="subtitle" mdc-unwrap="p" />
           </p>
         </div>
 
@@ -48,7 +50,7 @@ const { data: projects } = await useAsyncData('projects-display', async () => {
           <template v-if="projects?.length">
             <SquareGridItem
               v-for="project in projects"
-              :key="project._id"
+              :key="project.id"
               :to="`/projects/${project.slug}`"
               :image="project.cover"
               :title="project.title"

@@ -7,7 +7,7 @@ cover: /heroAbout.jpg
 excerpt: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, które będą nie tylko piękne, ale również praktyczne w codziennym użytkowaniu.
 author: Anna Kowalska
 authorRole: Architekt wnętrz
-authorImage: /teamMember1.jpg
+authorImage: /heroHome.jpg
 ---
 
 # Jak zaprojektować funkcjonalne wnętrze mieszkania?

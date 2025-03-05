@@ -6,13 +6,11 @@ seo:
   description: Zobacz nasze najnowsze projekty i realizacje wnętrz - Molki Design
 ---
 
-::title-section
-#title
-Nasze Realizacje
-
-#subtitle
-Zobacz nasze najnowsze projekty i realizacje wnętrz
-::
 
 ::projects-display
+#title
+Wszystkie Projekty
+
+#subtitle
+Odkryj nasze najlepsze realizacje i projekty wnętrz
 ::

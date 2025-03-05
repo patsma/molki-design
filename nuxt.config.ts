@@ -339,7 +339,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       ignore: ['/api', '/studio'],
-      routes: ['/'],
+      routes: ['/', '/todo'],
     },
     routeRules: {
       '/**': {

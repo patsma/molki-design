@@ -22,6 +22,10 @@ export default defineAppConfig({
               label: 'Isolation',
               link: '/isolation',
             },
+            {
+              label: 'Todo',
+              link: '/todo',
+            },
           ],
         },
         {

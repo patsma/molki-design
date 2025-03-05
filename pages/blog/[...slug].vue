@@ -92,7 +92,7 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
         <div class="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12">
           <div>
             <article class="prose prose-xl max-w-none">
-              <ContentRenderer v-if="data.body" :value="data" :excerpt="false" />
+              <ContentRenderer v-if="data.meta?.body" :value="data.meta.body" :excerpt="false" />
             </article>
           </div>
 

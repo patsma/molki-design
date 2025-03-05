@@ -170,7 +170,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const resetEffects = () => {
     if (!scrollSmoother) return;
 
-    // console.log('🔄 Plugin: Resetting effects');
+    console.log('🔄 Plugin: Resetting effects');
     const elements = document.querySelectorAll('[data-speed]');
     elements.forEach((el) => {
       $gsap.set(el, {
@@ -189,7 +189,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Update the transition hooks with better timing
   nuxtApp.hook('page:start', () => {
-    console.log('🔄 [1] Page transition starting');
+    // console.log('🔄 [1] Page transition starting');
     if (!process.client) return;
 
     // Show loader immediately and hide content
@@ -198,7 +198,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     // Handle ScrollSmoother after a small delay
     $gsap.delayedCall(0.1, () => {
       if (scrollSmoother && !isMobile.value) {
-        console.log('🔄 [2] Freezing ScrollSmoother');
+        // console.log('🔄 [2] Freezing ScrollSmoother');
         scrollSmoother.paused(true);
         $gsap.set(scrollSmoother, { scrollTop: 0 });
       }
@@ -206,12 +206,12 @@ export default defineNuxtPlugin((nuxtApp) => {
   });
 
   nuxtApp.hook('page:transition:finish', () => {
-    console.log('🔄 [3] Page transition finished');
+    // console.log('🔄 [3] Page transition finished');
     if (!process.client) return;
 
     const transitionTL = $gsap.timeline({
       onComplete: () => {
-        console.log('🔄 [6] All transitions complete, hiding loader');
+        // console.log('🔄 [6] All transitions complete, hiding loader');
         $gsap.delayedCall(0.3, () => {
           loaderStore.finishLoading();
         });
@@ -229,7 +229,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     // Then handle animations with shorter delays
     transitionTL
       .add(() => {
-        console.log('🔄 [4] Resetting effects and initializing animations');
+        // console.log('🔄 [4] Resetting effects and initializing animations');
         if (animationContext) {
           animationContext.revert();
         }
@@ -237,7 +237,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         animationContext = initSectionAnimations();
       }, '+=0.1')
       .add(() => {
-        console.log('🔄 [5] Refreshing ScrollTrigger');
+        // console.log('🔄 [5] Refreshing ScrollTrigger');
         $ScrollTrigger.refresh(true);
       }, '+=0.1');
 

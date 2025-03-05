@@ -1,8 +1,10 @@
 <template>
-  <div class="content-grid">
-    <div class="full-width">
-      <ContentRenderer v-if="home" :value="home" />
-      <div v-else>Home not found</div>
+  <div>
+    <div class="content-grid">
+      <div class="full-width">
+        <ContentRenderer v-if="home" :value="home" />
+        <div v-else>Home not found</div>
+      </div>
     </div>
   </div>
 </template>

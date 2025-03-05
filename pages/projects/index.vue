@@ -5,17 +5,17 @@
       <template #subtitle>Zobacz wszystkie nasze projekty</template>
     </TitleSection>
 
-    <SquareGrid v-if="projects?.length">
-      <template #items>
+    <SquareGrid contentType="projects" orderBy="number" orderDirection="ASC">
+      <template #item="{ item }">
         <SquareGridItem
-          v-for="project in projects"
-          :key="project.id"
-          :to="`/projects/${project.slug}`"
-          :number="project.number"
-          :title="project.title"
-          :location="project.location"
-          :year="project.year"
-          :image="project.cover"
+          :key="item.id"
+          :to="`/projects/${item.slug}`"
+          :number="item.number"
+          :title="item.title"
+          :location="item.location"
+          :year="item.year"
+          :image="item.cover"
+          type="project"
         />
       </template>
     </SquareGrid>
@@ -26,12 +26,14 @@
 </template>
 
 <script setup>
-import { queryCollection } from '#imports';
-
-const { data: projects, error } = await useAsyncData('projects', () =>
-  queryCollection('projects').order('number', 'ASC').all()
-);
-
-// Debug output
-console.log('Projects data:', projects.value);
+// Check if we have any projects
+const { error } = await useAsyncData('projects-check', async () => {
+  try {
+    const count = await queryCollection('projects').count();
+    return null;
+  } catch (error) {
+    console.error('Error checking projects:', error);
+    return error;
+  }
+});
 </script>

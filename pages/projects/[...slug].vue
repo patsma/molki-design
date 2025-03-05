@@ -3,9 +3,14 @@ const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
 const swiperRef = ref(null);
 
-const { data } = await useAsyncData(`project-${route.path}`, () =>
-  queryCollection('projects').where('slug', '=', route.params.slug).first()
-);
+const { data } = await useAsyncData(`project-${route.path}`, async () => {
+  try {
+    return await queryCollection('projects').where('slug', '=', route.params.slug).first();
+  } catch (error) {
+    console.error('Error fetching project:', error);
+    return null;
+  }
+});
 
 // Debug output
 console.log('Project data:', data.value);

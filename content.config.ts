@@ -21,6 +21,23 @@ export default defineContentConfig({
         }),
       })
     ),
+    blog: defineCollection(
+      asSitemapCollection({
+        type: 'document',
+        source: 'blog/*.md',
+        schema: z.object({
+          title: z.string(),
+          slug: z.string(),
+          category: z.string(),
+          date: z.string(),
+          cover: z.string(),
+          excerpt: z.string(),
+          author: z.string().optional(),
+          authorRole: z.string().optional(),
+          authorImage: z.string().optional(),
+        }),
+      })
+    ),
     content: defineCollection(
       asSitemapCollection({
         type: 'page',

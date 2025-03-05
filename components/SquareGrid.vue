@@ -1,12 +1,50 @@
 <script setup lang="ts">
-defineProps<{
-  title?: string;
-  subtitle?: string;
-}>();
+// Define content types for proper typing
+type ContentType = 'projects' | 'blog';
 
-const { data: projects } = await useAsyncData('projects-grid', () =>
-  queryCollection('projects').order('number', 'ASC').all()
+// Define props with more flexibility for different content types
+const props = withDefaults(
+  defineProps<{
+    title?: string;
+    subtitle?: string;
+    contentType?: ContentType;
+    orderBy?: string;
+    orderDirection?: 'ASC' | 'DESC';
+    limit?: number;
+  }>(),
+  {
+    contentType: 'projects',
+    orderBy: 'number',
+    orderDirection: 'ASC',
+    limit: 0,
+  }
 );
+
+// Fetch content based on content type
+const { data: items } = await useAsyncData(`${props.contentType}-grid`, async () => {
+  try {
+    // Create a query for the specified collection
+    // Using type assertion to bypass type checking since we're dynamically selecting the collection
+    let query = queryCollection(props.contentType as any);
+
+    // Apply ordering if specified
+    if (props.orderBy) {
+      // Using type assertion to bypass type checking for dynamic field names
+      query = query.order(props.orderBy as any, props.orderDirection);
+    }
+
+    // Apply limit if specified
+    if (props.limit > 0) {
+      query = query.limit(props.limit);
+    }
+
+    // Execute the query and return all matching results
+    return await query.all();
+  } catch (error) {
+    console.error(`Error fetching ${props.contentType}:`, error);
+    return [];
+  }
+});
 </script>
 
 <template>
@@ -35,24 +73,15 @@ const { data: projects } = await useAsyncData('projects-grid', () =>
           </p>
         </div>
 
-        <!-- Projects Grid -->
+        <!-- Content Grid -->
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
         >
-          <template v-if="projects?.length">
-            <SquareGridItem
-              v-for="project in projects"
-              :key="project.id"
-              :to="`/projects/${project.slug}`"
-              :number="project.number"
-              :title="project.title"
-              :location="project.location"
-              :year="project.year"
-              :image="project.cover"
-            />
+          <template v-if="items?.length">
+            <slot name="item" v-for="item in items" :key="item.id" :item="item" />
           </template>
           <slot name="items" v-else />
         </div>

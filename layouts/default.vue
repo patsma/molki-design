@@ -215,6 +215,8 @@ onMounted(() => {
 
       <!-- Cookie Control Banner -->
     </GSAPScrollSmoother>
-    <CookieControl locale="pl" />
+    <div class="grid">
+      <CookieControl locale="pl" />
+    </div>
   </div>
 </template>

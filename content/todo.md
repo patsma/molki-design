@@ -34,8 +34,8 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 ## 2. Prezentacja Projektów/Realizacji
 
 - ✅ Szablon realizacji
-
-
+- ❌ **Implementacja Menu**
+  - ❌ Oznaczenie aktualnej strony kolorem podstawowym
 
 ## 3. SEO i Marketing
 
@@ -48,12 +48,17 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ❌ **Integracja Analityki**
   - ❌ Google Analytics 4
   - ❌ Google Tag Manager
+- ❌ **Newsletter**
+  - ❌ Integracja z dostawcą (do ustalenia)
+  - ❌ Konfiguracja adresu odbiorczego
+- ❌ **Open Graph**
+  - ❌ Konfiguracja obrazów OG dla mediów społecznościowych
+  - ❌ Poprawne metadane dla udostępniania w mediach społecznościowych
 
 ## 4. Wymogi Prawne
 
 - ✅ Baner zgody na pliki cookie (Potrzebne: Projekt + Tekst)
 - ✅ Strona Polityki Prywatności (Potrzebne: Treść od klienta)
-- ❌ Konfiguracja zgodna z RODO
 
 ## 5. Konfiguracja Techniczna
 
@@ -64,7 +69,10 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ **Niestandardowe Ikony**:
   - ✅ Podstawowe ikony społecznościowe
   - ✅ Niestandardowe ikony dekoracyjne z projektu
-- ❌ Favicony dla wszystkich urządzeń/przeglądarek
+- ✅ Favicony dla wszystkich urządzeń/przeglądarek
+- ❌ **Web Manifest**
+  - ❌ Konfiguracja pliku manifest.json
+  - ❌ Ustawienia kolorów i ikon dla urządzeń mobilnych
 
 ## 6. Dopracowanie Designu
 
@@ -74,47 +82,64 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ Animacja menu mobilnego
 - ❌ **Animacja Niestandardowych Linii** (Z projektu Figma)
 - ✅ Stylizacja komunikatów walidacji formularza
+- ❌ **Poprawki menu mobilnego**
+  - ❌ Naprawa zachowania ukrywania/pokazywania nagłówka
+  - ❌ Odświeżanie wysokości
 
 ## 7. Kontrola Jakości
 
 - 🟡 **Testy Międzyprzeglądarkowe**:
   - ❌ Chrome/Firefox/Safari/Edge
   - ❌ Przeglądarki mobilne
-- ❌ Strona błędu 404 (Potrzebny projekt)
+- ✅ Strona błędu 404
 - ✅ Test wysyłania formularza
 - ❌ Końcowa optymalizacja wydajności
 - ❌ Sprawdzenie pisowni i gramatyki
 
 ## Lista Priorytetów Developera
 
-1. Implementacja niestandardowych ikon
-2. Integracja CMS dla:
-   - Edycji linków menu
-   - Zarządzania treścią stopki
-   - Tworzenia nowych stron
-3. Animacje niestandardowych linii
-4. Poprawki błędów
-5. Strona 404 (oczekiwanie na projekt)
+- ✅ Implementacja niestandardowych ikon
+- ✅ Integracja CMS dla:
+  - ✅ Edycji linków menu
+  - ❌ Zarządzania treścią stopki
+  - ✅ Tworzenia nowych stron
+- ❌ Animacje niestandardowych linii
+- ❌ Poprawki błędów
+- ✅ Strona 404
+- ❌ Naprawienie zachowania menu mobilnego
+- ❌ Konfiguracja Web Manifest
+- ❌ Implementacja obrazów OG
+- ❌ Dodanie wyróżnienia aktualnej strony w menu
 
 ## Wymagane Działania Klienta
 
-1. Treść polityki prywatności
-2. Tekst polityki cookie
-3. Zatwierdzenie projektu strony 404
-4. Dodanie treści
-5. Końcowy przegląd treści
-6. Zatwierdzenie wszystkich integracji:
-  - Google Analytics, Google Tag Manager, HubSpot itd
-7. Potwierdzenie wszystkich funkcjonalnosci 
-  - formularze kontaktowe - na jakie adresy email itd
-
-
+- ✅ Treść polityki prywatności
+- ❌ **Struktura Treści**:
+  - ❌ Uzupełnienie brakującej treści
+  - ❌ Decyzja o strukturze menu i elementach
+  - ❌ Ustalenie poprawnej struktury mapy strony
+- ❌ **Linkowanie**:
+  - ❌ Określenie poprawnych linków dla wszystkich przycisków i sekcji
+  - ❌ Weryfikacja ścieżek nawigacji użytkownika
+- ❌ **Zgodność z RODO**:
+  - ❌ Konfiguracja zgodności z przepisami
+  - ❌ Weryfikacja polityki prywatności
+- ❌ **Zatwierdzenie funkcjonalności**:
+  - ❌ Formularze kontaktowe - adresy email do odbierania wiadomości
+  - ❌ Newsletter - wybór dostawcy, adres do konfiguracji
+- ❌ **Zatwierdzenie integracji analitycznych**:
+  - ❌ Google Analytics, Google Tag Manager itp.
+- ❌ Końcowy przegląd treści
+- ❌ Potwierdzenie wszystkich funkcjonalności
+- ❌ Akceptacja strony do publikacji
 
 ## Harmonogram Uruchomienia
 
-- Ukończenie techniczne: 14-21 dni roboczych
-- Okres przeglądu przez klienta: 3 dni
+- Ukończenie techniczne: 10-14 dni roboczych
+- Okres przeglądu przez klienta: 2-3 dni
 - Finalne uruchomienie: 1 dzień po zatwierdzeniu
+
+*Ostatnia aktualizacja: 05.03.2025*
 
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: 'Polityka prywatności'
 description: 'Informacje o tym, jak przetwarzamy Twoje dane osobowe'
+layout: default
+pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
 ---
 
 # Polityka prywatności

@@ -15,10 +15,9 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 ## 1. Zarządzanie Treścią
 
 - ✅ Struktura głównych stron (Strona główna, Projekty, Usługi)
-- 🟡 **Zarządzanie Menu**
-  - ❌ Edycja menu przez interfejs Nuxt Studio
-- ❌ **Zarządzanie Stopką**
-  - ❌ Utworzenie stopki jako edytowalnego pliku MD w CMS
+- ✅ **Zarządzanie Menu**
+  - ✅ Edycja menu przez interfejs Nuxt Studio
+- ❌ **Zarządzanie Stopką w Nuxt Studio**
   - ❌ Dane kontaktowe edytowalne przez Nuxt Studio
   - ❌ Linki społecznościowe zarządzane przez CMS
 - ✅ Automatyzacja roku w prawach autorskich
@@ -30,7 +29,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ✅ Możliwość dodawania nowych realizacji przez Nuxt Studio
   - ✅ Szablon realizacji dla treści tworzonych w CMS
 
-- ❌ **Wprowadzone tresci**
+- ✅ **Wprowadzone tresci**
 
 ## 2. Prezentacja Projektów/Realizacji
 
@@ -62,9 +61,9 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - 🟡 **Konfiguracja Domeny**:
   - ❌ Finalna aktualizacja rekordu A
 - ✅ Optymalizacja obrazów
-- 🟡 **Niestandardowe Ikony**:
+- ✅ **Niestandardowe Ikony**:
   - ✅ Podstawowe ikony społecznościowe
-  - ❌ Niestandardowe ikony dekoracyjne z projektu
+  - ✅ Niestandardowe ikony dekoracyjne z projektu
 - ❌ Favicony dla wszystkich urządzeń/przeglądarek
 
 ## 6. Dopracowanie Designu

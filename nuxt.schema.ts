@@ -9,7 +9,7 @@ export default defineNuxtSchema({
       fields: {
         main: group({
           title: 'Main Navigation',
-          description: 'Primary website menu structureeeeeee',
+          description: 'Primary website menu structure',
           icon: 'i-mdi-menu',
           fields: {
             items: field({
@@ -167,36 +167,6 @@ export default defineNuxtSchema({
           description: 'Title displayed in browser tab and headers',
           icon: 'i-mdi-format-title',
           default: 'Molki Design',
-        }),
-      },
-    }),
-    testMenu: group({
-      title: 'Test Menu',
-      description: 'Experimental menu configuration',
-      icon: 'i-heroicons-bars-3',
-      fields: {
-        links: field({
-          type: 'array',
-          title: 'Menu Items',
-          description: 'Collection of navigation links',
-          default: [],
-          items: {
-            type: 'object',
-            fields: {
-              label: field({
-                type: 'string',
-                required: true,
-                default: 'New Item',
-                description: 'Display text for the menu item',
-              }),
-              link: field({
-                type: 'string',
-                required: true,
-                default: '/',
-                description: 'URL path or external link',
-              }),
-            },
-          },
         }),
       },
     }),

@@ -131,7 +131,12 @@ const formatDate = (dateString: string) => {
         </div>
 
         <!-- View All Button -->
-        <div class="text-center mt-12">
+        <div
+          class="text-center mt-12"
+          data-scroll-item
+          data-scroll-animation="fadeUp"
+          data-scroll-duration="1"
+        >
           <NuxtLink
             to="/blog"
             class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors duration-300"

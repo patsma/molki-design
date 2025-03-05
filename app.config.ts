@@ -18,6 +18,10 @@ export default defineAppConfig({
               label: 'Dla Biznesu',
               link: '/dla-biznesu',
             },
+            {
+              label: 'Isolation',
+              link: '/isolation',
+            },
           ],
         },
         {
@@ -32,7 +36,7 @@ export default defineAppConfig({
         },
         {
           label: 'Realizacje',
-          link: '/realizacje',
+          link: '/nasze-realizacje',
         },
         {
           label: 'O nas',

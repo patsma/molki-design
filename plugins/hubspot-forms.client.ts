@@ -3,10 +3,10 @@ export default defineNuxtPlugin(() => {
 
   if (process.client) {
     // Debug portal ID configuration
-    console.log('HubSpot Configuration:', {
-      portalId: config.public.hubspotPortalId,
-      environment: process.dev ? 'development' : 'production',
-    });
+    // console.log('HubSpot Configuration:', {
+    //   portalId: config.public.hubspotPortalId,
+    //   environment: process.dev ? 'development' : 'production',
+    // });
 
     // Add HubSpot Forms script
     const script = document.createElement('script');
@@ -15,7 +15,7 @@ export default defineNuxtPlugin(() => {
     script.async = true;
     script.src = '//js-eu1.hsforms.net/forms/embed/v2.js';
     script.onload = () => {
-      console.log('HubSpot Forms script loaded');
+      // console.log('HubSpot Forms script loaded');
     };
     document.body.appendChild(script);
   }
@@ -42,11 +42,11 @@ export default defineNuxtPlugin(() => {
             return;
           }
 
-          console.log('Creating HubSpot form with config:', {
-            portalId,
-            formId: options.formId,
-            region: options.region || 'eu1',
-          });
+          // console.log('Creating HubSpot form with config:', {
+          //   portalId,
+          //   formId: options.formId,
+          //   region: options.region || 'eu1',
+          // });
 
           return window.hbspt.forms.create({
             portalId,

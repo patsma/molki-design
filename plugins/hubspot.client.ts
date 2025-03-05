@@ -21,19 +21,19 @@ export default defineNuxtPlugin(() => {
   if (process.client) {
     // Debug info for initialization
     const debugHubspot = () => {
-      console.group('🔍 HubSpot Debug Info');
-      console.log('Environment:', process.dev ? 'Development' : 'Production');
-      console.log('Domain:', window.location.hostname);
-      console.log('Portal ID:', config.public.hubspotPortalId);
-      console.log('HubSpot Script Status:', !!window.HubSpotConversations);
+      // console.group('🔍 HubSpot Debug Info');
+      // console.log('Environment:', process.dev ? 'Development' : 'Production');
+      // console.log('Domain:', window.location.hostname);
+      // console.log('Portal ID:', config.public.hubspotPortalId);
+      // console.log('HubSpot Script Status:', !!window.HubSpotConversations);
 
       if (window.HubSpotConversations) {
         const status = window.HubSpotConversations.widget.status();
-        console.log('Widget Status:', status);
-        console.log('Widget Configuration:', {
-          loadImmediately: true,
-          inlineEmbedSelector: '#hubspot-messages-iframe-container',
-        });
+        // console.log('Widget Status:', status);
+        // console.log('Widget Configuration:', {
+        //   loadImmediately: true,
+        //   inlineEmbedSelector: '#hubspot-messages-iframe-container',
+        // });
       } else {
         console.warn('HubSpot Conversations not initialized');
       }
@@ -48,13 +48,13 @@ export default defineNuxtPlugin(() => {
           defer: true,
           async: true,
           onload: () => {
-            console.log('🟢 HubSpot script loaded');
+            // console.log('🟢 HubSpot script loaded');
             debugHubspot();
 
             // Initialize widget with configuration
             const initWidget = () => {
               if (window.HubSpotConversations) {
-                console.log('🟢 Initializing HubSpot conversations');
+                // console.log('🟢 Initializing HubSpot conversations');
 
                 try {
                   // Configure the widget
@@ -65,29 +65,29 @@ export default defineNuxtPlugin(() => {
 
                   // Use on() instead of addEventListener
                   window.HubSpotConversations.on('hsConversationsLoaded', () => {
-                    console.log('🟢 HubSpot widget fully loaded');
+                    // console.log('🟢 HubSpot widget fully loaded');
                     debugHubspot();
                   });
 
                   // Event listeners using on()
                   window.HubSpotConversations.on('widgetOpen', () => {
-                    console.log('🟢 Chat widget opened');
+                    // console.log('🟢 Chat widget opened');
                     debugHubspot();
                   });
 
                   window.HubSpotConversations.on('widgetClose', () => {
-                    console.log('Chat widget closed');
+                    // console.log('Chat widget closed');
                   });
 
                   window.HubSpotConversations.on('messageReceived', (payload) => {
-                    console.log('New message received', payload);
+                    // console.log('New message received', payload);
                   });
                 } catch (error) {
                   console.error('❌ Error initializing HubSpot widget:', error);
                   debugHubspot();
                 }
               } else {
-                console.log('⏳ Waiting for HubSpot to initialize...');
+                // console.log('⏳ Waiting for HubSpot to initialize...');
                 setTimeout(initWidget, 500);
               }
             };
@@ -109,32 +109,32 @@ export default defineNuxtPlugin(() => {
       hubspotDebug: () => {
         if (process.client) {
           console.group('🔍 HubSpot Manual Debug Check');
-          console.log('Current Time:', new Date().toISOString());
-          console.log('HubSpot object exists:', !!window.HubSpotConversations);
+          // console.log('Current Time:', new Date().toISOString());
+          // console.log('HubSpot object exists:', !!window.HubSpotConversations);
 
           if (window.HubSpotConversations) {
             const status = window.HubSpotConversations.widget.status();
-            console.log('Widget status:', status);
+            // console.log('Widget status:', status);
             try {
               window.HubSpotConversations.widget.refresh();
-              console.log('🔄 Widget refreshed');
+              // console.log('🔄 Widget refreshed');
 
               // Try to force open the widget
               window.HubSpotConversations.widget.open();
-              console.log('👆 Attempting to open widget');
+              // console.log('👆 Attempting to open widget');
             } catch (e) {
               console.error('❌ Widget operation failed:', e);
             }
           }
 
           // Check for common issues
-          console.log('Common Issues Check:', {
-            isDevelopment: process.dev,
-            domain: window.location.hostname,
-            portalId: config.public.hubspotPortalId,
-            scriptLoaded: !!document.getElementById('hs-script-loader'),
-            conversationsApiExists: !!window.HubSpotConversations,
-          });
+          // console.log('Common Issues Check:', {
+          //   isDevelopment: process.dev,
+          //   domain: window.location.hostname,
+          //   portalId: config.public.hubspotPortalId,
+          //   scriptLoaded: !!document.getElementById('hs-script-loader'),
+          //   conversationsApiExists: !!window.HubSpotConversations,
+          // });
 
           console.groupEnd();
         }

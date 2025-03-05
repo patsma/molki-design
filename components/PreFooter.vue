@@ -20,7 +20,7 @@ defineSlots<{
 
 // Form event handlers
 const handleFormLoad = () => {
-  console.log('HubSpot form loaded successfully');
+  // console.log('HubSpot form loaded successfully');
 };
 
 const handleFormError = (error: any) => {

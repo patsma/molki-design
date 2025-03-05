@@ -13,8 +13,8 @@ const { data } = await useAsyncData(`project-${route.path}`, async () => {
 });
 
 // Debug output
-console.log('Project data:', data.value);
-console.log('Markdown content:', data.value?.meta?.body?.value);
+// console.log('Project data:', data.value);
+// console.log('Markdown content:', data.value?.meta?.body?.value);
 
 const ctaLink = computed(() => {
   if (data.value?.ctaLink) return data.value.ctaLink;

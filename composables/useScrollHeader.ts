@@ -17,10 +17,10 @@ export const useScrollHeader = () => {
   const initScrollHeader = () => {
     // console.log('🎯 Initializing scroll header');
     if (!process.client || !headerRef.value) {
-      console.log('⚠️ Header initialization skipped:', {
-        isClient: process.client,
-        hasHeaderRef: !!headerRef.value,
-      });
+      // console.log('⚠️ Header initialization skipped:', {
+      //   isClient: process.client,
+      //   hasHeaderRef: !!headerRef.value,
+      // });
       return;
     }
 

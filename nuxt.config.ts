@@ -78,19 +78,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: [
-    '@nuxtjs/sitemap',
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@hypernym/nuxt-gsap',
-    '@pinia/nuxt',
-    '@nuxt/fonts',
-    '@vueuse/nuxt',
-    '@nuxt/image',
-    '@nuxt/icon',
-    'nuxt-swiper',
-    '@nuxtjs/seo',
-  ],
+  modules: ['@nuxtjs/sitemap', '@nuxt/content', '@nuxtjs/tailwindcss', '@hypernym/nuxt-gsap', '@pinia/nuxt', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/icon', 'nuxt-swiper', '@nuxtjs/seo', '@dargmuesli/nuxt-cookie-control'],
 
   devServer: {
     host: '0.0.0.0',

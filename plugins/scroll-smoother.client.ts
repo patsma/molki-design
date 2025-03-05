@@ -170,7 +170,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const resetEffects = () => {
     if (!scrollSmoother) return;
 
-    console.log('🔄 Plugin: Resetting effects');
+    // console.log('🔄 Plugin: Resetting effects');
     const elements = document.querySelectorAll('[data-speed]');
     elements.forEach((el) => {
       $gsap.set(el, {

@@ -157,26 +157,27 @@
 
 
 
-✔ Blog? @started(25-03-05 11:15) @done(25-03-05 11:58) @lasted(43m30s)
 
+✔ Blog? @started(25-03-05 11:15) @done(25-03-05 11:58) @lasted(43m30s)
 ✔ Ensure blog and projects are reusable and working @started(25-03-05 12:00) @done(25-03-05 13:44) @lasted(1h44m20s)
+✔ Blog template @done(25-03-05 13:45)
+✔ Favicon @done(25-03-05 13:46)
+✔ Add proper favicon @done(25-03-05 13:46)
+✔ Realizacje @done(25-03-05 13:47)
+
+- Add cookies banner
 
 ☐ Cenniki
-☐ Realizacje
-- Add cookies banner
 - Add Proper links
 - Add OG Images
 - Add custom lines
 - Add drawing animation to HeroPath partials
 - Add more HeroPath components variants - refactor so we can use different shapes
-- Blog template
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link?
 - Ensure new pages have space for header - so the titles aren't cut off
 - Newsletter?
-- Faficon
 - Web manifest
-- Add proper favicon
 - Add proper og images
 - Add canonical url
 - Add RSS feed

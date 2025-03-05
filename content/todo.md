@@ -51,8 +51,8 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 
 ## 4. Wymogi Prawne
 
-- ❌ Baner zgody na pliki cookie (Potrzebne: Projekt + Tekst)
-- ❌ Strona Polityki Prywatności (Potrzebne: Treść od klienta)
+- ✅ Baner zgody na pliki cookie (Potrzebne: Projekt + Tekst)
+- ✅ Strona Polityki Prywatności (Potrzebne: Treść od klienta)
 - ❌ Konfiguracja zgodna z RODO
 
 ## 5. Konfiguracja Techniczna

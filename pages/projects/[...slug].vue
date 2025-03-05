@@ -12,6 +12,15 @@ const { data } = await useAsyncData(`project-${route.path}`, async () => {
   }
 });
 
+// If the project doesn't exist, throw a 404 error
+if (!data.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Projekt nie został odnaleziony',
+    fatal: true,
+  });
+}
+
 // Debug output
 // console.log('Project data:', data.value);
 // console.log('Markdown content:', data.value?.meta?.body?.value);
@@ -25,7 +34,7 @@ const ctaLink = computed(() => {
 
 <template>
   <main>
-    <div v-if="data" class="content-grid py-32">
+    <div class="content-grid py-32">
       <div class="breakout1">
         <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center pb-14">
           <div class="grid grid-flow-col justify-start gap-8">
@@ -87,6 +96,5 @@ const ctaLink = computed(() => {
         </div>
       </div>
     </div>
-    <pre v-else class="p-4">Loading...</pre>
   </main>
 </template>

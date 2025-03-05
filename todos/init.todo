@@ -150,29 +150,21 @@
 ✔ Divide into pages @done(25-03-04 16:45)
 ✔ Add Missing Bussines section @done(25-03-04 16:45)
 ✔ Tidy up the order of elements @done(25-03-04 16:45)
-
-
-
-
-
-
-
-
 ✔ Blog? @started(25-03-05 11:15) @done(25-03-05 11:58) @lasted(43m30s)
 ✔ Ensure blog and projects are reusable and working @started(25-03-05 12:00) @done(25-03-05 13:44) @lasted(1h44m20s)
 ✔ Blog template @done(25-03-05 13:45)
 ✔ Favicon @done(25-03-05 13:46)
 ✔ Add proper favicon @done(25-03-05 13:46)
 ✔ Realizacje @done(25-03-05 13:47)
-
 ✔ Add cookies banner @started(25-03-05 13:50) @done(25-03-05 14:27) @lasted(37m59s)
 ✔ Cleanup old pages @done(25-03-05 15:39)
-
 ✔ Fix ToDo page @started(25-03-05 15:39) @done(25-03-05 16:09) @lasted(30m12s)
-
 ✔ Adjust Cookie banner to proper settings @started(25-03-05 16:10) @done(25-03-05 16:25) @lasted(15m55s)
+✔ Make the cookie banner smarter, and in sync with the animation @started(25-03-05 16:25) @done(25-03-05 16:33) @lasted(8m52s)
 
-- Page 404 template
+
+- Page 404 template @started(25-03-05 17:14)
+
 ☐ Cenniki
 - Add Proper links
 - Add OG Images

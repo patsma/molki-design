@@ -12,6 +12,15 @@ const { data, error } = await useAsyncData(`blog-${route.path}`, async () => {
   }
 });
 
+// If the blog post doesn't exist or there was an error, throw a 404 error
+if (!data.value || error.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Artykuł nie został odnaleziony',
+    fatal: true,
+  });
+}
+
 // Format date for display
 const formattedDate = computed(() => {
   if (!data.value?.date) return '';

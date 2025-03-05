@@ -78,6 +78,7 @@ declare module '@nuxt/schema' {
       isCookieIdVisible?: boolean;
       isTinyMCE?: boolean;
       privacyLink?: string;
+      localeTexts?: Record<string, Record<string, string>>;
     };
   }
 }
@@ -134,41 +135,51 @@ export default defineNuxtConfig({
       checkboxInactiveCircleBackground: '#ffffff',
       checkboxDisabledBackground: '#d9d9d9',
       controlButtonBackground: '#b76246',
-      controlButtonHoverBackground: '#a65339',
-      controlButtonIconColor: '#ffffff',
     },
-    isModalForced: false,
-    isCookieIdVisible: false,
-    isAcceptNecessaryButtonEnabled: true,
-    isControlButtonEnabled: false,
     cookies: {
       necessary: [
         {
-          id: 'necessary',
+          id: 'nec',
           name: 'Niezbędne pliki cookie',
           description:
-            'Te pliki cookie są niezbędne do prawidłowego funkcjonowania strony internetowej i nie mogą być wyłączone.',
-          targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled_cookies'],
+            'Te pliki cookie są niezbędne do prawidłowego funkcjonowania naszej strony internetowej i nie można ich wyłączyć.',
+          targetCookieIds: ['ncc_c', 'ncc_e'],
         },
       ],
       optional: [
         {
-          id: 'functional',
-          name: 'Funkcjonalne pliki cookie',
+          id: 'ana',
+          name: 'Analityka',
           description:
-            'Te pliki cookie umożliwiają zapamiętanie wybranych przez Ciebie ustawień i preferencji.',
-          targetCookieIds: ['functional_cookies'],
-          onAccepted: function () {
-            console.log('Functional cookies accepted');
+            'Te pliki cookie pomagają nam zrozumieć, w jaki sposób użytkownicy korzystają z naszej strony, co pozwala nam poprawić jej funkcjonalność.',
+          targetCookieIds: ['_ga', '_gid', '_gat'],
+        },
+        {
+          id: 'mkt',
+          name: 'Marketing',
+          description:
+            'Te pliki cookie służą do śledzenia użytkowników w różnych witrynach w celu wyświetlania odpowiednich reklam.',
+          links: {
+            '/polityka-prywatnosci': 'Polityka Prywatności',
           },
-          onDeclined: function () {
-            console.log('Functional cookies declined');
-          },
+          targetCookieIds: ['_fbp', '_gcl_au'],
         },
       ],
     },
     locales: ['pl'],
-    locale: 'pl',
+    localeTexts: {
+      pl: {
+        bannerDescription:
+          'Używamy plików cookie, aby zapewnić najlepsze wrażenia na naszej stronie. Możesz dowiedzieć się więcej o tym, jakich plików cookie używamy, lub wyłączyć je w ustawieniach.',
+        bannerTitle: 'Pliki cookie',
+        acceptAll: 'Akceptuj wszystkie',
+        decline: 'Tylko niezbędne',
+        manageCookies: 'Zarządzaj cookies',
+        save: 'Zapisz',
+      },
+    },
+    isControlButtonEnabled: false,
+    isCookieIdVisible: true,
     privacyLink: '/polityka-prywatnosci',
   },
 

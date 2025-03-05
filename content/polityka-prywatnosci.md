@@ -5,70 +5,129 @@ description: 'Informacje o tym, jak przetwarzamy Twoje dane osobowe'
 
 # Polityka prywatności
 
-## Wprowadzenie
+## Postanowienia ogólne
 
-Dziękujemy za odwiedzenie naszej strony. Ochrona Twoich danych osobowych jest dla nas niezwykle ważna. W niniejszej Polityce prywatności przedstawiamy informacje dotyczące przetwarzania danych osobowych podczas korzystania z naszej strony internetowej zgodnie z obowiązującymi przepisami dotyczącymi ochrony danych, w szczególności z Ogólnym Rozporządzeniem o Ochronie Danych (RODO).
+Niniejszy dokument:
 
-## Administrator danych
+- spełnia wymagania przepisów prawa w tym w zakresie: ustawy z dnia 16 lipca 2004. Prawo telekomunikacyjne, ustawy oświadczeniu usług drogą elektroniczną
+- w szczególności określa zasady przechowywania i dostępu do informacji na urządzeniach Użytkownika za pomocą plików Cookies, służących realizacji usług świadczonych drogą elektroniczną
+- zawiera informacje dotyczące przetwarzania przez:
 
-Administratorem danych jest:
+**MOLKI Sp. z o.o.**  
+ul. Heweliusza 11/811, 80-390 Gdańsk  
+KRS: 0000874895  
+NIP: 9571129157  
+REGON: 387741765  
+tel.: +48 572 323 207  
+email: biuro@molki.pl
 
-Molki Sp. z o.o.
-NIP: 957-112-91-57
-ul. Heweliusza 11/811
-80-890 Gdańsk
+Administratorem danych osobowych jest MOLKI Sp. z o.o.
 
-## Jakie dane zbieramy
+## Definicje
 
-### Dane zbierane automatycznie
+- **Administrator** (Administrator danych osobowych) - MOLKI Sp. z o.o. ul. Heweliusza 11/811, 80-390 Gdańsk, NIP: 9571129157, tel.: +48 572 323 207, email: biuro@molki.pl
+- **Cookies** - dane informatyczne, w szczególności niewielkie pliki tekstowe, zapisywane i przechowywane na urządzeniach, za pośrednictwem których Użytkownik korzysta ze stron internetowych Serwisu
+- **Cookies Administratora** - Cookies zamieszczane przez Administratora, związane ze świadczeniem usług drogą elektroniczną
+- **Cookies Zewnętrzne** - Cookies zamieszczane przez partnerów Administratora
+- **Serwis** - strona internetowa działająca w domenie pl i jej subdomenach
+- **Dane osobowe** - wszelkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej
+- **Urządzenie** - elektroniczne urządzenie, za pośrednictwem którego Użytkownik uzyskuje dostęp do Serwisu
+- **Użytkownik** - podmiot korzystający z Serwisu
 
-Podczas odwiedzania naszej strony internetowej, serwer automatycznie zapisuje informacje, które Twoja przeglądarka przesyła do naszego serwera. Są to:
-- Adres IP
-- Data i godzina zapytania
-- Różnica stref czasowych względem GMT
-- Zawartość żądania (konkretna strona)
-- Status dostępu/kod statusu HTTP
-- Przesłana ilość danych
-- Strona, z której pochodzi żądanie
-- Przeglądarka internetowa
-- System operacyjny i jego interfejs
-- Język i wersja oprogramowania przeglądarki
+## Bezpieczeństwo danych
 
-### Pliki cookie
+Administrator stosuje środki organizacyjne i techniczne zgodne z przepisami polskiego prawa oraz rozporządzeniami unijnymi, podejmując wszelkie niezbędne działania w celu zabezpieczenia danych przed:
 
-Nasza strona wykorzystuje pliki cookie, które są małymi plikami tekstowymi umieszczanymi na Twoim urządzeniu. Pliki te pomagają nam w zapewnieniu funkcjonalności naszej strony internetowej.
+- przypadkowym lub niezgodnym z prawem zniszczeniem
+- utratą
+- modyfikacją
+- nieuprawnionym ujawnieniem
+- nieuprawnionym dostępem
 
-#### Rodzaje plików cookie:
+## Linki zewnętrzne
 
-1. **Niezbędne pliki cookie** - pliki niezbędne do działania strony, umożliwiające korzystanie z usług dostępnych w ramach serwisu.
+Serwis może zawierać linki do innych stron internetowych. Administrator:
 
-2. **Funkcjonalne pliki cookie** - pliki umożliwiające zapamiętanie wybranych przez użytkownika ustawień i personalizację interfejsu.
+- nie ma wpływu na politykę prywatności tych stron
+- nie ponosi odpowiedzialności za ich politykę wykorzystywania plików cookies
+- zaleca zapoznanie się z dokumentami dotyczącymi polityki prywatności tych stron
 
-## Podstawa prawna przetwarzania danych
+## Przetwarzanie danych osobowych
 
-Przetwarzamy Twoje dane osobowe na podstawie:
-- Art. 6 ust. 1 lit. a RODO - Twojej zgody
-- Art. 6 ust. 1 lit. b RODO - przetwarzanie jest niezbędne do wykonania umowy
-- Art. 6 ust. 1 lit. f RODO - prawnie uzasadniony interes administratora
+Administrator dba o bezpieczeństwo danych osobowych zgodnie z rozporządzeniem RODO (UE) 2016/679.
 
-## Twoje prawa
+Serwis ogranicza zbieranie i wykorzystywanie informacji o Użytkownikach do niezbędnego minimum (art. 5 ust.1 lit. c RODO).
 
-Zgodnie z RODO, przysługują Ci następujące prawa:
-- Prawo dostępu do danych (art. 15 RODO)
-- Prawo do sprostowania danych (art. 16 RODO)
-- Prawo do usunięcia danych (art. 17 RODO)
-- Prawo do ograniczenia przetwarzania (art. 18 RODO)
-- Prawo do przenoszenia danych (art. 20 RODO)
-- Prawo do sprzeciwu (art. 21 RODO)
-- Prawo do wycofania zgody (art. 7 ust. 3 RODO)
+Administrator przetwarza dane generowane automatycznie przez połączenie internetowe Użytkownika (adres IP, czas korzystania, nazwy stron, wyszukiwarki) oraz pliki cookie w celu:
 
-## Kontakt w sprawie ochrony danych
+- monitorowania ruchu w Serwisie
+- badań diagnostycznych
+- analiz marketingowych
+- celów statystycznych
 
-W przypadku pytań dotyczących przetwarzania Twoich danych osobowych, prosimy o kontakt:
+## Prawa osób, których dane dotyczą
 
-Email: kontakt@molki.pl
-Telefon: +48 572 323 207
+1. **Prawo do informacji** - informacja o przetwarzaniu danych
+2. **Prawo do kopii danych** - otrzymanie kopii przetwarzanych danych
+3. **Prawo do sprostowania** - poprawianie błędów i uzupełnianie danych
+4. **Prawo do usunięcia danych** - żądanie usunięcia niepotrzebnych danych
+5. **Prawo do ograniczenia przetwarzania** - ograniczenie operacji na danych
+6. **Prawo do przenoszenia danych** - otrzymanie danych w formacie komputerowym
+7. **Prawo sprzeciwu wobec przetwarzania w celach marketingowych**
+8. **Prawo sprzeciwu wobec innych celów przetwarzania**
+9. **Prawo wycofania zgody** - wycofanie zgody na przetwarzanie
+10. **Prawo do skargi** - złożenie skargi do Prezesa Urzędu Ochrony Danych Osobowych
 
-## Aktualizacje polityki prywatności
+Wniosek można złożyć:
 
-Niniejsza Polityka prywatności może być okresowo aktualizowana. Ostatnia aktualizacja: Marzec 2025. 
+- pisemnie na adres Administratora
+- drogą e-mailową na adres Administratora
+
+Odpowiedź na zgłoszenie udzielana jest w ciągu miesiąca od jego otrzymania.
+
+## Pliki Cookies
+
+### Rodzaje plików cookies
+
+1. **Cookies sesyjne**:
+   - przechowywane do końca sesji przeglądarki
+   - nie pozwalają na pobieranie danych osobowych
+
+2. **Cookies trwałe**:
+   - przechowywane do momentu skasowania
+   - nie pozwalają na pobieranie danych osobowych
+
+### Cele wykorzystania cookies
+
+1. Konfiguracja serwisu i realizacja procesów
+2. Analizy, badania i audyt oglądalności
+3. Zapewnienie bezpieczeństwa i niezawodności serwisu
+
+### Zarządzanie cookies
+
+Użytkownik może:
+
+- zmienić ustawienia dotyczące plików cookies
+- usunąć pliki cookies
+- ograniczyć lub wyłączyć dostęp plików cookies
+
+Instrukcje dla przeglądarek:
+
+- Internet Explorer
+- Mozilla Firefox
+- Chrome
+- Safari
+- Opera
+
+## Bezpieczeństwo urządzeń
+
+Zalecenia dla Użytkowników:
+
+- posiadanie aktualnego programu antywirusowego
+- korzystanie z aktualnej wersji przeglądarki internetowej
+- włączona zapora sieciowa (firewall)
+- regularne aktualizowanie systemu operacyjnego i oprogramowania
+
+## Postanowienia końcowe
+
+Polityka obowiązuje od dnia 10.10.2020. O wszelkich zmianach Użytkownicy będą informowani w zakładce "Polityka prywatności".

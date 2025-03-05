@@ -31,22 +31,6 @@ Umów konsultację
   :::
 ::
 
-::blog-display
-#title
-Najnowsze artykuły
-
-#subtitle
-Sprawdź nasze najnowsze publikacje i porady
-::
-
-::projects-display
-#title
-Wszystkie Projekty
-
-#subtitle
-Odkryj nasze najlepsze realizacje i projekty wnętrz
-::
-
 ::title-section
 ---
 hasBackground: false
@@ -276,7 +260,6 @@ Dodatkowe usługi projektowe
 - **Inwentaryzacja bez projektu** – wyceny indywidualne
 ::
 
-
 ::full-viewport-slider
 ---
 ctaLink: /buttons
@@ -367,6 +350,6 @@ PREMIUM
 - Izolacja przeciwwilgociowa
 - Sprzątanie poremontowe
 
-#infoText  
+#infoText
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::

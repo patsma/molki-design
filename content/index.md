@@ -31,8 +31,21 @@ Umów konsultację
   :::
 ::
 
+::blog-display
+#title
+Najnowsze artykuły
 
+#subtitle
+Sprawdź nasze najnowsze publikacje i porady
+::
 
+::projects-display
+#title
+Wszystkie Projekty
+
+#subtitle
+Odkryj nasze najlepsze realizacje i projekty wnętrz
+::
 
 ::title-section
 ---

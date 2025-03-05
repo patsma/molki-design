@@ -33,16 +33,6 @@ export default defineAppConfig({
         {
           label: 'Realizacje',
           link: '/realizacje',
-          children: [
-            {
-              label: 'Projekty Wnętrz',
-              link: '/realizacje/projekty-wnetrz',
-            },
-            {
-              label: 'Dla Biznesu',
-              link: '/realizacje/dla-biznesu',
-            },
-          ],
         },
         {
           label: 'O nas',

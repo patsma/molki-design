@@ -86,7 +86,7 @@ onMounted(() => {
           <template #rightCompanyTitle>MOLKI INVEST</template>
 
           <template #rightCompanySubtitle
-            ><b>Nieruchomości inwestycyjne przygotowane do efektywnego wynajmu.</b></template
+            ><b>Nieruchomości inwestycyjne przygotowane do efektywnego wynajmu.</b></template
           >
 
           <template #rightCompanyText
@@ -186,19 +186,19 @@ onMounted(() => {
             <p>Wszelkie prawa zastrzeżone.</p>
             <p class="space-x-1">
               <NuxtLink
-                to="/"
+                to="/polityka-prywatnosci"
                 class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
                 >prywatność</NuxtLink
               >
               <span>/</span>
               <NuxtLink
-                to="/"
+                to="/polityka-prywatnosci#pliki-cookie"
                 class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
                 >ciasteczka</NuxtLink
               >
               <span>/</span>
               <NuxtLink
-                to="/"
+                to="/polityka-prywatnosci"
                 class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
                 >klauzula RODO</NuxtLink
               >
@@ -206,10 +206,15 @@ onMounted(() => {
           </template>
 
           <template #privacyText>
-            <NuxtLink to="/" class="hover:text-primary"> Polityka prywatności </NuxtLink>
+            <NuxtLink to="/polityka-prywatnosci" class="hover:text-primary">
+              Polityka prywatności
+            </NuxtLink>
           </template>
         </FooterComponent>
       </div>
+
+      <!-- Cookie Control Banner -->
     </GSAPScrollSmoother>
+    <CookieControl locale="pl" />
   </div>
 </template>

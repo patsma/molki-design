@@ -59,6 +59,26 @@ declare module '@nuxt/schema' {
       enableComposables?: boolean;
       bundled?: boolean;
     };
+    cookieControl?: {
+      barPosition?: string;
+      closeModalOnClickOutside?: boolean;
+      colors?: Record<string, string>;
+      cookieExpiryOffsetMs?: number;
+      cookieNameCookiesAccepted?: string;
+      cookieNameCookiesEnabledIds?: string;
+      cookies?: {
+        necessary?: Array<Record<string, any>>;
+        optional?: Array<Record<string, any>>;
+      };
+      isAcceptNecessaryButtonEnabled?: boolean;
+      isControlButtonEnabled?: boolean;
+      isModalForced?: boolean;
+      locales?: Array<string>;
+      locale?: string;
+      isCookieIdVisible?: boolean;
+      isTinyMCE?: boolean;
+      privacyLink?: string;
+    };
   }
 }
 
@@ -78,7 +98,79 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ['@nuxtjs/sitemap', '@nuxt/content', '@nuxtjs/tailwindcss', '@hypernym/nuxt-gsap', '@pinia/nuxt', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/icon', 'nuxt-swiper', '@nuxtjs/seo', '@dargmuesli/nuxt-cookie-control'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss',
+    '@hypernym/nuxt-gsap',
+    '@pinia/nuxt',
+    '@nuxt/fonts',
+    '@vueuse/nuxt',
+    '@nuxt/image',
+    '@nuxt/icon',
+    'nuxt-swiper',
+    '@nuxtjs/seo',
+    '@dargmuesli/nuxt-cookie-control',
+  ],
+
+  // Cookie control configuration
+  cookieControl: {
+    barPosition: 'bottom-full',
+    closeModalOnClickOutside: true,
+    colors: {
+      barBackground: '#ffffff',
+      barButtonBackground: '#b76246',
+      barButtonColor: '#ffffff',
+      barButtonHoverBackground: '#a65339',
+      barTextColor: '#503d32',
+      modalBackground: '#f9f5f2',
+      modalButtonBackground: '#b76246',
+      modalButtonColor: '#ffffff',
+      modalButtonHoverBackground: '#a65339',
+      modalTextColor: '#503d32',
+      checkboxActiveBackground: '#b76246',
+      checkboxInactiveBackground: '#e6e4df',
+      checkboxActiveCircleBackground: '#ffffff',
+      checkboxInactiveCircleBackground: '#ffffff',
+      checkboxDisabledBackground: '#d9d9d9',
+      controlButtonBackground: '#b76246',
+      controlButtonHoverBackground: '#a65339',
+      controlButtonIconColor: '#ffffff',
+    },
+    isModalForced: false,
+    isCookieIdVisible: false,
+    isAcceptNecessaryButtonEnabled: true,
+    isControlButtonEnabled: false,
+    cookies: {
+      necessary: [
+        {
+          id: 'necessary',
+          name: 'Niezbędne pliki cookie',
+          description:
+            'Te pliki cookie są niezbędne do prawidłowego funkcjonowania strony internetowej i nie mogą być wyłączone.',
+          targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled_cookies'],
+        },
+      ],
+      optional: [
+        {
+          id: 'functional',
+          name: 'Funkcjonalne pliki cookie',
+          description:
+            'Te pliki cookie umożliwiają zapamiętanie wybranych przez Ciebie ustawień i preferencji.',
+          targetCookieIds: ['functional_cookies'],
+          onAccepted: function () {
+            console.log('Functional cookies accepted');
+          },
+          onDeclined: function () {
+            console.log('Functional cookies declined');
+          },
+        },
+      ],
+    },
+    locales: ['pl'],
+    locale: 'pl',
+    privacyLink: '/polityka-prywatnosci',
+  },
 
   devServer: {
     host: '0.0.0.0',

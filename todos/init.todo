@@ -163,13 +163,15 @@
 ✔ Make the cookie banner smarter, and in sync with the animation @started(25-03-05 16:25) @done(25-03-05 16:33) @lasted(8m52s)
 
 
-- Page 404 template @started(25-03-05 17:14)
+✔ Page 404 template @started(25-03-05 17:14) @done(25-03-05 17:35) @lasted(21m32s)
+- Add drawing animation to HeroPath partials
+
+
 
 ☐ Cenniki
 - Add Proper links
 - Add OG Images
 - Add custom lines
-- Add drawing animation to HeroPath partials
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link?

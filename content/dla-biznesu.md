@@ -29,7 +29,7 @@ cta-link: /buttons
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /buttons
+  to: /dla-biznesu#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -54,7 +54,7 @@ cta-link: /buttons
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /buttons
+  to: /dla-biznesu#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -79,7 +79,7 @@ cta-link: /buttons
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /buttons
+  to: /dla-biznesu#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -101,10 +101,7 @@ cta-link: /buttons
   **Lepsze pierwsze wrażenie** – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
   :::
 
-#cta
-UMÓW KONSULTACJĘ
 ::
-
 
 ::full-viewport-slider{#realizacje}
 ---

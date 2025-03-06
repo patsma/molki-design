@@ -168,22 +168,22 @@
 
 ✔ Projekt Funkcjonalny wykonawczy porada projektowa - dodac link do cennika lub wylaczyc clickanie @done(25-03-06 10:51)
 
-- Add drawing animation to HeroPath partials
 ✔ Dla biznesu CTA hero scroll to slider or remove @done(25-03-06 10:50)
-- Usunac umow konsultacje z projekt funkcjonalny
-- Dla biznesu wywalic CTA z dolu
-- Loader only on first page load
+✔ Usunac umow konsultacje z projekt funkcjonalny @done(25-03-06 11:02)
+✔ Dla biznesu wywalic CTA z dolu @done(25-03-06 11:02)
+✔ Add Proper links @done(25-03-06 10:41)
+- O Nas wywalic ramke, ma byc osobnym bytem
+- Add drawing animation to HeroPath partials
 - Menu Add FaceBook and Instagram links
 - Kontakt - ostylowac formularze
 - Style Hubspot form?
-- O Nas wywalic ramke, ma byc osobnym bytem
 
-✔ Add Proper links @done(25-03-06 10:41)
 - Get Umow konsultacje link - client
 - Add OG Images
 - Add custom lines
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
+- Loader only on first page load
 - Add primary color to menu item if current page is the same as the link?
 - Ensure new pages have space for header - so the titles aren't cut off
 - Web manifest

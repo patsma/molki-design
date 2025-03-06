@@ -116,11 +116,12 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ Treść polityki prywatności
 - ❌ **Struktura Treści**:
   - ❌ Uzupełnienie brakującej treści
-  - ❌ Decyzja o strukturze menu i elementach
-  - ❌ Ustalenie poprawnej struktury mapy strony
+  - ✅ Decyzja o strukturze menu i elementach
+  - ✅ Ustalenie poprawnej struktury mapy strony
 - ❌ **Linkowanie**:
-  - ❌ Określenie poprawnych linków dla wszystkich przycisków i sekcji
-  - ❌ Weryfikacja ścieżek nawigacji użytkownika
+  - ✅ Określenie poprawnych linków dla wszystkich przycisków i sekcji
+  - ✅ Weryfikacja ścieżek nawigacji użytkownika
+  - ❌ Link do Umów Konsultacje
 - ❌ **Zgodność z RODO**:
   - ❌ Konfiguracja zgodności z przepisami
   - ❌ Weryfikacja polityki prywatności
@@ -129,6 +130,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ❌ Newsletter - wybór dostawcy, adres do konfiguracji
 - ❌ **Zatwierdzenie integracji analitycznych**:
   - ❌ Google Analytics, Google Tag Manager itp.
+  - ✅ Google Analytics Kod
 - ❌ Końcowy przegląd treści
 - ❌ Potwierdzenie wszystkich funkcjonalności
 - ❌ Akceptacja strony do publikacji

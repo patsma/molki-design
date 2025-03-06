@@ -166,18 +166,20 @@
 ✔ Page 404 template @started(25-03-05 17:14) @done(25-03-05 17:35) @lasted(21m32s)
 ✔ Newsletter? @done(25-03-06 09:10)
 
+✔ Projekt Funkcjonalny wykonawczy porada projektowa - dodac link do cennika lub wylaczyc clickanie @done(25-03-06 10:51)
 
 - Add drawing animation to HeroPath partials
-- Projekt Funkcjonalny wykonawczy porada projektowa - dodac link do cennika lub wylaczyc clickanie
-- Usunac umow konsultacje 
+✔ Dla biznesu CTA hero scroll to slider or remove @done(25-03-06 10:50)
+- Usunac umow konsultacje z projekt funkcjonalny
 - Dla biznesu wywalic CTA z dolu
-- Dla biznesu CTA hero scroll to slider or remove
 - Loader only on first page load
 - Menu Add FaceBook and Instagram links
-- Kontakt - ostylowac formularz
+- Kontakt - ostylowac formularze
 - Style Hubspot form?
+- O Nas wywalic ramke, ma byc osobnym bytem
 
-- Add Proper links
+✔ Add Proper links @done(25-03-06 10:41)
+- Get Umow konsultacje link - client
 - Add OG Images
 - Add custom lines
 - Add more HeroPath components variants - refactor so we can use different shapes

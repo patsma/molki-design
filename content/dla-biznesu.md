@@ -2,7 +2,7 @@
 ::hero-business
 ---
 hasBackground: false
-cta-link: /nasze-realizacje
+cta-link: /dla-biznesu#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -62,7 +62,7 @@ cta-link: /buttons
     ::::
   
   #title
-  Projekty i Wizualizacje
+  Remonty pod Klucz
   
   #description
   **Oszczędność czasu i stresu** – pełna obsługa od projektu do realizacji, bez potrzeby angażowania się w prace remontowe.
@@ -106,7 +106,7 @@ UMÓW KONSULTACJĘ
 ::
 
 
-::full-viewport-slider
+::full-viewport-slider{#realizacje}
 ---
 ctaLink: /buttons
 ---

@@ -172,7 +172,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-  to: /buttons
+  to: /projekt-wnetrza#cennik
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -189,7 +189,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-  to: /buttons
+  to: /projekt-wnetrza#cennik
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -206,7 +206,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-  to: /buttons
+  to: /projekt-wnetrza#cennik
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -224,7 +224,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 UMÓW KONSULTACJĘ
 ::
 
-::title-section
+::title-section{#cennik}
 ---
 hasBackground: false
 ---

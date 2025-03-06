@@ -49,8 +49,8 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ❌ Google Analytics 4
   - ❌ Google Tag Manager
 - ❌ **Newsletter**
-  - ❌ Integracja z dostawcą (do ustalenia)
-  - ❌ Konfiguracja adresu odbiorczego
+  - ✅ Integracja z dostawcą (do ustalenia) - hubspot
+  - ✅ Konfiguracja adresu odbiorczego - huspot
 - ❌ **Open Graph**
   - ❌ Konfiguracja obrazów OG dla mediów społecznościowych
   - ❌ Poprawne metadane dla udostępniania w mediach społecznościowych

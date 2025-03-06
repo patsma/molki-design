@@ -1,6 +1,6 @@
 ::hero-projects
 ---
-cta-link: /buttons
+cta-link: /nasze-realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}

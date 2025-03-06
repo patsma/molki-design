@@ -161,18 +161,22 @@
 ✔ Fix ToDo page @started(25-03-05 15:39) @done(25-03-05 16:09) @lasted(30m12s)
 ✔ Adjust Cookie banner to proper settings @started(25-03-05 16:10) @done(25-03-05 16:25) @lasted(15m55s)
 ✔ Make the cookie banner smarter, and in sync with the animation @started(25-03-05 16:25) @done(25-03-05 16:33) @lasted(8m52s)
-
-
+✔ Cenniki @done(25-03-06 09:03)
+✔ Add newsletter Hubspot form @done(25-03-06 09:08)
 ✔ Page 404 template @started(25-03-05 17:14) @done(25-03-05 17:35) @lasted(21m32s)
+✔ Newsletter? @done(25-03-06 09:10)
+
+
 - Add drawing animation to HeroPath partials
-
-
+- Projekt Funkcjonalny wykonawczy porada projektowa - dodac link do cennika lub wylaczyc clickanie
+- Usunac umow konsultacje 
+- Dla biznesu wywalic CTA z dolu
+- Dla biznesu CTA hero scroll to slider or remove
 - Loader only on first page load
 - Menu Add FaceBook and Instagram links
-✔ Add newsletter Hubspot form @done(25-03-06 09:08)
+- Kontakt - ostylowac formularz
 - Style Hubspot form?
 
-✔ Cenniki @done(25-03-06 09:03)
 - Add Proper links
 - Add OG Images
 - Add custom lines
@@ -180,7 +184,6 @@
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link?
 - Ensure new pages have space for header - so the titles aren't cut off
-✔ Newsletter? @done(25-03-06 09:10)
 - Web manifest
 - Add proper og images
 - Add canonical url

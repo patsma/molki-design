@@ -2,7 +2,7 @@
 ::hero-business
 ---
 hasBackground: false
-cta-link: /buttons
+cta-link: /nasze-realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -99,6 +99,25 @@ cta-link: /buttons
   :br
   
   **Lepsze pierwsze wrażenie** – odpowiednio zaaranżowana przestrzeń buduje pozytywne emocje i pomaga przekonać klientów do oferty.
+  :::
+
+#cta
+UMÓW KONSULTACJĘ
+::
+
+
+::full-viewport-slider
+---
+ctaLink: /buttons
+---
+#slides-0
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Slide 1](/heroHome.jpg)
+  :::
+
+#slides-1
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Slide 2](/heroAbout.jpg)
   :::
 
 #cta

@@ -1,6 +1,8 @@
 <script setup>
 import { useLoaderStore } from '~/stores/loaderStore';
 import { useMenuStore } from '@/stores/menuStore';
+import { useAppConfig } from '#app';
+import IconBlock from '~/components/IconBlock.vue';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 useHead({
@@ -10,6 +12,7 @@ useHead({
 const menuStore = useMenuStore();
 const loaderStore = useLoaderStore();
 const cookieControl = ref(null);
+const appConfig = useAppConfig();
 
 // Handle page transitions
 
@@ -185,39 +188,47 @@ onMounted(() => {
             </div>
           </template>
 
-          <template #contactAddress>
-            <p class="text-neutral-600">ul. Heweliusza 11/811,<br />80-890 Gdańsk</p>
-          </template>
-
-          <template #contactEmail>
-            <a href="mailto:kontakt@molki.pl" class="text-neutral-600 hover:text-primary">
-              kontakt@molki.pl
-            </a>
-          </template>
-
-          <template #contactPhone>
-            <a href="tel:+48572323207" class="text-neutral-600 hover:text-primary">
-              +48 572 323 207
-            </a>
-          </template>
-
+          <!-- Provide socialLinks for when it's needed in the slots -->
           <template #socialLinks>
             <div class="flex space-x-4">
-              <NuxtLink
-                v-for="social in ['linkedin', 'instagram', 'facebook']"
-                :key="social"
-                :to="`https://${social}.com`"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary hover:text-primary-dark transition-colors"
-              >
-                <IconBlock :name="`fig:${social}`" customClass="w-16 h-16 text-primary" />
-              </NuxtLink>
+              <template v-if="appConfig.contactInfo?.socialLinks?.instagram">
+                <NuxtLink
+                  :to="appConfig.contactInfo.socialLinks.instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                  aria-label="Instagram"
+                >
+                  <IconBlock name="fig:instagram" customClass="w-6 h-6 text-primary" />
+                </NuxtLink>
+              </template>
+              <template v-if="appConfig.contactInfo?.socialLinks?.facebook">
+                <NuxtLink
+                  :to="appConfig.contactInfo.socialLinks.facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                  aria-label="Facebook"
+                >
+                  <IconBlock name="fig:facebook" customClass="w-6 h-6 text-primary" />
+                </NuxtLink>
+              </template>
+              <template v-if="appConfig.contactInfo?.socialLinks?.linkedin">
+                <NuxtLink
+                  :to="appConfig.contactInfo.socialLinks.linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <IconBlock name="fig:linkedin" customClass="w-6 h-6 text-primary" />
+                </NuxtLink>
+              </template>
             </div>
           </template>
 
           <template #copyrightText>
-            <p>Company Name © {{ new Date().getFullYear() }}</p>
+            <p>{{ appConfig.studio.title || 'Molki Design' }} © {{ new Date().getFullYear() }}</p>
             <p>Wszelkie prawa zastrzeżone.</p>
             <p class="space-x-1">
               <NuxtLink
@@ -227,7 +238,7 @@ onMounted(() => {
               >
               <span>/</span>
               <NuxtLink
-                to="/polityka-prywatnosci#pliki-cookie"
+                to="/polityka-prywatnosci"
                 class="text-neutral-500 hover:text-primary transition-colors duration-200 ease-in-out"
                 >ciasteczka</NuxtLink
               >

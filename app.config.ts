@@ -49,8 +49,8 @@ export default defineAppConfig({
     phone: '+48 572 323 207',
     address: 'ul. Heweliusza 11/811, 80-890 Gdańsk',
     socialLinks: {
-      instagram: 'https://instagram.com/molki.design',
-      facebook: 'https://facebook.com/molki.design',
+      instagram: 'https://www.instagram.com/molki_design/',
+      facebook: 'https://www.facebook.com/molkidesign',
       linkedin: '',
       pinterest: '',
     },

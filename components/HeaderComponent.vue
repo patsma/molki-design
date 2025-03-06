@@ -5,10 +5,13 @@ import MainMenu from '~/components/MainMenu.vue';
 import Logo from '~/components/Logo.vue';
 import BaseButton from '~/components/BaseButton.vue';
 import { useScrollHeader } from '@/composables/useScrollHeader';
+import IconBlock from '~/components/IconBlock.vue';
+import { useAppConfig } from '#app';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 const menuStore = useMenuStore();
 const { headerRef, initScrollHeader, cleanup } = useScrollHeader();
+const appConfig = useAppConfig();
 
 onMounted(() => {
   if (process.client) {
@@ -66,7 +69,35 @@ onUnmounted(() => {
           <!-- Mobile Menu Button -->
 
           <!-- CTA Button (Desktop) -->
-          <div class="hidden xl:grid justify-end">
+          <div class="hidden xl:flex items-center justify-end gap-6">
+            <!-- Social Media Links -->
+            <div class="grid grid-flow-col gap-3 items-center">
+              <NuxtLink
+                :to="
+                  appConfig.contactInfo?.socialLinks?.instagram ||
+                  'https://instagram.com/molki.design'
+                "
+                target="_blank"
+                rel="noopener noreferrer"
+                class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                aria-label="Instagram"
+              >
+                <IconBlock name="fig:instagram" customClass="w-6 h-6 text-primary" />
+              </NuxtLink>
+              <NuxtLink
+                :to="
+                  appConfig.contactInfo?.socialLinks?.facebook ||
+                  'https://facebook.com/molki.design'
+                "
+                target="_blank"
+                rel="noopener noreferrer"
+                class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                aria-label="Facebook"
+              >
+                <IconBlock name="fig:facebook" customClass="w-6 h-6 text-primary" />
+              </NuxtLink>
+            </div>
+            <!-- CTA Button -->
             <BaseButton to="/kontakt"> Umów konsultację </BaseButton>
           </div>
         </div>
@@ -79,6 +110,34 @@ onUnmounted(() => {
           <MainMenu :is-mobile="true" />
           <div class="mt-8 pb-8 mobile-menu-button">
             <BaseButton to="/kontakt" :full-width="true"> Umów konsultację </BaseButton>
+
+            <!-- Mobile Social Media Links -->
+            <div class="grid grid-flow-col gap-6 justify-center mt-8">
+              <NuxtLink
+                :to="
+                  appConfig.contactInfo?.socialLinks?.instagram ||
+                  'https://instagram.com/molki.design'
+                "
+                target="_blank"
+                rel="noopener noreferrer"
+                class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                aria-label="Instagram"
+              >
+                <IconBlock name="fig:instagram" customClass="w-8 h-8 text-primary" />
+              </NuxtLink>
+              <NuxtLink
+                :to="
+                  appConfig.contactInfo?.socialLinks?.facebook ||
+                  'https://facebook.com/molki.design'
+                "
+                target="_blank"
+                rel="noopener noreferrer"
+                class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                aria-label="Facebook"
+              >
+                <IconBlock name="fig:facebook" customClass="w-8 h-8 text-primary" />
+              </NuxtLink>
+            </div>
           </div>
         </div>
       </div>

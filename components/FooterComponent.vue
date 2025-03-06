@@ -1,7 +1,31 @@
 <script setup lang="ts">
 import { useMenuStore } from '@/stores/menuStore';
+import { useAppConfig } from '#app';
+import IconBlock from '~/components/IconBlock.vue';
 
 const menuStore = useMenuStore();
+const appConfig = useAppConfig();
+
+// Type the config to resolve TypeScript errors
+type AppConfig = {
+  contactInfo?: {
+    email?: string;
+    phone?: string;
+    address?: string;
+    socialLinks?: {
+      instagram?: string;
+      facebook?: string;
+      linkedin?: string;
+      pinterest?: string;
+    };
+  };
+  studio?: {
+    title?: string;
+  };
+};
+
+// Use typed config in template
+const typedConfig = appConfig as AppConfig;
 
 // Get menu items directly from store and split them
 const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
@@ -124,22 +148,32 @@ defineSlots<{
                 <div class="flex items-start space-x-2">
                   <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
                   <slot name="contactAddress" mdc-unwrap="p">
-                    <p class="text-neutral-600">ul. Heweliusza 11/811,<br />80-890 Gdańsk</p>
+                    <p class="text-neutral-600">
+                      {{
+                        typedConfig.contactInfo?.address || 'ul. Heweliusza 11/811, 80-890 Gdańsk'
+                      }}
+                    </p>
                   </slot>
                 </div>
                 <div class="flex items-center space-x-2">
                   <Icon name="fig:envelope" class="w-10 h-10 text-primary" />
                   <slot name="contactEmail" mdc-unwrap="p">
-                    <a href="mailto:kontakt@molki.pl" class="text-neutral-600 hover:text-primary">
-                      kontakt@molki.pl
+                    <a
+                      :href="`mailto:${typedConfig.contactInfo?.email || 'kontakt@molki.pl'}`"
+                      class="text-neutral-600 hover:text-primary"
+                    >
+                      {{ typedConfig.contactInfo?.email || 'kontakt@molki.pl' }}
                     </a>
                   </slot>
                 </div>
                 <div class="flex items-center space-x-2">
                   <Icon name="fig:phone" class="w-10 h-10 text-primary" />
                   <slot name="contactPhone" mdc-unwrap="p">
-                    <a href="tel:+48572323207" class="text-neutral-600 hover:text-primary">
-                      +48 572 323 207
+                    <a
+                      :href="`tel:${typedConfig.contactInfo?.phone || '+48572323207'}`"
+                      class="text-neutral-600 hover:text-primary"
+                    >
+                      {{ typedConfig.contactInfo?.phone || '+48 572 323 207' }}
                     </a>
                   </slot>
                 </div>
@@ -167,16 +201,39 @@ defineSlots<{
                 <h4 class="text-sm font-bold text-primary mb-4">Bądź na bieżąco:</h4>
                 <slot name="socialLinks" mdc-unwrap="p">
                   <div class="flex space-x-4">
-                    <NuxtLink
-                      v-for="social in ['linkedin', 'instagram', 'facebook']"
-                      :key="social"
-                      :to="`https://${social}.com`"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-primary hover:text-primary-dark transition-colors"
-                    >
-                      <IconBlock :name="`uil:${social}`" customClass="w-6 h-6 text-primary" />
-                    </NuxtLink>
+                    <template v-if="typedConfig.contactInfo?.socialLinks?.instagram">
+                      <NuxtLink
+                        :to="typedConfig.contactInfo.socialLinks.instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <IconBlock name="fig:instagram" customClass="w-6 h-6 text-primary" />
+                      </NuxtLink>
+                    </template>
+                    <template v-if="typedConfig.contactInfo?.socialLinks?.facebook">
+                      <NuxtLink
+                        :to="typedConfig.contactInfo.socialLinks.facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                        aria-label="Facebook"
+                      >
+                        <IconBlock name="fig:facebook" customClass="w-6 h-6 text-primary" />
+                      </NuxtLink>
+                    </template>
+                    <template v-if="typedConfig.contactInfo?.socialLinks?.linkedin">
+                      <NuxtLink
+                        :to="typedConfig.contactInfo.socialLinks.linkedin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <IconBlock name="fig:linkedin" customClass="w-6 h-6 text-primary" />
+                      </NuxtLink>
+                    </template>
                   </div>
                 </slot>
               </div>

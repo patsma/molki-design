@@ -129,8 +129,10 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ❌ Formularze kontaktowe - adresy email do odbierania wiadomości
   - ❌ Newsletter - wybór dostawcy, adres do konfiguracji
 - ❌ **Zatwierdzenie integracji analitycznych**:
-  - ❌ Google Analytics, Google Tag Manager itp.
-  - ✅ Google Analytics Kod
+  - ✅ Google Analytics
+  - ❌ Google Search Console - dane 
+  - Google Tag Manager?
+  - Facebook pixel?
 - ❌ Końcowy przegląd treści
 - ❌ Potwierdzenie wszystkich funkcjonalności
 - ❌ Akceptacja strony do publikacji

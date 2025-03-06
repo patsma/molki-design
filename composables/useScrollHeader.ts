@@ -1,3 +1,5 @@
+import { ref } from 'vue';
+import { useNuxtApp } from '#app';
 import { useElementBounding } from '@vueuse/core';
 import { useMobileDetection } from '~/composables/useMobileDetection';
 import { useThrottleFn } from '@vueuse/core';
@@ -8,6 +10,9 @@ export const useScrollHeader = () => {
   const headerRef = ref<HTMLElement | null>(null);
   const { height: headerHeight } = useElementBounding(headerRef);
   const { isMobile } = useMobileDetection();
+
+  // Track header visibility state
+  const isHeaderVisible = ref(true);
 
   let headerTrigger: any = null;
   let headerAnimation: any = null;
@@ -69,9 +74,16 @@ export const useScrollHeader = () => {
         const scrollTop = smoother.scrollTop();
         const direction = self.direction;
 
-        if (direction > 0 && scrollTop > headerHeight.value) {
+        // Only trigger animations when state actually changes
+        if (direction > 0 && scrollTop > headerHeight.value && isHeaderVisible.value) {
+          isHeaderVisible.value = false;
+          // Ensure clean animation by killing any in-progress tweens
+          $gsap.killTweensOf(headerRef.value);
           $gsap.to(headerRef.value, { yPercent: -100, duration: 0.3 });
-        } else if (direction < 0) {
+        } else if (direction < 0 && !isHeaderVisible.value) {
+          isHeaderVisible.value = true;
+          // Ensure clean animation by killing any in-progress tweens
+          $gsap.killTweensOf(headerRef.value);
           $gsap.to(headerRef.value, { yPercent: 0, duration: 0.3 });
         }
       }, 400), // Throttle to 400ms between executions
@@ -79,12 +91,14 @@ export const useScrollHeader = () => {
   };
 
   const initMobileHeader = () => {
-    // console.log('📱 Initializing mobile header');
     const header = headerRef.value;
     if (!header) {
       console.warn('⚠️ Header element not found');
       return;
     }
+
+    // Reset visibility state
+    isHeaderVisible.value = true;
 
     // Same setup as desktop
     $gsap.set(header, {
@@ -106,23 +120,39 @@ export const useScrollHeader = () => {
       },
     });
 
-    // Same animation timeline
-    headerAnimation = $gsap
-      .timeline({ paused: true })
-      .fromTo(header, { yPercent: 0 }, { yPercent: -100, duration: 0.3, ease: 'power3.inOut' });
+    // Create animation timeline but don't use play/reverse approach
+    // This allows more control over the animation state
+    headerAnimation = $gsap.timeline({ paused: true });
 
-    // Modified scroll listener without ScrollSmoother
+    // Modified scroll listener with improved state management
     $ScrollTrigger.create({
       start: 0,
       end: 'max',
       onUpdate: useThrottleFn((self) => {
-        const scrollTop = window.scrollY; // Use native scroll position
+        const scrollTop = window.scrollY;
         const direction = self.direction;
 
-        if (direction > 0 && scrollTop > headerHeight.value) {
-          headerAnimation?.play();
+        // Minimum distance to scroll before toggling header
+        const minScrollThreshold = Math.min(100, headerHeight.value);
+
+        // Only change header state when specific conditions are met
+        // This prevents rapid toggling when scrolling direction changes quickly
+        if (direction > 0 && scrollTop > minScrollThreshold) {
+          // Only hide if currently visible (prevents animation conflicts)
+          if (isHeaderVisible.value) {
+            isHeaderVisible.value = false;
+            // Kill any running animations first
+            $gsap.killTweensOf(header);
+            $gsap.to(header, { yPercent: -100, duration: 0.3, ease: 'power3.out' });
+          }
         } else if (direction < 0) {
-          headerAnimation?.reverse();
+          // Only show if currently hidden (prevents animation conflicts)
+          if (!isHeaderVisible.value) {
+            isHeaderVisible.value = true;
+            // Kill any running animations first
+            $gsap.killTweensOf(header);
+            $gsap.to(header, { yPercent: 0, duration: 0.3, ease: 'power3.out' });
+          }
         }
       }, 400), // Throttle to 400ms between executions
     });
@@ -144,5 +174,6 @@ export const useScrollHeader = () => {
     headerHeight,
     initScrollHeader,
     cleanup,
+    isHeaderVisible, // Expose the visibility state
   };
 };

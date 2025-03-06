@@ -224,9 +224,10 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 UMÓW KONSULTACJĘ
 ::
 
-::title-section{#cennik}
+::title-section
 ---
 hasBackground: false
+id: cennik
 ---
 #title
 Cennik Usług Projektowych
@@ -394,7 +395,6 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   :::
 ::
 
-
 ::banner-pricing
 #title
 Nowe Pomysły na Twoje Wnętrze
@@ -427,7 +427,6 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
 #infoText
 Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
 ::
-
 
 ::info-pricing
 #title

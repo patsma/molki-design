@@ -164,9 +164,6 @@ Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów ofer
 Sprawdź i dowiedz się wiecej.
 ::
 
-
-
-
 ::pricing-grid
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -242,9 +239,6 @@ PREMIUM
 #infoText
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::
-
-
-
 
 ::full-viewport-slider
 ---

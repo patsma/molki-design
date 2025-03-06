@@ -2,9 +2,10 @@
 title: Jak zaprojektować funkcjonalne wnętrze mieszkania?
 slug: jak-zaprojektowac-funkcjonalne-wnetrze-mieszkania
 category: Projektowanie
-date: '2023-11-15'
+date: 2023-11-15
 cover: /heroAbout.jpg
-excerpt: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, które będą nie tylko piękne, ale również praktyczne w codziennym użytkowaniu.
+excerpt: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, które
+  będą nie tylko piękne, ale również praktyczne w codziennym użytkowaniu.
 author: Anna Kowalska
 authorRole: Architekt wnętrz
 authorImage: /heroHome.jpg
@@ -76,4 +77,4 @@ W miejscach intensywnie użytkowanych warto postawić na trwałe materiały:
 
 Projektowanie funkcjonalnego wnętrza wymaga czasu i przemyślenia wielu aspektów. Warto jednak poświęcić temu uwagę, ponieważ dobrze zaprojektowana przestrzeń będzie służyć przez lata, podnosząc komfort codziennego życia.
 
-Jeśli potrzebujesz profesjonalnej pomocy w zaprojektowaniu funkcjonalnego wnętrza, [skontaktuj się z nami](/kontakt). Nasz zespół doświadczonych projektantów pomoże stworzyć przestrzeń idealnie dopasowaną do Twoich potrzeb. 
+Jeśli potrzebujesz profesjonalnej pomocy w zaprojektowaniu funkcjonalnego wnętrza, [skontaktuj się z nami](/kontakt). Nasz zespół doświadczonych projektantów pomoże stworzyć przestrzeń idealnie dopasowaną do Twoich potrzeb.

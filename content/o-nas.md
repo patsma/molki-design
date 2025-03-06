@@ -38,7 +38,7 @@ Wioletta Retko
 Prezes Zarządu
 
 #description
-Uwielbiam organizować i nadzorować złożone projekty. 
+Uwielbiam organizować i nadzorować złożone projekty.
 
 Codziennie dbam o to, by każdy etap realizacji przebiegał zgodnie z planem, a każdy detal był dopracowany do perfekcji.
 
@@ -84,6 +84,7 @@ To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
   Nagród Branżowych
   :::
 ::
+
 ::team-member
 #section-title
 POZNAJMY SIĘ!
@@ -151,7 +152,7 @@ Martyna Kwiecińska
 Projektantka wnętrz
 
 #description
-Projektowanie wnętrz to moja pasja. 
+Projektowanie wnętrz to moja pasja.
 
 Projektując, dopasowuję każde wnętrze indywidualnie do potrzeb klienta, aby stworzyć przestrzenie, które idealnie odpowiadają ich oczekiwaniom.
 
@@ -195,8 +196,6 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
   Zadowolonych klientów
   :::
 ::
-
-
 
 ::team-member
 #section-title

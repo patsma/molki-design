@@ -24,11 +24,9 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ **Zarządzanie Stronami**
   - ✅ Możliwość dodawania nowych stron przez Nuxt Studio
   - ✅ Szablon strony dla treści tworzonych w CMS
-
 - ✅ **Zarządzanie Realizacjami**
   - ✅ Możliwość dodawania nowych realizacji przez Nuxt Studio
   - ✅ Szablon realizacji dla treści tworzonych w CMS
-
 - ✅ **Wprowadzone tresci**
 
 ## 2. Prezentacja Projektów/Realizacji
@@ -130,7 +128,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ❌ Newsletter - wybór dostawcy, adres do konfiguracji
 - ❌ **Zatwierdzenie integracji analitycznych**:
   - ✅ Google Analytics
-  - ❌ Google Search Console - dane 
+  - ❌ Google Search Console - dane
   - Google Tag Manager?
   - Facebook pixel?
 - ❌ Końcowy przegląd treści

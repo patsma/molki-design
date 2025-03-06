@@ -6,7 +6,6 @@ seo:
   description: Zobacz nasze najnowsze projekty i realizacje wnętrz - Molki Design
 ---
 
-
 ::projects-display
 #title
 Wszystkie Projekty

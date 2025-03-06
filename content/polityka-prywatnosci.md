@@ -1,6 +1,6 @@
 ---
-title: 'Polityka prywatności'
-description: 'Informacje o tym, jak przetwarzamy Twoje dane osobowe'
+title: Polityka prywatności
+description: Informacje o tym, jak przetwarzamy Twoje dane osobowe
 layout: default
 pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
 ---
@@ -15,19 +15,13 @@ Niniejszy dokument:
 - w szczególności określa zasady przechowywania i dostępu do informacji na urządzeniach Użytkownika za pomocą plików Cookies, służących realizacji usług świadczonych drogą elektroniczną
 - zawiera informacje dotyczące przetwarzania przez:
 
-**MOLKI Sp. z o.o.**  
-ul. Heweliusza 11/811, 80-390 Gdańsk  
-KRS: 0000874895  
-NIP: 9571129157  
-REGON: 387741765  
-tel.: +48 572 323 207  
-email: biuro@molki.pl
+**MOLKI Sp. z o.o.**:brul. Heweliusza 11/811, 80-390 Gdańsk:brKRS: 0000874895:brNIP: 9571129157:brREGON: 387741765:brtel.: +48 572 323 207:bremail: <biuro@molki.pl>
 
 Administratorem danych osobowych jest MOLKI Sp. z o.o.
 
 ## Definicje
 
-- **Administrator** (Administrator danych osobowych) - MOLKI Sp. z o.o. ul. Heweliusza 11/811, 80-390 Gdańsk, NIP: 9571129157, tel.: +48 572 323 207, email: biuro@molki.pl
+- **Administrator** (Administrator danych osobowych) - MOLKI Sp. z o.o. ul. Heweliusza 11/811, 80-390 Gdańsk, NIP: 9571129157, tel.: +48 572 323 207, email: <biuro@molki.pl>
 - **Cookies** - dane informatyczne, w szczególności niewielkie pliki tekstowe, zapisywane i przechowywane na urządzeniach, za pośrednictwem których Użytkownik korzysta ze stron internetowych Serwisu
 - **Cookies Administratora** - Cookies zamieszczane przez Administratora, związane ze świadczeniem usług drogą elektroniczną
 - **Cookies Zewnętrzne** - Cookies zamieszczane przez partnerów Administratora
@@ -94,7 +88,6 @@ Odpowiedź na zgłoszenie udzielana jest w ciągu miesiąca od jego otrzymania.
 1. **Cookies sesyjne**:
    - przechowywane do końca sesji przeglądarki
    - nie pozwalają na pobieranie danych osobowych
-
 2. **Cookies trwałe**:
    - przechowywane do momentu skasowania
    - nie pozwalają na pobieranie danych osobowych

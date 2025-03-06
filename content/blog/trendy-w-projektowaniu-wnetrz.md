@@ -2,9 +2,10 @@
 title: Trendy w projektowaniu wnętrz na rok 2023
 slug: trendy-w-projektowaniu-wnetrz-2023
 category: Porady
-date: '2023-12-05'
+date: 2023-12-05
 cover: /heroHome.jpg
-excerpt: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominować w nadchodzącym roku. Od kolorów po materiały i style.
+excerpt: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominować w
+  nadchodzącym roku. Od kolorów po materiały i style.
 author: Piotr Nowak
 authorRole: Główny projektant
 authorImage: /heroHome.jpg
@@ -82,4 +83,4 @@ Rośliny nie tylko upiększają przestrzeń, ale również poprawiają jakość 
 
 Trendy w projektowaniu wnętrz na rok 2023 odzwierciedlają głębsze zmiany społeczne - rosnącą świadomość ekologiczną, potrzebę kontaktu z naturą oraz dążenie do tworzenia przestrzeni, które wspierają dobrostan psychiczny i fizyczny. Niezależnie od tego, czy planujesz całkowitą metamorfozę wnętrza, czy tylko odświeżenie, warto rozważyć wprowadzenie niektórych z tych trendów, aby stworzyć przestrzeń, która będzie nie tylko modna, ale przede wszystkim przyjazna i funkcjonalna.
 
-Potrzebujesz pomocy w zaprojektowaniu wnętrza zgodnego z najnowszymi trendami? [Skontaktuj się z nami](/kontakt) - nasi projektanci pomogą stworzyć przestrzeń idealnie dopasowaną do Twoich potrzeb i preferencji. 
+Potrzebujesz pomocy w zaprojektowaniu wnętrza zgodnego z najnowszymi trendami? [Skontaktuj się z nami](/kontakt) - nasi projektanci pomogą stworzyć przestrzeń idealnie dopasowaną do Twoich potrzeb i preferencji.

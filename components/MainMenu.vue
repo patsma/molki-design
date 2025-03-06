@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useMenuStore } from '@/stores/menuStore';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import DropdownArrow from './DropdownArrow.vue';
 
 const props = defineProps<{
@@ -9,6 +9,15 @@ const props = defineProps<{
 
 const menuStore = useMenuStore();
 const router = useRouter();
+const route = useRoute();
+
+/**
+ * Checks if the menu item exactly matches the current route
+ * For parent items, this is a direct match only (not based on children)
+ */
+const isMenuItemActive = (item: { link: string }) => {
+  return item.link !== '#' && route.path === item.link;
+};
 
 const handleClick = async (event: MouseEvent, link: string, hasChildren = false, index: number) => {
   event.preventDefault();
@@ -35,7 +44,10 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
       <a
         :href="item.link"
         class="nav-menu__link"
-        :class="{ 'nav-menu__link--has-children': item.children }"
+        :class="{
+          'nav-menu__link--has-children': item.children,
+          '!text-primary': isMenuItemActive(item),
+        }"
         @click="(e: MouseEvent) => handleClick(e, item.link, !!item.children, index)"
       >
         {{ item.label }}
@@ -52,6 +64,9 @@ const handleArrowClick = (event: MouseEvent, index: number) => {
           :key="child.label"
           :to="child.link"
           class="nav-menu__link"
+          :class="{
+            '!text-primary': route.path === child.link,
+          }"
           @click="(e: MouseEvent) => handleClick(e, child.link, false, index)"
         >
           {{ child.label }}

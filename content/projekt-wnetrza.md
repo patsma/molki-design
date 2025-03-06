@@ -393,3 +393,37 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   ---
   :::
 ::
+
+
+::banner-pricing
+#title
+Nowe Pomysły na Twoje Wnętrze
+
+#description
+Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](/buttons) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Interior Design Consultation](/heroPricing.jpg)
+  :::
+
+#options
+  :::pricing-option
+  #title
+  Porada Projektowa
+  
+  #price
+  600 zł
+  :::
+
+  :::pricing-option
+  #title
+  Porada Projektowa z dokumentacją
+  
+  #price
+  1 200 zł
+  :::
+
+#infoText
+Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
+::

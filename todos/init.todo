@@ -168,10 +168,11 @@
 
 
 - Loader only on first page load
+- Menu Add FaceBook and Instagram links
+✔ Add newsletter Hubspot form @done(25-03-06 09:08)
+- Style Hubspot form?
 
-
-
-☐ Cenniki
+✔ Cenniki @done(25-03-06 09:03)
 - Add Proper links
 - Add OG Images
 - Add custom lines
@@ -179,7 +180,7 @@
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Add primary color to menu item if current page is the same as the link?
 - Ensure new pages have space for header - so the titles aren't cut off
-- Newsletter?
+✔ Newsletter? @done(25-03-06 09:10)
 - Web manifest
 - Add proper og images
 - Add canonical url

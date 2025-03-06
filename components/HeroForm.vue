@@ -11,6 +11,14 @@ defineSlots<{
   submitText?: (props: {}) => any;
   infoText?: (props: {}) => any;
 }>();
+// Form event handlers
+const handleFormLoad = () => {
+  // console.log('HubSpot form loaded successfully');
+};
+
+const handleFormError = (error: any) => {
+  console.error('HubSpot form error:', error);
+};
 </script>
 
 <template>
@@ -41,19 +49,21 @@ defineSlots<{
       <!-- Content Container -->
       <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8">
         <div class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16">
-          <!-- Left Column: Form Section -->
+          <!-- HubSpot Form -->
           <ClientOnly>
-            <ContactForm data-scroll-item data-scroll-animation="fadeUp" data-scroll-duration="1">
-              <template #title>
-                <slot name="title" mdc-unwrap="p" />
-              </template>
-              <template #description>
-                <slot name="description" mdc-unwrap="p" />
-              </template>
-              <template #submitText>
-                <slot name="submitText" mdc-unwrap="p" />
-              </template>
-            </ContactForm>
+            <HubspotForm
+              formId="4620c0d5-ee42-40e1-9558-b5c4ba031abc"
+              region="eu1"
+              @load="handleFormLoad"
+              @error="handleFormError"
+            />
+            <template #fallback>
+              <div class="animate-pulse">
+                <div class="h-12 bg-gray-200 rounded mb-4"></div>
+                <div class="h-12 bg-gray-200 rounded mb-4"></div>
+                <div class="h-12 bg-gray-200 rounded"></div>
+              </div>
+            </template>
           </ClientOnly>
 
           <!-- Right Column: Empty for background visibility -->

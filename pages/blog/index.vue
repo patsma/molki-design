@@ -2,7 +2,7 @@
   <main>
     <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="3" />
 
-    <SquareGrid contentType="blog" orderBy="date" orderDirection="DESC">
+    <!-- <SquareGrid contentType="blog" orderBy="date" orderDirection="DESC">
       <template #item="{ item }">
         <SquareGridItem
           :key="item._id || item.id"
@@ -16,7 +16,7 @@
           aspectRatio="aspect-[4/3]"
         />
       </template>
-    </SquareGrid>
+    </SquareGrid> -->
 
     <!-- Debug output -->
     <pre v-if="error" class="p-4 text-red-500">{{ error }}</pre>

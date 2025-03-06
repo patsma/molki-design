@@ -174,19 +174,20 @@
 ✔ Add Proper links @done(25-03-06 10:41)
 ✔ Menu Add FaceBook and Instagram links @done(25-03-06 11:57)
 ✔ Add Sync and edit from nuxt studio of footer information @done(25-03-06 11:58)
+
+- Add OG Images
+- Add primary color to menu item if current page is the same as the link?
+- Ensure new pages have space for header - so the titles aren't cut off
 - O Nas wywalic ramke, ma byc osobnym bytem
 - Add drawing animation to HeroPath partials
 - Kontakt - ostylowac formularze
 - Style Hubspot form?
 
 - Get Umow konsultacje link - client
-- Add OG Images
 - Add custom lines
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Loader only on first page load
-- Add primary color to menu item if current page is the same as the link?
-- Ensure new pages have space for header - so the titles aren't cut off
 - Web manifest
 - Add proper og images
 - Add canonical url

@@ -29,16 +29,6 @@ export default defineAppConfig({
           ],
         },
         {
-          label: 'Cenniki',
-          link: '/cenniki',
-          children: [
-            {
-              label: 'Projektowanie Wnętrz',
-              link: '/cenniki/projektowanie-wnetrz',
-            },
-          ],
-        },
-        {
           label: 'Realizacje',
           link: '/nasze-realizacje',
         },

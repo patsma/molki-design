@@ -1,5 +1,3 @@
-import { ref } from 'vue';
-import { useNuxtApp } from '#app';
 import { useElementBounding } from '@vueuse/core';
 import { useMobileDetection } from '~/composables/useMobileDetection';
 import { useThrottleFn } from '@vueuse/core';
@@ -37,7 +35,7 @@ export const useScrollHeader = () => {
     // Ensure header has correct height before pinning
     $gsap.set(headerRef.value, {
       height: headerHeight.value,
-      clearProps: 'all', // Clear all other properties
+      // clearProps: 'all', // Clear all other properties
     });
 
     // Pin the header

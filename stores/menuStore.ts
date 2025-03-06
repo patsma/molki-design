@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { gsap } from 'gsap';
 import { useAppConfig } from '#imports';
 
 // Define the ScrollTo options type

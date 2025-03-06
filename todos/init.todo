@@ -175,6 +175,7 @@
 ✔ Menu Add FaceBook and Instagram links @done(25-03-06 11:57)
 ✔ Add Sync and edit from nuxt studio of footer information @done(25-03-06 11:58)
 ✔ Add primary color to menu item if current page is the same as the link? @done(25-03-06 12:27)
+- Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 
 - Ensure new pages have space for header - so the titles aren't cut off
 - Add OG Images
@@ -186,7 +187,6 @@
 - Get Umow konsultacje link - client
 - Add custom lines
 - Add more HeroPath components variants - refactor so we can use different shapes
-- Fix mobile header appear disapear glitch headroom probably after FullWidthSliver
 - Loader only on first page load
 - Web manifest
 - Add proper og images

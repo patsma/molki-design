@@ -243,13 +243,23 @@ PREMIUM
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::
 
-::FullWidthButton
+
+
+
+::full-viewport-slider
 ---
-to: "/kontakt"
-color: "primary"
-background: "transparent"
-padding: "py-20"
-animate: true
+ctaLink: /buttons
 ---
+#slides-0
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Slide 1](/heroHome.jpg)
+  :::
+
+#slides-1
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Slide 2](/heroAbout.jpg)
+  :::
+
+#cta
 UMÓW KONSULTACJĘ
 ::

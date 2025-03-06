@@ -1,120 +1,81 @@
 <template>
-  <div class="grid gap-8 p-8">
-    <!-- Primary Buttons -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-semibold">Primary Buttons</h2>
+  <div class="p-6 space-y-8">
+    <h2 class="text-2xl font-bold mb-4">BaseButton Examples</h2>
+
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold">Button Types</h3>
       <div class="flex flex-wrap gap-4">
-        <!-- Default Primary -->
-        <button
-          class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-        >
-          Default Primary
-        </button>
+        <!-- Regular Button -->
+        <BaseButton @click="handleButtonClick"> Regular Button ({{ clickCount }}) </BaseButton>
 
-        <!-- Large Primary -->
-        <button
-          class="rounded-md bg-primary px-6 py-3 text-base font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-        >
-          Large Primary
-        </button>
+        <!-- Internal Link -->
+        <BaseButton to="/about"> Internal Link </BaseButton>
 
-        <!-- Small Primary -->
-        <button
-          class="rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-        >
-          Small Primary
-        </button>
+        <!-- External Link -->
+        <BaseButton href="https://nuxtjs.org" target="_blank"> External Link </BaseButton>
       </div>
     </div>
 
-    <!-- Secondary Buttons -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-semibold">Secondary Buttons</h2>
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold">Button Variants</h3>
       <div class="flex flex-wrap gap-4">
-        <!-- Default Secondary -->
-        <button
-          class="rounded-md bg-secondary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-        >
-          Default Secondary
-        </button>
+        <BaseButton variant="primary"> Primary </BaseButton>
 
-        <!-- Large Secondary -->
-        <button
-          class="rounded-md bg-secondary px-6 py-3 text-base font-medium text-neutral-100 transition-colors duration-200 hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-        >
-          Large Secondary
-        </button>
+        <BaseButton variant="secondary"> Secondary </BaseButton>
 
-        <!-- Small Secondary -->
-        <button
-          class="rounded-md bg-secondary px-3 py-1.5 text-xs font-medium text-neutral-100 transition-colors duration-200 hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-        >
-          Small Secondary
-        </button>
+        <BaseButton variant="text"> Text </BaseButton>
+
+        <BaseButton variant="outline"> Outline </BaseButton>
       </div>
     </div>
 
-    <!-- Outline Buttons -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-semibold">Outline Buttons</h2>
-      <div class="flex flex-wrap gap-4">
-        <!-- Primary Outline -->
-        <button
-          class="rounded-md border-2 border-primary px-4 py-2 text-sm font-medium text-primary transition-colors duration-200 hover:bg-primary hover:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-        >
-          Primary Outline
-        </button>
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold">Button Sizes</h3>
+      <div class="flex flex-wrap gap-4 items-center">
+        <BaseButton size="sm"> Small </BaseButton>
 
-        <!-- Secondary Outline -->
-        <button
-          class="rounded-md border-2 border-secondary px-4 py-2 text-sm font-medium text-secondary transition-colors duration-200 hover:bg-secondary hover:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-        >
-          Secondary Outline
-        </button>
+        <BaseButton size="md"> Medium </BaseButton>
+
+        <BaseButton size="lg"> Large </BaseButton>
       </div>
     </div>
 
-    <!-- Ghost Buttons -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-semibold">Ghost Buttons</h2>
-      <div class="flex flex-wrap gap-4">
-        <!-- Primary Ghost -->
-        <button
-          class="rounded-md px-4 py-2 text-sm font-medium text-primary transition-colors duration-200 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-        >
-          Primary Ghost
-        </button>
-
-        <!-- Secondary Ghost -->
-        <button
-          class="rounded-md px-4 py-2 text-sm font-medium text-secondary transition-colors duration-200 hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-        >
-          Secondary Ghost
-        </button>
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold">Full Width</h3>
+      <div class="w-full">
+        <BaseButton :full-width="true"> Full Width Button </BaseButton>
       </div>
     </div>
 
-    <!-- Disabled States -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-semibold">Disabled States</h2>
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold">Case Control</h3>
       <div class="flex flex-wrap gap-4">
-        <button
-          disabled
-          class="rounded-md bg-primary/50 px-4 py-2 text-sm font-medium text-neutral-100 cursor-not-allowed"
-        >
-          Disabled Primary
-        </button>
-        <button
-          disabled
-          class="rounded-md bg-secondary/50 px-4 py-2 text-sm font-medium text-neutral-100 cursor-not-allowed"
-        >
-          Disabled Secondary
-        </button>
+        <BaseButton> Default (Uppercase) </BaseButton>
+
+        <BaseButton :uppercase="false"> Lowercase/Normal Case </BaseButton>
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold">Disabled State</h3>
+      <div class="flex flex-wrap gap-4">
+        <BaseButton :disabled="true"> Disabled Button </BaseButton>
+
+        <BaseButton variant="secondary" :disabled="true"> Disabled Secondary </BaseButton>
+
+        <BaseButton to="/about" :disabled="true"> Disabled Link </BaseButton>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// No additional logic needed
+import { ref } from 'vue';
+import BaseButton from '~/components/BaseButton.vue';
+
+const clickCount = ref(0);
+
+const handleButtonClick = () => {
+  clickCount.value++;
+};
 </script>

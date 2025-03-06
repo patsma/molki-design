@@ -3,6 +3,7 @@ import { onMounted, onUnmounted } from 'vue';
 import { useMenuStore } from '@/stores/menuStore';
 import MainMenu from '~/components/MainMenu.vue';
 import Logo from '~/components/Logo.vue';
+import BaseButton from '~/components/BaseButton.vue';
 import { useScrollHeader } from '@/composables/useScrollHeader';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
@@ -66,11 +67,7 @@ onUnmounted(() => {
 
           <!-- CTA Button (Desktop) -->
           <div class="hidden xl:grid justify-end">
-            <button
-              class="rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            >
-              Umów konsultację
-            </button>
+            <BaseButton to="/kontakt"> Umów konsultację </BaseButton>
           </div>
         </div>
       </div>
@@ -81,11 +78,7 @@ onUnmounted(() => {
         <div class="h-full pt-24 breakout1 overflow-y-auto">
           <MainMenu :is-mobile="true" />
           <div class="mt-8 pb-8 mobile-menu-button">
-            <button
-              class="w-full rounded-md uppercase bg-primary px-4 py-2 text-sm font-medium text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            >
-              Umów konsultację
-            </button>
+            <BaseButton to="/kontakt" :full-width="true"> Umów konsultację </BaseButton>
           </div>
         </div>
       </div>

@@ -49,6 +49,20 @@ const handleFormError = (error: any) => {
       <!-- Content Container -->
       <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8">
         <div class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16">
+          <!-- Left Column: Form Section -->
+          <ClientOnly>
+            <ContactForm data-scroll-item data-scroll-animation="fadeUp" data-scroll-duration="1">
+              <template #title>
+                <slot name="title" mdc-unwrap="p" />
+              </template>
+              <template #description>
+                <slot name="description" mdc-unwrap="p" />
+              </template>
+              <template #submitText>
+                <slot name="submitText" mdc-unwrap="p" />
+              </template>
+            </ContactForm>
+          </ClientOnly>
           <!-- HubSpot Form -->
           <ClientOnly>
             <HubspotForm

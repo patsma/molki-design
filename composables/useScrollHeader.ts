@@ -4,6 +4,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ref } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 import { useMobileDetection } from '~/composables/useMobileDetection';
+import { useThrottleFn } from '@vueuse/core';
 
 export const useScrollHeader = () => {
   const headerRef = ref<HTMLElement | null>(null);
@@ -64,11 +65,7 @@ export const useScrollHeader = () => {
     ScrollTrigger.create({
       start: 0,
       end: 'max',
-      onUpdate: (self) => {
-        const now = Date.now();
-        if (now - lastCheck < 400) return;
-        lastCheck = now;
-
+      onUpdate: useThrottleFn((self) => {
         const smoother = ScrollSmoother.get();
         if (!smoother) return;
 
@@ -80,7 +77,7 @@ export const useScrollHeader = () => {
         } else if (direction < 0) {
           gsap.to(headerRef.value, { yPercent: 0, duration: 0.3 });
         }
-      },
+      }, 400), // Throttle to 400ms between executions
     });
   };
 

@@ -223,3 +223,173 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 #cta
 UMÓW KONSULTACJĘ
 ::
+
+::title-section
+---
+hasBackground: false
+---
+#title
+Cennik Usług Projektowych
+
+#subtitle
+Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoich potrzeb i budżetu.
+::
+
+::services-table
+---
+infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
+  należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna
+  kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych
+  pomieszczeń."
+---
+#services
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Inwentaryzacja
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Wyburzenia/zabudowy ścian
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Układ funkcjonalny z opisami
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Lista zakupów (materiałów, mebli, dodatków)
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Przyłącza wodno-kanalizacyjne
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Przyłącza do ogrzewania
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Projekt elektryki
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Projekt oświetlenia
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Projekt podłóg
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Projekt listew przypodłogowych, sztukaterii i karniszy
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Projekt sufitów (malowanie+dodatki)
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Projekt malowania ścian
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: true
+  premiumExec: true
+  premiumFunc: true
+  name: Układ mebli na wymiar
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: false
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: true
+  name: Projekt w 3D
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: false
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: true
+  name: Fotorealistyczne wizualizacje
+  ---
+  :::
+::

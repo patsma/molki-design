@@ -3,8 +3,8 @@ export default defineAppConfig({
     main: {
       items: [
         {
-          label: 'Usługi',
-          link: '#',
+          label: 'Nasze Usługi',
+          link: '/projekt-wnetrza',
           children: [
             {
               label: 'Projekt Wnętrza',
@@ -28,10 +28,7 @@ export default defineAppConfig({
             },
           ],
         },
-        {
-          label: 'Realizacje',
-          link: '/nasze-realizacje',
-        },
+
         {
           label: 'O nas',
           link: '/o-nas',

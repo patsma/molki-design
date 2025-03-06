@@ -1,3 +1,5 @@
+import { ref } from 'vue';
+import { useNuxtApp } from '#app';
 import { useElementBounding } from '@vueuse/core';
 import { useMobileDetection } from '~/composables/useMobileDetection';
 import { useThrottleFn } from '@vueuse/core';
@@ -9,161 +11,138 @@ export const useScrollHeader = () => {
   const { height: headerHeight } = useElementBounding(headerRef);
   const { isMobile } = useMobileDetection();
 
-  // Track header visibility state
-  const isHeaderVisible = ref(true);
-
-  let headerTrigger: any = null;
   let headerAnimation: any = null;
+  let ctx: any = null;
 
   const initScrollHeader = () => {
-    // console.log('🎯 Initializing scroll header');
-    if (!process.client || !headerRef.value) {
-      // console.log('⚠️ Header initialization skipped:', {
-      //   isClient: process.client,
-      //   hasHeaderRef: !!headerRef.value,
-      // });
-      return;
-    }
+    if (!process.client || !headerRef.value) return;
 
-    if (isMobile.value) {
-      // console.log('📱 Initializing mobile header');
-      initMobileHeader();
-      return;
-    }
+    // Clean up previous context if it exists
+    if (ctx) ctx.revert();
 
-    // console.log('🖥️ Initializing desktop header');
-    // Ensure header has correct height before pinning
+    // Create a fresh GSAP context for proper cleanup
+    ctx = $gsap.context(() => {
+      // Use different initialization based on device
+      if (isMobile.value) {
+        initMobileHeader();
+      } else {
+        initDesktopHeader();
+      }
+    });
+  };
+
+  const initDesktopHeader = () => {
+    if (!headerRef.value) return;
+
+    // Initial setup
     $gsap.set(headerRef.value, {
       height: headerHeight.value,
-      // clearProps: 'all', // Clear all other properties
+      top: 0,
+      y: 0,
+      yPercent: 0,
     });
 
-    // Pin the header
-    headerTrigger = $ScrollTrigger.create({
-      trigger: headerRef.value,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-      onRefresh: () => {
-        // Ensure header maintains correct height during refresh
-        $gsap.set(headerRef.value, { height: headerHeight.value });
-      },
-    });
-
-    // Create hide/show animation
+    // Create animation once and reuse it
     headerAnimation = $gsap
       .timeline({ paused: true })
-      .fromTo(
-        headerRef.value,
-        { yPercent: 0 },
-        { yPercent: -100, duration: 0.3, ease: 'power3.inOut' }
-      );
+      .to(headerRef.value, { yPercent: -100, duration: 0.3, ease: 'power2.inOut' });
 
-    // Create scroll listener
+    // Create scroll trigger for animation
     $ScrollTrigger.create({
       start: 0,
       end: 'max',
       onUpdate: useThrottleFn((self) => {
+        // Get smoother instance properly
         const smoother = $ScrollSmoother.get();
-        if (!smoother) return;
 
-        const scrollTop = smoother.scrollTop();
-        const direction = self.direction;
+        // Get scroll position from smoother if available
+        const scrollY = smoother ? smoother.scrollTop() : window.scrollY;
+        const velocity = Math.abs(self.getVelocity());
 
-        // Only trigger animations when state actually changes
-        if (direction > 0 && scrollTop > headerHeight.value && isHeaderVisible.value) {
-          isHeaderVisible.value = false;
-          // Ensure clean animation by killing any in-progress tweens
-          $gsap.killTweensOf(headerRef.value);
-          $gsap.to(headerRef.value, { yPercent: -100, duration: 0.3 });
-        } else if (direction < 0 && !isHeaderVisible.value) {
-          isHeaderVisible.value = true;
-          // Ensure clean animation by killing any in-progress tweens
-          $gsap.killTweensOf(headerRef.value);
-          $gsap.to(headerRef.value, { yPercent: 0, duration: 0.3 });
+        // Only animate when there's actual meaningful scrolling
+        if (velocity < 5) return;
+
+        if (self.direction > 0 && scrollY > headerHeight.value) {
+          // Scrolling down - hide header
+          if (!headerAnimation.progress() || headerAnimation.reversed()) {
+            headerAnimation.play();
+          }
+        } else if (self.direction < 0) {
+          // Scrolling up - show header
+          if (headerAnimation.progress() && !headerAnimation.reversed()) {
+            headerAnimation.reverse();
+          }
         }
-      }, 400), // Throttle to 400ms between executions
+      }, 300),
+    });
+
+    // Pin the header - ensure it's properly set up for ScrollSmoother
+    $ScrollTrigger.create({
+      trigger: headerRef.value,
+      start: 'top top',
+      end: 'max',
+      pin: true,
+      pinSpacing: false,
     });
   };
 
   const initMobileHeader = () => {
-    const header = headerRef.value;
-    if (!header) {
-      console.warn('⚠️ Header element not found');
-      return;
-    }
+    if (!headerRef.value) return;
 
-    // Reset visibility state
-    isHeaderVisible.value = true;
-
-    // Same setup as desktop
-    $gsap.set(header, {
-      top: 0,
+    // Initial setup
+    $gsap.set(headerRef.value, {
       height: headerHeight.value,
-      clearProps: 'all',
+      top: 0,
+      y: 0,
+      yPercent: 0,
     });
 
-    // Same pin configuration
-    headerTrigger = $ScrollTrigger.create({
-      trigger: header,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-      onRefresh: () => {
-        $gsap.set(header, { height: headerHeight.value });
-      },
-    });
+    // Create animation once and reuse it
+    headerAnimation = $gsap
+      .timeline({ paused: true })
+      .to(headerRef.value, { yPercent: -100, duration: 0.3, ease: 'power2.inOut' });
 
-    // Create animation timeline but don't use play/reverse approach
-    // This allows more control over the animation state
-    headerAnimation = $gsap.timeline({ paused: true });
-
-    // Modified scroll listener with improved state management
+    // Create scroll trigger for animation
     $ScrollTrigger.create({
       start: 0,
       end: 'max',
       onUpdate: useThrottleFn((self) => {
-        const scrollTop = window.scrollY;
-        const direction = self.direction;
+        const scrollY = window.scrollY;
+        const velocity = Math.abs(self.getVelocity());
+        const minScroll = Math.min(100, headerHeight.value);
 
-        // Minimum distance to scroll before toggling header
-        const minScrollThreshold = Math.min(100, headerHeight.value);
+        // Only animate when there's actual meaningful scrolling
+        if (velocity < 5) return;
 
-        // Only change header state when specific conditions are met
-        // This prevents rapid toggling when scrolling direction changes quickly
-        if (direction > 0 && scrollTop > minScrollThreshold) {
-          // Only hide if currently visible (prevents animation conflicts)
-          if (isHeaderVisible.value) {
-            isHeaderVisible.value = false;
-            // Kill any running animations first
-            $gsap.killTweensOf(header);
-            $gsap.to(header, { yPercent: -100, duration: 0.3, ease: 'power3.out' });
+        if (self.direction > 0 && scrollY > minScroll) {
+          // Scrolling down - hide header
+          if (!headerAnimation.progress() || headerAnimation.reversed()) {
+            headerAnimation.play();
           }
-        } else if (direction < 0) {
-          // Only show if currently hidden (prevents animation conflicts)
-          if (!isHeaderVisible.value) {
-            isHeaderVisible.value = true;
-            // Kill any running animations first
-            $gsap.killTweensOf(header);
-            $gsap.to(header, { yPercent: 0, duration: 0.3, ease: 'power3.out' });
+        } else if (self.direction < 0) {
+          // Scrolling up - show header
+          if (headerAnimation.progress() && !headerAnimation.reversed()) {
+            headerAnimation.reverse();
           }
         }
-      }, 400), // Throttle to 400ms between executions
+      }, 300),
+    });
+
+    // Pin the header
+    $ScrollTrigger.create({
+      trigger: headerRef.value,
+      start: 'top top',
+      end: 'max',
+      pin: true,
+      pinSpacing: false,
     });
   };
 
   const cleanup = () => {
-    if (headerTrigger) {
-      headerTrigger.kill();
-      headerTrigger = null;
-    }
-    if (headerAnimation) {
-      headerAnimation.kill();
-      headerAnimation = null;
+    // Let GSAP context handle all the cleanup
+    if (ctx) {
+      ctx.revert();
+      ctx = null;
     }
   };
 
@@ -172,6 +151,5 @@ export const useScrollHeader = () => {
     headerHeight,
     initScrollHeader,
     cleanup,
-    isHeaderVisible, // Expose the visibility state
   };
 };

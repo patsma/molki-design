@@ -118,11 +118,7 @@ export const useScrollHeader = () => {
     ScrollTrigger.create({
       start: 0,
       end: 'max',
-      onUpdate: (self) => {
-        const now = Date.now();
-        if (now - lastCheck < 400) return;
-        lastCheck = now;
-
+      onUpdate: useThrottleFn((self) => {
         const scrollTop = window.scrollY; // Use native scroll position
         const direction = self.direction;
 
@@ -131,7 +127,7 @@ export const useScrollHeader = () => {
         } else if (direction < 0) {
           headerAnimation?.reverse();
         }
-      },
+      }, 400), // Throttle to 400ms between executions
     });
   };
 

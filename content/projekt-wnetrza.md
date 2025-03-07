@@ -160,7 +160,7 @@ Poznaj etapy Procesu Projektowania
 
 ::project-grid
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 Od Koncepcji do Realizacji
@@ -400,7 +400,7 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
 Nowe Pomysły na Twoje Wnętrze
 
 #description
-Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](/buttons) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
+Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -438,15 +438,13 @@ Dodatkowe usługi projektowe
   :::
 
 #content
-**Konsultacja przedprojektowa** - 190 zł/h
+### Konsultacja przedprojektowa - 190 zł/h
+
 
 :br
 
+### [Dodatkowe Usługi]{.text-primary} - wyceny indywidualne
 :br
-
-:br
-
-[**Dodatkowe Usługi**]{.text-primary} - wyceny indywidualne
 
 - **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – prosimy o kontakt w celu omówienia szczegółów i wyceny.
 - **Doradztwo w zakresie wyboru materiałów i mebli** – stawka godzinowa

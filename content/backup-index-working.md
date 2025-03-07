@@ -14,7 +14,7 @@ seo:
 
 ::hero
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 Umów spotkanie
@@ -102,7 +102,7 @@ Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przes
 
 ::hero-interior
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -248,7 +248,7 @@ Poznaj etapy Procesu Projektowania
 
 ::project-grid
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 Od Koncepcji do Realizacji
@@ -259,7 +259,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 #projects
   :::project-grid-item
   ---
-  to: /buttons
+  to: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -275,7 +275,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /buttons
+  to: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -291,7 +291,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /buttons
+  to: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -311,7 +311,7 @@ UMÓW KONSULTACJĘ
 
 ::hero-projects
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -420,7 +420,7 @@ Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 
 ::item-card
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 Lorem ipsum dolor sit amet
@@ -439,7 +439,7 @@ Discover More →
 
 ::hero-business
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -462,7 +462,7 @@ Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 
 ::project-grid
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 Od Koncepcji do Realizacji
@@ -473,7 +473,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 #projects
   :::project-grid-item
   ---
-  to: /buttons
+  to: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -489,7 +489,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /buttons
+  to: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -505,7 +505,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
 
   :::project-grid-item
   ---
-  to: /buttons
+  to: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -672,7 +672,7 @@ Wszystkie przesłane dane są chronione zgodnie z naszą polityką prywatności.
 
 ::full-viewport-slider
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #slides-0
   :::parallax-img{.w-full.h-full.object-cover}

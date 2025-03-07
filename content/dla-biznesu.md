@@ -22,7 +22,7 @@ Oferujemy profesjonalne projektowanie wnętrz oraz kompleksowe remonty pod klucz
 
 ::project-grid
 ---
-cta-link: /buttons
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #projects
   :::project-grid-item
@@ -103,7 +103,7 @@ cta-link: /buttons
 
 ::full-viewport-slider
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 id: realizacje
 ---
 #slides-0

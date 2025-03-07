@@ -109,7 +109,7 @@ Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 
 ::item-card
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 BASIC
@@ -128,7 +128,7 @@ Sprawdź i dowiedz się wiecej.
 
 ::item-card
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 COMFORT
@@ -147,7 +147,7 @@ Sprawdź i dowiedz się wiecej.
 
 ::item-card
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 PREMIUM
@@ -242,7 +242,7 @@ PREMIUM
 
 ::full-viewport-slider
 ---
-ctaLink: /buttons
+ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #slides-0
   :::parallax-img{.w-full.h-full.object-cover}

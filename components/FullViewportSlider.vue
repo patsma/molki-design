@@ -20,7 +20,8 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   ctaText: 'UMÓW KONSULTACJĘ',
-  ctaLink: '/buttons',
+  ctaLink:
+    'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271',
   images: () => [],
 });
 

@@ -13,7 +13,7 @@
     </div>
 
     <!-- Content Section -->
-    <div class="content-grid py-16 bg-neutral-300">
+    <div class="content-grid py-16">
       <div class="breakout1">
         <!-- Title & Description -->
         <div class="mb-16">

@@ -22,7 +22,9 @@ import PricingOption from '~/components/PricingOption.vue';
 <template>
   <div class="content-grid">
     <div class="full-width">
-      <Hero ctaLink="/buttons">
+      <Hero
+        ctaLink="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+      >
         <template #heroImage>
           <ParallaxImg>
             <nuxt-img
@@ -107,7 +109,9 @@ import PricingOption from '~/components/PricingOption.vue';
         </template>
       </TeamMember>
 
-      <HeroInterior ctaLink="/buttons">
+      <HeroInterior
+        ctaLink="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+      >
         <template #heroImage>
           <ParallaxImg>
             <nuxt-img
@@ -212,7 +216,9 @@ import PricingOption from '~/components/PricingOption.vue';
         </template>
       </TitleSection>
 
-      <ItemCard ctaLink="/buttons">
+      <ItemCard
+        ctaLink="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+      >
         <template #image>
           <ParallaxImg>
             <nuxt-img src="/heroHome.jpg" alt="Card Image" class="parallax-content" format="webp" />
@@ -227,7 +233,9 @@ import PricingOption from '~/components/PricingOption.vue';
         <template #cta>Discover More →</template>
       </ItemCard>
 
-      <HeroBusiness ctaLink="/buttons">
+      <HeroBusiness
+        ctaLink="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+      >
         <template #heroImage>
           <ParallaxImg>
             <nuxt-img
@@ -256,7 +264,9 @@ import PricingOption from '~/components/PricingOption.vue';
       </HeroBusiness>
 
       <!-- Hero Projects Section -->
-      <HeroProjects ctaLink="/buttons">
+      <HeroProjects
+        ctaLink="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+      >
         <template #heroImage>
           <ParallaxImg>
             <nuxt-img
@@ -315,14 +325,18 @@ import PricingOption from '~/components/PricingOption.vue';
         </template>
       </HeroProjects>
 
-      <ProjectGrid ctaLink="/buttons">
+      <ProjectGrid
+        ctaLink="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+      >
         <template #title>Od Koncepcji do Realizacji</template>
         <template #subtitle
           >Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość</template
         >
 
         <template #projects>
-          <ProjectGridItem to="/buttons">
+          <ProjectGridItem
+            to="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+          >
             <template #image>
               <ParallaxImg>
                 <nuxt-img
@@ -340,7 +354,9 @@ import PricingOption from '~/components/PricingOption.vue';
             </template>
           </ProjectGridItem>
 
-          <ProjectGridItem to="/buttons">
+          <ProjectGridItem
+            to="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+          >
             <template #image>
               <ParallaxImg>
                 <nuxt-img
@@ -358,7 +374,9 @@ import PricingOption from '~/components/PricingOption.vue';
             </template>
           </ProjectGridItem>
 
-          <ProjectGridItem to="/buttons">
+          <ProjectGridItem
+            to="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+          >
             <template #image>
               <ParallaxImg>
                 <nuxt-img

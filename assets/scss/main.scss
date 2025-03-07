@@ -27,6 +27,24 @@ $phone: 768px;
 //   will-change: transform;
 // }
 
+/* Header height utility - only applied when the class is explicitly added */
+:root {
+  --header-height-mobile: 4rem; /* h-16 */
+  --header-height-desktop: 6rem; /* h-24 */
+  --header-height: var(--header-height-mobile);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: var(--header-height-desktop);
+  }
+}
+
+/* Class to apply header spacing when needed */
+.has-header-spacing {
+  padding-top: var(--header-height);
+}
+
 * {
   box-sizing: border-box;
   // margin: 0;

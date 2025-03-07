@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, watch } from 'vue';
 import { useMenuStore } from '@/stores/menuStore';
 import MainMenu from '~/components/MainMenu.vue';
 import Logo from '~/components/Logo.vue';
@@ -10,16 +10,48 @@ import { useAppConfig } from '#app';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
 const menuStore = useMenuStore();
-const { headerRef, initScrollHeader, cleanup } = useScrollHeader();
+const { headerRef, headerHeight, initScrollHeader, cleanup } = useScrollHeader();
 const appConfig = useAppConfig();
+
+// Update CSS variable when header height changes
+watch(headerHeight, (newHeight) => {
+  if (process.client) {
+    // Update the CSS variables with the actual measured height
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      document.documentElement.style.setProperty('--header-height-mobile', `${newHeight}px`);
+      document.documentElement.style.setProperty('--header-height', `${newHeight}px`);
+    } else {
+      document.documentElement.style.setProperty('--header-height-desktop', `${newHeight}px`);
+      document.documentElement.style.setProperty('--header-height', `${newHeight}px`);
+    }
+  }
+});
 
 onMounted(() => {
   if (process.client) {
-    // console.log('🎯 HeaderComponent mounted, headerRef:', headerRef.value);
     $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline');
 
     menuStore.initAnimation($gsap);
     initScrollHeader();
+
+    // Set initial header height
+    if (headerHeight.value > 0) {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        document.documentElement.style.setProperty(
+          '--header-height-mobile',
+          `${headerHeight.value}px`
+        );
+        document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
+      } else {
+        document.documentElement.style.setProperty(
+          '--header-height-desktop',
+          `${headerHeight.value}px`
+        );
+        document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
+      }
+    }
   }
 });
 
@@ -42,7 +74,6 @@ onUnmounted(() => {
             :class="{ 'is-active': menuStore.isMobileMenuOpen }"
             @click.prevent="
               () => {
-                // console.log('Hamburger clicked');
                 menuStore.toggleMenu();
               }
             "

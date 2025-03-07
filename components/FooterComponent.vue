@@ -43,6 +43,9 @@ menuStore.menuItems.forEach((item) => {
 const flatFirstHalf = tempItems.slice(0, Math.ceil(tempItems.length / 2));
 const flatSecondHalf = tempItems.slice(Math.ceil(tempItems.length / 2));
 
+// Helper function to check if an item has children
+const hasChildren = (item: any) => item.children && item.children.length > 0;
+
 // Expose year as a prop with a default computed value
 const props = withDefaults(
   defineProps<{

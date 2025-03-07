@@ -1,4 +1,6 @@
 <script setup>
+import { useHeaderSpacing } from '~/composables/useHeaderSpacing';
+
 const route = useRoute();
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug;
 
@@ -20,6 +22,9 @@ if (!data.value || error.value) {
     fatal: true,
   });
 }
+
+// Use header spacing composable
+const needsHeaderSpacing = useHeaderSpacing(data);
 
 // Format date for display
 const formattedDate = computed(() => {
@@ -56,7 +61,7 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
 </script>
 
 <template>
-  <main>
+  <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
     <div v-if="error" class="content-grid py-32">
       <div class="breakout1 text-center">
         <p class="text-xl text-red-500">{{ error }}</p>

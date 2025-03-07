@@ -1,4 +1,6 @@
 <script setup>
+import { useHeaderSpacing } from '~/composables/useHeaderSpacing';
+
 const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
 const swiperRef = ref(null);
@@ -25,6 +27,9 @@ if (!data.value) {
 // console.log('Project data:', data.value);
 // console.log('Markdown content:', data.value?.meta?.body?.value);
 
+// Use header spacing composable
+const needsHeaderSpacing = useHeaderSpacing(data);
+
 const ctaLink = computed(() => {
   if (data.value?.ctaLink) return data.value.ctaLink;
   if (data.value?.slug) return `/projects/${data.value.slug}`;
@@ -33,7 +38,7 @@ const ctaLink = computed(() => {
 </script>
 
 <template>
-  <main>
+  <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
     <div class="content-grid py-32">
       <div class="breakout1">
         <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center pb-14">

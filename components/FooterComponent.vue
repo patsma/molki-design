@@ -28,8 +28,20 @@ type AppConfig = {
 const typedConfig = appConfig as AppConfig;
 
 // Get menu items directly from store and split them
-const firstHalf = menuStore.menuItems.slice(0, Math.ceil(menuStore.menuItems.length / 2));
-const secondHalf = menuStore.menuItems.slice(Math.ceil(menuStore.menuItems.length / 2));
+// Create a flat array of all menu items (parents and children)
+const tempItems: any[] = [];
+menuStore.menuItems.forEach((item) => {
+  tempItems.push(item);
+  if (item.children && item.children.length > 0) {
+    item.children.forEach((child) => {
+      tempItems.push(child);
+    });
+  }
+});
+
+// Split the flat array in half
+const flatFirstHalf = tempItems.slice(0, Math.ceil(tempItems.length / 2));
+const flatSecondHalf = tempItems.slice(Math.ceil(tempItems.length / 2));
 
 // Expose year as a prop with a default computed value
 const props = withDefaults(
@@ -88,7 +100,7 @@ defineSlots<{
               <h4 class="text-sm font-bold text-primary">MENU</h4>
               <nav class="space-y-2">
                 <NuxtLink
-                  v-for="item in firstHalf"
+                  v-for="item in flatFirstHalf"
                   :key="item.label"
                   :to="item.link"
                   class="block text-neutral-600 hover:text-primary transition-colors"
@@ -117,7 +129,7 @@ defineSlots<{
             <h4 class="text-sm font-bold text-primary"></h4>
             <nav class="space-y-2">
               <NuxtLink
-                v-for="item in secondHalf"
+                v-for="item in flatSecondHalf"
                 :key="item.label"
                 :to="item.link"
                 class="block text-neutral-600 hover:text-primary transition-colors"

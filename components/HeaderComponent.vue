@@ -98,7 +98,10 @@ onUnmounted(() => {
               </NuxtLink>
             </div>
             <!-- CTA Button -->
-            <BaseButton to="/kontakt"> Umów konsultację </BaseButton>
+            <BaseButton
+              href="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+              >Umów Konstultacje</BaseButton
+            >
           </div>
         </div>
       </div>
@@ -109,7 +112,12 @@ onUnmounted(() => {
         <div class="h-full pt-24 breakout1 overflow-y-auto">
           <MainMenu :is-mobile="true" />
           <div class="mt-8 pb-8 mobile-menu-button">
-            <BaseButton to="/kontakt" :full-width="true"> Umów konsultację </BaseButton>
+            <BaseButton
+              href="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
+              full-width
+            >
+              Umów konsultację
+            </BaseButton>
 
             <!-- Mobile Social Media Links -->
             <div class="grid grid-flow-col gap-6 justify-center mt-8">

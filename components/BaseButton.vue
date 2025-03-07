@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from 'vue';
-
 /**
  * BaseButton component - A reusable button that can render as a button, internal link, or external link
  *
@@ -13,26 +11,58 @@ import { computed } from 'vue';
  */
 
 const props = defineProps({
-  // Link props
+  // NuxtLink props
   to: {
-    type: String,
+    type: [String, Object],
     default: '',
-    description: 'Route path for internal links (uses NuxtLink)',
   },
   href: {
     type: String,
     default: '',
-    description: 'URL for external links',
   },
   target: {
     type: String,
-    default: '_blank',
-    description: 'Target attribute for external links (default: _blank)',
+    default: '',
   },
   rel: {
     type: String,
-    default: 'noopener noreferrer',
-    description: 'Rel attribute for external links (default: noopener noreferrer)',
+    default: '',
+  },
+  noRel: {
+    type: Boolean,
+    default: false,
+  },
+  activeClass: {
+    type: String,
+    default: undefined,
+  },
+  exactActiveClass: {
+    type: String,
+    default: undefined,
+  },
+  replace: {
+    type: Boolean,
+    default: false,
+  },
+  ariaCurrentValue: {
+    type: String,
+    default: undefined,
+  },
+  external: {
+    type: Boolean,
+    default: false,
+  },
+  prefetch: {
+    type: Boolean,
+    default: undefined,
+  },
+  noPrefetch: {
+    type: Boolean,
+    default: false,
+  },
+  prefetchedClass: {
+    type: String,
+    default: undefined,
   },
 
   // Button styling props
@@ -40,128 +70,107 @@ const props = defineProps({
     type: String,
     default: 'primary',
     validator: (value) => ['primary', 'secondary', 'text', 'outline'].includes(value),
-    description: 'Button style variant',
   },
   size: {
     type: String,
     default: 'md',
     validator: (value) => ['sm', 'md', 'lg'].includes(value),
-    description: 'Button size',
   },
   fullWidth: {
     type: Boolean,
     default: false,
-    description: 'Whether the button should take full width',
   },
   uppercase: {
     type: Boolean,
     default: true,
-    description: 'Whether text should be uppercase',
   },
   disabled: {
     type: Boolean,
     default: false,
-    description: 'Whether the button is disabled',
   },
 });
 
 // Custom events
 const emit = defineEmits(['click']);
 
-// Determine component type based on props
-const is = computed(() => {
-  if (props.to) return 'NuxtLink';
-  if (props.href) return 'a';
-  return 'button';
-});
-
-// Computed properties for attributes
-const attributes = computed(() => {
-  const attrs = {};
-
-  if (is.value === 'a') {
-    attrs.href = props.href;
-    attrs.target = props.target;
-    attrs.rel = props.rel;
-  }
-
-  if (is.value === 'NuxtLink') {
-    attrs.to = props.to;
-  }
-
-  if (is.value === 'button') {
-    attrs.type = 'button';
-    attrs.disabled = props.disabled;
-  }
-
-  return attrs;
-});
-
-// Event handlers
-const onClick = (event) => {
+// Handle click events
+const handleClick = (event) => {
   if (props.disabled) {
     event.preventDefault();
     return;
   }
-
   emit('click', event);
 };
 
-// Class computation
-const buttonClasses = computed(() => {
-  const classes = [
-    // Base styles
-    'rounded-md',
-    'font-medium',
-    'transition-colors',
-    'duration-200',
-    'focus:outline-none',
-    'focus:ring-2',
-    'focus:ring-primary',
-    'focus:ring-offset-2',
+// Classes based on props
+const btnClasses = [
+  // Base styles
+  'rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
 
-    // Size variants
-    {
-      'px-3 py-1 text-xs': props.size === 'sm',
-      'px-4 py-2 text-sm': props.size === 'md',
-      'px-6 py-3 text-base': props.size === 'lg',
-    },
+  // Size variants
+  props.size === 'sm'
+    ? 'px-3 py-1 text-xs'
+    : props.size === 'lg'
+      ? 'px-6 py-3 text-base'
+      : 'px-4 py-2 text-sm',
 
-    // Width
-    { 'w-full': props.fullWidth },
+  // Width
+  props.fullWidth ? 'w-full grid text-center' : '',
 
-    // Text transform
-    { uppercase: props.uppercase },
+  // Text transform
+  props.uppercase ? 'uppercase' : '',
 
-    // Disabled state
-    { 'opacity-60 cursor-not-allowed': props.disabled },
+  // Disabled state
+  props.disabled ? 'opacity-60 cursor-not-allowed' : '',
 
-    // Variants
-    {
-      // Primary
-      'cursor-pointer bg-primary text-neutral-100 hover:bg-primary-dark':
-        props.variant === 'primary' && !props.disabled,
+  // Variants
+  !props.disabled &&
+    (props.variant === 'primary'
+      ? 'cursor-pointer bg-primary text-neutral-100 hover:bg-primary-dark'
+      : props.variant === 'secondary'
+        ? 'cursor-pointer bg-gray-200 text-gray-800 hover:bg-gray-300'
+        : props.variant === 'text'
+          ? 'cursor-pointer bg-transparent text-primary hover:text-primary-dark'
+          : 'cursor-pointer bg-transparent text-primary border border-primary hover:bg-primary hover:text-neutral-100'),
+];
 
-      // Secondary
-      'cursor-pointer bg-gray-200 text-gray-800 hover:bg-gray-300':
-        props.variant === 'secondary' && !props.disabled,
+// NuxtLink props that should be passed
+const nuxtLinkProps = {
+  to: props.to,
+  activeClass: props.activeClass,
+  exactActiveClass: props.exactActiveClass,
+  replace: props.replace,
+  ariaCurrentValue: props.ariaCurrentValue,
+  external: props.external,
+  prefetch: props.prefetch,
+  noPrefetch: props.noPrefetch,
+  prefetchedClass: props.prefetchedClass,
+  rel: props.rel,
+  noRel: props.noRel,
+  target: props.target,
+};
 
-      // Text
-      'cursor-pointer bg-transparent text-primary hover:text-primary-dark':
-        props.variant === 'text' && !props.disabled,
-
-      // Outline
-      'cursor-pointer bg-transparent text-primary border border-primary hover:bg-primary hover:text-neutral-100':
-        props.variant === 'outline' && !props.disabled,
-    },
-  ];
-
-  return classes;
-});
+// External link props
+const externalLinkProps = {
+  href: props.href,
+  target: props.target || '_blank',
+  rel: props.rel || (props.noRel ? undefined : 'noopener noreferrer'),
+};
 </script>
 
 <template>
-  <component :is="is" :class="buttonClasses" v-bind="attributes" @click="onClick">
+  <!-- Render as NuxtLink for internal routes -->
+  <NuxtLink v-if="to" v-bind="nuxtLinkProps" :class="btnClasses" @click="handleClick">
     <slot></slot>
-  </component>
+  </NuxtLink>
+
+  <!-- Render as anchor for external links -->
+  <a v-else-if="href" v-bind="externalLinkProps" :class="btnClasses" @click="handleClick">
+    <slot></slot>
+  </a>
+
+  <!-- Render as button by default -->
+  <button v-else type="button" :disabled="disabled" :class="btnClasses" @click="handleClick">
+    <slot></slot>
+  </button>
 </template>

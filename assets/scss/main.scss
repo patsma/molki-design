@@ -90,7 +90,8 @@ body {
     width: 100%;
   }
 }
-.nav .router-link-exact-active {
+.nav .router-link-exact-active,
+footer .router-link-exact-active {
   color: var(--color-primary);
 }
 .center-screen {

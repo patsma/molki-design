@@ -99,20 +99,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: [
-    '@nuxtjs/sitemap',
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@hypernym/nuxt-gsap',
-    '@pinia/nuxt',
-    '@nuxt/fonts',
-    '@vueuse/nuxt',
-    '@nuxt/image',
-    '@nuxt/icon',
-    'nuxt-swiper',
-    '@nuxtjs/seo',
-    '@dargmuesli/nuxt-cookie-control',
-  ],
+  modules: ['@nuxtjs/sitemap', '@hypernym/nuxt-gsap', '@pinia/nuxt', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/icon', 'nuxt-swiper', '@nuxtjs/seo', '@nuxt/content', '@dargmuesli/nuxt-cookie-control', '@nuxtjs/tailwindcss'],
 
   // Cookie control configuration
   cookieControl: {
@@ -326,13 +313,6 @@ export default defineNuxtConfig({
     experimental: {
       clientDB: true,
       stripQueryParameters: true,
-    },
-  },
-
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
     },
   },
 

@@ -1,0 +1,10 @@
+# Ignore all Markdown files
+*.md
+content/*.md
+**/*.md
+
+# Also ignore generated files
+.nuxt
+dist
+.output
+node_modules 

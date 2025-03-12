@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import { useHeaderSpacing } from '~/composables/useHeaderSpacing';
-
-const route = useRoute();
-
 // Request the page data
+const route = useRoute();
 const { data: page } = await useAsyncData('page-' + route.path, () => {
   return queryCollection('content').path(route.path).first();
 });
@@ -17,8 +14,26 @@ if (!page.value) {
   });
 }
 
-// Use the header spacing composable
-const needsHeaderSpacing = useHeaderSpacing(page);
+// Debug - log the complete page object to find where headerSpacing is stored
+console.log('FULL PAGE DATA:', JSON.parse(JSON.stringify(page.value)));
+
+// Get headerSpacing setting from meta
+const needsHeaderSpacing = computed(() => {
+  // Check if headerSpacing is explicitly set in frontmatter (in meta object)
+  if (page.value?.meta?.headerSpacing === false) {
+    console.log('headerSpacing is FALSE in frontmatter, no spacing');
+    return false;
+  }
+
+  if (page.value?.meta?.headerSpacing === true) {
+    console.log('headerSpacing is TRUE in frontmatter, adding spacing');
+    return true;
+  }
+
+  // Default (if not specified)
+  console.log('headerSpacing not specified in frontmatter, no spacing by default');
+  return false;
+});
 </script>
 
 <template>

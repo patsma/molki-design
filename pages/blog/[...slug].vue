@@ -23,8 +23,12 @@ if (!data.value || error.value) {
   });
 }
 
-// Use header spacing composable
-const needsHeaderSpacing = useHeaderSpacing(data);
+// Simply check if we need header spacing based on route
+const needsHeaderSpacing = computed(() => {
+  // Is this the homepage? If so, NEVER add spacing
+  const isHomePage = route.path === '/' || route.path === '';
+  return !isHomePage; // Add spacing for all pages except homepage
+});
 
 // Format date for display
 const formattedDate = computed(() => {

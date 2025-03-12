@@ -27,8 +27,12 @@ if (!data.value) {
 // console.log('Project data:', data.value);
 // console.log('Markdown content:', data.value?.meta?.body?.value);
 
-// Use header spacing composable
-const needsHeaderSpacing = useHeaderSpacing(data);
+// Simply check if we need header spacing based on route
+const needsHeaderSpacing = computed(() => {
+  // Is this the homepage? If so, NEVER add spacing
+  const isHomePage = route.path === '/' || route.path === '';
+  return !isHomePage; // Add spacing for all pages except homepage
+});
 
 const ctaLink = computed(() => {
   if (data.value?.ctaLink) return data.value.ctaLink;

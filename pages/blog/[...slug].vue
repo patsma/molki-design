@@ -1,6 +1,4 @@
 <script setup>
-import { useHeaderSpacing } from '~/composables/useHeaderSpacing';
-
 const route = useRoute();
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug;
 
@@ -23,11 +21,27 @@ if (!data.value || error.value) {
   });
 }
 
-// Simply check if we need header spacing based on route
+// Debug - log the complete data object to help debug headerSpacing
+console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));
+
+// Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {
-  // Is this the homepage? If so, NEVER add spacing
-  const isHomePage = route.path === '/' || route.path === '';
-  return !isHomePage; // Add spacing for all pages except homepage
+  // Check if headerSpacing is explicitly set in frontmatter (in meta object)
+  if (data.value?.meta?.headerSpacing === false) {
+    console.log('Blog: headerSpacing is FALSE in frontmatter, no spacing');
+    return false;
+  }
+
+  if (data.value?.meta?.headerSpacing === true) {
+    console.log('Blog: headerSpacing is TRUE in frontmatter, adding spacing');
+    return true;
+  }
+
+  // Default for blog pages is to ADD spacing if not specified
+  console.log(
+    'Blog: headerSpacing not specified in frontmatter, ADDING spacing by default for blog pages'
+  );
+  return true;
 });
 
 // Format date for display

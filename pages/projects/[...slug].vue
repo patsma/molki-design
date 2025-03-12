@@ -1,6 +1,4 @@
 <script setup>
-import { useHeaderSpacing } from '~/composables/useHeaderSpacing';
-
 const route = useRoute();
 const fullPath = `/projects/${route.params.slug.join('/')}`;
 const swiperRef = ref(null);
@@ -23,15 +21,27 @@ if (!data.value) {
   });
 }
 
-// Debug output
-// console.log('Project data:', data.value);
-// console.log('Markdown content:', data.value?.meta?.body?.value);
+// Debug - log the complete data object to help debug headerSpacing
+console.log('PROJECT DATA:', JSON.parse(JSON.stringify(data.value)));
 
-// Simply check if we need header spacing based on route
+// Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {
-  // Is this the homepage? If so, NEVER add spacing
-  const isHomePage = route.path === '/' || route.path === '';
-  return !isHomePage; // Add spacing for all pages except homepage
+  // Check if headerSpacing is explicitly set in frontmatter (in meta object)
+  if (data.value?.meta?.headerSpacing === false) {
+    console.log('Project: headerSpacing is FALSE in frontmatter, no spacing');
+    return false;
+  }
+
+  if (data.value?.meta?.headerSpacing === true) {
+    console.log('Project: headerSpacing is TRUE in frontmatter, adding spacing');
+    return true;
+  }
+
+  // Default for project pages is to ADD spacing if not specified
+  console.log(
+    'Project: headerSpacing not specified in frontmatter, ADDING spacing by default for project pages'
+  );
+  return true;
 });
 
 const ctaLink = computed(() => {

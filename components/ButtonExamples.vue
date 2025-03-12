@@ -9,7 +9,7 @@
         <BaseButton @click="handleButtonClick"> Regular Button ({{ clickCount }}) </BaseButton>
 
         <!-- Internal Link -->
-        <BaseButton to="/about"> Internal Link </BaseButton>
+        <BaseButton to="/o-nas"> Internal Link </BaseButton>
 
         <!-- External Link -->
         <BaseButton href="https://nuxtjs.org" target="_blank"> External Link </BaseButton>
@@ -63,7 +63,7 @@
 
         <BaseButton variant="secondary" :disabled="true"> Disabled Secondary </BaseButton>
 
-        <BaseButton to="/about" :disabled="true"> Disabled Link </BaseButton>
+        <BaseButton to="/o-nas" :disabled="true"> Disabled Link </BaseButton>
       </div>
     </div>
   </div>

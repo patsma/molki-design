@@ -240,8 +240,11 @@ export default defineNuxtConfig({
     },
   },
 
+  // Enhanced site configuration for SEO
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
+    description: 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia, Trójmiasto, Polska',
+    defaultLocale: 'pl',
   },
 });

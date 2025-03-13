@@ -35,27 +35,54 @@ const needsHeaderSpacing = computed(() => {
   return false;
 });
 
-// Set up simple SEO meta tags including OG image
+// Get the site config
+const siteConfig = useSiteConfig();
+
+// Get SEO data from the page content
+const pageTitle = computed(() => {
+  const content = page.value as any;
+  return content?.seo?.title || content?.title || siteConfig.name;
+});
+
+const pageDescription = computed(() => {
+  const content = page.value as any;
+  return (
+    content?.seo?.description ||
+    content?.description ||
+    'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia'
+  );
+});
+
+// Get image path and ensure it's an absolute URL
+const getAbsoluteImageUrl = (imagePath: string) => {
+  if (!imagePath) return `${siteConfig.url}/heroHome.jpg`;
+  return imagePath.startsWith('http') ? imagePath : `${siteConfig.url}${imagePath}`;
+};
+
+const ogImageUrl = computed(() => {
+  const content = page.value as any;
+  const imagePath = content?.seo?.image || content?.cover || '/heroHome.jpg';
+  return getAbsoluteImageUrl(imagePath);
+});
+
+// Set up SEO meta tags
 useSeoMeta({
   // Basic SEO
-  title: page.value?.title || 'Molki Design',
-  description:
-    page.value?.description || 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia',
+  title: pageTitle,
+  description: pageDescription,
 
   // Open Graph
-  ogTitle: page.value?.title || 'Molki Design',
-  ogDescription:
-    page.value?.description || 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia',
-  ogImage: page.value?.cover || '/heroHome.jpg', // Use page cover or default image
-  ogUrl: `https://molki-design-2025.netlify.app${route.path}`,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogImage: ogImageUrl,
+  ogUrl: `${siteConfig.url}${route.path}`,
   ogType: 'website',
-  ogSiteName: 'Molki Design',
+  ogSiteName: siteConfig.name,
 
   // Twitter
-  twitterTitle: page.value?.title || 'Molki Design',
-  twitterDescription:
-    page.value?.description || 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia',
-  twitterImage: page.value?.cover || '/heroHome.jpg',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: ogImageUrl,
   twitterCard: 'summary_large_image',
 });
 
@@ -67,7 +94,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://molki-design-2025.netlify.app${route.path}`,
+      href: `${siteConfig.url}${route.path}`,
     },
     {
       rel: 'icon',

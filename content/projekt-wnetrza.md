@@ -4,6 +4,7 @@ description: Projekty wnętrz i Porady projektow e | Gdańsk Sopot Gdynia,
   Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres
   usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz
   domów, mieszkań i wnętrz komercyjnych
+headerSpacing: true  
 seo:
   title: Molki Design
   description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,

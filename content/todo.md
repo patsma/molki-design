@@ -46,12 +46,12 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ❌ **Integracja Analityki**
   - ❌ Google Analytics 4
   - ❌ Google Tag Manager
-- ❌ **Newsletter**
+- ✅ **Newsletter**
   - ✅ Integracja z dostawcą (do ustalenia) - hubspot
   - ✅ Konfiguracja adresu odbiorczego - huspot
-- ❌ **Open Graph**
-  - ❌ Konfiguracja obrazów OG dla mediów społecznościowych
-  - ❌ Poprawne metadane dla udostępniania w mediach społecznościowych
+- ✅ **Open Graph**
+  - ✅ Konfiguracja obrazów OG dla mediów społecznościowych
+  - ✅ Poprawne metadane dla udostępniania w mediach społecznościowych
 
 ## 4. Wymogi Prawne
 
@@ -68,9 +68,9 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ✅ Podstawowe ikony społecznościowe
   - ✅ Niestandardowe ikony dekoracyjne z projektu
 - ✅ Favicony dla wszystkich urządzeń/przeglądarek
-- ❌ **Web Manifest**
-  - ❌ Konfiguracja pliku manifest.json
-  - ❌ Ustawienia kolorów i ikon dla urządzeń mobilnych
+- ✅ **Web Manifest**
+  - ✅ Konfiguracja pliku manifest.json
+  - ✅ Ustawienia kolorów i ikon dla urządzeń mobilnych
 
 ## 6. Dopracowanie Designu
 
@@ -105,8 +105,8 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ❌ Poprawki błędów
 - ✅ Strona 404
 - ✅ Naprawienie zachowania menu mobilnego
-- ❌ Konfiguracja Web Manifest
-- ❌ Implementacja obrazów OG
+- ✅ Konfiguracja Web Manifest
+- ✅ Implementacja obrazów OG
 - ✅ Dodanie wyróżnienia aktualnej strony w menu
 
 ## Wymagane Działania Klienta

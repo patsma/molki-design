@@ -1,88 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config';
 
-declare module '@nuxt/schema' {
-  interface NuxtConfig {
-    gsap?: {
-      composables?: boolean;
-      extraPlugins?: Record<string, boolean>;
-      clubPlugins?: Record<string, boolean>;
-    };
-    fonts?: {
-      families: Array<{
-        name: string;
-        provider?: string;
-        weights?: number[];
-        styles?: string[];
-        src?: Array<{
-          path: string;
-          weight: number;
-          style: string;
-          format: string;
-        }>;
-      }>;
-    };
-    content?: {
-      documentDriven?: boolean;
-      markdown?: {
-        toc?: {
-          depth?: number;
-          searchDepth?: number;
-        };
-        anchorLinks?: boolean;
-      };
-      renderer?: {
-        anchorLinks: boolean;
-      };
-      experimental?: {
-        clientDB: boolean;
-        stripQueryParameters: boolean;
-        advancedEditing: boolean;
-      };
-      navigation?: {
-        fields: string[];
-      };
-      preview?: {
-        port?: number;
-        host?: string;
-        api?: string;
-        dev?: boolean;
-      };
-      api?: {
-        baseURL?: string;
-      };
-      studio?: {
-        apiURL?: string;
-      };
-    };
-    swiper?: {
-      enableComposables?: boolean;
-      bundled?: boolean;
-    };
-    cookieControl?: {
-      barPosition?: string;
-      closeModalOnClickOutside?: boolean;
-      colors?: Record<string, string>;
-      cookieExpiryOffsetMs?: number;
-      cookieNameCookiesAccepted?: string;
-      cookieNameCookiesEnabledIds?: string;
-      cookies?: {
-        necessary?: Array<Record<string, any>>;
-        optional?: Array<Record<string, any>>;
-      };
-      isAcceptNecessaryButtonEnabled?: boolean;
-      isControlButtonEnabled?: boolean;
-      isModalForced?: boolean;
-      locales?: Array<string>;
-      locale?: string;
-      isCookieIdVisible?: boolean;
-      isTinyMCE?: boolean;
-      privacyLink?: string;
-      localeTexts?: Record<string, Record<string, string>>;
-    };
-  }
-}
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
@@ -180,7 +98,6 @@ export default defineNuxtConfig({
     },
     isControlButtonEnabled: false,
     isCookieIdVisible: true,
-    privacyLink: '/polityka-prywatnosci',
   },
 
   devServer: {
@@ -260,92 +177,18 @@ export default defineNuxtConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ['normal', 'italic'],
       },
+      // Use a simpler configuration for Spartan font
       {
         name: 'Spartan',
-        provider: 'none',
-        src: [
-          {
-            path: '/fonts/spartan/woff2/Spartan-Thin.woff2',
-            weight: 100,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-ExtraLight.woff2',
-            weight: 200,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-Light.woff2',
-            weight: 300,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-Regular.woff2',
-            weight: 400,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-Medium.woff2',
-            weight: 500,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-SemiBold.woff2',
-            weight: 600,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-Bold.woff2',
-            weight: 700,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-ExtraBold.woff2',
-            weight: 800,
-            style: 'normal',
-            format: 'woff2',
-          },
-          {
-            path: '/fonts/spartan/woff2/Spartan-Black.woff2',
-            weight: 900,
-            style: 'normal',
-            format: 'woff2',
-          },
-        ],
+        provider: 'none', // Don't use any provider, we'll handle it manually
       },
     ],
   },
 
   content: {
-    documentDriven: true,
+    // Only include the preview property which is likely supported in Nuxt Content v3
     preview: {
       api: 'https://api.nuxt.studio',
-      port: 3000,
-      host: '0.0.0.0',
-      dev: true,
-    },
-    renderer: {
-      anchorLinks: false,
-    },
-    studio: {
-      apiURL: 'https://api.nuxt.studio',
-      experimental: {
-        advancedEditing: true,
-      },
-    },
-    api: {
-      baseURL: '/api/_content',
-    },
-    experimental: {
-      clientDB: true,
-      stripQueryParameters: true,
     },
   },
 
@@ -400,12 +243,5 @@ export default defineNuxtConfig({
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
-  },
-
-  studio: {
-    // Force cache invalidation on each page load
-    devtools: {
-      enabled: true,
-    },
   },
 });

@@ -56,6 +56,11 @@ useHead({
       rel: 'canonical',
       href: `https://molki-design-2025.netlify.app${route.path}`,
     },
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: '/favicon.svg',
+    },
   ],
 });
 

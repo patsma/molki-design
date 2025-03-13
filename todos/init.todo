@@ -193,6 +193,6 @@
 - Add custom lines
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Loader only on first page load
-
+- Change projects to realizacje
 - Add RSS feed
 ☐ Robots.txt

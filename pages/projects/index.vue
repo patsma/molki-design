@@ -57,7 +57,7 @@ if (data.value) {
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (data.value?.meta?.headerSpacing === false) {
-    console.log('Projects Index: headerSpacing is FALSE in frontmatter, no spacing');
+    // console.log('Projects Index: headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 

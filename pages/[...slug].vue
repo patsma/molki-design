@@ -34,6 +34,43 @@ const needsHeaderSpacing = computed(() => {
   console.log('headerSpacing not specified in frontmatter, no spacing by default');
   return false;
 });
+
+// Set up simple SEO meta tags including OG image
+useSeoMeta({
+  // Basic SEO
+  title: page.value?.title || 'Molki Design',
+  description:
+    page.value?.description || 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia',
+
+  // Open Graph
+  ogTitle: page.value?.title || 'Molki Design',
+  ogDescription:
+    page.value?.description || 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia',
+  ogImage: page.value?.cover || '/heroHome.jpg', // Use page cover or default image
+  ogUrl: `https://molki-design-2025.netlify.app${route.path}`,
+  ogType: 'website',
+  ogSiteName: 'Molki Design',
+
+  // Twitter
+  twitterTitle: page.value?.title || 'Molki Design',
+  twitterDescription:
+    page.value?.description || 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia',
+  twitterImage: page.value?.cover || '/heroHome.jpg',
+  twitterCard: 'summary_large_image',
+});
+
+// Set HTML attributes and links
+useHead({
+  htmlAttrs: {
+    lang: 'pl',
+  },
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://molki-design-2025.netlify.app${route.path}`,
+    },
+  ],
+});
 </script>
 
 <template>

@@ -22,7 +22,46 @@ if (!data.value || error.value) {
 }
 
 // Debug - log the complete data object to help debug headerSpacing
-console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));
+// console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));
+
+// Set up simple SEO meta tags including OG image for blog posts
+useSeoMeta({
+  // Basic SEO
+  title: data.value?.title + ' | Molki Design Blog',
+  description: data.value?.excerpt || 'Blog Molki Design - projekty wnętrz i porady projektowe',
+
+  // Open Graph
+  ogTitle: data.value?.title,
+  ogDescription: data.value?.excerpt,
+  ogImage: data.value?.cover || '/heroHome.jpg',
+  ogUrl: `https://molki-design-2025.netlify.app${route.path}`,
+  ogType: 'article',
+  ogSiteName: 'Molki Design',
+
+  // Article specific meta (for blogs)
+  articlePublishedTime: data.value?.date,
+  articleAuthor: data.value?.author,
+  articleSection: data.value?.category,
+
+  // Twitter
+  twitterTitle: data.value?.title,
+  twitterDescription: data.value?.excerpt,
+  twitterImage: data.value?.cover || '/heroHome.jpg',
+  twitterCard: 'summary_large_image',
+});
+
+// Set HTML attributes and links
+useHead({
+  htmlAttrs: {
+    lang: 'pl',
+  },
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://molki-design-2025.netlify.app${route.path}`,
+    },
+  ],
+});
 
 // Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {

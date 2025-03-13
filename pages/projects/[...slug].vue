@@ -22,7 +22,42 @@ if (!data.value) {
 }
 
 // Debug - log the complete data object to help debug headerSpacing
-console.log('PROJECT DATA:', JSON.parse(JSON.stringify(data.value)));
+// console.log('PROJECT DATA:', JSON.parse(JSON.stringify(data.value)));
+
+// Set up simple SEO meta tags including OG image for project pages
+useSeoMeta({
+  // Basic SEO
+  title: `${data.value?.title} | ${data.value?.location} | Molki Design`,
+  description:
+    data.value?.subtitle || `Projekt ${data.value?.title} w ${data.value?.location} - Molki Design`,
+
+  // Open Graph
+  ogTitle: data.value?.title,
+  ogDescription: data.value?.subtitle,
+  ogImage: data.value?.cover || data.value?.images?.[0] || '/heroHome.jpg',
+  ogUrl: `https://molki-design-2025.netlify.app${route.path}`,
+  ogType: 'website',
+  ogSiteName: 'Molki Design',
+
+  // Twitter
+  twitterTitle: data.value?.title,
+  twitterDescription: data.value?.subtitle,
+  twitterImage: data.value?.cover || data.value?.images?.[0] || '/heroHome.jpg',
+  twitterCard: 'summary_large_image',
+});
+
+// Set HTML attributes and links
+useHead({
+  htmlAttrs: {
+    lang: 'pl',
+  },
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://molki-design-2025.netlify.app${route.path}`,
+    },
+  ],
+});
 
 // Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {

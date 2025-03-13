@@ -11,7 +11,6 @@ useHead({
 
 const menuStore = useMenuStore();
 const loaderStore = useLoaderStore();
-const cookieControl = ref(null);
 const appConfig = useAppConfig();
 
 // Handle page transitions
@@ -30,45 +29,24 @@ const initializeApp = () => {
   }
 };
 
-// Show cookie control with animation after page load
-const showCookieControl = () => {
-  if (!process.client || !cookieControl.value) return;
-
-  // Wait for the page to be fully loaded and loader to finish
-  const waitForLoader = () => {
-    if (loaderStore.isLoading) {
-      // If still loading, check again in 100ms
-      setTimeout(waitForLoader, 100);
-      return;
-    }
-
-    // Loader is finished, now animate the cookie control
-    $gsap.fromTo(
-      cookieControl.value,
-      {
-        opacity: 0,
-        y: 20, // Start slightly below final position
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 2, // Add delay after loader finishes
-      }
-    );
-  };
-
-  // Start checking if loader is finished
-  waitForLoader();
-};
-
 onMounted(() => {
   initializeApp();
-  showCookieControl();
+
+  // Simplest cookie banner animation - just one line of GSAP when ready
+  if (process.client) {
+    const interval = setInterval(() => {
+      if (!loaderStore.isLoading) {
+        clearInterval(interval);
+        setTimeout(() => {
+          // One line of GSAP - targeting by class, no refs
+          $gsap.to('.cookie-banner', { autoAlpha: 1, duration: 0.8, ease: 'power3.out' });
+        }, 2000);
+      }
+    }, 100);
+  }
 });
 
-// Watch for route changes
+
 </script>
 
 <template>
@@ -261,8 +239,8 @@ onMounted(() => {
 
       <!-- Cookie Control Banner -->
     </GSAPScrollSmoother>
-    <!-- Place cookie control outside ScrollSmoother to prevent interference -->
-    <div ref="cookieControl" class="grid opacity-0 fixed bottom-0 left-0 right-0 z-[100]">
+
+    <div class="cookie-banner fixed opacity-0 bottom-0 left-0 right-0 z-[100]">
       <CookieControl locale="pl" />
     </div>
   </div>

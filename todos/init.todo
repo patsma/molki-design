@@ -185,6 +185,7 @@
 ✔ Add canonical url @done(25-03-13 20:03)
 ✔ Check sitemap @done(25-03-13 20:04)
 ✔ Add OG Images @done(25-03-13 20:33)
+✔ Proper favicon web manifest @done(25-03-13 20:44)
 - O Nas wywalic ramke, ma byc osobnym bytem
 - Add drawing animation to HeroPath partials
 - Style Hubspot form?
@@ -194,4 +195,4 @@
 - Loader only on first page load
 
 - Add RSS feed
-- Robots.txt
+☐ Robots.txt

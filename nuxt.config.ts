@@ -99,7 +99,20 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ['@nuxtjs/sitemap', '@hypernym/nuxt-gsap', '@pinia/nuxt', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/icon', 'nuxt-swiper', '@nuxtjs/seo', '@nuxt/content', '@dargmuesli/nuxt-cookie-control', '@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@hypernym/nuxt-gsap',
+    '@pinia/nuxt',
+    '@nuxt/fonts',
+    '@vueuse/nuxt',
+    '@nuxt/image',
+    '@nuxt/icon',
+    'nuxt-swiper',
+    '@nuxtjs/seo',
+    '@nuxt/content',
+    '@dargmuesli/nuxt-cookie-control',
+    '@nuxtjs/tailwindcss',
+  ],
 
   // Cookie control configuration
   cookieControl: {
@@ -184,8 +197,28 @@ export default defineNuxtConfig({
           content:
             'Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania. Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać projekty, z których możemy być dumni.',
         },
+        // Theme color meta tag for mobile browsers
+        { name: 'theme-color', content: '#b76246' },
+        // Windows tile color
+        { name: 'msapplication-TileColor', content: '#b76246' },
       ],
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      link: [
+        // SVG favicon - primary choice for modern browsers
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+
+        // ICO favicon - for legacy browsers
+        { rel: 'icon', href: '/favicon.ico' },
+
+        // PNG fallback favicons for better compatibility
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+
+        // Apple Touch Icon for iOS devices
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+
+        // Web App Manifest
+        { rel: 'manifest', href: '/site.webmanifest' },
+      ],
     },
     pageTransition: {
       name: 'page',

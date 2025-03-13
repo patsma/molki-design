@@ -181,9 +181,11 @@
 ✔ Ensure text primary is added only to header items @done(25-03-07 16:19)
 ✔ Add all links to footer including children @done(25-03-12 18:42)
 ✔ Ensure new pages have space for header - so the titles aren't cut off @done(25-03-12 18:39)
-- Fix cookie banner advanced settings
-- O Nas wywalic ramke, ma byc osobnym bytem
+✔ Fix cookie banner advanced settings @done(25-03-13 20:00)
+✔ Add canonical url @done(25-03-13 20:03)
+✔ Check sitemap @done(25-03-13 20:04)
 - Add OG Images
+- O Nas wywalic ramke, ma byc osobnym bytem
 - Add drawing animation to HeroPath partials
 - Kontakt - ostylowac formularze
 - Style Hubspot form?
@@ -191,9 +193,6 @@
 - Add custom lines
 - Add more HeroPath components variants - refactor so we can use different shapes
 - Loader only on first page load
-- Web manifest
-- Add proper og images
-- Add canonical url
+
 - Add RSS feed
-- Check sitemap
 - Robots.txt

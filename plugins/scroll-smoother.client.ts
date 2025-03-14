@@ -230,6 +230,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const { $gsap } = useNuxtApp();
 
     // Show loader immediately and hide content
+    // TODO: comment out to hide the loader
     loaderStore.startLoading();
 
     // Handle ScrollSmoother after a small delay
@@ -249,6 +250,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const transitionTL = $gsap.timeline({
       onComplete: () => {
         $gsap.delayedCall(0.3, () => {
+          // TODO: comment out to hide the loader
           loaderStore.finishLoading();
         });
       },

@@ -88,7 +88,7 @@ To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
 
 ::team-member
 #section-title
-POZNAJMY SIĘ!
+TECHNOLOGIA I PROCESY
 
 #name
 Tomasz Godyński
@@ -111,40 +111,40 @@ To pozwala nam skalować nasze działania i osiągać coraz lepsze wyniki.
 #achievements
   :::achievement
   #title
-  +5 LAT
+  7+ lat
   
   #subtitle
-  Doświadczenia w projektowaniu wnętrz
+  Doświadczenia w zarządzaniu
   :::
 
   :::achievement
   #title
-  +12345m²
+  50+
   
   #subtitle
-  Wykończonych domów i mieszkań
+  Zoptymalizowanych procesów
   :::
 
   :::achievement
   #title
-  +12345
+  120+
   
   #subtitle
-  Zrealizowanych projektów
+  Wdrożonych rozwiązań technologicznych
   :::
 
   :::achievement
   #title
-  +12345
+  30%
   
   #subtitle
-  Zadowolonych klientów
+  Wzrost efektywności projektów
   :::
 ::
 
 ::team-member
 #section-title
-POZNAJMY SIĘ!
+PASJA PROJEKTOWANIA
 
 #name
 Martyna Kwiecińska
@@ -167,7 +167,7 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
 #achievements
   :::achievement
   #title
-  +5 LAT
+  6+ lat
   
   #subtitle
   Doświadczenia w projektowaniu wnętrz
@@ -175,15 +175,15 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
 
   :::achievement
   #title
-  +12345m²
+  8500+ m²
   
   #subtitle
-  Wykończonych domów i mieszkań
+  Zaprojektowanych przestrzeni
   :::
 
   :::achievement
   #title
-  +12345
+  85+
   
   #subtitle
   Zrealizowanych projektów
@@ -191,7 +191,7 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
 
   :::achievement
   #title
-  +12345
+  95%
   
   #subtitle
   Zadowolonych klientów
@@ -200,7 +200,7 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
 
 ::team-member
 #section-title
-POZNAJMY SIĘ!
+SPRAWNA ADMINISTRACJA
 
 #name
 Anna Kwiatek
@@ -223,40 +223,40 @@ Lubię, kiedy wszystko działa sprawnie i bez niespodzianek!
 #achievements
   :::achievement
   #title
-  +5 LAT
+  5+ lat
   
   #subtitle
-  Doświadczenia w projektowaniu wnętrz
+  Doświadczenia w administracji
   :::
 
   :::achievement
   #title
-  +12345m²
+  1000+
   
   #subtitle
-  Wykończonych domów i mieszkań
+  Przetworzonych dokumentów rocznie
   :::
 
   :::achievement
   #title
-  +12345
+  100%
   
   #subtitle
-  Zrealizowanych projektów
+  Terminowość realizacji zadań
   :::
 
   :::achievement
   #title
-  +12345
+  25%
   
   #subtitle
-  Zadowolonych klientów
+  Redukcja kosztów operacyjnych
   :::
 ::
 
 ::team-member
 #section-title
-POZNAJMY SIĘ!
+OBSŁUGA KLIENTA
 
 #name
 Agata Rybka
@@ -279,40 +279,40 @@ Możesz liczyć na otwartą komunikację i miłą atmosferę – zawsze dbam o t
 #achievements
   :::achievement
   #title
-  +5 LAT
+  4+ lat
   
   #subtitle
-  Doświadczenia w projektowaniu wnętrz
+  Doświadczenia w obsłudze klienta
   :::
 
   :::achievement
   #title
-  +12345m²
+  200+
   
   #subtitle
-  Wykończonych domów i mieszkań
+  Przygotowanych ofert
   :::
 
   :::achievement
   #title
-  +12345
+  98%
   
   #subtitle
-  Zrealizowanych projektów
+  Pozytywnych opinii klientów
   :::
 
   :::achievement
   #title
-  +12345
+  40+
   
   #subtitle
-  Zadowolonych klientów
+  Pozyskanych klientów
   :::
 ::
 
 ::team-member
 #section-title
-POZNAJMY SIĘ!
+ZARZĄDZANIE NAJMEM
 
 #name
 Patryk Bartelik
@@ -335,33 +335,33 @@ Wszystkie zadania wykonuję z pełnym zaangażowaniem i serdecznym uśmiechem.
 #achievements
   :::achievement
   #title
-  +5 LAT
+  5+ lat
   
   #subtitle
-  Doświadczenia w projektowaniu wnętrz
+  Doświadczenia w zarządzaniu najmem
   :::
 
   :::achievement
   #title
-  +12345m²
+  75+
   
   #subtitle
-  Wykończonych domów i mieszkań
+  Zarządzanych nieruchomości
   :::
 
   :::achievement
   #title
-  +12345
+  99%
   
   #subtitle
-  Zrealizowanych projektów
+  Bezproblemowych transakcji
   :::
 
   :::achievement
   #title
-  +12345
+  90%
   
   #subtitle
-  Zadowolonych klientów
+  Współczynnik przedłużenia umów
   :::
 ::

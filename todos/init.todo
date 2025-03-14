@@ -188,10 +188,10 @@
 ✔ Proper favicon web manifest @done(25-03-13 20:44)
 ✔ Change projects to realizacje @done(25-03-14 14:17)
 ✘ O Nas wywalic ramke, ma byc osobnym bytem @cancelled(25-03-14 15:41)
-- Add drawing animation to HeroPath partials
-- Style Hubspot form?
+✘ Add RSS feed @cancelled(25-03-14 16:11)
+✔ Add drawing animation to HeroPath partials @done(25-03-14 16:10)
+✔ Robots.txt @done(25-03-14 16:11)
 
-- Add more HeroPath components variants - refactor so we can use different shapes
-- Loader only on first page load
-- Add RSS feed
-☐ Robots.txt
+- Style Hubspot form?
+- Add more HeroPath components variants - refactor so we can use different shapes?
+- Loader only on first page load?

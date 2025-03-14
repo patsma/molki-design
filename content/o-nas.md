@@ -107,39 +107,6 @@ To pozwala nam skalować nasze działania i osiągać coraz lepsze wyniki.
   :::parallax-img{.w-full.h-full.object-cover}
   ![Tomasz Godyński - Prezes Zarządu](/team/tomasz-godynski.jpg)
   :::
-
-#achievements
-  :::achievement
-  #title
-  +5 LAT
-  
-  #subtitle
-  Doświadczenia w projektowaniu wnętrz
-  :::
-
-  :::achievement
-  #title
-  +12345m²
-  
-  #subtitle
-  Wykończonych domów i mieszkań
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zrealizowanych projektów
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zadowolonych klientów
-  :::
 ::
 
 ::team-member
@@ -164,38 +131,6 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
   ![Martyna Kwiecińska - Główna Projektantka](/team/martyna-kwiecinska.jpg)
   :::
 
-#achievements
-  :::achievement
-  #title
-  +5 LAT
-  
-  #subtitle
-  Doświadczenia w projektowaniu wnętrz
-  :::
-
-  :::achievement
-  #title
-  +12345m²
-  
-  #subtitle
-  Wykończonych domów i mieszkań
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zrealizowanych projektów
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zadowolonych klientów
-  :::
 ::
 
 ::team-member
@@ -220,38 +155,6 @@ Lubię, kiedy wszystko działa sprawnie i bez niespodzianek!
   ![Anna Kwiatek - Kierownik ds. administracji](/team/anna-kwiatek.jpg)
   :::
 
-#achievements
-  :::achievement
-  #title
-  +5 LAT
-  
-  #subtitle
-  Doświadczenia w projektowaniu wnętrz
-  :::
-
-  :::achievement
-  #title
-  +12345m²
-  
-  #subtitle
-  Wykończonych domów i mieszkań
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zrealizowanych projektów
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zadowolonych klientów
-  :::
 ::
 
 ::team-member
@@ -276,38 +179,6 @@ Możesz liczyć na otwartą komunikację i miłą atmosferę – zawsze dbam o t
   ![Agata Rybka - Asystentka Zarządu](/team/agata-rybka.jpg)
   :::
 
-#achievements
-  :::achievement
-  #title
-  +5 LAT
-  
-  #subtitle
-  Doświadczenia w projektowaniu wnętrz
-  :::
-
-  :::achievement
-  #title
-  +12345m²
-  
-  #subtitle
-  Wykończonych domów i mieszkań
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zrealizowanych projektów
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zadowolonych klientów
-  :::
 ::
 
 ::team-member
@@ -332,36 +203,4 @@ Wszystkie zadania wykonuję z pełnym zaangażowaniem i serdecznym uśmiechem.
   ![Patryk Bartelik - Spec. ds. Zarządzania Najmem](/team/patryk-bartelik.jpg)
   :::
 
-#achievements
-  :::achievement
-  #title
-  +5 LAT
-  
-  #subtitle
-  Doświadczenia w projektowaniu wnętrz
-  :::
-
-  :::achievement
-  #title
-  +12345m²
-  
-  #subtitle
-  Wykończonych domów i mieszkań
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zrealizowanych projektów
-  :::
-
-  :::achievement
-  #title
-  +12345
-  
-  #subtitle
-  Zadowolonych klientów
-  :::
 ::

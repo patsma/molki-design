@@ -3,6 +3,7 @@
     <svg viewBox="0 0 330 920" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         data-scroll-item
+        data-scroll-independent="true"
         data-scroll-animation="drawSVG"
         data-scroll-duration="2.5"
         data-scroll-delay="0.5"

@@ -203,7 +203,7 @@ export default defineNuxtConfig({
     bundled: true,
   },
 
-  plugins: ['~/plugins/hubspot.client.ts'],
+  plugins: ['~/plugins/hubspot.client.ts', '~/plugins/google-analytics.client.ts'],
 
   nitro: {
     prerender: {
@@ -229,6 +229,8 @@ export default defineNuxtConfig({
             'js-eu1.hs-analytics.net',
             'js-eu1.hs-banner.com',
             'js-eu1.hsforms.net',
+            '*.googletagmanager.com',
+            '*.google-analytics.com',
           ].join(' '),
         },
       },

@@ -78,7 +78,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ Efekty hover na przyciskach
 - ✅ Animacja ekranu ładowania
 - ✅ Animacja menu mobilnego
-- ❌ **Animacja Niestandardowych Linii** (Z projektu Figma)
+- ✅ **Animacja Niestandardowych Linii** (Z projektu Figma)
 - ✅ Stylizacja komunikatów walidacji formularza
 - ✅ **Poprawki menu mobilnego**
   - ✅ Naprawa zachowania ukrywania/pokazywania nagłówka
@@ -101,7 +101,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ✅ Edycji linków menu
   - ✅ Zarządzania treścią stopki∂
   - ✅ Tworzenia nowych stron
-- ❌ Animacje niestandardowych linii
+- ✅ Animacje niestandardowych linii
 - ❌ Poprawki błędów
 - ✅ Strona 404
 - ✅ Naprawienie zachowania menu mobilnego
@@ -137,11 +137,11 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 
 ## Harmonogram Uruchomienia
 
-- Ukończenie techniczne: 10-14 dni roboczych
+- Ukończenie techniczne: 7 dni roboczych
 - Okres przeglądu przez klienta: 2-3 dni
 - Finalne uruchomienie: 1 dzień po zatwierdzeniu
 
-*Ostatnia aktualizacja: 05.03.2025*
+*Ostatnia aktualizacja: 14.03.2025*
 
 ---
 

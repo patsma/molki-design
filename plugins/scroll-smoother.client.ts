@@ -1,21 +1,56 @@
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { SplitText } from 'gsap/SplitText';
 import { useMobileDetection } from '~/composables/useMobileDetection';
 import { useLoaderStore } from '@/stores/loaderStore';
 
+/**
+ * Scroll Smoother Plugin for Nuxt
+ *
+ * This plugin sets up smooth scrolling and scroll-based animations
+ * using the @hypernym/nuxt-gsap module.
+ *
+ * Features:
+ * - Uses Nuxt GSAP module's global instances via useNuxtApp()
+ * - Provides smooth scrolling for desktop devices
+ * - Falls back to native scrolling for mobile
+ * - Allows configuration via data attributes:
+ *   - data-scroll-section: Container for animations
+ *   - data-scroll-item: Element to animate
+ *   - data-scroll-animation: Animation type (fadeUp, fadeIn)
+ *   - data-scroll-order: Order of animation (number)
+ *   - data-scroll-delay: Delay before animation (seconds)
+ *   - data-scroll-duration: Duration of animation (seconds)
+ *   - data-scroll-stagger: Stagger between multiple elements (seconds)
+ *   - data-scroll-independent: Whether to animate independently (true/false)
+ *   - data-scroll-start: ScrollTrigger start position
+ *   - data-scroll-end: ScrollTrigger end position
+ *   - data-scroll-toggle: ScrollTrigger toggle actions
+ *
+ * Usage example in a component:
+ * <div data-scroll-section>
+ *   <h1 data-scroll-item data-scroll-animation="fadeUp">Title</h1>
+ *   <p data-scroll-item data-scroll-animation="fadeIn" data-scroll-order="1">Text</p>
+ * </div>
+ */
+
 export default defineNuxtPlugin((nuxtApp) => {
-  const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = nuxtApp;
   const { isMobile } = useMobileDetection();
   const loaderStore = useLoaderStore();
-  let scrollSmoother = null;
-  let animationContext = null;
+
+  // Use ref to track initialization state cleanly
+  const isInitialized = ref(false);
+
+  // Store references with proper typing using 'any' to avoid TypeScript errors
+  // We use 'any' here since the exact types from GSAP are complex and would add
+  // unnecessary verbosity to the code
+  let scrollSmoother: any = null;
+  let animationContext: any = null;
 
   // Register GSAP effects
   const registerEffects = () => {
+    const { $gsap } = useNuxtApp();
+
     $gsap.registerEffect({
       name: 'fadeIn',
-      effect: (targets, config) => {
+      effect: (targets: any, config: any) => {
         return $gsap.fromTo(
           targets,
           { opacity: 0 },
@@ -33,7 +68,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     $gsap.registerEffect({
       name: 'fadeUp',
-      effect: (targets, config) => {
+      effect: (targets: any, config: any) => {
         return $gsap.fromTo(
           targets,
           { opacity: 0, y: 50 },
@@ -51,8 +86,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
   };
 
+  // Set up scroll-based animations using data attributes
   const initSectionAnimations = () => {
-    // console.log('🎯 Initializing section animations');
+    const { $gsap } = useNuxtApp();
+
     const DEFAULT_SCROLL_START = 'top 80%';
     const DEFAULT_SCROLL_END = 'bottom 20%';
     const DEFAULT_TOGGLE_ACTIONS = 'play none none none';
@@ -60,7 +97,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     const ctx = $gsap.context(() => {
       document.querySelectorAll('[data-scroll-section]').forEach((section) => {
-        // console.log('📍 Found scroll section:', section);
         const sectionStart = section.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
         const sectionEnd = section.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
         const sectionToggleActions =
@@ -85,17 +121,11 @@ export default defineNuxtPlugin((nuxtApp) => {
         });
 
         orderedItems.forEach((item, index) => {
-          // console.log(
-          //   '🔄 Processing item:',
-          //   item,
-          //   'Animation type:',
-          //   item.getAttribute('data-scroll-animation')
-          // );
           const isIndependent = item.getAttribute('data-scroll-independent') === 'true';
           const animationType = item.getAttribute('data-scroll-animation') || 'fadeUp';
-          const duration = parseFloat(item.getAttribute('data-scroll-duration')) || 0.5;
-          const stagger = parseFloat(item.getAttribute('data-scroll-stagger')) || 0.1;
-          const delay = parseFloat(item.getAttribute('data-scroll-delay')) || 0;
+          const duration = parseFloat(item.getAttribute('data-scroll-duration') || '0.5') || 0.5;
+          const stagger = parseFloat(item.getAttribute('data-scroll-stagger') || '0.1') || 0.1;
+          const delay = parseFloat(item.getAttribute('data-scroll-delay') || '0') || 0;
 
           if (isIndependent) {
             const itemStart = item.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
@@ -118,7 +148,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           } else {
             const position = index === 0 ? 0 : GLOBAL_OVERLAP;
             const animation = $gsap.effects[animationType](item, { duration, stagger });
-            tl.add(animation, position + delay);
+            tl.add(animation, `${position}${delay > 0 ? '+=' + delay : ''}`);
           }
         });
       });
@@ -126,16 +156,19 @@ export default defineNuxtPlugin((nuxtApp) => {
     return ctx;
   };
 
+  // Initialize ScrollSmoother and animations
   const initScrollSmoother = () => {
-    if (window.__gsap_init) return;
-    window.__gsap_init = true;
+    // Prevent multiple initializations
+    if (isInitialized.value) return;
+    isInitialized.value = true;
 
-    // console.log('🚀 Initializing ScrollSmoother, isMobile:', isMobile.value);
-    $gsap.registerPlugin($ScrollTrigger, $ScrollSmoother, $SplitText);
+    const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = useNuxtApp();
+
+    // Register effects
     registerEffects();
 
     if (isMobile.value) {
-      // console.log('📱 Mobile detected - initializing native scroll');
+      // Mobile setup (native scroll)
       animationContext = initSectionAnimations();
       $gsap.delayedCall(0.1, () => {
         $ScrollTrigger.refresh(true);
@@ -144,12 +177,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       return;
     }
 
-    // Desktop setup
+    // Desktop setup (smooth scroll)
     const wrapper = document.querySelector('#smooth-wrapper');
     const content = document.querySelector('#smooth-content');
 
     if (wrapper && content) {
-      // console.log('🖥️ Creating ScrollSmoother instance');
+      // Create ScrollSmoother instance
       scrollSmoother = $ScrollSmoother.create({
         wrapper,
         content,
@@ -158,8 +191,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         normalizeScroll: true,
         touchMultiplier: 2,
         ignoreMobileResize: true,
-      });
+      } as any);
 
+      // Initialize animations after a short delay
       $gsap.delayedCall(0.1, () => {
         initSectionAnimations();
         $ScrollTrigger.refresh();
@@ -170,7 +204,9 @@ export default defineNuxtPlugin((nuxtApp) => {
   const resetEffects = () => {
     if (!scrollSmoother) return;
 
-    // console.log('🔄 Plugin: Resetting effects');
+    const { $gsap, $ScrollTrigger } = useNuxtApp();
+
+    // Reset elements with speed data attribute
     const elements = document.querySelectorAll('[data-speed]');
     elements.forEach((el) => {
       $gsap.set(el, {
@@ -179,18 +215,19 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
 
     $ScrollTrigger.refresh(true);
-    scrollSmoother.effects('[data-speed], [data-lag]', true);
+    scrollSmoother.effects('[data-speed], [data-lag]', {});
   };
 
-  // Initialize on plugin load
+  // Initialize on plugin load (client-side only)
   if (process.client) {
     initScrollSmoother();
   }
 
-  // Update the transition hooks with better timing
+  // Handle page transitions
   nuxtApp.hook('page:start', () => {
-    // console.log('🔄 [1] Page transition starting');
     if (!process.client) return;
+
+    const { $gsap } = useNuxtApp();
 
     // Show loader immediately and hide content
     loaderStore.startLoading();
@@ -198,7 +235,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     // Handle ScrollSmoother after a small delay
     $gsap.delayedCall(0.1, () => {
       if (scrollSmoother && !isMobile.value) {
-        // console.log('🔄 [2] Freezing ScrollSmoother');
         scrollSmoother.paused(true);
         $gsap.set(scrollSmoother, { scrollTop: 0 });
       }
@@ -206,12 +242,12 @@ export default defineNuxtPlugin((nuxtApp) => {
   });
 
   nuxtApp.hook('page:transition:finish', () => {
-    // console.log('🔄 [3] Page transition finished');
     if (!process.client) return;
+
+    const { $gsap, $ScrollTrigger } = useNuxtApp();
 
     const transitionTL = $gsap.timeline({
       onComplete: () => {
-        // console.log('🔄 [6] All transitions complete, hiding loader');
         $gsap.delayedCall(0.3, () => {
           loaderStore.finishLoading();
         });
@@ -229,7 +265,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     // Then handle animations with shorter delays
     transitionTL
       .add(() => {
-        // console.log('🔄 [4] Resetting effects and initializing animations');
         if (animationContext) {
           animationContext.revert();
         }
@@ -237,18 +272,17 @@ export default defineNuxtPlugin((nuxtApp) => {
         animationContext = initSectionAnimations();
       }, '+=0.1')
       .add(() => {
-        // console.log('🔄 [5] Refreshing ScrollTrigger');
         $ScrollTrigger.refresh(true);
       }, '+=0.1');
 
+    // Reset scroll position for mobile
     if (isMobile.value) {
       window.scrollTo(0, 0);
     }
   });
 
-  // Keep your existing cleanup code
-  nuxtApp.hook('app:unmount', () => {
-    delete window.__gsap_init;
+  // Clean up on unmount
+  onUnmounted(() => {
     if (scrollSmoother) {
       scrollSmoother.kill();
     }
@@ -257,7 +291,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
   });
 
-  // Provide methods to components
+  // Provide ScrollSmoother to components
   return {
     provide: {
       smoothScroller: {

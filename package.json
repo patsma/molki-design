@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@dargmuesli/nuxt-cookie-control": "^8.5.4",
-    "@hypernym/nuxt-gsap": "^2.4.2",
+    "@hypernym/nuxt-gsap": "^2.4.3",
     "@iconify-json/ic": "^1.2.2",
     "@iconify-json/uil": "^1.2.3",
     "@nuxt/content": "^3.3.0",

@@ -115,9 +115,9 @@ export default defineNuxtConfig({
             'Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania. Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać projekty, z których możemy być dumni.',
         },
         // Theme color meta tag for mobile browsers
-        { name: 'theme-color', content: '#b76246' },
+        { name: 'theme-color', content: '#ffffff' },
         // Windows tile color
-        { name: 'msapplication-TileColor', content: '#b76246' },
+        { name: 'msapplication-TileColor', content: '#ffffff' },
       ],
       link: [
         // SVG favicon - primary choice for modern browsers

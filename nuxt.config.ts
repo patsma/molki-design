@@ -168,6 +168,7 @@ export default defineNuxtConfig({
       morphSvg: true, // Note the lowercase 'svg'
       splitText: true,
       scrollSmoother: true, // Add ScrollSmoother as a club plugin
+      drawSvg: true, // Add DrawSVG plugin for SVG path animations (lowercase 'svg')
     },
   },
 

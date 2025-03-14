@@ -84,6 +84,28 @@ export default defineNuxtPlugin((nuxtApp) => {
       defaults: { duration: 0.5, stagger: 0 },
       extendTimeline: true,
     });
+
+    // Add DrawSVG effect for animating SVG paths
+    $gsap.registerEffect({
+      name: 'drawSVG',
+      effect: (targets: any, config: any) => {
+        // DrawSVG is properly imported through the Nuxt GSAP plugin
+        // Create the animation directly
+        return $gsap.fromTo(
+          targets,
+          { drawSVG: config.from || '0%' },
+          {
+            drawSVG: config.to || '100%',
+            duration: config.duration || 1,
+            ease: config.ease || 'power2.inOut',
+            stagger: config.stagger || 0,
+            delay: config.delay || 0,
+          }
+        );
+      },
+      defaults: { duration: 1, ease: 'power2.inOut', from: '0%', to: '100%', stagger: 0, delay: 0 },
+      extendTimeline: true,
+    });
   };
 
   // Set up scroll-based animations using data attributes

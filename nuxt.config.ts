@@ -246,5 +246,6 @@ export default defineNuxtConfig({
     name: 'Molki Design',
     description: 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia, Trójmiasto, Polska',
     defaultLocale: 'pl',
+    image: '/og-image.jpg',
   },
 });

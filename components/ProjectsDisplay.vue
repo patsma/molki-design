@@ -51,7 +51,7 @@ const { data: projects } = await useAsyncData('projects-display', async () => {
             <SquareGridItem
               v-for="project in projects"
               :key="project.id"
-              :to="`/projects/${project.slug}`"
+              :to="`/realizacje/${project.slug}`"
               :image="project.cover"
               :title="project.title"
               :number="project.number"

@@ -10,12 +10,12 @@ images:
   - /projectItem2 .jpg
   - /heroAbout.jpg
 ctaText: ZOBACZ WIĘCEJ
-ctaLink: /projects
+ctaLink: /realizacje
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
 
-Here's a [link to our process](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271) that [shows](/projects) how we work.
+Here's a [link to our process](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271) that [shows](/realizacje) how we work.
 
 ## Key Features
 

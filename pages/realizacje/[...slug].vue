@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute();
-const fullPath = `/projects/${route.params.slug.join('/')}`;
+const fullPath = `/realizacje/${route.params.slug.join('/')}`;
 const swiperRef = ref(null);
 
 const { data } = await useAsyncData(`project-${route.path}`, async () => {
@@ -86,8 +86,8 @@ const needsHeaderSpacing = computed(() => {
 
 const ctaLink = computed(() => {
   if (data.value?.ctaLink) return data.value.ctaLink;
-  if (data.value?.slug) return `/projects/${data.value.slug}`;
-  return '/projects';
+  if (data.value?.slug) return `/realizacje/${data.value.slug}`;
+  return '/realizacje';
 });
 </script>
 

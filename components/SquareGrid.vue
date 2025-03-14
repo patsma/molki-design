@@ -48,13 +48,12 @@ const { data: items } = await useAsyncData(`${props.contentType}-grid`, async ()
 </script>
 
 <template>
-  <section class="py-16" data-scroll-section>
+  <section class="py-10" data-scroll-section>
     <div class="content-grid">
       <div class="breakout1">
         <!-- Title and Subtitle -->
-        <div class="text-center mb-16">
+        <div v-if="$slots.title" class="text-center mb-16">
           <h2
-            v-if="$slots.title"
             class="h2-style font-semibold text-primary mb-4"
             data-scroll-item
             data-scroll-animation="fadeUp"

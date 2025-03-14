@@ -1,6 +1,6 @@
 <template>
   <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
-    <TitleSection>
+    <TitleSection class="md:!py-10">
       <template #title>Nasze Realizacje</template>
       <template #subtitle>Zobacz wszystkie nasze projekty</template>
     </TitleSection>
@@ -9,7 +9,7 @@
       <template #item="{ item }">
         <SquareGridItem
           :key="item.id"
-          :to="`/projects/${item.slug}`"
+          :to="`/realizacje/${item.slug}`"
           :number="item.number"
           :title="item.title"
           :location="item.location"
@@ -50,25 +50,25 @@ const { data } = await useAsyncData('projects-index', async () => {
 
 // Debug - log data if available
 if (data.value) {
-  console.log('PROJECTS INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
+  console.log('REALIZACJE INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
 }
 
 // Get headerSpacing setting from meta if available
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (data.value?.meta?.headerSpacing === false) {
-    // console.log('Projects Index: headerSpacing is FALSE in frontmatter, no spacing');
+    // console.log('Realizacje Index: headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 
   if (data.value?.meta?.headerSpacing === true) {
-    console.log('Projects Index: headerSpacing is TRUE in frontmatter, adding spacing');
+    console.log('Realizacje Index: headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
-  // Default for projects index is to ADD spacing if not specified
+  // Default for realizacje index is to ADD spacing if not specified
   console.log(
-    'Projects Index: headerSpacing not specified in frontmatter, ADDING spacing by default'
+    'Realizacje Index: headerSpacing not specified in frontmatter, ADDING spacing by default'
   );
   return true;
 });

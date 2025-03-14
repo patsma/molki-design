@@ -28,7 +28,6 @@ export default defineAppConfig({
             },
           ],
         },
-
         {
           label: 'O nas',
           link: '/o-nas',

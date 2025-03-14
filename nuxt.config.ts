@@ -6,6 +6,8 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/projects': { redirect: '/realizacje' },
+    '/projects/**': { redirect: '/realizacje/**' },
     '/**': {
       prerender: true,
       index: false,

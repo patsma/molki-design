@@ -72,7 +72,8 @@ export default defineNuxtConfig({
           name: 'Analityka',
           description:
             'Te pliki cookie pomagają nam zrozumieć, w jaki sposób użytkownicy korzystają z naszej strony, co pozwala nam poprawić jej funkcjonalność.',
-          targetCookieIds: ['_ga', '_gid', '_gat'],
+          targetCookieIds: ['_ga', '_gid', '_gat', 'ga-gtag'],
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-242W7FGX6K',
         },
         {
           id: 'mkt',

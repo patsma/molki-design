@@ -21,17 +21,17 @@ if (!page.value) {
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (page.value?.meta?.headerSpacing === false) {
-    console.log('headerSpacing is FALSE in frontmatter, no spacing');
+    // console.log('headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 
   if (page.value?.meta?.headerSpacing === true) {
-    console.log('headerSpacing is TRUE in frontmatter, adding spacing');
+    // console.log('headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
   // Default (if not specified)
-  console.log('headerSpacing not specified in frontmatter, no spacing by default');
+  // console.log('headerSpacing not specified in frontmatter, no spacing by default');
   return false;
 });
 

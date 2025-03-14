@@ -68,19 +68,19 @@ useHead({
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (data.value?.meta?.headerSpacing === false) {
-    console.log('Project: headerSpacing is FALSE in frontmatter, no spacing');
+    // console.log('Project: headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 
   if (data.value?.meta?.headerSpacing === true) {
-    console.log('Project: headerSpacing is TRUE in frontmatter, adding spacing');
+    // console.log('Project: headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
   // Default for project pages is to ADD spacing if not specified
-  console.log(
-    'Project: headerSpacing not specified in frontmatter, ADDING spacing by default for project pages'
-  );
+  // console.log(
+  //   'Project: headerSpacing not specified in frontmatter, ADDING spacing by default for project pages'
+  // );
   return true;
 });
 

@@ -62,14 +62,14 @@ const needsHeaderSpacing = computed(() => {
   }
 
   if (data.value?.meta?.headerSpacing === true) {
-    console.log('Realizacje Index: headerSpacing is TRUE in frontmatter, adding spacing');
+    // console.log('Realizacje Index: headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
   // Default for realizacje index is to ADD spacing if not specified
-  console.log(
-    'Realizacje Index: headerSpacing not specified in frontmatter, ADDING spacing by default'
-  );
+  // console.log(
+  //   'Realizacje Index: headerSpacing not specified in frontmatter, ADDING spacing by default'
+  // );
   return true;
 });
 </script>

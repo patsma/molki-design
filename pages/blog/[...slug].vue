@@ -72,19 +72,19 @@ useHead({
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (data.value?.meta?.headerSpacing === false) {
-    console.log('Blog: headerSpacing is FALSE in frontmatter, no spacing');
+    // console.log('Blog: headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 
   if (data.value?.meta?.headerSpacing === true) {
-    console.log('Blog: headerSpacing is TRUE in frontmatter, adding spacing');
+    // console.log('Blog: headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
   // Default for blog pages is to ADD spacing if not specified
-  console.log(
-    'Blog: headerSpacing not specified in frontmatter, ADDING spacing by default for blog pages'
-  );
+  // console.log(
+  //   'Blog: headerSpacing not specified in frontmatter, ADDING spacing by default for blog pages'
+  // );
   return true;
 });
 

@@ -33,6 +33,10 @@ export default defineAppConfig({
           link: '/o-nas',
         },
         {
+          label: 'Realizacje',
+          link: '/realizacje',
+        },
+        {
           label: 'Blog',
           link: '/blog',
         },

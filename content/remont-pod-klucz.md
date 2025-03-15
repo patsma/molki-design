@@ -11,6 +11,9 @@ seo:
     Trójmiasto, Polska – molki design to studio projektowe oferujące pełen
     zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu
     wnętrz domów, mieszkań i wnętrz komercyjnych
+  ogTitle: Remont pod Klucz
+  ogDescription: Wybierz wariant dopasowany do Twoich potrzeb
+  ogImage: /heroProjects.jpg
 ---
 
 ::hero-projects

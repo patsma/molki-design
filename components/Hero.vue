@@ -23,7 +23,7 @@ defineProps<{
       </div>
 
       <!-- SVG Accent Shape -->
-      <div class="absolute bottom-0 left-0 overflow-hidden">
+      <div class="absolute bottom-0 left-0 overflow-hidden pointer-events-none">
         <HeroPath class="h-screen" />
       </div>
 

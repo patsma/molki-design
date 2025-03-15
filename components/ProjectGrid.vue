@@ -30,7 +30,14 @@ defineProps<{
         </div>
 
         <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-16" v-if="$slots.projects">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 overflow-hidden relative gap-8 md:gap-12 mb-16"
+          v-if="$slots.projects"
+        >
+          <!-- SVG Accent Shape -->
+          <div class="absolute -top-1/3 left-0 overflow-hidden z-10 pointer-events-none">
+            <HeroPath4 class="h-screen" />
+          </div>
           <slot name="projects" />
         </div>
 

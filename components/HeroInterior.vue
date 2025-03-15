@@ -24,8 +24,8 @@ defineProps<{
       </div>
 
       <!-- SVG Accent Shape -->
-      <div class="absolute top-1/2 -left-10 overflow-hidden">
-        <HeroPath class="h-screen" />
+      <div class="absolute top-[80%] right-0 overflow-hidden pointer-events-none">
+        <HeroPath3 class="h-screen" />
       </div>
 
       <!-- Content Container -->

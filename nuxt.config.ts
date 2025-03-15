@@ -34,6 +34,11 @@ export default defineNuxtConfig({
     'nuxt-og-image',
   ],
 
+  ogImage: {
+    defaults: {
+      component: 'Custom',
+    },
+  },
   // Cookie control configuration
   cookieControl: {
     barPosition: 'bottom-full',

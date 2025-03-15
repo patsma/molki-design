@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
+import { asOgImageCollection } from 'nuxt-og-image/content';
 import { asSitemapCollection } from '@nuxtjs/sitemap/content';
 
 export default defineContentConfig({
@@ -39,10 +40,12 @@ export default defineContentConfig({
       })
     ),
     content: defineCollection(
-      asSitemapCollection({
-        type: 'page',
-        source: '**/*.md',
-      })
+      asSitemapCollection(
+        asOgImageCollection({
+          type: 'page',
+          source: '**/*.md',
+        })
+      )
     ),
   },
 });

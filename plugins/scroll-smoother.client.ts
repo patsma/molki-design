@@ -217,9 +217,22 @@ export default defineNuxtPlugin((nuxtApp) => {
 
       // Initialize animations after a short delay
       $gsap.delayedCall(0.1, () => {
-        initSectionAnimations();
+        animationContext = initSectionAnimations();
         $ScrollTrigger.refresh();
       });
+    }
+  };
+
+  // Safely clean up ScrollTrigger and ScrollSmoother instances
+  const cleanupAnimations = () => {
+    if (scrollSmoother) {
+      scrollSmoother.kill();
+      scrollSmoother = null;
+    }
+
+    if (animationContext) {
+      animationContext.revert();
+      animationContext = null;
     }
   };
 
@@ -237,7 +250,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
 
     $ScrollTrigger.refresh(true);
-    scrollSmoother.effects('[data-speed], [data-lag]', {});
+    if (scrollSmoother && typeof scrollSmoother.effects === 'function') {
+      scrollSmoother.effects('[data-speed], [data-lag]', {});
+    }
   };
 
   // Initialize on plugin load (client-side only)
@@ -252,14 +267,18 @@ export default defineNuxtPlugin((nuxtApp) => {
     const { $gsap } = useNuxtApp();
 
     // Show loader immediately and hide content
-    // TODO: comment out to hide the loader
     loaderStore.startLoading();
 
     // Handle ScrollSmoother after a small delay
     $gsap.delayedCall(0.1, () => {
       if (scrollSmoother && !isMobile.value) {
-        scrollSmoother.paused(true);
-        $gsap.set(scrollSmoother, { scrollTop: 0 });
+        // scrollSmoother.paused(true);
+
+        try {
+          $gsap.set(scrollSmoother, { scrollTop: 0 });
+        } catch (error) {
+          console.warn('Could not set scrollTop on ScrollSmoother:', error);
+        }
       }
     });
   });
@@ -272,7 +291,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     const transitionTL = $gsap.timeline({
       onComplete: () => {
         $gsap.delayedCall(0.3, () => {
-          // TODO: comment out to hide the loader
           loaderStore.finishLoading();
         });
       },
@@ -305,15 +323,19 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
   });
 
-  // Clean up on unmount
-  onUnmounted(() => {
-    if (scrollSmoother) {
-      scrollSmoother.kill();
+  // Instead of using onUnmounted, use window events for cleanup
+  if (process.client) {
+    // Clean up when the page is unloaded (e.g., navigation away or refresh)
+    window.addEventListener('beforeunload', cleanupAnimations);
+
+    // For hot module reloading during development
+    if (import.meta.hot) {
+      import.meta.hot.dispose(() => {
+        cleanupAnimations();
+        window.removeEventListener('beforeunload', cleanupAnimations);
+      });
     }
-    if (animationContext) {
-      animationContext.revert();
-    }
-  });
+  }
 
   // Provide ScrollSmoother to components
   return {
@@ -321,6 +343,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       smoothScroller: {
         get: () => scrollSmoother,
         reset: resetEffects,
+        cleanup: cleanupAnimations,
       },
     },
   };

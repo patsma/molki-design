@@ -1,20 +1,5 @@
 ---
-title: Remont pod Klucz | Molki Design
-description: Kompleksowe usługi remontowe pod klucz w Trójmieście. Od projektu do realizacji - profesjonalne ekipy, koordynacja i transparentne wyceny. Sprawdź nasze pakiety Basic, Comfort i Premium.
 headerSpacing: true
-seo:
-  title: Remont pod Klucz | Kompleksowe Usługi Remontowe | Molki Design
-  description: Profesjonalne usługi remontowe pod klucz w Trójmieście. Wybierz pakiet dopasowany do Twoich potrzeb - Basic, Comfort lub Premium. Gwarantujemy jakość i terminowość.
-ogImage:
-  component: OgImage
-  props:
-    title: Remont pod Klucz
-    description: Od projektu do realizacji - kompleksowe usługi remontowe w Trójmieście
-    image: /heroProjects.jpg
-meta:
-  keywords: remont pod klucz, usługi remontowe Trójmiasto, remont mieszkania Gdańsk, wykończenie wnętrz, Molki Design
-  author: Molki Design
-  robots: index, follow
 ---
 
 ::hero-projects

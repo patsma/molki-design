@@ -1,23 +1,6 @@
 <template>
   <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
     <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="3" />
-
-    <!-- <SquareGrid contentType="blog" orderBy="date" orderDirection="DESC">
-      <template #item="{ item }">
-        <SquareGridItem
-          :key="item._id || item.id"
-          :to="`/blog/${item.slug}`"
-          :title="item.title"
-          :category="item.category"
-          :date="item.date"
-          :image="item.cover"
-          :excerpt="item.excerpt"
-          type="blog"
-          aspectRatio="aspect-[4/3]"
-        />
-      </template>
-    </SquareGrid> -->
-
     <!-- Debug output -->
     <pre v-if="error" class="p-4 text-red-500">{{ error }}</pre>
   </main>
@@ -48,7 +31,7 @@ const { data } = await useAsyncData('blog-index', async () => {
 
 // Debug - log data if available
 if (data.value) {
-  console.log('BLOG INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
+  // console.log('BLOG INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
 }
 
 // Get headerSpacing setting from meta if available

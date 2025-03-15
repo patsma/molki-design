@@ -2,12 +2,8 @@
 import { useLoaderStore } from '~/stores/loaderStore';
 import { useMenuStore } from '@/stores/menuStore';
 import { useAppConfig } from '#app';
-import IconBlock from '~/components/IconBlock.vue';
 
 const { $gsap, $MorphSVGPlugin } = useNuxtApp();
-useHead({
-  title: 'Molki Design',
-});
 
 const menuStore = useMenuStore();
 const loaderStore = useLoaderStore();
@@ -45,13 +41,10 @@ onMounted(() => {
     }, 100);
   }
 });
-
-
 </script>
 
 <template>
   <div>
-    <!-- <NuxtLoadingIndicator class="fixed top-0 left-0 w-full h-4 z-[99999999999]" color="red" /> -->
     <GSAPScrollSmoother>
       <HeaderComponent />
       <Loader />

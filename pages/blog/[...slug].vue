@@ -24,59 +24,6 @@ if (!data.value || error.value) {
 // Debug - log the complete data object to help debug headerSpacing
 // console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));
 
-// Get the site config
-const siteConfig = useSiteConfig();
-
-// Computed values for SEO
-const pageTitle = computed(() => `${data.value?.title} | Molki Design Blog`);
-const pageDescription = computed(
-  () => data.value?.excerpt || 'Blog Molki Design - projekty wnętrz i porady projektowe'
-);
-
-// Use useHead for basic SEO
-useHead({
-  title: pageTitle,
-  htmlAttrs: {
-    lang: 'pl',
-  },
-  link: [
-    {
-      rel: 'canonical',
-      href: `${siteConfig.url}${route.path}`,
-    },
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: '/favicon.svg',
-    },
-  ],
-});
-
-// Use useSeoMeta for meta tags
-useSeoMeta({
-  title: pageTitle,
-  description: pageDescription,
-  ogTitle: pageTitle,
-  ogDescription: pageDescription,
-  ogUrl: `${siteConfig.url}${route.path}`,
-  ogType: 'article',
-  ogSiteName: siteConfig.name,
-  articlePublishedTime: data.value?.date,
-  articleAuthor: data.value?.author,
-  articleSection: data.value?.category,
-  twitterCard: 'summary_large_image',
-});
-
-// Use defineOgImage for OG image
-defineOgImage({
-  component: 'OgImage',
-  props: {
-    title: data.value?.title,
-    description: data.value?.excerpt,
-    image: data.value?.cover,
-  },
-});
-
 // Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)

@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     },
   },
   typescript: {
-    strict: true,
     typeCheck: false,
     shim: false,
   },
@@ -110,18 +109,6 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Molki Design',
-      meta: [
-        {
-          name: 'description',
-          content:
-            'Od 2019 roku Molki Design, z siedzibą w Gdańsku, działa na rynku trójmiejskim, oferując kreatywne rozwiązania, które przekraczają oczekiwania. Nasz zespół to grupa pasjonatów, którzy wzajemnie się uzupełniają, by dostarczać projekty, z których możemy być dumni.',
-        },
-        // Theme color meta tag for mobile browsers
-        { name: 'theme-color', content: '#ffffff' },
-        // Windows tile color
-        { name: 'msapplication-TileColor', content: '#ffffff' },
-      ],
       link: [
         // SVG favicon - primary choice for modern browsers
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
@@ -246,33 +233,12 @@ export default defineNuxtConfig({
   },
 
   // Enhanced site configuration for SEO
-  site: {
-    url: 'https://molki-design-2025.netlify.app',
-    name: 'Molki Design',
-    description:
-      'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
-    defaultLocale: 'pl',
-    image: '/og-image.jpg',
-  },
-
-  // Add OG Image configuration
-  ogImage: {
-    componentOptions: {
-      global: true,
-    },
-    defaults: {
-      component: 'OgImage',
-      width: 1200,
-      height: 630,
-    },
-  },
-
-  robots: {
-    rules: {
-      UserAgent: '*',
-      Allow: '/',
-      Disallow: '/admin',
-    },
-    sitemap: '/sitemap.xml',
-  },
+  // site: {
+  //   url: 'https://molki-design-2025.netlify.app',
+  //   name: 'Molki Design',
+  //   description:
+  //     'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
+  //   defaultLocale: 'pl',
+  //   image: '/og-image.jpg',
+  // },
 });

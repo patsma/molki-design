@@ -50,7 +50,7 @@ const { data } = await useAsyncData('projects-index', async () => {
 
 // Debug - log data if available
 if (data.value) {
-  console.log('REALIZACJE INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
+  // console.log('REALIZACJE INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
 }
 
 // Get headerSpacing setting from meta if available

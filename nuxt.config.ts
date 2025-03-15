@@ -254,4 +254,16 @@ export default defineNuxtConfig({
     defaultLocale: 'pl',
     image: '/og-image.jpg',
   },
+
+  // Add OG Image configuration
+  ogImage: {
+    componentOptions: {
+      global: true,
+    },
+    defaults: {
+      component: 'OgImage',
+      width: 1200,
+      height: 630,
+    },
+  },
 });

@@ -65,29 +65,9 @@ const ogImageUrl = computed(() => {
   return getAbsoluteImageUrl(imagePath);
 });
 
-// Set up SEO meta tags
-useSeoMeta({
-  // Basic SEO
-  title: pageTitle,
-  description: pageDescription,
-
-  // Open Graph
-  ogTitle: pageTitle,
-  ogDescription: pageDescription,
-  ogImage: ogImageUrl,
-  ogUrl: `${siteConfig.url}${route.path}`,
-  ogType: 'website',
-  ogSiteName: siteConfig.name,
-
-  // Twitter
-  twitterTitle: pageTitle,
-  twitterDescription: pageDescription,
-  twitterImage: ogImageUrl,
-  twitterCard: 'summary_large_image',
-});
-
-// Set HTML attributes and links
+// Use useHead for SEO
 useHead({
+  title: pageTitle,
   htmlAttrs: {
     lang: 'pl',
   },
@@ -102,6 +82,28 @@ useHead({
       href: '/favicon.svg',
     },
   ],
+});
+
+// Use useSeoMeta for meta tags
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: `${siteConfig.url}${route.path}`,
+  ogType: 'website',
+  ogSiteName: siteConfig.name,
+  twitterCard: 'summary_large_image',
+});
+
+// Use defineOgImage for OG image
+defineOgImage({
+  component: 'OgImage',
+  props: {
+    title: pageTitle.value,
+    description: pageDescription.value,
+    image: page.value?.cover || page.value?.seo?.image,
+  },
 });
 </script>
 

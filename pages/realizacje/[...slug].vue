@@ -21,6 +21,57 @@ if (!data.value) {
   });
 }
 
+// Get the site config
+const siteConfig = useSiteConfig();
+
+// Computed values for SEO
+const pageTitle = computed(() => `${data.value?.title} | ${data.value?.location} | Molki Design`);
+const pageDescription = computed(
+  () =>
+    data.value?.subtitle || `Projekt ${data.value?.title} w ${data.value?.location} - Molki Design`
+);
+
+// Use useHead for basic SEO
+useHead({
+  title: pageTitle,
+  htmlAttrs: {
+    lang: 'pl',
+  },
+  link: [
+    {
+      rel: 'canonical',
+      href: `${siteConfig.url}${route.path}`,
+    },
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: '/favicon.svg',
+    },
+  ],
+});
+
+// Use useSeoMeta for meta tags
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: `${siteConfig.url}${route.path}`,
+  ogType: 'website',
+  ogSiteName: siteConfig.name,
+  twitterCard: 'summary_large_image',
+});
+
+// Use defineOgImage for OG image
+defineOgImage({
+  component: 'OgImage',
+  props: {
+    title: data.value?.title,
+    description: data.value?.subtitle,
+    image: data.value?.cover || data.value?.images?.[0],
+  },
+});
+
 // Debug - log the complete data object to help debug headerSpacing
 // console.log('PROJECT DATA:', JSON.parse(JSON.stringify(data.value)));
 
@@ -44,24 +95,6 @@ useSeoMeta({
   twitterDescription: data.value?.subtitle,
   twitterImage: data.value?.cover || data.value?.images?.[0] || '/heroHome.jpg',
   twitterCard: 'summary_large_image',
-});
-
-// Set HTML attributes and links
-useHead({
-  htmlAttrs: {
-    lang: 'pl',
-  },
-  link: [
-    {
-      rel: 'canonical',
-      href: `https://molki-design-2025.netlify.app${route.path}`,
-    },
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: '/favicon.svg',
-    },
-  ],
 });
 
 // Get headerSpacing setting from meta

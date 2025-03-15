@@ -1,19 +1,20 @@
 ---
-title: Molki Design
-description: Projekty wnętrz i Porady projektow e | Gdańsk Sopot Gdynia,
-  Trójmiasto, Polska – molki design to studio projektowe oferujące pełen zakres
-  usług w Trójmieście i okolicach, specjalizujące się w projektowaniu wnętrz
-  domów, mieszkań i wnętrz komercyjnych
-headerSpacing: true  
+title: Remont pod Klucz | Molki Design
+description: Kompleksowe usługi remontowe pod klucz w Trójmieście. Od projektu do realizacji - profesjonalne ekipy, koordynacja i transparentne wyceny. Sprawdź nasze pakiety Basic, Comfort i Premium.
+headerSpacing: true
 seo:
-  title: Molki Design
-  description: Projekty wnętrz i Porady projektowe | Gdańsk Sopot Gdynia,
-    Trójmiasto, Polska – molki design to studio projektowe oferujące pełen
-    zakres usług w Trójmieście i okolicach, specjalizujące się w projektowaniu
-    wnętrz domów, mieszkań i wnętrz komercyjnych
-  ogTitle: Remont pod Klucz
-  ogDescription: Wybierz wariant dopasowany do Twoich potrzeb
-  ogImage: /heroProjects.jpg
+  title: Remont pod Klucz | Kompleksowe Usługi Remontowe | Molki Design
+  description: Profesjonalne usługi remontowe pod klucz w Trójmieście. Wybierz pakiet dopasowany do Twoich potrzeb - Basic, Comfort lub Premium. Gwarantujemy jakość i terminowość.
+ogImage:
+  component: OgImage
+  props:
+    title: Remont pod Klucz
+    description: Od projektu do realizacji - kompleksowe usługi remontowe w Trójmieście
+    image: /heroProjects.jpg
+meta:
+  keywords: remont pod klucz, usługi remontowe Trójmiasto, remont mieszkania Gdańsk, wykończenie wnętrz, Molki Design
+  author: Molki Design
+  robots: index, follow
 ---
 
 ::hero-projects

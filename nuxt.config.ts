@@ -233,12 +233,12 @@ export default defineNuxtConfig({
   },
 
   // Enhanced site configuration for SEO
-  // site: {
-  //   url: 'https://molki-design-2025.netlify.app',
-  //   name: 'Molki Design',
-  //   description:
-  //     'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
-  //   defaultLocale: 'pl',
-  //   image: '/og-image.jpg',
-  // },
+  site: {
+    url: 'https://molki-design-2025.netlify.app',
+    name: 'Molki Design',
+    description:
+      'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
+    defaultLocale: 'pl',
+    image: '/og-image.jpg',
+  },
 });

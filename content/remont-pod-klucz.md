@@ -137,6 +137,12 @@ BASIC
   ![Card Image](/itemCard1.jpg)
   :::
 
+#accent-shape
+  :::div{.absolute.top-0.left-0.overflow-hidden.z-20.pointer-events-none}
+    ::::hero-path-5{.h-screen}
+    ::::
+  :::
+
 #content
 Podstawowy remont wnętrza – Idealne rozwiązanie dla tych, którzy szukają solidnego, funkcjonalnego i estetycznego wykończenia bez zbędnych dodatków. Oferujemy pełen zakres prac remontowych, które zapewnią świeżość i wygodę Twojej przestrzeni w korzystnej cenie.
 
@@ -154,6 +160,12 @@ COMFORT
 #image
   :::parallax-img{.w-full.h-full.object-cover}
   ![Card Image](/itemCard2.jpg)
+  :::
+
+#accent-shape
+  :::div{.absolute.top-0.left-0.overflow-hidden.z-20.pointer-events-none}
+    ::::hero-path-6{.h-screen}
+    ::::
   :::
 
 #content
@@ -174,6 +186,13 @@ PREMIUM
   :::parallax-img{.w-full.h-full.object-cover}
   ![Card Image](/itemCard3.jpg)
   :::
+
+#accent-shape
+  :::div{.absolute.top-[33%].left-0.overflow-hidden.z-20.pointer-events-none}
+    ::::hero-path-7{.h-screen}
+    ::::
+  :::
+
 
 #content
 Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń.

@@ -25,9 +25,11 @@ defineProps<{
       </slot>
 
       <!-- Accent Shape -->
-      <div class="absolute -bottom-1 left-0 overflow-hidden z-20">
-        <HeroPath class="h-[200%] opacity-50" />
-      </div>
+      <slot name="accent-shape">
+        <div class="absolute -bottom-1 left-0 overflow-hidden z-20">
+          <HeroPath class="h-[200%] opacity-50" />
+        </div>
+      </slot>
     </div>
 
     <!-- Text Box -->

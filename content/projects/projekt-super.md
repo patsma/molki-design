@@ -7,7 +7,7 @@ year: "2023"
 number: "02"
 cover: /projectItem1.jpg
 images:
-  - /projectItem2 .jpg
+  - /projectItem2.jpg
   - /heroAbout.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje

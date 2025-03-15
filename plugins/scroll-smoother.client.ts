@@ -290,7 +290,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     const transitionTL = $gsap.timeline({
       onComplete: () => {
-        $gsap.delayedCall(0.3, () => {
+        $gsap.delayedCall(0.1, () => {
           loaderStore.finishLoading();
         });
       },

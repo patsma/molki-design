@@ -209,8 +209,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      ignore: ['/api', '/studio'],
-      routes: ['/', '/todo'],
+      routes: ['/', '/realizacje', '/blog', '/sitemap.xml', '/robots.txt'],
     },
     routeRules: {
       '/**': {
@@ -250,7 +249,8 @@ export default defineNuxtConfig({
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
-    description: 'Projekty wnętrz i porady projektowe | Gdańsk, Sopot, Gdynia, Trójmiasto, Polska',
+    description:
+      'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
     defaultLocale: 'pl',
     image: '/og-image.jpg',
   },
@@ -265,5 +265,14 @@ export default defineNuxtConfig({
       width: 1200,
       height: 630,
     },
+  },
+
+  robots: {
+    rules: {
+      UserAgent: '*',
+      Allow: '/',
+      Disallow: '/admin',
+    },
+    sitemap: '/sitemap.xml',
   },
 });

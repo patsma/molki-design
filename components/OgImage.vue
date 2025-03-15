@@ -1,16 +1,36 @@
 <script setup lang="ts">
+const siteConfig = useSiteConfig();
+
 defineProps<{
   title?: string;
   description?: string;
   image?: string;
 }>();
+
+// Helper to get absolute image URL
+const getAbsoluteImage = (imgPath?: string) => {
+  if (!imgPath) return `${siteConfig.url}/og-image.jpg`;
+  return imgPath.startsWith('http') ? imgPath : `${siteConfig.url}${imgPath}`;
+};
 </script>
 
 <template>
   <div class="flex h-full w-full items-center justify-center bg-white p-16">
     <div class="flex max-w-5xl flex-col gap-8">
-      <!-- Image if provided -->
-      <img v-if="image" :src="image" class="h-64 w-full object-cover rounded-lg" />
+      <!-- Updated image handling -->
+      <img
+        v-if="image"
+        :src="getAbsoluteImage(image)"
+        class="h-64 w-full object-cover rounded-lg"
+        alt="Molki Design Project Preview"
+      />
+      <!-- Fallback image -->
+      <img
+        v-else
+        :src="`${siteConfig.url}/og-image.jpg`"
+        class="h-64 w-full object-cover rounded-lg"
+        alt="Molki Design Default Preview"
+      />
 
       <!-- Title -->
       <h1 class="text-5xl font-bold text-primary" v-if="title">

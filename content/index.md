@@ -1,5 +1,11 @@
 ---
 headerSpacing: false
+head.title: Design Molki
+description: An open source blog theme powered by Nuxt.
+title: Design Molki Title
+ogImage:
+    title: "Hi, I am OG Image."
+    cover: /heroAbout.jpg
 ---
 
 ::hero

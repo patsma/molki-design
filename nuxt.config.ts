@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@dargmuesli/nuxt-cookie-control',
     '@nuxtjs/tailwindcss',
+    'nuxt-og-image',
   ],
 
   // Cookie control configuration

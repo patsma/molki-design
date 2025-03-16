@@ -35,15 +35,18 @@ export const usePageSeo = (page: Ref<any>) => {
     return validated.length > 60 && validated.length < 300 ? validated : fallback;
   };
 
-  // Updated: Enhanced image handling
+  // Updated: Enhanced image handling that prioritizes static image files
   const getSocialImage = () => {
+    // Always prioritize static images for social media platforms
     if (page.value?.ogImage?.cover) {
+      // Use the static image directly from public directory
       return getAbsoluteUrl(page.value.ogImage.cover);
     }
     if (page.value?.cover) {
       return getAbsoluteUrl(page.value.cover);
     }
-    return getAbsoluteUrl('/og-social-default.jpg'); // Ensure this exists
+    // Use default image from public directory
+    return getAbsoluteUrl('/og-social-default.jpg');
   };
 
   // Get the current page URL
@@ -61,13 +64,7 @@ export const usePageSeo = (page: Ref<any>) => {
       ogTitle: defaults.title,
       description: defaults.description,
       ogDescription: defaults.description,
-      ogImage: {
-        url: getSocialImage(),
-        width: 1200,
-        height: 630, // Standard social media ratio
-        type: 'image/jpeg',
-        alt: defaults.title,
-      },
+      ogImage: getSocialImage(),
       ogImageWidth: 1200,
       ogImageHeight: 630,
       ogImageType: 'image/jpeg',
@@ -91,7 +88,7 @@ export const usePageSeo = (page: Ref<any>) => {
   // Get absolute URL for page cover
   const coverImage = page.value?.cover ? getAbsoluteUrl(page.value.cover) : defaults.imageUrl;
 
-  // SEO Meta Tags
+  // SEO Meta Tags with simplified og:image implementation
   useSeoMeta({
     title: page.value?.seo?.title || page.value?.title || defaults.title,
     ogTitle: page.value?.seo?.title || page.value?.title || defaults.title,
@@ -105,13 +102,8 @@ export const usePageSeo = (page: Ref<any>) => {
       page.value?.excerpt ||
       page.value?.description ||
       defaults.description,
-    ogImage: {
-      url: getSocialImage(),
-      width: 1200,
-      height: 630, // Standard social media ratio
-      type: 'image/jpeg',
-      alt: page.value?.title || siteConfig.name,
-    },
+    // Simplified image reference - direct URL instead of object
+    ogImage: getSocialImage(),
     ogImageWidth: 1200,
     ogImageHeight: 630,
     ogImageType: 'image/jpeg',
@@ -132,7 +124,7 @@ export const usePageSeo = (page: Ref<any>) => {
     fbAppId: siteConfig.facebookPage,
   });
 
-  // OG Image Generation
+  // OG Image Generation - still use this for other purposes
   if (page.value?.ogImage) {
     defineOgImage({
       component: 'Custom',

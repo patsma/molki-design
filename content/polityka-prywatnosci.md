@@ -2,12 +2,6 @@
 title: Polityka prywatności
 description: Informacje o tym, jak przetwarzamy Twoje dane osobowe
 pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
-head.title: Design Molki
-description: Projekty wnętrz w Trójmieście
-title: Molki Design
-ogImage:
-    title: "Molki Design"
-    cover: /heroAbout.jpg
 ---
 
 # Polityka prywatności

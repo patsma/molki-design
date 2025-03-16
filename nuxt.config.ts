@@ -234,7 +234,7 @@ export default defineNuxtConfig({
     description:
       'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
     defaultLocale: 'pl',
-    indexable: process.env.NUXT_PUBLIC_ENV === 'production',
+    indexable: true,
     image: 'https://molki-design-2025.netlify.app/og-image.jpg',
     titleSeparator: ' | ',
     trailingSlash: false,

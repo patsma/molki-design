@@ -1,7 +1,10 @@
 export const usePageSeo = (page: Ref<any>) => {
+  const { $config } = useNuxtApp();
+  const siteConfig = useSiteConfig();
+  const route = useRoute();
+
   // Get site config from runtime config
   const runtimeConfig = useRuntimeConfig();
-  const siteConfig = useSiteConfig();
   const config = useRuntimeConfig();
   const baseUrl = config.public.siteUrl || 'https://molki-design-2025.netlify.app';
 
@@ -17,10 +20,30 @@ export const usePageSeo = (page: Ref<any>) => {
     description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
     imageUrl: getAbsoluteUrl(siteConfig.image || '/og-image.jpg'),
     fallbackImage: {
-      title: siteConfig.name || 'Molki Design',
-      description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
-      cover: getAbsoluteUrl(siteConfig.image || '/og-image.jpg'),
+      component: 'Custom',
+      props: {
+        title: siteConfig.name || 'Molki Design',
+        description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
+        cover: getAbsoluteUrl(siteConfig.image || '/og-image.jpg'),
+      },
     },
+  };
+
+  // New: Social media validation function
+  const validateSocialMeta = (content: string, fallback: string) => {
+    const validated = content || fallback;
+    return validated.length > 60 && validated.length < 300 ? validated : fallback;
+  };
+
+  // Updated: Enhanced image handling
+  const getSocialImage = () => {
+    if (page.value?.ogImage?.cover) {
+      return getAbsoluteUrl(page.value.ogImage.cover);
+    }
+    if (page.value?.cover) {
+      return getAbsoluteUrl(page.value.cover);
+    }
+    return getAbsoluteUrl('/og-social-default.jpg'); // Ensure this exists
   };
 
   if (!page?.value) {
@@ -30,10 +53,16 @@ export const usePageSeo = (page: Ref<any>) => {
       ogTitle: defaults.title,
       description: defaults.description,
       ogDescription: defaults.description,
-      ogImage: defaults.imageUrl,
+      ogImage: {
+        url: getSocialImage(),
+        width: 1200,
+        height: 630, // Standard social media ratio
+        type: 'image/jpeg',
+        alt: defaults.title,
+      },
       ogImageWidth: 1200,
-      ogImageHeight: 600,
-      ogImageType: 'image/png',
+      ogImageHeight: 630,
+      ogImageType: 'image/jpeg',
       ogUrl: baseUrl,
       ogLocale: 'pl',
       ogSiteName: defaults.title,
@@ -41,7 +70,10 @@ export const usePageSeo = (page: Ref<any>) => {
       twitterCard: 'summary_large_image',
       twitterTitle: defaults.title,
       twitterDescription: defaults.description,
-      twitterImage: defaults.imageUrl,
+      twitterImage: getSocialImage(),
+      twitterSite: siteConfig.twitter,
+      twitterCreator: siteConfig.twitter,
+      fbAppId: siteConfig.facebookPage,
     });
 
     defineOgImage(defaults.fallbackImage);
@@ -65,10 +97,16 @@ export const usePageSeo = (page: Ref<any>) => {
       page.value?.excerpt ||
       page.value?.description ||
       defaults.description,
-    ogImage: coverImage,
+    ogImage: {
+      url: getSocialImage(),
+      width: 1200,
+      height: 630, // Standard social media ratio
+      type: 'image/jpeg',
+      alt: page.value?.title || siteConfig.name,
+    },
     ogImageWidth: 1200,
-    ogImageHeight: 600,
-    ogImageType: 'image/png',
+    ogImageHeight: 630,
+    ogImageType: 'image/jpeg',
     ogUrl: getAbsoluteUrl(page.value?._path || ''),
     ogLocale: 'pl',
     ogSiteName: defaults.title,
@@ -80,22 +118,63 @@ export const usePageSeo = (page: Ref<any>) => {
       page.value?.excerpt ||
       page.value?.description ||
       defaults.description,
-    twitterImage: coverImage,
+    twitterImage: getSocialImage(),
+    twitterSite: siteConfig.twitter,
+    twitterCreator: siteConfig.twitter,
+    fbAppId: siteConfig.facebookPage,
   });
 
   // OG Image Generation
   if (page.value?.ogImage) {
     defineOgImage({
-      ...page.value.ogImage,
-      cover: page.value.ogImage.cover ? getAbsoluteUrl(page.value.ogImage.cover) : undefined,
+      component: 'Custom',
+      props: {
+        ...page.value.ogImage,
+        cover: page.value.ogImage.cover ? getAbsoluteUrl(page.value.ogImage.cover) : undefined,
+      },
     });
   } else if (page.value?.cover) {
     defineOgImage({
-      title: page.value?.title || defaults.title,
-      description: page.value?.excerpt || page.value?.description || defaults.description,
-      cover: coverImage,
+      component: 'Custom',
+      props: {
+        title: page.value?.title || defaults.title,
+        description: page.value?.excerpt || page.value?.description || defaults.description,
+        cover: coverImage,
+      },
     });
   } else {
     defineOgImage(defaults.fallbackImage);
+  }
+
+  // Schema.org structured data
+  if (useSchemaOrg) {
+    useSchemaOrg([
+      {
+        '@type': 'WebSite',
+        name: siteConfig.name,
+        url: siteConfig.url,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${siteConfig.url}/search?q={search_term_string}`,
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'WebPage',
+        name: page.value?.title,
+        description: validateSocialMeta(page.value?.description, siteConfig.description),
+        image: getSocialImage(),
+        datePublished: page.value?.createdAt,
+        dateModified: page.value?.updatedAt,
+        author: [
+          {
+            '@type': 'Person',
+            name: 'Wioletta Retko',
+            jobTitle: 'Główny Projektant',
+            url: `${siteConfig.url}/o-nas`,
+          },
+        ],
+      },
+    ]);
   }
 };

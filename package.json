@@ -37,6 +37,7 @@
     "autoprefixer": "^10.4.21",
     "nuxt": "^3.16.0",
     "nuxt-og-image": "^5.0.3",
+    "nuxt-schema-org": "^5.0.4",
     "nuxt-swiper": "^2.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",

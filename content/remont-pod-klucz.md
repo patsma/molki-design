@@ -3,14 +3,18 @@ headerSpacing: true
 head.title: Design Molki
 description: Projekty wnętrz w Trójmieście
 title: Molki Design
+seo:
+  title: Remont pod klucz - Kompleksowe usługi remontowe | Molki Design
+  description: Kompleksowe usługi remontowe od projektu po realizację. Oferujemy profesjonalny remont pod klucz mieszkań i domów w Trójmieście.
 ogImage:
-    title: "Molki Design"
+    title: Remont pod klucz - Molki Design
+    description: Kompleksowe usługi remontowe od projektu po realizację
     cover: /heroAbout.jpg
 ---
 
 ::hero-projects
 ---
-cta-link: /nasze-realizacje
+cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}

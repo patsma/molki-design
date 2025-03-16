@@ -3,14 +3,18 @@ headerSpacing: true
 head.title: Design Molki
 description: Projekty wnętrz w Trójmieście
 title: Molki Design
+seo:
+  title: Projekt wnętrza - Profesjonalne projektowanie wnętrz | Molki Design
+  description: Kompleksowe projektowanie wnętrz mieszkalnych i komercyjnych w Trójmieście. Od koncepcji po realizację, tworzymy funkcjonalne i estetyczne przestrzenie.
 ogImage:
-    title: "Molki Design"
+    title: Projekt wnętrza - Molki Design
+    description: Profesjonalne projektowanie wnętrz w Trójmieście
     cover: /heroAbout.jpg
 ---
 
 ::hero-interior
 ---
-cta-link: /nasze-realizacje
+cta-link: /realizacje
 ---
 
 #heroImage
@@ -443,8 +447,8 @@ Dodatkowe usługi projektowe
 ### [Dodatkowe Usługi]{.text-primary} - wyceny indywidualne
 :br
 
-- **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – prosimy o kontakt w celu omówienia szczegółów i wyceny.
-- **Doradztwo w zakresie wyboru materiałów i mebli** – stawka godzinowa
-- **Realizacja i Nadzór Autorski** – wyceny indywidualne
-- **Inwentaryzacja bez projektu** – wyceny indywidualne
+- **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – prosimy o kontakt w celu omówienia szczegółów i wyceny.
+- **Doradztwo w zakresie wyboru materiałów i mebli** – stawka godzinowa
+- **Realizacja i Nadzór Autorski** – wyceny indywidualne
+- **Inwentaryzacja bez projektu** – wyceny indywidualne
 ::

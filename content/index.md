@@ -1,11 +1,13 @@
 ---
 headerSpacing: false
-head.title: Design Molki
-description: Projekty wnętrz w Trójmieście
 title: Molki Design
+seo:
+  title: Molki Design - Profesjonalne projekty wnętrz w Trójmieście
+  description: Profesjonalne projektowanie wnętrz mieszkalnych i komercyjnych w Trójmieście. Kompleksowe usługi od projektu po realizację.
 ogImage:
-    title: "Molki Design"
-    cover: /heroAbout.jpg
+  title: Molki Design
+  description: Profesjonalne projekty wnętrz w Trójmieście
+  cover: /heroHome.jpg
 ---
 
 ::hero

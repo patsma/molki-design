@@ -4,17 +4,17 @@ slug: trendy-w-projektowaniu-wnetrz-2023
 category: Porady
 date: 2023-12-05
 cover: /heroHome.jpg
-excerpt: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominować w
-  nadchodzącym roku. Od kolorów po materiały i style.
+excerpt: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominować w nadchodzącym roku. Od kolorów po materiały i style.
 author: Piotr Nowak
 authorRole: Główny projektant
 authorImage: /heroHome.jpg
-head.title: Design Molki
-description: Projekty wnętrz w Trójmieście
-title: Molki Design
+seo:
+  title: Trendy w projektowaniu wnętrz na rok 2023 - Molki Design
+  description: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominować w nadchodzącym roku. Od kolorów po materiały i style.
 ogImage:
-    title: "Molki Design"
-    cover: /heroAbout.jpg
+  title: Trendy w projektowaniu wnętrz na rok 2023
+  description: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominować w nadchodzącym roku
+  cover: /heroHome.jpg
 ---
 
 # Trendy w projektowaniu wnętrz na rok 2023

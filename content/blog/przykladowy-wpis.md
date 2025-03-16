@@ -4,17 +4,17 @@ slug: jak-zaprojektowac-funkcjonalne-wnetrze-mieszkania
 category: Projektowanie
 date: 2023-11-15
 cover: /heroAbout.jpg
-excerpt: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, które
-  będą nie tylko piękne, ale również praktyczne w codziennym użytkowaniu.
+excerpt: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, które będą nie tylko piękne, ale również praktyczne w codziennym użytkowaniu.
 author: Anna Kowalska
 authorRole: Architekt wnętrz
 authorImage: /heroHome.jpg
-head.title: Design Molki
-description: Projekty wnętrz w Trójmieście
-title: Molki Design
+seo:
+  title: Jak zaprojektować funkcjonalne wnętrze mieszkania? - Molki Design
+  description: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, które będą nie tylko piękne, ale również praktyczne w codziennym użytkowaniu.
 ogImage:
-    title: "Molki Design"
-    cover: /heroAbout.jpg
+  title: Jak zaprojektować funkcjonalne wnętrze mieszkania?
+  description: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz
+  cover: /heroAbout.jpg
 ---
 
 # Jak zaprojektować funkcjonalne wnętrze mieszkania?

@@ -1,7 +1,13 @@
 ---
 title: Polityka prywatności
-description: Informacje o tym, jak przetwarzamy Twoje dane osobowe
 pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
+seo:
+  title: Polityka prywatności - Molki Design
+  description: Informacje o tym, jak przetwarzamy Twoje dane osobowe, zasady ochrony prywatności oraz wykorzystania plików cookies.
+ogImage:
+  title: Polityka prywatności - Molki Design
+  description: Informacje o tym, jak przetwarzamy Twoje dane osobowe
+  cover: /heroAbout.jpg
 ---
 
 # Polityka prywatności

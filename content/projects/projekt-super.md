@@ -11,12 +11,13 @@ images:
   - /heroAbout.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
-head.title: Design Molki
-description: Projekty wnętrz w Trójmieście
-title: Molki Design
+seo:
+  title: Projekt Super w Sopocie - Molki Design
+  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja przestrzeni z nowoczesnymi rozwiązaniami.
 ogImage:
-    title: "Molki Design"
-    cover: /heroAbout.jpg
+  title: Projekt Super w Sopocie
+  description: Nowoczesny projekt wnętrza w nadmorskim klimacie
+  cover: /projectItem1.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.

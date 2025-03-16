@@ -11,12 +11,13 @@ images:
   - /heroAbout.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
-head.title: Design Molki
-description: Projekty wnętrz w Trójmieście
-title: Molki Design
+seo:
+  title: Projekt wnętrza mieszkania w Gdańsku - Molki Design
+  description: Kompleksowy projekt wnętrza mieszkania w Gdańsku. Nowoczesna aranżacja przestrzeni z wykorzystaniem zrównoważonych materiałów.
 ogImage:
-    title: "Molki Design"
-    cover: /heroAbout.jpg
+  title: Projekt wnętrza mieszkania w Gdańsku
+  description: Nowoczesna aranżacja przestrzeni mieszkalnej w Gdańsku
+  cover: /projectItem1.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.

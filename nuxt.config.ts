@@ -37,6 +37,8 @@ export default defineNuxtConfig({
   ogImage: {
     defaults: {
       component: 'Custom',
+      width: 1200,
+      height: 630,
     },
   },
   // Cookie control configuration
@@ -95,8 +97,6 @@ export default defineNuxtConfig({
     locales: ['pl'],
     localeTexts: {
       pl: {
-        bannerDescription:
-          'Używamy plików cookie, aby zapewnić najlepsze wrażenia na naszej stronie. Możesz dowiedzieć się więcej o tym, jakich plików cookie używamy, lub wyłączyć je w ustawieniach.',
         bannerTitle: 'Pliki cookie',
         acceptAll: 'Akceptuj wszystkie',
         decline: 'Tylko niezbędne',
@@ -226,21 +226,31 @@ export default defineNuxtConfig({
     },
   },
 
-  // Add runtimeConfig
-  runtimeConfig: {
-    public: {
-      hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '', // Provide empty string as fallback
-      isDev: process.env.NODE_ENV !== 'production',
-    },
-  },
-
   // Enhanced site configuration for SEO
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
     description:
       'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
-    defaultLocale: 'pl',
-    image: '/og-image.jpg',
+    defaultLocale: 'pl-PL',
+    image: 'https://molki-design-2025.netlify.app/og-image.jpg',
+    titleSeparator: ' | ',
+    trailingSlash: false,
+  },
+
+  // Configure SEO module
+  seo: {
+    splash: {
+      enabled: false,
+    },
+  },
+
+  // Update runtime config to include the site URL
+  runtimeConfig: {
+    public: {
+      hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '',
+      isDev: process.env.NODE_ENV !== 'production',
+      siteUrl: 'https://molki-design-2025.netlify.app',
+    },
   },
 });

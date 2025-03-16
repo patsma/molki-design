@@ -12,6 +12,7 @@ ogImage:
 ---
 cta-link: /nasze-realizacje
 ---
+
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior design showcase](/heroInterior.jpg)

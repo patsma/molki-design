@@ -1,37 +1,61 @@
 export const usePageSeo = (page: Ref<any>) => {
-  const { $config } = useNuxtApp();
+  // Get site config from runtime config
+  const runtimeConfig = useRuntimeConfig();
+  const siteConfig = useSiteConfig();
 
   // Default values from site config
   const defaults = {
-    title: $config.public.site.name || 'Molki',
-    description: $config.public.site.description || 'Molki - Nowoczesne rozwiązania budowlane',
-    imageUrl: $config.public.site.url
-      ? `${$config.public.site.url}/__og-image__/image/og.png`
-      : '/og-image.png',
+    title: siteConfig.name || 'Molki Design',
+    description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
+    imageUrl: siteConfig.image || '/og-image.jpg',
     fallbackImage: {
-      title: $config.public.site.name || 'Molki',
-      description: $config.public.site.description || 'Molki - Nowoczesne rozwiązania budowlane',
-      cover: '/og-image.png',
+      title: siteConfig.name || 'Molki Design',
+      description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
+      cover: siteConfig.image || '/og-image.jpg',
     },
   };
+
+  if (!page?.value) {
+    // Handle undefined page case with defaults
+    useSeoMeta({
+      title: defaults.title,
+      ogTitle: defaults.title,
+      description: defaults.description,
+      ogDescription: defaults.description,
+      ogImage: defaults.imageUrl,
+      twitterCard: 'summary_large_image',
+      twitterTitle: defaults.title,
+      twitterDescription: defaults.description,
+      twitterImage: defaults.imageUrl,
+    });
+
+    defineOgImage(defaults.fallbackImage);
+    return;
+  }
 
   // SEO Meta Tags
   useSeoMeta({
     title: page.value?.seo?.title || page.value?.title || defaults.title,
     ogTitle: page.value?.seo?.title || page.value?.title || defaults.title,
-    description: page.value?.seo?.description || page.value?.excerpt || defaults.description,
-    ogDescription: page.value?.seo?.description || page.value?.excerpt || defaults.description,
-    ogImage: {
-      url: page.value?.ogImage ? undefined : page.value?.cover || defaults.imageUrl,
-      alt: page.value?.seo?.title || page.value?.title || defaults.title,
-      width: 1200,
-      height: 630,
-      type: 'image/png',
-    },
+    description:
+      page.value?.seo?.description ||
+      page.value?.excerpt ||
+      page.value?.description ||
+      defaults.description,
+    ogDescription:
+      page.value?.seo?.description ||
+      page.value?.excerpt ||
+      page.value?.description ||
+      defaults.description,
+    ogImage: page.value?.cover || defaults.imageUrl,
     twitterCard: 'summary_large_image',
     twitterTitle: page.value?.seo?.title || page.value?.title || defaults.title,
-    twitterDescription: page.value?.seo?.description || page.value?.excerpt || defaults.description,
-    twitterImage: page.value?.ogImage?.cover || page.value?.cover || defaults.imageUrl,
+    twitterDescription:
+      page.value?.seo?.description ||
+      page.value?.excerpt ||
+      page.value?.description ||
+      defaults.description,
+    twitterImage: page.value?.cover || defaults.imageUrl,
   });
 
   // OG Image Generation
@@ -39,10 +63,9 @@ export const usePageSeo = (page: Ref<any>) => {
     defineOgImage(page.value.ogImage);
   } else if (page.value?.cover) {
     defineOgImage({
-      ...defaults.fallbackImage,
-      cover: page.value.cover,
       title: page.value?.title || defaults.title,
-      description: page.value?.excerpt || defaults.description,
+      description: page.value?.excerpt || page.value?.description || defaults.description,
+      cover: page.value.cover,
     });
   } else {
     defineOgImage(defaults.fallbackImage);

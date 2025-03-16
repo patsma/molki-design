@@ -37,7 +37,13 @@ const needsHeaderSpacing = computed(() => {
 
 // Apply optimized SEO using the composable
 import { usePageSeo } from '~/composables/usePageSeo';
-usePageSeo(page);
+
+// Apply SEO with error handling
+try {
+  usePageSeo(page);
+} catch (e) {
+  console.error('Error applying SEO to page:', e, JSON.stringify(page.value));
+}
 </script>
 
 <template>

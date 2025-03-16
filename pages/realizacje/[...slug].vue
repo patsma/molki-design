@@ -23,7 +23,13 @@ if (!data.value) {
 
 // Apply optimized SEO using the composable
 import { usePageSeo } from '~/composables/usePageSeo';
-usePageSeo(data);
+
+// Apply SEO with error handling
+try {
+  usePageSeo(data);
+} catch (e) {
+  console.error('Error applying SEO to project page:', e);
+}
 
 // Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {

@@ -23,7 +23,13 @@ if (!data.value || error.value) {
 
 // Apply optimized SEO using the composable
 import { usePageSeo } from '~/composables/usePageSeo';
-usePageSeo(data);
+
+// Apply SEO with error handling
+try {
+  usePageSeo(data);
+} catch (e) {
+  console.error('Error applying SEO to blog post:', e);
+}
 
 // Debug - log the complete data object to help debug headerSpacing
 // console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));

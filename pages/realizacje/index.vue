@@ -52,40 +52,36 @@ const { data } = await useAsyncData('projects-index', async () => {
 import { usePageSeo } from '~/composables/usePageSeo';
 // Create a default page object if no specific data is available
 const pageData = computed(() => {
-  return (
-    data.value || {
-      title: 'Nasze Realizacje',
-      seo: {
-        title: 'Nasze Realizacje - Zobacz nasze projekty',
-        description: 'Przeglądaj najnowsze realizacje, projekty i inwestycje z naszego portfolio.',
-      },
-    }
-  );
-});
-usePageSeo(pageData);
+  if (data.value) return data.value;
 
-// Debug - log data if available
-if (data.value) {
-  // console.log('REALIZACJE INDEX DATA:', JSON.parse(JSON.stringify(data.value)));
+  return {
+    title: 'Nasze Realizacje',
+    seo: {
+      title: 'Nasze Realizacje - Zobacz nasze projekty',
+      description: 'Przeglądaj najnowsze realizacje, projekty i inwestycje z naszego portfolio.',
+    },
+  };
+});
+
+// Apply SEO with error handling
+try {
+  usePageSeo(pageData);
+} catch (e) {
+  console.error('Error applying SEO to projects index:', e);
 }
 
 // Get headerSpacing setting from meta if available
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (data.value?.meta?.headerSpacing === false) {
-    // console.log('Realizacje Index: headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 
   if (data.value?.meta?.headerSpacing === true) {
-    // console.log('Realizacje Index: headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
   // Default for realizacje index is to ADD spacing if not specified
-  // console.log(
-  //   'Realizacje Index: headerSpacing not specified in frontmatter, ADDING spacing by default'
-  // );
   return true;
 });
 </script>

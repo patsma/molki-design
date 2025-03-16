@@ -33,17 +33,23 @@ const { data } = await useAsyncData('blog-index', async () => {
 import { usePageSeo } from '~/composables/usePageSeo';
 // Create a default page object if no specific data is available
 const pageData = computed(() => {
-  return (
-    data.value || {
-      title: 'Blog',
-      seo: {
-        title: 'Blog - Najnowsze artykuły i porady',
-        description: 'Przeglądaj najnowsze artykuły, porady i aktualności z branży budowlanej.',
-      },
-    }
-  );
+  if (data.value) return data.value;
+
+  return {
+    title: 'Blog',
+    seo: {
+      title: 'Blog - Najnowsze artykuły i porady',
+      description: 'Przeglądaj najnowsze artykuły, porady i aktualności z branży projektowej.',
+    },
+  };
 });
-usePageSeo(pageData);
+
+// Apply SEO with error handling
+try {
+  usePageSeo(pageData);
+} catch (e) {
+  console.error('Error applying SEO to blog index:', e);
+}
 
 // Debug - log data if available
 if (data.value) {

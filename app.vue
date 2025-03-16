@@ -50,7 +50,7 @@ useSeoMeta({
   ogTitle: 'Molki Design - Projektowanie i Remont Wnętrz',
   ogDescription:
     'W Molki Design tworzymy przemyślane, ponadczasowe wnętrza, które łączą w sobie piękno i wygodę. Oferujemy kompleksowe projekty wnętrz, remonty pod klucz oraz profesjonalne porady projektowe.',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://molki-design-2025.netlify.app/og-image.jpg',
   ogImageAlt: 'Molki Design - Wnętrza z charakterem',
   ogUrl: 'https://molki-design-2025.netlify.app', // Current domain
   ogType: 'website',
@@ -62,7 +62,7 @@ useSeoMeta({
   twitterTitle: 'Molki Design - Projektowanie i Remont Wnętrz',
   twitterDescription:
     'W Molki Design tworzymy przemyślane, ponadczasowe wnętrza, które łączą w sobie piękno i wygodę. Oferujemy kompleksowe projekty wnętrz, remonty pod klucz oraz profesjonalne porady projektowe.',
-  twitterImage: '/og-image.jpg',
+  twitterImage: 'https://molki-design-2025.netlify.app/og-image.jpg',
   twitterImageAlt: 'Molki Design - Wnętrza z charakterem',
 
   // Additional meta tags

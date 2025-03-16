@@ -238,13 +238,6 @@ export default defineNuxtConfig({
     trailingSlash: false,
   },
 
-  // Configure SEO module
-  seo: {
-    splash: {
-      enabled: false,
-    },
-  },
-
   // Update runtime config to include the site URL
   runtimeConfig: {
     public: {

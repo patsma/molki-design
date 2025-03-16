@@ -46,6 +46,14 @@ export const usePageSeo = (page: Ref<any>) => {
     return getAbsoluteUrl('/og-social-default.jpg'); // Ensure this exists
   };
 
+  // Get the current page URL
+  const getCurrentPageUrl = () => {
+    // First try to get the path from the page data
+    const pagePath = page.value?._path || route.path;
+    // Ensure we have a valid URL by combining with the base URL
+    return getAbsoluteUrl(pagePath);
+  };
+
   if (!page?.value) {
     // Handle undefined page case with defaults
     useSeoMeta({
@@ -107,7 +115,7 @@ export const usePageSeo = (page: Ref<any>) => {
     ogImageWidth: 1200,
     ogImageHeight: 630,
     ogImageType: 'image/jpeg',
-    ogUrl: getAbsoluteUrl(page.value?._path || ''),
+    ogUrl: getCurrentPageUrl(),
     ogLocale: 'pl',
     ogSiteName: defaults.title,
     ogType: 'website',

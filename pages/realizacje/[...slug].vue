@@ -21,15 +21,10 @@ if (!data.value) {
   });
 }
 
-useSeoMeta({
-  title: page.value?.seo?.title || 'Nuxt OG Image',
-  description:
-    page.value?.seo?.description ||
-    'The quickest and easiest way to build Open Graph images for Nuxt.',
-});
-if (page.value.ogImage) {
-  defineOgImage(page.value.ogImage);
-}
+// Apply optimized SEO using the composable
+import { usePageSeo } from '~/composables/usePageSeo';
+usePageSeo(data);
+
 // Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {
   // Check if headerSpacing is explicitly set in frontmatter (in meta object)

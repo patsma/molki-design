@@ -48,6 +48,22 @@ const { data } = await useAsyncData('projects-index', async () => {
   }
 });
 
+// Apply optimized SEO using the composable
+import { usePageSeo } from '~/composables/usePageSeo';
+// Create a default page object if no specific data is available
+const pageData = computed(() => {
+  return (
+    data.value || {
+      title: 'Nasze Realizacje',
+      seo: {
+        title: 'Nasze Realizacje - Zobacz nasze projekty',
+        description: 'Przeglądaj najnowsze realizacje, projekty i inwestycje z naszego portfolio.',
+      },
+    }
+  );
+});
+usePageSeo(pageData);
+
 // Debug - log data if available
 if (data.value) {
   // console.log('REALIZACJE INDEX DATA:', JSON.parse(JSON.stringify(data.value)));

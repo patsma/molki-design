@@ -29,6 +29,22 @@ const { data } = await useAsyncData('blog-index', async () => {
   }
 });
 
+// Apply optimized SEO using the composable
+import { usePageSeo } from '~/composables/usePageSeo';
+// Create a default page object if no specific data is available
+const pageData = computed(() => {
+  return (
+    data.value || {
+      title: 'Blog',
+      seo: {
+        title: 'Blog - Najnowsze artykuły i porady',
+        description: 'Przeglądaj najnowsze artykuły, porady i aktualności z branży budowlanej.',
+      },
+    }
+  );
+});
+usePageSeo(pageData);
+
 // Debug - log data if available
 if (data.value) {
   // console.log('BLOG INDEX DATA:', JSON.parse(JSON.stringify(data.value)));

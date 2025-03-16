@@ -21,15 +21,10 @@ if (!data.value || error.value) {
   });
 }
 
-useSeoMeta({
-  title: page.value?.seo?.title || 'Nuxt OG Image',
-  description:
-    page.value?.seo?.description ||
-    'The quickest and easiest way to build Open Graph images for Nuxt.',
-});
-if (page.value.ogImage) {
-  defineOgImage(page.value.ogImage);
-}
+// Apply optimized SEO using the composable
+import { usePageSeo } from '~/composables/usePageSeo';
+usePageSeo(data);
+
 // Debug - log the complete data object to help debug headerSpacing
 // console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));
 

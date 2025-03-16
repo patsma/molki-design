@@ -1,10 +1,10 @@
 ---
 headerSpacing: false
 head.title: Design Molki
-description: An open source blog theme powered by Nuxt.
-title: Design Molki Title
+description: Projekty wnętrz w Trójmieście
+title: Molki Design
 ogImage:
-    title: "Hi, I am OG Image."
+    title: "Molki Design"
     cover: /heroAbout.jpg
 ---
 

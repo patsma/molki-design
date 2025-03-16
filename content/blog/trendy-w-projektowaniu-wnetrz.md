@@ -9,6 +9,12 @@ excerpt: Poznaj najnowsze trendy w projektowaniu wnętrz, które będą dominowa
 author: Piotr Nowak
 authorRole: Główny projektant
 authorImage: /heroHome.jpg
+head.title: Design Molki
+description: Projekty wnętrz w Trójmieście
+title: Molki Design
+ogImage:
+    title: "Molki Design"
+    cover: /heroAbout.jpg
 ---
 
 # Trendy w projektowaniu wnętrz na rok 2023

@@ -9,6 +9,12 @@ excerpt: Poznaj najważniejsze zasady projektowania funkcjonalnych wnętrz, któ
 author: Anna Kowalska
 authorRole: Architekt wnętrz
 authorImage: /heroHome.jpg
+head.title: Design Molki
+description: Projekty wnętrz w Trójmieście
+title: Molki Design
+ogImage:
+    title: "Molki Design"
+    cover: /heroAbout.jpg
 ---
 
 # Jak zaprojektować funkcjonalne wnętrze mieszkania?

@@ -174,24 +174,20 @@ export default defineNuxtConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ['normal', 'italic'],
       },
-      // Use a simpler configuration for Spartan font
       {
         name: 'Spartan',
-        provider: 'none', // Don't use any provider, we'll handle it manually
+        provider: 'none',
       },
     ],
   },
 
   content: {
-    // Only include the preview property which is likely supported in Nuxt Content v3
     preview: {
       api: 'https://api.nuxt.studio',
     },
   },
 
   compatibilityDate: '2025-01-29',
-
-  // Fix the swiper configuration
   swiper: {
     enableComposables: true,
     bundled: true,

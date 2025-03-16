@@ -1,5 +1,11 @@
 ---
 headerSpacing: true
+head.title: Design Molki
+description: Projekty wnętrz w Trójmieście
+title: Molki Design
+ogImage:
+    title: "Molki Design"
+    cover: /heroAbout.jpg
 ---
 
 ::hero-team

@@ -65,7 +65,7 @@ const handleFormError = (error: any) => {
           data-scroll-duration="1"
         >
           <!-- Left Company -->
-          <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
             <div class="flex justify-center items-center">
               <slot name="leftCompanyLogo">
                 <Logo class="w-full max-w-[200px]" />
@@ -85,7 +85,7 @@ const handleFormError = (error: any) => {
           </div>
 
           <!-- Right Company -->
-          <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
             <div class="flex justify-center items-center">
               <slot name="rightCompanyLogo">
                 <Logo class="w-full max-w-[200px]" />

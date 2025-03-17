@@ -128,7 +128,7 @@ const handleFormError = (error: any) => {
           <!-- HubSpot Form -->
           <ClientOnly>
             <HubspotForm
-              formId="451093eb-38a4-4af8-ac3e-b1f50a824b47"
+              formId="be873485-56f5-42c9-8301-efaa818bdd36"
               region="eu1"
               @load="handleFormLoad"
               @error="handleFormError"

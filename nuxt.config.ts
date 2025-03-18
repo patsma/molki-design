@@ -224,9 +224,11 @@ export default defineNuxtConfig({
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
     description: 'Profesjonalne projekty wnętrz w Trójmieście',
+    image: '/og-social-default.jpg',
   },
 
   ogImage: {
+    componentDirs: ['components/OgImage'],
     defaults: {
       component: 'Custom',
       props: {

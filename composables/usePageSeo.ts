@@ -13,17 +13,17 @@ export const usePageSeo = (page: Ref<any>) => {
     return url.startsWith('http') ? url : `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
   };
 
-  // Default values from site config
+  // Default values from site config - ensure they always exist
   const defaults = {
     title: siteConfig.name || 'Molki Design',
     description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
-    imageUrl: getAbsoluteUrl(siteConfig.image || '/og-social-default.jpg'),
+    imageUrl: getAbsoluteUrl('/og-social-default.jpg'),
     fallbackImage: {
       component: 'Custom',
       props: {
         title: siteConfig.name || 'Molki Design',
         description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
-        cover: getAbsoluteUrl(siteConfig.image || '/og-social-default.jpg'),
+        cover: getAbsoluteUrl('/og-social-default.jpg'),
       },
     },
   };
@@ -37,6 +37,11 @@ export const usePageSeo = (page: Ref<any>) => {
   // Enhanced image handling with prioritization
   const getSocialImage = () => {
     // Prioritize OG image from page metadata
+    if (page.value?.ogImage?.props?.cover) {
+      return getAbsoluteUrl(page.value.ogImage.props.cover);
+    }
+
+    // Try the legacy format
     if (page.value?.ogImage?.cover) {
       return getAbsoluteUrl(page.value.ogImage.cover);
     }
@@ -56,7 +61,7 @@ export const usePageSeo = (page: Ref<any>) => {
     return getAbsoluteUrl(pagePath);
   };
 
-  // Handle undefined page case
+  // Handle undefined page case with reliable fallback
   if (!page?.value) {
     useSeoMeta({
       title: defaults.title,
@@ -68,7 +73,7 @@ export const usePageSeo = (page: Ref<any>) => {
       ogImageHeight: 630,
       ogImageType: 'image/jpeg',
       ogUrl: baseUrl,
-      ogLocale: 'pl',
+      ogLocale: 'pl_PL',
       ogSiteName: defaults.title,
       ogType: 'website',
       twitterCard: 'summary_large_image',
@@ -84,7 +89,7 @@ export const usePageSeo = (page: Ref<any>) => {
     return;
   }
 
-  // Determine title and description
+  // Determine title and description with strong fallbacks
   const pageTitle = page.value?.seo?.title || page.value?.title || defaults.title;
   const pageDescription =
     page.value?.seo?.description ||
@@ -92,10 +97,10 @@ export const usePageSeo = (page: Ref<any>) => {
     page.value?.description ||
     defaults.description;
 
-  // Get the proper OG image
+  // Get the proper OG image with absolute URL
   const ogImageUrl = getSocialImage();
 
-  // Apply SEO Meta Tags - simplified for clarity
+  // Apply SEO Meta Tags with consistent values
   useSeoMeta({
     title: pageTitle,
     ogTitle: pageTitle,
@@ -106,19 +111,19 @@ export const usePageSeo = (page: Ref<any>) => {
     ogImageHeight: 630,
     ogImageType: 'image/jpeg',
     ogUrl: getCurrentPageUrl(),
-    ogLocale: 'pl',
+    ogLocale: 'pl_PL',
     ogSiteName: defaults.title,
     ogType: 'website',
     twitterCard: 'summary_large_image',
     twitterTitle: pageTitle,
     twitterDescription: pageDescription,
     twitterImage: ogImageUrl,
-    twitterSite: siteConfig.twitter,
-    twitterCreator: siteConfig.twitter,
-    fbAppId: siteConfig.facebookPage,
+    twitterSite: siteConfig.twitter || '',
+    twitterCreator: siteConfig.twitter || '',
+    fbAppId: siteConfig.facebookPage || '',
   });
 
-  // OG Image Generation
+  // OG Image Generation with robust fallbacks
   if (page.value?.ogImage) {
     // If ogImage has a component property, use it
     if (page.value.ogImage.component) {
@@ -126,10 +131,12 @@ export const usePageSeo = (page: Ref<any>) => {
         component: page.value.ogImage.component,
         props: {
           ...page.value.ogImage.props,
+          title: page.value.ogImage.props?.title || pageTitle,
+          description: page.value.ogImage.props?.description || pageDescription,
           // Ensure cover is an absolute URL if provided
           cover: page.value.ogImage.props?.cover
             ? getAbsoluteUrl(page.value.ogImage.props.cover)
-            : undefined,
+            : defaults.imageUrl,
         },
       });
     } else {
@@ -139,7 +146,9 @@ export const usePageSeo = (page: Ref<any>) => {
         props: {
           title: page.value.ogImage.title || pageTitle,
           description: page.value.ogImage.description || pageDescription,
-          cover: page.value.ogImage.cover ? getAbsoluteUrl(page.value.ogImage.cover) : undefined,
+          cover: page.value.ogImage.cover
+            ? getAbsoluteUrl(page.value.ogImage.cover)
+            : defaults.imageUrl,
         },
       });
     }
@@ -155,7 +164,14 @@ export const usePageSeo = (page: Ref<any>) => {
     });
   } else {
     // Fallback to default OG image
-    defineOgImage(defaults.fallbackImage);
+    defineOgImage({
+      component: 'Custom',
+      props: {
+        title: pageTitle,
+        description: pageDescription,
+        cover: defaults.imageUrl,
+      },
+    });
   }
 
   // Schema.org structured data
@@ -164,10 +180,10 @@ export const usePageSeo = (page: Ref<any>) => {
       {
         '@type': 'WebSite',
         name: siteConfig.name,
-        url: siteConfig.url,
+        url: baseUrl,
         potentialAction: {
           '@type': 'SearchAction',
-          target: `${siteConfig.url}/search?q={search_term_string}`,
+          target: `${baseUrl}/search?q={search_term_string}`,
           'query-input': 'required name=search_term_string',
         },
       },
@@ -183,7 +199,7 @@ export const usePageSeo = (page: Ref<any>) => {
             '@type': 'Person',
             name: 'Wioletta Retko',
             jobTitle: 'Główny Projektant',
-            url: `${siteConfig.url}/o-nas`,
+            url: `${baseUrl}/o-nas`,
           },
         ],
       },

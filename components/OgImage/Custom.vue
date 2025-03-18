@@ -13,19 +13,22 @@ const twitter = props.author?.link?.replace('https://twitter.com/', '@');
 const imageWidth = 1200;
 const imageHeight = 630;
 
+// Get configuration for defaults
+const config = useRuntimeConfig();
+const baseUrl = config.public.siteUrl || 'https://molki-design-2025.netlify.app';
+
 // Helper to ensure image URLs are valid and optimize for social sharing
 const getCoverImage = computed(() => {
-  // If no cover image is provided, return null
-  if (!props.cover) return null;
+  // If no cover image is provided, return default OG image
+  if (!props.cover) return `${baseUrl}/og-social-default.jpg`;
 
   // If cover image starts with http, it's already an absolute URL
   if (props.cover.startsWith('http')) {
     return props.cover;
   }
 
-  // Otherwise, it's a relative URL - we'll use it as is since
-  // the SEO composable is responsible for making it absolute
-  return props.cover;
+  // Otherwise, it's a relative URL - make it absolute
+  return `${baseUrl}${props.cover.startsWith('/') ? '' : '/'}${props.cover}`;
 });
 
 // Limit title and description lengths to avoid overflow
@@ -35,7 +38,7 @@ const formattedTitle = computed(() => {
 });
 
 const formattedDescription = computed(() => {
-  if (!props.description) return '';
+  if (!props.description) return 'Profesjonalne projekty wnętrz w Trójmieście';
   return props.description.length > 180
     ? props.description.substring(0, 177) + '...'
     : props.description;
@@ -48,11 +51,10 @@ const formattedDescription = computed(() => {
     :style="{ padding: '30px 45px', width: imageWidth + 'px', height: imageHeight + 'px' }"
   >
     <div class="px-5 py-3 rounded absolute bottom-10 bg-white right-10">
-      <img src="/logo.svg" width="99" height="29" alt="Molki Design Logo" />
+      <img :src="`${baseUrl}/logo.svg`" width="99" height="29" alt="Molki Design Logo" />
     </div>
     <div class="pb-10 justify-center items-center flex flex-col">
       <img
-        v-if="getCoverImage"
         :src="getCoverImage"
         :alt="formattedTitle"
         width="432"

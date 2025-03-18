@@ -1,9 +1,9 @@
 <template>
-  <NuxtLayout>
+  <header>
+    Nuxt OG Image x Nuxt Content v3
+    <nav><NuxtLink to="/">home</NuxtLink></nav>
+  </header>
+  <main>
     <NuxtPage />
-  </NuxtLayout>
+  </main>
 </template>
-<!--suppress CssUnknownTarget -->
-<style lang="scss">
-@use '~/assets/scss/main.scss';
-</style>

@@ -47,10 +47,10 @@ const handleFormError = (error: any) => {
       </div>
 
       <!-- Content Container -->
-      <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8">
+      <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8 pt-10">
         <div class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16">
           <!-- Left Column: Form Section -->
-          <ClientOnly>
+          <!-- <ClientOnly>
             <ContactForm data-scroll-item data-scroll-animation="fadeUp" data-scroll-duration="1">
               <template #title>
                 <slot name="title" mdc-unwrap="p" />
@@ -62,11 +62,11 @@ const handleFormError = (error: any) => {
                 <slot name="submitText" mdc-unwrap="p" />
               </template>
             </ContactForm>
-          </ClientOnly>
+          </ClientOnly> -->
           <!-- HubSpot Form -->
           <ClientOnly>
             <HubspotForm
-              formId="4620c0d5-ee42-40e1-9558-b5c4ba031abc"
+              formId="31f3f223-e756-4f66-88f2-79582f3afb25"
               region="eu1"
               @load="handleFormLoad"
               @error="handleFormError"

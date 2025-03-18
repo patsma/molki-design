@@ -65,8 +65,8 @@ const handleFormError = (error: any) => {
           data-scroll-duration="1"
         >
           <!-- Left Company -->
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="flex justify-center items-center">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="flex justify-center items-start">
               <slot name="leftCompanyLogo">
                 <Logo class="w-full max-w-[200px]" />
               </slot>
@@ -85,8 +85,8 @@ const handleFormError = (error: any) => {
           </div>
 
           <!-- Right Company -->
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="flex justify-center items-center">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="flex justify-center items-start">
               <slot name="rightCompanyLogo">
                 <Logo class="w-full max-w-[200px]" />
               </slot>
@@ -128,7 +128,7 @@ const handleFormError = (error: any) => {
           <!-- HubSpot Form -->
           <ClientOnly>
             <HubspotForm
-              formId="451093eb-38a4-4af8-ac3e-b1f50a824b47"
+              formId="be873485-56f5-42c9-8301-efaa818bdd36"
               region="eu1"
               @load="handleFormLoad"
               @error="handleFormError"

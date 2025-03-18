@@ -4,7 +4,6 @@ export const usePageSeo = (page: Ref<any>) => {
   const route = useRoute();
 
   // Get site config from runtime config
-  const runtimeConfig = useRuntimeConfig();
   const config = useRuntimeConfig();
   const baseUrl = config.public.siteUrl || 'https://molki-design-2025.netlify.app';
 
@@ -18,53 +17,53 @@ export const usePageSeo = (page: Ref<any>) => {
   const defaults = {
     title: siteConfig.name || 'Molki Design',
     description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
-    imageUrl: getAbsoluteUrl(siteConfig.image || '/og-image.jpg'),
+    imageUrl: getAbsoluteUrl(siteConfig.image || '/og-social-default.jpg'),
     fallbackImage: {
       component: 'Custom',
       props: {
         title: siteConfig.name || 'Molki Design',
         description: siteConfig.description || 'Profesjonalne projekty wnętrz w Trójmieście',
-        cover: getAbsoluteUrl(siteConfig.image || '/og-image.jpg'),
+        cover: getAbsoluteUrl(siteConfig.image || '/og-social-default.jpg'),
       },
     },
   };
 
-  // New: Social media validation function
+  // Validation function for meta content
   const validateSocialMeta = (content: string, fallback: string) => {
     const validated = content || fallback;
     return validated.length > 60 && validated.length < 300 ? validated : fallback;
   };
 
-  // Updated: Enhanced image handling that prioritizes static image files
+  // Enhanced image handling with prioritization
   const getSocialImage = () => {
-    // Always prioritize static images for social media platforms
+    // Prioritize OG image from page metadata
     if (page.value?.ogImage?.cover) {
-      // Use the static image directly from public directory
       return getAbsoluteUrl(page.value.ogImage.cover);
     }
+
+    // Fallback to page cover if available
     if (page.value?.cover) {
       return getAbsoluteUrl(page.value.cover);
     }
-    // Use default image from public directory
-    return getAbsoluteUrl('/og-social-default.jpg');
+
+    // Use default image as last resort
+    return defaults.imageUrl;
   };
 
   // Get the current page URL
   const getCurrentPageUrl = () => {
-    // First try to get the path from the page data
     const pagePath = page.value?._path || route.path;
-    // Ensure we have a valid URL by combining with the base URL
     return getAbsoluteUrl(pagePath);
   };
 
+  // Handle undefined page case
   if (!page?.value) {
-    // Handle undefined page case with defaults
     useSeoMeta({
       title: defaults.title,
       ogTitle: defaults.title,
       description: defaults.description,
       ogDescription: defaults.description,
-      ogImage: getSocialImage(),
+      ogImage: defaults.imageUrl,
       ogImageWidth: 1200,
       ogImageHeight: 630,
       ogImageType: 'image/jpeg',
@@ -75,7 +74,7 @@ export const usePageSeo = (page: Ref<any>) => {
       twitterCard: 'summary_large_image',
       twitterTitle: defaults.title,
       twitterDescription: defaults.description,
-      twitterImage: getSocialImage(),
+      twitterImage: defaults.imageUrl,
       twitterSite: siteConfig.twitter,
       twitterCreator: siteConfig.twitter,
       fbAppId: siteConfig.facebookPage,
@@ -85,25 +84,24 @@ export const usePageSeo = (page: Ref<any>) => {
     return;
   }
 
-  // Get absolute URL for page cover
-  const coverImage = page.value?.cover ? getAbsoluteUrl(page.value.cover) : defaults.imageUrl;
+  // Determine title and description
+  const pageTitle = page.value?.seo?.title || page.value?.title || defaults.title;
+  const pageDescription =
+    page.value?.seo?.description ||
+    page.value?.excerpt ||
+    page.value?.description ||
+    defaults.description;
 
-  // SEO Meta Tags with simplified og:image implementation
+  // Get the proper OG image
+  const ogImageUrl = getSocialImage();
+
+  // Apply SEO Meta Tags - simplified for clarity
   useSeoMeta({
-    title: page.value?.seo?.title || page.value?.title || defaults.title,
-    ogTitle: page.value?.seo?.title || page.value?.title || defaults.title,
-    description:
-      page.value?.seo?.description ||
-      page.value?.excerpt ||
-      page.value?.description ||
-      defaults.description,
-    ogDescription:
-      page.value?.seo?.description ||
-      page.value?.excerpt ||
-      page.value?.description ||
-      defaults.description,
-    // Simplified image reference - direct URL instead of object
-    ogImage: getSocialImage(),
+    title: pageTitle,
+    ogTitle: pageTitle,
+    description: pageDescription,
+    ogDescription: pageDescription,
+    ogImage: ogImageUrl,
     ogImageWidth: 1200,
     ogImageHeight: 630,
     ogImageType: 'image/jpeg',
@@ -112,37 +110,51 @@ export const usePageSeo = (page: Ref<any>) => {
     ogSiteName: defaults.title,
     ogType: 'website',
     twitterCard: 'summary_large_image',
-    twitterTitle: page.value?.seo?.title || page.value?.title || defaults.title,
-    twitterDescription:
-      page.value?.seo?.description ||
-      page.value?.excerpt ||
-      page.value?.description ||
-      defaults.description,
-    twitterImage: getSocialImage(),
+    twitterTitle: pageTitle,
+    twitterDescription: pageDescription,
+    twitterImage: ogImageUrl,
     twitterSite: siteConfig.twitter,
     twitterCreator: siteConfig.twitter,
     fbAppId: siteConfig.facebookPage,
   });
 
-  // OG Image Generation - still use this for other purposes
+  // OG Image Generation
   if (page.value?.ogImage) {
-    defineOgImage({
-      component: 'Custom',
-      props: {
-        ...page.value.ogImage,
-        cover: page.value.ogImage.cover ? getAbsoluteUrl(page.value.ogImage.cover) : undefined,
-      },
-    });
+    // If ogImage has a component property, use it
+    if (page.value.ogImage.component) {
+      defineOgImage({
+        component: page.value.ogImage.component,
+        props: {
+          ...page.value.ogImage.props,
+          // Ensure cover is an absolute URL if provided
+          cover: page.value.ogImage.props?.cover
+            ? getAbsoluteUrl(page.value.ogImage.props.cover)
+            : undefined,
+        },
+      });
+    } else {
+      // Default to Custom component with provided ogImage properties
+      defineOgImage({
+        component: 'Custom',
+        props: {
+          title: page.value.ogImage.title || pageTitle,
+          description: page.value.ogImage.description || pageDescription,
+          cover: page.value.ogImage.cover ? getAbsoluteUrl(page.value.ogImage.cover) : undefined,
+        },
+      });
+    }
   } else if (page.value?.cover) {
+    // Use page cover for OG image
     defineOgImage({
       component: 'Custom',
       props: {
-        title: page.value?.title || defaults.title,
-        description: page.value?.excerpt || page.value?.description || defaults.description,
-        cover: coverImage,
+        title: pageTitle,
+        description: pageDescription,
+        cover: getAbsoluteUrl(page.value.cover),
       },
     });
   } else {
+    // Fallback to default OG image
     defineOgImage(defaults.fallbackImage);
   }
 
@@ -161,9 +173,9 @@ export const usePageSeo = (page: Ref<any>) => {
       },
       {
         '@type': 'WebPage',
-        name: page.value?.title,
-        description: validateSocialMeta(page.value?.description, siteConfig.description),
-        image: getSocialImage(),
+        name: pageTitle,
+        description: validateSocialMeta(pageDescription, defaults.description),
+        image: ogImageUrl,
         datePublished: page.value?.createdAt,
         dateModified: page.value?.updatedAt,
         author: [

@@ -35,12 +35,36 @@ const needsHeaderSpacing = computed(() => {
   return false;
 });
 
+// Handle ogImage structure to ensure it's in the correct format
+const preparePageForSeo = () => {
+  // Deep clone to avoid mutating the original object
+  const pageClone = JSON.parse(JSON.stringify(page.value || {}));
+
+  // If ogImage exists but doesn't have the proper structure, fix it
+  if (pageClone?.meta?.ogImage && !pageClone.meta.ogImage.component) {
+    // Convert the old structure to the new one
+    pageClone.meta.ogImage = {
+      component: 'Custom',
+      props: {
+        title: pageClone.meta.ogImage.title || pageClone.meta.title,
+        description: pageClone.meta.ogImage.description || pageClone.meta.description,
+        cover: pageClone.meta.ogImage.cover || null,
+      },
+    };
+  }
+
+  return ref(pageClone);
+};
+
+// Get the prepared page object
+const seoPage = preparePageForSeo();
+
 // Apply optimized SEO using the composable
 import { usePageSeo } from '~/composables/usePageSeo';
 
 // Apply SEO with error handling
 try {
-  usePageSeo(page);
+  usePageSeo(seoPage);
 } catch (e) {
   console.error('Error applying SEO to page:', e, JSON.stringify(page.value));
 }

@@ -13,25 +13,48 @@ const twitter = props.author?.link?.replace('https://twitter.com/', '@');
 const imageWidth = 1200;
 const imageHeight = 630;
 
-// Helper to ensure image URLs are valid
+// Helper to ensure image URLs are valid and optimize for social sharing
 const getCoverImage = computed(() => {
+  // If no cover image is provided, return null
   if (!props.cover) return null;
+
+  // If cover image starts with http, it's already an absolute URL
+  if (props.cover.startsWith('http')) {
+    return props.cover;
+  }
+
+  // Otherwise, it's a relative URL - we'll use it as is since
+  // the SEO composable is responsible for making it absolute
   return props.cover;
+});
+
+// Limit title and description lengths to avoid overflow
+const formattedTitle = computed(() => {
+  if (!props.title) return 'Molki Design';
+  return props.title.length > 80 ? props.title.substring(0, 77) + '...' : props.title;
+});
+
+const formattedDescription = computed(() => {
+  if (!props.description) return '';
+  return props.description.length > 180
+    ? props.description.substring(0, 177) + '...'
+    : props.description;
 });
 </script>
 
 <template>
   <div
     class="w-full h-full flex flex-col items-center justify-center text-white bg-gray-900"
-    :style="{ padding: '30px 45px', width: '1200px', height: '630px' }"
+    :style="{ padding: '30px 45px', width: imageWidth + 'px', height: imageHeight + 'px' }"
   >
     <div class="px-5 py-3 rounded absolute bottom-10 bg-white right-10">
-      <img src="/logo.svg" width="99" height="29" class="" />
+      <img src="/logo.svg" width="99" height="29" alt="Molki Design Logo" />
     </div>
     <div class="pb-10 justify-center items-center flex flex-col">
       <img
         v-if="getCoverImage"
         :src="getCoverImage"
+        :alt="formattedTitle"
         width="432"
         height="243"
         :style="{ borderRadius: '8px', overflow: 'hidden', objectFit: 'cover' }"
@@ -48,7 +71,7 @@ const getCoverImage = computed(() => {
           textOverflow: 'ellipsis',
         }"
       >
-        {{ title }}
+        {{ formattedTitle }}
       </h1>
       <p
         :style="{
@@ -64,10 +87,17 @@ const getCoverImage = computed(() => {
         }"
         class="mx-10 mt-5 text-gray-400"
       >
-        {{ description }}
+        {{ formattedDescription }}
       </p>
       <div v-if="author" class="flex items-center mt-5">
-        <img :src="author.avatarUrl" width="80" height="80" class="rounded-full mr-5" />
+        <img
+          v-if="author.avatarUrl"
+          :src="author.avatarUrl"
+          width="80"
+          height="80"
+          class="rounded-full mr-5"
+          alt="Author avatar"
+        />
         <div class="flex flex-col text-gray-300">
           <div class="text-3xl" :style="{ whiteSpace: 'pre' }">
             {{ author.name }}

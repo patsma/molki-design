@@ -5,9 +5,11 @@ seo:
   title: Kontakt - Molki Design | Projektowanie wnętrz Trójmiasto
   description: Skontaktuj się z zespołem Molki Design. Umów konsultację, zadaj pytanie lub rozpocznij współpracę przy projektowaniu wnętrz w Trójmieście.
 ogImage:
-  title: Kontakt - Molki Design
-  description: Skontaktuj się z nami i rozpocznij współpracę przy projekcie Twoich marzeń
-  cover: /heroPrefooter.jpg
+  component: Custom
+  props:
+    title: Kontakt - Molki Design
+    description: Skontaktuj się z nami i rozpocznij współpracę przy projekcie Twoich marzeń
+    cover: /heroPrefooter.jpg
 ---
 
 ::hero-form

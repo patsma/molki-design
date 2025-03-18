@@ -5,9 +5,11 @@ seo:
   title: Dla biznesu - Projektowanie wnętrz komercyjnych | Molki Design
   description: Profesjonalne projektowanie wnętrz komercyjnych i biurowych w Trójmieście. Kompleksowe rozwiązania dla firm, hoteli, restauracji i przestrzeni publicznych.
 ogImage:
-  title: Dla biznesu - Molki Design
-  description: Profesjonalne projektowanie wnętrz komercyjnych i biurowych
-  cover: /heroAbout.jpg
+  component: Custom
+  props:
+    title: Dla biznesu - Molki Design
+    description: Profesjonalne projektowanie wnętrz komercyjnych i biurowych
+    cover: /heroAbout.jpg
 ---
 
 ::hero-business

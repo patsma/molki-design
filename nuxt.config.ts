@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config';
 
+// Define the primary site URL in one place
+const SITE_URL = process.env.NUXT_SITE_URL || 'https://molki-design-2025.netlify.app';
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
@@ -40,7 +43,15 @@ export default defineNuxtConfig({
       component: 'Custom',
       width: 1200,
       height: 630,
+      // Define props that will be used as default values
+      props: {
+        title: 'Molki Design',
+        description: 'Profesjonalne projekty wnętrz w Trójmieście',
+        cover: '/og-social-default.jpg',
+      },
     },
+    // Enable static image rendering for faster sharing
+    runtimeCacheStorage: true,
   },
   // Cookie control configuration
   cookieControl: {
@@ -229,13 +240,13 @@ export default defineNuxtConfig({
 
   // Enhanced site configuration for SEO
   site: {
-    url: process.env.NUXT_SITE_URL || 'https://molki-design-2025.netlify.app',
+    url: SITE_URL,
     name: 'Molki Design',
     description:
       'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
     defaultLocale: 'pl',
     indexable: true,
-    image: 'https://molki-design-2025.netlify.app/og-image.jpg',
+    image: '/og-social-default.jpg', // Use a consistent image path
     titleSeparator: ' | ',
     trailingSlash: false,
     twitter: '@MolkiDesign',
@@ -248,7 +259,7 @@ export default defineNuxtConfig({
     public: {
       hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '',
       isDev: process.env.NODE_ENV !== 'production',
-      siteUrl: 'https://molki-design-2025.netlify.app',
+      siteUrl: SITE_URL, // Use the same URL defined above
     },
   },
 });

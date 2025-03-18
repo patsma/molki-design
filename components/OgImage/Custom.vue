@@ -15,8 +15,24 @@ const imageHeight = 630;
 
 // Helper to ensure image URLs are valid
 const getCoverImage = computed(() => {
-  if (!props.cover) return null;
+  // Return fully qualified URL for API-based rendering
+  if (!props.cover) return '/og-social-default.jpg';
+
+  // Make sure we have a valid path
   return props.cover;
+});
+
+// Truncate text to prevent overflow
+const truncatedTitle = computed(() => {
+  if (!props.title) return 'Molki Design';
+  return props.title.length > 60 ? props.title.substring(0, 57) + '...' : props.title;
+});
+
+const truncatedDescription = computed(() => {
+  if (!props.description) return 'Profesjonalne projekty wnętrz w Trójmieście';
+  return props.description.length > 140
+    ? props.description.substring(0, 137) + '...'
+    : props.description;
 });
 </script>
 
@@ -48,7 +64,7 @@ const getCoverImage = computed(() => {
           textOverflow: 'ellipsis',
         }"
       >
-        {{ title }}
+        {{ truncatedTitle }}
       </h1>
       <p
         :style="{
@@ -64,7 +80,7 @@ const getCoverImage = computed(() => {
         }"
         class="mx-10 mt-5 text-gray-400"
       >
-        {{ description }}
+        {{ truncatedDescription }}
       </p>
       <div v-if="author" class="flex items-center mt-5">
         <img :src="author.avatarUrl" width="80" height="80" class="rounded-full mr-5" />

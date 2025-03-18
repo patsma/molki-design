@@ -237,7 +237,7 @@ export default defineNuxtConfig({
     },
   },
 
-  // Update runtime config to include the site URL
+  // Update runtime config to include the site URL and configuration
   runtimeConfig: {
     public: {
       hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '',
@@ -245,7 +245,7 @@ export default defineNuxtConfig({
       siteUrl: 'https://molki-design-2025.netlify.app',
       site: {
         url: 'https://molki-design-2025.netlify.app',
-        name: 'Default Molki Design',
+        name: 'Molki Design',
         description: 'Profesjonalne projekty wnętrz w Trójmieście',
       },
     },

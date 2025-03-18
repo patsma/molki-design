@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // Request the page data
 const route = useRoute();
-const { data: page } = await useAsyncData('page-' + route.path, () => {
+const { data: page } = await useAsyncData(`page-${route.path}`, () => {
   return queryCollection('content').path(route.path).first();
 });
 
@@ -19,41 +19,24 @@ if (!page.value) {
 
 // Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {
-  // Check if headerSpacing is explicitly set in frontmatter (in meta object)
-  if (page.value?.meta?.headerSpacing === false) {
-    // console.log('headerSpacing is FALSE in frontmatter, no spacing');
-    return false;
-  }
-
-  if (page.value?.meta?.headerSpacing === true) {
-    // console.log('headerSpacing is TRUE in frontmatter, adding spacing');
-    return true;
-  }
-
-  // Default (if not specified)
-  // console.log('headerSpacing not specified in frontmatter, no spacing by default');
+  if (page.value?.meta?.headerSpacing === false) return false;
+  if (page.value?.meta?.headerSpacing === true) return true;
   return false;
 });
 
-// Get site config for fallbacks
-const config = useRuntimeConfig();
-const baseUrl = config.public.siteUrl || 'https://molki-design-2025.netlify.app';
+// Use site config for fallbacks
+const config = useRuntimeConfig().public;
+const baseUrl = config.siteUrl || 'https://molki-design-2025.netlify.app';
 
 // Set SEO metadata with proper OG image handling
 useSeoMeta({
-  title: page.value?.seo?.title || page.value?.title || 'Molki Design',
-  ogTitle: page.value?.seo?.title || page.value?.title || 'Molki Design',
-  description:
-    page.value?.seo?.description ||
-    page.value?.description ||
-    'Profesjonalne projekty wnętrz w Trójmieście',
-  ogDescription:
-    page.value?.seo?.description ||
-    page.value?.description ||
-    'Profesjonalne projekty wnętrz w Trójmieście',
+  title: page.value?.seo?.title || page.value?.title || config.site.name,
+  ogTitle: page.value?.seo?.title || page.value?.title || config.site.name,
+  description: page.value?.seo?.description || page.value?.description || config.site.description,
+  ogDescription: page.value?.seo?.description || page.value?.description || config.site.description,
   ogImage: {
     url: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/image/og.png`,
-    alt: page.value?.seo?.title || page.value?.title || 'Molki Design',
+    alt: page.value?.seo?.title || page.value?.title || config.site.name,
     width: 1200,
     height: 630,
     type: 'image/jpeg',
@@ -62,28 +45,16 @@ useSeoMeta({
 });
 
 // Define OG image with fallback
-if (page.value?.ogImage) {
-  defineOgImage({
+defineOgImage(
+  page.value?.ogImage || {
     component: 'Custom',
     props: {
-      title: page.value.ogImage.props?.title || page.value.title || 'Molki Design',
-      description:
-        page.value.ogImage.props?.description ||
-        page.value.description ||
-        'Profesjonalne projekty wnętrz w Trójmieście',
-      cover: page.value.ogImage.props?.cover || '/og-social-default.jpg',
-    },
-  });
-} else {
-  defineOgImage({
-    component: 'Custom',
-    props: {
-      title: 'Molki Design',
-      description: 'Profesjonalne projekty wnętrz w Trójmieście',
+      title: config.site.name,
+      description: config.site.description,
       cover: '/og-social-default.jpg',
     },
-  });
-}
+  }
+);
 </script>
 
 <template>

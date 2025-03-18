@@ -3,46 +3,8 @@ export default defineAppConfig({
     main: {
       items: [
         {
-          label: 'Nasze Usługi',
-          link: '/projekt-wnetrza',
-          children: [
-            {
-              label: 'Projekt Wnętrza',
-              link: '/projekt-wnetrza',
-            },
-            {
-              label: 'Remont Pod Klucz',
-              link: '/remont-pod-klucz',
-            },
-            {
-              label: 'Dla Biznesu',
-              link: '/dla-biznesu',
-            },
-            {
-              label: 'Isolation',
-              link: '/isolation',
-            },
-            {
-              label: 'Todo',
-              link: '/todo',
-            },
-          ],
-        },
-        {
           label: 'O nas',
           link: '/o-nas',
-        },
-        {
-          label: 'Realizacje',
-          link: '/realizacje',
-        },
-        {
-          label: 'Blog',
-          link: '/blog',
-        },
-        {
-          label: 'Kontakt',
-          link: '/kontakt',
         },
       ],
     },

@@ -23,39 +23,6 @@ const needsHeaderSpacing = computed(() => {
   if (page.value?.meta?.headerSpacing === true) return true;
   return false;
 });
-
-// Use site config for fallbacks
-const config = useRuntimeConfig().public;
-const baseUrl = config.siteUrl || 'https://molki-design-2025.netlify.app';
-
-// Set SEO metadata with proper OG image handling
-useSeoMeta({
-  title: page.value?.seo?.title || page.value?.title || config.site.name,
-  ogTitle: page.value?.seo?.title || page.value?.title || config.site.name,
-  description: page.value?.seo?.description || page.value?.description || config.site.description,
-  ogDescription: page.value?.seo?.description || page.value?.description || config.site.description,
-  ogImage: {
-    url: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/static/og.png`,
-    alt: page.value?.seo?.title || page.value?.title || config.site.name,
-    width: 1200,
-    height: 630,
-    type: 'image/png',
-  },
-  twitterCard: 'summary_large_image',
-  twitterImage: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/static/og.png`,
-});
-
-// Define OG image with fallback
-defineOgImage(
-  page.value?.ogImage || {
-    component: 'Custom',
-    props: {
-      title: config.site.name,
-      description: config.site.description,
-      cover: '/og-social-default.jpg',
-    },
-  }
-);
 </script>
 
 <template>

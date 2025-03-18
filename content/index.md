@@ -34,10 +34,3 @@ Umów konsultację
   :::
 ::
 
-::blog-display
-#title
-Najnowsze artykuły
-
-#subtitle
-Sprawdź nasze najnowsze publikacje i porady
-::

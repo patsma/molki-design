@@ -14,6 +14,7 @@ if (!page.value) {
   });
 }
 
+
 // Debug - log the complete page object to find where headerSpacing is stored
 // console.log('FULL PAGE DATA:', JSON.parse(JSON.stringify(page.value)));
 

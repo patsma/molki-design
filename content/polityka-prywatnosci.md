@@ -5,9 +5,11 @@ seo:
   title: Polityka prywatności - Molki Design
   description: Informacje o tym, jak przetwarzamy Twoje dane osobowe, zasady ochrony prywatności oraz wykorzystania plików cookies.
 ogImage:
-  title: Polityka prywatności - Molki Design
-  description: Informacje o tym, jak przetwarzamy Twoje dane osobowe
-  cover: /heroAbout.jpg
+  component: Custom
+  props:
+    title: Polityka prywatności - Molki Design
+    description: Informacje o tym, jak przetwarzamy Twoje dane osobowe
+    cover: /heroAbout.jpg
 ---
 
 # Polityka prywatności

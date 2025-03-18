@@ -7,6 +7,8 @@ seo:
   title: Projekt wnętrza - Profesjonalne projektowanie wnętrz | Molki Design
   description: Kompleksowe projektowanie wnętrz mieszkalnych i komercyjnych w Trójmieście. Od koncepcji po realizację, tworzymy funkcjonalne i estetyczne przestrzenie.
 ogImage:
+  component: Custom
+  props:
     title: Projekt wnętrza - Molki Design
     description: Profesjonalne projektowanie wnętrz w Trójmieście
     cover: /heroAbout.jpg

@@ -12,10 +12,7 @@ ogImage:
       🏆 Wiodące biuro projektowe w Trójmieście | 
       ✅ 10+ lat doświadczenia | 
       💯 Gwarancja jakości
-    image: /social-preview.jpg
-    colors:
-      primary: '#2A2A2A'
-      secondary: '#E5E5E5'
+    cover: /social-preview.jpg
 ---
 
 ::hero-team

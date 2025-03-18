@@ -222,17 +222,17 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://molki-design-2025.netlify.app',
-    name: 'Nuxt Content OG Image',
-    description: 'The quickest and easiest way to build Open Graph images for Nuxt Content',
+    name: 'Molki Design',
+    description: 'Profesjonalne projekty wnętrz w Trójmieście',
   },
 
   ogImage: {
     defaults: {
       component: 'Custom',
       props: {
-        title: 'Nuxt Content OG Image',
-        description: 'Dynamic Open Graph images for Nuxt Content',
-        cover: '/og-image.jpg',
+        title: 'Molki Design',
+        description: 'Profesjonalne projekty wnętrz w Trójmieście',
+        cover: '/og-social-default.jpg',
       },
     },
   },

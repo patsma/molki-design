@@ -7,19 +7,29 @@ const props = defineProps({
   author: Object,
 });
 
+const siteConfig = useSiteConfig();
 const twitter = props.author?.link?.replace('https://twitter.com/', '@');
 
 // Make sure images have proper dimensions for social media platforms
 const imageWidth = 1200;
 const imageHeight = 630;
 
-// Helper to ensure image URLs are valid
+// Helper to ensure image URLs are valid and absolute
 const getCoverImage = computed(() => {
-  // Return fully qualified URL for API-based rendering
-  if (!props.cover) return '/og-social-default.jpg';
+  // Default fallback image
+  const defaultImage = '/og-social-default.jpg';
 
-  // Make sure we have a valid path
-  return props.cover;
+  if (!props.cover) return defaultImage;
+
+  // If already absolute URL, use it directly
+  if (props.cover.startsWith('http')) {
+    return props.cover;
+  }
+
+  // For relative URLs, make them absolute using site config
+  const baseUrl = siteConfig.url || 'https://molki-design-2025.netlify.app';
+  const path = props.cover.startsWith('/') ? props.cover : `/${props.cover}`;
+  return `${baseUrl}${path}`;
 });
 
 // Truncate text to prevent overflow

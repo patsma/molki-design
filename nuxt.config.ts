@@ -1,8 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config';
 
-// Define the primary site URL in one place
-const SITE_URL = process.env.NUXT_SITE_URL || 'https://molki-design-2025.netlify.app';
+// Determine environment
+const isDev = process.env.NODE_ENV !== 'production';
+
+// Define the primary site URL with environment awareness
+const SITE_URL =
+  process.env.NUXT_SITE_URL ||
+  (isDev ? 'http://localhost:3000' : 'https://molki-design-2025.netlify.app');
+
+// Site environment - important for robots.txt generation
+const SITE_ENV = process.env.NUXT_SITE_ENV || (isDev ? 'development' : 'production');
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -238,15 +246,16 @@ export default defineNuxtConfig({
     },
   },
 
-  // Enhanced site configuration for SEO
+  // Enhanced site configuration for SEO with environment awareness
   site: {
     url: SITE_URL,
     name: 'Molki Design',
     description:
       'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
     defaultLocale: 'pl',
-    indexable: true,
-    image: '/og-social-default.jpg', // Use a consistent image path
+    indexable: SITE_ENV === 'production', // Only index in production
+    env: SITE_ENV, // Add environment explicitly
+    image: '/og-social-default.jpg',
     titleSeparator: ' | ',
     trailingSlash: false,
     twitter: '@MolkiDesign',
@@ -254,12 +263,13 @@ export default defineNuxtConfig({
     facebookPage: 'MolkiDesign',
   },
 
-  // Update runtime config to include the site URL
+  // Update runtime config with environment awareness
   runtimeConfig: {
     public: {
       hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '',
-      isDev: process.env.NODE_ENV !== 'production',
-      siteUrl: SITE_URL, // Use the same URL defined above
+      isDev: isDev,
+      siteUrl: SITE_URL,
+      siteEnv: SITE_ENV,
     },
   },
 });

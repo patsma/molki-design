@@ -1,13 +1,21 @@
 ---
 headerSpacing: true
-title: O nas - Molki Design
+title: Molki Design
 seo:
-  title: O nas - Molki Design | Projektowanie wnętrz w Trójmieście
-  description: Poznaj zespół Molki Design - profesjonalne studio projektowania wnętrz z Gdańska. Dowiedz się więcej o naszej filozofii i podejściu do projektowania.
+  title: Molki Design - Profesjonalne projekty wnętrz w Trójmieście
+  description: Profesjonalne projektowanie wnętrz mieszkalnych i komercyjnych w Trójmieście. Kompleksowe usługi od projektu po realizację.
 ogImage:
-  title: O nas - Molki Design
-  description: Poznaj zespół Molki Design - profesjonalne studio projektowania wnętrz z Gdańska
-  cover: /heroAbout.jpg
+  component: Custom
+  props:
+    title: Molki Team - Profesjonalne projekty wnętrz
+    description: |
+      🏆 Wiodące biuro projektowe w Trójmieście | 
+      ✅ 10+ lat doświadczenia | 
+      💯 Gwarancja jakości
+    image: /social-preview.jpg
+    colors:
+      primary: '#2A2A2A'
+      secondary: '#E5E5E5'
 ---
 
 ::hero-team

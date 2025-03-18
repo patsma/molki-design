@@ -42,7 +42,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ✅ Tytuły stron
   - 🟡 Tekst alternatywny dla wszystkich obrazów
   - 🟡 Weryfikacja Google Search Console
-  - ❌ Konfiguracja robots.txt
+  - ✅ Konfiguracja robots.txt
 - ✅ **Integracja Analityki**
   - ✅ Google Analytics 4
   - ✅ Google Tag Manager

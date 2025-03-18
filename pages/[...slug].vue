@@ -35,13 +35,14 @@ useSeoMeta({
   description: page.value?.seo?.description || page.value?.description || config.site.description,
   ogDescription: page.value?.seo?.description || page.value?.description || config.site.description,
   ogImage: {
-    url: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/image/og.png`,
+    url: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/static/og.png`,
     alt: page.value?.seo?.title || page.value?.title || config.site.name,
     width: 1200,
     height: 630,
-    type: 'image/jpeg',
+    type: 'image/png',
   },
   twitterCard: 'summary_large_image',
+  twitterImage: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/static/og.png`,
 });
 
 // Define OG image with fallback

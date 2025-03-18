@@ -220,7 +220,6 @@ export default defineNuxtConfig({
     },
   },
 
-  
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
@@ -244,6 +243,11 @@ export default defineNuxtConfig({
       hubspotPortalId: process.env.HUBSPOT_PORTAL_ID || '',
       isDev: process.env.NODE_ENV !== 'production',
       siteUrl: 'https://molki-design-2025.netlify.app',
+      site: {
+        url: 'https://molki-design-2025.netlify.app',
+        name: 'Default Molki Design',
+        description: 'Profesjonalne projekty wnętrz w Trójmieście',
+      },
     },
   },
 });

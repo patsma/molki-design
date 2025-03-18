@@ -35,38 +35,54 @@ const needsHeaderSpacing = computed(() => {
   return false;
 });
 
-// Handle ogImage structure to ensure it's in the correct format
-const preparePageForSeo = () => {
-  // Deep clone to avoid mutating the original object
-  const pageClone = JSON.parse(JSON.stringify(page.value || {}));
+// Get site config for fallbacks
+const config = useRuntimeConfig();
+const baseUrl = config.public.siteUrl || 'https://molki-design-2025.netlify.app';
 
-  // If ogImage exists but doesn't have the proper structure, fix it
-  if (pageClone?.meta?.ogImage && !pageClone.meta.ogImage.component) {
-    // Convert the old structure to the new one
-    pageClone.meta.ogImage = {
-      component: 'Custom',
-      props: {
-        title: pageClone.meta.ogImage.title || pageClone.meta.title,
-        description: pageClone.meta.ogImage.description || pageClone.meta.description,
-        cover: pageClone.meta.ogImage.cover || null,
-      },
-    };
-  }
+// Set SEO metadata with proper OG image handling
+useSeoMeta({
+  title: page.value?.seo?.title || page.value?.title || 'Molki Design',
+  ogTitle: page.value?.seo?.title || page.value?.title || 'Molki Design',
+  description:
+    page.value?.seo?.description ||
+    page.value?.description ||
+    'Profesjonalne projekty wnętrz w Trójmieście',
+  ogDescription:
+    page.value?.seo?.description ||
+    page.value?.description ||
+    'Profesjonalne projekty wnętrz w Trójmieście',
+  ogImage: {
+    url: page.value?.ogImage ? undefined : `${baseUrl}/__og-image__/image/og.png`,
+    alt: page.value?.seo?.title || page.value?.title || 'Molki Design',
+    width: 1200,
+    height: 630,
+    type: 'image/jpeg',
+  },
+  twitterCard: 'summary_large_image',
+});
 
-  return ref(pageClone);
-};
-
-// Get the prepared page object
-const seoPage = preparePageForSeo();
-
-// Apply optimized SEO using the composable
-import { usePageSeo } from '~/composables/usePageSeo';
-
-// Apply SEO with error handling
-try {
-  usePageSeo(seoPage);
-} catch (e) {
-  console.error('Error applying SEO to page:', e, JSON.stringify(page.value));
+// Define OG image with fallback
+if (page.value?.ogImage) {
+  defineOgImage({
+    component: 'Custom',
+    props: {
+      title: page.value.ogImage.props?.title || page.value.title || 'Molki Design',
+      description:
+        page.value.ogImage.props?.description ||
+        page.value.description ||
+        'Profesjonalne projekty wnętrz w Trójmieście',
+      cover: page.value.ogImage.props?.cover || '/og-social-default.jpg',
+    },
+  });
+} else {
+  defineOgImage({
+    component: 'Custom',
+    props: {
+      title: 'Molki Design',
+      description: 'Profesjonalne projekty wnętrz w Trójmieście',
+      cover: '/og-social-default.jpg',
+    },
+  });
 }
 </script>
 

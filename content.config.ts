@@ -6,7 +6,7 @@ export default defineContentConfig({
   collections: {
     projects: defineCollection(
       asSitemapCollection({
-        type: 'page',
+        type: 'document',
         source: 'projects/*.md',
         schema: z.object({
           title: z.string(),
@@ -24,7 +24,7 @@ export default defineContentConfig({
     ),
     blog: defineCollection(
       asSitemapCollection({
-        type: 'page',
+        type: 'document',
         source: 'blog/*.md',
         schema: z.object({
           title: z.string(),

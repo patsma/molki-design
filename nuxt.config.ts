@@ -190,6 +190,7 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/hubspot.client.ts', '~/plugins/google-analytics.client.ts'],
 
   nitro: {
+    trailingSlash: false,
     prerender: {
       crawlLinks: true,
       routes: ['/', '/realizacje', '/blog', '/sitemap.xml'],

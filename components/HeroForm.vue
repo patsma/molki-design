@@ -47,7 +47,7 @@ const handleFormError = (error: any) => {
       </div>
 
       <!-- Content Container -->
-      <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8">
+      <div class="content-grid w-full relative z-10 grid min-h-screen content-end gap-y-8 pt-10">
         <div class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16">
           <!-- Left Column: Form Section -->
           <!-- <ClientOnly>

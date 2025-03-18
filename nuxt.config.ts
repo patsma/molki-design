@@ -23,4 +23,14 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-09-11',
   devtools: { enabled: true },
+
+  runtimeConfig: {
+    public: {
+      site: {
+        name: 'Nuxt Content OG Image',
+        description: 'The quickest and easiest way to build Open Graph images for Nuxt Content',
+        url: 'https://nuxt-content-v3-og-image.netlify.app',
+      },
+    },
+  },
 });

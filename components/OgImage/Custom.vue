@@ -7,7 +7,7 @@ const props = defineProps({
   author: Object,
 });
 
-const twitter = props.author?.link?.replace('https://twitter.com/', '@');
+const twitter = props.author?.link?.replace('https://twitter.com/', '@') || '';
 </script>
 
 <template>
@@ -36,19 +36,11 @@ const twitter = props.author?.link?.replace('https://twitter.com/', '@');
       >
         {{ title }}
       </h1>
-      <p
-        :style="{ fontSize: '29px', lineHeight: '45px' }"
-        class="mx-10 mt-5 text-gray-400"
-      >
+      <p :style="{ fontSize: '29px', lineHeight: '45px' }" class="mx-10 mt-5 text-gray-400">
         {{ description }}
       </p>
       <div v-if="author" class="flex items-center">
-        <img
-          :src="author.avatarUrl"
-          width="80"
-          height="80"
-          class="rounded-full mr-5"
-        />
+        <img :src="author.avatarUrl" width="80" height="80" class="rounded-full mr-5" />
         <div class="flex flex-col text-gray-300">
           <div class="text-3xl" :style="{ whiteSpace: 'pre' }">
             {{ author.name }}

@@ -9,6 +9,20 @@ export default defineContentConfig({
         source: '**/*.md',
         schema: z.object({
           date: z.string().optional(),
+          ogImage: z
+            .object({
+              title: z.string().optional(),
+              description: z.string().optional(),
+              cover: z.string().optional(),
+              author: z
+                .object({
+                  name: z.string().optional(),
+                  avatarUrl: z.string().optional(),
+                  link: z.string().optional(),
+                })
+                .optional(),
+            })
+            .optional(),
         }),
       })
     ),

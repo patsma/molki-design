@@ -1,73 +1,43 @@
 <script setup lang="ts">
-// Request the page data
 const route = useRoute();
+
 const { data: page } = await useAsyncData('page-' + route.path, () => {
   return queryCollection('content').path(route.path).first();
 });
 
-// If the page doesn't exist, throw a 404 error
 if (!page.value) {
   throw createError({
     statusCode: 404,
+
     statusMessage: 'Strona nie została odnaleziona',
+
     fatal: true,
   });
 }
 
-// Debug - log the complete page object to find where headerSpacing is stored
-// console.log('FULL PAGE DATA:', JSON.parse(JSON.stringify(page.value)));
-
-// Get headerSpacing setting from meta
 const needsHeaderSpacing = computed(() => {
-  // Check if headerSpacing is explicitly set in frontmatter (in meta object)
   if (page.value?.meta?.headerSpacing === false) {
-    // console.log('headerSpacing is FALSE in frontmatter, no spacing');
     return false;
   }
 
   if (page.value?.meta?.headerSpacing === true) {
-    // console.log('headerSpacing is TRUE in frontmatter, adding spacing');
     return true;
   }
 
-  // Default (if not specified)
-  // console.log('headerSpacing not specified in frontmatter, no spacing by default');
   return false;
 });
 
-// Handle ogImage structure to ensure it's in the correct format
-const preparePageForSeo = () => {
-  // Deep clone to avoid mutating the original object
-  const pageClone = JSON.parse(JSON.stringify(page.value || {}));
+useSeoMeta({
+  title: page.value?.seo?.title,
 
-  // If ogImage exists but doesn't have the proper structure, fix it
-  if (pageClone?.meta?.ogImage && !pageClone.meta.ogImage.component) {
-    // Convert the old structure to the new one
-    pageClone.meta.ogImage = {
-      component: 'Custom',
-      props: {
-        title: pageClone.meta.ogImage.title || pageClone.meta.title,
-        description: pageClone.meta.ogImage.description || pageClone.meta.description,
-        cover: pageClone.meta.ogImage.cover || null,
-      },
-    };
-  }
+  description: page.value?.seo?.description,
+});
 
-  return ref(pageClone);
-};
-
-// Get the prepared page object
-const seoPage = preparePageForSeo();
-
-// Apply optimized SEO using the composable
-import { usePageSeo } from '~/composables/usePageSeo';
-
-// Apply SEO with error handling
-try {
-  usePageSeo(seoPage);
-} catch (e) {
-  console.error('Error applying SEO to page:', e, JSON.stringify(page.value));
+if (page.value.ogImage?.props.cover) {
+  defineOgImage(page.value.ogImage?.props.cover);
 }
+
+console.log('OG IMAGE:', page.value.ogImage?.props.cover);
 </script>
 
 <template>

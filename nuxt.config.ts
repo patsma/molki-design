@@ -220,6 +220,7 @@ export default defineNuxtConfig({
     },
   },
 
+  
   site: {
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',

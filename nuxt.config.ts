@@ -35,13 +35,6 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
   ],
 
-  ogImage: {
-    defaults: {
-      component: 'Custom',
-      width: 1200,
-      height: 630,
-    },
-  },
   // Cookie control configuration
   cookieControl: {
     barPosition: 'bottom-full',
@@ -227,20 +220,21 @@ export default defineNuxtConfig({
     },
   },
 
-  // Enhanced site configuration for SEO
   site: {
-    url: process.env.NUXT_SITE_URL || 'https://molki-design-2025.netlify.app',
-    name: 'Molki Design',
-    description:
-      'Profesjonalne projekty wnętrz w Trójmieście. Kompleksowe usługi projektowania domów, mieszkań i przestrzeni komercyjnych. Sprawdź nasze realizacje!',
-    defaultLocale: 'pl',
-    indexable: true,
-    image: 'https://molki-design-2025.netlify.app/og-image.jpg',
-    titleSeparator: ' | ',
-    trailingSlash: false,
-    twitter: '@MolkiDesign',
-    facebook: true,
-    facebookPage: 'MolkiDesign',
+    url: 'https://molki-design-2025.netlify.app',
+    name: 'Nuxt Content OG Image',
+    description: 'The quickest and easiest way to build Open Graph images for Nuxt Content',
+  },
+
+  ogImage: {
+    defaults: {
+      component: 'Custom',
+      props: {
+        title: 'Nuxt Content OG Image',
+        description: 'Dynamic Open Graph images for Nuxt Content',
+        cover: '/og-image.jpg',
+      },
+    },
   },
 
   // Update runtime config to include the site URL

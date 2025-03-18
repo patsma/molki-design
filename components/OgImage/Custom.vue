@@ -48,18 +48,19 @@ const formattedDescription = computed(() => {
 <template>
   <div
     class="w-full h-full flex flex-col items-center justify-center text-white bg-gray-900"
-    :style="{ padding: '30px 45px', width: imageWidth + 'px', height: imageHeight + 'px' }"
+    :style="{ padding: '30px 45px' }"
   >
     <div class="px-5 py-3 rounded absolute bottom-10 bg-white right-10">
-      <img :src="`${baseUrl}/logo.svg`" width="99" height="29" alt="Molki Design Logo" />
+      <img src="/logo.svg" width="99" height="29" alt="Molki Design Logo" />
     </div>
     <div class="pb-10 justify-center items-center flex flex-col">
       <img
-        :src="getCoverImage"
-        :alt="formattedTitle"
+        v-if="cover"
+        :src="cover"
         width="432"
         height="243"
         :style="{ borderRadius: '8px', overflow: 'hidden', objectFit: 'cover' }"
+        :alt="title"
       />
       <h1
         :style="{
@@ -73,7 +74,7 @@ const formattedDescription = computed(() => {
           textOverflow: 'ellipsis',
         }"
       >
-        {{ formattedTitle }}
+        {{ title }}
       </h1>
       <p
         :style="{
@@ -89,7 +90,7 @@ const formattedDescription = computed(() => {
         }"
         class="mx-10 mt-5 text-gray-400"
       >
-        {{ formattedDescription }}
+        {{ description }}
       </p>
       <div v-if="author" class="flex items-center mt-5">
         <img

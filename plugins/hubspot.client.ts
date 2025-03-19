@@ -59,7 +59,7 @@ export default defineNuxtPlugin(() => {
                 try {
                   // Configure the widget
                   window.HubSpotConversations.widget.load({
-                    loadImmediately: true,
+                    loadImmediately: false,
                     inlineEmbedSelector: '#hubspot-messages-iframe-container',
                   });
 

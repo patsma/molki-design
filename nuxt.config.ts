@@ -52,13 +52,10 @@ export default defineNuxtConfig({
       modalTextColor: '#503d32',
       checkboxActiveBackground: '#b76246',
       checkboxInactiveBackground: '#e6e4df',
-      checkboxActiveCircleBackground: '#ffffff',
-      checkboxInactiveCircleBackground: '#ffffff',
-      checkboxDisabledBackground: '#d9d9d9',
       controlButtonBackground: '#b76246',
     },
+    locales: ['pl'],
     cookies: {
-      description: 'Molki Design',
       necessary: [
         {
           id: 'nec',
@@ -89,14 +86,13 @@ export default defineNuxtConfig({
         },
       ],
     },
-    locales: ['pl'],
     localeTexts: {
       pl: {
-        bannerTitle: 'Pliki cookie',
         acceptAll: 'Akceptuj wszystkie',
         decline: 'Tylko niezbędne',
         manageCookies: 'Zarządzaj cookies',
         save: 'Zapisz',
+        bannerDescription: 'Używamy własnych plików cookie i plików cookie stron trzecich',
       },
     },
     isControlButtonEnabled: false,

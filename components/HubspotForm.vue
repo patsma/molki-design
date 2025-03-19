@@ -31,7 +31,7 @@ const error = ref('');
 const isDev = config.public.isDev;
 
 // Use provided portal ID or fall back to config
-const portalId = computed(() => '144440300');
+const portalId = computed(() => props.portalId || config.public.hubspotPortalId);
 
 onMounted(() => {
   if (!portalId.value) {

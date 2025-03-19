@@ -1,3 +1,18 @@
+declare global {
+  interface Window {
+    hbspt: {
+      forms: {
+        create: (config: {
+          portalId: string;
+          formId: string;
+          region: string;
+          target: string | HTMLElement;
+        }) => void;
+      };
+    };
+  }
+}
+
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig();
 
@@ -34,7 +49,7 @@ export default defineNuxtPlugin(() => {
             return;
           }
 
-          const portalId = options.portalId || config.public.hubspotPortalId;
+          const portalId = options.portalId || config.public.hubspotPortalId || '';
 
           // Validate portal ID
           if (!portalId) {
@@ -49,7 +64,7 @@ export default defineNuxtPlugin(() => {
           // });
 
           return window.hbspt.forms.create({
-            portalId,
+            portalId: portalId.toString(),
             formId: options.formId,
             region: options.region || 'eu1',
             target: options.target,

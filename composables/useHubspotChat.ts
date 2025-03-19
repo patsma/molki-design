@@ -1,32 +1,32 @@
-import { Ref } from 'vue'
+import { Ref } from 'vue';
 
 export const useHubspotChat = () => {
-  const { $hubspot } = useNuxtApp()
-  
+  const { $hubspot } = useNuxtApp();
+
   // Initialize the chat widget
-  const init = () => {
-    $hubspot.init()
-  }
+  const init = (): void => {
+    $hubspot.init();
+  };
 
   // Open the chat widget
-  const open = () => {
-    $hubspot.open()
-  }
+  const open = (): void => {
+    $hubspot.open();
+  };
 
   // Close the chat widget
-  const close = () => {
-    $hubspot.close()
-  }
+  const close = (): void => {
+    $hubspot.close();
+  };
 
   // Remove the widget completely
-  const remove = () => {
-    $hubspot.remove()
-  }
+  const remove = (): void => {
+    $hubspot.remove();
+  };
 
   // Reactive states
-  const isInitialized: Ref<boolean> = $hubspot.isInitialized
-  const isLoaded: Ref<boolean> = $hubspot.isLoaded
-  const isVisible: Ref<boolean> = $hubspot.isVisible
+  const isInitialized: Ref<boolean> = $hubspot.isInitialized;
+  const isLoaded: Ref<boolean> = $hubspot.isLoaded;
+  const isVisible: Ref<boolean> = $hubspot.isVisible;
 
   return {
     init,
@@ -35,6 +35,6 @@ export const useHubspotChat = () => {
     remove,
     isInitialized,
     isLoaded,
-    isVisible
-  }
-} 
+    isVisible,
+  };
+};

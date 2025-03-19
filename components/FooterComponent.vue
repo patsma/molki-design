@@ -75,28 +75,161 @@ defineSlots<{
   <footer class="bg-neutral-100">
     <div class="content-grid py-16" data-scroll-section>
       <div class="breakout1">
+        <!-- Mobile Layout (< md screens) -->
+        <div class="md:hidden space-y-12">
+          <!-- Centered Logo -->
+          <div class="flex justify-center">
+            <slot name="logo" mdc-unwrap="p">
+              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                <IconBlock name="fig:molki-logo-design" customClass="w-16 h-16 text-primary" />
+              </NuxtLink>
+            </slot>
+          </div>
+
+          <!-- Menu Section -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-primary uppercase">MENU</h4>
+            <nav class="space-y-2">
+              <NuxtLink
+                v-for="item in tempItems"
+                :key="item.label"
+                :to="item.link"
+                class="block text-neutral-600 hover:text-primary transition-colors"
+              >
+                {{ item.label }}
+              </NuxtLink>
+            </nav>
+          </div>
+
+          <!-- Contact Info Section -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-primary uppercase">Kontakt</h4>
+            <div class="space-y-2">
+              <div class="flex items-start space-x-2">
+                <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
+                <slot name="contactAddress" mdc-unwrap="p">
+                  <p class="text-neutral-600">
+                    {{ typedConfig.contactInfo?.address || 'ul. Heweliusza 11/811, 80-890 Gdańsk' }}
+                  </p>
+                </slot>
+              </div>
+              <div class="flex items-center space-x-2">
+                <Icon name="fig:envelope" class="w-10 h-10 text-primary" />
+                <slot name="contactEmail" mdc-unwrap="p">
+                  <a
+                    :href="`mailto:${typedConfig.contactInfo?.email || 'kontakt@molki.pl'}`"
+                    class="text-neutral-600 hover:text-primary"
+                  >
+                    {{ typedConfig.contactInfo?.email || 'kontakt@molki.pl' }}
+                  </a>
+                </slot>
+              </div>
+              <div class="flex items-center space-x-2">
+                <Icon name="fig:phone" class="w-10 h-10 text-primary" />
+                <slot name="contactPhone" mdc-unwrap="p">
+                  <a
+                    :href="`tel:${typedConfig.contactInfo?.phone || '+48572323207'}`"
+                    class="text-neutral-600 hover:text-primary"
+                  >
+                    {{ typedConfig.contactInfo?.phone || '+48 572 323 207' }}
+                  </a>
+                </slot>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Section -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-primary uppercase">Bądź na bieżąco:</h4>
+            <slot name="socialLinks" mdc-unwrap="p">
+              <div class="flex space-x-4 justify-center">
+                <template v-if="typedConfig.contactInfo?.socialLinks?.instagram">
+                  <NuxtLink
+                    :to="typedConfig.contactInfo.socialLinks.instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <IconBlock name="fig:instagram" customClass="w-6 h-6 text-primary" />
+                  </NuxtLink>
+                </template>
+                <template v-if="typedConfig.contactInfo?.socialLinks?.facebook">
+                  <NuxtLink
+                    :to="typedConfig.contactInfo.socialLinks.facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <IconBlock name="fig:facebook" customClass="w-6 h-6 text-primary" />
+                  </NuxtLink>
+                </template>
+              </div>
+            </slot>
+          </div>
+
+          <!-- Sponsors Section -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-primary uppercase">Sponsorujemy:</h4>
+            <slot name="sponsors" mdc-unwrap="p">
+              <div class="flex gap-4 justify-center">
+                <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                  <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
+                </NuxtLink>
+              </div>
+            </slot>
+          </div>
+
+          <!-- Certifications Section -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-primary uppercase">Nasze certyfikaty:</h4>
+            <slot name="certifications" mdc-unwrap="p">
+              <div class="flex gap-4 justify-center">
+                <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                  <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
+                </NuxtLink>
+              </div>
+            </slot>
+          </div>
+
+          <!-- Memberships Section -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-primary uppercase">Należymy do:</h4>
+            <slot name="memberships" mdc-unwrap="p">
+              <div class="flex gap-4 justify-center">
+                <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+                  <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
+                </NuxtLink>
+              </div>
+            </slot>
+          </div>
+
+          <!-- Copyright Section -->
+          <div class="text-xs text-neutral-500 space-y-2 text-center">
+            <p class="text-neutral-500">molki.design.pl © {{ props.year }}</p>
+            <slot name="copyrightText" mdc-unwrap="p">
+              <p class="text-neutral-500">
+                Wszelkie prawa zastrzeżone /
+                <NuxtLink to="/privacy" class="hover:text-primary transition-colors">
+                  prywatność i ciasteczka
+                </NuxtLink>
+                /
+                <NuxtLink to="/rodo" class="hover:text-primary transition-colors">
+                  klauzula RODO
+                </NuxtLink>
+              </p>
+            </slot>
+          </div>
+        </div>
+
+        <!-- Desktop Layout (≥ md screens) -->
         <div
-          class="grid grid-cols-1 md:grid-cols-5 gap-x-8 gap-y-16"
+          class="hidden md:grid md:grid-cols-4 gap-x-8 gap-y-16"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
         >
-          <!-- Column 1: Logo -->
-          <div>
-            <div
-              class="h-full flex flex-col"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
-            >
-              <slot name="logo" mdc-unwrap="p">
-                <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-                  <IconBlock name="fig:molki-logo-design" customClass="w-16 h-16 text-primary" />
-                </NuxtLink>
-              </slot>
-            </div>
-          </div>
-
           <!-- Column 2: First Half of Menu + Sponsors -->
           <div class="h-full flex flex-col justify-between">
             <div class="space-y-4">
@@ -113,7 +246,7 @@ defineSlots<{
               </nav>
             </div>
             <div class="pt-8 border-neutral-200 flex items-center">
-              <h4 class="text-sm font-bold text-primary mb-4">Sponsorujemy:</h4>
+              <h4 class="text-sm font-bold text-primary uppercase">Sponsorujemy:</h4>
               <slot name="sponsors" mdc-unwrap="p">
                 <div class="flex gap-4">
                   <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
@@ -141,7 +274,7 @@ defineSlots<{
               </NuxtLink>
             </nav>
             <div class="pt-8 border-neutral-200 flex items-center">
-              <h4 class="text-sm font-bold text-primary mb-4">Nasze Certyfikaty:</h4>
+              <h4 class="text-sm font-bold text-primary uppercase">Nasze Certyfikaty:</h4>
               <slot name="certifications" mdc-unwrap="p">
                 <div class="flex gap-4">
                   <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
@@ -158,7 +291,7 @@ defineSlots<{
           <!-- Column 4: Company Info + Memberships -->
           <div class="h-full flex flex-col justify-between">
             <div class="space-y-4">
-              <h4 class="text-sm font-bold text-primary">Dane kontaktowe:</h4>
+              <h4 class="text-sm font-bold text-primary uppercase">Dane kontaktowe:</h4>
               <div class="space-y-2">
                 <div class="flex items-start space-x-2">
                   <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
@@ -195,7 +328,7 @@ defineSlots<{
               </div>
             </div>
             <div class="pt-8 border-neutral-200 flex items-center">
-              <h4 class="text-sm font-bold text-primary mb-4">Należymy do:</h4>
+              <h4 class="text-sm font-bold text-primary uppercase">Należymy do:</h4>
               <slot name="memberships" mdc-unwrap="p">
                 <div class="flex gap-4">
                   <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
@@ -213,7 +346,7 @@ defineSlots<{
           <div class="h-full flex flex-col justify-between">
             <div class="space-y-8">
               <div>
-                <h4 class="text-sm font-bold text-primary mb-4">Bądź na bieżąco:</h4>
+                <h4 class="text-sm font-bold text-primary uppercase">Bądź na bieżąco:</h4>
                 <slot name="socialLinks" mdc-unwrap="p">
                   <div class="flex space-x-4">
                     <template v-if="typedConfig.contactInfo?.socialLinks?.instagram">
@@ -266,6 +399,27 @@ defineSlots<{
                     </NuxtLink>
                   </p>
                 </slot>
+                <!-- Column 1: Logo -->
+                <div>
+                  <div
+                    class="h-full flex flex-col"
+                    data-scroll-item
+                    data-scroll-animation="fadeUp"
+                    data-scroll-duration="1"
+                  >
+                    <slot name="logo" mdc-unwrap="p">
+                      <NuxtLink
+                        to="/"
+                        class="text-primary hover:text-primary-dark transition-colors"
+                      >
+                        <IconBlock
+                          name="fig:molki-logo-design"
+                          customClass="w-16 h-16 text-primary"
+                        />
+                      </NuxtLink>
+                    </slot>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

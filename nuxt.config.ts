@@ -35,7 +35,6 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
   ],
 
-  // Cookie control configuration
   cookieControl: {
     barPosition: 'bottom-full',
     closeModalOnClickOutside: true,
@@ -112,7 +111,7 @@ export default defineNuxtConfig({
         manageCookies: 'Zarządzaj cookies',
         save: 'Zapisz',
         bannerDescription:
-          'Używamy własnych plików cookie i plików cookie stron trzecich do analizy ruchu na stronie, personalizacji treści i reklam oraz udostępniania funkcji mediów społecznościowych.',
+          'Używamy własnych plików cookie i plików cookie stron trzecich do analizy ruchu na stronie',
       },
     },
     isControlButtonEnabled: false,
@@ -127,26 +126,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        // SVG favicon - primary choice for modern browsers
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-
-        // ICO favicon - for legacy browsers
         { rel: 'icon', href: '/favicon.ico' },
-
-        // PNG fallback favicons for better compatibility
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-
-        // Apple Touch Icon for iOS devices
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-
-        // Web App Manifest
         { rel: 'manifest', href: '/site.webmanifest' },
       ],
-    },
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
     },
   },
   icon: {
@@ -158,22 +144,19 @@ export default defineNuxtConfig({
     ],
   },
   gsap: {
-    // Enable composables
     composables: true,
 
     // Extra plugins
     extraPlugins: {
       scrollTrigger: true,
-      // Note: ScrollSmoother is not an official extra plugin
-      // We'll need to handle it differently
     },
 
     // Club plugins (premium)
     clubPlugins: {
-      morphSvg: true, // Note the lowercase 'svg'
+      morphSvg: true,
       splitText: true,
-      scrollSmoother: true, // Add ScrollSmoother as a club plugin
-      drawSvg: true, // Add DrawSVG plugin for SVG path animations (lowercase 'svg')
+      scrollSmoother: true,
+      drawSvg: true,
     },
   },
 
@@ -216,6 +199,7 @@ export default defineNuxtConfig({
         headers: {
           'Content-Security-Policy': [
             "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+            // Hubspot domains
             '*.hs-scripts.com',
             '*.hubspot.com',
             '*.hscollectedforms.net',
@@ -229,8 +213,18 @@ export default defineNuxtConfig({
             'js-eu1.hs-analytics.net',
             'js-eu1.hs-banner.com',
             'js-eu1.hsforms.net',
+            // Google Analytics
             '*.googletagmanager.com',
             '*.google-analytics.com',
+            // Hotjar
+            '*.hotjar.com',
+            'static.hotjar.com',
+            // Microsoft Clarity
+            '*.clarity.ms',
+            'www.clarity.ms',
+            // Facebook
+            '*.facebook.net',
+            'connect.facebook.net',
           ].join(' '),
         },
       },

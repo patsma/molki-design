@@ -1,7 +1,11 @@
 import type { TrackingService } from '~/types/analytics';
 import { analyticsConfig } from '~/config/analytics.config';
 
-export const googleAnalyticsService: TrackingService = {
+// Create the service as an object with both TrackingService interface and custom properties
+const googleAnalyticsService = {
+  // Expose measurement ID for page view tracking
+  measurementId: analyticsConfig.googleAnalytics?.measurementId,
+
   init: () => {
     const gtagId = analyticsConfig.googleAnalytics?.measurementId;
     if (!gtagId) return;
@@ -42,3 +46,5 @@ export const googleAnalyticsService: TrackingService = {
     delete window.gtag;
   },
 };
+
+export { googleAnalyticsService };

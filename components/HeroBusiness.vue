@@ -30,7 +30,7 @@ const props = withDefaults(
       </div>
 
       <!-- SVG Accent Shape -->
-      <div class="absolute top-1/2 -left-10 overflow-hidden">
+      <div class="absolute -top-1/4 -left-10 overflow-hidden">
         <HeroPath class="h-screen" />
       </div>
 

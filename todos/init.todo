@@ -193,9 +193,11 @@
 ✔ Robots.txt @done(25-03-14 16:11)
 ✔ Add more HeroPath components variants - refactor so we can use different shapes? @started(25-03-15 09:27) @done(25-03-15 12:41) @lasted(3h14m51s)
 ✔ Style Hubspot form? @done(25-03-18 13:12)
+✔ Ensure analytics and cookies are injected only when accepted @done(25-03-19 10:02)
 
-- Add proper images OG @started(25-03-15 16:41)
+- Make Footer on mobile nicer
+- Refactor the pricing table
 
-- Ensure analytics and cookies are injected only when accepted
+- Add proper images OG
 - Loader only on first page load?
 - Change loader to be nicer?

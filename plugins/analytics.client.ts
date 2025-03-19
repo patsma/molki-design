@@ -10,9 +10,9 @@ export default defineNuxtPlugin(() => {
   // Map services to their cookie consent categories
   const services = [
     { name: 'Google Analytics', service: googleAnalyticsService, cookieId: 'ana' },
-    { name: 'Facebook Pixel', service: facebookPixelService, cookieId: 'mkt' },
-    { name: 'Hotjar', service: hotjarService, cookieId: 'ana' },
-    { name: 'Clarity', service: clarityService, cookieId: 'ana' },
+    // { name: 'Facebook Pixel', service: facebookPixelService, cookieId: 'mkt' },
+    // { name: 'Hotjar', service: hotjarService, cookieId: 'ana' },
+    // { name: 'Clarity', service: clarityService, cookieId: 'ana' },
   ];
 
   // Initialize or cleanup services based on cookie consent

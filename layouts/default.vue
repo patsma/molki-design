@@ -236,5 +236,7 @@ onMounted(() => {
     <div class="cookie-banner fixed opacity-0 bottom-0 left-0 right-0 z-[100]">
       <CookieControl locale="pl" />
     </div>
+
+    <HubspotChatLoader />
   </div>
 </template>

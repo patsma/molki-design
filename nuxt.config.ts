@@ -84,6 +84,15 @@ export default defineNuxtConfig({
           },
           targetCookieIds: ['_fbp', '_gcl_au'],
         },
+        {
+          id: 'chat',
+          name: 'Chat',
+          description:
+            'Umożliwia działanie czatu na stronie, dzięki któremu możesz się z nami skontaktować.',
+          links: {
+            'https://legal.hubspot.com/cookie-policy': 'HubSpot Cookie Policy',
+          },
+        },
       ],
     },
     localeTexts: {
@@ -187,7 +196,6 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/hubspot.client.ts', '~/plugins/google-analytics.client.ts'],
 
   nitro: {
-    trailingSlash: false,
     prerender: {
       crawlLinks: true,
       routes: ['/', '/realizacje', '/blog', '/sitemap.xml'],

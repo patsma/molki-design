@@ -31,7 +31,7 @@ const error = ref('');
 const isDev = config.public.isDev;
 
 // Use provided portal ID or fall back to config
-const portalId = computed(() => props.portalId || config.public.hubspotPortalId);
+const portalId = computed(() => '144440300');
 
 onMounted(() => {
   if (!portalId.value) {
@@ -52,7 +52,7 @@ onMounted(() => {
           portalId: portalId.value,
         });
         loading.value = false;
-      } catch (e) {
+      } catch (e: any) {
         error.value = `Failed to load form: ${e.message}`;
         console.error('HubSpot form creation error:', e);
       }

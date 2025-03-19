@@ -70,19 +70,29 @@ export default defineNuxtConfig({
           id: 'ana',
           name: 'Analityka',
           description:
-            'Te pliki cookie pomagają nam zrozumieć, w jaki sposób użytkownicy korzystają z naszej strony, co pozwala nam poprawić jej funkcjonalność.',
-          targetCookieIds: ['_ga', '_gid', '_gat', 'ga-gtag'],
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-242W7FGX6K',
+            'Te pliki cookie pomagają nam zrozumieć, w jaki sposób użytkownicy korzystają z naszej strony, co pozwala nam poprawić jej funkcjonalność. Obejmują one Google Analytics, Hotjar i Microsoft Clarity.',
+          targetCookieIds: [
+            '_ga',
+            '_gid',
+            '_gat',
+            'ga-gtag',
+            '_hjid',
+            '_hjSessionUser',
+            '_hjSession',
+            '_hjAbsoluteSessionInProgress',
+            '_clck',
+            '_clsk',
+          ],
         },
         {
           id: 'mkt',
           name: 'Marketing',
           description:
-            'Te pliki cookie służą do śledzenia użytkowników w różnych witrynach w celu wyświetlania odpowiednich reklam.',
+            'Te pliki cookie służą do śledzenia użytkowników w różnych witrynach w celu wyświetlania odpowiednich reklam i mierzenia ich skuteczności.',
           links: {
             '/polityka-prywatnosci': 'Polityka Prywatności',
           },
-          targetCookieIds: ['_fbp', '_gcl_au'],
+          targetCookieIds: ['_fbp', '_gcl_au', 'fr'],
         },
         {
           id: 'chat',
@@ -101,7 +111,8 @@ export default defineNuxtConfig({
         decline: 'Tylko niezbędne',
         manageCookies: 'Zarządzaj cookies',
         save: 'Zapisz',
-        bannerDescription: 'Używamy własnych plików cookie i plików cookie stron trzecich',
+        bannerDescription:
+          'Używamy własnych plików cookie i plików cookie stron trzecich do analizy ruchu na stronie, personalizacji treści i reklam oraz udostępniania funkcji mediów społecznościowych.',
       },
     },
     isControlButtonEnabled: false,
@@ -193,7 +204,7 @@ export default defineNuxtConfig({
     bundled: true,
   },
 
-  plugins: ['~/plugins/hubspot.client.ts', '~/plugins/google-analytics.client.ts'],
+  plugins: ['~/plugins/analytics.client.ts', '~/plugins/hubspot.client.ts'],
 
   nitro: {
     prerender: {

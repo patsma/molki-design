@@ -58,6 +58,7 @@ export default defineNuxtConfig({
       controlButtonBackground: '#b76246',
     },
     cookies: {
+      description: 'Molki Design',
       necessary: [
         {
           id: 'nec',
@@ -225,5 +226,15 @@ export default defineNuxtConfig({
     url: 'https://molki-design-2025.netlify.app',
     name: 'Molki Design',
     description: 'Profesjonalne projekty wnętrz w Trójmieście',
+  },
+  ogImage: {
+    defaults: {
+      component: 'Custom',
+      props: {
+        title: 'OG Molki Design',
+        description: 'OG Profesjonalne projekty wnętrz w Trójmieście',
+        cover: '/og-social-default.jpg',
+      },
+    },
   },
 });

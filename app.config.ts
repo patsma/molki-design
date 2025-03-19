@@ -18,10 +18,7 @@ export default defineAppConfig({
               label: 'Dla Biznesu',
               link: '/dla-biznesu',
             },
-            {
-              label: 'Isolation',
-              link: '/isolation',
-            },
+
             {
               label: 'Todo',
               link: '/todo',

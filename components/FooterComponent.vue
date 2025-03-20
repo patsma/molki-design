@@ -2,6 +2,7 @@
 import { useMenuStore } from '@/stores/menuStore';
 import { useAppConfig } from '#app';
 import IconBlock from '~/components/IconBlock.vue';
+import Logo from '~/components/Logo.vue';
 
 const menuStore = useMenuStore();
 const appConfig = useAppConfig();
@@ -76,7 +77,7 @@ defineSlots<{
     <div class="content-grid py-16" data-scroll-section>
       <div class="breakout1">
         <!-- Mobile Layout (< md screens) -->
-        <div class="md:hidden space-y-12">
+        <div class="lg:hidden space-y-12">
           <!-- Centered Logo -->
           <div class="flex justify-center">
             <slot name="logo" mdc-unwrap="p">
@@ -225,7 +226,7 @@ defineSlots<{
 
         <!-- Desktop Layout (≥ md screens) -->
         <div
-          class="hidden md:grid md:grid-cols-4 gap-x-8 gap-y-16"
+          class="hidden lg:grid lg:grid-cols-4 gap-x-8 gap-y-16"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
@@ -344,7 +345,7 @@ defineSlots<{
 
           <!-- Column 5: Social Media + Copyright -->
           <div class="h-full flex flex-col justify-between">
-            <div class="space-y-8">
+            <div class="space-y-4">
               <div>
                 <h4 class="text-sm font-bold text-primary uppercase">Bądź na bieżąco:</h4>
                 <slot name="socialLinks" mdc-unwrap="p">
@@ -399,28 +400,15 @@ defineSlots<{
                     </NuxtLink>
                   </p>
                 </slot>
-                <!-- Column 1: Logo -->
-                <div>
-                  <div
-                    class="h-full flex flex-col"
-                    data-scroll-item
-                    data-scroll-animation="fadeUp"
-                    data-scroll-duration="1"
-                  >
-                    <slot name="logo" mdc-unwrap="p">
-                      <NuxtLink
-                        to="/"
-                        class="text-primary hover:text-primary-dark transition-colors"
-                      >
-                        <IconBlock
-                          name="fig:molki-logo-design"
-                          customClass="w-16 h-16 text-primary"
-                        />
-                      </NuxtLink>
-                    </slot>
-                  </div>
-                </div>
               </div>
+            </div>
+            <!-- Logo Section -->
+            <div class="pt-8 border-neutral-200 flex items-center">
+              <slot name="logo" mdc-unwrap="p">
+                <NuxtLink to="/" class="inline-block ml-4" aria-label="Molki - Home">
+                  <Logo class="w-60 h-full text-primary" />
+                </NuxtLink>
+              </slot>
             </div>
           </div>
         </div>

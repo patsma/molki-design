@@ -126,12 +126,6 @@ onMounted(() => {
         </PreFooter>
 
         <FooterComponent>
-          <template #logo>
-            <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-              <IconBlock name="fig:molki-logo-design" customClass="w-60 h-60 text-primary" />
-            </NuxtLink>
-          </template>
-
           <template #sponsors>
             <div class="flex gap-4">
               <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
@@ -225,6 +219,12 @@ onMounted(() => {
           <template #privacyText>
             <NuxtLink to="/polityka-prywatnosci" class="hover:text-primary">
               Polityka prywatności
+            </NuxtLink>
+          </template>
+
+          <template #logo>
+            <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
+              <Logo class="xl:w-60 w-40 h-full" />
             </NuxtLink>
           </template>
         </FooterComponent>

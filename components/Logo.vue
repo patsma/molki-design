@@ -1,20 +1,18 @@
-<script setup>
-defineProps({
-  class: {
-    type: String,
-    default: "",
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  class?: string;
+}>();
 </script>
 
 <template>
-  <div class="grid">
+  <div :class="class">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       id="Warstwa_1"
       data-name="Warstwa 1"
       viewBox="0 0 1396.53 478.24"
+      class="w-full h-full"
     >
       <defs>
         <radialGradient

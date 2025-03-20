@@ -398,33 +398,45 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   :::
 ::
 
-::banner-pricing
-#title
-Nowe Pomysły na Twoje Wnętrze
-
-#description
-Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
-
-#image
+::pricing-grid
+#backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior Design Consultation](/heroPricing.jpg)
   :::
 
-#options
-  :::pricing-option
+#title
+Nowe Pomysły na Twoje Wnętrze
+
+#subtitle
+Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
+
+#columns
+  :::pricing-column
   #title
   Porada Projektowa
   
   #price
   600 zł
+  
+  #features
+  - Konsultacja z projektantem
+  - Analiza przestrzeni
+  - Profesjonalne doradztwo
+  - Propozycje zmian
   :::
 
-  :::pricing-option
+  :::pricing-column
   #title
   Porada Projektowa z dokumentacją
   
   #price
   1 200 zł
+  
+  #features
+  - Wszystko z podstawowej porady
+  - Szczegółowa dokumentacja
+  - Pisemne zalecenia
+  - Plan działania
   :::
 
 #infoText

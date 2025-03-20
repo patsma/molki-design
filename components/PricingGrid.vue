@@ -4,16 +4,7 @@ defineSlots<{
   title?: (props: { mdcUnwrap: string }) => any;
   subtitle?: (props: { mdcUnwrap: string }) => any;
   backgroundImage?: (props: {}) => any;
-  // Column slots
-  basicTitle?: (props: { mdcUnwrap: string }) => any;
-  basicPrice?: (props: { mdcUnwrap: string }) => any;
-  basicFeatures?: (props: {}) => any;
-  comfortTitle?: (props: { mdcUnwrap: string }) => any;
-  comfortPrice?: (props: { mdcUnwrap: string }) => any;
-  comfortFeatures?: (props: {}) => any;
-  premiumTitle?: (props: { mdcUnwrap: string }) => any;
-  premiumPrice?: (props: { mdcUnwrap: string }) => any;
-  premiumFeatures?: (props: {}) => any;
+  columns?: (props: {}) => any;
   infoText?: (props: {}) => any;
 }>();
 </script>
@@ -21,7 +12,6 @@ defineSlots<{
 <template>
   <section class="full-width data-scroll-section relative w-full" data-scroll-section>
     <!-- Background with overlay -->
-    <!-- TODO: Add proper background image to the component to have consistent overlay behavior -->
     <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
       <div class="absolute inset-0 bg-white/10 z-10"></div>
       <slot name="backgroundImage">
@@ -37,7 +27,7 @@ defineSlots<{
 
     <div class="relative z-10 w-full">
       <!-- Title Section -->
-      <TitleSection>
+      <TitleSection v-if="$slots.title || $slots.subtitle">
         <template #title>
           <slot name="title" mdc-unwrap="p" />
         </template>
@@ -49,67 +39,18 @@ defineSlots<{
       <!-- Pricing Grid -->
       <div class="content-grid pb-24">
         <div
-          class="breakout1 grid md:grid-cols-3 gap-8"
+          class="breakout1 grid gap-8"
+          :class="{
+            'md:grid-cols-1': $slots.columns?.().length === 1,
+            'md:grid-cols-2': $slots.columns?.().length === 2,
+            'md:grid-cols-3': $slots.columns?.().length === 3,
+            'md:grid-cols-4': $slots.columns?.().length === 4,
+          }"
           data-scroll-item
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
         >
-          <!-- Basic Plan -->
-          <div class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="bg-primary p-6 text-center">
-              <h3 class="text-2xl font-semibold text-white">
-                <slot name="basicTitle" mdc-unwrap="p">BASIC</slot>
-              </h3>
-            </div>
-            <div class="p-8 flex-1 flex flex-col">
-              <div class="text-center mb-8">
-                <div class="text-4xl font-bold text-primary">
-                  <slot name="basicPrice" mdc-unwrap="p">1190 zł/m²</slot>
-                </div>
-              </div>
-              <div class="flex-1 prose prose-lg max-w-none">
-                <slot name="basicFeatures" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Comfort Plan -->
-          <div class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="bg-primary p-6 text-center">
-              <h3 class="text-2xl font-semibold text-white">
-                <slot name="comfortTitle" mdc-unwrap="p">COMFORT</slot>
-              </h3>
-            </div>
-            <div class="p-8 flex-1 flex flex-col">
-              <div class="text-center mb-8">
-                <div class="text-4xl font-bold text-primary">
-                  <slot name="comfortPrice" mdc-unwrap="p">1590 zł/m²</slot>
-                </div>
-              </div>
-              <div class="flex-1 prose prose-lg max-w-none">
-                <slot name="comfortFeatures" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Premium Plan -->
-          <div class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="bg-primary p-6 text-center">
-              <h3 class="text-2xl font-semibold text-white">
-                <slot name="premiumTitle" mdc-unwrap="p">PREMIUM</slot>
-              </h3>
-            </div>
-            <div class="p-8 flex-1 flex flex-col">
-              <div class="text-center mb-8">
-                <div class="text-4xl font-bold text-primary">
-                  <slot name="premiumPrice" mdc-unwrap="p">2490 zł/m²</slot>
-                </div>
-              </div>
-              <div class="flex-1 prose prose-lg max-w-none">
-                <slot name="premiumFeatures" />
-              </div>
-            </div>
-          </div>
+          <slot name="columns" />
         </div>
 
         <!-- Info Text -->

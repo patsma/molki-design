@@ -415,18 +415,20 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   #title
   Projekt Funkcjonalny
   
-  #price
-  od 60 zł/m² (Podstawowy) | od 120 zł/m² (Premium)
+  #basicPrice
+  od 60 zł/m²
   
-  #features
-  **Pakiet Podstawowy zawiera:**
+  #basicFeatures
   - Inwentaryzacja
   - Wyburzenia/zabudowy ścian
   - Układ funkcjonalny z opisami
   - Lista zakupów (materiałów, mebli, dodatków)
   - Układ mebli na wymiar
 
-  **Pakiet Premium dodatkowo zawiera:**
+  #premiumPrice
+  od 120 zł/m²
+  
+  #premiumFeatures
   - Projekt w 3D
   - Fotorealistyczne wizualizacje
   :::
@@ -435,11 +437,10 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   #title
   Projekt Wykonawczy
   
-  #price
-  od 180 zł/m² (Podstawowy) | od 240 zł/m² (Premium)
+  #basicPrice
+  od 180 zł/m²
   
-  #features
-  **Pakiet Podstawowy zawiera:**
+  #basicFeatures
   - Wszystkie elementy z Projektu Funkcjonalnego
   - Przyłącza wodno-kanalizacyjne
   - Przyłącza do ogrzewania
@@ -449,7 +450,10 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Projekt sufitów (malowanie+dodatki)
   - Projekt malowania ścian
 
-  **Pakiet Premium dodatkowo zawiera:**
+  #premiumPrice
+  od 240 zł/m²
+  
+  #premiumFeatures
   - Projekt w 3D
   - Fotorealistyczne wizualizacje
   :::

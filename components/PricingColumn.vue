@@ -3,6 +3,10 @@ defineSlots<{
   title?: (props: { mdcUnwrap: string }) => any;
   price?: (props: { mdcUnwrap: string }) => any;
   features?: (props: {}) => any;
+  basicPrice?: (props: { mdcUnwrap: string }) => any;
+  premiumPrice?: (props: { mdcUnwrap: string }) => any;
+  basicFeatures?: (props: {}) => any;
+  premiumFeatures?: (props: {}) => any;
 }>();
 </script>
 
@@ -13,7 +17,9 @@ defineSlots<{
         <slot name="title" mdc-unwrap="p" />
       </h3>
     </div>
-    <div class="p-8 flex-1 flex flex-col">
+
+    <!-- Single Price Version -->
+    <div v-if="$slots.price && $slots.features" class="p-8 flex-1 flex flex-col">
       <div class="text-center mb-8">
         <div class="text-4xl font-bold text-primary">
           <slot name="price" mdc-unwrap="p" />
@@ -21,6 +27,32 @@ defineSlots<{
       </div>
       <div class="flex-1 prose prose-lg max-w-none">
         <slot name="features" />
+      </div>
+    </div>
+
+    <!-- Basic/Premium Version -->
+    <div v-else-if="$slots.basicPrice || $slots.premiumPrice" class="p-8 flex-1 flex flex-col">
+      <div class="mb-8">
+        <div class="text-xl font-semibold mb-2">Pakiet Podstawowy</div>
+        <div class="text-2xl font-bold text-primary mb-6">
+          <slot name="basicPrice" mdc-unwrap="p" />
+        </div>
+        <div class="prose prose-lg max-w-none">
+          <slot name="basicFeatures" />
+        </div>
+      </div>
+
+      <div v-if="$slots.premiumPrice" class="pt-8 border-t border-neutral-200">
+        <div class="text-xl font-semibold text-primary mb-2">Pakiet Premium</div>
+        <div class="text-2xl font-bold text-primary mb-6">
+          <slot name="premiumPrice" mdc-unwrap="p" />
+        </div>
+        <div class="prose prose-lg max-w-none">
+          <div class="text-sm italic mb-4">
+            Zawiera wszystkie elementy z pakietu podstawowego oraz:
+          </div>
+          <slot name="premiumFeatures" />
+        </div>
       </div>
     </div>
   </div>

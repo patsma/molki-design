@@ -372,27 +372,16 @@ defineSlots<{
                         <IconBlock name="fig:facebook" customClass="w-6 h-6 text-primary" />
                       </NuxtLink>
                     </template>
-                    <template v-if="typedConfig.contactInfo?.socialLinks?.linkedin">
-                      <NuxtLink
-                        :to="typedConfig.contactInfo.socialLinks.linkedin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="grid place-items-center text-primary hover:text-primary-dark transition-colors"
-                        aria-label="LinkedIn"
-                      >
-                        <IconBlock name="fig:linkedin" customClass="w-6 h-6 text-primary" />
-                      </NuxtLink>
-                    </template>
                   </div>
                 </slot>
               </div>
-              <div class="text-xs text-neutral-500 space-y-2">
-                <p class="text-neutral-500">molki.design.pl © {{ props.year }}</p>
+              <div class="text-xs text-neutral-500">
+                <p>molki.design.pl © {{ props.year }}</p>
                 <slot name="copyrightText" mdc-unwrap="p">
-                  <p class="text-neutral-500">
-                    Wszelkie prawa zastrzeżone /
+                  <p>
+                    Molki Design © {{ props.year }}Wszelkie prawa zastrzeżone /
                     <NuxtLink to="/privacy" class="hover:text-primary transition-colors">
-                      prywatność i ciasteczka
+                      prywatność/ciasteczka
                     </NuxtLink>
                     /
                     <NuxtLink to="/rodo" class="hover:text-primary transition-colors">
@@ -402,11 +391,10 @@ defineSlots<{
                 </slot>
               </div>
             </div>
-            <!-- Logo Section -->
-            <div class="pt-8 border-neutral-200 flex items-center">
+            <div class="pt-8 -mt-4">
               <slot name="logo" mdc-unwrap="p">
-                <NuxtLink to="/" class="inline-block ml-4" aria-label="Molki - Home">
-                  <Logo class="w-60 h-full text-primary" />
+                <NuxtLink to="/" class="block" aria-label="Molki - Home">
+                  <Logo />
                 </NuxtLink>
               </slot>
             </div>

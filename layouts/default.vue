@@ -224,7 +224,7 @@ onMounted(() => {
 
           <template #logo>
             <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
-              <Logo class="xl:w-60 w-40 h-full" />
+              <Logo class="w-40 h-full" />
             </NuxtLink>
           </template>
         </FooterComponent>

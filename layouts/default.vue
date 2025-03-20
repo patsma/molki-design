@@ -69,11 +69,11 @@ onMounted(() => {
 
           <template #leftCompanyLogo>
             <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
-              <IconBlock name="fig:molki-logo-akademia" customClass="h-60 w-60 text-primary" />
+              <IconBlock name="fig:wlasciwy-kurs" customClass="h-60 w-60 text-primary" />
             </NuxtLink>
           </template>
 
-          <template #leftCompanyTitle>AKADEMIA MOLKI</template>
+          <template #leftCompanyTitle>WŁAŚCIWY KURS</template>
 
           <template #leftCompanySubtitle
             ><b>Kursy, szkolenia, poradniki, wzory dokumentów.</b>

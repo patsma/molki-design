@@ -394,7 +394,7 @@ defineSlots<{
             <div class="pt-8">
               <slot name="logo" mdc-unwrap="p">
                 <NuxtLink to="/" class="block" aria-label="Molki - Home">
-                  <Logo />
+                  <Logo customClass="w-[240px] text-primary" />
                 </NuxtLink>
               </slot>
             </div>

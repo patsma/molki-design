@@ -1,11 +1,14 @@
 <script setup lang="ts">
-defineProps<{
-  class?: string;
-}>();
+defineProps({
+  customClass: {
+    type: String,
+    default: '',
+  },
+});
 </script>
 
 <template>
-  <div :class="class">
+  <div :class="customClass">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"

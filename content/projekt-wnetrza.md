@@ -398,7 +398,6 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   :::
 ::
 
-
 ::pricing-grid
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -414,80 +413,43 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
 #columns
   :::pricing-column
   #title
-  Projekt Funkcjonalny Podstawowy
+  Projekt Funkcjonalny
   
   #price
-  od 60 zł/m²
+  od 60 zł/m² (Podstawowy) | od 120 zł/m² (Premium)
   
   #features
+  **Pakiet Podstawowy zawiera:**
   - Inwentaryzacja
   - Wyburzenia/zabudowy ścian
   - Układ funkcjonalny z opisami
   - Lista zakupów (materiałów, mebli, dodatków)
   - Układ mebli na wymiar
-  :::
 
-  :::pricing-column
-  #title
-  Projekt Funkcjonalny Premium
-  
-  #price
-  od 120 zł/m²
-  
-  #features
-  - Inwentaryzacja
-  - Wyburzenia/zabudowy ścian
-  - Układ funkcjonalny z opisami
-  - Lista zakupów (materiałów, mebli, dodatków)
-  - Układ mebli na wymiar
+  **Pakiet Premium dodatkowo zawiera:**
   - Projekt w 3D
   - Fotorealistyczne wizualizacje
   :::
 
   :::pricing-column
   #title
-  Projekt Wykonawczy Podstawowy
+  Projekt Wykonawczy
   
   #price
-  od 180 zł/m²
+  od 180 zł/m² (Podstawowy) | od 240 zł/m² (Premium)
   
   #features
-  - Inwentaryzacja
-  - Wyburzenia/zabudowy ścian
-  - Układ funkcjonalny z opisami
-  - Lista zakupów (materiałów, mebli, dodatków)
+  **Pakiet Podstawowy zawiera:**
+  - Wszystkie elementy z Projektu Funkcjonalnego
   - Przyłącza wodno-kanalizacyjne
   - Przyłącza do ogrzewania
-  - Projekt elektryki
-  - Projekt oświetlenia
+  - Projekt elektryki i oświetlenia
   - Projekt podłóg
   - Projekt listew przypodłogowych, sztukaterii i karniszy
   - Projekt sufitów (malowanie+dodatki)
   - Projekt malowania ścian
-  - Układ mebli na wymiar
-  :::
 
-  :::pricing-column
-  #title
-  Projekt Wykonawczy Premium
-  
-  #price
-  od 240 zł/m²
-  
-  #features
-  - Inwentaryzacja
-  - Wyburzenia/zabudowy ścian
-  - Układ funkcjonalny z opisami
-  - Lista zakupów (materiałów, mebli, dodatków)
-  - Przyłącza wodno-kanalizacyjne
-  - Przyłącza do ogrzewania
-  - Projekt elektryki
-  - Projekt oświetlenia
-  - Projekt podłóg
-  - Projekt listew przypodłogowych, sztukaterii i karniszy
-  - Projekt sufitów (malowanie+dodatki)
-  - Projekt malowania ścian
-  - Układ mebli na wymiar
+  **Pakiet Premium dodatkowo zawiera:**
   - Projekt w 3D
   - Fotorealistyczne wizualizacje
   :::
@@ -495,7 +457,6 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
 #infoText
 *Powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
 ::
-
 
 ::pricing-grid
 #backgroundImage

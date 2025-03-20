@@ -88,7 +88,7 @@ defineProps<{
 
               <!-- Features Grid -->
               <div
-                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
                 v-if="$slots.features"
               >
                 <slot name="features">

@@ -54,7 +54,7 @@ onMounted(() => {
 
         <!-- Pre-Footer Section -->
         <PreFooter>
-          <template #title>Nasze oddziały</template>
+          <template #title>Zobacz Również</template>
 
           <template #backgroundImage>
             <ParallaxImg>

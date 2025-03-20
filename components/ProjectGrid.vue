@@ -35,7 +35,7 @@ defineProps<{
           v-if="$slots.projects"
         >
           <!-- SVG Accent Shape -->
-          <div class="absolute -top-1/3 left-0 overflow-hidden z-10 pointer-events-none">
+          <div class="absolute -top-1/3 right-0 overflow-hidden z-10 pointer-events-none">
             <HeroPath4 class="h-screen" />
           </div>
           <slot name="projects" />

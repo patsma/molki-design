@@ -398,6 +398,105 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   :::
 ::
 
+
+::pricing-grid
+#backgroundImage
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Interior Design Services](/uslugiProjektowe.jpg)
+  :::
+
+#title
+Cennik Usług Projektowych
+
+#subtitle
+Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich potrzeb i budżetu
+
+#columns
+  :::pricing-column
+  #title
+  Projekt Funkcjonalny Podstawowy
+  
+  #price
+  od 60 zł/m²
+  
+  #features
+  - Inwentaryzacja
+  - Wyburzenia/zabudowy ścian
+  - Układ funkcjonalny z opisami
+  - Lista zakupów (materiałów, mebli, dodatków)
+  - Układ mebli na wymiar
+  :::
+
+  :::pricing-column
+  #title
+  Projekt Funkcjonalny Premium
+  
+  #price
+  od 120 zł/m²
+  
+  #features
+  - Inwentaryzacja
+  - Wyburzenia/zabudowy ścian
+  - Układ funkcjonalny z opisami
+  - Lista zakupów (materiałów, mebli, dodatków)
+  - Układ mebli na wymiar
+  - Projekt w 3D
+  - Fotorealistyczne wizualizacje
+  :::
+
+  :::pricing-column
+  #title
+  Projekt Wykonawczy Podstawowy
+  
+  #price
+  od 180 zł/m²
+  
+  #features
+  - Inwentaryzacja
+  - Wyburzenia/zabudowy ścian
+  - Układ funkcjonalny z opisami
+  - Lista zakupów (materiałów, mebli, dodatków)
+  - Przyłącza wodno-kanalizacyjne
+  - Przyłącza do ogrzewania
+  - Projekt elektryki
+  - Projekt oświetlenia
+  - Projekt podłóg
+  - Projekt listew przypodłogowych, sztukaterii i karniszy
+  - Projekt sufitów (malowanie+dodatki)
+  - Projekt malowania ścian
+  - Układ mebli na wymiar
+  :::
+
+  :::pricing-column
+  #title
+  Projekt Wykonawczy Premium
+  
+  #price
+  od 240 zł/m²
+  
+  #features
+  - Inwentaryzacja
+  - Wyburzenia/zabudowy ścian
+  - Układ funkcjonalny z opisami
+  - Lista zakupów (materiałów, mebli, dodatków)
+  - Przyłącza wodno-kanalizacyjne
+  - Przyłącza do ogrzewania
+  - Projekt elektryki
+  - Projekt oświetlenia
+  - Projekt podłóg
+  - Projekt listew przypodłogowych, sztukaterii i karniszy
+  - Projekt sufitów (malowanie+dodatki)
+  - Projekt malowania ścian
+  - Układ mebli na wymiar
+  - Projekt w 3D
+  - Fotorealistyczne wizualizacje
+  :::
+
+#infoText
+*Powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
+::
+
+
 ::pricing-grid
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}

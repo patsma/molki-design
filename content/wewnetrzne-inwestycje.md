@@ -15,7 +15,7 @@ ogImage:
 ::hero-business
 ---
 hasBackground: false
-cta-link: /dla-biznesu#realizacje
+cta-link: /wewnetrzne-inwestycje#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -42,7 +42,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /dla-biznesu#realizacje
+  to: /wewnetrzne-inwestycje#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -67,7 +67,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /dla-biznesu#realizacje
+  to: /wewnetrzne-inwestycje#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -92,7 +92,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /dla-biznesu#realizacje
+  to: /wewnetrzne-inwestycje#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

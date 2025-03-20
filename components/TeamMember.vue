@@ -62,7 +62,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
           data-scroll-order="4"
           data-scroll-duration="1.5"
         >
-          <div class="relative aspect-[3/4] overflow-hidden">
+          <div class="relative aspect-[3/3.7] overflow-hidden">
             <slot name="image" />
             <HeroPath class="absolute bottom-0 left-0 h-full opacity-50" />
           </div>

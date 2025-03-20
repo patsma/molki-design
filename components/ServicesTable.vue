@@ -10,6 +10,7 @@ interface ServiceItem {
 defineProps<{
   services?: ServiceItem[];
   infoText?: string;
+  className?: string;
 }>();
 
 // Default services if none provided
@@ -46,7 +47,7 @@ const defaultServices = [
 </script>
 
 <template>
-  <section class="py-24" data-scroll-section>
+  <section :class="className" data-scroll-section>
     <div class="content-grid">
       <div class="breakout1">
         <!-- Table Container with horizontal scroll for mobile -->

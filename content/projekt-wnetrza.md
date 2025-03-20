@@ -229,6 +229,7 @@ UMÓW KONSULTACJĘ
 
 ::title-section
 ---
+className: hidden md:grid
 hasBackground: false
 id: cennik
 ---
@@ -241,6 +242,7 @@ Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoic
 
 ::services-table
 ---
+className: hidden md:grid
 infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna
   kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych
@@ -399,6 +401,11 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
 ::
 
 ::pricing-grid
+---
+isSolid: true
+
+---
+
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior Design Services](/uslugiProjektowe.jpg)
@@ -463,6 +470,12 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
 ::
 
 ::pricing-grid
+---
+hasOverlay: true
+overlayColor: bg-white
+overlayOpacity: 90
+---
+
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior Design Consultation](/heroPricing.jpg)

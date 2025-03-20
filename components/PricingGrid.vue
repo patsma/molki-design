@@ -1,4 +1,41 @@
 <script setup lang="ts">
+interface Props {
+  /**
+   * Whether to show the background overlay
+   * @default true
+   */
+  hasOverlay?: boolean;
+  /**
+   * Background color for the overlay
+   * @default 'bg-white'
+   */
+  overlayColor?: string;
+  /**
+   * Opacity level for the overlay (10-90)
+   * Only used when isSolid is false
+   * @default 90
+   */
+  overlayOpacity?: number;
+  /**
+   * Whether the overlay should be solid instead of semi-transparent
+   * @default false
+   */
+  isSolid?: boolean;
+  /**
+   * Additional classes to add to the root section element
+   * @default ''
+   */
+  className?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  hasOverlay: true,
+  overlayColor: 'bg-white',
+  overlayOpacity: 90,
+  isSolid: false,
+  className: '',
+});
+
 // Define slots for the component
 defineSlots<{
   title?: (props: { mdcUnwrap: string }) => any;
@@ -10,10 +47,13 @@ defineSlots<{
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative w-full" data-scroll-section>
+  <section
+    class="full-width data-scroll-section relative w-full"
+    :class="className"
+    data-scroll-section
+  >
     <!-- Background with overlay -->
-    <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
-      <div class="absolute inset-0 bg-white/90 z-10"></div>
+    <div v-if="$slots.backgroundImage" class="absolute w-full h-full inset-0 z-0 overflow-hidden">
       <slot name="backgroundImage">
         <!-- Default background image -->
         <ParallaxImg
@@ -23,6 +63,11 @@ defineSlots<{
           format="webp"
         />
       </slot>
+      <div
+        v-if="hasOverlay"
+        class="absolute inset-0 z-10"
+        :class="[overlayColor + (isSolid ? '' : '/' + overlayOpacity)]"
+      ></div>
     </div>
 
     <div class="relative z-10 w-full">

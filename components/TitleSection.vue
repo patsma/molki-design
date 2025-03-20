@@ -1,13 +1,14 @@
 <script setup lang="ts">
 defineProps<{
   hasBackground?: boolean;
+  className?: string;
 }>();
 </script>
 
 <template>
   <section
     class="title-section text-center py-16 md:py-24"
-    :class="{ 'bg-neutral-400': hasBackground }"
+    :class="[{ 'bg-neutral-400': hasBackground }, className]"
     data-scroll-section
   >
     <div class="content-grid">

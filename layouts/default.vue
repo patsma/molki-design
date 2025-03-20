@@ -193,8 +193,10 @@ onMounted(() => {
           </template>
 
           <template #copyrightText>
-            <p>{{ appConfig.studio.title || 'Molki Design' }} © {{ new Date().getFullYear() }}</p>
-            <p>Wszelkie prawa zastrzeżone.</p>
+            <span class="text-neutral-500">
+              {{ appConfig.studio.title || 'Molki Design' }} © {{ new Date().getFullYear() }}
+            </span>
+            <p class="text-neutral-500">Wszelkie prawa zastrzeżone.</p>
             <p class="space-x-1">
               <NuxtLink
                 to="/polityka-prywatnosci"

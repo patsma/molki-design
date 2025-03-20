@@ -376,7 +376,7 @@ defineSlots<{
                 </slot>
               </div>
               <div class="text-xs text-neutral-500">
-                <p>molki.design.pl © {{ props.year }}</p>
+                <span>molki.design.pl © {{ props.year }}</span>
                 <slot name="copyrightText" mdc-unwrap="p">
                   <p>
                     Molki Design © {{ props.year }}Wszelkie prawa zastrzeżone /
@@ -391,7 +391,7 @@ defineSlots<{
                 </slot>
               </div>
             </div>
-            <div class="pt-8 -mt-4">
+            <div class="pt-8">
               <slot name="logo" mdc-unwrap="p">
                 <NuxtLink to="/" class="block" aria-label="Molki - Home">
                   <Logo />

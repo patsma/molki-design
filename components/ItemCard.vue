@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <div class="item-card relative" data-scroll-section>
     <!-- Image Container -->
-    <div class="relative aspect-[16/9] overflow-hidden">
+    <div class="relative md:aspect-[16/6] aspect-[16/9] overflow-hidden">
       <!-- Overlay -->
       <div class="absolute inset-0 bg-black/30 z-10"></div>
 

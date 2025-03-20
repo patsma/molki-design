@@ -161,7 +161,7 @@ COMFORT
   :::
 
 #accent-shape
-  :::div{.absolute.top-0.left-0.overflow-hidden.z-20.pointer-events-none}
+  :::div{.absolute.top-0.right-0.overflow-hidden.z-20.pointer-events-none}
     ::::hero-path-6{.h-screen}
     ::::
   :::
@@ -186,7 +186,7 @@ PREMIUM
   :::
 
 #accent-shape
-  :::div{.absolute.top-[33%].left-0.overflow-hidden.z-20.pointer-events-none}
+  :::div{.absolute.top-[20%].left-0.overflow-hidden.z-20.pointer-events-none}
     ::::hero-path-7{.h-screen}
     ::::
   :::

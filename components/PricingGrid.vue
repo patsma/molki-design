@@ -21,6 +21,11 @@ interface Props {
    * @default false
    */
   isSolid?: boolean;
+  /**
+   * Additional classes to be applied to the section element
+   * @default ''
+   */
+  classList?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -28,6 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
   overlayColor: 'bg-white',
   overlayOpacity: 90,
   isSolid: false,
+  classList: '',
 });
 
 // Define slots for the component
@@ -41,7 +47,11 @@ defineSlots<{
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative w-full" data-scroll-section>
+  <section
+    class="full-width data-scroll-section relative w-full"
+    :class="classList"
+    data-scroll-section
+  >
     <!-- Background with overlay -->
     <div v-if="$slots.backgroundImage" class="absolute w-full h-full inset-0 z-0 overflow-hidden">
       <slot name="backgroundImage">

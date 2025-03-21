@@ -242,7 +242,7 @@ Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoic
 
 ::services-table
 ---
-className: hidden md:grid
+className: hidden md:grid pb-20
 infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna
   kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych
@@ -400,8 +400,9 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   :::
 ::
 
-::pricing-grid{.md:hidden}
+::pricing-grid
 ---
+classList: md:hidden
 isSolid: true
 ---
 

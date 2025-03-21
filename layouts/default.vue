@@ -128,7 +128,12 @@ onMounted(() => {
         <FooterComponent>
           <template #sponsors>
             <div class="flex gap-4">
-              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <NuxtLink
+                to="https://www.wybrzezegdansk.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-primary-dark transition-colors"
+              >
                 <IconBlock name="fig:club01" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>
@@ -136,10 +141,20 @@ onMounted(() => {
 
           <template #certifications>
             <div class="flex gap-4">
-              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <NuxtLink
+                to="https://kapitalnafirma.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-primary-dark transition-colors"
+              >
                 <IconBlock name="fig:cert01" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
-              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <NuxtLink
+                to="https://rzetelnafirma.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-primary-dark transition-colors"
+              >
                 <IconBlock name="fig:cert02" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>
@@ -147,7 +162,12 @@ onMounted(() => {
 
           <template #memberships>
             <div class="flex gap-4">
-              <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+              <NuxtLink
+                to="https://www.wybrzezegdansk.pl/klub-200"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-primary-dark transition-colors"
+              >
                 <IconBlock name="fig:cert03" customClass="w-16 h-16 text-primary" />
               </NuxtLink>
             </div>

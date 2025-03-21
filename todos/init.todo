@@ -196,9 +196,7 @@
 ✔ Ensure analytics and cookies are injected only when accepted @done(25-03-19 10:02)
 
 
-- Make Footer on mobile nicer
-- Refactor the pricing table
+✔ Make Footer on mobile nicer @done(25-03-21 09:01)
+✔ Refactor the pricing table @done(25-03-21 09:01)
+✔ Add proper images OG @done(25-03-21 09:01)
 
-- Add proper images OG
-- Loader only on first page load?
-- Change loader to be nicer?

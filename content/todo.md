@@ -49,9 +49,9 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ **Newsletter**
   - ✅ Integracja z dostawcą (do ustalenia) - hubspot
   - ✅ Konfiguracja adresu odbiorczego - huspot
-- ❌ **Open Graph**
-  - ❌ Konfiguracja obrazów OG dla mediów społecznościowych
-  - ❌ Poprawne metadane dla udostępniania w mediach społecznościowych
+- ✅ **Open Graph**
+  - ✅ Konfiguracja obrazów OG dla mediów społecznościowych
+  - ✅ Poprawne metadane dla udostępniania w mediach społecznościowych
 
 ## 4. Wymogi Prawne
 
@@ -86,7 +86,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 
 ## 7. Kontrola Jakości
 
-- 🟡 **Testy Międzyprzeglądarkowe**:
+- ✅ **Testy Międzyprzeglądarkowe**:
   - ✅ Chrome/Firefox/Safari/Edge
   - ✅ Przeglądarki mobilne
 - ✅ Strona błędu 404
@@ -106,7 +106,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ Strona 404
 - ✅ Naprawienie zachowania menu mobilnego
 - ✅ Konfiguracja Web Manifest
-- ❌ Implementacja obrazów OG
+- ✅ Implementacja obrazów OG
 - ✅ Dodanie wyróżnienia aktualnej strony w menu
 
 ## Wymagane Działania Klienta

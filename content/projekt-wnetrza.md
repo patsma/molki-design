@@ -400,10 +400,9 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   :::
 ::
 
-::pricing-grid
+::pricing-grid{.md:hidden}
 ---
 isSolid: true
-
 ---
 
 #backgroundImage

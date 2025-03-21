@@ -37,7 +37,7 @@ if (page.value.ogImage?.props.cover) {
   defineOgImage(page.value.ogImage?.props.cover);
 }
 
-console.log('OG IMAGE:', page.value.ogImage?.props.cover);
+// console.log('OG IMAGE:', page.value.ogImage?.props.cover);
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 import { useMobileDetection } from '~/composables/useMobileDetection';
 import { useLoaderStore } from '@/stores/loaderStore';
+import { useAnimationStore } from '~/stores/animationStore';
 
 /**
  * Scroll Smoother Plugin for Nuxt
@@ -34,316 +35,223 @@ import { useLoaderStore } from '@/stores/loaderStore';
 export default defineNuxtPlugin((nuxtApp) => {
   const { isMobile } = useMobileDetection();
   const loaderStore = useLoaderStore();
-
-  // Use ref to track initialization state cleanly
-  const isInitialized = ref(false);
-
-  // Store references with proper typing using 'any' to avoid TypeScript errors
-  // We use 'any' here since the exact types from GSAP are complex and would add
-  // unnecessary verbosity to the code
+  const animationStore = useAnimationStore();
   let scrollSmoother: any = null;
-  let animationContext: any = null;
+  const debug = process.env.NODE_ENV === 'development';
 
-  // Register GSAP effects
-  const registerEffects = () => {
-    const { $gsap } = useNuxtApp();
-
-    $gsap.registerEffect({
-      name: 'fadeIn',
-      effect: (targets: any, config: any) => {
-        return $gsap.fromTo(
-          targets,
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: config.duration || 0.5,
-            ease: 'power2.out',
-            stagger: config.stagger || 0,
-          }
-        );
-      },
-      defaults: { duration: 0.5, stagger: 0 },
-      extendTimeline: true,
-    });
-
-    $gsap.registerEffect({
-      name: 'fadeUp',
-      effect: (targets: any, config: any) => {
-        return $gsap.fromTo(
-          targets,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: config.duration || 0.5,
-            ease: 'power2.out',
-            stagger: config.stagger || 0,
-          }
-        );
-      },
-      defaults: { duration: 0.5, stagger: 0 },
-      extendTimeline: true,
-    });
-
-    // Add DrawSVG effect for animating SVG paths
-    $gsap.registerEffect({
-      name: 'drawSVG',
-      effect: (targets: any, config: any) => {
-        // DrawSVG is properly imported through the Nuxt GSAP plugin
-        // Create the animation directly
-        return $gsap.fromTo(
-          targets,
-          { drawSVG: config.from || '0%' },
-          {
-            drawSVG: config.to || '100%',
-            duration: config.duration || 1,
-            ease: config.ease || 'power2.inOut',
-            stagger: config.stagger || 0,
-            delay: config.delay || 0,
-          }
-        );
-      },
-      defaults: { duration: 1, ease: 'power2.inOut', from: '0%', to: '100%', stagger: 0, delay: 0 },
-      extendTimeline: true,
-    });
+  const log = (message: string, data?: any) => {
+    if (debug) {
+      console.log(`[ScrollSmoother] ${message}`, data || '');
+    }
   };
 
-  // Set up scroll-based animations using data attributes
-  const initSectionAnimations = () => {
-    const { $gsap } = useNuxtApp();
+  // Initialize scroll-based animations
+  const initAnimations = () => {
+    if (!process.client) return;
+    const { $gsap, $ScrollTrigger } = useNuxtApp();
+    log('Initializing animations');
 
-    const DEFAULT_SCROLL_START = 'top 80%';
-    const DEFAULT_SCROLL_END = 'bottom 20%';
-    const DEFAULT_TOGGLE_ACTIONS = 'play none none none';
-    const GLOBAL_OVERLAP = '-=0.5';
+    // First kill any existing ScrollTriggers
+    $ScrollTrigger.getAll().forEach((st: any) => st.kill());
 
-    const ctx = $gsap.context(() => {
-      document.querySelectorAll('[data-scroll-section]').forEach((section) => {
-        const sectionStart = section.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
-        const sectionEnd = section.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
-        const sectionToggleActions =
-          section.getAttribute('data-scroll-toggle') || DEFAULT_TOGGLE_ACTIONS;
+    document.querySelectorAll('[data-scroll-section]').forEach((section, index) => {
+      const items = section.querySelectorAll('[data-scroll-item]');
+      if (!items.length) return;
 
-        const tl = $gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: sectionStart,
-            end: sectionEnd,
-            toggleActions: sectionToggleActions,
-            markers: false, // Set to true for debugging
-          },
-        });
+      const id = `section_${index}`;
+      log(`Creating timeline for section ${id}`, { items: items.length });
 
-        const items = section.querySelectorAll('[data-scroll-item], [data-scroll-stagger-group]');
-        const orderedItems = Array.from(items).sort((a, b) => {
-          return (
-            parseInt(a.getAttribute('data-scroll-order') || '0') -
-            parseInt(b.getAttribute('data-scroll-order') || '0')
+      // Create a timeline for this section
+      const tl = $gsap.timeline({ paused: true });
+
+      // Add animations to timeline
+      items.forEach((item: Element) => {
+        const type = item.getAttribute('data-scroll-animation') || 'fadeUp';
+        const delay = parseFloat(item.getAttribute('data-scroll-delay') || '0');
+        const duration = parseFloat(item.getAttribute('data-scroll-duration') || '0.5');
+
+        log(`Adding ${type} animation to timeline`, { delay, duration });
+
+        if (type === 'fadeUp') {
+          tl.fromTo(
+            item,
+            {
+              opacity: 0,
+              y: 50,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration,
+              ease: 'power2.out',
+            },
+            delay
           );
-        });
-
-        orderedItems.forEach((item, index) => {
-          const isIndependent = item.getAttribute('data-scroll-independent') === 'true';
-          const animationType = item.getAttribute('data-scroll-animation') || 'fadeUp';
-          const duration = parseFloat(item.getAttribute('data-scroll-duration') || '0.5') || 0.5;
-          const stagger = parseFloat(item.getAttribute('data-scroll-stagger') || '0.1') || 0.1;
-          const delay = parseFloat(item.getAttribute('data-scroll-delay') || '0') || 0;
-
-          if (isIndependent) {
-            const itemStart = item.getAttribute('data-scroll-start') || DEFAULT_SCROLL_START;
-            const itemEnd = item.getAttribute('data-scroll-end') || DEFAULT_SCROLL_END;
-            const itemToggleActions =
-              item.getAttribute('data-scroll-toggle') || DEFAULT_TOGGLE_ACTIONS;
-
-            const independentTL = $gsap.timeline({
-              scrollTrigger: {
-                trigger: item,
-                start: itemStart,
-                end: itemEnd,
-                toggleActions: itemToggleActions,
-                markers: false,
-              },
-            });
-
-            const animation = $gsap.effects[animationType](item, { duration, stagger });
-            independentTL.add(animation, delay);
-          } else {
-            const position = index === 0 ? 0 : GLOBAL_OVERLAP;
-            const animation = $gsap.effects[animationType](item, { duration, stagger });
-            tl.add(animation, `${position}${delay > 0 ? '+=' + delay : ''}`);
-          }
-        });
+        } else if (type === 'fadeIn') {
+          tl.fromTo(
+            item,
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration,
+              ease: 'power2.out',
+            },
+            delay
+          );
+        }
       });
+
+      // Create ScrollTrigger after timeline is set up
+      $ScrollTrigger.create({
+        trigger: section,
+        start: 'top 80%',
+        onEnter: () => {
+          log(`Section ${id} entered viewport`);
+          tl.play();
+        },
+        onLeaveBack: () => {
+          log(`Section ${id} left viewport`);
+          tl.pause();
+        },
+        onRefresh: ({ progress, direction, isActive }) => {
+          log(`ScrollTrigger refresh for ${id}`, { progress, direction, isActive });
+        },
+      });
+
+      // Register timeline with animation store
+      animationStore.register(id, tl);
     });
-    return ctx;
+
+    // Refresh ScrollTrigger after all animations are set up
+    $ScrollTrigger.refresh();
   };
 
-  // Initialize ScrollSmoother and animations
-  const initScrollSmoother = () => {
-    // Prevent multiple initializations
-    if (isInitialized.value) return;
-    isInitialized.value = true;
+  // Initialize ScrollSmoother
+  const init = () => {
+    if (!process.client) return;
+    log('Initializing ScrollSmoother');
 
-    const { $gsap, $ScrollTrigger, $ScrollSmoother, $SplitText } = useNuxtApp();
+    const { $gsap, $ScrollTrigger, $ScrollSmoother } = useNuxtApp();
 
-    // Register effects
-    registerEffects();
+    // Clean up existing setup
+    cleanup();
 
-    if (isMobile.value) {
-      // Mobile setup (native scroll)
-      animationContext = initSectionAnimations();
-      $gsap.delayedCall(0.1, () => {
-        $ScrollTrigger.refresh(true);
-        window.scrollTo(0, 0);
-      });
-      return;
+    // Setup ScrollSmoother for desktop
+    if (!isMobile.value) {
+      const wrapper = document.querySelector('#smooth-wrapper');
+      const content = document.querySelector('#smooth-content');
+
+      if (wrapper && content) {
+        log('Creating ScrollSmoother instance');
+        try {
+          scrollSmoother = $ScrollSmoother.create({
+            wrapper,
+            content,
+            smooth: 1,
+            effects: true,
+          });
+
+          // Add scroll listener instead of using onUpdate
+          if (debug) {
+            window.addEventListener(
+              'scroll',
+              () => {
+                requestAnimationFrame(() => {
+                  if (scrollSmoother && scrollSmoother.scrollTop) {
+                    const scrollTop = Math.round(scrollSmoother.scrollTop());
+                    // Only log every 100px to avoid console spam
+                    if (scrollTop % 100 === 0) {
+                      log('Scroll position', { scrollTop });
+                    }
+                  }
+                });
+              },
+              { passive: true }
+            );
+          }
+        } catch (error) {
+          console.error('Error creating ScrollSmoother:', error);
+        }
+      }
     }
 
-    // Desktop setup (smooth scroll)
-    const wrapper = document.querySelector('#smooth-wrapper');
-    const content = document.querySelector('#smooth-content');
-
-    if (wrapper && content) {
-      // Create ScrollSmoother instance
-      scrollSmoother = $ScrollSmoother.create({
-        wrapper,
-        content,
-        smooth: 1,
-        effects: true,
-        normalizeScroll: true,
-        touchMultiplier: 2,
-        ignoreMobileResize: true,
-      } as any);
-
-      // Initialize animations after a short delay
-      $gsap.delayedCall(0.1, () => {
-        animationContext = initSectionAnimations();
-        $ScrollTrigger.refresh();
-      });
-    }
+    // Initialize animations with a slight delay
+    setTimeout(() => {
+      initAnimations();
+      animationStore.setReady(true);
+      log('Animation system initialized');
+      // Finish loading after animations are ready
+      loaderStore.finishLoading();
+    }, 100);
   };
 
-  // Safely clean up ScrollTrigger and ScrollSmoother instances
-  const cleanupAnimations = () => {
+  // Clean up
+  const cleanup = () => {
+    log('Cleaning up ScrollSmoother');
+
+    const { $ScrollTrigger } = useNuxtApp();
+
+    // Kill all ScrollTriggers first
+    if ($ScrollTrigger) {
+      $ScrollTrigger.getAll().forEach((st: any) => st.kill());
+    }
+
+    // Kill ScrollSmoother
     if (scrollSmoother) {
       scrollSmoother.kill();
       scrollSmoother = null;
     }
 
-    if (animationContext) {
-      animationContext.revert();
-      animationContext = null;
-    }
+    // Clean up animation store
+    animationStore.cleanup();
   };
 
-  const resetEffects = () => {
-    if (!scrollSmoother) return;
-
-    const { $gsap, $ScrollTrigger } = useNuxtApp();
-
-    // Reset elements with speed data attribute
-    const elements = document.querySelectorAll('[data-speed]');
-    elements.forEach((el) => {
-      $gsap.set(el, {
-        clearProps: 'transform,willChange',
-      });
-    });
-
-    $ScrollTrigger.refresh(true);
-    if (scrollSmoother && typeof scrollSmoother.effects === 'function') {
-      scrollSmoother.effects('[data-speed], [data-lag]', {});
+  // Watch for loader state changes
+  watch(
+    () => loaderStore.isLoading,
+    (isLoading) => {
+      log('Loader state changed', { isLoading });
+      if (!isLoading && animationStore.isReady) {
+        // Add a small delay to ensure DOM is ready
+        setTimeout(() => {
+          animationStore.playInView();
+        }, 50);
+      }
     }
-  };
+  );
 
-  // Initialize on plugin load (client-side only)
+  // Initialize on plugin load
   if (process.client) {
-    initScrollSmoother();
+    // Delay initialization to ensure DOM is ready
+    window.addEventListener('load', () => {
+      init();
+    });
   }
 
   // Handle page transitions
   nuxtApp.hook('page:start', () => {
     if (!process.client) return;
-
-    const { $gsap } = useNuxtApp();
-
-    // Show loader immediately and hide content
+    log('Page transition started');
     loaderStore.startLoading();
-
-    // Handle ScrollSmoother after a small delay
-    $gsap.delayedCall(0.1, () => {
-      if (scrollSmoother && !isMobile.value) {
-        // scrollSmoother.paused(true);
-
-        try {
-          $gsap.set(scrollSmoother, { scrollTop: 0 });
-        } catch (error) {
-          console.warn('Could not set scrollTop on ScrollSmoother:', error);
-        }
-      }
-    });
+    cleanup();
   });
 
-  nuxtApp.hook('page:transition:finish', () => {
+  nuxtApp.hook('page:finish', () => {
     if (!process.client) return;
-
-    const { $gsap, $ScrollTrigger } = useNuxtApp();
-
-    const transitionTL = $gsap.timeline({
-      onComplete: () => {
-        $gsap.delayedCall(0.1, () => {
-          loaderStore.finishLoading();
-        });
-      },
-    });
-
-    // Reset ScrollSmoother first
-    if (scrollSmoother && !isMobile.value) {
-      transitionTL.add(() => {
-        scrollSmoother.scrollTop(0);
-        scrollSmoother.paused(false);
-      });
-    }
-
-    // Then handle animations with shorter delays
-    transitionTL
-      .add(() => {
-        if (animationContext) {
-          animationContext.revert();
-        }
-        resetEffects();
-        animationContext = initSectionAnimations();
-      }, '+=0.1')
-      .add(() => {
-        $ScrollTrigger.refresh(true);
-      }, '+=0.1');
-
-    // Reset scroll position for mobile
-    if (isMobile.value) {
-      window.scrollTo(0, 0);
-    }
+    log('Page transition finished');
+    // Initialize with a delay to ensure new page content is ready
+    setTimeout(() => {
+      init();
+    }, 100);
   });
 
-  // Instead of using onUnmounted, use window events for cleanup
-  if (process.client) {
-    // Clean up when the page is unloaded (e.g., navigation away or refresh)
-    window.addEventListener('beforeunload', cleanupAnimations);
-
-    // For hot module reloading during development
-    if (import.meta.hot) {
-      import.meta.hot.dispose(() => {
-        cleanupAnimations();
-        window.removeEventListener('beforeunload', cleanupAnimations);
-      });
-    }
-  }
-
-  // Provide ScrollSmoother to components
   return {
     provide: {
       smoothScroller: {
         get: () => scrollSmoother,
-        reset: resetEffects,
-        cleanup: cleanupAnimations,
+        init,
+        cleanup,
+        playAnimations: () => animationStore.playInView(),
       },
     },
   };

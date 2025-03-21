@@ -9,24 +9,12 @@ interface AnimationPreset {
   to: gsap.TweenVars;
 }
 
-interface ScrollTriggerOptions {
-  trigger?: Element;
-  start?: string;
-  end?: string;
-  markers?: boolean;
-  toggleActions?: string;
-  onEnter?: () => void;
-  onLeave?: () => void;
-  onEnterBack?: () => void;
-  onLeaveBack?: () => void;
-}
-
 interface AnimationOptions {
-  type?: AnimationType;
   delay?: number;
   duration?: number;
   ease?: string;
-  scrollTrigger?: ScrollTriggerOptions;
+  start?: string;
+  markers?: boolean;
 }
 
 /**
@@ -36,13 +24,10 @@ interface AnimationOptions {
  * Examples:
  * <div v-scroll-anim="'fadeUp'">Content</div>
  * <div v-scroll-anim:fadeLeft="{ delay: 0.2 }">Content</div>
- * <div v-scroll-anim="{ type: 'fadeIn', delay: 0.3, scrollTrigger: { start: 'top center' } }">Content</div>
  */
 export default defineNuxtPlugin((nuxtApp) => {
-  const { $gsap, $ScrollTrigger } = useNuxtApp();
-
-  // Store all animations for cleanup
-  const animations: gsap.core.Animation[] = [];
+  const { $gsap } = useNuxtApp();
+  let ctx: gsap.Context | null = null;
 
   // Animation presets
   const presets: Record<AnimationType, AnimationPreset> = {
@@ -68,20 +53,35 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
   };
 
-  // Clear all animations
-  const clearAnimations = () => {
-    animations.forEach((anim) => {
-      if (anim.scrollTrigger) {
-        anim.scrollTrigger.kill();
-      }
-      anim.kill();
+  // Create animation with ScrollTrigger
+  const createAnimation = (
+    el: HTMLElement,
+    type: AnimationType,
+    options: AnimationOptions = {}
+  ) => {
+    if (!process.client) return;
+
+    const preset = presets[type];
+    if (!preset) return;
+
+    return $gsap.fromTo(el, preset.from, {
+      ...preset.to,
+      ...options,
+      scrollTrigger: {
+        trigger: el,
+        start: options.start || 'top 80%',
+        markers: process.env.NODE_ENV === 'development' && options.markers,
+        toggleActions: 'play none none none',
+      },
     });
-    animations.length = 0;
   };
 
   // Handle page transitions
   nuxtApp.hook('page:start', () => {
-    clearAnimations();
+    if (ctx) {
+      ctx.revert(); // This kills all animations and removes ScrollTriggers
+      ctx = null;
+    }
   });
 
   // Create the directive
@@ -90,59 +90,28 @@ export default defineNuxtPlugin((nuxtApp) => {
       if (!process.client) return;
 
       try {
+        // Create a new context if needed
+        if (!ctx) {
+          ctx = $gsap.context(() => {});
+        }
+
         // Get animation type and options
-        let type: AnimationType = 'fadeIn';
+        let type: AnimationType = 'fadeUp';
         let options: AnimationOptions = {};
 
         if (typeof binding.value === 'string') {
           type = binding.value as AnimationType;
         } else if (typeof binding.value === 'object') {
           options = binding.value;
-          type = (options.type as AnimationType) || (binding.arg as AnimationType) || 'fadeIn';
+          type = (binding.arg as AnimationType) || 'fadeUp';
         } else if (binding.arg) {
           type = binding.arg as AnimationType;
         }
 
-        // Get animation preset
-        const preset = presets[type];
-        if (!preset) {
-          console.warn(`[v-scroll-anim] Unknown animation type: ${type}`);
-          return;
-        }
-
-        // Create the animation
-        const animation = $gsap.fromTo(el, preset.from, {
-          ...preset.to,
-          ...options,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-            markers: process.env.NODE_ENV === 'development' && options.scrollTrigger?.markers,
-            toggleActions: 'play none none none',
-            ...options.scrollTrigger,
-          },
-        });
-
-        // Store for cleanup
-        animations.push(animation);
+        // Add animation to context
+        ctx.add(() => createAnimation(el, type, options));
       } catch (error) {
         console.warn('[v-scroll-anim] Error creating animation:', error);
-      }
-    },
-
-    unmounted(el) {
-      // Find and cleanup animations for this element
-      const index = animations.findIndex(
-        (anim) => anim.scrollTrigger && anim.scrollTrigger.trigger === el
-      );
-
-      if (index !== -1) {
-        const animation = animations[index];
-        if (animation.scrollTrigger) {
-          animation.scrollTrigger.kill();
-        }
-        animation.kill();
-        animations.splice(index, 1);
       }
     },
   };
@@ -155,23 +124,17 @@ export default defineNuxtPlugin((nuxtApp) => {
     provide: {
       scrollAnimations: {
         presets,
-        clear: clearAnimations,
         create: (el: HTMLElement, type: AnimationType, options?: AnimationOptions) => {
-          const preset = presets[type];
-          if (!preset) return null;
-
-          const animation = $gsap.fromTo(el, preset.from, {
-            ...preset.to,
-            ...options,
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 80%',
-              ...options?.scrollTrigger,
-            },
-          });
-
-          animations.push(animation);
-          return animation;
+          if (!ctx) {
+            ctx = $gsap.context(() => {});
+          }
+          return ctx.add(() => createAnimation(el, type, options));
+        },
+        clear: () => {
+          if (ctx) {
+            ctx.revert();
+            ctx = null;
+          }
         },
       },
     },

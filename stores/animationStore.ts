@@ -6,6 +6,7 @@ export const useAnimationStore = defineStore('animation', {
     isReady: false,
     debug: process.env.NODE_ENV === 'development',
   }),
+  
 
   getters: {
     activeAnimations: (state) => state.animations.size,

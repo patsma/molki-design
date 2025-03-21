@@ -1,13 +1,10 @@
 <template>
   <Transition name="fade">
     <div
-      v-if="!loaderStore.isHidden"
-      class="loader-group bg-secondary grid justify-center fixed z-40 h-screen w-full"
-      :class="{ 'loader-group--hidden': !loaderStore.isLoading }"
+      v-if="loaderStore.isActive"
+      class="loader fixed inset-0 z-50 flex items-center justify-center bg-secondary"
     >
-      <div class="loader grid">
-        <LoaderLogo class="w-40" />
-      </div>
+      <LoaderLogo class="w-40" />
     </div>
   </Transition>
 </template>
@@ -18,20 +15,13 @@ import { useLoaderStore } from '~/stores/loaderStore';
 const loaderStore = useLoaderStore();
 </script>
 
-<style>
-.loader-group {
-  transition: opacity 0.3s ease-out;
-}
-
-.loader-group--hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
+<style scoped>
+.fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }

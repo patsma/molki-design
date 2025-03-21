@@ -26,6 +26,10 @@ export default defineAppConfig({
           ],
         },
         {
+          label: 'Animation',
+          link: '/animation-demo',
+        },
+        {
           label: 'O nas',
           link: '/o-nas',
         },

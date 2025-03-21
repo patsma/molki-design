@@ -4,7 +4,7 @@ import { useMobileDetection } from '~/composables/useMobileDetection';
 import type { UseResizeObserverReturn } from '@vueuse/core';
 
 export const useScrollHeader = () => {
-  const { $gsap, $ScrollTrigger, $ScrollSmoother } = useNuxtApp();
+  const { $gsap, $ScrollTrigger } = useNuxtApp();
 
   const headerRef = ref<HTMLElement | null>(null);
   const { height: headerHeight } = useElementBounding(headerRef);
@@ -50,177 +50,202 @@ export const useScrollHeader = () => {
   const initResizeObserver = () => {
     if (!headerRef.value) return;
 
-    if (stopResizeObserver.value?.stop) {
-      stopResizeObserver.value.stop();
-    }
+    try {
+      if (stopResizeObserver.value?.stop) {
+        stopResizeObserver.value.stop();
+      }
 
-    stopResizeObserver.value = useResizeObserver(headerRef, () => {
-      handleResize();
-    });
+      stopResizeObserver.value = useResizeObserver(headerRef, () => {
+        handleResize();
+      });
+    } catch (error) {
+      console.warn('Error initializing resize observer:', error);
+    }
   };
 
   const initScrollHeader = () => {
     if (!process.client || !headerRef.value) return;
 
-    // Clean up previous instances
-    cleanup();
+    try {
+      // Clean up previous instances
+      cleanup();
 
-    // Create a fresh GSAP context for proper cleanup
-    ctx = $gsap.context(() => {
-      // Use different initialization based on device
-      if (isMobile.value) {
-        initMobileHeader();
-      } else {
-        initDesktopHeader();
-      }
-    });
+      // Create a fresh GSAP context for proper cleanup
+      ctx = $gsap.context(() => {
+        // Use different initialization based on device
+        if (isMobile.value) {
+          initMobileHeader();
+        } else {
+          initDesktopHeader();
+        }
+      });
 
-    // Initialize resize observer
-    initResizeObserver();
+      // Initialize resize observer
+      initResizeObserver();
+    } catch (error) {
+      console.warn('Error initializing scroll header:', error);
+    }
   };
 
   const initDesktopHeader = () => {
     if (!headerRef.value) return;
 
-    // Initial setup
-    $gsap.set(headerRef.value, {
-      height: headerHeight.value,
-      top: 0,
-      y: 0,
-      yPercent: 0,
-    });
+    try {
+      // Initial setup
+      $gsap.set(headerRef.value, {
+        height: headerHeight.value,
+        top: 0,
+        y: 0,
+        yPercent: 0,
+      });
 
-    // Create animation once and reuse it
-    headerAnimation = $gsap
-      .timeline({ paused: true })
-      .to(headerRef.value, { yPercent: -100, duration: 0.3, ease: 'power2.inOut' });
+      // Create animation once and reuse it
+      headerAnimation = $gsap
+        .timeline({ paused: true })
+        .to(headerRef.value, { yPercent: -100, duration: 0.3, ease: 'power2.inOut' });
 
-    // Create scroll trigger for animation
-    scrollTriggerInstance = $ScrollTrigger.create({
-      start: 0,
-      end: 'max',
-      onUpdate: useThrottleFn((self) => {
-        const smoother = $ScrollSmoother.get();
-        const scrollY = smoother ? smoother.scrollTop() : window.scrollY;
-        const velocity = Math.abs(self.getVelocity());
+      // Create scroll trigger for animation
+      scrollTriggerInstance = $ScrollTrigger.create({
+        start: 0,
+        end: 'max',
+        onUpdate: useThrottleFn((self) => {
+          const scrollY = window.scrollY;
+          const velocity = Math.abs(self.getVelocity());
 
-        if (velocity < 5) return;
+          if (velocity < 5) return;
 
-        if (self.direction > 0 && scrollY > headerHeight.value) {
-          if (!headerAnimation.progress() || headerAnimation.reversed()) {
-            headerAnimation.play();
+          if (self.direction > 0 && scrollY > headerHeight.value) {
+            if (!headerAnimation.progress() || headerAnimation.reversed()) {
+              headerAnimation.play();
+            }
+          } else if (self.direction < 0) {
+            if (headerAnimation.progress() && !headerAnimation.reversed()) {
+              headerAnimation.reverse();
+            }
           }
-        } else if (self.direction < 0) {
-          if (headerAnimation.progress() && !headerAnimation.reversed()) {
-            headerAnimation.reverse();
-          }
-        }
-      }, 300),
-    });
+        }, 300),
+      });
 
-    // Pin the header
-    pinInstance = $ScrollTrigger.create({
-      trigger: headerRef.value,
-      start: 'top top',
-      end: 'max',
-      pin: true,
-      pinSpacing: false,
-    });
+      // Pin the header
+      pinInstance = $ScrollTrigger.create({
+        trigger: headerRef.value,
+        start: 'top top',
+        end: 'max',
+        pin: true,
+        pinSpacing: false,
+      });
+    } catch (error) {
+      console.warn('Error initializing desktop header:', error);
+    }
   };
 
   // Simple scroll handler for mobile
   const handleScroll = useThrottleFn(() => {
     if (!headerRef.value) return;
 
-    const currentScrollY = window.scrollY;
+    try {
+      const currentScrollY = window.scrollY;
 
-    // Only trigger after scrolling a minimum distance
-    if (Math.abs(currentScrollY - lastScrollY) < 10) {
-      return;
+      // Only trigger after scrolling a minimum distance
+      if (Math.abs(currentScrollY - lastScrollY) < 10) {
+        return;
+      }
+
+      // Scroll direction
+      const scrollingDown = currentScrollY > lastScrollY;
+
+      // Show/hide header based on scroll direction and position
+      if (scrollingDown && currentScrollY > headerHeight.value) {
+        // Scrolling down - hide header
+        $gsap.to(headerRef.value, {
+          y: -100 + '%',
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      } else if (!scrollingDown) {
+        // Scrolling up - show header
+        $gsap.to(headerRef.value, {
+          y: 0,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      }
+
+      lastScrollY = currentScrollY;
+    } catch (error) {
+      console.warn('Error in scroll handler:', error);
     }
-
-    // Scroll direction
-    const scrollingDown = currentScrollY > lastScrollY;
-
-    // Show/hide header based on scroll direction and position
-    if (scrollingDown && currentScrollY > headerHeight.value) {
-      // Scrolling down - hide header
-      $gsap.to(headerRef.value, {
-        y: -100 + '%',
-        duration: 0.3,
-        ease: 'power2.out',
-      });
-    } else if (!scrollingDown) {
-      // Scrolling up - show header
-      $gsap.to(headerRef.value, {
-        y: 0,
-        duration: 0.3,
-        ease: 'power2.out',
-      });
-    }
-
-    lastScrollY = currentScrollY;
   }, 100);
 
   const initMobileHeader = () => {
     if (!headerRef.value) return;
 
-    // Set initial position for mobile
-    $gsap.set(headerRef.value, {
-      y: 0,
-      position: 'fixed',
-      top: 0,
-      width: '100%',
-      zIndex: 50,
-      height: headerHeight.value,
-    });
+    try {
+      // Set initial position for mobile
+      $gsap.set(headerRef.value, {
+        y: 0,
+        position: 'fixed',
+        top: 0,
+        width: '100%',
+        zIndex: 50,
+        height: headerHeight.value,
+      });
 
-    // Reset scroll values
-    lastScrollY = window.scrollY;
-    ticking = false;
+      // Reset scroll values
+      lastScrollY = window.scrollY;
+      ticking = false;
 
-    // Add scroll listener for mobile
-    window.addEventListener('scroll', handleScroll);
+      // Add scroll listener for mobile
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    } catch (error) {
+      console.warn('Error initializing mobile header:', error);
+    }
   };
 
   const cleanup = () => {
-    // Remove scroll listener
-    if (process.client) {
+    if (!process.client) return;
+
+    try {
+      // Remove scroll listener
       window.removeEventListener('scroll', handleScroll);
-    }
 
-    // Clean up GSAP animations and ScrollTrigger instances
-    if (headerAnimation) {
-      headerAnimation.kill();
-      headerAnimation = null;
-    }
+      // Clean up GSAP animations and ScrollTrigger instances
+      if (headerAnimation) {
+        headerAnimation.kill();
+        headerAnimation = null;
+      }
 
-    if (scrollTriggerInstance) {
-      scrollTriggerInstance.kill();
-      scrollTriggerInstance = null;
-    }
+      if (scrollTriggerInstance) {
+        scrollTriggerInstance.kill();
+        scrollTriggerInstance = null;
+      }
 
-    if (pinInstance) {
-      pinInstance.kill();
-      pinInstance = null;
-    }
+      if (pinInstance) {
+        pinInstance.kill();
+        pinInstance = null;
+      }
 
-    // Clean up GSAP context
-    if (ctx) {
-      ctx.revert();
-      ctx = null;
-    }
+      // Clean up GSAP context
+      if (ctx) {
+        ctx.revert();
+        ctx = null;
+      }
 
-    // Clean up resize observer
-    if (stopResizeObserver.value?.stop) {
-      stopResizeObserver.value.stop();
+      // Clean up resize observer
+      if (stopResizeObserver.value?.stop) {
+        stopResizeObserver.value.stop();
+      }
+      stopResizeObserver.value = null;
+    } catch (error) {
+      console.warn('Error during cleanup:', error);
     }
-    stopResizeObserver.value = null;
   };
 
   // Clean up on component unmount
   onUnmounted(() => {
-    cleanup();
+    if (process.client) {
+      cleanup();
+    }
   });
 
   return {

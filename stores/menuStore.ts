@@ -31,119 +31,131 @@ export const useMenuStore = defineStore('menu', {
 
   actions: {
     initAnimation($gsap: typeof gsap) {
-      // console.log('🎨 Initializing animations');
-      this.gsapInstance = $gsap;
-
       if (!process.client) {
         console.warn('⚠️ Not running on client side, skipping animation init');
         return;
       }
 
-      const menu = document.querySelector('.mobile-menu');
-      const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
-      const menuButton = document.querySelector('.mobile-menu-button');
+      try {
+        this.gsapInstance = $gsap;
 
-      // Initial state
-      $gsap.set(menu, {
-        display: 'none',
-        xPercent: 0,
-        opacity: 0,
-      });
+        const menu = document.querySelector('.mobile-menu');
+        const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
+        const menuButton = document.querySelector('.mobile-menu-button');
 
-      $gsap.set([menuItems, menuButton], {
-        autoAlpha: 0,
-        y: 20,
-      });
+        if (!menu || !menuItems.length) {
+          console.warn('⚠️ Menu elements not found');
+          return;
+        }
 
-      this.mobileMenuTimeline = $gsap
-        .timeline({ paused: true })
-        .to(menu, {
-          display: 'grid',
+        // Initial state
+        $gsap.set(menu, {
+          display: 'none',
           xPercent: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: 'power2.out',
-        })
-        .to(
-          [menuItems, menuButton],
-          {
-            autoAlpha: 1,
-            y: 0,
-            stagger: 0.05,
-            duration: 0.3,
-          },
-          '-=0.2'
+          opacity: 0,
+        });
+
+        $gsap.set([menuItems, menuButton], {
+          autoAlpha: 0,
+          y: 20,
+        });
+
+        this.mobileMenuTimeline = $gsap
+          .timeline({ paused: true })
+          .to(menu, {
+            display: 'grid',
+            xPercent: 0,
+            opacity: 1,
+            duration: 0.4,
+            ease: 'power2.out',
+          })
+          .to(
+            [menuItems, menuButton],
+            {
+              autoAlpha: 1,
+              y: 0,
+              stagger: 0.05,
+              duration: 0.3,
+            },
+            '-=0.2'
+          );
+
+        // Watch for route changes
+        const route = useRoute();
+        watch(
+          () => route.path,
+          () => {
+            if (this.isMobileMenuOpen) {
+              this.closeMenu();
+            }
+          }
         );
 
-      // Watch for route changes
-      const route = useRoute();
-      watch(
-        () => route.path,
-        () => {
-          if (this.isMobileMenuOpen) {
-            this.closeMenu();
-          }
-        }
-      );
-
-      this.initDropdownTimelines();
+        this.initDropdownTimelines();
+      } catch (error) {
+        console.warn('Error initializing menu animations:', error);
+      }
     },
 
     initDropdownTimelines() {
       if (!this.gsapInstance || !process.client) return;
 
-      this.dropdownTimelines.forEach((tl) => tl.kill());
-      this.dropdownTimelines.clear();
+      try {
+        // Clean up existing timelines
+        this.cleanup();
 
-      document.querySelectorAll('.nav-menu.mobile .nav-menu__item').forEach((item, index) => {
-        const submenu = item.querySelector('.nav-menu__item-submenu');
-        const arrow = item.querySelector('.dropdown-arrow');
+        document.querySelectorAll('.nav-menu.mobile .nav-menu__item').forEach((item, index) => {
+          const submenu = item.querySelector('.nav-menu__item-submenu');
+          const arrow = item.querySelector('.dropdown-arrow');
 
-        if (!submenu || !arrow || !this.gsapInstance) return;
+          if (!submenu || !arrow || !this.gsapInstance) return;
 
-        const dropdownId = `dropdown-${index}`;
+          const dropdownId = `dropdown-${index}`;
 
-        // First, measure the content height
-        this.gsapInstance.set(submenu, {
-          display: 'grid',
-          maxHeight: 'none',
-          height: 'auto',
-          opacity: 0,
-          visibility: 'hidden',
+          // First, measure the content height
+          this.gsapInstance.set(submenu, {
+            display: 'grid',
+            maxHeight: 'none',
+            height: 'auto',
+            opacity: 0,
+            visibility: 'hidden',
+          });
+
+          const contentHeight = (submenu as HTMLElement).offsetHeight;
+
+          // Set initial state
+          this.gsapInstance.set(submenu, {
+            display: 'grid',
+            maxHeight: 0,
+            height: 'auto',
+            opacity: 0,
+            visibility: 'visible',
+          });
+
+          const tl = this.gsapInstance
+            .timeline({
+              paused: true,
+              defaults: { duration: 0.7, ease: 'power2.inOut' },
+            })
+            .to(submenu, {
+              maxHeight: '50vh',
+              opacity: 1,
+              immediateRender: false,
+            })
+            .to(
+              arrow,
+              {
+                rotation: 90,
+                ease: 'power2.out',
+              },
+              0
+            );
+
+          this.dropdownTimelines.set(dropdownId, tl);
         });
-
-        const contentHeight = (submenu as HTMLElement).offsetHeight;
-
-        // Set initial state
-        this.gsapInstance.set(submenu, {
-          display: 'grid',
-          maxHeight: 0,
-          height: 'auto',
-          opacity: 0,
-          visibility: 'visible',
-        });
-
-        const tl = this.gsapInstance
-          .timeline({
-            paused: true,
-            defaults: { duration: 0.7, ease: 'power2.inOut' },
-          })
-          .to(submenu, {
-            maxHeight: '50vh',
-            opacity: 1,
-            immediateRender: false,
-          })
-          .to(
-            arrow,
-            {
-              rotation: 90,
-              ease: 'power2.out',
-            },
-            0
-          );
-
-        this.dropdownTimelines.set(dropdownId, tl);
-      });
+      } catch (error) {
+        console.warn('Error initializing dropdown timelines:', error);
+      }
     },
 
     toggleDropdown(itemIndex: number) {
@@ -152,67 +164,110 @@ export const useMenuStore = defineStore('menu', {
 
       if (!timeline) return;
 
-      if (this.activeDropdownId && this.activeDropdownId !== dropdownId) {
-        const activeTimeline = this.dropdownTimelines.get(this.activeDropdownId);
-        activeTimeline?.reverse();
-        this.activeDropdownId = null;
-      }
+      try {
+        if (this.activeDropdownId && this.activeDropdownId !== dropdownId) {
+          const activeTimeline = this.dropdownTimelines.get(this.activeDropdownId);
+          activeTimeline?.reverse();
+          this.activeDropdownId = null;
+        }
 
-      if (timeline.progress() === 0 || timeline.reversed()) {
-        timeline.play();
-        this.activeDropdownId = dropdownId;
-      } else {
-        timeline.reverse();
-        this.activeDropdownId = null;
+        if (timeline.progress() === 0 || timeline.reversed()) {
+          timeline.play();
+          this.activeDropdownId = dropdownId;
+        } else {
+          timeline.reverse();
+          this.activeDropdownId = null;
+        }
+      } catch (error) {
+        console.warn('Error toggling dropdown:', error);
       }
     },
 
     toggleMenu() {
-      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      try {
+        this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
-      if (!this.mobileMenuTimeline) {
-        console.warn('Timeline not initialized');
-        return;
-      }
+        if (!this.mobileMenuTimeline) {
+          console.warn('Timeline not initialized');
+          return;
+        }
 
-      if (this.isMobileMenuOpen) {
-        this.mobileMenuTimeline.play();
-      } else {
-        this.mobileMenuTimeline.reverse();
+        if (this.isMobileMenuOpen) {
+          this.mobileMenuTimeline.play();
+        } else {
+          this.mobileMenuTimeline.reverse();
+        }
+      } catch (error) {
+        console.warn('Error toggling menu:', error);
       }
     },
 
     closeMenu() {
       if (!this.isMobileMenuOpen) return;
-      this.isMobileMenuOpen = false;
-      this.mobileMenuTimeline?.reverse();
+
+      try {
+        this.isMobileMenuOpen = false;
+        this.mobileMenuTimeline?.reverse();
+      } catch (error) {
+        console.warn('Error closing menu:', error);
+      }
     },
 
     async handleMenuItemClick(link: string, router: any, event: MouseEvent) {
-      // Close mobile menu if open
-      if (this.isMobileMenuOpen) {
-        this.closeMenu();
-      }
-
-      // Handle hash links
-      if (link.startsWith('#')) {
-        event.preventDefault();
-        const element = document.querySelector(link);
-        if (element) {
-          const smoother = ScrollSmoother.get();
-          smoother?.scrollTo(
-            element as any,
-            {
-              duration: 1,
-              ease: 'power2.inOut',
-            } as any
-          );
+      try {
+        // Close mobile menu if open
+        if (this.isMobileMenuOpen) {
+          this.closeMenu();
         }
-        return;
-      }
 
-      // Handle regular navigation
-      await router.push(link);
+        // Handle hash links
+        if (link.startsWith('#')) {
+          event.preventDefault();
+          const element = document.querySelector(link);
+          if (element) {
+            const { $gsap } = useNuxtApp();
+            $gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: element,
+                offsetY: 100,
+              },
+              ease: 'power2.inOut',
+            });
+          }
+          return;
+        }
+
+        // Handle regular navigation
+        await router.push(link);
+      } catch (error) {
+        console.warn('Error handling menu item click:', error);
+      }
+    },
+
+    cleanup() {
+      if (!process.client) return;
+
+      try {
+        // Clean up mobile menu timeline
+        if (this.mobileMenuTimeline) {
+          this.mobileMenuTimeline.kill();
+          this.mobileMenuTimeline = null;
+        }
+
+        // Clean up dropdown timelines
+        this.dropdownTimelines.forEach((timeline) => {
+          timeline.kill();
+        });
+        this.dropdownTimelines.clear();
+        this.activeDropdownId = null;
+
+        // Reset state
+        this.isMobileMenuOpen = false;
+        this.gsapInstance = null;
+      } catch (error) {
+        console.warn('Error during menu cleanup:', error);
+      }
     },
   },
 });

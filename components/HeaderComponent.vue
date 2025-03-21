@@ -8,7 +8,7 @@ import { useScrollHeader } from '@/composables/useScrollHeader';
 import IconBlock from '~/components/IconBlock.vue';
 import { useAppConfig } from '#app';
 
-const { $gsap, $MorphSVGPlugin } = useNuxtApp();
+const { $gsap } = useNuxtApp();
 const menuStore = useMenuStore();
 const { headerRef, headerHeight, initScrollHeader, cleanup } = useScrollHeader();
 const appConfig = useAppConfig();
@@ -30,34 +30,42 @@ watch(headerHeight, (newHeight) => {
 
 onMounted(() => {
   if (process.client) {
-    $MorphSVGPlugin.convertToPath('circle, rect, ellipse, line, polygon, polyline');
+    try {
+      menuStore.initAnimation($gsap);
+      initScrollHeader();
 
-    menuStore.initAnimation($gsap);
-    initScrollHeader();
-
-    // Set initial header height
-    if (headerHeight.value > 0) {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) {
-        document.documentElement.style.setProperty(
-          '--header-height-mobile',
-          `${headerHeight.value}px`
-        );
-        document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
-      } else {
-        document.documentElement.style.setProperty(
-          '--header-height-desktop',
-          `${headerHeight.value}px`
-        );
-        document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
+      // Set initial header height
+      if (headerHeight.value > 0) {
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+          document.documentElement.style.setProperty(
+            '--header-height-mobile',
+            `${headerHeight.value}px`
+          );
+          document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
+        } else {
+          document.documentElement.style.setProperty(
+            '--header-height-desktop',
+            `${headerHeight.value}px`
+          );
+          document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
+        }
       }
+    } catch (error) {
+      console.warn('Error initializing header animations:', error);
     }
   }
 });
 
 onUnmounted(() => {
-  menuStore.cleanup();
-  cleanup();
+  if (process.client) {
+    try {
+      menuStore.cleanup();
+      cleanup();
+    } catch (error) {
+      console.warn('Error cleaning up header animations:', error);
+    }
+  }
 });
 </script>
 

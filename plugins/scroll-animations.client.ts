@@ -1,21 +1,51 @@
 import { useNuxtApp } from '#app';
+import type { Directive } from 'vue';
+
+// Animation preset types
+type AnimationType = 'fadeIn' | 'fadeUp' | 'fadeLeft' | 'fadeRight' | 'scale';
+
+interface AnimationPreset {
+  from: gsap.TweenVars;
+  to: gsap.TweenVars;
+}
+
+interface ScrollTriggerOptions {
+  trigger?: Element;
+  start?: string;
+  end?: string;
+  markers?: boolean;
+  toggleActions?: string;
+  onEnter?: () => void;
+  onLeave?: () => void;
+  onEnterBack?: () => void;
+  onLeaveBack?: () => void;
+}
+
+interface AnimationOptions {
+  type?: AnimationType;
+  delay?: number;
+  duration?: number;
+  ease?: string;
+  scrollTrigger?: ScrollTriggerOptions;
+}
 
 /**
  * Vue directive for scroll animations
  * Use v-scroll-anim on any element to add scroll-triggered animations
  *
- * Example:
+ * Examples:
  * <div v-scroll-anim="'fadeUp'">Content</div>
  * <div v-scroll-anim:fadeLeft="{ delay: 0.2 }">Content</div>
+ * <div v-scroll-anim="{ type: 'fadeIn', delay: 0.3, scrollTrigger: { start: 'top center' } }">Content</div>
  */
 export default defineNuxtPlugin((nuxtApp) => {
   const { $gsap, $ScrollTrigger } = useNuxtApp();
 
   // Store all animations for cleanup
-  let animations = [];
+  const animations: gsap.core.Animation[] = [];
 
   // Animation presets
-  const presets = {
+  const presets: Record<AnimationType, AnimationPreset> = {
     fadeIn: {
       from: { autoAlpha: 0 },
       to: { autoAlpha: 1, duration: 0.8, ease: 'power2.out' },
@@ -46,7 +76,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       }
       anim.kill();
     });
-    animations = [];
+    animations.length = 0;
   };
 
   // Handle page transitions
@@ -54,53 +84,95 @@ export default defineNuxtPlugin((nuxtApp) => {
     clearAnimations();
   });
 
-  // Register the directive
-  nuxtApp.vueApp.directive('scroll-anim', {
+  // Create the directive
+  const scrollAnimDirective: Directive<HTMLElement, string | AnimationOptions> = {
     mounted(el, binding) {
-      // Get animation type from directive
-      const type = binding.arg || binding.value || 'fadeIn';
+      if (!process.client) return;
 
-      // Get options from directive value (if an object)
-      const options = typeof binding.value === 'object' ? binding.value : {};
+      try {
+        // Get animation type and options
+        let type: AnimationType = 'fadeIn';
+        let options: AnimationOptions = {};
 
-      // Get animation preset
-      const preset = presets[type] || presets.fadeIn;
-
-      // Create the animation
-      const animation = $gsap.fromTo(el, preset.from, {
-        ...preset.to,
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 80%',
-          markers: process.env.NODE_ENV === 'development' && options.markers,
-          toggleActions: 'play none none none',
-          ...options.scrollTrigger,
-        },
-        ...options,
-      });
-
-      // Store for cleanup
-      animations.push(animation);
-    },
-    unmounted(el) {
-      // Find and cleanup animation for this element
-      animations = animations.filter((anim) => {
-        if (anim.scrollTrigger && anim.scrollTrigger.trigger === el) {
-          anim.scrollTrigger.kill();
-          anim.kill();
-          return false;
+        if (typeof binding.value === 'string') {
+          type = binding.value as AnimationType;
+        } else if (typeof binding.value === 'object') {
+          options = binding.value;
+          type = (options.type as AnimationType) || (binding.arg as AnimationType) || 'fadeIn';
+        } else if (binding.arg) {
+          type = binding.arg as AnimationType;
         }
-        return true;
-      });
-    },
-  });
 
-  // Provide a way to manually trigger animations
+        // Get animation preset
+        const preset = presets[type];
+        if (!preset) {
+          console.warn(`[v-scroll-anim] Unknown animation type: ${type}`);
+          return;
+        }
+
+        // Create the animation
+        const animation = $gsap.fromTo(el, preset.from, {
+          ...preset.to,
+          ...options,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 80%',
+            markers: process.env.NODE_ENV === 'development' && options.scrollTrigger?.markers,
+            toggleActions: 'play none none none',
+            ...options.scrollTrigger,
+          },
+        });
+
+        // Store for cleanup
+        animations.push(animation);
+      } catch (error) {
+        console.warn('[v-scroll-anim] Error creating animation:', error);
+      }
+    },
+
+    unmounted(el) {
+      // Find and cleanup animations for this element
+      const index = animations.findIndex(
+        (anim) => anim.scrollTrigger && anim.scrollTrigger.trigger === el
+      );
+
+      if (index !== -1) {
+        const animation = animations[index];
+        if (animation.scrollTrigger) {
+          animation.scrollTrigger.kill();
+        }
+        animation.kill();
+        animations.splice(index, 1);
+      }
+    },
+  };
+
+  // Register the directive
+  nuxtApp.vueApp.directive('scroll-anim', scrollAnimDirective);
+
+  // Provide animation utilities
   return {
     provide: {
       scrollAnimations: {
-        clear: clearAnimations,
         presets,
+        clear: clearAnimations,
+        create: (el: HTMLElement, type: AnimationType, options?: AnimationOptions) => {
+          const preset = presets[type];
+          if (!preset) return null;
+
+          const animation = $gsap.fromTo(el, preset.from, {
+            ...preset.to,
+            ...options,
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 80%',
+              ...options?.scrollTrigger,
+            },
+          });
+
+          animations.push(animation);
+          return animation;
+        },
       },
     },
   };

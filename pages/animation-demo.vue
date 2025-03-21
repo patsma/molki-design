@@ -28,18 +28,18 @@ const items = [
   },
   {
     title: 'Card Six',
-    text: 'Easy to implement with directives or the composable.',
+    text: 'Easy to implement with directives or programmatically.',
     image: 'https://picsum.photos/seed/six/500/300',
   },
 ];
 
-// Using the scroll animation composable for custom elements
+// Using the new animation system programmatically
 const headerRef = ref(null);
-const { animate } = useScrollAnimation();
+const { $scrollAnimations } = useNuxtApp();
 
 onMounted(() => {
-  if (headerRef.value) {
-    animate(headerRef.value, 'fadeUp', { delay: 0.1 });
+  if (process.client && headerRef.value) {
+    $scrollAnimations.create(headerRef.value, 'fadeUp', { delay: 0.1 });
   }
 });
 </script>
@@ -53,50 +53,55 @@ onMounted(() => {
 
         <p
           class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
-          v-scroll-anim="{ delay: 0.3 }"
+          v-scroll-anim:fadeUp="{ delay: 0.3 }"
         >
           A simple, clean approach to scroll-triggered animations
         </p>
       </div>
     </section>
 
-    <!-- First animated section -->
-    <AnimatedSection
-      title="Using the AnimatedSection Component"
-      subtitle="This component handles animations for its children automatically"
-    >
-      <AnimatedCard
-        v-for="(item, index) in items.slice(0, 3)"
-        :key="index"
-        :title="item.title"
-        :text="item.text"
-        :image="item.image"
-        :index="index"
-      />
-    </AnimatedSection>
-
-    <!-- Second animated section with different animation type -->
-    <AnimatedSection
-      title="Different Animation Types"
-      subtitle="You can use various animation presets like fadeLeft, fadeRight, scale, etc."
-      animation-type="fadeLeft"
-    >
-      <AnimatedCard
-        v-for="(item, index) in items.slice(3)"
-        :key="index"
-        :title="item.title"
-        :text="item.text"
-        :image="item.image"
-        :index="index"
-      />
-    </AnimatedSection>
-
-    <!-- Direct use of directive on custom elements -->
-    <section class="py-16 md:py-24 bg-gray-100">
+    <!-- Cards Grid Section -->
+    <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" v-scroll-anim:scale>
-          Direct Directive Usage
+        <h2 class="text-3xl font-bold mb-12 text-center" v-scroll-anim:fadeUp>
+          Animation Examples
         </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            v-for="(item, index) in items"
+            :key="index"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+            v-scroll-anim:fadeUp="{ delay: index * 0.1 }"
+          >
+            <img :src="item.image" :alt="item.title" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">{{ item.title }}</h3>
+              <p class="text-gray-600">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animation Types Demo -->
+    <section class="py-16 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center" v-scroll-anim:scale>
+          Different Animation Types
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+          <div class="bg-white p-8 rounded-lg shadow-md" v-scroll-anim:fadeLeft>
+            <h3 class="text-xl font-semibold mb-4">Fade Left</h3>
+            <p>This element slides in from the left side of the screen.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md" v-scroll-anim:fadeRight>
+            <h3 class="text-xl font-semibold mb-4">Fade Right</h3>
+            <p>This element slides in from the right side of the screen.</p>
+          </div>
+        </div>
 
         <div class="grid md:grid-cols-3 gap-8">
           <div
@@ -111,7 +116,7 @@ onMounted(() => {
               {{ i }}
             </div>
             <h3 class="text-xl font-semibold mb-2">Feature {{ i }}</h3>
-            <p>This element uses the v-scroll-anim directive directly with custom delay.</p>
+            <p>This element fades up with a staggered delay.</p>
           </div>
         </div>
       </div>

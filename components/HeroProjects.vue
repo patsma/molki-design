@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <!-- Hero Section -->
-  <section class="full-width data-scroll-section relative w-full overflow-hidden">
+  <section data-scroll-section class="full-width relative w-full overflow-hidden">
     <!-- Hero Container -->
     <div class="relative w-full" :style="{ height: heroHeight || '80vh' }">
       <!-- Background image with overlay -->
@@ -26,7 +26,7 @@ defineProps<{
       </div>
 
       <!-- SVG Accent Shape -->
-      <div class="absolute top-1/2 -left-10 overflow-hidden">
+      <div class="absolute -top-1/4 -left-10 overflow-hidden">
         <HeroPath class="h-screen" />
       </div>
 

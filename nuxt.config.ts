@@ -167,6 +167,7 @@ export default defineNuxtConfig({
     // Extra plugins
     extraPlugins: {
       scrollTrigger: true,
+      scrollTo: true,
     },
 
     // Club plugins (premium)

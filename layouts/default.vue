@@ -48,6 +48,10 @@ onUnmounted(() => {
 </template>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 /* Page transitions */
 .page-enter-active,
 .page-leave-active {

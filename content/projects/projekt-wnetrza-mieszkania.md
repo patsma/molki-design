@@ -15,9 +15,11 @@ seo:
   title: Projekt wnętrza mieszkania w Gdańsku - Molki Design
   description: Kompleksowy projekt wnętrza mieszkania w Gdańsku. Nowoczesna aranżacja przestrzeni z wykorzystaniem zrównoważonych materiałów.
 ogImage:
-  title: Projekt wnętrza mieszkania w Gdańsku
-  description: Nowoczesna aranżacja przestrzeni mieszkalnej w Gdańsku
-  cover: /projectItem1.jpg
+  component: Custom
+  props:
+    title: Projekt wnętrza mieszkania w Gdańsku
+    description: Nowoczesna aranżacja przestrzeni mieszkalnej w Gdańsku
+    cover: /projectItem1.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.

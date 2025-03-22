@@ -5,15 +5,23 @@ const swiperRef = ref(null);
 
 const { data } = await useAsyncData(`project-${route.path}`, async () => {
   try {
-    return await queryCollection('projects').where('slug', '=', route.params.slug).first();
+    const project = await queryCollection('projects').where('slug', '=', route.params.slug).first();
+    // During prerendering, return null if project doesn't exist
+    if (!project && process.server && import.meta.env.NITRO_PRERENDER) {
+      return null;
+    }
+    return project;
   } catch (error) {
     console.error('Error fetching project:', error);
+    if (process.server && import.meta.env.NITRO_PRERENDER) {
+      return null;
+    }
     return null;
   }
 });
 
-// If the project doesn't exist, throw a 404 error
-if (!data.value) {
+// Only throw 404 during client-side navigation or non-prerender server-side
+if (!data.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Projekt nie został odnaleziony',
@@ -26,7 +34,30 @@ import { usePageSeo } from '~/composables/usePageSeo';
 
 // Apply SEO with error handling
 try {
-  usePageSeo(data);
+  if (data.value || !import.meta.env.NITRO_PRERENDER) {
+    usePageSeo(data);
+
+    // Define OG image with proper component and props
+    const ogImageConfig = {
+      component: 'Custom',
+      props: {
+        title: data.value?.title || 'Molki Design - Realizacje',
+        description: data.value?.description || 'Profesjonalne projekty wnętrz w Trójmieście',
+        cover: data.value?.cover || '/og-social-default.jpg',
+      },
+    };
+
+    // If the project has specific OG image config, use it
+    if (data.value?.ogImage?.component && data.value?.ogImage?.props) {
+      ogImageConfig.component = data.value.ogImage.component;
+      ogImageConfig.props = {
+        ...ogImageConfig.props,
+        ...data.value.ogImage.props,
+      };
+    }
+
+    defineOgImage(ogImageConfig);
+  }
 } catch (e) {
   console.error('Error applying SEO to project page:', e);
 }

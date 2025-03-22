@@ -31,6 +31,41 @@ try {
   console.error('Error applying SEO to blog post:', e);
 }
 
+// Apply SEO meta tags
+if (data.value || !import.meta.env.NITRO_PRERENDER) {
+  useSeoMeta({
+    title: data.value?.title,
+    description: data.value?.excerpt,
+  });
+
+  // Define OG image with proper component and props
+  const ogImageConfig = {
+    component: 'Custom',
+    props: {
+      title: data.value?.title || 'Molki Design Blog',
+      description: data.value?.excerpt || 'Profesjonalne projekty wnętrz w Trójmieście',
+      cover: data.value?.cover || '/og-social-default.jpg',
+      author: data.value?.author
+        ? {
+            name: data.value.author,
+            avatarUrl: data.value.authorImage,
+          }
+        : undefined,
+    },
+  };
+
+  // If the blog post has specific OG image config, use it
+  if (data.value?.ogImage?.component && data.value?.ogImage?.props) {
+    ogImageConfig.component = data.value.ogImage.component;
+    ogImageConfig.props = {
+      ...ogImageConfig.props,
+      ...data.value.ogImage.props,
+    };
+  }
+
+  defineOgImage(ogImageConfig);
+}
+
 // Debug - log the complete data object to help debug headerSpacing
 // console.log('BLOG DATA:', JSON.parse(JSON.stringify(data.value)));
 

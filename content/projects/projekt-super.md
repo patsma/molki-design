@@ -15,9 +15,11 @@ seo:
   title: Projekt Super w Sopocie - Molki Design
   description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja przestrzeni z nowoczesnymi rozwiązaniami.
 ogImage:
-  title: Projekt Super w Sopocie
-  description: Nowoczesny projekt wnętrza w nadmorskim klimacie
-  cover: /projectItem1.jpg
+  component: Custom
+  props:
+    title: Projekt Super w Sopocie
+    description: Nowoczesny projekt wnętrza w nadmorskim klimacie
+    cover: /projectItem1.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.

@@ -66,6 +66,18 @@ const pageData = computed(() => {
 // Apply SEO with error handling
 try {
   usePageSeo(pageData);
+
+  // Define OG image with proper component and props
+  defineOgImage({
+    component: 'Custom',
+    props: {
+      title: pageData.value?.seo?.title || 'Nasze Realizacje - Molki Design',
+      description:
+        pageData.value?.seo?.description ||
+        'Przeglądaj najnowsze realizacje, projekty i inwestycje z naszego portfolio.',
+      cover: pageData.value?.cover || '/og-social-default.jpg',
+    },
+  });
 } catch (e) {
   console.error('Error applying SEO to projects index:', e);
 }

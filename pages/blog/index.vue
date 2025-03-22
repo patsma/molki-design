@@ -47,6 +47,17 @@ const pageData = computed(() => {
 // Apply SEO with error handling
 try {
   usePageSeo(pageData);
+
+  // Define OG image with proper component and props
+  defineOgImage({
+    component: 'Custom',
+    props: {
+      title: pageData.value?.seo?.title || 'Blog - Molki Design',
+      description:
+        pageData.value?.seo?.description || 'Najnowsze artykuły i porady z branży projektowej',
+      cover: pageData.value?.cover || '/og-social-default.jpg',
+    },
+  });
 } catch (e) {
   console.error('Error applying SEO to blog index:', e);
 }

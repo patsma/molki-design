@@ -211,9 +211,7 @@ export default defineNuxtConfig({
       routes: [
         '/',
         '/realizacje',
-        '/realizacje/**',
         '/blog',
-        '/blog/**',
         '/sitemap.xml',
         '/o-nas',
         '/kontakt',
@@ -221,40 +219,29 @@ export default defineNuxtConfig({
         '/wewnetrzne-inwestycje',
       ],
       failOnError: false,
+      ignore: [
+        // Ignore dynamic route JSON payloads during prerender
+        '/realizacje/**/_payload.json',
+        '/blog/**/_payload.json',
+      ],
     },
     routeRules: {
+      '/': { prerender: true },
+      '/realizacje': { prerender: true },
+      '/blog': { prerender: true },
+      '/realizacje/**': {
+        prerender: true,
+        index: false,
+        swr: true, // Enable stale-while-revalidate for dynamic routes
+      },
+      '/blog/**': {
+        prerender: true,
+        index: false,
+        swr: true, // Enable stale-while-revalidate for dynamic routes
+      },
       '/**': {
-        headers: {
-          'Content-Security-Policy': [
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-            // Hubspot domains
-            '*.hs-scripts.com',
-            '*.hubspot.com',
-            '*.hscollectedforms.net',
-            '*.usemessages.com',
-            '*.hs-analytics.net',
-            '*.hs-banner.com',
-            '*.hsforms.net',
-            'js-eu1.hs-scripts.com',
-            'js-eu1.hscollectedforms.net',
-            'js-eu1.usemessages.com',
-            'js-eu1.hs-analytics.net',
-            'js-eu1.hs-banner.com',
-            'js-eu1.hsforms.net',
-            // Google Analytics
-            '*.googletagmanager.com',
-            '*.google-analytics.com',
-            // Hotjar
-            '*.hotjar.com',
-            'static.hotjar.com',
-            // Microsoft Clarity
-            '*.clarity.ms',
-            'www.clarity.ms',
-            // Facebook
-            '*.facebook.net',
-            'connect.facebook.net',
-          ].join(' '),
-        },
+        prerender: true,
+        index: false,
       },
     },
   },
@@ -275,6 +262,16 @@ export default defineNuxtConfig({
     },
     componentDirs: ['~/components/OgImage'],
     runtimeCacheStorage: true,
+    cache: true,
+    debug: process.env.NODE_ENV === 'development',
+    host: 'https://molki-design-2025.netlify.app',
+    compatibility: {
+      prerender: {
+        enabled: true,
+        addScriptTag: true,
+      },
+    },
+    injectMode: 'script',
   },
 
   runtimeConfig: {

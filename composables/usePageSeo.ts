@@ -1,4 +1,9 @@
 export const usePageSeo = (page: Ref<any>) => {
+  // Skip SEO during prerendering if no page data
+  if (process.server && import.meta.env.NITRO_PRERENDER && !page?.value) {
+    return;
+  }
+
   const { $config } = useNuxtApp();
   const siteConfig = useSiteConfig();
   const route = useRoute();

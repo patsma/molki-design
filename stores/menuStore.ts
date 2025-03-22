@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { useAppConfig } from '#imports';
+import { useAppConfig, useNuxtApp } from '#imports';
 
 // Define the ScrollTo options type
 interface ScrollToOptions {
@@ -14,260 +14,261 @@ export interface MenuItem {
   children?: MenuItem[];
 }
 
-export const useMenuStore = defineStore('menu', {
-  state: () => {
-    const appConfig = useAppConfig();
-    const configMenuItems = appConfig.navigation?.main?.items || [];
+export const useMenuStore = defineStore('menu', () => {
+  // State
+  const isMobileMenuOpen = ref(false);
+  const activeDropdownId = ref<string | null>(null);
+  const appConfig = useAppConfig();
+  const menuItems = computed(() => appConfig.navigation?.main?.items || []);
 
-    return {
-      isMobileMenuOpen: false,
-      mobileMenuTimeline: null as gsap.core.Timeline | null,
-      gsapInstance: null as typeof gsap | null,
-      menuItems: configMenuItems as MenuItem[],
-      activeDropdownId: null as string | null,
-      dropdownTimelines: new Map<string, gsap.core.Timeline>(),
-    };
-  },
+  // Only instantiate these on client side
+  let mobileMenuTimeline: gsap.core.Timeline | null = null;
+  let dropdownTimelines = new Map<string, gsap.core.Timeline>();
 
-  actions: {
-    initAnimation($gsap: typeof gsap) {
-      if (!process.client) {
-        console.warn('⚠️ Not running on client side, skipping animation init');
-        return;
-      }
+  // Setup mobile menu when component mounts
+  function setupMobileMenu() {
+    if (!process.client) return;
 
-      try {
-        this.gsapInstance = $gsap;
+    const { $gsap } = useNuxtApp();
 
-        const menu = document.querySelector('.mobile-menu');
-        const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
-        const menuButton = document.querySelector('.mobile-menu-button');
+    // Find elements
+    const menu = document.querySelector('.mobile-menu');
+    if (!menu) return;
 
-        if (!menu || !menuItems.length) {
-          console.warn('⚠️ Menu elements not found');
-          return;
-        }
+    const menuItems = document.querySelectorAll('.mobile-menu .nav-menu__item');
+    const menuButton = document.querySelector('.mobile-menu-button');
 
-        // Initial state
-        $gsap.set(menu, {
-          display: 'none',
-          xPercent: 0,
-          opacity: 0,
-        });
+    // Create timeline if not already created
+    if (!mobileMenuTimeline) {
+      // Set initial states
+      $gsap.set(menu, {
+        display: 'none',
+        opacity: 0,
+      });
 
-        $gsap.set([menuItems, menuButton], {
-          autoAlpha: 0,
-          y: 20,
-        });
+      $gsap.set([menuItems, menuButton], {
+        autoAlpha: 0,
+        y: 20,
+      });
 
-        this.mobileMenuTimeline = $gsap
-          .timeline({ paused: true })
-          .to(menu, {
-            display: 'grid',
-            xPercent: 0,
-            opacity: 1,
-            duration: 0.4,
+      // Create animation timeline
+      mobileMenuTimeline = $gsap
+        .timeline({ paused: true })
+        .to(menu, {
+          display: 'grid',
+          opacity: 1,
+          duration: 0.4,
+          ease: 'power2.out',
+        })
+        .to(
+          [menuItems, menuButton],
+          {
+            autoAlpha: 1,
+            y: 0,
+            stagger: 0.05,
+            duration: 0.3,
+          },
+          '-=0.2'
+        );
+    }
+
+    setupDropdowns();
+  }
+
+  // Setup dropdown animations
+  function setupDropdowns() {
+    if (!process.client) return;
+
+    const { $gsap } = useNuxtApp();
+
+    // Clear existing timelines
+    dropdownTimelines.forEach((timeline) => timeline.kill());
+    dropdownTimelines.clear();
+
+    // Setup new dropdown timelines
+    document.querySelectorAll('.nav-menu.mobile .nav-menu__item').forEach((item, index) => {
+      const submenu = item.querySelector('.nav-menu__item-submenu');
+      const arrow = item.querySelector('.dropdown-arrow');
+
+      if (!submenu || !arrow) return;
+
+      const dropdownId = `dropdown-${index}`;
+
+      // Set initial state
+      $gsap.set(submenu, {
+        display: 'grid',
+        maxHeight: 0,
+        height: 'auto',
+        opacity: 0,
+        visibility: 'visible',
+      });
+
+      // Create timeline
+      const tl = $gsap
+        .timeline({
+          paused: true,
+          defaults: { duration: 0.5, ease: 'power2.inOut' },
+        })
+        .to(submenu, {
+          maxHeight: '50vh',
+          opacity: 1,
+          immediateRender: false,
+        })
+        .to(
+          arrow,
+          {
+            rotation: 90,
             ease: 'power2.out',
-          })
-          .to(
-            [menuItems, menuButton],
-            {
-              autoAlpha: 1,
-              y: 0,
-              stagger: 0.05,
-              duration: 0.3,
-            },
-            '-=0.2'
-          );
-
-        // Watch for route changes
-        const route = useRoute();
-        watch(
-          () => route.path,
-          () => {
-            if (this.isMobileMenuOpen) {
-              this.closeMenu();
-            }
-          }
+          },
+          0
         );
 
-        this.initDropdownTimelines();
-      } catch (error) {
-        console.warn('Error initializing menu animations:', error);
-      }
-    },
+      dropdownTimelines.set(dropdownId, tl);
+    });
+  }
 
-    initDropdownTimelines() {
-      if (!this.gsapInstance || !process.client) return;
+  // Toggle mobile menu
+  function toggleMenu() {
+    if (!process.client) return;
 
-      try {
-        // Clean up existing timelines
-        this.cleanup();
+    // Setup menu animations if not already done
+    if (!mobileMenuTimeline) {
+      setupMobileMenu();
 
-        document.querySelectorAll('.nav-menu.mobile .nav-menu__item').forEach((item, index) => {
-          const submenu = item.querySelector('.nav-menu__item-submenu');
-          const arrow = item.querySelector('.dropdown-arrow');
+      // If setup failed, return
+      if (!mobileMenuTimeline) return;
+    }
 
-          if (!submenu || !arrow || !this.gsapInstance) return;
+    // Toggle state and play animation
+    isMobileMenuOpen.value = !isMobileMenuOpen.value;
 
-          const dropdownId = `dropdown-${index}`;
+    if (isMobileMenuOpen.value) {
+      mobileMenuTimeline.play();
+    } else {
+      mobileMenuTimeline.reverse();
+      // Close any open dropdowns
+      closeDropdowns();
+    }
+  }
 
-          // First, measure the content height
-          this.gsapInstance.set(submenu, {
-            display: 'grid',
-            maxHeight: 'none',
-            height: 'auto',
-            opacity: 0,
-            visibility: 'hidden',
-          });
+  // Close the menu
+  function closeMenu() {
+    if (!isMobileMenuOpen.value || !process.client) return;
 
-          const contentHeight = (submenu as HTMLElement).offsetHeight;
+    isMobileMenuOpen.value = false;
+    mobileMenuTimeline?.reverse();
+    closeDropdowns();
+  }
 
-          // Set initial state
-          this.gsapInstance.set(submenu, {
-            display: 'grid',
-            maxHeight: 0,
-            height: 'auto',
-            opacity: 0,
-            visibility: 'visible',
-          });
+  // Toggle dropdown
+  function toggleDropdown(itemIndex: number) {
+    if (!process.client) return;
 
-          const tl = this.gsapInstance
-            .timeline({
-              paused: true,
-              defaults: { duration: 0.7, ease: 'power2.inOut' },
-            })
-            .to(submenu, {
-              maxHeight: '50vh',
-              opacity: 1,
-              immediateRender: false,
-            })
-            .to(
-              arrow,
-              {
-                rotation: 90,
-                ease: 'power2.out',
-              },
-              0
-            );
+    const dropdownId = `dropdown-${itemIndex}`;
+    const timeline = dropdownTimelines.get(dropdownId);
 
-          this.dropdownTimelines.set(dropdownId, tl);
+    if (!timeline) return;
+
+    // Close previously open dropdown if different
+    if (activeDropdownId.value && activeDropdownId.value !== dropdownId) {
+      const prevTimeline = dropdownTimelines.get(activeDropdownId.value);
+      if (prevTimeline) prevTimeline.reverse();
+    }
+
+    // Toggle current dropdown
+    if (activeDropdownId.value === dropdownId) {
+      timeline.reverse();
+      activeDropdownId.value = null;
+    } else {
+      timeline.play();
+      activeDropdownId.value = dropdownId;
+    }
+  }
+
+  // Close all dropdowns
+  function closeDropdowns() {
+    if (!process.client || !activeDropdownId.value) return;
+
+    const timeline = dropdownTimelines.get(activeDropdownId.value);
+    if (timeline) timeline.reverse();
+    activeDropdownId.value = null;
+  }
+
+  // Handle menu item click
+  async function handleMenuItemClick(link: string, router: any, event: MouseEvent) {
+    if (!process.client) return;
+
+    // Close mobile menu if open
+    if (isMobileMenuOpen.value) {
+      closeMenu();
+    }
+
+    // Handle hash links with smooth scroll
+    if (link.startsWith('#')) {
+      event.preventDefault();
+      const { $gsap } = useNuxtApp();
+      const element = document.querySelector(link);
+
+      if (element) {
+        $gsap.to(window, {
+          duration: 1,
+          scrollTo: {
+            y: element,
+            offsetY: 100,
+          },
+          ease: 'power2.inOut',
         });
-      } catch (error) {
-        console.warn('Error initializing dropdown timelines:', error);
       }
-    },
+      return;
+    }
 
-    toggleDropdown(itemIndex: number) {
-      const dropdownId = `dropdown-${itemIndex}`;
-      const timeline = this.dropdownTimelines.get(dropdownId);
+    // Regular navigation
+    await router.push(link);
+  }
 
-      if (!timeline) return;
+  // Clean up when component unmounts
+  function cleanup() {
+    if (!process.client) return;
 
-      try {
-        if (this.activeDropdownId && this.activeDropdownId !== dropdownId) {
-          const activeTimeline = this.dropdownTimelines.get(this.activeDropdownId);
-          activeTimeline?.reverse();
-          this.activeDropdownId = null;
+    // Kill all animations
+    if (mobileMenuTimeline) {
+      mobileMenuTimeline.kill();
+      mobileMenuTimeline = null;
+    }
+
+    dropdownTimelines.forEach((timeline) => timeline.kill());
+    dropdownTimelines.clear();
+
+    // Reset state
+    isMobileMenuOpen.value = false;
+    activeDropdownId.value = null;
+  }
+
+  // Watch for route changes to close menu
+  if (process.client) {
+    const route = useRoute();
+    watch(
+      () => route.path,
+      () => {
+        if (isMobileMenuOpen.value) {
+          closeMenu();
         }
-
-        if (timeline.progress() === 0 || timeline.reversed()) {
-          timeline.play();
-          this.activeDropdownId = dropdownId;
-        } else {
-          timeline.reverse();
-          this.activeDropdownId = null;
-        }
-      } catch (error) {
-        console.warn('Error toggling dropdown:', error);
       }
-    },
+    );
+  }
 
-    toggleMenu() {
-      try {
-        this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  return {
+    // State
+    isMobileMenuOpen,
+    activeDropdownId,
+    menuItems,
 
-        if (!this.mobileMenuTimeline) {
-          console.warn('Timeline not initialized');
-          return;
-        }
-
-        if (this.isMobileMenuOpen) {
-          this.mobileMenuTimeline.play();
-        } else {
-          this.mobileMenuTimeline.reverse();
-        }
-      } catch (error) {
-        console.warn('Error toggling menu:', error);
-      }
-    },
-
-    closeMenu() {
-      if (!this.isMobileMenuOpen) return;
-
-      try {
-        this.isMobileMenuOpen = false;
-        this.mobileMenuTimeline?.reverse();
-      } catch (error) {
-        console.warn('Error closing menu:', error);
-      }
-    },
-
-    async handleMenuItemClick(link: string, router: any, event: MouseEvent) {
-      try {
-        // Close mobile menu if open
-        if (this.isMobileMenuOpen) {
-          this.closeMenu();
-        }
-
-        // Handle hash links
-        if (link.startsWith('#')) {
-          event.preventDefault();
-          const element = document.querySelector(link);
-          if (element) {
-            const { $gsap } = useNuxtApp();
-            $gsap.to(window, {
-              duration: 1,
-              scrollTo: {
-                y: element,
-                offsetY: 100,
-              },
-              ease: 'power2.inOut',
-            });
-          }
-          return;
-        }
-
-        // Handle regular navigation
-        await router.push(link);
-      } catch (error) {
-        console.warn('Error handling menu item click:', error);
-      }
-    },
-
-    cleanup() {
-      if (!process.client) return;
-
-      try {
-        // Clean up mobile menu timeline
-        if (this.mobileMenuTimeline) {
-          this.mobileMenuTimeline.kill();
-          this.mobileMenuTimeline = null;
-        }
-
-        // Clean up dropdown timelines
-        this.dropdownTimelines.forEach((timeline) => {
-          timeline.kill();
-        });
-        this.dropdownTimelines.clear();
-        this.activeDropdownId = null;
-
-        // Reset state
-        this.isMobileMenuOpen = false;
-        this.gsapInstance = null;
-      } catch (error) {
-        console.warn('Error during menu cleanup:', error);
-      }
-    },
-  },
+    // Actions
+    setupMobileMenu,
+    toggleMenu,
+    closeMenu,
+    toggleDropdown,
+    handleMenuItemClick,
+    cleanup,
+  };
 });

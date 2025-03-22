@@ -31,7 +31,7 @@ watch(headerHeight, (newHeight) => {
 onMounted(() => {
   if (process.client) {
     try {
-      menuStore.initAnimation($gsap);
+      menuStore.setupMobileMenu();
       initScrollHeader();
 
       // Set initial header height

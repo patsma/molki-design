@@ -6,13 +6,13 @@ const { $gsap } = useNuxtApp();
 const menuStore = useMenuStore();
 const appConfig = useAppConfig();
 
-// Initialize menu animations
+// Initialize animations
 onMounted(() => {
   if (!process.client) return;
 
   // Initialize menu animations
   try {
-    menuStore.initAnimation($gsap);
+    menuStore.setupMobileMenu();
   } catch (error) {
     console.error('Failed to initialize menu:', error);
   }
@@ -28,6 +28,7 @@ onUnmounted(() => {
   if (!process.client) return;
 
   // Cleanup any global animations if needed
+  menuStore.cleanup();
 });
 </script>
 

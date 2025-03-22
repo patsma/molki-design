@@ -3,6 +3,20 @@ import { useLoaderStore } from '~/stores/loaderStore';
 
 const loaderStore = useLoaderStore();
 
+// Add meta tags for OG Image
+useHead({
+  meta: [
+    {
+      property: 'og:site_name',
+      content: 'Molki Design',
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+  ],
+});
+
 // Page initialization
 onMounted(() => {
   // Hide loader after initial page load

@@ -51,7 +51,9 @@ const { $scrollAnimations } = useNuxtApp();
 
     <section class="py-20 bg-gray-100">
       <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 ref="headerRef" class="text-4xl md:text-6xl font-bold mb-6">Animation System Demo</h1>
+        <h1 ref="headerRef" class="text-4xl md:text-6xl font-bold mb-6" v-scroll-anim:fadeUp>
+          Animation System Demo
+        </h1>
 
         <p
           class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
@@ -68,31 +70,23 @@ const { $scrollAnimations } = useNuxtApp();
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-3xl font-bold mb-12 text-center" v-scroll-anim:scale>
-          Stagger Animation Examples
+          Card Grid with Stagger
         </h2>
 
-        <!-- Basic stagger example -->
-        <div v-scroll-anim:staggerUp="{ stagger: 0.1 }" class="grid md:grid-cols-3 gap-8 mb-16">
-          <div v-for="i in 3" :key="i" class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-2">Card {{ i }}</h3>
-            <p>This card is part of a staggered animation group.</p>
-          </div>
-        </div>
-
-        <!-- Cards with images -->
+        <!-- Grid with stagger animation -->
         <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           v-scroll-anim:staggerUp="{
             stagger: {
-              amount: 0.6, // Total amount of time between first and last
+              amount: 0.6,
               from: 'start',
-              ease: 'power2.out',
+              grid: 'auto',
             },
           }"
-          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <div
-            v-for="(item, index) in items"
-            :key="index"
+            v-for="item in items"
+            :key="item.title"
             class="bg-white rounded-lg shadow-lg overflow-hidden"
           >
             <img :src="item.image" :alt="item.title" class="w-full h-48 object-cover" />
@@ -109,44 +103,74 @@ const { $scrollAnimations } = useNuxtApp();
     <section class="py-16 bg-gray-100">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-3xl font-bold mb-12 text-center" v-scroll-anim:scale>
-          Different Stagger Patterns
+          Different Animation Patterns
         </h2>
 
-        <!-- Stagger from left -->
+        <!-- Left to Right -->
         <div class="mb-16">
           <h3 class="text-xl font-semibold mb-4">Stagger from Left</h3>
-          <div v-scroll-anim:staggerLeft="{ stagger: 0.15 }" class="grid md:grid-cols-4 gap-4">
-            <div v-for="i in 4" :key="i" class="bg-white p-4 rounded-lg shadow-md">
-              Item {{ i }}
+          <div
+            class="grid md:grid-cols-4 gap-4"
+            v-scroll-anim:staggerLeft="{
+              stagger: {
+                amount: 0.4,
+                from: 'start',
+                grid: [4, 1],
+              },
+            }"
+          >
+            <div
+              v-for="item in items.slice(0, 4)"
+              :key="item.title"
+              class="bg-white p-4 rounded-lg shadow-md"
+            >
+              {{ item.title }}
             </div>
           </div>
         </div>
 
-        <!-- Stagger from right -->
+        <!-- Right to Left -->
         <div class="mb-16">
           <h3 class="text-xl font-semibold mb-4">Stagger from Right</h3>
-          <div v-scroll-anim:staggerRight="{ stagger: 0.15 }" class="grid md:grid-cols-4 gap-4">
-            <div v-for="i in 4" :key="i" class="bg-white p-4 rounded-lg shadow-md">
-              Item {{ i }}
+          <div
+            class="grid md:grid-cols-4 gap-4"
+            v-scroll-anim:staggerRight="{
+              stagger: {
+                amount: 0.4,
+                from: 'end',
+                grid: [4, 1],
+              },
+            }"
+          >
+            <div
+              v-for="item in items.slice(0, 4)"
+              :key="item.title"
+              class="bg-white p-4 rounded-lg shadow-md"
+            >
+              {{ item.title }}
             </div>
           </div>
         </div>
 
-        <!-- Stagger scale -->
+        <!-- Scale Up -->
         <div>
           <h3 class="text-xl font-semibold mb-4">Stagger Scale</h3>
           <div
+            class="grid md:grid-cols-3 gap-4"
             v-scroll-anim:staggerScale="{
               stagger: {
-                each: 0.1,
+                amount: 0.4,
                 from: 'center',
                 grid: 'auto',
               },
             }"
-            class="grid md:grid-cols-3 gap-4"
           >
-            <div v-for="i in 6" :key="i" class="bg-white p-4 rounded-lg shadow-md text-center">
-              {{ i }}
+            <div
+              v-for="item in items"
+              :key="item.title"
+              class="bg-white p-4 rounded-lg shadow-md text-center"
+            >
+              {{ item.title }}
             </div>
           </div>
         </div>

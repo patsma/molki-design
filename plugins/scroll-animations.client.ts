@@ -25,11 +25,15 @@ interface AnimationPreset {
 interface AnimationOptions {
   delay?: number;
   duration?: number;
+  stagger?: number | gsap.StaggerVars;
+  type?: 'chars' | 'words' | 'lines';
   ease?: string;
   start?: string;
+  end?: string;
   markers?: boolean;
-  type?: 'chars' | 'words' | 'lines'; // Type of split for text animations
-  stagger?: number | object; // Allow for complex stagger configurations
+  onComplete?: () => void;
+  onEnter?: () => void;
+  onLeave?: () => void;
 }
 
 /**

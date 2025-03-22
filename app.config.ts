@@ -18,16 +18,20 @@ export default defineAppConfig({
               label: 'Wewnętrzne Inwestycje',
               link: '/wewnetrzne-inwestycje',
             },
+            {
+              label: 'Animation',
+              link: '/animation-demo',
+            },
+            {
+              label: 'Animation Home',
+              link: '/animation-home',
+            },
 
             {
               label: 'Todo',
               link: '/todo',
             },
           ],
-        },
-        {
-          label: 'Animation',
-          link: '/animation-demo',
         },
         {
           label: 'O nas',

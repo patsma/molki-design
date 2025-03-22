@@ -38,12 +38,11 @@ defineProps<{
           >
             <!-- Title -->
             <h1
-              class="h1-style font-semibold uppercase opacity-0"
+              class="h1-style font-semibold uppercase"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
               data-scroll-order="1"
-          
               v-if="$slots.title"
             >
               <slot name="title" mdc-unwrap="p" />
@@ -51,7 +50,7 @@ defineProps<{
 
             <!-- Subtitle -->
             <h2
-              class="h2-style font-normal uppercase opacity-0"
+              class="h2-style font-normal uppercase"
               data-scroll-item
               data-scroll-animation="fadeUp"
               data-scroll-duration="1"
@@ -63,7 +62,7 @@ defineProps<{
           </div>
           <!-- CTA Button -->
           <div
-            class="uppercase grid opacity-0"
+            class="uppercase grid"
             data-scroll-item
             data-scroll-animation="fadeUp"
             data-scroll-duration="1"

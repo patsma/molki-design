@@ -44,21 +44,22 @@ defineProps<{
       <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
         <div class="breakout1">
           <!-- Title -->
-          <h2
-            v-if="$slots.title"
-            class="h2-style font-semibold text-primary text-center mb-8"
-            v-scroll-anim:splitText="{
-              type: 'chars',
-              stagger: 0.01,
-              delay: 0.5,
-            }"
-          >
-            <slot name="title" mdc-unwrap="p" />
-          </h2>
+          <ClientOnly>
+            <h2
+              v-if="$slots.title"
+              class="h2-style font-semibold text-primary text-center mb-8"
+              v-scroll-anim:splitText="{
+                type: 'chars',
+                stagger: 0.01,
+                delay: 0.5,
+              }"
+            >
+              <slot name="title" mdc-unwrap="p" />
+            </h2>
+          </ClientOnly>
 
           <!-- Paragraphs -->
-          <div class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800"
-          >
+          <div class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800">
             <slot name="content" />
           </div>
         </div>

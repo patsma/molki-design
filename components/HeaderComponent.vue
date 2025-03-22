@@ -10,21 +10,21 @@ import { useAppConfig } from '#app';
 
 const { $gsap } = useNuxtApp();
 const menuStore = useMenuStore();
-const { headerRef, headerHeight, initScrollHeader, cleanup } = useScrollHeader();
+const { headerRef, headerHeight, initScrollHeader, cleanup, setHeaderHeightCSSVars } =
+  useScrollHeader();
 const appConfig = useAppConfig();
+
+// Create a reference to the resize handler for proper cleanup
+const handleResize = () => {
+  if (headerHeight.value > 0) {
+    setHeaderHeightCSSVars();
+  }
+};
 
 // Update CSS variable when header height changes
 watch(headerHeight, (newHeight) => {
-  if (process.client) {
-    // Update the CSS variables with the actual measured height
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      document.documentElement.style.setProperty('--header-height-mobile', `${newHeight}px`);
-      document.documentElement.style.setProperty('--header-height', `${newHeight}px`);
-    } else {
-      document.documentElement.style.setProperty('--header-height-desktop', `${newHeight}px`);
-      document.documentElement.style.setProperty('--header-height', `${newHeight}px`);
-    }
+  if (process.client && newHeight > 0) {
+    setHeaderHeightCSSVars();
   }
 });
 
@@ -34,23 +34,13 @@ onMounted(() => {
       menuStore.setupMobileMenu();
       initScrollHeader();
 
-      // Set initial header height
+      // Ensure header CSS variables are set
       if (headerHeight.value > 0) {
-        const isMobile = window.innerWidth < 768;
-        if (isMobile) {
-          document.documentElement.style.setProperty(
-            '--header-height-mobile',
-            `${headerHeight.value}px`
-          );
-          document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
-        } else {
-          document.documentElement.style.setProperty(
-            '--header-height-desktop',
-            `${headerHeight.value}px`
-          );
-          document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
-        }
+        setHeaderHeightCSSVars();
       }
+
+      // Listen for window resize to update header height
+      window.addEventListener('resize', handleResize);
     } catch (error) {
       console.warn('Error initializing header animations:', error);
     }
@@ -60,6 +50,7 @@ onMounted(() => {
 onUnmounted(() => {
   if (process.client) {
     try {
+      window.removeEventListener('resize', handleResize);
       menuStore.cleanup();
       cleanup();
     } catch (error) {

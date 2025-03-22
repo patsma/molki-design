@@ -7,11 +7,11 @@ export const useScrollHeader = () => {
   const { $gsap, $ScrollTrigger } = useNuxtApp();
 
   const headerRef = ref<HTMLElement | null>(null);
-  const { height: headerHeight } = useElementBounding(headerRef);
+  const { height: headerHeight } = useElementBounding(headerRef, { reset: false });
   const { isMobile } = useMobileDetection();
 
-  let headerAnimation: any = null;
-  let ctx: any = null;
+  let headerAnimation: gsap.core.Timeline | null = null;
+  let ctx: gsap.Context | null = null;
   let scrollTriggerInstance: any = null;
   let pinInstance: any = null;
 
@@ -22,7 +22,23 @@ export const useScrollHeader = () => {
   // Use resize observer for more reliable size tracking
   const stopResizeObserver = ref<UseResizeObserverReturn | null>(null);
 
-  // Handle header resize
+  // Set CSS variables based on header height
+  const setHeaderHeightCSSVars = () => {
+    if (!process.client || !headerHeight.value) return;
+
+    const height = headerHeight.value;
+    const isMobileView = window.innerWidth < 768;
+
+    document.documentElement.style.setProperty('--header-height', `${height}px`);
+
+    if (isMobileView) {
+      document.documentElement.style.setProperty('--header-height-mobile', `${height}px`);
+    } else {
+      document.documentElement.style.setProperty('--header-height-desktop', `${height}px`);
+    }
+  };
+
+  // Handle header resize with debounce for performance
   const handleResize = useThrottleFn(() => {
     if (!headerRef.value || !headerHeight.value) return;
 
@@ -31,8 +47,11 @@ export const useScrollHeader = () => {
       height: headerHeight.value,
     });
 
+    // Update CSS variables
+    setHeaderHeightCSSVars();
+
     // Refresh ScrollTrigger to update positions
-    $ScrollTrigger.refresh(true);
+    $ScrollTrigger?.refresh(true);
 
     // Reinitialize if needed
     if (!ctx) {
@@ -41,20 +60,22 @@ export const useScrollHeader = () => {
   }, 200);
 
   // Watch for header height changes
-  watch(headerHeight, (newHeight) => {
-    if (newHeight && process.client) {
+  watch(headerHeight, (newHeight, oldHeight) => {
+    if (newHeight && process.client && Math.abs(newHeight - (oldHeight || 0)) > 2) {
       handleResize();
     }
   });
 
   const initResizeObserver = () => {
-    if (!headerRef.value) return;
+    if (!headerRef.value || !process.client) return;
 
     try {
+      // Clear existing observer
       if (stopResizeObserver.value?.stop) {
         stopResizeObserver.value.stop();
       }
 
+      // Create new resize observer
       stopResizeObserver.value = useResizeObserver(headerRef, () => {
         handleResize();
       });
@@ -69,6 +90,9 @@ export const useScrollHeader = () => {
     try {
       // Clean up previous instances
       cleanup();
+
+      // Set initial header height CSS variables
+      setHeaderHeightCSSVars();
 
       // Create a fresh GSAP context for proper cleanup
       ctx = $gsap.context(() => {
@@ -115,11 +139,11 @@ export const useScrollHeader = () => {
           if (velocity < 5) return;
 
           if (self.direction > 0 && scrollY > headerHeight.value) {
-            if (!headerAnimation.progress() || headerAnimation.reversed()) {
+            if (headerAnimation && (!headerAnimation.progress() || headerAnimation.reversed())) {
               headerAnimation.play();
             }
           } else if (self.direction < 0) {
-            if (headerAnimation.progress() && !headerAnimation.reversed()) {
+            if (headerAnimation && headerAnimation.progress() && !headerAnimation.reversed()) {
               headerAnimation.reverse();
             }
           }
@@ -158,7 +182,7 @@ export const useScrollHeader = () => {
       if (scrollingDown && currentScrollY > headerHeight.value) {
         // Scrolling down - hide header
         $gsap.to(headerRef.value, {
-          y: -100 + '%',
+          y: '-100%',
           duration: 0.3,
           ease: 'power2.out',
         });
@@ -248,10 +272,21 @@ export const useScrollHeader = () => {
     }
   });
 
+  // Watch for mobile/desktop changes to reinitialize
+  watch(
+    () => isMobile.value,
+    () => {
+      if (process.client) {
+        initScrollHeader();
+      }
+    }
+  );
+
   return {
     headerRef,
     headerHeight,
     initScrollHeader,
     cleanup,
+    setHeaderHeightCSSVars,
   };
 };

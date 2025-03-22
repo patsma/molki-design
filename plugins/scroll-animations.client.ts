@@ -14,7 +14,8 @@ type AnimationType =
   | 'staggerUp'
   | 'staggerLeft'
   | 'staggerRight'
-  | 'staggerScale';
+  | 'staggerScale'
+  | 'drawSVG';
 
 interface AnimationPreset {
   from: gsap.TweenVars;
@@ -105,6 +106,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       from: { autoAlpha: 0, y: 30, rotateX: -45 },
       to: { autoAlpha: 1, y: 0, rotateX: 0, duration: 0.8, ease: 'power2.out' },
       split: true,
+    },
+    drawSVG: {
+      from: { drawSVG: 0 },
+      to: { drawSVG: '100%', duration: 2.5, ease: 'power2.inOut' },
     },
   };
 

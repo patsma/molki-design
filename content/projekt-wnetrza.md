@@ -14,6 +14,29 @@ ogImage:
     cover: /heroAbout.jpg
 ---
 
+::hero-interior
+---
+cta-link: /realizacje
+---
+
+#heroImage
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Interior design showcase](/heroInterior.jpg)
+  :::
+
+#cta
+ZOBACZ NASZE REALIZACJE
+
+#title
+PROJEKT WNĘTRZA
+
+#content
+Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu.
+
+Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania.
+
+Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
+::
 
 ::icon-grid
 #title

@@ -37,16 +37,11 @@ defineProps<{
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
             <!-- Title -->
-            <h1
-              class="h1-style font-semibold uppercase"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
-              data-scroll-order="1"
-              v-if="$slots.title"
-            >
-              <slot name="title" mdc-unwrap="p" />
-            </h1>
+            <ClientOnly>
+              <h1 class="h1-style font-semibold uppercase" v-scroll-anim:fadeUp v-if="$slots.title">
+                <slot name="title" mdc-unwrap="p" />
+              </h1>
+            </ClientOnly>
 
             <!-- Subtitle -->
             <h2

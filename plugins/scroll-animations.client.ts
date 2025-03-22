@@ -47,18 +47,8 @@ interface AnimationOptions {
  * <div v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }">Animated Text</div>
  */
 export default defineNuxtPlugin((nuxtApp) => {
-  // Early return if not on client side
-  if (!process.client) {
-    return {
-      provide: {
-        scrollAnimations: {
-          presets: {},
-          create: () => {},
-          clear: () => {},
-        },
-      },
-    };
-  }
+  // Client-side guard at plugin level
+  if (process.server) return;
 
   const { $gsap, $SplitText } = useNuxtApp();
   let ctx: gsap.Context | null = null;
@@ -195,6 +185,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Create the directive
   const scrollAnimDirective: Directive<HTMLElement, string | AnimationOptions> = {
     mounted(el, binding) {
+      // Double client-side check
       if (!process.client) return;
 
       try {
@@ -222,12 +213,16 @@ export default defineNuxtPlugin((nuxtApp) => {
         console.warn('[v-scroll-anim] Error creating animation:', error);
       }
     },
+    // Add unmounted hook for cleanup
+    unmounted(el) {
+      if (!process.client || !ctx) return;
+      // We don't need to target specific elements - when component unmounts
+      // its animations will be automatically removed with the context
+    },
   };
 
-  // Only register the directive on the client side
-  if (process.client) {
-    nuxtApp.vueApp.directive('scroll-anim', scrollAnimDirective);
-  }
+  // Register directive on client only
+  nuxtApp.vueApp.directive('scroll-anim', scrollAnimDirective);
 
   // Provide animation utilities
   return {

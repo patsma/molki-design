@@ -8,6 +8,14 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/projects': { redirect: '/realizacje' },
     '/projects/**': { redirect: '/realizacje/**' },
+    '/realizacje/**': {
+      prerender: true,
+      index: false,
+    },
+    '/blog/**': {
+      prerender: true,
+      index: false,
+    },
     '/**': {
       prerender: true,
       index: false,
@@ -200,7 +208,19 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/realizacje', '/blog', '/sitemap.xml'],
+      routes: [
+        '/',
+        '/realizacje',
+        '/realizacje/**',
+        '/blog',
+        '/blog/**',
+        '/sitemap.xml',
+        '/o-nas',
+        '/kontakt',
+        '/remont-pod-klucz',
+        '/wewnetrzne-inwestycje',
+      ],
+      failOnError: false,
     },
     routeRules: {
       '/**': {
@@ -248,11 +268,13 @@ export default defineNuxtConfig({
     defaults: {
       component: 'Custom',
       props: {
-        title: 'OG Molki Design',
-        description: 'OG Profesjonalne projekty wnętrz w Trójmieście',
+        title: 'Molki Design',
+        description: 'Profesjonalne projekty wnętrz w Trójmieście',
         cover: '/og-social-default.jpg',
       },
     },
+    componentDirs: ['~/components/OgImage'],
+    runtimeCacheStorage: true,
   },
 
   runtimeConfig: {

@@ -1,13 +1,23 @@
 <script setup lang="ts">
-const props = defineProps({
-  path: String,
-  title: String,
-  description: String,
-  cover: String,
-  author: Object,
-});
+interface Author {
+  name?: string;
+  link?: string;
+  avatarUrl?: string;
+}
 
-const twitter = props.author?.link?.replace('https://twitter.com/', '@');
+interface Props {
+  path?: string;
+  title?: string;
+  description?: string;
+  cover?: string;
+  author?: Author;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  title: 'Molki Design',
+  description: '',
+  cover: '/og-social-default.jpg',
+});
 
 // Make sure images have proper dimensions for social media platforms
 const imageWidth = 1200;
@@ -15,8 +25,7 @@ const imageHeight = 630;
 
 // Helper to ensure image URLs are valid and optimize for social sharing
 const getCoverImage = computed(() => {
-  // If no cover image is provided, return null
-  if (!props.cover) return null;
+  if (!props.cover) return '/og-social-default.jpg';
 
   // If cover image starts with http, it's already an absolute URL
   if (props.cover.startsWith('http')) {
@@ -30,15 +39,19 @@ const getCoverImage = computed(() => {
 
 // Limit title and description lengths to avoid overflow
 const formattedTitle = computed(() => {
-  if (!props.title) return 'Molki Design';
-  return props.title.length > 80 ? props.title.substring(0, 77) + '...' : props.title;
+  return props.title && props.title.length > 80
+    ? props.title.substring(0, 77) + '...'
+    : props.title || 'Molki Design';
 });
 
 const formattedDescription = computed(() => {
-  if (!props.description) return '';
-  return props.description.length > 180
+  return props.description && props.description.length > 180
     ? props.description.substring(0, 177) + '...'
-    : props.description;
+    : props.description || '';
+});
+
+const twitter = computed(() => {
+  return props.author?.link?.replace('https://twitter.com/', '@') || '';
 });
 </script>
 

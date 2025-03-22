@@ -60,6 +60,58 @@ onMounted(() => {
       </div>
     </section>
 
+    <!-- Add this new section before the Cards Grid Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold mb-12 text-center"
+          v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+        >
+          Text Animation Examples
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3
+              class="text-2xl font-semibold mb-4"
+              v-scroll-anim:splitWords="{ type: 'words', stagger: 0.1 }"
+            >
+              Animate Each Word Separately
+            </h3>
+            <p
+              class="text-lg"
+              v-scroll-anim:splitText="{
+                type: 'chars',
+                stagger: 0.01,
+                delay: 0.5,
+              }"
+            >
+              Watch how each character animates individually in this text.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3
+              class="text-2xl font-semibold mb-4"
+              v-scroll-anim:splitText="{ type: 'words', stagger: 0.05 }"
+            >
+              Creative Text Animations
+            </h3>
+            <p
+              class="text-lg"
+              v-scroll-anim:splitWords="{
+                type: 'words',
+                stagger: 0.08,
+                delay: 0.3,
+              }"
+            >
+              Each word in this sentence will animate with a nice stagger effect.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Cards Grid Section -->
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4">

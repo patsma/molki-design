@@ -2,11 +2,19 @@ import { useNuxtApp } from '#app';
 import type { Directive } from 'vue';
 
 // Animation preset types
-type AnimationType = 'fadeIn' | 'fadeUp' | 'fadeLeft' | 'fadeRight' | 'scale';
+type AnimationType =
+  | 'fadeIn'
+  | 'fadeUp'
+  | 'fadeLeft'
+  | 'fadeRight'
+  | 'scale'
+  | 'splitText'
+  | 'splitWords';
 
 interface AnimationPreset {
   from: gsap.TweenVars;
   to: gsap.TweenVars;
+  split?: boolean;
 }
 
 interface AnimationOptions {
@@ -15,6 +23,8 @@ interface AnimationOptions {
   ease?: string;
   start?: string;
   markers?: boolean;
+  type?: 'chars' | 'words' | 'lines'; // Type of split for text animations
+  stagger?: number; // Stagger delay between elements
 }
 
 /**
@@ -24,9 +34,10 @@ interface AnimationOptions {
  * Examples:
  * <div v-scroll-anim="'fadeUp'">Content</div>
  * <div v-scroll-anim:fadeLeft="{ delay: 0.2 }">Content</div>
+ * <div v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }">Animated Text</div>
  */
 export default defineNuxtPlugin((nuxtApp) => {
-  const { $gsap } = useNuxtApp();
+  const { $gsap, $SplitText } = useNuxtApp();
   let ctx: gsap.Context | null = null;
 
   // Animation presets
@@ -51,6 +62,16 @@ export default defineNuxtPlugin((nuxtApp) => {
       from: { autoAlpha: 0, scale: 0.8 },
       to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
     },
+    splitText: {
+      from: { autoAlpha: 0, y: 20 },
+      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+      split: true,
+    },
+    splitWords: {
+      from: { autoAlpha: 0, y: 30, rotateX: -45 },
+      to: { autoAlpha: 1, y: 0, rotateX: 0, duration: 0.8, ease: 'power2.out' },
+      split: true,
+    },
   };
 
   // Create animation with ScrollTrigger
@@ -64,6 +85,34 @@ export default defineNuxtPlugin((nuxtApp) => {
     const preset = presets[type];
     if (!preset) return;
 
+    // Handle text splitting if needed
+    if (preset.split && $SplitText) {
+      const splitType = options.type || 'chars';
+      const split = new $SplitText(el, {
+        type: splitType,
+        linesClass: 'split-line',
+        charsClass: 'split-char',
+        wordsClass: 'split-word',
+      });
+
+      // Set initial state
+      const elements = split[options.type || 'chars'];
+      $gsap.set(elements, preset.from);
+
+      // Create the animation
+      return $gsap.to(elements, {
+        ...preset.to,
+        stagger: options.stagger || 0.02,
+        scrollTrigger: {
+          trigger: el,
+          start: options.start || 'top 80%',
+          markers: process.env.NODE_ENV === 'development' && options.markers,
+          toggleActions: 'play none none none',
+        },
+      });
+    }
+
+    // Regular animation for non-split elements
     return $gsap.fromTo(el, preset.from, {
       ...preset.to,
       ...options,

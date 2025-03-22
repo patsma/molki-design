@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <!-- Hero Section -->
-  <section data-scroll-section class="full-width relative w-full overflow-hidden">
+  <section class="full-width relative w-full overflow-hidden">
     <!-- Hero Container -->
     <div class="relative w-full" :style="{ height: heroHeight || '80vh' }">
       <!-- Background image with overlay -->
@@ -40,33 +40,24 @@ defineProps<{
     </div>
 
     <!-- Text Box Section -->
-    <div
-      class="full-width-content bg-neutral-400/90 relative"
-      data-scroll-item
-      data-scroll-animation="fadeUp"
-      data-scroll-duration="1"
-      data-scroll-independent="true"
-      data-scroll-start="top bottom"
-    >
+    <div class="full-width-content bg-neutral-400/90 relative">
       <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
         <div class="breakout1">
           <!-- Title -->
           <h2
             v-if="$slots.title"
             class="h2-style font-semibold text-primary text-center mb-8"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
+            v-scroll-anim:splitText="{
+              type: 'chars',
+              stagger: 0.01,
+              delay: 0.5,
+            }"
           >
             <slot name="title" mdc-unwrap="p" />
           </h2>
 
           <!-- Paragraphs -->
-          <div
-            class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
+          <div class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800"
           >
             <slot name="content" />
           </div>

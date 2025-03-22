@@ -9,12 +9,17 @@ type AnimationType =
   | 'fadeRight'
   | 'scale'
   | 'splitText'
-  | 'splitWords';
+  | 'splitWords'
+  | 'staggerUp'
+  | 'staggerLeft'
+  | 'staggerRight'
+  | 'staggerScale';
 
 interface AnimationPreset {
   from: gsap.TweenVars;
   to: gsap.TweenVars;
   split?: boolean;
+  stagger?: boolean;
 }
 
 interface AnimationOptions {
@@ -24,7 +29,7 @@ interface AnimationOptions {
   start?: string;
   markers?: boolean;
   type?: 'chars' | 'words' | 'lines'; // Type of split for text animations
-  stagger?: number; // Stagger delay between elements
+  stagger?: number | object; // Allow for complex stagger configurations
 }
 
 /**
@@ -62,6 +67,27 @@ export default defineNuxtPlugin((nuxtApp) => {
       from: { autoAlpha: 0, scale: 0.8 },
       to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
     },
+    // Stagger variants
+    staggerUp: {
+      from: { autoAlpha: 0, y: 30 },
+      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+      stagger: true,
+    },
+    staggerLeft: {
+      from: { autoAlpha: 0, x: -30 },
+      to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+      stagger: true,
+    },
+    staggerRight: {
+      from: { autoAlpha: 0, x: 30 },
+      to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+      stagger: true,
+    },
+    staggerScale: {
+      from: { autoAlpha: 0, scale: 0.8 },
+      to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
+      stagger: true,
+    },
     splitText: {
       from: { autoAlpha: 0, y: 20 },
       to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
@@ -95,14 +121,29 @@ export default defineNuxtPlugin((nuxtApp) => {
         wordsClass: 'split-word',
       });
 
-      // Set initial state
       const elements = split[options.type || 'chars'];
       $gsap.set(elements, preset.from);
 
-      // Create the animation
       return $gsap.to(elements, {
         ...preset.to,
         stagger: options.stagger || 0.02,
+        scrollTrigger: {
+          trigger: el,
+          start: options.start || 'top 80%',
+          markers: process.env.NODE_ENV === 'development' && options.markers,
+          toggleActions: 'play none none none',
+        },
+      });
+    }
+
+    // Handle stagger animations
+    if (preset.stagger) {
+      const children = el.children;
+      $gsap.set(children, preset.from);
+
+      return $gsap.to(children, {
+        ...preset.to,
+        stagger: options.stagger || 0.1,
         scrollTrigger: {
           trigger: el,
           start: options.start || 'top 80%',

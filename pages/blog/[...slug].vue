@@ -228,5 +228,7 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
         </div>
       </div>
     </div>
+    <LayoutPreFooterContent />
+    <LayoutFooterContent />
   </main>
 </template>

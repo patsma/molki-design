@@ -65,5 +65,7 @@ if (page.value || !import.meta.env.NITRO_PRERENDER) {
 <template>
   <div :class="[page?.meta?.pageClass, { 'has-header-spacing': needsHeaderSpacing }]">
     <ContentRenderer v-if="page" :value="page" class="" />
+    <LayoutPreFooterContent />
+    <LayoutFooterContent />
   </div>
 </template>

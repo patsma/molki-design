@@ -1,11 +1,3 @@
-<template>
-  <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
-    <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="3" />
-    <!-- Debug output -->
-    <pre v-if="error" class="p-4 text-red-500">{{ error }}</pre>
-  </main>
-</template>
-
 <script setup>
 // Check if we have any blog posts
 const { error } = await useAsyncData('blog-check', async () => {
@@ -85,3 +77,13 @@ const needsHeaderSpacing = computed(() => {
   return true;
 });
 </script>
+
+<template>
+  <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
+    <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="3" />
+    <LayoutPreFooterContent />
+    <LayoutFooterContent />
+    <!-- Debug output -->
+    <pre v-if="error" class="p-4 text-red-500">{{ error }}</pre>
+  </main>
+</template>

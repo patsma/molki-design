@@ -153,5 +153,7 @@ const ctaLink = computed(() => {
         </div>
       </div>
     </div>
+    <LayoutPreFooterContent />
+    <LayoutFooterContent />
   </main>
 </template>

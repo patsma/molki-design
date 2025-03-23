@@ -25,16 +25,23 @@ type AppConfig = {
   };
 };
 
+// Define menu item interface
+interface MenuItem {
+  label: string;
+  link: string;
+  children?: MenuItem[];
+}
+
 // Use typed config in template
 const typedConfig = appConfig as AppConfig;
 
 // Get menu items directly from store and split them
 // Create a flat array of all menu items (parents and children)
-const tempItems: any[] = [];
-menuStore.menuItems.forEach((item) => {
+const tempItems: MenuItem[] = [];
+menuStore.menuItems.forEach((item: MenuItem) => {
   tempItems.push(item);
   if (item.children && item.children.length > 0) {
-    item.children.forEach((child) => {
+    item.children.forEach((child: MenuItem) => {
       tempItems.push(child);
     });
   }

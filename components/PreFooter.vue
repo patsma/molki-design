@@ -29,7 +29,7 @@ const handleFormError = (error: any) => {
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative w-full py-24" data-scroll-section>
+  <section class="full-width relative w-full py-24" data-scroll-section>
     <!-- Background with overlay -->
     <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
       <div class="absolute inset-0 bg-white/90 z-10"></div>
@@ -49,23 +49,19 @@ const handleFormError = (error: any) => {
       <h2
         v-if="$slots.title"
         class="h2-style text-center font-semibold text-primary mb-16"
-        data-scroll-item
-        data-scroll-animation="fadeUp"
-        data-scroll-duration="1"
+        v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02, start: 'top 85%' }"
       >
         <slot name="title" mdc-unwrap="p" />
       </h2>
 
       <div class="breakout1">
         <!-- Company Information Grid -->
-        <div
-          class="grid md:grid-cols-2 gap-12 mb-16"
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="1"
-        >
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
           <!-- Left Company -->
-          <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div
+            class="grid md:grid-cols-2 gap-8 items-start"
+            v-scroll-anim:fadeLeft="{ delay: 0.1, start: 'top 80%' }"
+          >
             <div class="flex justify-center items-start">
               <slot name="leftCompanyLogo">
                 <Logo class="w-full max-w-[200px]" />
@@ -85,7 +81,10 @@ const handleFormError = (error: any) => {
           </div>
 
           <!-- Right Company -->
-          <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div
+            class="grid md:grid-cols-2 gap-8 items-start"
+            v-scroll-anim:fadeRight="{ delay: 0.3, start: 'top 80%' }"
+          >
             <div class="flex justify-center items-start">
               <slot name="rightCompanyLogo">
                 <Logo class="w-full max-w-[200px]" />
@@ -106,14 +105,9 @@ const handleFormError = (error: any) => {
         </div>
 
         <!-- Contact and Form Section -->
-        <div
-          class="grid md:grid-cols-2 gap-12"
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="1"
-        >
+        <div class="grid md:grid-cols-2 gap-12">
           <!-- Contact Information -->
-          <div class="space-y-6 max-w-xs">
+          <div class="space-y-6 max-w-xs" v-scroll-anim:fadeUp="{ delay: 0.5, start: 'top 75%' }">
             <h3
               v-if="$slots.contactTitle"
               class="text-xl text-primary font-semibold pb-4 border-gradient"
@@ -127,14 +121,16 @@ const handleFormError = (error: any) => {
 
           <!-- HubSpot Form -->
           <ClientOnly>
-            <HubspotForm
-              formId="be873485-56f5-42c9-8301-efaa818bdd36"
-              region="eu1"
-              @load="handleFormLoad"
-              @error="handleFormError"
-            />
+            <div v-scroll-anim:scale="{ delay: 0.7, start: 'top 75%' }">
+              <HubspotForm
+                formId="be873485-56f5-42c9-8301-efaa818bdd36"
+                region="eu1"
+                @load="handleFormLoad"
+                @error="handleFormError"
+              />
+            </div>
             <template #fallback>
-              <div class="animate-pulse">
+              <div class="animate-pulse" v-scroll-anim:fadeIn>
                 <div class="h-12 bg-gray-200 rounded mb-4"></div>
                 <div class="h-12 bg-gray-200 rounded mb-4"></div>
                 <div class="h-12 bg-gray-200 rounded"></div>

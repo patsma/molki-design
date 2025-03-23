@@ -8,11 +8,11 @@
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        data-scroll-item
-        data-scroll-independent="true"
-        data-scroll-animation="drawSVG"
-        data-scroll-duration="2.5"
-        data-scroll-delay="0.5"
+        v-scroll-anim:drawSVG="{
+          duration: 2.5,
+          delay: 0.5,
+          ease: 'power2.inOut',
+        }"
         d="M271.001 0.999998C274.001 127 390 651 196.94 854.286C157.414 888.013 103.779 911.836 49.3429 907.196C34.1328 905.858 18.1224 901.753 8.81625 891.046C-7.59455 872.041 7.7154 841.616 32.7319 832.693C57.7483 823.771 86.4673 831.087 109.883 842.954C167.821 872.398 204.745 927.629 222.357 985"
         stroke="url(#paint0_radial_324_3517)"
         stroke-width="4"

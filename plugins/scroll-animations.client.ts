@@ -6,6 +6,7 @@ import type { Directive } from 'vue';
 type AnimationType =
   | 'fadeIn'
   | 'fadeUp'
+  | 'fadeDown'
   | 'fadeLeft'
   | 'fadeRight'
   | 'scale'
@@ -65,6 +66,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
     fadeUp: {
       from: { autoAlpha: 0, y: 30 },
+      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+    },
+    fadeDown: {
+      from: { autoAlpha: 0, y: -30 },
       to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
     },
     fadeLeft: {
@@ -152,21 +157,35 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (options.sequence) {
       const group = getSequenceGroup(el);
       const sequenceDelay = options.sequenceDelay || 0.3;
+      const initialDelay = options.delay || 0;
 
       group.forEach((element, index) => {
         // Set initial state
         $gsap.set(element, preset.from);
 
-        // Add to timeline
-        tl.to(
-          element,
-          {
-            ...preset.to,
-            duration: options.duration || preset.to.duration || 0.8,
-            delay: index === 0 ? options.delay || 0 : 0,
-          },
-          index === 0 ? 0 : `<+=${sequenceDelay}`
-        );
+        // Add to timeline with proper position
+        if (index === 0) {
+          // First element starts at beginning plus any initial delay
+          tl.to(
+            element,
+            {
+              ...preset.to,
+              duration: options.duration || preset.to.duration || 0.8,
+              delay: initialDelay,
+            },
+            0
+          );
+        } else {
+          // Subsequent elements are positioned relative to previous ones
+          tl.to(
+            element,
+            {
+              ...preset.to,
+              duration: options.duration || preset.to.duration || 0.8,
+            },
+            `<+=${sequenceDelay}`
+          );
+        }
       });
 
       return tl;
@@ -188,6 +207,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       tl.to(elements, {
         ...preset.to,
         stagger: options.stagger || 0.02,
+        delay: options.delay || 0,
+        duration: options.duration || preset.to.duration || 0.8,
       });
 
       return tl;
@@ -201,6 +222,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       tl.to(children, {
         ...preset.to,
         stagger: options.stagger || 0.1,
+        delay: options.delay || 0,
+        duration: options.duration || preset.to.duration || 0.8,
       });
 
       return tl;
@@ -208,7 +231,11 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     // Regular animation
     $gsap.set(el, preset.from);
-    tl.to(el, preset.to);
+    tl.to(el, {
+      ...preset.to,
+      delay: options.delay || 0,
+      duration: options.duration || preset.to.duration || 0.8,
+    });
 
     return tl;
   };

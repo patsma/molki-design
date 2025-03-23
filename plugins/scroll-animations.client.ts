@@ -36,6 +36,9 @@ interface AnimationOptions {
   onComplete?: () => void;
   onEnter?: () => void;
   onLeave?: () => void;
+  sequence?: boolean;
+  sequenceDelay?: number;
+  order?: number;
 }
 
 /**
@@ -113,7 +116,14 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
   };
 
-  // Create animation with ScrollTrigger
+  // First, let's create a helper to group animations by their parent
+  const getSequenceGroup = (el: HTMLElement): HTMLElement[] => {
+    const parent = el.parentElement;
+    if (!parent) return [el];
+    return Array.from(parent.children) as HTMLElement[];
+  };
+
+  // Modify createAnimation function
   const createAnimation = (
     el: HTMLElement,
     type: AnimationType,
@@ -124,7 +134,41 @@ export default defineNuxtPlugin((nuxtApp) => {
     const preset = presets[type];
     if (!preset) return;
 
-    // Handle text splitting if needed
+    // Create timeline for sequences
+    const tl = $gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: options.start || 'top 80%',
+        markers: process.env.NODE_ENV === 'development' && options.markers,
+        toggleActions: 'play none none none',
+      },
+    });
+
+    // If this is part of a sequence, get all elements to animate
+    if (options.sequence) {
+      const group = getSequenceGroup(el);
+      const sequenceDelay = options.sequenceDelay || 0.3;
+
+      group.forEach((element, index) => {
+        // Set initial state
+        $gsap.set(element, preset.from);
+
+        // Add to timeline
+        tl.to(
+          element,
+          {
+            ...preset.to,
+            duration: options.duration || preset.to.duration || 0.8,
+            delay: index === 0 ? options.delay || 0 : 0,
+          },
+          index === 0 ? 0 : `<+=${sequenceDelay}`
+        );
+      });
+
+      return tl;
+    }
+
+    // Handle text splitting
     if (preset.split && $SplitText) {
       const splitType = options.type || 'chars';
       const split = new $SplitText(el, {
@@ -137,16 +181,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       const elements = split[options.type || 'chars'];
       $gsap.set(elements, preset.from);
 
-      return $gsap.to(elements, {
+      tl.to(elements, {
         ...preset.to,
         stagger: options.stagger || 0.02,
-        scrollTrigger: {
-          trigger: el,
-          start: options.start || 'top 80%',
-          markers: process.env.NODE_ENV === 'development' && options.markers,
-          toggleActions: 'play none none none',
-        },
       });
+
+      return tl;
     }
 
     // Handle stagger animations
@@ -154,29 +194,19 @@ export default defineNuxtPlugin((nuxtApp) => {
       const children = el.children;
       $gsap.set(children, preset.from);
 
-      return $gsap.to(children, {
+      tl.to(children, {
         ...preset.to,
         stagger: options.stagger || 0.1,
-        scrollTrigger: {
-          trigger: el,
-          start: options.start || 'top 80%',
-          markers: process.env.NODE_ENV === 'development' && options.markers,
-          toggleActions: 'play none none none',
-        },
       });
+
+      return tl;
     }
 
-    // Regular animation for non-split elements
-    return $gsap.fromTo(el, preset.from, {
-      ...preset.to,
-      ...options,
-      scrollTrigger: {
-        trigger: el,
-        start: options.start || 'top 80%',
-        markers: process.env.NODE_ENV === 'development' && options.markers,
-        toggleActions: 'play none none none',
-      },
-    });
+    // Regular animation
+    $gsap.set(el, preset.from);
+    tl.to(el, preset.to);
+
+    return tl;
   };
 
   // Handle page transitions

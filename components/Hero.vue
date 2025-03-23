@@ -28,20 +28,24 @@ defineProps<{
       </div>
 
       <!-- Content Container -->
-      <div class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100 pb-32">
+      <div
+        class="content-grid animation-sequence w-full relative z-10 grid min-h-screen text-neutral-100 pb-32"
+      >
         <div
-          data-speed="1.15"
           class="breakout1 content-end justify-center items-center justify-items-center grid gap-8"
         >
           <div
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
             <!-- Title -->
-            <ClientOnly>
-              <h1 class="h1-style font-semibold uppercase" v-scroll-anim:fadeUp v-if="$slots.title">
-                <slot name="title" mdc-unwrap="p" />
-              </h1>
-            </ClientOnly>
+
+            <h1
+              class="h1-style font-semibold uppercase"
+              v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.2 }"
+              v-if="$slots.title"
+            >
+              <slot name="title" mdc-unwrap="p" />
+            </h1>
 
             <!-- Subtitle -->
             <h2
@@ -56,13 +60,7 @@ defineProps<{
             </h2>
           </div>
           <!-- CTA Button -->
-          <div
-            class="uppercase grid"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-            data-scroll-order="3"
-          >
+          <div class="uppercase grid" v-scroll-anim:fadeUp>
             <NuxtLink
               v-if="$slots.cta"
               :to="ctaLink || '/'"

@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <section class="py-16" data-scroll-section>
     <div class="content-grid">
-      <div class="breakout1 animation-sequence">
+      <div class="breakout1">
         <!-- Title and Subtitle -->
         <div
           v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.2 }"

@@ -79,6 +79,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       from: { autoAlpha: 0, scale: 0.8 },
       to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
     },
+    scaleX: {
+      from: { autoAlpha: 0, scaleX: 0, transformOrigin: 'center center' },
+      to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
+    },
     // Stagger variants
     staggerUp: {
       from: { autoAlpha: 0, y: 30 },

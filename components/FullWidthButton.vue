@@ -64,14 +64,10 @@ const props = withDefaults(
     ]"
   >
     <div class="grid">
-      <div
-        class="relative w-full h-full grid place-items-center"
-        :data-scroll-item="animate"
-        :data-scroll-animation="animate ? 'fadeUp' : undefined"
-        :data-scroll-duration="animate ? '1' : undefined"
-      >
+      <div class="relative w-full h-full grid place-items-center">
         <!-- Decorator Line -->
         <div
+          v-scroll-anim:scaleX
           class="absolute w-screen h-[0.15rem]"
           :class="{
             'bg-primary': color === 'primary',

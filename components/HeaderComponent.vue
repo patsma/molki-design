@@ -8,20 +8,12 @@ import { useScrollHeader } from '@/composables/useScrollHeader';
 import IconBlock from '~/components/IconBlock.vue';
 import { useAppConfig } from '#app';
 
-const { $gsap } = useNuxtApp();
 const menuStore = useMenuStore();
 const { headerRef, headerHeight, initScrollHeader, cleanup, setHeaderHeightCSSVars } =
   useScrollHeader();
 const appConfig = useAppConfig();
 
-// Create a reference to the resize handler for proper cleanup
-const handleResize = () => {
-  if (headerHeight.value > 0) {
-    setHeaderHeightCSSVars();
-  }
-};
-
-// Update CSS variable when header height changes
+// Watch for header height changes
 watch(headerHeight, (newHeight) => {
   if (process.client && newHeight > 0) {
     setHeaderHeightCSSVars();
@@ -32,17 +24,9 @@ onMounted(() => {
   if (process.client) {
     try {
       menuStore.setupMobileMenu();
-      initScrollHeader();
-
-      // Ensure header CSS variables are set
-      if (headerHeight.value > 0) {
-        setHeaderHeightCSSVars();
-      }
-
-      // Listen for window resize to update header height
-      window.addEventListener('resize', handleResize);
+      initScrollHeader(); // Initialize the simplified headroom functionality
     } catch (error) {
-      console.warn('Error initializing header animations:', error);
+      console.warn('Error initializing header:', error);
     }
   }
 });
@@ -50,11 +34,10 @@ onMounted(() => {
 onUnmounted(() => {
   if (process.client) {
     try {
-      window.removeEventListener('resize', handleResize);
       menuStore.cleanup();
-      cleanup();
+      cleanup(); // Clean up event listeners
     } catch (error) {
-      console.warn('Error cleaning up header animations:', error);
+      console.warn('Error cleaning up header:', error);
     }
   }
 });

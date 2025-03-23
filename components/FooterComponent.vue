@@ -79,7 +79,7 @@ defineSlots<{
         <!-- Mobile Layout (< md screens) -->
         <div class="lg:hidden space-y-12">
           <!-- Centered Logo -->
-          <div class="flex justify-center">
+          <div class="flex justify-center" v-scroll-anim:fadeDown="{ delay: 0.1 }">
             <slot name="logo" mdc-unwrap="p">
               <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
                 <IconBlock name="fig:molki-logo-design" customClass="w-16 h-16 text-primary" />
@@ -88,9 +88,17 @@ defineSlots<{
           </div>
 
           <!-- Menu Section -->
-          <div class="space-y-4">
-            <h4 class="text-sm font-bold text-primary uppercase">MENU</h4>
-            <nav class="space-y-2">
+          <div class="space-y-4" v-scroll-anim:fadeUp="{ delay: 0.2 }">
+            <h4
+              class="text-sm font-bold text-primary uppercase"
+              v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+            >
+              MENU
+            </h4>
+            <nav
+              class="space-y-2"
+              v-scroll-anim:staggerUp="{ stagger: { amount: 0.3, from: 'start' } }"
+            >
               <NuxtLink
                 v-for="item in tempItems"
                 :key="item.label"
@@ -103,9 +111,17 @@ defineSlots<{
           </div>
 
           <!-- Contact Info Section -->
-          <div class="space-y-4">
-            <h4 class="text-sm font-bold text-primary uppercase">Kontakt</h4>
-            <div class="space-y-2">
+          <div class="space-y-4" v-scroll-anim:fadeUp="{ delay: 0.3 }">
+            <h4
+              class="text-sm font-bold text-primary uppercase"
+              v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+            >
+              Kontakt
+            </h4>
+            <div
+              class="space-y-2"
+              v-scroll-anim:staggerUp="{ stagger: { amount: 0.3, from: 'start' } }"
+            >
               <div class="flex items-start space-x-2">
                 <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
                 <slot name="contactAddress" mdc-unwrap="p">
@@ -140,10 +156,18 @@ defineSlots<{
           </div>
 
           <!-- Social Media Section -->
-          <div class="space-y-4">
-            <h4 class="text-sm font-bold text-primary uppercase">Bądź na bieżąco:</h4>
+          <div class="space-y-4" v-scroll-anim:fadeUp="{ delay: 0.4 }">
+            <h4
+              class="text-sm font-bold text-primary uppercase"
+              v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+            >
+              Bądź na bieżąco:
+            </h4>
             <slot name="socialLinks" mdc-unwrap="p">
-              <div class="flex space-x-4 justify-center">
+              <div
+                class="flex space-x-4 justify-center"
+                v-scroll-anim:staggerLeft="{ stagger: { amount: 0.2, from: 'start' } }"
+              >
                 <template v-if="typedConfig.contactInfo?.socialLinks?.instagram">
                   <NuxtLink
                     :to="typedConfig.contactInfo.socialLinks.instagram"
@@ -171,10 +195,18 @@ defineSlots<{
           </div>
 
           <!-- Sponsors Section -->
-          <div class="space-y-4">
-            <h4 class="text-sm font-bold text-primary uppercase">Sponsorujemy:</h4>
+          <div class="space-y-4" v-scroll-anim:fadeUp="{ delay: 0.5 }">
+            <h4
+              class="text-sm font-bold text-primary uppercase"
+              v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+            >
+              Sponsorujemy:
+            </h4>
             <slot name="sponsors" mdc-unwrap="p">
-              <div class="flex gap-4 justify-center">
+              <div
+                class="flex gap-4 justify-center"
+                v-scroll-anim:staggerScale="{ stagger: { amount: 0.2, from: 'center' } }"
+              >
                 <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
                   <IconBlock name="uil:building" customClass="w-16 h-16 text-primary" />
                 </NuxtLink>
@@ -183,10 +215,18 @@ defineSlots<{
           </div>
 
           <!-- Certifications Section -->
-          <div class="space-y-4">
-            <h4 class="text-sm font-bold text-primary uppercase">Nasze certyfikaty:</h4>
+          <div class="space-y-4" v-scroll-anim:fadeUp="{ delay: 0.6 }">
+            <h4
+              class="text-sm font-bold text-primary uppercase"
+              v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+            >
+              Nasze certyfikaty:
+            </h4>
             <slot name="certifications" mdc-unwrap="p">
-              <div class="flex gap-4 justify-center">
+              <div
+                class="flex gap-4 justify-center"
+                v-scroll-anim:staggerScale="{ stagger: { amount: 0.2, from: 'center' } }"
+              >
                 <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
                   <IconBlock name="uil:check-circle" customClass="w-16 h-16 text-primary" />
                 </NuxtLink>
@@ -195,10 +235,18 @@ defineSlots<{
           </div>
 
           <!-- Memberships Section -->
-          <div class="space-y-4">
-            <h4 class="text-sm font-bold text-primary uppercase">Należymy do:</h4>
+          <div class="space-y-4" v-scroll-anim:fadeUp="{ delay: 0.7 }">
+            <h4
+              class="text-sm font-bold text-primary uppercase"
+              v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+            >
+              Należymy do:
+            </h4>
             <slot name="memberships" mdc-unwrap="p">
-              <div class="flex gap-4 justify-center">
+              <div
+                class="flex gap-4 justify-center"
+                v-scroll-anim:staggerScale="{ stagger: { amount: 0.2, from: 'center' } }"
+              >
                 <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
                   <IconBlock name="uil:users-alt" customClass="w-16 h-16 text-primary" />
                 </NuxtLink>
@@ -207,7 +255,10 @@ defineSlots<{
           </div>
 
           <!-- Copyright Section -->
-          <div class="text-xs text-neutral-500 space-y-2 text-center">
+          <div
+            class="text-xs text-neutral-500 space-y-2 text-center"
+            v-scroll-anim:fadeUp="{ delay: 0.8 }"
+          >
             <p class="text-neutral-500">molki.design.pl © {{ props.year }}</p>
             <slot name="copyrightText" mdc-unwrap="p">
               <p class="text-neutral-500">
@@ -232,10 +283,18 @@ defineSlots<{
           data-scroll-duration="1"
         >
           <!-- Column 2: First Half of Menu + Sponsors -->
-          <div class="h-full flex flex-col justify-between">
+          <div class="h-full flex flex-col justify-between" v-scroll-anim:fadeLeft="{ delay: 0.2 }">
             <div class="space-y-4">
-              <h4 class="text-sm font-bold text-primary">MENU</h4>
-              <nav class="space-y-2">
+              <h4
+                class="text-sm font-bold text-primary"
+                v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+              >
+                MENU
+              </h4>
+              <nav
+                class="space-y-2"
+                v-scroll-anim:staggerUp="{ stagger: { amount: 0.2, from: 'start' } }"
+              >
                 <NuxtLink
                   v-for="item in flatFirstHalf"
                   :key="item.label"
@@ -262,9 +321,12 @@ defineSlots<{
           </div>
 
           <!-- Column 3: Second Half of Menu + Certifications -->
-          <div class="h-full flex flex-col justify-between">
+          <div class="h-full flex flex-col justify-between" v-scroll-anim:fadeUp="{ delay: 0.3 }">
             <h4 class="text-sm font-bold text-primary"></h4>
-            <nav class="space-y-2">
+            <nav
+              class="space-y-2"
+              v-scroll-anim:staggerUp="{ stagger: { amount: 0.2, from: 'start' } }"
+            >
               <NuxtLink
                 v-for="item in flatSecondHalf"
                 :key="item.label"
@@ -290,10 +352,21 @@ defineSlots<{
           </div>
 
           <!-- Column 4: Company Info + Memberships -->
-          <div class="h-full flex flex-col justify-between">
+          <div
+            class="h-full flex flex-col justify-between"
+            v-scroll-anim:fadeRight="{ delay: 0.4 }"
+          >
             <div class="space-y-4">
-              <h4 class="text-sm font-bold text-primary uppercase">Dane kontaktowe:</h4>
-              <div class="space-y-2">
+              <h4
+                class="text-sm font-bold text-primary uppercase"
+                v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+              >
+                Dane kontaktowe:
+              </h4>
+              <div
+                class="space-y-2"
+                v-scroll-anim:staggerUp="{ stagger: { amount: 0.2, from: 'start' } }"
+              >
                 <div class="flex items-start space-x-2">
                   <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
                   <slot name="contactAddress" mdc-unwrap="p">
@@ -344,12 +417,20 @@ defineSlots<{
           </div>
 
           <!-- Column 5: Social Media + Copyright -->
-          <div class="h-full flex flex-col justify-between">
+          <div class="h-full flex flex-col justify-between" v-scroll-anim:fadeUp="{ delay: 0.5 }">
             <div class="space-y-4">
               <div>
-                <h4 class="text-sm font-bold text-primary uppercase">Bądź na bieżąco:</h4>
+                <h4
+                  class="text-sm font-bold text-primary uppercase"
+                  v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }"
+                >
+                  Bądź na bieżąco:
+                </h4>
                 <slot name="socialLinks" mdc-unwrap="p">
-                  <div class="flex space-x-4">
+                  <div
+                    class="flex space-x-4"
+                    v-scroll-anim:staggerLeft="{ stagger: { amount: 0.2, from: 'start' } }"
+                  >
                     <template v-if="typedConfig.contactInfo?.socialLinks?.instagram">
                       <NuxtLink
                         :to="typedConfig.contactInfo.socialLinks.instagram"

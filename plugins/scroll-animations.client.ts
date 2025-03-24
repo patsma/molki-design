@@ -143,6 +143,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     const preset = presets[type];
     if (!preset) return;
 
+    // Store animation type and options as data attributes for potential refreshing
+    el.setAttribute('data-scroll-anim', type);
+    if (Object.keys(options).length > 0) {
+      el.setAttribute('data-scroll-options', JSON.stringify(options));
+    }
+
     // Create timeline for sequences
     const tl = $gsap.timeline({
       scrollTrigger: {
@@ -284,6 +290,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       if (!process.client || !ctx) return;
       // We don't need to target specific elements - when component unmounts
       // its animations will be automatically removed with the context
+      el.removeAttribute('data-scroll-anim');
+      el.removeAttribute('data-scroll-options');
     },
   };
 

@@ -1,8 +1,4 @@
 <script setup>
-import { useLoaderStore } from '~/stores/loaderStore';
-
-const loaderStore = useLoaderStore();
-
 // Add meta tags for OG Image
 useHead({
   meta: [
@@ -16,23 +12,10 @@ useHead({
     },
   ],
 });
-
-// Page initialization
-onMounted(() => {
-  // Hide loader after initial page load
-  if (process.client) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loaderStore.hide();
-      }, 200);
-    });
-  }
-});
 </script>
 
 <template>
   <div>
-    <Loader />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

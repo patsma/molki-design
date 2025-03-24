@@ -18,6 +18,7 @@ const loaderStore = useLoaderStore();
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
+  /* Match the page transition timing for consistent experience */
   transition: opacity 0.5s ease;
 }
 

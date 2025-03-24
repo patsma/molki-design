@@ -142,16 +142,6 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/site.webmanifest' },
       ],
     },
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
-      onBeforeEnter(el: HTMLElement) {
-        // Reset scroll position when page changes
-        if (typeof window !== 'undefined') {
-          window.scrollTo(0, 0);
-        }
-      },
-    },
   },
   icon: {
     customCollections: [

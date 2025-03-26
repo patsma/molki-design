@@ -125,7 +125,7 @@ Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 
 ::item-card
 ---
-ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
+ctaLink: /remont-pod-klucz#cennik
 ---
 #title
 BASIC
@@ -150,7 +150,7 @@ Sprawdź i dowiedz się wiecej.
 
 ::item-card
 ---
-ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
+ctaLink: /remont-pod-klucz#cennik
 ---
 #title
 COMFORT
@@ -175,7 +175,7 @@ Sprawdź i dowiedz się wiecej.
 
 ::item-card
 ---
-ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
+ctaLink: /remont-pod-klucz#cennik  
 ---
 #title
 PREMIUM
@@ -199,7 +199,7 @@ Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów ofer
 Sprawdź i dowiedz się wiecej.
 ::
 
-::pricing-grid
+::pricing-grid{#cennik}
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![pricing background](/heroPricingGrid.jpg)

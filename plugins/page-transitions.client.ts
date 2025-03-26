@@ -10,10 +10,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Indicate when navigating between pages begins
   nuxtApp.hook('page:start', () => {
     if (!process.client) return;
-
     // Show loader during navigation
     loaderStore.show();
-
     // Clear animations when navigation starts
     if (useNuxtApp().$scrollAnimations?.clear) {
       useNuxtApp().$scrollAnimations.clear();
@@ -24,10 +22,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.hook('page:finish', () => {
     if (!process.client) return;
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-
+    // Show loader during navigation
+    loaderStore.hide();
     // Hide loader after navigation completes
-    setTimeout(() => {
-      loaderStore.hide();
-    }, 200);
   });
 });

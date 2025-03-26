@@ -83,7 +83,7 @@ Stwórz z nami idealne wnętrze
   :::project-grid-item
   ---
   aspectRatio: 0.75
-  to: /wewnetrzne-inwestycje
+  to: /wnetrza-inwestycyjne
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

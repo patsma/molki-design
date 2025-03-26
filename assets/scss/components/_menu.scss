@@ -52,7 +52,7 @@
       display: grid;
       top: 120%;
       left: 0;
-      min-width: 200px;
+      min-width: 16rem;
       background: var(--color-neutral-100);
       overflow: hidden;
       opacity: 0;
@@ -65,7 +65,7 @@
       }
 
       > :not(:last-child) {
-        border-bottom: 0.175rem solid;
+        border-bottom: 0.1rem solid;
         border-image: linear-gradient(to right, #b76246, #d0835f, #a04225) 1;
       }
     }

@@ -185,7 +185,7 @@ export default defineNuxtConfig({
         '/o-nas',
         '/kontakt',
         '/remont-pod-klucz',
-        '/wewnetrzne-inwestycje',
+        '/wnetrza-inwestycyjne',
       ],
       failOnError: false,
       ignore: [

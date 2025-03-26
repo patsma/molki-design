@@ -15,7 +15,7 @@ ogImage:
 ::hero-business
 ---
 hasBackground: false
-cta-link: /wewnetrzne-inwestycje#realizacje
+cta-link: /wnetrza-inwestycyjne#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -26,7 +26,7 @@ cta-link: /wewnetrzne-inwestycje#realizacje
 ZOBACZ NASZE REALIZACJE
 
 #title
-DLA BIZNESU
+WNĘTRZA INWESTYCYJNE
 
 #content
 Czy chcesz zwiększyć wartość swojej nieruchomości i maksymalizować zyski ze sprzedaży lub wynajmu?
@@ -42,7 +42,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /wewnetrzne-inwestycje#realizacje
+  to: /wnetrza-inwestycyjne#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -67,7 +67,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /wewnetrzne-inwestycje#realizacje
+  to: /wnetrza-inwestycyjne#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -92,7 +92,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   :::project-grid-item
   ---
   aspectRatio: 0.95
-  to: /wewnetrzne-inwestycje#realizacje
+  to: /wnetrza-inwestycyjne#realizacje
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

@@ -8,11 +8,11 @@
     </div>
 
     <!-- Debug info in development -->
-    <div v-if="isDev" class="mt-4 p-4 bg-gray-100 rounded text-sm">
+    <!-- <div v-if="isDev" class="mt-4 p-4 bg-gray-100 rounded text-sm">
       <p>Portal ID: {{ portalId || 'Not set' }}</p>
       <p>Form ID: {{ formId }}</p>
       <p>Status: {{ loading ? 'Loading' : error ? 'Error' : 'Ready' }}</p>
-    </div>
+    </div> -->
   </div>
 </template>
 

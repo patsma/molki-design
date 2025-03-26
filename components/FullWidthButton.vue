@@ -67,7 +67,7 @@ const props = withDefaults(
       <div class="relative w-full h-full grid place-items-center">
         <!-- Decorator Line -->
         <div
-          v-scroll-anim:scaleX
+          v-scroll-anim:scaleX="{ delay: 2, start: 'top 95%' }"
           class="absolute w-screen h-[0.15rem]"
           :class="{
             'bg-primary': color === 'primary',

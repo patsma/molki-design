@@ -4,28 +4,6 @@ import { defineNuxtConfig } from 'nuxt/config';
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  routeRules: {
-    '/': { prerender: true },
-    '/projects': { redirect: '/realizacje' },
-    '/projects/**': { redirect: '/realizacje/**' },
-    '/realizacje/**': {
-      prerender: true,
-      index: false,
-    },
-    '/blog/**': {
-      prerender: true,
-      index: false,
-    },
-    '/**': {
-      prerender: true,
-      index: false,
-    },
-  },
-  typescript: {
-    typeCheck: false,
-    shim: false,
-  },
-
   modules: [
     '@nuxtjs/sitemap',
     '@hypernym/nuxt-gsap',

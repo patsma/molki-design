@@ -21,11 +21,7 @@ useHead({
 onMounted(() => {
   // Hide loader after initial page load
   if (process.client) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loaderStore.hide();
-      }, 200);
-    });
+    loaderStore.hide();
   }
 });
 </script>

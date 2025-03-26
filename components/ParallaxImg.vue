@@ -8,13 +8,4 @@
 
 <script setup></script>
 
-<style lang="scss">
-.parallax-wrapper {
-  height: 120%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-</style>
+<style lang="scss"></style>

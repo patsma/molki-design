@@ -21,7 +21,7 @@ POZNAJ ZESPÓŁ MOLKI DESIGN!
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Full width parallax](/heroAbout.jpg)
+  ![Full width parallax](/heroAboutCropped.jpg)
   :::
 
 #description

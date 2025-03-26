@@ -7,11 +7,6 @@ import { useLoaderStore } from '~/stores/loaderStore';
 export default defineNuxtPlugin((nuxtApp) => {
   const loaderStore = useLoaderStore();
 
-  // Detect if browser is Safari
-  const isSafari = () => {
-    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  };
-
   // Indicate when navigating between pages begins
   nuxtApp.hook('page:start', () => {
     if (!process.client) return;
@@ -25,33 +20,14 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
   });
 
-  // Handle page transitions and loader state
+  // Initialize animations when page has loaded
   nuxtApp.hook('page:finish', () => {
     if (!process.client) return;
-
-    // Reset scroll position
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
-    // Use longer delay for Safari
-    const delay = isSafari() ? 350 : 250;
-
-    // Wait for the page transition to complete first
-    const pageTransitionElement = document.querySelector('.page-leave-active, .page-enter-active');
-
-    if (pageTransitionElement) {
-      pageTransitionElement.addEventListener(
-        'transitionend',
-        () => {
-          setTimeout(() => {
-            loaderStore.hide();
-          }, delay);
-        },
-        { once: true }
-      );
-    } else {
-      setTimeout(() => {
-        loaderStore.hide();
-      }, delay);
-    }
+    // Hide loader after navigation completes
+    setTimeout(() => {
+      loaderStore.hide();
+    }, 200);
   });
 });

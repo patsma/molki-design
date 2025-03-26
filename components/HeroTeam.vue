@@ -24,7 +24,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
         </div>
 
         <!-- Image Section -->
-        <div class="relative flex-1 min-h-[70vh] overflow-hidden">
+        <div class="relative flex-1 min-h-[60vh] overflow-hidden">
           <!-- SVG Accent Shape -->
           <div class="absolute bottom-0 left-0 overflow-hidden z-10 pointer-events-none">
             <HeroPath2 class="w-80" />

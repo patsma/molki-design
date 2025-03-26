@@ -23,6 +23,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Initialize animations when page has loaded
   nuxtApp.hook('page:finish', () => {
     if (!process.client) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     // Hide loader after navigation completes
     setTimeout(() => {

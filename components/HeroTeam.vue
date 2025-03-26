@@ -7,8 +7,16 @@ import FrameCorner from '~/components/FrameCorner.vue';
     <!-- Team Intro Section -->
     <section class="min-h-screen relative flex flex-col">
       <div class="relative flex-1 flex flex-col">
+        <!-- Image Section -->
+        <div class="grid relative overflow-hidden">
+          <div class="absolute bottom-0 -left-[10rem] overflow-hidden z-10 pointer-events-none">
+            <HeroPath2 class="w-80" />
+          </div>
+          <slot v-if="$slots.image" name="image" />
+        </div>
+
         <!-- Title Section -->
-        <div data-scroll-section class="content-grid relative z-10 py-8 md:py-12">
+        <div data-scroll-section class="content-grid text-center relative z-10 pt-8 md:pt-12">
           <div class="breakout1">
             <h2
               v-if="$slots.title"
@@ -22,15 +30,6 @@ import FrameCorner from '~/components/FrameCorner.vue';
             </h2>
           </div>
         </div>
-
-        <!-- Image Section -->
-        <div class="grid relative overflow-hidden">
-          <div class="absolute bottom-0 -left-[10rem] overflow-hidden z-10 pointer-events-none">
-            <HeroPath2 class="w-80" />
-          </div>
-          <slot v-if="$slots.image" name="image" />
-        </div>
-
         <!-- Description Section -->
         <div class="content-grid relative z-10 py-12 md:py-16 bg-neutral-100">
           <div class="breakout1">

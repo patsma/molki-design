@@ -8,7 +8,9 @@ import FrameCorner from '~/components/FrameCorner.vue';
     <section class="min-h-screen relative flex flex-col">
       <div class="relative flex-1 flex flex-col">
         <!-- Image Section -->
-        <div class="grid relative overflow-hidden">
+        <div
+          class="grid relative min-h-[25vh] sm:min-h-[30vh] md:min-h-[50vh] lg:min-h-[65vh] overflow-hidden"
+        >
           <div class="absolute bottom-0 -left-[10rem] overflow-hidden z-10 pointer-events-none">
             <HeroPath2 class="w-80" />
           </div>

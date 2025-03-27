@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="logo-wrapper">
     <svg viewBox="0 0 621 713" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M359.87 657.62H351.42V710.91H359.87V657.62Z" fill="white" />
       <path
@@ -72,4 +72,20 @@
 
 <script lang="ts" setup></script>
 
-<style></style>
+<style scoped>
+.logo-wrapper {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>

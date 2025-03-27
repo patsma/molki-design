@@ -78,7 +78,8 @@ nuxtApp.hook('app:mounted', () => {
 });
 
 // Page finish hook
-nuxtApp.hook('page:finish', () => {
+nuxtApp.hook('page:loading:end', () => {
+  console.log('page:loading:end');
   isPageReady.value = true;
   checkImagesLoaded(); // Recheck images after page components are loaded
 });

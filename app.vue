@@ -21,7 +21,9 @@ useHead({
 onMounted(() => {
   // Hide loader after initial page load
   if (process.client) {
-    loaderStore.hide();
+    nextTick(() => {
+      loaderStore.hide();
+    });
   }
 });
 </script>

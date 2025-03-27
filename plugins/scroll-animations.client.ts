@@ -248,6 +248,13 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
   });
 
+  nuxtApp.hook('page:finish', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    });
+  });
+
   // Create the directive
   const scrollAnimDirective: Directive<HTMLElement, string | AnimationOptions> = {
     mounted(el, binding) {

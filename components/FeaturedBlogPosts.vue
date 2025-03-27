@@ -42,44 +42,29 @@ const formatDate = (dateString: string) => {
 </script>
 
 <template>
-  <section class="py-16 bg-neutral-50" data-scroll-section>
+  <section class="py-16 bg-neutral-50">
     <div class="content-grid">
       <div class="breakout1">
         <!-- Title and Subtitle -->
         <div class="text-center mb-16">
           <h2
             class="h2-style font-semibold text-primary mb-4"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
+            v-scroll-anim:splitText="{ type: 'words', stagger: 0.05 }"
           >
             {{ title }}
           </h2>
-          <p
-            class="text-xl md:text-2xl text-neutral-800"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-          >
+          <p class="text-xl md:text-2xl text-neutral-800" v-scroll-anim:fadeUp="{ delay: 0.3 }">
             {{ subtitle }}
           </p>
         </div>
 
         <!-- Blog Posts Grid -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="1"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <div
             v-for="post in posts"
+            v-scroll-anim:fadeIn="{ sequence: true, delay: 0.5 }"
             :key="post.id"
             class="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="0.8"
-            data-scroll-stagger="0.2"
           >
             <!-- Post Image -->
             <NuxtLink :to="`/blog/${post.slug}`" class="block aspect-[16/9] overflow-hidden">
@@ -131,11 +116,9 @@ const formatDate = (dateString: string) => {
         </div>
 
         <!-- View All Button -->
-        <div
+        <!-- <div
           class="text-center mt-12"
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="1"
+          v-scroll-anim:fadeUp="{ delay: 0.5 }"
         >
           <NuxtLink
             to="/blog"
@@ -143,7 +126,7 @@ const formatDate = (dateString: string) => {
           >
             Zobacz wszystkie artykuły
           </NuxtLink>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

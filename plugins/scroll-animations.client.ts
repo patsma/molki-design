@@ -1,5 +1,6 @@
 // @ts-nocheck - Disable type checking for this file since it's client-only
 import { useNuxtApp } from '#app';
+import { useLoaderStore } from '~/stores/loaderStore';
 import type { Directive } from 'vue';
 
 // Animation preset types
@@ -56,7 +57,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   if (process.server) return;
 
   const { $gsap, $SplitText } = useNuxtApp();
+  const loaderStore = useLoaderStore();
   let ctx: gsap.Context | null = null;
+  let pendingAnimations: Function[] = [];
+  let isAnimationsInitialized = false;
 
   // Animation presets
   const presets: Record<AnimationType, AnimationPreset> = {
@@ -132,7 +136,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     return Array.from(parent.children) as HTMLElement[];
   };
 
-  // Modify createAnimation function
+  // Modified createAnimation function to prepare but not play animations
   const createAnimation = (
     el: HTMLElement,
     type: AnimationType,
@@ -143,109 +147,137 @@ export default defineNuxtPlugin((nuxtApp) => {
     const preset = presets[type];
     if (!preset) return;
 
-    // Create timeline for sequences
-    const tl = $gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: options.start || 'top 80%',
-        markers: process.env.NODE_ENV === 'development' && options.markers,
-        toggleActions: 'play play play reverse',
-      },
-    });
-
-    // If this is part of a sequence, get all elements to animate
-    if (options.sequence) {
-      const group = getSequenceGroup(el);
-      const sequenceDelay = options.sequenceDelay || 0.3;
-      const initialDelay = options.delay || 0;
-
-      group.forEach((element, index) => {
-        // Set initial state
-        $gsap.set(element, preset.from);
-
-        // Add to timeline with proper position
-        if (index === 0) {
-          // First element starts at beginning plus any initial delay
-          tl.to(
-            element,
-            {
-              ...preset.to,
-              duration: options.duration || preset.to.duration || 0.8,
-              delay: initialDelay,
-            },
-            0
-          );
-        } else {
-          // Subsequent elements are positioned relative to previous ones
-          tl.to(
-            element,
-            {
-              ...preset.to,
-              duration: options.duration || preset.to.duration || 0.8,
-            },
-            `<+=${sequenceDelay}`
-          );
-        }
+    // Set initial state for elements without starting animations
+    const prepareAnimation = () => {
+      // Create timeline for sequences
+      const tl = $gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: options.start || 'top 80%',
+          markers: process.env.NODE_ENV === 'development' && options.markers,
+          toggleActions: 'play play play reverse',
+        },
+        paused: true, // Start paused
       });
 
-      return tl;
-    }
+      // If this is part of a sequence, get all elements to animate
+      if (options.sequence) {
+        const group = getSequenceGroup(el);
+        const sequenceDelay = options.sequenceDelay || 0.3;
+        const initialDelay = options.delay || 0;
 
-    // Handle text splitting
-    if (preset.split && $SplitText) {
-      const splitType = options.type || 'chars';
-      const split = new $SplitText(el, {
-        type: splitType,
-        linesClass: 'split-line',
-        charsClass: 'split-char',
-        wordsClass: 'split-word',
-      });
+        group.forEach((element, index) => {
+          // Set initial state
+          $gsap.set(element, preset.from);
 
-      const elements = split[options.type || 'chars'];
-      $gsap.set(elements, preset.from);
+          // Add to timeline with proper position
+          if (index === 0) {
+            // First element starts at beginning plus any initial delay
+            tl.to(
+              element,
+              {
+                ...preset.to,
+                duration: options.duration || preset.to.duration || 0.8,
+                delay: initialDelay,
+              },
+              0
+            );
+          } else {
+            // Subsequent elements are positioned relative to previous ones
+            tl.to(
+              element,
+              {
+                ...preset.to,
+                duration: options.duration || preset.to.duration || 0.8,
+              },
+              `<+=${sequenceDelay}`
+            );
+          }
+        });
 
-      tl.to(elements, {
+        return tl;
+      }
+
+      // Handle text splitting
+      if (preset.split && $SplitText) {
+        const splitType = options.type || 'chars';
+        const split = new $SplitText(el, {
+          type: splitType,
+          linesClass: 'split-line',
+          charsClass: 'split-char',
+          wordsClass: 'split-word',
+        });
+
+        const elements = split[options.type || 'chars'];
+        $gsap.set(elements, preset.from);
+
+        tl.to(elements, {
+          ...preset.to,
+          stagger: options.stagger || 0.02,
+          delay: options.delay || 0,
+          duration: options.duration || preset.to.duration || 0.8,
+        });
+
+        return tl;
+      }
+
+      // Handle stagger animations
+      if (preset.stagger) {
+        const children = el.children;
+        $gsap.set(children, preset.from);
+
+        tl.to(children, {
+          ...preset.to,
+          stagger: options.stagger || 0.1,
+          delay: options.delay || 0,
+          duration: options.duration || preset.to.duration || 0.8,
+        });
+
+        return tl;
+      }
+
+      // Regular animation
+      $gsap.set(el, preset.from);
+      tl.to(el, {
         ...preset.to,
-        stagger: options.stagger || 0.02,
         delay: options.delay || 0,
         duration: options.duration || preset.to.duration || 0.8,
       });
 
       return tl;
-    }
+    };
 
-    // Handle stagger animations
-    if (preset.stagger) {
-      const children = el.children;
-      $gsap.set(children, preset.from);
+    // Prepare the animation timeline
+    const tl = prepareAnimation();
 
-      tl.to(children, {
-        ...preset.to,
-        stagger: options.stagger || 0.1,
-        delay: options.delay || 0,
-        duration: options.duration || preset.to.duration || 0.8,
+    // Store the animation to be played when everything is loaded
+    if (tl) {
+      pendingAnimations.push(() => {
+        tl.scrollTrigger.enable();
+        tl.play();
       });
-
-      return tl;
     }
-
-    // Regular animation
-    $gsap.set(el, preset.from);
-    tl.to(el, {
-      ...preset.to,
-      delay: options.delay || 0,
-      duration: options.duration || preset.to.duration || 0.8,
-    });
 
     return tl;
   };
 
-  // Handle page transitions
+  // Set up event listener for animation start
+  if (process.client) {
+    window.addEventListener('start-animations', () => {
+      // Play all pending animations
+      pendingAnimations.forEach((playFn) => playFn());
+    });
+  }
+
+  // Hook into Nuxt lifecycle events
   nuxtApp.hook('page:start', () => {
     if (ctx) {
       ctx.revert(); // This kills all animations and removes ScrollTriggers
       ctx = null;
     }
+    pendingAnimations = [];
+    isAnimationsInitialized = false;
+    loaderStore.show(); // Show loader on page navigation
   });
 
   nuxtApp.hook('page:finish', () => {
@@ -253,6 +285,13 @@ export default defineNuxtPlugin((nuxtApp) => {
       top: 0,
       behavior: 'instant',
     });
+
+    // Let the system know animations are ready after a short delay
+    // to ensure all animation elements are mounted
+    setTimeout(() => {
+      isAnimationsInitialized = true;
+      loaderStore.setAnimationsReady();
+    }, 100);
   });
 
   // Create the directive
@@ -315,6 +354,10 @@ export default defineNuxtPlugin((nuxtApp) => {
             ctx.revert();
             ctx = null;
           }
+          pendingAnimations = [];
+        },
+        isReady: () => {
+          loaderStore.setAnimationsReady();
         },
       },
     },

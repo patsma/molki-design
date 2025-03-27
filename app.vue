@@ -2,9 +2,6 @@
 import { useLoaderStore } from '~/stores/loaderStore';
 
 const loaderStore = useLoaderStore();
-const isAppMounted = ref(false);
-const isPageReady = ref(false);
-const areImagesLoaded = ref(false);
 
 // Add meta tags for OG Image
 useHead({
@@ -29,7 +26,7 @@ const checkImagesLoaded = () => {
 
     // If no images, mark as loaded
     if (totalImages === 0) {
-      areImagesLoaded.value = true;
+      loaderStore.setImagesLoaded();
       return;
     }
 
@@ -41,8 +38,7 @@ const checkImagesLoaded = () => {
         img.onload = () => {
           loadedImages++;
           if (loadedImages === totalImages) {
-            areImagesLoaded.value = true;
-            checkAllLoaded();
+            loaderStore.setImagesLoaded();
           }
         };
       }
@@ -50,39 +46,24 @@ const checkImagesLoaded = () => {
 
     // If all images were already loaded
     if (loadedImages === totalImages) {
-      areImagesLoaded.value = true;
-      checkAllLoaded();
+      loaderStore.setImagesLoaded();
     }
   }
 };
-
-// Function to check if everything is loaded
-const checkAllLoaded = () => {
-  if (isAppMounted.value && isPageReady.value && areImagesLoaded.value) {
-    setTimeout(() => {
-      loaderStore.hide();
-    }, 300);
-  }
-};
-
-// Watch for all conditions
-watch([isAppMounted, isPageReady, areImagesLoaded], () => {
-  checkAllLoaded();
-});
 
 // Nuxt hooks for loading states
 const nuxtApp = useNuxtApp();
 
 // App mounted hook
 nuxtApp.hook('app:mounted', () => {
-  isAppMounted.value = true;
+  loaderStore.setAppMounted();
   checkImagesLoaded(); // Check images after mount
 });
 
 // Page finish hook
-nuxtApp.hook('page:loading:end', () => {
-  console.log('page:loading:end');
-  isPageReady.value = true;
+nuxtApp.hook('page:finish', () => {
+  console.log('page:finish hook triggered');
+  loaderStore.setPageReady();
   checkImagesLoaded(); // Recheck images after page components are loaded
 });
 </script>

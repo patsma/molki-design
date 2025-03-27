@@ -28,7 +28,7 @@ const onLeave = (el: Element, done: () => void) => {
   $gsap.to(htmlEl, {
     opacity: 0,
     duration: 0.5,
-    ease: 'power2.inOut',
+    ease: 'sine.in',
     onComplete: done,
   });
 };

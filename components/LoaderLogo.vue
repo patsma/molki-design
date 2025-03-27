@@ -74,18 +74,37 @@
 
 <style scoped>
 .logo-wrapper {
-  animation: pulse 2s ease-in-out infinite;
+  /* Combined animations for smooth effect */
+  animation:
+    pulse 3s ease-in-out infinite,
+    glow 3s ease-in-out infinite;
+  /* Ensure smooth animations */
+  will-change: transform, filter;
 }
 
+/* Subtle scale animation */
 @keyframes pulse {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(0.95); /* More subtle scale */
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* Professional glow effect */
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
   }
 }
 </style>

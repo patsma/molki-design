@@ -29,8 +29,7 @@ I REMONTY "POD KLUCZ"
 Umów konsultację
 
 #heroImage
-  :::parallax-img{.w-full.h-full.object-cover}
-  ![Nice Apartment](/heroHome.jpg)
+  :::nuxt-img{src="/heroHome.jpg" class="w-full h-full object-cover" loading="eager" placeholder="blur"}
   :::
 ::
 

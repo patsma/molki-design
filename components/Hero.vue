@@ -9,10 +9,7 @@ defineProps<{
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
-      <div
-        v-scroll-anim:fadeIn="{ sequence: true, sequenceDelay: 0 }"
-        class="absolute w-full h-full inset-0 z-0 overflow-hidden"
-      >
+      <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
         <div class="absolute inset-0 bg-black/30 z-10"></div>
         <slot name="heroImage" mdc-unwrap="p">
           <!-- Default image -->
@@ -44,21 +41,14 @@ defineProps<{
 
             <h1
               class="h1-style font-semibold uppercase"
-              v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.2 }"
+              v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.3 }"
               v-if="$slots.title"
             >
               <slot name="title" mdc-unwrap="p" />
             </h1>
 
             <!-- Subtitle -->
-            <h2
-              class="h2-style font-normal uppercase"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
-              data-scroll-order="2"
-              v-if="$slots.subtitle"
-            >
+            <h2 class="h2-style font-normal uppercase" v-if="$slots.subtitle">
               <slot name="subtitle" mdc-unwrap="p" />
             </h2>
           </div>

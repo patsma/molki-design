@@ -18,25 +18,23 @@
         <!-- Content Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <!-- Image Column -->
-          <div class="aspect-square overflow-hidden" v-scroll-anim:fadeLeft="{ delay: 0.3 }">
-            <div>
-              <slot name="image" mdc-unwrap="p" />
-            </div>
+          <div class="aspect-square overflow-hidden" v-scroll-anim:fadeIn="{ delay: 0.3 }">
+            <slot name="image" mdc-unwrap="p" />
           </div>
 
           <!-- Content Column -->
           <div v-scroll-anim:fadeRight="{ delay: 0.5 }">
             <article class="prose prose-xl max-w-none">
-              <ContentRenderer
-                :value="{ body: $slots.content }"
-                v-scroll-anim:staggerUp="{ stagger: 0.1, delay: 0.6 }"
-              >
-                <template #empty>
-                  <div v-scroll-anim:staggerUp="{ stagger: 0.1, delay: 0.6 }">
-                    <slot name="content" mdc-unwrap="p" />
-                  </div>
-                </template>
-              </ContentRenderer>
+              <!-- Wrap ContentRenderer with a div -->
+              <div v-scroll-anim:staggerUp="{ stagger: 0.1, delay: 0.6 }">
+                <ContentRenderer :value="{ body: $slots.content }">
+                  <template #empty>
+                    <div v-scroll-anim:staggerUp="{ stagger: 0.1, delay: 0.6 }">
+                      <slot name="content" mdc-unwrap="p" />
+                    </div>
+                  </template>
+                </ContentRenderer>
+              </div>
             </article>
           </div>
         </div>

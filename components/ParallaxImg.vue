@@ -94,7 +94,7 @@ onUnmounted(() => {
 
   .parallax-content {
     position: absolute;
-    top: 10%; // Add extra space for parallax movement
+    top: 0; // Add extra space for parallax movement
     left: 0;
     width: 100%;
     height: 140%; // Add extra height to prevent gaps

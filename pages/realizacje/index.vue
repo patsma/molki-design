@@ -80,6 +80,7 @@ const needsHeaderSpacing = computed(() => {
     <SquareGrid contentType="projects" orderBy="number" orderDirection="ASC">
       <template #item="{ item }">
         <SquareGridItem
+          v-scroll-anim:staggerUp="{ sequence: true, delay: 0.5 }"
           :key="item.id"
           :to="`/realizacje/${item.slug}`"
           :number="item.number"

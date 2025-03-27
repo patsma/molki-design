@@ -103,10 +103,7 @@ defineSlots<{
           <div
             v-if="$slots.infoText"
             class="mt-12 w-full text-sm text-neutral-600 mx-auto"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-            data-scroll-delay="0.2"
+            v-scroll-anim:fadeUp
           >
             <slot name="infoText" mdc-unwrap="p" />
           </div>

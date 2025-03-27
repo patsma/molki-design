@@ -61,7 +61,7 @@ const checkAllLoaded = () => {
   if (isAppMounted.value && isPageReady.value && areImagesLoaded.value) {
     setTimeout(() => {
       loaderStore.hide();
-    }, 200);
+    }, 300);
   }
 };
 

@@ -41,7 +41,7 @@ defineProps<{
 
             <h1
               class="h1-style font-semibold uppercase"
-              v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.3 }"
+              v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.4 }"
               v-if="$slots.title"
             >
               <slot name="title" mdc-unwrap="p" />

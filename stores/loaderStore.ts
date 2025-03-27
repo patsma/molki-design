@@ -3,23 +3,20 @@ import { defineStore } from 'pinia';
 /**
  * Store for managing the global loader state
  * Used to show/hide the loading indicator when navigating between pages
- * or during initial application load
  */
 export const useLoaderStore = defineStore('loader', {
   state: () => ({
     isActive: true,
-    appMounted: false,
-    pageReady: false,
     imagesLoaded: false,
-    animationsReady: false,
+    contentReady: false,
   }),
 
   getters: {
     /**
-     * Check if everything is loaded and ready
+     * Check if everything is ready to hide the loader
      */
-    isEverythingReady: (state) => {
-      return state.appMounted && state.pageReady && state.imagesLoaded && state.animationsReady;
+    isReadyToHide: (state) => {
+      return state.imagesLoaded && state.contentReady;
     },
   },
 
@@ -39,49 +36,38 @@ export const useLoaderStore = defineStore('loader', {
     },
 
     /**
-     * Set app as mounted
+     * Reset the loader state for page transitions
      */
-    setAppMounted() {
-      this.appMounted = true;
-      this.checkAllLoaded();
+    reset() {
+      this.imagesLoaded = false;
+      this.contentReady = false;
+      this.isActive = true;
     },
 
     /**
-     * Set page as ready
-     */
-    setPageReady() {
-      this.pageReady = true;
-      this.checkAllLoaded();
-    },
-
-    /**
-     * Set images as loaded
+     * Mark images as loaded
      */
     setImagesLoaded() {
       this.imagesLoaded = true;
-      this.checkAllLoaded();
+      this.checkReady();
     },
 
     /**
-     * Set animations as ready
+     * Mark content as ready
      */
-    setAnimationsReady() {
-      this.animationsReady = true;
-      this.checkAllLoaded();
+    setContentReady() {
+      this.contentReady = true;
+      this.checkReady();
     },
 
     /**
-     * Check if everything is loaded and hide the loader if it is
+     * Check if everything is ready and hide loader if so
      */
-    checkAllLoaded() {
-      if (this.isEverythingReady) {
+    checkReady() {
+      if (this.isReadyToHide) {
         setTimeout(() => {
           this.hide();
-          // Emit a custom event to trigger animations
-          if (process.client) {
-            window.dispatchEvent(new Event('start-animations'));
-          }
-        }, 300);
+        }, 200);
       }
     },
   },

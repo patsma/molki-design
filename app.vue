@@ -2,22 +2,18 @@
 import { useLoaderStore } from '~/stores/loaderStore';
 
 const loaderStore = useLoaderStore();
+const nuxtApp = useNuxtApp();
+const { $animations } = useNuxtApp();
 
-// Add meta tags for OG Image
+// Add meta tags
 useHead({
   meta: [
-    {
-      property: 'og:site_name',
-      content: 'Molki Design',
-    },
-    {
-      name: 'twitter:card',
-      content: 'summary_large_image',
-    },
+    { property: 'og:site_name', content: 'Molki Design' },
+    { name: 'twitter:card', content: 'summary_large_image' },
   ],
 });
 
-// Function to check if all images are loaded
+// Simple image loading check
 const checkImagesLoaded = () => {
   if (process.client) {
     const images = document.getElementsByTagName('img');
@@ -41,6 +37,13 @@ const checkImagesLoaded = () => {
             loaderStore.setImagesLoaded();
           }
         };
+        // Handle image load errors
+        img.onerror = () => {
+          loadedImages++;
+          if (loadedImages === totalImages) {
+            loaderStore.setImagesLoaded();
+          }
+        };
       }
     });
 
@@ -51,20 +54,38 @@ const checkImagesLoaded = () => {
   }
 };
 
-// Nuxt hooks for loading states
-const nuxtApp = useNuxtApp();
+// ============= HOOKS =============
+
+// Add router navigation guards to show loader immediately
+const router = useRouter();
+router.beforeEach((to, from, next) => {
+  loaderStore.reset();
+  next();
+});
+
+// When animations are prepared, set content as ready
+nuxtApp.hook('animations:prepared', () => {
+  loaderStore.setContentReady();
+});
+
+// When loader disappears, play animations
+watch(
+  () => loaderStore.isActive,
+  (isActive) => {
+    if (!isActive && $animations && $animations.isPrepared()) {
+      $animations.play();
+    }
+  }
+);
 
 // App mounted hook
 nuxtApp.hook('app:mounted', () => {
-  loaderStore.setAppMounted();
-  checkImagesLoaded(); // Check images after mount
+  checkImagesLoaded();
 });
 
 // Page finish hook
 nuxtApp.hook('page:finish', () => {
-  console.log('page:finish hook triggered');
-  loaderStore.setPageReady();
-  checkImagesLoaded(); // Recheck images after page components are loaded
+  checkImagesLoaded();
 });
 </script>
 

@@ -1,166 +1,168 @@
 // @ts-nocheck - Disable type checking for this file since it's client-only
 import { useNuxtApp } from '#app';
-import { useLoaderStore } from '~/stores/loaderStore';
 import type { Directive } from 'vue';
 
-// Animation preset types
-type AnimationType =
-  | 'fadeIn'
-  | 'fadeUp'
-  | 'fadeDown'
-  | 'fadeLeft'
-  | 'fadeRight'
-  | 'scale'
-  | 'splitText'
-  | 'splitWords'
-  | 'staggerUp'
-  | 'staggerLeft'
-  | 'staggerRight'
-  | 'staggerScale'
-  | 'drawSVG';
-
-interface AnimationPreset {
-  from: gsap.TweenVars;
-  to: gsap.TweenVars;
-  split?: boolean;
-  stagger?: boolean;
-}
-
-interface AnimationOptions {
-  delay?: number;
-  duration?: number;
-  stagger?: number | gsap.StaggerVars;
-  type?: 'chars' | 'words' | 'lines';
-  ease?: string;
-  start?: string;
-  end?: string;
-  markers?: boolean;
-  onComplete?: () => void;
-  onEnter?: () => void;
-  onLeave?: () => void;
-  sequence?: boolean;
-  sequenceDelay?: number;
-  order?: number;
-}
-
-/**
- * Vue directive for scroll animations
- * Use v-scroll-anim on any element to add scroll-triggered animations
- *
- * Examples:
- * <div v-scroll-anim="'fadeUp'">Content</div>
- * <div v-scroll-anim:fadeLeft="{ delay: 0.2 }">Content</div>
- * <div v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02 }">Animated Text</div>
- */
 export default defineNuxtPlugin((nuxtApp) => {
-  // Client-side guard at plugin level
+  // Client-side guard
   if (process.server) return;
 
   const { $gsap, $SplitText } = useNuxtApp();
-  const loaderStore = useLoaderStore();
-  let ctx: gsap.Context | null = null;
-  let pendingAnimations: Function[] = [];
-  let isAnimationsInitialized = false;
+  let ctx = null;
+  let animations = [];
+  let isReady = false;
 
-  // Animation presets
-  const presets: Record<AnimationType, AnimationPreset> = {
-    fadeIn: {
-      from: { autoAlpha: 0 },
-      to: { autoAlpha: 1, duration: 0.8, ease: 'power2.out' },
-    },
-    fadeUp: {
-      from: { autoAlpha: 0, y: 30 },
-      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-    },
-    fadeDown: {
-      from: { autoAlpha: 0, y: -30 },
-      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-    },
-    fadeLeft: {
-      from: { autoAlpha: 0, x: -30 },
-      to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
-    },
-    fadeRight: {
-      from: { autoAlpha: 0, x: 30 },
-      to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
-    },
-    scale: {
-      from: { autoAlpha: 0, scale: 0.8 },
-      to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
-    },
-    scaleX: {
-      from: { autoAlpha: 0, scaleX: 0, transformOrigin: 'center center' },
-      to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
-    },
-    // Stagger variants
-    staggerUp: {
-      from: { autoAlpha: 0, y: 30 },
-      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-      stagger: true,
-    },
-    staggerLeft: {
-      from: { autoAlpha: 0, x: -30 },
-      to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
-      stagger: true,
-    },
-    staggerRight: {
-      from: { autoAlpha: 0, x: 30 },
-      to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
-      stagger: true,
-    },
-    staggerScale: {
-      from: { autoAlpha: 0, scale: 0.8 },
-      to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
-      stagger: true,
-    },
-    splitText: {
-      from: { autoAlpha: 0, y: 20 },
-      to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-      split: true,
-    },
-    splitWords: {
-      from: { autoAlpha: 0, y: 30, rotateX: -45 },
-      to: { autoAlpha: 1, y: 0, rotateX: 0, duration: 0.8, ease: 'power2.out' },
-      split: true,
-    },
-    drawSVG: {
-      from: { drawSVG: 0 },
-      to: { drawSVG: '100%', duration: 2.5, ease: 'power2.inOut' },
-    },
+  // Create a state that can be accessed globally
+  const state = reactive({
+    prepared: false,
+    playing: false,
+  });
+
+  // Function to prepare all animations (set initial states)
+  const prepareAnimations = () => {
+    animations.forEach((anim) => {
+      // Set initial states but don't play yet
+      anim.prepare();
+    });
+    state.prepared = true;
+
+    // Emit event that animations are prepared
+    nuxtApp.callHook('animations:prepared');
   };
 
-  // First, let's create a helper to group animations by their parent
-  const getSequenceGroup = (el: HTMLElement): HTMLElement[] => {
+  // Function to play all animations
+  const playAnimations = () => {
+    animations.forEach((anim) => {
+      anim.play();
+    });
+    state.playing = true;
+
+    // Emit event that animations are playing
+    nuxtApp.callHook('animations:playing');
+  };
+
+  // Helper to group animations by their parent
+  const getSequenceGroup = (el) => {
     const parent = el.parentElement;
     if (!parent) return [el];
-    return Array.from(parent.children) as HTMLElement[];
+    return Array.from(parent.children);
   };
 
-  // Modified createAnimation function to prepare but not play animations
-  const createAnimation = (
-    el: HTMLElement,
-    type: AnimationType,
-    options: AnimationOptions = {}
-  ) => {
-    if (!process.client) return;
+  // Simple animation class to handle different animation types
+  class Animation {
+    constructor(el, type, options = {}) {
+      this.el = el;
+      this.type = type;
+      this.options = options;
+      this.tl = null;
+      this.split = null;
+    }
 
-    const preset = presets[type];
-    if (!preset) return;
+    // Set initial state without playing
+    prepare() {
+      const { el, type, options } = this;
 
-    // Set initial state for elements without starting animations
-    const prepareAnimation = () => {
-      // Create timeline for sequences
-      const tl = $gsap.timeline({
+      // Create comprehensive animation presets
+      const presets = {
+        // Basic fade animations
+        fadeIn: {
+          from: { autoAlpha: 0 },
+          to: { autoAlpha: 1, duration: 0.8, ease: 'power2.out' },
+        },
+        fadeUp: {
+          from: { autoAlpha: 0, y: 30 },
+          to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+        },
+        fadeDown: {
+          from: { autoAlpha: 0, y: -30 },
+          to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+        },
+        fadeLeft: {
+          from: { autoAlpha: 0, x: -30 },
+          to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+        },
+        fadeRight: {
+          from: { autoAlpha: 0, x: 30 },
+          to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+        },
+
+        // Scale animations
+        scale: {
+          from: { autoAlpha: 0, scale: 0.8 },
+          to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
+        },
+        scaleX: {
+          from: { autoAlpha: 0, scaleX: 0, transformOrigin: 'center center' },
+          to: { autoAlpha: 1, scaleX: 1, duration: 0.8, ease: 'power2.out' },
+        },
+
+        // Text split animations
+        splitText: {
+          from: { autoAlpha: 0, y: 20 },
+          to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+          split: true,
+          splitType: 'chars',
+        },
+        splitWords: {
+          from: { autoAlpha: 0, y: 30, rotateX: -45 },
+          to: { autoAlpha: 1, y: 0, rotateX: 0, duration: 0.8, ease: 'power2.out' },
+          split: true,
+          splitType: 'words',
+        },
+
+        // Stagger animations
+        staggerUp: {
+          from: { autoAlpha: 0, y: 30 },
+          to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+          stagger: true,
+          staggerAmount: 0.1,
+        },
+        staggerDown: {
+          from: { autoAlpha: 0, y: -30 },
+          to: { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+          stagger: true,
+          staggerAmount: 0.1,
+        },
+        staggerLeft: {
+          from: { autoAlpha: 0, x: -30 },
+          to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+          stagger: true,
+          staggerAmount: 0.1,
+        },
+        staggerRight: {
+          from: { autoAlpha: 0, x: 30 },
+          to: { autoAlpha: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+          stagger: true,
+          staggerAmount: 0.1,
+        },
+        staggerScale: {
+          from: { autoAlpha: 0, scale: 0.8 },
+          to: { autoAlpha: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
+          stagger: true,
+          staggerAmount: 0.1,
+        },
+
+        // SVG animations
+        drawSVG: {
+          from: { drawSVG: 0 },
+          to: { drawSVG: '100%', duration: 2.5, ease: 'power2.inOut' },
+        },
+      };
+
+      // Get preset or use default
+      const preset = presets[type] || presets.fadeUp;
+
+      // Create timeline but paused
+      this.tl = $gsap.timeline({
+        paused: true,
         scrollTrigger: {
           trigger: el,
           start: options.start || 'top 80%',
           markers: process.env.NODE_ENV === 'development' && options.markers,
-          toggleActions: 'play play play reverse',
+          toggleActions: 'play none none none',
         },
-        paused: true, // Start paused
       });
 
-      // If this is part of a sequence, get all elements to animate
+      // Handle sequence animations
       if (options.sequence) {
         const group = getSequenceGroup(el);
         const sequenceDelay = options.sequenceDelay || 0.3;
@@ -170,10 +172,9 @@ export default defineNuxtPlugin((nuxtApp) => {
           // Set initial state
           $gsap.set(element, preset.from);
 
-          // Add to timeline with proper position
+          // Add to timeline
           if (index === 0) {
-            // First element starts at beginning plus any initial delay
-            tl.to(
+            this.tl.to(
               element,
               {
                 ...preset.to,
@@ -183,8 +184,7 @@ export default defineNuxtPlugin((nuxtApp) => {
               0
             );
           } else {
-            // Subsequent elements are positioned relative to previous ones
-            tl.to(
+            this.tl.to(
               element,
               {
                 ...preset.to,
@@ -194,170 +194,201 @@ export default defineNuxtPlugin((nuxtApp) => {
             );
           }
         });
-
-        return tl;
       }
-
       // Handle text splitting
-      if (preset.split && $SplitText) {
-        const splitType = options.type || 'chars';
-        const split = new $SplitText(el, {
+      else if (preset.split && $SplitText) {
+        const splitType = options.type || preset.splitType || 'chars';
+        this.split = new $SplitText(el, {
           type: splitType,
           linesClass: 'split-line',
           charsClass: 'split-char',
           wordsClass: 'split-word',
         });
 
-        const elements = split[options.type || 'chars'];
+        const elements = this.split[splitType];
         $gsap.set(elements, preset.from);
 
-        tl.to(elements, {
+        this.tl.to(elements, {
           ...preset.to,
           stagger: options.stagger || 0.02,
           delay: options.delay || 0,
           duration: options.duration || preset.to.duration || 0.8,
         });
-
-        return tl;
       }
-
       // Handle stagger animations
-      if (preset.stagger) {
+      else if (preset.stagger) {
         const children = el.children;
-        $gsap.set(children, preset.from);
+        if (children.length > 0) {
+          $gsap.set(children, preset.from);
 
-        tl.to(children, {
+          this.tl.to(children, {
+            ...preset.to,
+            stagger: options.stagger || preset.staggerAmount || 0.1,
+            delay: options.delay || 0,
+            duration: options.duration || preset.to.duration || 0.8,
+          });
+        } else {
+          // Fallback to regular animation if no children
+          $gsap.set(el, preset.from);
+          this.tl.to(el, {
+            ...preset.to,
+            delay: options.delay || 0,
+            duration: options.duration || preset.to.duration || 0.8,
+          });
+        }
+      }
+      // SVG specific animations
+      else if (type === 'drawSVG' && $gsap.getProperty(el, 'drawSVG') !== undefined) {
+        $gsap.set(el, preset.from);
+        this.tl.to(el, {
           ...preset.to,
-          stagger: options.stagger || 0.1,
+          delay: options.delay || 0,
+          duration: options.duration || preset.to.duration || 2.5,
+        });
+      }
+      // Regular animation
+      else {
+        $gsap.set(el, preset.from);
+        this.tl.to(el, {
+          ...preset.to,
           delay: options.delay || 0,
           duration: options.duration || preset.to.duration || 0.8,
         });
-
-        return tl;
       }
 
-      // Regular animation
-      $gsap.set(el, preset.from);
-      tl.to(el, {
-        ...preset.to,
-        delay: options.delay || 0,
-        duration: options.duration || preset.to.duration || 0.8,
-      });
+      // Disable scrolltrigger until play
+      if (this.tl.scrollTrigger) {
+        this.tl.scrollTrigger.disable();
+      }
 
-      return tl;
-    };
-
-    // Prepare the animation timeline
-    const tl = prepareAnimation();
-
-    // Store the animation to be played when everything is loaded
-    if (tl) {
-      pendingAnimations.push(() => {
-        tl.scrollTrigger.enable();
-        tl.play();
-      });
+      return this;
     }
 
-    return tl;
-  };
+    // Play the animation
+    play() {
+      if (this.tl && this.tl.scrollTrigger) {
+        this.tl.scrollTrigger.enable();
+      }
+    }
 
-  // Set up event listener for animation start
-  if (process.client) {
-    window.addEventListener('start-animations', () => {
-      // Play all pending animations
-      pendingAnimations.forEach((playFn) => playFn());
-    });
+    // Clean up
+    destroy() {
+      if (this.split) {
+        this.split.revert();
+      }
+
+      if (this.tl) {
+        this.tl.kill();
+      }
+    }
   }
 
-  // Hook into Nuxt lifecycle events
-  nuxtApp.hook('page:start', () => {
-    if (ctx) {
-      ctx.revert(); // This kills all animations and removes ScrollTriggers
-      ctx = null;
-    }
-    pendingAnimations = [];
-    isAnimationsInitialized = false;
-    loaderStore.show(); // Show loader on page navigation
-  });
-
-  nuxtApp.hook('page:finish', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant',
-    });
-
-    // Let the system know animations are ready after a short delay
-    // to ensure all animation elements are mounted
-    setTimeout(() => {
-      isAnimationsInitialized = true;
-      loaderStore.setAnimationsReady();
-    }, 100);
-  });
-
-  // Create the directive
-  const scrollAnimDirective: Directive<HTMLElement, string | AnimationOptions> = {
+  // Create directive
+  const scrollAnimDirective = {
     mounted(el, binding) {
-      // Double client-side check
       if (!process.client) return;
 
       try {
-        // Create a new context if needed
+        // Create context if needed
         if (!ctx) {
           ctx = $gsap.context(() => {});
         }
 
         // Get animation type and options
-        let type: AnimationType = 'fadeUp';
-        let options: AnimationOptions = {};
+        let type = 'fadeUp';
+        let options = {};
 
         if (typeof binding.value === 'string') {
-          type = binding.value as AnimationType;
+          type = binding.value;
         } else if (typeof binding.value === 'object') {
           options = binding.value;
-          type = (binding.arg as AnimationType) || 'fadeUp';
+          type = binding.arg || 'fadeUp';
         } else if (binding.arg) {
-          type = binding.arg as AnimationType;
+          type = binding.arg;
         }
 
-        // Add animation to context
-        ctx.add(() => createAnimation(el, type, options));
+        // Create animation and add to collection
+        const animation = new Animation(el, type, options);
+        animations.push(animation);
+
+        // If animations are already playing, prepare and play this one immediately
+        if (state.playing) {
+          animation.prepare().play();
+        }
       } catch (error) {
-        console.warn('[v-scroll-anim] Error creating animation:', error);
+        console.warn('[v-scroll-anim] Error:', error);
       }
     },
-    // Add unmounted hook for cleanup
+
+    // Clean up on unmount
     unmounted(el) {
-      if (!process.client || !ctx) return;
-      // We don't need to target specific elements - when component unmounts
-      // its animations will be automatically removed with the context
+      if (!process.client) return;
+
+      // No need to search for specific animation - will be handled by global cleanup
     },
   };
 
-  // Register directive on client only
+  // Register directive
   nuxtApp.vueApp.directive('scroll-anim', scrollAnimDirective);
 
-  // Provide animation utilities
+  // Clear on page navigation
+  nuxtApp.hook('page:start', () => {
+    if (ctx) {
+      // Clean up splits
+      animations.forEach((anim) => {
+        if (anim.destroy) {
+          anim.destroy();
+        }
+      });
+
+      ctx.revert();
+      ctx = null;
+    }
+    animations = [];
+    state.prepared = false;
+    state.playing = false;
+  });
+
+  // Prepare animations when page is ready
+  nuxtApp.hook('page:finish', () => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Wait a bit for components to be mounted
+    setTimeout(() => {
+      prepareAnimations();
+    }, 50);
+  });
+
+  // Provide methods globally
   return {
     provide: {
-      scrollAnimations: {
-        presets,
-        create: (el: HTMLElement, type: AnimationType, options?: AnimationOptions) => {
-          if (!process.client) return;
-          if (!ctx) {
-            ctx = $gsap.context(() => {});
-          }
-          return ctx.add(() => createAnimation(el, type, options));
-        },
-        clear: () => {
-          if (!process.client) return;
-          if (ctx) {
-            ctx.revert();
-            ctx = null;
-          }
-          pendingAnimations = [];
-        },
-        isReady: () => {
-          loaderStore.setAnimationsReady();
+      animations: {
+        // Check if animations are prepared
+        isPrepared: () => state.prepared,
+
+        // Check if animations are playing
+        isPlaying: () => state.playing,
+
+        // Manually prepare all animations
+        prepare: prepareAnimations,
+
+        // Manually play all animations
+        play: playAnimations,
+
+        // Reset animation state
+        reset: () => {
+          animations.forEach((anim) => {
+            if (anim.tl && anim.tl.scrollTrigger) {
+              anim.tl.scrollTrigger.disable();
+            }
+
+            if (anim.destroy) {
+              anim.destroy();
+            }
+          });
+          state.prepared = false;
+          state.playing = false;
         },
       },
     },

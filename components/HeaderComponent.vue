@@ -46,8 +46,9 @@ onUnmounted(() => {
 <template>
   <header class="content-grid">
     <nav
+      v-scroll-anim:fadeIn
       ref="headerRef"
-      class="full-width grid absolute nav h-16 md:h-24 z-50 top-0 py-1 md:py-4 w-full bg-white"
+      class="opacity-0 full-width grid absolute nav h-16 md:h-24 z-50 top-0 py-1 md:py-4 w-full bg-white"
     >
       <div class="nav__wrapper content-grid grid grid-flow-col items-center justify-between">
         <div class="breakout1 items-center md:justify-between grid grid-cols-[1fr_auto_1fr]">
@@ -60,13 +61,17 @@ onUnmounted(() => {
               }
             "
             aria-label="Toggle Menu"
+            v-scroll-anim:fadeLeft="{ delay: 0.2 }"
           >
             <span></span>
             <span></span>
             <span></span>
           </button>
           <!-- Logo -->
-          <div class="nav__logo w-32 justify-self-center md:justify-self-start grid relative z-50">
+          <div
+            class="nav__logo w-32 justify-self-center md:justify-self-start grid relative z-50"
+            v-scroll-anim:fadeIn="{ delay: 0.3 }"
+          >
             <NuxtLink to="/" class="inline-block" aria-label="Molki - Home">
               <Logo />
             </NuxtLink>
@@ -74,15 +79,23 @@ onUnmounted(() => {
 
           <!-- Desktop Menu -->
           <div class="hidden xl:grid">
-            <MainMenu :is-mobile="false" />
+            <MainMenu :is-mobile="false" v-scroll-anim:fadeIn="{ sequence: true, delay: 0.4 }" />
             <div
               class="w-full h-[0.1rem] relative z-50 bg-gradient-to-r from-[#B76246] via-[#D0835F] to-[#A04225]"
+              v-scroll-anim:scaleX="{
+                delay: 0.5,
+                from: 'center',
+                duration: 0.8,
+              }"
             ></div>
           </div>
           <!-- Mobile Menu Button -->
 
           <!-- CTA Button (Desktop) -->
-          <div class="hidden xl:flex items-center justify-end gap-6">
+          <div
+            class="hidden xl:flex items-center justify-end gap-6"
+            v-scroll-anim:fadeIn="{ delay: 0.6 }"
+          >
             <!-- Social Media Links -->
             <div class="grid grid-flow-col gap-3 items-center">
               <NuxtLink
@@ -113,8 +126,9 @@ onUnmounted(() => {
             <!-- CTA Button -->
             <BaseButton
               href="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
-              >Umów Konstultacje</BaseButton
             >
+              Umów Konstultacje
+            </BaseButton>
           </div>
         </div>
       </div>
@@ -123,8 +137,17 @@ onUnmounted(() => {
         class="mobile-menu content-grid top-0 absolute w-full h-screen inset-0 bg-white z-30 opacity-0"
       >
         <div class="h-full pt-24 breakout1 overflow-y-auto">
-          <MainMenu :is-mobile="true" />
-          <div class="mt-8 pb-8 mobile-menu-button">
+          <MainMenu
+            :is-mobile="true"
+            v-scroll-anim:staggerUp="{
+              stagger: {
+                amount: 0.1,
+                from: 'start',
+              },
+              delay: 0.2,
+            }"
+          />
+          <div class="mt-8 pb-8 mobile-menu-button" v-scroll-anim:fadeUp="{ delay: 0.4 }">
             <BaseButton
               href="https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271"
               full-width
@@ -133,7 +156,16 @@ onUnmounted(() => {
             </BaseButton>
 
             <!-- Mobile Social Media Links -->
-            <div class="grid grid-flow-col gap-6 justify-center mt-8">
+            <div
+              class="grid grid-flow-col gap-6 justify-center mt-8"
+              v-scroll-anim:staggerUp="{
+                stagger: {
+                  amount: 0.1,
+                  from: 'start',
+                },
+                delay: 0.5,
+              }"
+            >
               <NuxtLink
                 :to="
                   appConfig.contactInfo?.socialLinks?.instagram ||

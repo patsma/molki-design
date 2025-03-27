@@ -47,15 +47,4 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style>
-html {
-  scroll-behavior: smooth;
-}
-
-/* Pa
-
-/* Cookie banner */
-.cookie-banner {
-  visibility: hidden;
-}
-</style>
+<style></style>

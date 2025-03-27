@@ -9,12 +9,11 @@ defineProps<{
     <div class="content-grid">
       <div class="breakout1">
         <!-- Title and Subtitle -->
-        <div
-          v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.2 }"
-          v-if="$slots.title"
-          class="text-center mb-16"
-        >
-          <h2 class="h2-style font-semibold text-primary mb-4">
+        <div v-if="$slots.title" class="text-center mb-16">
+          <h2
+            v-scroll-anim:fadeUp="{ sequence: true, sequenceDelay: 0.2 }"
+            class="h2-style font-semibold text-primary mb-4"
+          >
             <slot name="title" mdc-unwrap="p" />
           </h2>
           <p v-if="$slots.subtitle" class="text-xl md:text-2xl text-neutral-800">

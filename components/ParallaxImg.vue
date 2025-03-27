@@ -14,7 +14,7 @@ const props = withDefaults(
     speed?: number;
   }>(),
   {
-    speed: 0.15, // Default parallax speed (15% of scroll)
+    speed: 0.1, // Default parallax speed (15% of scroll)
   }
 );
 
@@ -94,10 +94,10 @@ onUnmounted(() => {
 
   .parallax-content {
     position: absolute;
-    top: -10%; // Add extra space for parallax movement
+    top: -5%; // Add extra space for parallax movement
     left: 0;
     width: 100%;
-    height: 140%; // Add extra height to prevent gaps
+    height: 125%; // Add extra height to prevent gaps
     will-change: transform; // Optimize for animations
 
     img {

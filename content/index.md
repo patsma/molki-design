@@ -29,7 +29,7 @@ I REMONTY "POD KLUCZ"
 Umów konsultację
 
 #heroImage
-  :::nuxt-img{src="/heroHome.jpg" class="w-full h-full object-cover" loading="eager" placeholder="blur"}
+  :::nuxt-img{src="/heroHome.jpg" class="w-full h-full object-cover" loading="eager" placeholder="blur" placeholder-blur="100"}
   :::
 ::
 

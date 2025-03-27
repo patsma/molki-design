@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative h-screen w-full">
+  <div v-scroll-anim:fadeUp="{ delay: 0.4 }" class="relative h-screen w-full">
     <!-- Slider Container -->
     <ClientOnly>
       <swiper-container

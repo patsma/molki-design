@@ -46,34 +46,20 @@ const props = withDefaults(
     </div>
 
     <!-- Text Box Section -->
-    <div
-      :class="['full-width-content relative', hasBackground ? 'bg-neutral-400' : 'bg-white']"
-      data-scroll-item
-      data-scroll-animation="fadeUp"
-      data-scroll-duration="1"
-      data-scroll-independent="true"
-      data-scroll-start="top bottom"
-    >
+    <div :class="['full-width-content relative', hasBackground ? 'bg-neutral-400' : 'bg-white']">
       <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
         <div class="breakout1">
           <!-- Title -->
           <h2
             v-if="$slots.title"
+            v-scroll-anim:fadeUp="{ sequence: true }"
             class="h2-style font-semibold text-primary mb-8"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
           >
             <slot name="title" mdc-unwrap="p" />
           </h2>
 
           <!-- Paragraphs -->
-          <div
-            class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-          >
+          <div class="space-y-4 text-xl md:text-2xl leading-relaxed text-neutral-800">
             <slot name="content" />
           </div>
         </div>

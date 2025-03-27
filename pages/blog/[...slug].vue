@@ -142,19 +142,30 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
         <!-- Blog Post Header -->
         <div class="grid grid-cols-1 gap-8 items-center pb-14">
           <div class="grid">
-            <div class="flex items-center gap-4 mb-4">
+            <div class="flex items-center gap-4 mb-4" v-scroll-anim:fadeDown="{ delay: 0.2 }">
               <span class="px-3 py-1 text-sm font-medium rounded-full bg-primary text-white">
                 {{ data.category }}
               </span>
               <span class="text-neutral-600">{{ formattedDate }}</span>
             </div>
-            <h1 class="h2-style text-primary mb-4">{{ data.title }}</h1>
-            <p v-if="data.excerpt" class="text-xl text-neutral-600">{{ data.excerpt }}</p>
+            <h1
+              class="h2-style text-primary mb-4"
+              v-scroll-anim:splitText="{ type: 'words', stagger: 0.05 }"
+            >
+              {{ data.title }}
+            </h1>
+            <p
+              v-if="data.excerpt"
+              class="text-xl text-neutral-600"
+              v-scroll-anim:fadeUp="{ delay: 0.3 }"
+            >
+              {{ data.excerpt }}
+            </p>
           </div>
         </div>
 
         <!-- Featured Image -->
-        <div class="mb-12">
+        <div class="mb-12" v-scroll-anim:scale="{ delay: 0.4 }">
           <div class="aspect-[21/9] overflow-hidden rounded-lg">
             <nuxt-img
               :src="data.cover"
@@ -167,14 +178,18 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
 
         <!-- Blog Content -->
         <div class="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12">
-          <div>
+          <div v-scroll-anim:fadeUp="{ delay: 0.5 }">
             <article class="prose prose-xl max-w-none">
               <ContentRenderer v-if="data.meta?.body" :value="data.meta.body" :excerpt="false" />
             </article>
           </div>
 
           <!-- Author Info if available -->
-          <div v-if="data.author" class="bg-neutral-50 p-6 rounded-lg h-fit">
+          <div
+            v-if="data.author"
+            class="bg-neutral-50 p-6 rounded-lg h-fit"
+            v-scroll-anim:fadeRight="{ delay: 0.6 }"
+          >
             <div class="flex items-center gap-4 mb-4">
               <div v-if="data.authorImage" class="w-16 h-16 rounded-full overflow-hidden">
                 <nuxt-img
@@ -194,8 +209,23 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
 
         <!-- Related Posts -->
         <div v-if="relatedPosts?.length" class="mt-16">
-          <h2 class="h3-style text-primary mb-8">Powiązane artykuły</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2
+            class="h3-style text-primary mb-8"
+            v-scroll-anim:splitText="{ type: 'words', stagger: 0.02, delay: 0.7 }"
+          >
+            Powiązane artykuły
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-6"
+            v-scroll-anim:staggerUp="{
+              stagger: {
+                amount: 0.4,
+                from: 'start',
+                grid: 'auto',
+              },
+              delay: 0.8,
+            }"
+          >
             <div
               v-for="relatedPost in relatedPosts"
               :key="relatedPost._id || relatedPost.id"

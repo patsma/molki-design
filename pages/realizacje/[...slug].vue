@@ -93,15 +93,28 @@ const ctaLink = computed(() => {
   <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
     <div class="content-grid py-32">
       <div class="breakout1">
-        <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center pb-14">
+        <!-- Project Header -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center pb-14"
+          v-scroll-anim:fadeUp="{ delay: 0.2 }"
+        >
           <div class="grid grid-flow-col justify-start gap-8">
-            <div class="text-6xl font-bold text-primary">{{ data.number }}</div>
+            <div class="text-6xl font-bold text-primary" v-scroll-anim:scale="{ delay: 0.3 }">
+              {{ data.number }}
+            </div>
             <div class="grid">
-              <h1 class="h3-style text-primary">{{ data.title }}</h1>
-              <div class="text-xl text-neutral-600">{{ data.location }} | {{ data.year }}</div>
+              <h1
+                class="h3-style text-primary"
+                v-scroll-anim:splitText="{ type: 'words', stagger: 0.05, delay: 0.4 }"
+              >
+                {{ data.title }}
+              </h1>
+              <div class="text-xl text-neutral-600" v-scroll-anim:fadeUp="{ delay: 0.5 }">
+                {{ data.location }} | {{ data.year }}
+              </div>
             </div>
           </div>
-          <div class="grid text-center">
+          <div class="grid text-center" v-scroll-anim:fadeLeft="{ delay: 0.6 }">
             <NuxtLink
               :to="ctaLink"
               class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
@@ -111,9 +124,18 @@ const ctaLink = computed(() => {
             </NuxtLink>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8">
+
+        <!-- Project Content -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8"
+          v-scroll-anim:fadeUp="{ delay: 0.7 }"
+        >
+          <!-- Image Slider -->
           <div class="grid">
-            <div class="aspect-video overflow-hidden rounded-lg">
+            <div
+              class="aspect-video overflow-hidden rounded-lg"
+              v-scroll-anim:scale="{ delay: 0.8 }"
+            >
               <ClientOnly>
                 <swiper-container
                   ref="swiperRef"
@@ -141,7 +163,9 @@ const ctaLink = computed(() => {
               </ClientOnly>
             </div>
           </div>
-          <div class="grid">
+
+          <!-- Project Description -->
+          <div class="grid" v-scroll-anim:fadeLeft="{ delay: 0.9 }">
             <article class="prose prose-xl max-w-none">
               <ContentRenderer
                 v-if="data?.meta?.body"

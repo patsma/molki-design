@@ -1,7 +1,7 @@
 <template>
   <div ref="container" class="parallax-wrapper" :style="{ '--parallax-speed': speed }">
     <div ref="content" class="parallax-content">
-      <slot />
+      <slot mdc-unwrap="p" />
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ const props = withDefaults(
     speed?: number;
   }>(),
   {
-    speed: 0.05, // Default parallax speed (15% of scroll)
+    speed: 0.15, // Default parallax speed (15% of scroll)
   }
 );
 
@@ -94,7 +94,7 @@ onUnmounted(() => {
 
   .parallax-content {
     position: absolute;
-    top: 0; // Add extra space for parallax movement
+    top: -10%; // Add extra space for parallax movement
     left: 0;
     width: 100%;
     height: 140%; // Add extra height to prevent gaps

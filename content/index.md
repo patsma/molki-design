@@ -29,7 +29,8 @@ I REMONTY "POD KLUCZ"
 Umów konsultację
 
 #heroImage
-  :::nuxt-img{src="/heroHome.jpg" class="w-full h-full object-cover" loading="eager" placeholder="blur" placeholder-blur="100"}
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Interior Design Services](/heroHome.jpg)
   :::
 ::
 

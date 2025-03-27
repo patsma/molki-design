@@ -10,6 +10,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
         <!-- Image Section -->
         <div
           class="grid relative min-h-[25vh] sm:min-h-[30vh] md:min-h-[50vh] lg:min-h-[65vh] overflow-hidden"
+          v-scroll-anim:fadeIn="{ duration: 1.2 }"
         >
           <div class="absolute bottom-0 -left-[10rem] overflow-hidden z-10 pointer-events-none">
             <HeroPath2 class="w-80" />
@@ -20,49 +21,30 @@ import FrameCorner from '~/components/FrameCorner.vue';
         <!-- Title Section -->
         <div data-scroll-section class="content-grid text-center relative z-10 pt-8 md:pt-12">
           <div class="breakout1">
-            <h2
-              v-if="$slots.title"
-              class="h2-style font-semibold text-primary"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
-              data-scroll-position="+=0.5"
-            >
-              <slot name="title" mdc-unwrap="p" />
-            </h2>
+            <ClientOnly>
+              <h2
+                v-if="$slots.title"
+                class="h2-style font-semibold text-primary"
+                v-scroll-anim:splitText="{ type: 'words', stagger: 0.05 }"
+              >
+                <slot name="title" mdc-unwrap="p" />
+              </h2>
+            </ClientOnly>
           </div>
         </div>
         <!-- Description Section -->
         <div class="content-grid relative z-10 py-12 md:py-16 bg-neutral-100">
           <div class="breakout1">
             <div class="relative">
-              <FrameCorner
-                data-scroll-item
-                data-scroll-animation="fadeUp"
-                data-scroll-duration="0.8"
-                data-scroll-independent="true"
-                data-scroll-start="top center"
-                position="top-left"
-              />
+              <FrameCorner v-scroll-anim:fadeUp="{ delay: 0.2 }" position="top-left" />
               <div
-                data-scroll-item
-                data-scroll-animation="fadeUp"
-                data-scroll-duration="1"
-                data-scroll-independent="true"
-                data-scroll-start="top bottom"
                 v-if="$slots.description"
                 class="space-y-6 px-8 py-12 text-xl md:text-2xl leading-relaxed text-neutral-800"
+                v-scroll-anim:fadeUp="{ delay: 0.4 }"
               >
                 <slot name="description" />
               </div>
-              <FrameCorner
-                data-scroll-item
-                data-scroll-animation="fadeUp"
-                data-scroll-duration="0.8"
-                data-scroll-independent="true"
-                data-scroll-start="top center"
-                position="bottom-right"
-              />
+              <FrameCorner v-scroll-anim:fadeUp="{ delay: 0.2 }" position="bottom-right" />
             </div>
           </div>
         </div>

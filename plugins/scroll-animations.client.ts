@@ -352,7 +352,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Prepare animations when page is ready
   nuxtApp.hook('page:finish', () => {
     // Scroll to top
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
     // Wait a bit for components to be mounted
     setTimeout(() => {

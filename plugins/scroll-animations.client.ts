@@ -158,7 +158,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           trigger: el,
           start: options.start || 'top 80%',
           markers: process.env.NODE_ENV === 'development' && options.markers,
-          toggleActions: 'play none none none',
+          toggleActions: 'play play play reverse',
         },
       });
 

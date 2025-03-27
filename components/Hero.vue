@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="full-width data-scroll-section relative min-h-[100vh] w-full" data-scroll-section>
+  <section class="full-width data-scroll-section relative min-h-[100vh] w-full">
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
@@ -28,9 +28,7 @@ defineProps<{
       </div>
 
       <!-- Content Container -->
-      <div
-        class="content-grid animation-sequence w-full relative z-10 grid min-h-screen text-neutral-100 pb-32"
-      >
+      <div class="content-grid w-full relative z-10 grid min-h-screen text-neutral-100 pb-32">
         <div
           class="breakout1 content-end justify-center items-center justify-items-center grid gap-8"
         >

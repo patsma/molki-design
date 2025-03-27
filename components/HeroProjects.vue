@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <!-- Hero Section -->
-  <section data-scroll-section class="full-width relative w-full overflow-hidden">
+  <section class="full-width relative w-full overflow-hidden">
     <!-- Hero Container -->
     <div class="relative w-full" :style="{ height: heroHeight || '80vh' }">
       <!-- Background image with overlay -->
@@ -40,14 +40,7 @@ defineProps<{
     </div>
 
     <!-- Features Section -->
-    <div
-      class="full-width-content bg-neutral-400 relative"
-      data-scroll-item
-      data-scroll-animation="fadeUp"
-      data-scroll-duration="1"
-      data-scroll-independent="true"
-      data-scroll-start="top bottom"
-    >
+    <div class="full-width-content bg-neutral-400 relative">
       <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
         <div class="breakout1">
           <!-- Title and Subtitle -->
@@ -55,27 +48,30 @@ defineProps<{
             <h2
               v-if="$slots.title"
               class="h2-style font-semibold text-primary mb-4"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
+              v-scroll-anim:splitText="{ type: 'words', stagger: 0.1 }"
             >
               <slot name="title" mdc-unwrap="p" />
             </h2>
             <p
               v-if="$slots.subtitle"
               class="text-xl md:text-2xl text-neutral-800"
-              data-scroll-item
-              data-scroll-animation="fadeUp"
-              data-scroll-duration="1"
+              v-scroll-anim:fadeUp="{ delay: 0.3 }"
             >
               <slot name="subtitle" mdc-unwrap="p" />
             </p>
           </div>
 
           <!-- Features Grid -->
+
           <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
             v-if="$slots.features"
+            v-scroll-anim:staggerUp="{
+              stagger: {
+                amount: 0.4,
+                from: 'center',
+              },
+            }"
           >
             <slot name="features">
               <!-- Default features -->

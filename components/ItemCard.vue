@@ -33,15 +33,14 @@ defineProps<{
     </div>
 
     <!-- Text Box -->
-    <div
-      class="relative bg-neutral-400 p-8 md:p-12"
-      data-scroll-item
-      data-scroll-animation="fadeUp"
-      data-scroll-duration="1"
-    >
+    <div class="relative bg-neutral-400 p-8 md:p-12">
       <div class="w-full">
         <!-- Title -->
-        <h3 v-if="$slots.title" class="text-2xl md:text-3xl font-semibold text-primary mb-4">
+        <h3
+          v-scroll-anim:fadeUp="{ sequence: true }"
+          v-if="$slots.title"
+          class="text-2xl md:text-3xl font-semibold text-primary mb-4"
+        >
           <slot mdc-unwrap="p" name="title"></slot>
         </h3>
 

@@ -31,10 +31,7 @@ defineSlots<{
           <slot name="price" mdc-unwrap="p" />
         </div>
       </div>
-      <div
-        class="flex-1 prose prose-lg max-w-none"
-        v-scroll-anim:splitText="{ type: 'words', stagger: 0.2 }"
-      >
+      <div class="flex-1 prose prose-lg max-w-none" v-scroll-anim:fadeUp="{ delay: 1.2 }">
         <slot name="features" mdc-unwrap="p" />
       </div>
     </div>
@@ -51,10 +48,7 @@ defineSlots<{
         <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale="{ delay: 0.7 }">
           <slot name="basicPrice" mdc-unwrap="p" />
         </div>
-        <div
-          class="prose prose-lg max-w-none"
-          v-scroll-anim:splitText="{ type: 'words', stagger: 0.2 }"
-        >
+        <div class="prose prose-lg max-w-none" v-scroll-anim:fadeUp="{ delay: 1.2 }">
           <slot name="basicFeatures" />
         </div>
       </div>
@@ -77,7 +71,7 @@ defineSlots<{
           <div class="text-sm italic mb-4" v-scroll-anim:fadeUp="{ delay: 1.2 }">
             Zawiera wszystkie elementy z pakietu podstawowego oraz:
           </div>
-          <div v-scroll-anim:splitText="{ type: 'words', stagger: 0.2 }">
+          <div v-scroll-anim:fadeUp="{ delay: 1.2 }">
             <slot name="premiumFeatures" />
           </div>
         </div>

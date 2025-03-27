@@ -47,8 +47,11 @@ const handleFormError = (error: any) => {
       </div>
 
       <!-- Content Container -->
-      <div class="content-grid w-full relative z-10 grid min-h-[120vh] content-end gap-y-8 pt-10">
-        <div class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16">
+      <div class="content-grid w-full relative z-10 grid min-h-[120vh] content-start gap-y-8 pt-10">
+        <div
+          v-scroll-anim:fadeUp="{ delay: 0.25 }"
+          class="breakout1 grid md:grid-cols-2 items-center gap-8 py-16"
+        >
           <!-- Left Column: Form Section -->
           <!-- <ClientOnly>
             <ContactForm data-scroll-item data-scroll-animation="fadeUp" data-scroll-duration="1">
@@ -88,11 +91,7 @@ const handleFormError = (error: any) => {
         <div
           v-if="$slots.infoText"
           class="breakout1 mb-16"
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="1"
-          data-scroll-independent="true"
-          data-scroll-start="top bottom"
+          v-scroll-anim:fadeUp="{ delay: 0.25, start: '10% 50%' }"
         >
           <div class="py-8 md:py-12">
             <div class="text-sm leading-relaxed text-white">

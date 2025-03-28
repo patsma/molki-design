@@ -3,6 +3,7 @@ import { useLoaderStore } from '~/stores/loaderStore';
 
 const loaderStore = useLoaderStore();
 const { $animations } = useNuxtApp();
+const nuxtApp = useNuxtApp();
 
 // Add meta tags
 useHead({
@@ -12,18 +13,28 @@ useHead({
   ],
 });
 
-// When app is mounted, hide loader and play animations
-onMounted(() => {
-  if (!process.client) return;
+// Show loader on page navigation
+nuxtApp.hook('page:start', () => {
+  loaderStore.show();
+});
 
-  // Small delay to ensure everything is ready
+// When animations are prepared, hide loader and then play animations
+nuxtApp.hook('animations:prepared', () => {
+  // Small delay to ensure everything is mounted
   setTimeout(() => {
-    loaderStore.hideLoader();
-    if ($animations?.isPrepared()) {
+    loaderStore.hide();
+  }, 100);
+});
+
+// Watch loader visibility to trigger animations
+watch(
+  () => loaderStore.isVisible,
+  (isVisible) => {
+    if (!isVisible && $animations?.isPrepared()) {
       $animations.play();
     }
-  }, 500);
-});
+  }
+);
 </script>
 
 <template>

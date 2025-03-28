@@ -5,22 +5,22 @@ import { defineStore } from 'pinia';
  */
 export const useLoaderStore = defineStore('loader', {
   state: () => ({
-    isLoading: true,
+    isVisible: true,
   }),
 
   actions: {
     /**
      * Hide the loader and mark app as ready
      */
-    hideLoader() {
-      this.isLoading = false;
+    hide() {
+      this.isVisible = false;
     },
 
     /**
      * Show the loader (used for page transitions if needed)
      */
-    showLoader() {
-      this.isLoading = true;
+    show() {
+      this.isVisible = true;
     },
   },
 });

@@ -1,7 +1,7 @@
 <template>
   <Transition :css="false" @enter="onEnter" @leave="onLeave">
     <div
-      v-if="loaderStore.isLoading"
+      v-if="loaderStore.isVisible"
       class="loader fixed inset-0 z-50 flex items-center justify-center bg-secondary"
     >
       <LoaderLogo class="w-40" />
@@ -15,11 +15,13 @@ import { useLoaderStore } from '~/stores/loaderStore';
 const loaderStore = useLoaderStore();
 const { $gsap } = useNuxtApp();
 
+// Immediately show loader
 const onEnter = (el: Element, done: () => void) => {
   $gsap.set(el, { opacity: 1 });
   done();
 };
 
+// Smooth fade out
 const onLeave = (el: Element, done: () => void) => {
   $gsap.to(el, {
     opacity: 0,

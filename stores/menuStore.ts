@@ -21,7 +21,6 @@ export const useMenuStore = defineStore('menu', () => {
   const activeDropdownId = ref<string | null>(null);
   const appConfig = useAppConfig();
   const menuItems = computed(() => appConfig.navigation?.main?.items || []);
-  const isMenuReady = ref(false);
   const isPrepared = ref(false);
 
   // Animation references
@@ -31,10 +30,9 @@ export const useMenuStore = defineStore('menu', () => {
   // Reference to loader store
   const loaderStore = useLoaderStore();
 
-  // Setup mobile menu (prepare only)
-  function prepareMenu() {
-    if (!process.client) return;
-    if (isPrepared.value) return;
+  // Setup mobile menu animations
+  function setupMobileMenu() {
+    if (!process.client || isPrepared.value) return;
 
     const { $gsap } = useNuxtApp();
 
@@ -56,7 +54,7 @@ export const useMenuStore = defineStore('menu', () => {
       y: 20,
     });
 
-    // Create animation timeline but don't play it yet
+    // Create menu animation
     menuAnimation.value = $gsap
       .timeline({ paused: true })
       .to(menu, {
@@ -76,47 +74,7 @@ export const useMenuStore = defineStore('menu', () => {
         '-=0.2'
       );
 
-    prepareDropdowns();
-    isPrepared.value = true;
-  }
-
-  // Setup mobile menu when needed
-  function setupMobileMenu() {
-    if (!process.client) return;
-
-    // Make sure we've prepared the animations first
-    if (!isPrepared.value) {
-      prepareMenu();
-    }
-
-    // Only mark as ready if loader is already gone, otherwise wait for it
-    if (!loaderStore.isActive) {
-      isMenuReady.value = true;
-    } else {
-      // Watch for loader to disappear
-      const stopWatch = watch(
-        () => loaderStore.isActive,
-        (isActive) => {
-          if (!isActive) {
-            isMenuReady.value = true;
-            stopWatch(); // Clean up the watcher
-          }
-        },
-        { immediate: true }
-      );
-    }
-  }
-
-  // Setup dropdown animations
-  function prepareDropdowns() {
-    if (!process.client) return;
-
-    const { $gsap } = useNuxtApp();
-
-    // Clear existing animations
-    dropdownAnimations.clear();
-
-    // Setup new dropdown animations
+    // Setup dropdown animations
     document.querySelectorAll('.nav-menu.mobile .nav-menu__item').forEach((item, index) => {
       const submenu = item.querySelector('.nav-menu__item-submenu');
       const arrow = item.querySelector('.dropdown-arrow');
@@ -138,7 +96,7 @@ export const useMenuStore = defineStore('menu', () => {
       const tl = $gsap
         .timeline({
           paused: true,
-          defaults: { duration: 0.4, ease: 'power2.inOut' }, // Slightly faster
+          defaults: { duration: 0.4, ease: 'power2.inOut' },
         })
         .to(submenu, {
           maxHeight: '50vh',
@@ -156,40 +114,32 @@ export const useMenuStore = defineStore('menu', () => {
 
       dropdownAnimations.set(dropdownId, tl);
     });
+
+    isPrepared.value = true;
   }
 
   // Toggle mobile menu
   function toggleMenu() {
-    if (!process.client) return;
+    if (!process.client || !isPrepared.value) return;
 
-    // Make sure menu is ready before toggling
-    if (!isMenuReady.value) {
-      setupMobileMenu();
-      if (!isMenuReady.value) return; // Still not ready, exit
-    }
-
-    // Toggle state and play animation
     isMobileMenuOpen.value = !isMobileMenuOpen.value;
 
     if (isMobileMenuOpen.value) {
-      // Add overflow hidden to body when menu is open
       document.body.style.overflow = 'hidden';
       menuAnimation.value?.play();
     } else {
-      // Restore scroll when menu is closed
       document.body.style.overflow = '';
       menuAnimation.value?.reverse();
-      // Close any open dropdowns
       closeDropdowns();
     }
   }
 
   // Close the menu
   function closeMenu() {
-    if (!isMobileMenuOpen.value || !process.client || !isMenuReady.value) return;
+    if (!isMobileMenuOpen.value || !process.client) return;
 
     isMobileMenuOpen.value = false;
-    document.body.style.overflow = ''; // Restore scroll
+    document.body.style.overflow = '';
     menuAnimation.value?.reverse();
     closeDropdowns();
   }
@@ -260,65 +210,46 @@ export const useMenuStore = defineStore('menu', () => {
     await router.push(link);
   }
 
-  // Clean up when component unmounts
+  // Clean up animations and state
   function cleanup() {
     if (!process.client) return;
 
-    // Kill animations
-    if (menuAnimation.value) {
-      menuAnimation.value.kill();
-      menuAnimation.value = null;
-    }
+    menuAnimation.value?.kill();
+    menuAnimation.value = null;
 
     dropdownAnimations.forEach((timeline) => timeline.kill());
     dropdownAnimations.clear();
 
-    // Restore any body styles
     document.body.style.overflow = '';
 
-    // Reset state
     isMobileMenuOpen.value = false;
     activeDropdownId.value = null;
-    isMenuReady.value = false;
     isPrepared.value = false;
-  }
-
-  // Reset menu on page change
-  function resetMenu() {
-    if (isMobileMenuOpen.value) {
-      // Restore scroll if menu was open
-      if (process.client) {
-        document.body.style.overflow = '';
-      }
-      isMobileMenuOpen.value = false;
-    }
-    activeDropdownId.value = null;
   }
 
   // Hook into page transitions
   if (process.client) {
     const nuxtApp = useNuxtApp();
 
-    // Prepare animations early during page load
-    nuxtApp.hook('page:finish', () => {
-      prepareMenu();
-    });
-
-    // Reset when navigation starts
-    nuxtApp.hook('page:start', () => {
-      resetMenu();
-    });
-
-    // Watch for route changes to close menu
-    const route = useRoute();
+    // Setup menu when page is ready and loader is hidden
     watch(
-      () => route.path,
-      () => {
-        if (isMobileMenuOpen.value) {
-          resetMenu();
+      () => loaderStore.isVisible,
+      (isVisible) => {
+        if (!isVisible && !isPrepared.value) {
+          setupMobileMenu();
         }
-      }
+      },
+      { immediate: true }
     );
+
+    // Reset menu state on page navigation
+    nuxtApp.hook('page:start', () => {
+      if (isMobileMenuOpen.value) {
+        document.body.style.overflow = '';
+        isMobileMenuOpen.value = false;
+      }
+      activeDropdownId.value = null;
+    });
   }
 
   return {
@@ -326,17 +257,14 @@ export const useMenuStore = defineStore('menu', () => {
     isMobileMenuOpen,
     activeDropdownId,
     menuItems,
-    isMenuReady,
     isPrepared,
 
     // Actions
-    prepareMenu,
     setupMobileMenu,
     toggleMenu,
     closeMenu,
     toggleDropdown,
     handleMenuItemClick,
-    resetMenu,
     cleanup,
   };
 });

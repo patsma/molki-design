@@ -1,74 +1,26 @@
 import { defineStore } from 'pinia';
 
 /**
- * Store for managing the global loader state
- * Used to show/hide the loading indicator when navigating between pages
+ * Simple store for managing the global loader state
  */
 export const useLoaderStore = defineStore('loader', {
   state: () => ({
-    isActive: true,
-    imagesLoaded: false,
-    contentReady: false,
+    isLoading: true,
   }),
-
-  getters: {
-    /**
-     * Check if everything is ready to hide the loader
-     */
-    isReadyToHide: (state) => {
-      return state.imagesLoaded && state.contentReady;
-    },
-  },
 
   actions: {
     /**
-     * Show the loader
+     * Hide the loader and mark app as ready
      */
-    show() {
-      this.isActive = true;
+    hideLoader() {
+      this.isLoading = false;
     },
 
     /**
-     * Hide the loader
+     * Show the loader (used for page transitions if needed)
      */
-    hide() {
-      this.isActive = false;
-    },
-
-    /**
-     * Reset the loader state for page transitions
-     */
-    reset() {
-      this.imagesLoaded = false;
-      this.contentReady = false;
-      this.isActive = true;
-    },
-
-    /**
-     * Mark images as loaded
-     */
-    setImagesLoaded() {
-      this.imagesLoaded = true;
-      this.checkReady();
-    },
-
-    /**
-     * Mark content as ready
-     */
-    setContentReady() {
-      this.contentReady = true;
-      this.checkReady();
-    },
-
-    /**
-     * Check if everything is ready and hide loader if so
-     */
-    checkReady() {
-      if (this.isReadyToHide) {
-        setTimeout(() => {
-          this.hide();
-        }, 200);
-      }
+    showLoader() {
+      this.isLoading = true;
     },
   },
 });

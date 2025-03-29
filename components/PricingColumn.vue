@@ -15,63 +15,51 @@ defineSlots<{
     class="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden"
     v-scroll-anim:fadeUp="{ delay: 0.2 }"
   >
-    <div class="bg-primary p-6 text-center" v-scroll-anim:fadeDown="{ delay: 0.3 }">
-      <h3
-        class="text-2xl font-semibold text-white"
-        v-scroll-anim:staggerUp="{ stagger: 0.05, delay: 0.4 }"
-      >
+    <div class="bg-primary p-6 text-center" v-scroll-anim:fadeDown>
+      <h3 class="text-2xl font-semibold text-white" v-scroll-anim:staggerUp="{ stagger: 0.05 }">
         <slot name="title" mdc-unwrap="p" />
       </h3>
     </div>
 
     <!-- Single Price Version -->
     <div v-if="$slots.price && $slots.features" class="p-8 flex-1 flex flex-col">
-      <div class="text-center mb-8" v-scroll-anim:fadeUp="{ delay: 0.5 }">
-        <div class="text-4xl font-bold text-primary" v-scroll-anim:scale="{ delay: 0.6 }">
+      <div class="text-center mb-8" v-scroll-anim:fadeUp>
+        <div class="text-4xl font-bold text-primary" v-scroll-anim:scale>
           <slot name="price" mdc-unwrap="p" />
         </div>
       </div>
-      <div class="flex-1 prose prose-lg max-w-none" v-scroll-anim:fadeUp="{ delay: 1.2 }">
+      <div class="flex-1 prose prose-lg max-w-none" v-scroll-anim:fadeUp>
         <slot name="features" mdc-unwrap="p" />
       </div>
     </div>
 
     <!-- Basic/Premium Version -->
     <div v-else-if="$slots.basicPrice || $slots.premiumPrice" class="p-8 flex-1 flex flex-col">
-      <div class="mb-8" v-scroll-anim:fadeUp="{ delay: 0.5 }">
-        <div
-          class="text-xl font-semibold mb-2"
-          v-scroll-anim:staggerUp="{ stagger: 0.03, delay: 0.6 }"
-        >
-          Pakiet Podstawowy
-        </div>
-        <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale="{ delay: 0.7 }">
+      <div class="mb-8" v-scroll-anim:fadeUp>
+        <div class="text-xl font-semibold mb-2" v-scroll-anim:staggerUp>Pakiet Podstawowy</div>
+        <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale>
           <slot name="basicPrice" mdc-unwrap="p" />
         </div>
-        <div class="prose prose-lg max-w-none" v-scroll-anim:fadeUp="{ delay: 1.2 }">
+        <div class="prose prose-lg max-w-none" v-scroll-anim:fadeUp>
           <slot name="basicFeatures" />
         </div>
       </div>
 
-      <div
-        v-if="$slots.premiumPrice"
-        class="pt-8 border-t border-neutral-200"
-        v-scroll-anim:fadeUp="{ delay: 0.9 }"
-      >
+      <div v-if="$slots.premiumPrice" class="pt-8 border-t border-neutral-200" v-scroll-anim:fadeUp>
         <div
           class="text-xl font-semibold text-primary mb-2"
-          v-scroll-anim:staggerUp="{ stagger: 0.03, delay: 1 }"
+          v-scroll-anim:staggerUp="{ stagger: 0.03 }"
         >
           Pakiet Premium
         </div>
-        <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale="{ delay: 1.1 }">
+        <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale>
           <slot name="premiumPrice" mdc-unwrap="p" />
         </div>
         <div class="prose prose-lg max-w-none">
-          <div class="text-sm italic mb-4" v-scroll-anim:fadeUp="{ delay: 1.2 }">
+          <div class="text-sm italic mb-4" v-scroll-anim:fadeUp>
             Zawiera wszystkie elementy z pakietu podstawowego oraz:
           </div>
-          <div v-scroll-anim:fadeUp="{ delay: 1.2 }">
+          <div v-scroll-anim:fadeUp>
             <slot name="premiumFeatures" />
           </div>
         </div>

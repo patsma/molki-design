@@ -158,7 +158,15 @@ export default defineNuxtPlugin((nuxtApp) => {
           trigger: el,
           start: options.start || 'top 80%',
           markers: process.env.NODE_ENV === 'development' && options.markers,
-          toggleActions: 'play play play reverse',
+          toggleActions: options.once ? 'play none none none' : 'play play play reverse',
+          onComplete: options.once
+            ? function () {
+                // Disable the ScrollTrigger after it plays once
+                if (this.scrollTrigger) {
+                  this.scrollTrigger.kill();
+                }
+              }
+            : null,
         },
       });
 

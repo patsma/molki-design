@@ -46,7 +46,7 @@ onUnmounted(() => {
 <template>
   <header class="content-grid">
     <nav
-      v-scroll-anim:fadeIn
+      v-scroll-anim:fadeIn="{ start: '-50%', once: true }"
       ref="headerRef"
       class="opacity-0 full-width grid absolute nav h-16 md:h-24 z-50 top-0 py-1 md:py-4 w-full bg-white"
     >

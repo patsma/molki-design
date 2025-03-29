@@ -14,7 +14,11 @@
     </template>
 
     <template #leftCompanyLogo>
-      <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+      <NuxtLink
+        target="_blank"
+        to="https://wlasciwykurs.com/"
+        class="text-primary hover:text-primary-dark transition-colors"
+      >
         <IconBlock name="fig:wlasciwy-kurs" customClass="h-60 w-60 text-primary" />
       </NuxtLink>
     </template>
@@ -32,7 +36,11 @@
     </template>
 
     <template #rightCompanyLogo>
-      <NuxtLink to="/" class="text-primary hover:text-primary-dark transition-colors">
+      <NuxtLink
+        target="_blank"
+        to="https://molkiinvest.pl/"
+        class="text-primary hover:text-primary-dark transition-colors"
+      >
         <IconBlock name="fig:molki-logo-invest" customClass="h-60 w-60 text-primary" />
       </NuxtLink>
     </template>

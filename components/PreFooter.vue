@@ -68,9 +68,15 @@ const handleFormError = (error: any) => {
               </slot>
             </div>
             <div class="space-y-4">
-              <h3 v-if="$slots.leftCompanyTitle" class="text-xl font-semibold text-primary">
-                <slot name="leftCompanyTitle" mdc-unwrap="p" />
-              </h3>
+              <NuxtLink
+                target="_blank"
+                to="https://wlasciwykurs.com/"
+                class="text-xl font-semibold text-primary hover:text-primary-dark transition-colors"
+              >
+                <h3 v-if="$slots.leftCompanyTitle">
+                  <slot name="leftCompanyTitle" mdc-unwrap="p" />
+                </h3>
+              </NuxtLink>
               <h4 v-if="$slots.leftCompanySubtitle" class="text-lg text-neutral-600">
                 <slot name="leftCompanySubtitle" mdc-unwrap="p" />
               </h4>
@@ -91,9 +97,15 @@ const handleFormError = (error: any) => {
               </slot>
             </div>
             <div class="space-y-4">
-              <h3 v-if="$slots.rightCompanyTitle" class="text-xl font-semibold text-primary">
-                <slot name="rightCompanyTitle" mdc-unwrap="p" />
-              </h3>
+              <NuxtLink
+                target="_blank"
+                to="https://molkiinvest.pl/"
+                class="text-xl font-semibold text-primary hover:text-primary-dark transition-colors"
+              >
+                <h3 v-if="$slots.rightCompanyTitle">
+                  <slot name="rightCompanyTitle" mdc-unwrap="p" />
+                </h3>
+              </NuxtLink>
               <h4 v-if="$slots.rightCompanySubtitle" class="text-lg text-neutral-600">
                 <slot name="rightCompanySubtitle" mdc-unwrap="p" />
               </h4>

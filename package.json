@@ -1,5 +1,5 @@
 {
-  "name": "molki-design-seo-test",
+  "name": "molki-design",
   "author": "Patryk Smakosz",
   "version": "0.0.1",
   "description": "Molki Design",
@@ -12,7 +12,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

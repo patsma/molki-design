@@ -104,11 +104,6 @@ export default defineNuxtConfig({
     isCookieIdVisible: true,
   },
 
-  devServer: {
-    host: '0.0.0.0',
-    port: 3000,
-  },
-
   app: {
     head: {
       link: [
@@ -175,6 +170,11 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/analytics.client.ts', '~/plugins/hubspot.client.ts'],
 
   nitro: {
+    devServer: {
+      host: '0.0.0.0',
+      port: 3000,
+      https: false,
+    },
     prerender: {
       crawlLinks: true,
       routes: [

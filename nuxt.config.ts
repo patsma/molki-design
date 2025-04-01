@@ -212,6 +212,115 @@ export default defineNuxtConfig({
         prerender: true,
         index: false,
       },
+      // Blog post redirects
+      '/maly-balkon-wielkie-mozliwosci-jak-zaaranzowac-przestrzen-z-molki-design': {
+        redirect: {
+          to: '/blog/maly-balkon-wielkie-mozliwosci-jak-zaaranzowac-przestrzen-z-molki-design',
+          statusCode: 301,
+        },
+      },
+      '/minimalizm-w-praktyce-jak-stworzyc-spokojna-i-funkcjonalna-przestrzen': {
+        redirect: {
+          to: '/blog/minimalizm-w-praktyce-jak-stworzyc-spokojna-i-funkcjonalna-przestrzen',
+          statusCode: 301,
+        },
+      },
+      '/zielona-oaza-w-miejskim-wnetrzu-jak-rosliny-ozywiaja-przestrzen': {
+        redirect: {
+          to: '/blog/zielona-oaza-w-miejskim-wnetrzu-jak-rosliny-ozywiaja-przestrzen',
+          statusCode: 301,
+        },
+      },
+      '/mala-lazienka-wielki-efekt-jak-tworzymy-przestrzen-pelna-stylu-i-funkcjonalnosci': {
+        redirect: {
+          to: '/blog/mala-lazienka-wielki-efekt-jak-tworzymy-przestrzen-pelna-stylu-i-funkcjonalnosci',
+          statusCode: 301,
+        },
+      },
+      '/jak-stworzyc-przestrzen-marzen-sekrety-udanej-wspolpracy-z-projektantem-wnetrz': {
+        redirect: {
+          to: '/blog/jak-stworzyc-przestrzen-marzen-sekrety-udanej-wspolpracy-z-projektantem-wnetrz',
+          statusCode: 301,
+        },
+      },
+      '/sekretne-zycie-kolorow-jak-wybrac-odcienie-ktore-opowiadaja-twoja-historie': {
+        redirect: {
+          to: '/blog/sekretne-zycie-kolorow-jak-wybrac-odcienie-ktore-opowiadaja-twoja-historie',
+          statusCode: 301,
+        },
+      },
+      '/harmonia-barw-jak-wybrac-idealna-palete-kolorystyczna': {
+        redirect: {
+          to: '/blog/harmonia-barw-jak-wybrac-idealna-palete-kolorystyczna',
+          statusCode: 301,
+        },
+      },
+      '/mniejsza-przestrzen-wieksze-mozliwosci-sekrety-aranzacji-malych-wnetrz': {
+        redirect: {
+          to: '/blog/mniejsza-przestrzen-wieksze-mozliwosci-sekrety-aranzacji-malych-wnetrz',
+          statusCode: 301,
+        },
+      },
+      '/eklektyzm-w-twoim-domu-jak-polaczyc-stare-z-nowym-dla-unikalnego-wnetrza': {
+        redirect: {
+          to: '/blog/eklektyzm-w-twoim-domu-jak-polaczyc-stare-z-nowym-dla-unikalnego-wnetrza',
+          statusCode: 301,
+        },
+      },
+      '/przestrzen-pelna-swiatla-oswietlenie-ktore-zmienia-wszystko-w-twoim-wnetrzu': {
+        redirect: {
+          to: '/blog/przestrzen-pelna-swiatla-oswietlenie-ktore-zmienia-wszystko-w-twoim-wnetrzu',
+          statusCode: 301,
+        },
+      },
+      '/ergonomia-w-domowym-biurze-tworzenie-przestrzeni-pracy': {
+        redirect: {
+          to: '/blog/ergonomia-w-domowym-biurze-tworzenie-przestrzeni-pracy',
+          statusCode: 301,
+        },
+      },
+      '/transformacja-przestrzeni-przed-i-po-z-molki-design': {
+        redirect: {
+          to: '/blog/transformacja-przestrzeni-przed-i-po-z-molki-design',
+          statusCode: 301,
+        },
+      },
+      '/nowoczesna-kuchnia-marzen-sekrety-projektowania-z-molki-design': {
+        redirect: {
+          to: '/blog/nowoczesna-kuchnia-marzen-sekrety-projektowania-z-molki-design',
+          statusCode: 301,
+        },
+      },
+      '/kacik-czytelniczy-twoj-osobisty-azyl-w-domu-z-pomoca-molki-design': {
+        redirect: {
+          to: '/blog/kacik-czytelniczy-twoj-osobisty-azyl-w-domu-z-pomoca-molki-design',
+          statusCode: 301,
+        },
+      },
+      '/zrownowazony-design-jak-tworzymy-eko-przyjazne-wnetrza-w-molki-design': {
+        redirect: {
+          to: '/blog/zrownowazony-design-jak-tworzymy-eko-przyjazne-wnetrza-w-molki-design',
+          statusCode: 301,
+        },
+      },
+      '/sztuka-doboru-tekstyliow-dodaj-charakteru-swoim-wnetrzom-z-molki-design': {
+        redirect: {
+          to: '/blog/sztuka-doboru-tekstyliow-dodaj-charakteru-swoim-wnetrzom-z-molki-design',
+          statusCode: 301,
+        },
+      },
+      '/za-kulisami-molki-design-jak-powstaje-nasz-projekt-wnetrza': {
+        redirect: {
+          to: '/blog/za-kulisami-molki-design-jak-powstaje-nasz-projekt-wnetrza',
+          statusCode: 301,
+        },
+      },
+      '/kreatywne-rozwiazania-na-male-przestrzenie-geniusz-projektowy-molki-design': {
+        redirect: {
+          to: '/blog/kreatywne-rozwiazania-na-male-przestrzenie-geniusz-projektowy-molki-design',
+          statusCode: 301,
+        },
+      },
     },
   },
 

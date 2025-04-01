@@ -30,6 +30,7 @@ onMounted(() => {
     return;
   }
 
+  
   const { number, suffix } = parsed;
 
   // Set initial state immediately to prevent flash

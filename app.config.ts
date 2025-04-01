@@ -19,15 +19,6 @@ export default defineAppConfig({
               link: '/wnetrza-inwestycyjne',
             },
             {
-              label: 'Animation',
-              link: '/animation-demo',
-            },
-            {
-              label: 'Animation Home',
-              link: '/animation-home',
-            },
-
-            {
               label: 'Todo',
               link: '/todo',
             },

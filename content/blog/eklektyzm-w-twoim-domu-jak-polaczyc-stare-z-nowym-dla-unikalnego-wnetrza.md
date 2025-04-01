@@ -15,7 +15,7 @@ ogImage:
   title: Eklektyzm w Twoim Domu
   description: Jak Połączyć Stare z Nowym dla Unikalnego Wnętrza
   cover: /blog/blog-molki-design-002.webp
---- 
+---
 
 Eklektyzm w Twoim Domu: Jak Połączyć Stare z Nowym dla Unikalnego Wnętrza
 Cześć, miłośnicy pięknych wnętrz! Dziś na blogu MOLKI DESIGN przenosimy się w świat, gdzie przeszłość spotyka się z teraźniejszością – tak, mówimy o eklektycznym stylu w projektowaniu wnętrz. Eklektyzm jest jak jazz, improwizacja oparta na różnych nutach, tworząca harmonijną, choć niespodziewaną melodię. Gotowi odkryć, jak nadać swojej przestrzeni niepowtarzalny charakter?

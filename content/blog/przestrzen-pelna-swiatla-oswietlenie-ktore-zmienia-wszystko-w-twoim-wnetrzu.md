@@ -9,15 +9,14 @@ author: Wioletta Retko
 authorRole: Główny projektant
 authorImage: /team/wioletta-retko.jpg
 seo:
-  title: Przestrzeń pełna światła - Oświetlenie, które zmienia wszystko w Twoim wnętrzu
+  title: Przestrzeń pełna światła - Oświetlenie, które zmienia wszystko w Twoim
+    wnętrzu
   description: ""
 ogImage:
   title: Przestrzeń pełna światła
   description: Oświetlenie, które zmienia wszystko w Twoim wnętrzu
   cover: /blog/blog-molki-design-003.webp
---- 
-
-
+---
 
 Przestrzeń pełna światła: Oświetlenie, które zmienia wszystko w Twoim wnętrzu
 Cześć, miłośnicy pięknych przestrzeni! Dziś w MOLKI DESIGN skupimy się na aspekcie wnętrz, który często jest niedoceniany, a może całkowicie zmienić odczucie naszego domu – oświetleniu. Czy kiedykolwiek zastanawiałeś się, jak wielki wpływ ma światło na nasze nastroje, odczuwanie przestrzeni, a nawet na to, jak postrzegamy kolory? Zapnij pasy, zabieramy Cię w podróż po świecie oświetlenia wnętrz!

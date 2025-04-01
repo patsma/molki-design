@@ -13,7 +13,8 @@ ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:
   title: Projekt Super w Sopocie - Molki Design
-  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja przestrzeni z nowoczesnymi rozwiązaniami.
+  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja
+    przestrzeni z nowoczesnymi rozwiązaniami.
 ogImage:
   component: Custom
   props:

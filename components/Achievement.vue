@@ -5,59 +5,64 @@ const props = defineProps<{
 }>();
 
 const numberEl = ref<HTMLElement | null>(null);
-const hasAnimated = ref(false);
+const initialValue = ref<string>(''); // Store initial value
 
-// Function to animate number
-const animateNumber = (el: HTMLElement) => {
-  if (!el || hasAnimated.value) return;
-
-  const content = el.textContent || '';
+// Function to extract number and suffix from content
+const parseContent = (content: string) => {
   const match = content.match(/^(\d+)([^0-9]*)$/);
+  if (!match) return null;
 
-  if (!match) return;
-
-  const endNumber = parseInt(match[1]);
-  const suffix = match[2]; // This will capture '+', '%', ' lat', etc.
-
-  if (isNaN(endNumber)) return;
-
-  hasAnimated.value = true;
-  let startNumber = 0;
-
-  const increment = endNumber / 50; // We'll do 50 steps
-  const stepDuration = (props.duration || 1.5) / 50;
-
-  const updateNumber = () => {
-    startNumber = Math.min(startNumber + increment, endNumber);
-    el.textContent = Math.round(startNumber) + suffix;
-
-    if (startNumber < endNumber) {
-      requestAnimationFrame(() => setTimeout(updateNumber, stepDuration * 1000));
-    }
+  return {
+    number: parseInt(match[1]),
+    suffix: match[2], // This will capture '+', '%', ' lat', etc.
   };
-
-  updateNumber();
 };
 
-// Watch for intersection
 onMounted(() => {
   if (!numberEl.value) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateNumber(numberEl.value!);
-          observer.disconnect();
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+  // Store the initial content before any manipulation
+  initialValue.value = numberEl.value.textContent || '0';
 
-  observer.observe(numberEl.value);
+  const parsed = parseContent(initialValue.value);
+  if (!parsed) {
+    console.warn('Invalid number format in Achievement component');
+    return;
+  }
+
+  const { number, suffix } = parsed;
+
+  // Set initial state immediately to prevent flash
+  numberEl.value.textContent = '0' + suffix;
+
+  // Create GSAP animation using our scroll trigger system
+  const { $gsap } = useNuxtApp();
+
+  $gsap.set(numberEl.value, {
+    immediateRender: true,
+    modifiers: {
+      textContent: () => '0' + suffix, // Ensure clean initial state
+    },
+  });
+
+  $gsap.to(numberEl.value, {
+    scrollTrigger: {
+      trigger: numberEl.value,
+      start: 'top 80%',
+      toggleActions: 'play play play reverse', // Animate on scroll down AND up
+    },
+    textContent: number,
+    duration: props.duration || 1.5,
+    ease: 'power1.out',
+    snap: { textContent: 1 }, // Snap to integer values
+    modifiers: {
+      textContent: (value: number) => {
+        // Ensure we always return a valid string
+        const roundedValue = Math.round(value);
+        return !isNaN(roundedValue) ? roundedValue + suffix : initialValue.value;
+      },
+    },
+  });
 });
 </script>
 

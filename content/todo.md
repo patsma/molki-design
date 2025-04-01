@@ -6,6 +6,7 @@ pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
 ---
 
 # Molki Design - Lista Kontrolna Przed Uruchomieniem
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/626f3b1c-50f0-457f-aa31-17b77a41ffef/deploy-status){.w-40}](https://app.netlify.com/sites/molki-design-2025/deploys)
 Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 
@@ -122,10 +123,10 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ **Zgodność z RODO**:
   - ✅ Konfiguracja zgodności z przepisami
   - ✅ Weryfikacja polityki prywatności
-- ✅  **Zatwierdzenie funkcjonalności**:
-  - ✅  Formularze kontaktowe - adresy email do odbierania wiadomości
+- ✅ **Zatwierdzenie funkcjonalności**:
+  - ✅ Formularze kontaktowe - adresy email do odbierania wiadomości
   - ✅ Newsletter - wybór dostawcy, adres do konfiguracji
-- ✅  **Zatwierdzenie integracji analitycznych**:
+- ✅ **Zatwierdzenie integracji analitycznych**:
   - ✅ Google Analytics
   - 🟡 Google Search Console - dane
   - ✅ Google Tag Manager?

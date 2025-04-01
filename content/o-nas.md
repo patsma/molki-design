@@ -3,7 +3,8 @@ headerSpacing: true
 title: Molki Design
 seo:
   title: Molki Design - Profesjonalne projekty wnętrz w Trójmieście
-  description: Profesjonalne projektowanie wnętrz mieszkalnych i komercyjnych w Trójmieście. Kompleksowe usługi od projektu po realizację.
+  description: Profesjonalne projektowanie wnętrz mieszkalnych i komercyjnych w
+    Trójmieście. Kompleksowe usługi od projektu po realizację.
 ogImage:
   component: Custom
   props:
@@ -381,7 +382,7 @@ Małgorzata Piszczek
 Spec. ds. Zarządzania Najmem
 
 #description
-Moim celem jest zapewnienie właścicielom nieruchomości spokoju, a najemcom komfortu. W ścisłej współpracy z naszymi projektantkami przygotuję Twoje mieszkanie do wynajmu, aby jak najlepiej je wynająć i przyciągnąć odpowiednich najemców. 
+Moim celem jest zapewnienie właścicielom nieruchomości spokoju, a najemcom komfortu. W ścisłej współpracy z naszymi projektantkami przygotuję Twoje mieszkanie do wynajmu, aby jak najlepiej je wynająć i przyciągnąć odpowiednich najemców.
 
 Dobrze zaprojektowane wnętrze zwiększa zainteresowanie najemców i pozwala uzyskać wyższy przychód z najmu. Każde zadanie realizuję z pełnym zaangażowaniem i dbałością o detale.
 

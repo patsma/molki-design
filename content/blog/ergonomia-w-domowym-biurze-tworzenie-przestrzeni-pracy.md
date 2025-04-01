@@ -15,10 +15,9 @@ ogImage:
   title: Ergonomia w Domowym Biurze
   description: Tworzenie Przestrzeni Pracy
   cover: /blog/blog-molki-design-010.webp
---- 
+---
 
 Ergonomia w Domowym Biurze: Tworzenie Przestrzeni Pracy
- 
 
 Cześć, entuzjaści komfortowej i efektywnej pracy! W dzisiejszym poście z MOLKI DESIGN skupimy się na jednym z najbardziej aktualnych tematów w dziedzinie projektowania wnętrz – tworzeniu ergonomicznego domowego biura. W dobie pracy zdalnej, prawidłowo zaprojektowane miejsce pracy w domu stało się nie tylko trendem, ale koniecznością. Jak więc stworzyć przestrzeń, która będzie zarówno funkcjonalna, jak i sprzyjająca zdrowiu? Oto nasze wskazówki!
 

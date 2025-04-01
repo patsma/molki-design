@@ -3,7 +3,8 @@ title: Polityka prywatności
 pageClass: max-w-3xl mx-auto px-6 py-24 bg-white prose
 seo:
   title: Polityka prywatności - Molki Design
-  description: Informacje o tym, jak przetwarzamy Twoje dane osobowe, zasady ochrony prywatności oraz wykorzystania plików cookies.
+  description: Informacje o tym, jak przetwarzamy Twoje dane osobowe, zasady
+    ochrony prywatności oraz wykorzystania plików cookies.
 ogImage:
   component: Custom
   props:
@@ -22,15 +23,14 @@ Niniejsza Polityka Prywatności:
   - Ustawy z dnia 16 lipca 2004 r. – Prawo telekomunikacyjne
   - Ustawy o świadczeniu usług drogą elektroniczną
   - Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO)
-- określa zasady przetwarzania danych osobowych oraz przechowywania i dostępu do informacji na urządzeniach Użytkownika za pomocą plików Cookies w ramach serwisu internetowego www.molkidesign.pl
+- określa zasady przetwarzania danych osobowych oraz przechowywania i dostępu do informacji na urządzeniach Użytkownika za pomocą plików Cookies w ramach serwisu internetowego [www.molkidesign.pl](http://www.molkidesign.pl)
 - zawiera informacje dotyczące przetwarzania przez:
 
-**MOLKI Sp. z o.o.**:br
-ul. Heweliusza 11/811, 80-890 Gdańsk:br
-KRS: 0000874895:br
-NIP: 9571129157:br
-REGON: 387741765:br
-tel.: +48 572 323 207:br
+**MOLKI Sp. z o.o.**:br ul. Heweliusza 11/811, 80-890 Gdańsk\:br
+KRS: 0000874895\:br
+NIP: 9571129157\:br
+REGON: 387741765\:br
+tel.: +48 572 323 207\:br
 email: <biuro@molki.pl>
 
 Administratorem danych osobowych jest MOLKI Sp. z o.o.
@@ -75,11 +75,9 @@ Administrator przetwarza dane osobowe Użytkowników w następujących celach:
 1. **Kontakt z klientem**
    - gdy Użytkownik dobrowolnie przekazuje swoje dane (imię, nazwisko, adres e-mail, numer telefonu) w formularzu kontaktowym
    - w celu udzielenia odpowiedzi na zapytanie
-
 2. **Newsletter**
    - gdy Użytkownik wyrazi zgodę na otrzymywanie treści marketingowych drogą elektroniczną
    - w celu wysyłki informacji handlowych i marketingowych
-
 3. **Dane generowane automatycznie**
    - adres IP, czas korzystania, nazwy stron, wyszukiwarki
    - w celach:
@@ -87,7 +85,6 @@ Administrator przetwarza dane osobowe Użytkowników w następujących celach:
      - badań diagnostycznych
      - analiz marketingowych
      - celów statystycznych
-
 4. **Realizacja prawnie uzasadnionych interesów**
    - analiza ruchu na stronie
    - poprawa jakości świadczonych usług

@@ -38,7 +38,7 @@ POZNAJMY SIĘ!
 Wioletta Retko
 
 #role
-Prezes Zarządu
+prezes zarządu - projektantka wnętrz
 
 #description
 Uwielbiam organizować i nadzorować złożone projekty.
@@ -48,6 +48,8 @@ Codziennie dbam o to, by każdy etap realizacji przebiegał zgodnie z planem, a 
 Nie tylko kocham kolory i estetykę, ale również dbam o funkcjonalność przestrzeni, by były one zarówno piękne, jak i praktyczne.
 
 To pozwala mi rozwijać zespół i osiągać lepsze rezultaty.
+
+Moja podstawowa zasada to urządzanie wnętrz zgodnie z tym jak chcesz żyć, kim jesteś i co robisz w swoim domu, a nie z tym jak chcesz być postrzegany
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}

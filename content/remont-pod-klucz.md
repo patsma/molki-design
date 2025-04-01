@@ -142,10 +142,10 @@ BASIC
   :::
 
 #content
-Podstawowy remont wnętrza – Idealne rozwiązanie dla tych, którzy szukają solidnego, funkcjonalnego i estetycznego wykończenia bez zbędnych dodatków. Oferujemy pełen zakres prac remontowych, które zapewnią świeżość i wygodę Twojej przestrzeni w korzystnej cenie.
+Podstawowy remont wnętrza – idealne rozwiązanie dla tych, którzy szukają solidnego, funkcjonalnego i estetycznego wykończenia bez zbędnych dodatków. Oferujemy pełen zakres prac remontowych, które zapewnią świeżość i wygodę Twojej przestrzeni w korzystnej cenie.
 
 #cta
-Sprawdź i dowiedz się wiecej.
+Sprawdź i dowiedz się wiecej
 ::
 
 ::item-card
@@ -167,10 +167,10 @@ COMFORT
   :::
 
 #content
-Komfortowy standard wykończenia – Ten pakiet łączy w sobie funkcjonalność i estetykę na wyższym poziomie, z możliwością większej personalizacji. Wybierając Comfort, zyskujesz wnętrze dopracowane pod kątem detali, które idealnie odpowiada Twoim potrzebom i stylowi życia.
+Komfortowy standard wykończenia – ten pakiet łączy w sobie funkcjonalność i estetykę na wyższym poziomie, z możliwością większej personalizacji. Wybierając Comfort, zyskujesz wnętrze dopracowane pod kątem detali, które idealnie odpowiada Twoim potrzebom i stylowi życia.
 
 #cta
-Sprawdź i dowiedz się wiecej.
+Sprawdź i dowiedz się wiecej
 ::
 
 ::item-card
@@ -193,10 +193,10 @@ PREMIUM
 
 
 #content
-Luksusowe wykończenie wnętrza – Dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń.
+Luksusowe wykończenie wnętrza – dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń.
 
 #cta
-Sprawdź i dowiedz się wiecej.
+Sprawdź i dowiedz się wiecej
 ::
 
 ::pricing-grid{#cennik}
@@ -206,10 +206,10 @@ Sprawdź i dowiedz się wiecej.
   :::
 
 #title
-Wybierz Swoje Wymarzone Wykończenie
+Wybierz swoje wymarzone wykończenie
 
 #subtitle
-Odkryj Pakiety Remontowe Dostosowane do Twoich Potrzeb i Stylu Życia
+odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 
 #columns
   :::pricing-column

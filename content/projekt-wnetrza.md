@@ -32,11 +32,7 @@ ZOBACZ NASZE REALIZACJE
 PROJEKT WNĘTRZA
 
 #content
-Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu.
-
-Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania.
-
-Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
+Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu. Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania. Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
 ::
 
 ::icon-grid
@@ -204,7 +200,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   Projekt Wykonawczy
   
   #description
-  dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe.
+  dostarczy Ci szczegółowe rysunki techniczne i specyfikacje materiałowe, które umożliwią realizację wnętrza zgodnie z ustalonymi założeniami i standardami jakości.
   :::
 
   :::project-grid-item
@@ -221,7 +217,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   Porada Projektowa
   
   #description
-  to spotkanie, podczas którego nasza projektantka wnętrz doradzi.
+  to spotkanie, podczas którego nasza projektantka wnętrz doradzi, jakie rozwiązania najlepiej pasują do Twojej przestrzeni i potrzeb.
   :::
 
 #cta

@@ -527,13 +527,13 @@ Dodatkowe usługi projektowe
   :::
 
 #content
- [Konsultacja przedprojektowa]{.text-primary.h3-style.font-bold} [ - 190 zł/h]{.h3-style.font-bold}
+ [Konsultacja przedprojektowa]{.text-primary.h4-style.font-bold} [ - 190 zł/h]{.h4-style.font-bold}
 
 
 :br
 :br
 
- [Dodatkowe Usługi]{.text-primary.h3-style.font-bold} [ - wyceny indywidualne]{.h3-style.font-bold}
+ [Dodatkowe Usługi]{.text-primary.h4-style.font-bold} [ - wyceny indywidualne]{.h4-style.font-bold}
 :br
 :br
 

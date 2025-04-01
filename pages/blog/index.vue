@@ -80,7 +80,7 @@ const needsHeaderSpacing = computed(() => {
 
 <template>
   <main :class="{ 'has-header-spacing': needsHeaderSpacing }">
-    <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="3" />
+    <FeaturedBlogPosts title="Blog" subtitle="Najnowsze artykuły i porady" :limit="99" />
     <LayoutPreFooterContent />
     <LayoutFooterContent />
     <!-- Debug output -->

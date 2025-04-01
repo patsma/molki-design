@@ -38,7 +38,7 @@ POZNAJMY SIĘ!
 Wioletta Retko
 
 #role
-prezes zarządu - projektantka wnętrz
+Prezes zarządu - projektantka wnętrz
 
 #description
 Uwielbiam organizować i nadzorować złożone projekty.
@@ -269,11 +269,11 @@ Agata Rybka
 Asystentka Zarządu
 
 #description
-Zajmuję się Tobą i Twoimi potrzebami podczas naszej współpracy, dbając, byś czuł się wysłuchany i zrozumiany.
+Zajmuję się Tobą i Twoimi potrzebami od pierwszego kontaktu, dbając, byś czuł się wysłuchany i zrozumiany.
 
-Dla mnie kluczowe jest, żeby oferta, którą przygotuję, była idealnie dopasowana do Twoich potrzeb.
+Umawiam Cię na konsultację z naszą projektantką, przygotowuję umowy i czuwam nad każdym szczegółem, aby wszystko było dopięte na ostatni guzik.
 
-Możesz liczyć na otwartą komunikację i miłą atmosferę – zawsze dbam o to, by nasza współpraca była nie tylko profesjonalna, ale też przyjemna.
+Możesz liczyć na otwartą komunikację i miłą atmosferę – dbam o to, by nasza współpraca była nie tylko profesjonalna, ale też przyjemna i bezstresowa.
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -367,5 +367,59 @@ Wszystkie zadania wykonuję z pełnym zaangażowaniem i serdecznym uśmiechem.
   
   #subtitle
   Współczynnik przedłużenia umów
+  :::
+::
+
+::team-member
+#section-title
+ZARZĄDZANIE NAJMEM
+
+#name
+Małgorzata Piszczek
+
+#role
+Spec. ds. Zarządzania Najmem
+
+#description
+Moim celem jest zapewnienie właścicielom nieruchomości spokoju, a najemcom komfortu. W ścisłej współpracy z naszymi projektantkami przygotuję Twoje mieszkanie do wynajmu, aby jak najlepiej je wynająć i przyciągnąć odpowiednich najemców. 
+
+Dobrze zaprojektowane wnętrze zwiększa zainteresowanie najemców i pozwala uzyskać wyższy przychód z najmu. Każde zadanie realizuję z pełnym zaangażowaniem i dbałością o detale.
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Małgorzata Piszczek - Spec. ds. Zarządzania Najmem](/team/malgorzata-piszczek.jpg)
+  :::
+
+#achievements
+  :::achievement
+  #title
+  95%
+  
+  #subtitle
+  Wzrost zainteresowania po aranżacji
+  :::
+
+  :::achievement
+  #title
+  20%+
+  
+  #subtitle
+  Średni wzrost czynszu po remoncie
+  :::
+
+  :::achievement
+  #title
+  50+
+  
+  #subtitle
+  Przygotowanych mieszkań
+  :::
+
+  :::achievement
+  #title
+  98%
+  
+  #subtitle
+  Zadowolonych właścicieli
   :::
 ::

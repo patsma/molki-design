@@ -16,13 +16,22 @@ ogImage:
 
 ## Postanowienia ogólne
 
-Niniejszy dokument:
+Niniejsza Polityka Prywatności:
 
-- spełnia wymagania przepisów prawa w tym w zakresie: ustawy z dnia 16 lipca 2004. Prawo telekomunikacyjne, ustawy oświadczeniu usług drogą elektroniczną
-- w szczególności określa zasady przechowywania i dostępu do informacji na urządzeniach Użytkownika za pomocą plików Cookies, służących realizacji usług świadczonych drogą elektroniczną
+- spełnia wymagania przepisów prawa, w tym:
+  - Ustawy z dnia 16 lipca 2004 r. – Prawo telekomunikacyjne
+  - Ustawy o świadczeniu usług drogą elektroniczną
+  - Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO)
+- określa zasady przetwarzania danych osobowych oraz przechowywania i dostępu do informacji na urządzeniach Użytkownika za pomocą plików Cookies w ramach serwisu internetowego www.molkidesign.pl
 - zawiera informacje dotyczące przetwarzania przez:
 
-**MOLKI Sp. z o.o.**:brul. Heweliusza 11/811, 80-390 Gdańsk:brKRS: 0000874895:brNIP: 9571129157:brREGON: 387741765:brtel.: +48 572 323 207:bremail: <biuro@molki.pl>
+**MOLKI Sp. z o.o.**:br
+ul. Heweliusza 11/811, 80-890 Gdańsk:br
+KRS: 0000874895:br
+NIP: 9571129157:br
+REGON: 387741765:br
+tel.: +48 572 323 207:br
+email: <biuro@molki.pl>
 
 Administratorem danych osobowych jest MOLKI Sp. z o.o.
 
@@ -61,12 +70,30 @@ Administrator dba o bezpieczeństwo danych osobowych zgodnie z rozporządzeniem 
 
 Serwis ogranicza zbieranie i wykorzystywanie informacji o Użytkownikach do niezbędnego minimum (art. 5 ust.1 lit. c RODO).
 
-Administrator przetwarza dane generowane automatycznie przez połączenie internetowe Użytkownika (adres IP, czas korzystania, nazwy stron, wyszukiwarki) oraz pliki cookie w celu:
+Administrator przetwarza dane osobowe Użytkowników w następujących celach:
 
-- monitorowania ruchu w Serwisie
-- badań diagnostycznych
-- analiz marketingowych
-- celów statystycznych
+1. **Kontakt z klientem**
+   - gdy Użytkownik dobrowolnie przekazuje swoje dane (imię, nazwisko, adres e-mail, numer telefonu) w formularzu kontaktowym
+   - w celu udzielenia odpowiedzi na zapytanie
+
+2. **Newsletter**
+   - gdy Użytkownik wyrazi zgodę na otrzymywanie treści marketingowych drogą elektroniczną
+   - w celu wysyłki informacji handlowych i marketingowych
+
+3. **Dane generowane automatycznie**
+   - adres IP, czas korzystania, nazwy stron, wyszukiwarki
+   - w celach:
+     - monitorowania ruchu w Serwisie
+     - badań diagnostycznych
+     - analiz marketingowych
+     - celów statystycznych
+
+4. **Realizacja prawnie uzasadnionych interesów**
+   - analiza ruchu na stronie
+   - poprawa jakości świadczonych usług
+   - zapewnienie bezpieczeństwa serwisu
+
+Dane osobowe są przechowywane przez okres niezbędny do realizacji powyższych celów lub do momentu wycofania zgody przez Użytkownika.
 
 ## Prawa osób, których dane dotyczą
 
@@ -132,4 +159,4 @@ Zalecenia dla Użytkowników:
 
 ## Postanowienia końcowe
 
-Polityka obowiązuje od dnia 10.10.2020. O wszelkich zmianach Użytkownicy będą informowani w zakładce "Polityka prywatności".
+Polityka obowiązuje od dnia 27 marca 2025 r. O wszelkich zmianach Użytkownicy będą informowani w zakładce "Polityka prywatności".

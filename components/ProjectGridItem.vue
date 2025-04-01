@@ -1,7 +1,9 @@
 <template>
-  <NuxtLink
+  <component
+    :is="to ? 'NuxtLink' : 'div'"
     :to="to"
-    class="group block relative overflow-hidden"
+    class="block relative overflow-hidden"
+    :class="{ group: to }"
     data-scroll-item
     data-scroll-animation="fadeUp"
     data-scroll-duration="0.8"
@@ -15,6 +17,7 @@
         :style="{ paddingBottom: aspectRatio ? `${(1 / aspectRatio) * 100}%` : '75%' }"
       >
         <div
+          v-if="to"
           class="absolute inset-0 bg-primary/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
         ></div>
         <!-- Image slot with absolute positioning -->
@@ -35,17 +38,18 @@
 
       <!-- Mobile-only button -->
       <button
+        v-if="to"
         class="md:hidden mt-4 w-full rounded-md bg-primary px-6 py-3 text-sm font-medium text-white"
       >
         Zobacz więcej
       </button>
     </div>
-  </NuxtLink>
+  </component>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-  to: string;
+  to?: string;
   aspectRatio?: number; // width/height ratio (e.g., 16/9 = 1.78, 4/3 = 1.33, 1/1 = 1)
 }>();
 </script>

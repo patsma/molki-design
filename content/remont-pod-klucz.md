@@ -16,7 +16,7 @@ ogImage:
 
 ::hero-projects
 ---
-cta-link: /realizacje
+cta-link: /remont-pod-klucz#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
@@ -282,7 +282,7 @@ odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::
 
-::full-viewport-slider
+::full-viewport-slider{#realizacje}
 ---
 ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---

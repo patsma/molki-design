@@ -21,7 +21,7 @@ cta-link: /wnetrza-inwestycyjne#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior design showcase](/heroBusiness.jpg)
+  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/heroBusiness.jpg)
   :::
 
 #cta
@@ -47,7 +47,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Funkcjonalny](/gridItem4.jpg)
+    ![Przykład profesjonalnego projektu wnętrza inwestycyjnego z wizualizacją 3D](/gridItem4.jpg)
     ::::
   
   #title
@@ -71,7 +71,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Wykonawczy](/gridItem5.jpg)
+    ![Kompleksowy remont wnętrza pod klucz - przykład realizacji](/gridItem5.jpg)
     ::::
   
   #title
@@ -95,7 +95,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Porada Projektowa](/gridItem6.jpg)
+    ![Profesjonalny home staging wnętrza mieszkania inwestycyjnego](/gridItem6.jpg)
     ::::
   
   #title
@@ -121,12 +121,12 @@ id: realizacje
 ---
 #slides-0
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Slide 1](/heroHome.jpg)
+  ![Luksusowe wnętrze mieszkania po kompleksowym remoncie](/heroHome.jpg)
   :::
 
 #slides-1
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Slide 2](/heroAbout.jpg)
+  ![Nowoczesna aranżacja przestrzeni mieszkalnej](/heroAbout.jpg)
   :::
 
 #cta

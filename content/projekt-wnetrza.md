@@ -23,7 +23,7 @@ cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior design showcase](/heroInterior.jpg)
+  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/heroInterior.jpg)
   :::
 
 #cta
@@ -177,7 +177,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Funkcjonalny](/gridItem1.jpg)
+    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/gridItem1.jpg)
     ::::
   
   #title
@@ -194,7 +194,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt Wykonawczy](/gridItem2.jpg)
+    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/gridItem2.jpg)
     ::::
   
   #title
@@ -211,7 +211,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Porada Projektowa](/gridItem3.jpg)
+    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/gridItem3.jpg)
     ::::
   
   #title

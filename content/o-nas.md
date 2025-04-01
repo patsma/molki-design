@@ -22,7 +22,7 @@ POZNAJ ZESPÓŁ MOLKI DESIGN!
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Full width parallax](/heroAboutCropped.jpg)
+  ![Zespół Molki Design w nowoczesnym biurze projektowym](/heroAboutCropped.jpg)
   :::
 
 #description
@@ -54,7 +54,7 @@ Moja podstawowa zasada to urządzanie wnętrz zgodnie z tym jak chcesz żyć, ki
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Wioletta Retko - Prezes Zarządu](/team/wioletta-retko.jpg)
+  ![Wioletta Retko - Prezes Zarządu i projektantka wnętrz w Molki Design](/team/wioletta-retko.jpg)
   :::
 
 #achievements
@@ -110,7 +110,7 @@ To pozwala nam skalować nasze działania i osiągać coraz lepsze wyniki.
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Tomasz Godyński - Prezes Zarządu](/team/tomasz-godynski.jpg)
+  ![Tomasz Godyński - Prezes Zarządu Molki Design, specjalista ds. technologii i procesów](/team/tomasz-godynski.jpg)
   :::
 
 #achievements
@@ -166,7 +166,7 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Martyna Kwiecińska - Główna Projektantka](/team/martyna-kwiecinska.jpg)
+  ![Martyna Kwiecińska - Główna Projektantka Molki Design przy pracy nad projektem](/team/martyna-kwiecinska.jpg)
   :::
 
 #achievements

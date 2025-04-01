@@ -31,7 +31,7 @@ Umów konsultację
 
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/heroHome.jpg)
+  ![Profesjonalne usługi projektowania wnętrz - nowoczesne i funkcjonalne przestrzenie mieszkalne](/heroHome.jpg)
   :::
 ::
 
@@ -53,7 +53,7 @@ Bez stresu i kompromisów
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt wnętrza](/gridItem1.jpg)
+    ![Przykład luksusowego projektu wnętrza mieszkalnego z indywidualnym charakterem](/gridItem1.jpg)
     ::::
   
   #title
@@ -70,7 +70,7 @@ Bez stresu i kompromisów
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Remont pod klucz](/gridItem2.jpg)
+    ![Kompleksowy remont mieszkania pod klucz - przykład realizacji](/gridItem2.jpg)
     ::::
   
   #title
@@ -87,7 +87,7 @@ Bez stresu i kompromisów
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Dla biznesu](/gridItem3.jpg)
+    ![Profesjonalne projekty wnętrz dla nieruchomości inwestycyjnych](/gridItem3.jpg)
     ::::
   
   #title

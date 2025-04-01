@@ -13,7 +13,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
           <ClientOnly>
             <h3
               v-scroll-anim:fadeUp="{ delay: 0.2 }"
-              class="h3-style font-bold uppercase tracking-widest text-secondary"
+              class="font-bold uppercase tracking-widest text-secondary text-3xl md:text-4xl"
             >
               <slot name="section-title" mdc-unwrap="p">POZNAJMY SIĘ!</slot>
             </h3>
@@ -24,10 +24,13 @@ import FrameCorner from '~/components/FrameCorner.vue';
                 class="relative gap-1 grid pl-6 border-l-2 border-primary"
                 v-scroll-anim:fadeLeft="{ delay: 0.4 }"
               >
-                <h2 v-if="$slots.name" class="h2-style font-semibold text-primary">
+                <h2
+                  v-if="$slots.name"
+                  class="font-semibold text-primary text-4xl md:text-5xl lg:text-6xl"
+                >
                   <slot name="name" mdc-unwrap="p" />
                 </h2>
-                <p v-if="$slots.role" class="font-medium">
+                <p v-if="$slots.role" class="font-medium text-lg md:text-xl lg:text-2xl">
                   <slot name="role" mdc-unwrap="p" />
                 </p>
               </div>
@@ -36,7 +39,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
               <div
                 v-if="$slots.description"
                 v-scroll-anim:fadeUp="{ delay: 0.6 }"
-                class="body-large text-neutral-700 leading-relaxed space-y-6"
+                class="text-neutral-700 leading-relaxed space-y-6 text-2xl md:text-2xl"
               >
                 <slot name="description" />
               </div>

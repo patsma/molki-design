@@ -12,4 +12,4 @@ ogImage:
     cover: /projectItem1.jpg
 ---
 
-<!-- This content file is used to configure SEO and OG image for the realizations index page --> 
+<!-- This content file is used to configure SEO and OG image for the realizations index page -->

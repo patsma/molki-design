@@ -12,4 +12,4 @@ ogImage:
     cover: /heroHome.jpg
 ---
 
-<!-- This content file is used to configure SEO and OG image for the blog index page --> 
+<!-- This content file is used to configure SEO and OG image for the blog index page -->

@@ -1,11 +1,14 @@
 ---
 headerSpacing: true
-head.title: Design Molki
+head:
+  title: Design Molki
 description: Projekty wnętrz w Trójmieście
 title: Molki Design
 seo:
   title: Projekt wnętrza - Profesjonalne projektowanie wnętrz | Molki Design
-  description: Kompleksowe projektowanie wnętrz mieszkalnych i komercyjnych w Trójmieście. Od koncepcji po realizację, tworzymy funkcjonalne i estetyczne przestrzenie.
+  description: Kompleksowe projektowanie wnętrz mieszkalnych i komercyjnych w
+    Trójmieście. Od koncepcji po realizację, tworzymy funkcjonalne i estetyczne
+    przestrzenie.
 ogImage:
   component: Custom
   props:
@@ -18,8 +21,6 @@ ogImage:
 ---
 cta-link: /realizacje
 ---
-
-
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior design showcase](/heroInterior.jpg)
@@ -226,8 +227,8 @@ UMÓW KONSULTACJĘ
 
 ::title-section
 ---
-className: hidden md:grid
 hasBackground: false
+class: hidden md:grid
 id: cennik
 ---
 #title
@@ -239,7 +240,7 @@ Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoic
 
 ::services-table
 ---
-className: hidden md:grid pb-20
+class: hidden md:grid pb-20
 infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna
   kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych
@@ -399,10 +400,9 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
 
 ::pricing-grid
 ---
-classList: md:hidden
 isSolid: true
+classList: md:hidden
 ---
-
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior Design Services](/uslugiProjektowe.jpg)
@@ -428,7 +428,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Układ funkcjonalny z opisami
   - Lista zakupów (materiałów, mebli, dodatków)
   - Układ mebli na wymiar
-
+  
   #premiumPrice
   od 120 zł/m²
   
@@ -453,7 +453,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Projekt listew przypodłogowych, sztukaterii i karniszy
   - Projekt sufitów (malowanie+dodatki)
   - Projekt malowania ścian
-
+  
   #premiumPrice
   od 240 zł/m²
   
@@ -463,16 +463,15 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   :::
 
 #infoText
-*Powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
+\*Powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
 ::
 
 ::pricing-grid
 ---
 hasOverlay: true
-overlayColor: bg-white
 overlayOpacity: 90
+overlayColor: bg-white
 ---
-
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
   ![Interior Design Consultation](/heroPricing.jpg)
@@ -527,14 +526,16 @@ Dodatkowe usługi projektowe
   :::
 
 #content
- [Konsultacja przedprojektowa]{.text-primary.h4-style.font-bold} [ - 190 zł/h]{.h4-style.font-bold}
-
+[Konsultacja przedprojektowa]{.text-primary.h4-style.font-bold} [- 190 zł/h]{.h4-style.font-bold}
 
 :br
+
 :br
 
- [Dodatkowe Usługi]{.text-primary.h4-style.font-bold} [ - wyceny indywidualne]{.h4-style.font-bold}
+[Dodatkowe Usługi]{.text-primary.h4-style.font-bold} [- wyceny indywidualne]{.h4-style.font-bold}
+
 :br
+
 :br
 
 - **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – prosimy o kontakt w celu omówienia szczegółów i wyceny.

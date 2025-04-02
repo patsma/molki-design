@@ -21,7 +21,7 @@ const mediaPickerSchema = z.string().startsWith('/').editor({ input: 'media' });
 // Define slider schema
 const sliderSchema = z.object({
   images: z
-    .array(mediaPickerSchema)
+    .array(z.string())
     .describe('Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)')
     .editor({
       input: 'media',
@@ -56,7 +56,7 @@ export default defineContentConfig({
               'Główne zdjęcie projektu (wyświetlane na liście projektów)'
             ),
             images: z
-              .array(mediaPickerSchema)
+              .array(z.string())
               .describe(
                 'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
               )

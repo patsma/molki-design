@@ -63,8 +63,7 @@ export default defineContentConfig({
               .editor({
                 input: 'media',
               })
-              .optional()
-              .describe('Slider zdjęć realizacji'),
+              .optional(),
 
             // Call to Action
             ctaText: z

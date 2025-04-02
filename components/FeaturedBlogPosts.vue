@@ -69,8 +69,8 @@ const formatDate = (dateString: string) => {
             <!-- Post Image -->
             <NuxtLink :to="`/blog/${post.slug}`" class="block aspect-[16/9] overflow-hidden">
               <nuxt-img
-                :src="post.cover.src"
-                :alt="post.cover.alt || post.title"
+                :src="post.cover?.src || post.cover"
+                :alt="post.cover?.alt || post.title"
                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 format="webp"
               />

@@ -3,11 +3,15 @@ title: Harmonia Barw - Jak Wybrać Idealną Paletę Kolorystyczną?
 slug: harmonia-barw-jak-wybrac-idealna-palete-kolorystyczna
 category: Porady
 date: 2023-11-03
-cover: /blog/blog-molki-design-007.webp
+cover:
+  src: /blog/blog-molki-design-007.webp
+  alt: Harmonia Barw - Jak Wybrać Idealną Paletę Kolorystyczną?
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Harmonia Barw - Jak Wybrać Idealną Paletę Kolorystyczną?
   description: ""

@@ -168,8 +168,8 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
         <div class="mb-12" v-scroll-anim:scale="{ delay: 0.4 }">
           <div class="aspect-[21/9] overflow-hidden rounded-lg">
             <nuxt-img
-              :src="data.cover.src"
-              :alt="data.cover.alt || data.title"
+              :src="data.cover?.src || data.cover"
+              :alt="data.cover?.alt || data.title"
               class="w-full h-full object-cover"
               format="webp"
             />
@@ -193,8 +193,8 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
             <div class="flex items-center gap-4 mb-4">
               <div v-if="data.authorImage" class="w-16 h-16 rounded-full overflow-hidden">
                 <nuxt-img
-                  :src="data.authorImage"
-                  :alt="data.author"
+                  :src="data.authorImage?.src || data.authorImage"
+                  :alt="data.authorImage?.alt || data.author"
                   class="w-full h-full object-cover"
                   format="webp"
                 />
@@ -236,8 +236,8 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
                 class="block aspect-[16/9] overflow-hidden"
               >
                 <nuxt-img
-                  :src="relatedPost.cover"
-                  :alt="relatedPost.title"
+                  :src="relatedPost.cover?.src || relatedPost.cover"
+                  :alt="relatedPost.cover?.alt || relatedPost.title"
                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   format="webp"
                 />

@@ -15,13 +15,21 @@ const ogImageSchema = z.object({
 });
 
 // Define media picker schema for images - using simple string pattern instead of refine
-const mediaPickerSchema = z.string().startsWith('/');
+const mediaPickerSchema = z.string().startsWith('/').editor({ input: 'media' });
 
 // Define slider schema
 const sliderSchema = z.object({
-  images: z.array(mediaPickerSchema).describe('Zdjęcia do wyświetlenia w sliderze'),
-  ctaText: z.string().optional().describe('Tekst przycisku (domyślnie: UMÓW KONSULTACJĘ)'),
-  ctaLink: z.string().optional().describe('Link do przycisku'),
+  images: z
+    .array(mediaPickerSchema)
+    .describe('Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)')
+    .editor({
+      input: 'media',
+    }),
+  ctaText: z
+    .string()
+    .optional()
+    .describe('Wprowadź tekst, który ma się pojawić na przycisku (domyślnie: UMÓW KONSULTACJĘ)'),
+  ctaLink: z.string().optional().describe('Wprowadź URL, do którego ma prowadzić przycisk'),
 });
 
 export default defineContentConfig({

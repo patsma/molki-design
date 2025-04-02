@@ -60,11 +60,19 @@ export default defineContentConfig({
               'Główne zdjęcie projektu (wyświetlane na liście projektów)'
             ),
             images: z
-              .array(mediaPickerSchema)
+              .array(
+                z.object({
+                  src: z.string().startsWith('/').editor({ input: 'media' }),
+                  alt: z
+                    .string()
+                    .min(1, 'Tekst alternatywny jest wymagany')
+                    .describe('Tekst alternatywny dla obrazu'),
+                })
+              )
+              .min(1, 'Wymagane jest przynajmniej jedno zdjęcie')
               .describe(
                 'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
-              )
-              .optional(),
+              ),
 
             // Call to Action
             ctaText: z

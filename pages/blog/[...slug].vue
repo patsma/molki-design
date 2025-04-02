@@ -196,6 +196,7 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
                   :src="data.authorImage.src"
                   :alt="data.authorImage.alt"
                   class="w-full h-full object-cover"
+                  format="webp"
                 />
               </div>
               <div>

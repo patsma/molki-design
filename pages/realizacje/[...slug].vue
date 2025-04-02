@@ -154,8 +154,9 @@ const ctaLink = computed(() => {
                   >
                     <nuxt-img
                       :src="image.src"
-                      :alt="image.alt || `${data.title} - Image ${index + 1}`"
+                      :alt="image.alt"
                       class="w-full h-full object-cover"
+                      format="webp"
                     />
                   </swiper-slide>
                 </swiper-container>

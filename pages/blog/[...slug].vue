@@ -168,8 +168,8 @@ const { data: relatedPosts } = await useAsyncData(`related-posts-${route.path}`,
         <div class="mb-12" v-scroll-anim:scale="{ delay: 0.4 }">
           <div class="aspect-[21/9] overflow-hidden rounded-lg">
             <nuxt-img
-              :src="data.cover"
-              :alt="data.title"
+              :src="data.cover.src"
+              :alt="data.cover.alt || data.title"
               class="w-full h-full object-cover"
               format="webp"
             />

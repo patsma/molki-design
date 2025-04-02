@@ -15,7 +15,7 @@ register();
 interface Props {
   ctaText?: string;
   ctaLink?: string;
-  images: string[];
+  images: Array<{ src: string; alt?: string }>;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -64,8 +64,8 @@ onMounted(() => {
         <swiper-slide v-for="(image, index) in images" :key="index" class="w-full h-full">
           <parallax-img class="w-full h-full object-cover">
             <nuxt-img
-              :src="image"
-              :alt="`Slide ${index + 1}`"
+              :src="image.src"
+              :alt="image.alt || `Slide ${index + 1}`"
               format="webp"
               loading="eager"
               class="w-full h-full object-cover"

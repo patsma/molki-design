@@ -153,8 +153,8 @@ const ctaLink = computed(() => {
                     class="w-full h-full"
                   >
                     <nuxt-img
-                      :src="image"
-                      :alt="`${data.title} - Image ${index + 1}`"
+                      :src="image.src"
+                      :alt="image.alt || `${data.title} - Image ${index + 1}`"
                       class="w-full h-full object-cover"
                       format="webp"
                     />

@@ -42,13 +42,13 @@ export const usePageSeo = (page: Ref<any>) => {
   // Enhanced image handling with prioritization
   const getSocialImage = () => {
     // Prioritize OG image from page metadata
-    if (page.value?.ogImage?.cover) {
-      return getAbsoluteUrl(page.value.ogImage.cover);
+    if (page.value?.ogImage?.cover?.src) {
+      return getAbsoluteUrl(page.value.ogImage.cover.src);
     }
 
     // Fallback to page cover if available
-    if (page.value?.cover) {
-      return getAbsoluteUrl(page.value.cover);
+    if (page.value?.cover?.src) {
+      return getAbsoluteUrl(page.value.cover.src);
     }
 
     // Use default image as last resort
@@ -132,8 +132,8 @@ export const usePageSeo = (page: Ref<any>) => {
         props: {
           ...page.value.ogImage.props,
           // Ensure cover is an absolute URL if provided
-          cover: page.value.ogImage.props?.cover
-            ? getAbsoluteUrl(page.value.ogImage.props.cover)
+          cover: page.value.ogImage.props?.cover?.src
+            ? getAbsoluteUrl(page.value.ogImage.props.cover.src)
             : undefined,
         },
       });
@@ -144,18 +144,20 @@ export const usePageSeo = (page: Ref<any>) => {
         props: {
           title: page.value.ogImage.title || pageTitle,
           description: page.value.ogImage.description || pageDescription,
-          cover: page.value.ogImage.cover ? getAbsoluteUrl(page.value.ogImage.cover) : undefined,
+          cover: page.value.ogImage.cover?.src
+            ? getAbsoluteUrl(page.value.ogImage.cover.src)
+            : undefined,
         },
       });
     }
-  } else if (page.value?.cover) {
+  } else if (page.value?.cover?.src) {
     // Use page cover for OG image
     defineOgImage({
       component: 'Custom',
       props: {
         title: pageTitle,
         description: pageDescription,
-        cover: getAbsoluteUrl(page.value.cover),
+        cover: getAbsoluteUrl(page.value.cover.src),
       },
     });
   } else {

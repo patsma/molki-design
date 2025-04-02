@@ -3,11 +3,15 @@ title: Kreatywne Rozwiązania na Małe Przestrzenie - Geniusz Projektowy MOLKI D
 slug: kreatywne-rozwiazania-na-male-przestrzenie-geniusz-projektowy-molki-design
 category: Porady
 date: 2024-02-05
-cover: /blog/blog-molki-design-015.webp
+cover:
+  src: /blog/blog-molki-design-015.webp
+  alt: Kreatywne Rozwiązania na Małe Przestrzenie - Geniusz Projektowy MOLKI DESIGN
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Kreatywne Rozwiązania na Małe Przestrzenie - Geniusz Projektowy MOLKI DESIGN
   description: ""

@@ -3,11 +3,15 @@ title: Nowoczesna Kuchnia Marzeń - Sekrety Projektowania z MOLKI DESIGN
 slug: nowoczesna-kuchnia-marzen-sekrety-projektowania-z-molki-design
 category: Porady
 date: 2024-02-15
-cover: /blog/blog-molki-design-022.webp
+cover:
+  src: /blog/blog-molki-design-022.webp
+  alt: Nowoczesna Kuchnia Marzeń - Sekrety Projektowania z MOLKI DESIGN
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Nowoczesna Kuchnia Marzeń - Sekrety Projektowania z MOLKI DESIGN
   description: ""

@@ -3,11 +3,15 @@ title: Sekretne Życie Kolorów - Jak Wybrać Odcienie, które Opowiadają Twoj�
 slug: sekretne-zycie-kolorow-jak-wybrac-odcienie-ktore-opowiadaja-twoja-historie
 category: Porady
 date: 2023-11-08
-cover: /blog/blog-molki-design-008.webp
+cover:
+  src: /blog/blog-molki-design-008.webp
+  alt: Sekretne Życie Kolorów - Jak Wybrać Odcienie, które Opowiadają Twoją Historię
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Sekretne Życie Kolorów - Jak Wybrać Odcienie, które Opowiadają Twoją Historię
   description: ""

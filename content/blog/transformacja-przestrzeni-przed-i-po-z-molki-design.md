@@ -3,11 +3,15 @@ title: Transformacja Przestrzeni - Przed i Po z MOLKI DESIGN
 slug: transformacja-przestrzeni-przed-i-po-z-molki-design
 category: Porady
 date: 2023-11-20
-cover: /blog/blog-molki-design-011.webp
+cover:
+  src: /blog/blog-molki-design-011.webp
+  alt: Transformacja Przestrzeni - Przed i Po z MOLKI DESIGN
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Transformacja Przestrzeni - Przed i Po z MOLKI DESIGN
   description: ""

@@ -1,20 +1,24 @@
 ---
-title: Zrównoważony Design - Jak Tworzymy Eko-Przyjazne Wnętrza w MOLKI DESIGN
+title: Zrównoważony Design - Jak Tworzymy Eko-przyjazne Wnętrza w Molki Design
 slug: zrownowazony-design-jak-tworzymy-eko-przyjazne-wnetrza-w-molki-design
 category: Porady
-date: 2024-02-08
-cover: /blog/blog-molki-design-016.webp
+date: 2023-10-20
+cover:
+  src: /blog/blog-molki-design-004.webp
+  alt: Zrównoważony Design - Jak Tworzymy Eko-przyjazne Wnętrza w Molki Design
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
-  title: Zrównoważony Design - Jak Tworzymy Eko-Przyjazne Wnętrza w MOLKI DESIGN
+  title: Zrównoważony Design - Jak Tworzymy Eko-przyjazne Wnętrza w Molki Design
   description: ""
 ogImage:
   title: Zrównoważony Design
-  description: Jak Tworzymy Eko-Przyjazne Wnętrza w MOLKI DESIGN
-  cover: /blog/blog-molki-design-016.webp
+  description: Jak Tworzymy Eko-przyjazne Wnętrza w Molki Design
+  cover: /blog/blog-molki-design-004.webp
 ---
 
 Zrównoważony Design: Jak Tworzymy Eko-Przyjazne Wnętrza w MOLKI DESIGN

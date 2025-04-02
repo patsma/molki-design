@@ -3,11 +3,15 @@ title: Przestrzeń pełna światła - Oświetlenie, które zmienia wszystko w Tw
 slug: przestrzen-pelna-swiatla-oswietlenie-ktore-zmienia-wszystko-w-twoim-wnetrzu
 category: Porady
 date: 2023-10-15
-cover: /blog/blog-molki-design-003.webp
+cover:
+  src: /blog/blog-molki-design-003.webp
+  alt: Przestrzeń pełna światła - Oświetlenie, które zmienia wszystko w Twoim wnętrzu
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Przestrzeń pełna światła - Oświetlenie, które zmienia wszystko w Twoim
     wnętrzu

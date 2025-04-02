@@ -3,11 +3,15 @@ title: Kącik Czytelniczy - Twój Osobisty Azyl w Domu z Pomocą MOLKI DESIGN
 slug: kacik-czytelniczy-twoj-osobisty-azyl-w-domu-z-pomoca-molki-design
 category: Porady
 date: 2024-02-10
-cover: /blog/blog-molki-design-021.webp
+cover:
+  src: /blog/blog-molki-design-021.webp
+  alt: Kącik Czytelniczy - Twój Osobisty Azyl w Domu z Pomocą MOLKI DESIGN
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Kącik Czytelniczy - Twój Osobisty Azyl w Domu z Pomocą MOLKI DESIGN
   description: ""

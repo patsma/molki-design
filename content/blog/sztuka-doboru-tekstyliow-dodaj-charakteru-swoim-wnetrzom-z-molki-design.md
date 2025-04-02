@@ -3,11 +3,15 @@ title: Sztuka Doboru Tekstyliów - Dodaj Charakteru Swoim Wnętrzom z MOLKI DESI
 slug: sztuka-doboru-tekstyliow-dodaj-charakteru-swoim-wnetrzom-z-molki-design
 category: Porady
 date: 2024-01-20
-cover: /blog/blog-molki-design-012.webp
+cover:
+  src: /blog/blog-molki-design-012.webp
+  alt: Sztuka Doboru Tekstyliów - Dodaj Charakteru Swoim Wnętrzom z MOLKI DESIGN
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Sztuka Doboru Tekstyliów - Dodaj Charakteru Swoim Wnętrzom z MOLKI DESIGN
   description: ""

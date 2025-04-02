@@ -4,11 +4,15 @@ title: Jak Stworzyć Przestrzeń Marzeń - Sekrety Udanej Współpracy z Projekt
 slug: jak-stworzyc-przestrzen-marzen-sekrety-udanej-wspolpracy-z-projektantem-wnetrz
 category: Porady
 date: 2023-10-25
-cover: /blog/blog-molki-design-001.webp
+cover:
+  src: /blog/blog-molki-design-001.webp
+  alt: Jak Stworzyć Przestrzeń Marzeń - Sekrety Udanej Współpracy z Projektantem
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Jak Stworzyć Przestrzeń Marzeń - Sekrety Udanej Współpracy z Projektantem
     Wnętrz

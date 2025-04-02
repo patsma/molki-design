@@ -3,11 +3,15 @@ title: Mały Balkon, Wielkie Możliwości - Jak Zaaranżować Przestrzeń z MOLK
 slug: maly-balkon-wielkie-mozliwosci-jak-zaaranzowac-przestrzen-z-molki-design
 category: Porady
 date: 2024-03-01
-cover: /blog/maly-balkon-wielkie-mozliwosci-jak-zaaranzowac-przestrzen-z-molki-design.webp
+cover:
+  src: /blog/maly-balkon-wielkie-mozliwosci-jak-zaaranzowac-przestrzen-z-molki-design.webp
+  alt: Mały Balkon, Wielkie Możliwości - Jak Zaaranżować Przestrzeń z MOLKI DESIGN
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Mały Balkon, Wielkie Możliwości - Jak Zaaranżować Przestrzeń z MOLKI DESIGN
   description: ""

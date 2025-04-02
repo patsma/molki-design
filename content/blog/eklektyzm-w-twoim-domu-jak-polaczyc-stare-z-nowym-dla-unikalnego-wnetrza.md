@@ -3,11 +3,15 @@ title: Eklektyzm w Twoim Domu - Jak Połączyć Stare z Nowym dla Unikalnego Wn�
 slug: eklektyzm-w-twoim-domu-jak-polaczyc-stare-z-nowym-dla-unikalnego-wnetrza
 category: Porady
 date: 2023-10-10T00:00:00.000Z
-cover: /blog/blog-molki-design-001.webp
+cover:
+  src: /blog/blog-molki-design-001.webp
+  alt: Eklektyzm w Twoim Domu - Jak Połączyć Stare z Nowym dla Unikalnego Wnętrza
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Eklektyzm w Twoim Domu - Jak Połączyć Stare z Nowym dla Unikalnego Wnętrza
   description: ""

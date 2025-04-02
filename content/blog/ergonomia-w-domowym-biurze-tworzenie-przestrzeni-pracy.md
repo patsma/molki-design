@@ -3,11 +3,15 @@ title: Ergonomia w Domowym Biurze - Tworzenie Przestrzeni Pracy
 slug: ergonomia-w-domowym-biurze-tworzenie-przestrzeni-pracy
 category: Porady
 date: 2023-11-25
-cover: /blog/blog-molki-design-010.webp
+cover:
+  src: /blog/blog-molki-design-010.webp
+  alt: Ergonomia w Domowym Biurze - Tworzenie Przestrzeni Pracy
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Ergonomia w Domowym Biurze - Tworzenie Przestrzeni Pracy
   description: ""

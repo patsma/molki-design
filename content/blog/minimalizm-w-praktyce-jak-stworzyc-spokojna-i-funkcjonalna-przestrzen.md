@@ -3,11 +3,15 @@ title: Minimalizm w Praktyce - Jak Stworzyć Spokojną i Funkcjonalną Przestrze
 slug: minimalizm-w-praktyce-jak-stworzyc-spokojna-i-funkcjonalna-przestrzen
 category: Porady
 date: 2023-11-15
-cover: /blog/blog-molki-design-009.webp
+cover:
+  src: /blog/blog-molki-design-009.webp
+  alt: Minimalizm w Praktyce - Jak Stworzyć Spokojną i Funkcjonalną Przestrzeń
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Minimalizm w Praktyce - Jak Stworzyć Spokojną i Funkcjonalną Przestrzeń
   description: ""

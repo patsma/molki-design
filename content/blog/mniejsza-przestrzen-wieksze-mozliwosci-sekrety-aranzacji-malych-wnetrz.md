@@ -3,11 +3,15 @@ title: Mniejsza przestrzeń, większe możliwości - Sekrety aranżacji małych 
 slug: mniejsza-przestrzen-wieksze-mozliwosci-sekrety-aranzacji-malych-wnetrz
 category: Porady
 date: 2023-10-15
-cover: /blog/blog-molki-design-004.webp
+cover:
+  src: /blog/blog-molki-design-004.webp
+  alt: Mniejsza przestrzeń, większe możliwości - Sekrety aranżacji małych wnętrz
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Mniejsza przestrzeń, większe możliwości - Sekrety aranżacji małych wnętrz
   description: ""

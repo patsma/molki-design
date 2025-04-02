@@ -4,11 +4,15 @@ title: Mała Łazienka, Wielki Efekt - Jak Tworzymy Przestrzeń Pełną Stylu i
 slug: mala-lazienka-wielki-efekt-jak-tworzymy-przestrzen-pelna-stylu-i-funkcjonalnosci
 category: Porady
 date: 2023-11-05
-cover: /blog/blog-molki-design-006.webp
+cover:
+  src: /blog/blog-molki-design-006.webp
+  alt: Mała Łazienka, Wielki Efekt - Jak Tworzymy Przestrzeń Pełną Stylu i
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Mała Łazienka, Wielki Efekt - Jak Tworzymy Przestrzeń Pełną Stylu i
     Funkcjonalności

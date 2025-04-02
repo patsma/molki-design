@@ -2,19 +2,23 @@
 title: Zielona Oaza w Miejskim Wnętrzu - Jak Rośliny Ożywiają Przestrzeń
 slug: zielona-oaza-w-miejskim-wnetrzu-jak-rosliny-ozywiaja-przestrzen
 category: Porady
-date: 2023-11-10
-cover: /blog/blog-molki-design-005.webp
+date: 2023-10-15
+cover:
+  src: /blog/blog-molki-design-003.webp
+  alt: Zielona Oaza w Miejskim Wnętrzu - Jak Rośliny Ożywiają Przestrzeń
 excerpt: ""
 author: Wioletta Retko
 authorRole: Główny projektant
-authorImage: /team/wioletta-retko.jpg
+authorImage:
+  src: /team/wioletta-retko.jpg
+  alt: Wioletta Retko - Główny projektant
 seo:
   title: Zielona Oaza w Miejskim Wnętrzu - Jak Rośliny Ożywiają Przestrzeń
   description: ""
 ogImage:
   title: Zielona Oaza w Miejskim Wnętrzu
   description: Jak Rośliny Ożywiają Przestrzeń
-  cover: /blog/blog-molki-design-005.webp
+  cover: /blog/blog-molki-design-003.webp
 ---
 
 Zielona Oaza w Miejskim Wnętrzu: Jak Rośliny Ożywiają Przestrzeń

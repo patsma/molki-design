@@ -10,22 +10,61 @@ interface SwiperContainer extends HTMLElement {
   initialize: () => void;
 }
 
+interface PageData {
+  fullViewportSlider?: {
+    images: Array<{ src: string; alt?: string }>;
+    ctaText?: string;
+    ctaLink?: string;
+  };
+}
+
 register();
 
-// Get the current page content
-const { page } = useContent();
+// Get the current route to find the current page
+const route = useRoute();
 
-// Get slider settings from page content
-const sliderSettings = computed(() => {
-  return (
-    page.value?.fullViewportSlider || {
-      images: [],
-      ctaText: 'UMÓW KONSULTACJĘ',
-      ctaLink:
-        'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271',
-    }
-  );
+// Direct props for when the component is used directly with props
+const props = defineProps<{
+  images?: Array<{ src: string; alt?: string }>;
+  ctaText?: string;
+  ctaLink?: string;
+}>();
+
+// Get the current page data from the content collection
+const { data: pageData } = await useAsyncData<PageData | null>(`content-${route.path}`, () =>
+  // @ts-ignore - queryContent is auto-imported by Nuxt Content
+  queryContent(route.path)
+    .find()
+    .then((result: any[]) => result[0] || null)
+);
+
+// Get slider settings with precedence: props > page data > defaults
+const sliderImages = computed(() => {
+  // Direct props take precedence
+  if (props.images && props.images.length > 0) {
+    return props.images;
+  }
+  // Then page settings
+  if (
+    pageData.value?.fullViewportSlider?.images &&
+    pageData.value.fullViewportSlider.images.length > 0
+  ) {
+    return pageData.value.fullViewportSlider.images;
+  }
+  // Fallback to empty array
+  return [];
 });
+
+const sliderCtaText = computed(
+  () => props.ctaText || pageData.value?.fullViewportSlider?.ctaText || 'UMÓW KONSULTACJĘ'
+);
+
+const sliderCtaLink = computed(
+  () =>
+    props.ctaLink ||
+    pageData.value?.fullViewportSlider?.ctaLink ||
+    'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271'
+);
 
 const swiperRef = ref<SwiperContainer | null>(null);
 
@@ -63,11 +102,7 @@ onMounted(() => {
           disableOnInteraction: false,
         }"
       >
-        <swiper-slide
-          v-for="(image, index) in sliderSettings.images"
-          :key="index"
-          class="w-full h-full"
-        >
+        <swiper-slide v-for="(image, index) in sliderImages" :key="index" class="w-full h-full">
           <parallax-img class="w-full h-full object-cover">
             <nuxt-img
               :src="image.src"
@@ -112,10 +147,10 @@ onMounted(() => {
 
         <!-- Button -->
         <NuxtLink
-          :to="sliderSettings.ctaLink"
+          :to="sliderCtaLink"
           class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
-          {{ sliderSettings.ctaText }}
+          {{ sliderCtaText }}
         </NuxtLink>
       </div>
     </div>

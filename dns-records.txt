@@ -1,0 +1,36 @@
+# DNS Records for molkidesign.pl
+# Exported on: [Current Date]
+
+# A Records
+ftp                     300  A      195.78.67.53
+localhost               300  A      127.0.0.1
+molkidesign.pl.        300  A      195.78.67.53
+pop                     300  A      195.78.67.53
+smtp                    300  A      195.78.67.53
+www                     300  A      195.78.67.53
+
+# NS Records
+molkidesign.pl.        300  NS     ns1.hekko.net.pl.
+molkidesign.pl.        300  NS     ns2.hekko.net.pl.
+
+# MX Records
+molkidesign.pl.        300  MX     1  ASPMX.L.GOOGLE.COM.
+molkidesign.pl.        300  MX     10 ALT3.ASPMX.L.GOOGLE.COM.
+molkidesign.pl.        300  MX     10 ALT4.ASPMX.L.GOOGLE.COM.
+molkidesign.pl.        300  MX     5  ALT1.ASPMX.L.GOOGLE.COM.
+molkidesign.pl.        300  MX     5  ALT2.ASPMX.L.GOOGLE.COM.
+
+# CNAME Records
+autoconfig              300  CNAME  autodiscover.s85.hekko.pl.
+litesrv._domainkey.molkidesign.pl.  300  CNAME  litesrv._domainkey.mlsend.com.
+mail                    300  CNAME  ghs.googlehosted.com.
+
+# TXT Records
+@                      300  TXT    "google-site-verification=HfK9BQMsglsg5OQ-3JI8uBQwJxlqmUYAVCJnloiGj5Y"
+@                      300  TXT    "google-site-verification=JnDLVU4mpMmKkzZG4QU0mUJsz9jy6bqjgMPioSXo03Q"
+_dmarc                 300  TXT    "v=DMARC1; p=none; sp=none"
+molkidesign.pl.        300  TXT    "v=spf1 include:_spf.mlsend.com a mx include:_spf.cyberfolks.pl include:_spf.google.com -all"
+x._domainkey           300  TXT    "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtZwhZkUPqP1wjrJtYxMAAZpawepKq+/1fRVQLnGlem9+r/i5HjOJdP8Diul48flAPRziiUI2PFKuYRRgOfGnnE5ayV68I0KqTUu3C6hCjLop+VFh8zkLJ4R2H5+soQ7xhRdhboFwKS2RYjVkoLNH9nWH6spIwwvkyHuMj1TNzmD8Kqs1fhndB5faGAeR5KKBboNG0MYxqNAdqDFiw4TFLBBTBf5KkYetmyLwbtdQkLiiQeHbwxfJVwPqeIAJkfSi0ngApxhVCdm2cJ2Zy6s+HovhbhfCWvVysyQm4yyvK4ZmdqNqv3wQWl7ZRvrPTTHvI39hX4+LuWvZMy//zqC8XwIDAQAB"
+
+# SRV Records
+_autodiscover._tcp     300  SRV    10 10 443 autodiscover.s85.hekko.pl. 

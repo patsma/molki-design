@@ -14,6 +14,18 @@ const ogImageSchema = z.object({
     .optional(),
 });
 
+// Define media picker schema for images
+const mediaPickerSchema = z.string().refine(
+  (value) => {
+    // Validate that the value is a string and starts with a forward slash
+    // This ensures it's a valid path from the public directory
+    return typeof value === 'string' && value.startsWith('/');
+  },
+  {
+    message: 'Image path must be a valid path from the public directory',
+  }
+);
+
 export default defineContentConfig({
   collections: {
     projects: defineCollection(
@@ -28,8 +40,8 @@ export default defineContentConfig({
             location: z.string(),
             year: z.string(),
             number: z.string(),
-            cover: z.string(),
-            images: z.array(z.string()),
+            cover: mediaPickerSchema,
+            images: z.array(mediaPickerSchema),
             ctaText: z.string().optional(),
             ctaLink: z.string().optional(),
             seo: z
@@ -53,11 +65,11 @@ export default defineContentConfig({
             slug: z.string(),
             category: z.string(),
             date: z.string(),
-            cover: z.string(),
+            cover: mediaPickerSchema,
             excerpt: z.string(),
             author: z.string().optional(),
             authorRole: z.string().optional(),
-            authorImage: z.string().optional(),
+            authorImage: mediaPickerSchema.optional(),
             seo: z
               .object({
                 title: z.string().optional(),

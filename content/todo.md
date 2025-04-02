@@ -41,7 +41,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
 - ✅ Automatyczne generowanie mapy strony
 - ✅ **Końcowe Sprawdzenie SEO**:
   - ✅ Tytuły stron
-  - 🟡 Tekst alternatywny dla wszystkich obrazów
+  - ✅ Tekst alternatywny dla wszystkich obrazów
   - ✅ Konfiguracja robots.txt
 - ✅ **Integracja Analityki**
   - ✅ Google Analytics 4
@@ -128,7 +128,7 @@ Ta strona śledzi nasz postęp w kierunku ukończenia strony internetowej.
   - ✅ Newsletter - wybór dostawcy, adres do konfiguracji
 - ✅ **Zatwierdzenie integracji analitycznych**:
   - ✅ Google Analytics
-  - 🟡 Google Search Console - dane
+  - ✅ Google Search Console - dane
   - ✅ Google Tag Manager?
   - ✅ Facebook pixel?
 - ✅ Końcowy przegląd treści

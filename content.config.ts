@@ -56,8 +56,11 @@ export default defineContentConfig({
             ),
             images: z
               .array(mediaPickerSchema)
-              .describe('Galeria zdjęć projektu - wybierz wszystkie zdjęcia dla slidera'),
-
+              .describe('Galeria zdjęć projektu - wybierz wszystkie zdjęcia dla slidera')
+              .editor({
+                input: 'media',
+                multi: true,
+              }),
             // Call to Action
             ctaText: z
               .string()
@@ -96,7 +99,9 @@ export default defineContentConfig({
             slug: z.string().describe('URL-friendly nazwa wpisu'),
             category: z.string().describe('Kategoria wpisu'),
             date: z.string().describe('Data publikacji'),
-            cover: mediaPickerSchema.describe('Główne zdjęcie wpisu'),
+            cover: mediaPickerSchema.describe(
+              'Główne zdjęcie projektu (wyświetlane na liście projektów) (zalecane wymiary: 1920x1080px)'
+            ),
             excerpt: z.string().describe('Krótki opis wpisu'),
             author: z.string().optional().describe('Autor wpisu'),
             authorRole: z.string().optional().describe('Stanowisko autora'),

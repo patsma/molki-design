@@ -17,7 +17,10 @@ const ogImageSchema = z.object({
 // Define media picker schema for images
 const mediaPickerSchema = z.object({
   src: z.string().startsWith('/').editor({ input: 'media' }),
-  alt: z.string().describe('Tekst alternatywny dla obrazu'),
+  alt: z
+    .string()
+    .min(1, 'Tekst alternatywny jest wymagany')
+    .describe('Tekst alternatywny dla obrazu'),
 });
 
 // Define slider schema

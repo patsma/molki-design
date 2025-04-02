@@ -64,7 +64,7 @@ export default defineContentConfig({
             images: z
               .array(
                 z.object({
-                  src: imageSchema.describe('Ścieżka do zdjęcia'),
+                  src: mediaPickerSchema.describe('Ścieżka do zdjęcia'),
                   alt: z.string().describe('Tekst alternatywny dla zdjęcia'),
                 })
               )

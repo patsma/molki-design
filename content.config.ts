@@ -13,6 +13,13 @@ const ogImageSchema = z.object({
     })
     .optional(),
 });
+// Image schema with media picker*
+
+const imageSchema = z.object({
+  src: z.string().startsWith('/').describe('Ścieżka do obrazu').editor({ input: 'media' }),
+
+  alt: z.string().optional().describe('Tekst alternatywny dla obrazu'),
+});
 
 // Define media picker schema for images - using simple string pattern instead of refine
 const mediaPickerSchema = z.string().startsWith('/').editor({ input: 'media' });
@@ -55,12 +62,15 @@ export default defineContentConfig({
               'Główne zdjęcie projektu (wyświetlane na liście projektów)'
             ),
             images: z
-              .array(mediaPickerSchema)
-              .describe('Galeria zdjęć projektu - wybierz wszystkie zdjęcia dla slidera')
-              .editor({
-                input: 'media',
-                multi: true,
-              }),
+              .array(
+                z.object({
+                  src: imageSchema.describe('Ścieżka do zdjęcia'),
+                  alt: z.string().describe('Tekst alternatywny dla zdjęcia'),
+                })
+              )
+              .optional()
+              .describe('Slider zdjęć realizacji'),
+
             // Call to Action
             ctaText: z
               .string()

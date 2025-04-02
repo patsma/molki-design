@@ -156,7 +156,6 @@ const ctaLink = computed(() => {
                       :src="image.src"
                       :alt="image.alt || `${data.title} - Image ${index + 1}`"
                       class="w-full h-full object-cover"
-                      format="webp"
                     />
                   </swiper-slide>
                 </swiper-container>

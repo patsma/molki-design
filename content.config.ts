@@ -17,15 +17,13 @@ const ogImageSchema = z.object({
 
 // Define media picker schema for images - using simple string pattern instead of refine
 const mediaPickerSchema = z.string().startsWith('/').editor({ input: 'media' });
+const mediaArraySchema = z.array(z.string().startsWith('/')).editor({ input: 'media' });
 
 // Define slider schema
 const sliderSchema = z.object({
-  images: z
-    .array(z.string())
-    .describe('Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)')
-    .editor({
-      input: 'media',
-    }),
+  images: mediaArraySchema.describe(
+    'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
+  ),
   ctaText: z
     .string()
     .optional()
@@ -55,14 +53,10 @@ export default defineContentConfig({
             cover: mediaPickerSchema.describe(
               'Główne zdjęcie projektu (wyświetlane na liście projektów)'
             ),
-            images: z
-              .array(z.string())
+            images: mediaArraySchema
               .describe(
                 'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
               )
-              .editor({
-                input: 'media',
-              })
               .optional(),
 
             // Call to Action

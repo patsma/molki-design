@@ -4,10 +4,23 @@ head:
   title: Design Molki
 description: Projekty wnętrz w Trójmieście
 title: Molki Design
+fullViewportSlider:
+  images:
+    - src: /heroProjects.jpg
+      alt: Przykłady zrealizowanych projektów remontowych przez Molki Design
+    - src: /heroAbout.jpg
+      alt: Wnętrza zaprojektowane przez Molki Design
+    - src: /blog/blog-molki-design-008.webp
+      alt: Tekst Alt
+  ctaText: UMÓW KONSULTACJĘ
+  ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 seo:
   title: Remont pod klucz - Kompleksowe usługi remontowe | Molki Design
   description: Kompleksowe usługi remontowe od projektu po realizację. Oferujemy
     profesjonalny remont pod klucz mieszkań i domów w Trójmieście.
+  image:
+    src: /heroAbout.jpg
+    alt: Remont pod klucz - Molki Design
 ogImage:
   component: Custom
   props:
@@ -289,9 +302,11 @@ odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 ::full-viewport-slider
 ---
 images:
-  - /heroHome.jpg
-  - /heroAbout.jpg
-ctaText: UMÓW KONSULTACJĘ
+  - src: /heroHome.jpg
+    alt: Luksusowe wnętrze mieszkania po kompleksowym remoncie
+  - src: /heroAbout.jpg
+    alt: Nowoczesna aranżacja przestrzeni mieszkalnej
 ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
+ctaText: UMÓW KONSULTACJĘ
 ---
 ::

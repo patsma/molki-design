@@ -56,11 +56,13 @@ export default defineContentConfig({
               'Główne zdjęcie projektu (wyświetlane na liście projektów)'
             ),
             images: z
-              .array(
-                z.object({
-                  src: mediaPickerSchema.describe('Slider zdjęć realizacji'),
-                })
+              .array(mediaPickerSchema)
+              .describe(
+                'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
               )
+              .editor({
+                input: 'media',
+              })
               .optional()
               .describe('Slider zdjęć realizacji'),
 

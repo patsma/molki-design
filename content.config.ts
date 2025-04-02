@@ -110,7 +110,7 @@ export default defineContentConfig({
             excerpt: z.string().describe('Krótki opis wpisu'),
             author: z.string().optional().describe('Autor wpisu'),
             authorRole: z.string().optional().describe('Stanowisko autora'),
-            authorImage: mediaPickerSchema.optional().describe('Zdjęcie autora'),
+            authorImage: mediaPickerSchema.describe('Zdjęcie autora'),
             seo: z
               .object({
                 title: z

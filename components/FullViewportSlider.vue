@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 
 interface SwiperContainer extends HTMLElement {
   swiper?: {
@@ -13,16 +13,20 @@ interface SwiperContainer extends HTMLElement {
 register();
 
 interface Props {
+  images: Array<{
+    src: string;
+    alt?: string;
+  }>;
   ctaText?: string;
   ctaLink?: string;
-  images: Array<{ src: string; alt?: string }>;
 }
 
+// Define props with editor metadata for Nuxt Studio
 const props = withDefaults(defineProps<Props>(), {
+  images: () => [],
   ctaText: 'UMÓW KONSULTACJĘ',
   ctaLink:
     'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271',
-  images: () => [],
 });
 
 const swiperRef = ref<SwiperContainer | null>(null);

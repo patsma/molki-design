@@ -143,19 +143,35 @@ export default defineContentConfig({
           type: 'page',
           source: '**/*.md',
           schema: z.object({
-            title: z.string().optional().describe('Tytuł strony'),
-            description: z.string().optional().describe('Opis strony'),
+            // Basic Page Information
+            headerSpacing: z.boolean().optional().describe('Czy strona ma mieć odstęp od nagłówka'),
+            title: z.string().describe('Tytuł strony'),
+            description: z.string().describe('Opis strony'),
+
+            // SEO Settings
+            seo: z
+              .object({
+                title: z.string().describe('Własny tytuł SEO'),
+                description: z.string().describe('Własny opis SEO'),
+              })
+              .describe('Ustawienia SEO'),
+
+            // OG Image Settings
+            ogImage: z
+              .object({
+                component: z.string(),
+                props: z.object({
+                  title: z.string(),
+                  description: z.string(),
+                  cover: z.string().startsWith('/'),
+                }),
+              })
+              .describe('Ustawienia obrazu dla social media'),
+
+            // Full Viewport Slider (if needed)
             fullViewportSlider: sliderSchema
               .optional()
               .describe('Ustawienia slidera na pełną wysokość ekranu'),
-            seo: z
-              .object({
-                title: z.string().optional().describe('Własny tytuł SEO'),
-                description: z.string().optional().describe('Własny opis SEO'),
-              })
-              .optional()
-              .describe('Ustawienia SEO'),
-            ogImage: ogImageSchema.optional().describe('Ustawienia obrazu dla social media'),
           }),
         })
       )

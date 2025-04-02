@@ -15,12 +15,6 @@ const ogImageSchema = z.object({
 });
 // Image schema with media picker*
 
-const imageSchema = z.object({
-  src: z.string().startsWith('/').describe('Ścieżka do obrazu').editor({ input: 'media' }),
-
-  alt: z.string().optional().describe('Tekst alternatywny dla obrazu'),
-});
-
 // Define media picker schema for images - using simple string pattern instead of refine
 const mediaPickerSchema = z.string().startsWith('/').editor({ input: 'media' });
 
@@ -64,8 +58,7 @@ export default defineContentConfig({
             images: z
               .array(
                 z.object({
-                  src: mediaPickerSchema.describe('Ścieżka do zdjęcia'),
-                  alt: z.string().describe('Tekst alternatywny dla zdjęcia'),
+                  src: mediaPickerSchema.describe('Slider zdjęć realizacji'),
                 })
               )
               .optional()

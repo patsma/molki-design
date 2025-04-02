@@ -300,13 +300,4 @@ odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 ::
 
 ::full-viewport-slider
----
-images:
-  - src: /heroHome.jpg
-    alt: Luksusowe wnętrze mieszkania po kompleksowym remoncie
-  - src: /heroAbout.jpg
-    alt: Nowoczesna aranżacja przestrzeni mieszkalnej
-ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
-ctaText: UMÓW KONSULTACJĘ
----
 ::

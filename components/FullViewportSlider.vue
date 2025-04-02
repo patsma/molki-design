@@ -12,21 +12,19 @@ interface SwiperContainer extends HTMLElement {
 
 register();
 
-interface Props {
-  images: Array<{
-    src: string;
-    alt?: string;
-  }>;
-  ctaText?: string;
-  ctaLink?: string;
-}
+// Get the current page content
+const { page } = useContent();
 
-// Define props with editor metadata for Nuxt Studio
-const props = withDefaults(defineProps<Props>(), {
-  images: () => [],
-  ctaText: 'UMÓW KONSULTACJĘ',
-  ctaLink:
-    'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271',
+// Get slider settings from page content
+const sliderSettings = computed(() => {
+  return (
+    page.value?.fullViewportSlider || {
+      images: [],
+      ctaText: 'UMÓW KONSULTACJĘ',
+      ctaLink:
+        'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271',
+    }
+  );
 });
 
 const swiperRef = ref<SwiperContainer | null>(null);
@@ -65,7 +63,11 @@ onMounted(() => {
           disableOnInteraction: false,
         }"
       >
-        <swiper-slide v-for="(image, index) in images" :key="index" class="w-full h-full">
+        <swiper-slide
+          v-for="(image, index) in sliderSettings.images"
+          :key="index"
+          class="w-full h-full"
+        >
           <parallax-img class="w-full h-full object-cover">
             <nuxt-img
               :src="image.src"
@@ -110,10 +112,10 @@ onMounted(() => {
 
         <!-- Button -->
         <NuxtLink
-          :to="ctaLink"
+          :to="sliderSettings.ctaLink"
           class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
-          {{ ctaText }}
+          {{ sliderSettings.ctaText }}
         </NuxtLink>
       </div>
     </div>

@@ -17,6 +17,13 @@ const ogImageSchema = z.object({
 // Define media picker schema for images - using simple string pattern instead of refine
 const mediaPickerSchema = z.string().startsWith('/');
 
+// Define slider schema
+const sliderSchema = z.object({
+  images: z.array(mediaPickerSchema).describe('Zdjęcia do wyświetlenia w sliderze'),
+  ctaText: z.string().optional().describe('Tekst przycisku (domyślnie: UMÓW KONSULTACJĘ)'),
+  ctaLink: z.string().optional().describe('Link do przycisku'),
+});
+
 export default defineContentConfig({
   collections: {
     projects: defineCollection(
@@ -112,6 +119,9 @@ export default defineContentConfig({
           schema: z.object({
             title: z.string().optional().describe('Tytuł strony'),
             description: z.string().optional().describe('Opis strony'),
+            fullViewportSlider: sliderSchema
+              .optional()
+              .describe('Ustawienia slidera na pełną wysokość ekranu'),
             seo: z
               .object({
                 title: z.string().optional().describe('Własny tytuł SEO'),

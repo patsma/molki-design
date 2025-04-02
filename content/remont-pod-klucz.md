@@ -288,19 +288,10 @@ odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 
 ::full-viewport-slider
 ---
+images:
+  - /heroHome.jpg
+  - /heroAbout.jpg
+ctaText: UMÓW KONSULTACJĘ
 ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
-id: realizacje
 ---
-#slides-0
-  :::parallax-img{.w-full.h-full.object-cover}
-  ![Slide 1](/heroHome.jpg)
-  :::
-
-#slides-1
-  :::parallax-img{.w-full.h-full.object-cover}
-  ![Slide 2](/heroAbout.jpg)
-  :::
-
-#cta
-UMÓW KONSULTACJĘ
 ::

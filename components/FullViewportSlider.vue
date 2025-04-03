@@ -5,10 +5,20 @@ import { onMounted, ref } from 'vue';
 // Register Swiper web components
 register();
 
-// Get data directly from MDC props
+// Component props with documentation
 const props = defineProps({
-  images: { type: Array, default: () => [] },
-  ctaText: { type: String, default: 'UMÓW KONSULTACJĘ' },
+  /** Array of images to display in the slider */
+  images: {
+    type: Array,
+    default: () => [],
+    required: true,
+  },
+  /** Text to display on the CTA button */
+  ctaText: {
+    type: String,
+    default: 'UMÓW KONSULTACJĘ',
+  },
+  /** Link for the CTA button */
   ctaLink: {
     type: String,
     default:
@@ -16,16 +26,14 @@ const props = defineProps({
   },
 });
 
+// Reference to the Swiper instance
 const swiperRef = ref(null);
 
-const handlePrevSlide = () => {
-  swiperRef.value?.swiper?.slidePrev();
-};
+// Navigation methods
+const handlePrevSlide = () => swiperRef.value?.swiper?.slidePrev();
+const handleNextSlide = () => swiperRef.value?.swiper?.slideNext();
 
-const handleNextSlide = () => {
-  swiperRef.value?.swiper?.slideNext();
-};
-
+// Initialize Swiper on component mount
 onMounted(() => {
   swiperRef.value?.initialize();
 });
@@ -82,7 +90,7 @@ onMounted(() => {
       </svg>
     </button>
 
-    <!-- Persistent CTA Button -->
+    <!-- CTA Button -->
     <div
       class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 w-full max-w-screen-xl mx-auto px-4"
     >
@@ -100,6 +108,7 @@ onMounted(() => {
 </template>
 
 <style>
+/* Swiper Bullet Styles */
 swiper-container::part(bullet) {
   background-color: white;
   opacity: 0.5;

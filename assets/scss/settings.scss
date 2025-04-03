@@ -7,7 +7,10 @@ $w2560-up: "print, screen and (min-width: 2500px)"; // 2.5K QHD
 $w3840-up: "print, screen and (min-width: 3800px)"; // 4K UHD
 
 :root {
+  /* Base font size */
   font-size: 16px;
+
+  /* Custom properties */
   --font-family-regular: "Arial Nova", sans-serif;
   --font-family-bold: "Arial Nova", sans-serif;
   --font-family-display: "Shadows Into Light", cursive;
@@ -29,4 +32,23 @@ $w3840-up: "print, screen and (min-width: 3800px)"; // 4K UHD
   --color-neutral-600: #363434;
 
   --color-text-primary: #503d32;
+}
+
+/* Responsive font scaling */
+@media #{$w1920-up} {
+  :root {
+    font-size: 20px;
+  }
+}
+
+@media #{$w2560-up} {
+  :root {
+    font-size: 28px;
+  }
+}
+
+@media #{$w3840-up} {
+  :root {
+    font-size: 40px;
+  }
 }

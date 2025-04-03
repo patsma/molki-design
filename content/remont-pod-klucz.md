@@ -6,7 +6,7 @@ description: Projekty wnętrz w Trójmieście
 title: Molki Design
 fullViewportSlider:
   images:
-    - src: /heroProjects.jpg
+    - src: /premium/Molki Design Gdańsk Apartament Premium.jpeg42.jpeg
       alt: Przykłady zrealizowanych projektów remontowych przez Molki Design
     - src: /heroAbout.jpg
       alt: Wnętrza zaprojektowane przez Molki Design

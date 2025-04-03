@@ -32,7 +32,7 @@ cta-link: /wnetrza-inwestycyjne#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/premium/Gdan%CC%81sk%20NL09%20Medium.jpeg)
+  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/gridItem2.jpg)
   :::
 
 #cta

@@ -1,6 +1,17 @@
 ---
 headerSpacing: true
 title: Dla biznesu
+fullViewportSlider:
+  images:
+    - src: /heroProjects.jpg
+      alt: Przykłady zrealizowanych projektów remontowych przez Molki Design
+    - src: /heroAbout.jpg
+      alt: Wnętrza zaprojektowane przez Molki Design
+    - src: /blog/blog-molki-design-008.webp
+      alt: Tekst Alt
+    - src: /blog/blog-molki-design-019.webp
+  ctaText: UMÓW KONSULTACJĘ
+  ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 seo:
   title: Dla biznesu - Projektowanie wnętrz komercyjnych | Molki Design
   description: Profesjonalne projektowanie wnętrz komercyjnych i biurowych w
@@ -116,19 +127,8 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
 
 ::full-viewport-slider
 ---
-ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
-id: realizacje
+:cta-link: fullViewportSlider.ctaLink
+:cta-text: fullViewportSlider.ctaText
+:images: fullViewportSlider.images
 ---
-#slides-0
-  :::parallax-img{.w-full.h-full.object-cover}
-  ![Luksusowe wnętrze mieszkania po kompleksowym remoncie](/heroHome.jpg)
-  :::
-
-#slides-1
-  :::parallax-img{.w-full.h-full.object-cover}
-  ![Nowoczesna aranżacja przestrzeni mieszkalnej](/heroAbout.jpg)
-  :::
-
-#cta
-UMÓW KONSULTACJĘ
 ::

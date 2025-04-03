@@ -59,7 +59,8 @@ onMounted(() => {
               :src="image.src"
               :alt="image.alt || `Slide ${index + 1}`"
               format="webp"
-              loading="eager"
+              :loading="index === 0 ? 'eager' : 'lazy'"
+              :preload="index === 0"
               class="w-full h-full object-cover"
             />
           </parallax-img>

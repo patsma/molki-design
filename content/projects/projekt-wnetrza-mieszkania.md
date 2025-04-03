@@ -1,9 +1,9 @@
 ---
-title: Projekt wnętrza mieszkania
-subtitle: 2025 | Gdańsk
+title: "Apartament Premium "
+subtitle: 2024 | Gdańsk
 slug: projekt-wnetrza-mieszkania
 location: Gdańsk
-year: "2023"
+year: "2024"
 number: "01"
 cover: /projectItem1.jpg
 images:

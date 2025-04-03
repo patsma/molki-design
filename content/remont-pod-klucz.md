@@ -6,13 +6,18 @@ description: Projekty wnętrz w Trójmieście
 title: Molki Design
 fullViewportSlider:
   images:
-    - src: /premium/Molki Design Gdańsk Apartament Premium.jpeg42.jpeg
-      alt: Przykłady zrealizowanych projektów remontowych przez Molki Design
-    - src: /heroAbout.jpg
-      alt: Wnętrza zaprojektowane przez Molki Design
-    - src: /blog/blog-molki-design-008.webp
-      alt: Tekst Alt
-    - src: /blog/blog-molki-design-019.webp
+    - src: /Remonty/1 (4) Medium.jpeg
+      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 1
+    - src: /Remonty/1 (10) Medium.jpeg
+      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 3
+    - src: /Remonty/1 (23) Medium.jpeg
+      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 2
+    - src: /Remonty/1 (18) Medium.jpeg
+      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
+    - alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
+      src: /Remonty/1 (34) Medium.jpeg
+    - src: /Remonty/1 (37) Medium.jpeg
+      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
   ctaText: UMÓW KONSULTACJĘ
   ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 seo:

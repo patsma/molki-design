@@ -1,38 +1,34 @@
 ---
 title: Projekt super
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-  perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-  laudantium.
 subtitle: 2023 | Sopot
 slug: projekt-super
 location: Gdańsk
 year: "2023"
 number: "02"
-cover: /blog/blog-molki-design-002.webp
-gallery:
-  - src: /projectItem2.jpg
-    alt: Wnętrze projektu super
-  - src: /heroAbout.jpg
-    alt: Dodatkowe zdjęcie projektu
-cta:
-  text: ZOBACZ WIĘCEJ
-  link: /realizacje
+cover:
+  src: /blog/blog-molki-design-002.webp
+  alt: Projekt Super - Widok główny
+slider:
+  images:
+    - src: /blog/blog-molki-design-004.webp
+      alt: Projekt Super - Wnętrze 1
+    - src: /blog/blog-molki-design-008.webp
+      alt: Projekt Super - Wnętrze 2
+    - src: /projectItem2.jpg
+      alt: Wnętrze projektu super
+    - src: /heroAbout.jpg
+      alt: Dodatkowe zdjęcie projektu
+ctaText: ZOBACZ WIĘCEJ
+ctaLink: /realizacje
 seo:
   title: Projekt Super w Sopocie - Molki Design
-  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja
-    przestrzeni z nowoczesnymi rozwiązaniami.
-  image:
-    src: /projectItem1.jpg
-    alt: Projekt Super w Sopocie
+  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja przestrzeni z nowoczesnymi rozwiązaniami.
 ogImage:
   component: Custom
   props:
     title: Projekt Super w Sopocie
     description: Nowoczesny projekt wnętrza w nadmorskim klimacie
     cover: /projectItem1.jpg
-images:
-  - src: /blog/blog-molki-design-004.webp
-  - src: /blog/blog-molki-design-008.webp
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.

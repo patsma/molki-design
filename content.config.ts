@@ -39,25 +39,25 @@ const sliderSchema = z.object({
 
 export default defineContentConfig({
   collections: {
-    projects: defineCollection(
+    realizacje: defineCollection(
       asSitemapCollection(
         asOgImageCollection({
           type: 'data',
-          source: 'projects/*.md',
+          source: 'realizacje/*.md',
           schema: z.object({
             // Basic Project Information
-            title: z.string().describe('Tytuł projektu'),
-            subtitle: z.string().describe('Podtytuł projektu'),
+            title: z.string().describe('Tytuł realizacji'),
+            subtitle: z.string().describe('Podtytuł realizacji'),
             slug: z
               .string()
-              .describe('URL-friendly nazwa projektu (np. projekt-wnetrza-mieszkania)'),
-            location: z.string().describe('Lokalizacja projektu (np. Gdańsk)'),
+              .describe('URL-friendly nazwa realizacji (np. projekt-wnetrza-mieszkania)'),
+            location: z.string().describe('Lokalizacja realizacji (np. Gdańsk)'),
             year: z.string().describe('Rok realizacji'),
-            number: z.string().describe('Numer projektu (np. 01)'),
+            number: z.string().describe('Numer realizacji (np. 01)'),
 
             // Project Images
             cover: mediaPickerSchema.describe(
-              'Główne zdjęcie projektu (wyświetlane na liście projektów) (zalecane wymiary: 1920x1080px)'
+              'Główne zdjęcie realizacji (wyświetlane na liście realizacji) (zalecane wymiary: 1920x1080px)'
             ),
             slider: z
               .object({
@@ -69,7 +69,7 @@ export default defineContentConfig({
                   ),
               })
               .optional()
-              .describe('Ustawienia slidera projektu'),
+              .describe('Ustawienia slidera realizacji'),
 
             // Call to Action
             ctaText: z

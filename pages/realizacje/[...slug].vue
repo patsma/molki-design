@@ -3,16 +3,18 @@ const route = useRoute();
 const fullPath = `/realizacje/${route.params.slug.join('/')}`;
 const swiperRef = ref(null);
 
-const { data } = await useAsyncData(`project-${route.path}`, async () => {
+const { data } = await useAsyncData(`realizacja-${route.path}`, async () => {
   try {
-    const project = await queryCollection('projects').where('slug', '=', route.params.slug).first();
-    // During prerendering, return null if project doesn't exist
-    if (!project && process.server && import.meta.env.NITRO_PRERENDER) {
+    const realizacja = await queryCollection('realizacje')
+      .where('slug', '=', route.params.slug)
+      .first();
+    // During prerendering, return null if realizacja doesn't exist
+    if (!realizacja && process.server && import.meta.env.NITRO_PRERENDER) {
       return null;
     }
-    return project;
+    return realizacja;
   } catch (error) {
-    console.error('Error fetching project:', error);
+    console.error('Error fetching realizacja:', error);
     if (process.server && import.meta.env.NITRO_PRERENDER) {
       return null;
     }
@@ -24,7 +26,7 @@ const { data } = await useAsyncData(`project-${route.path}`, async () => {
 if (!data.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Projekt nie został odnaleziony',
+    statusMessage: 'Realizacja nie została odnaleziona',
     fatal: true,
   });
 }
@@ -47,7 +49,7 @@ try {
       },
     };
 
-    // If the project has specific OG image config, use it
+    // If the realizacja has specific OG image config, use it
     if (data.value?.ogImage?.component && data.value?.ogImage?.props) {
       ogImageConfig.component = data.value.ogImage.component;
       ogImageConfig.props = {
@@ -59,7 +61,7 @@ try {
     defineOgImage(ogImageConfig);
   }
 } catch (e) {
-  console.error('Error applying SEO to project page:', e);
+  console.error('Error applying SEO to realizacja page:', e);
 }
 
 // Get headerSpacing setting from meta

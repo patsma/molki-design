@@ -1,22 +1,22 @@
 <script setup>
-// Check if we have any projects
-const { error } = await useAsyncData('projects-check', async () => {
+// Check if we have any realizacje
+const { error } = await useAsyncData('realizacje-check', async () => {
   try {
-    const count = await queryCollection('projects').count();
+    const count = await queryCollection('realizacje').count();
     return null;
   } catch (error) {
-    console.error('Error checking projects:', error);
+    console.error('Error checking realizacje:', error);
     return error;
   }
 });
 
-// Fetch the projects index content if available (could be a content/projects.md file)
-const { data } = await useAsyncData('projects-index', async () => {
+// Fetch the realizacje index content if available (could be a content/realizacje.md file)
+const { data } = await useAsyncData('realizacje-index', async () => {
   try {
-    // Try to fetch a potential projects index content file
-    return await queryContent('projects').findOne();
+    // Try to fetch a potential realizacje index content file
+    return await queryContent('realizacje').findOne();
   } catch (error) {
-    console.log('No specific content file for projects index, using defaults');
+    console.log('No specific content file for realizacje index, using defaults');
     return null;
   }
 });
@@ -52,7 +52,7 @@ try {
     },
   });
 } catch (e) {
-  console.error('Error applying SEO to projects index:', e);
+  console.error('Error applying SEO to realizacje index:', e);
 }
 
 // Get headerSpacing setting from meta if available
@@ -77,7 +77,7 @@ const needsHeaderSpacing = computed(() => {
       <template #subtitle>Zobacz wszystkie nasze projekty</template>
     </TitleSection>
 
-    <SquareGrid contentType="projects" orderBy="number" orderDirection="ASC">
+    <SquareGrid contentType="realizacje" orderBy="number" orderDirection="ASC">
       <template #item="{ item }">
         <SquareGridItem
           v-scroll-anim:staggerUp="{ sequence: true, delay: 0.5 }"
@@ -88,7 +88,7 @@ const needsHeaderSpacing = computed(() => {
           :location="item.location"
           :year="item.year"
           :image="item.cover"
-          type="project"
+          type="realizacja"
         />
       </template>
     </SquareGrid>

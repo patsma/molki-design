@@ -12,6 +12,7 @@ fullViewportSlider:
       alt: Wnętrza zaprojektowane przez Molki Design
     - src: /blog/blog-molki-design-008.webp
       alt: Tekst Alt
+    - src: /blog/blog-molki-design-019.webp
   ctaText: UMÓW KONSULTACJĘ
   ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 seo:
@@ -299,5 +300,10 @@ odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::
 
-::full-viewport-slider{:images="fullViewportSlider.images" :ctaText="fullViewportSlider.ctaText" :ctaLink="fullViewportSlider.ctaLink"}
+::full-viewport-slider
+---
+:cta-link: fullViewportSlider.ctaLink
+:cta-text: fullViewportSlider.ctaText
+:images: fullViewportSlider.images
+---
 ::

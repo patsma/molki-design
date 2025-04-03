@@ -32,7 +32,7 @@ cta-link: /wnetrza-inwestycyjne#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/heroBusiness.jpg)
+  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/gridItem2.jpg)
   :::
 
 #cta

@@ -69,7 +69,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
         <ClientOnly>
           <FrameCorner v-scroll-anim:fadeUp="{ delay: 0.2 }" position="top-left" class="-top-4" />
           <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8"
+            class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8"
             v-scroll-anim:staggerUp="{
               stagger: {
                 amount: 0.4,

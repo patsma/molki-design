@@ -57,22 +57,18 @@ export default defineContentConfig({
 
             // Project Images
             cover: mediaPickerSchema.describe(
-              'Główne zdjęcie projektu (wyświetlane na liście projektów)'
+              'Główne zdjęcie projektu (wyświetlane na liście projektów) (zalecane wymiary: 1920x1080px)'
             ),
-            images: z
-              .array(
-                z.object({
-                  src: z.string().startsWith('/').editor({ input: 'media' }),
-                  alt: z
-                    .string()
-                    .min(1, 'Tekst alternatywny jest wymagany')
-                    .describe('Tekst alternatywny dla obrazu'),
-                })
-              )
-              .min(1, 'Wymagane jest przynajmniej jedno zdjęcie')
-              .describe(
-                'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
-              ),
+            slider: z
+              .object({
+                images: z
+                  .array(mediaPickerSchema)
+                  .min(1, 'Wymagane jest przynajmniej jedno zdjęcie')
+                  .describe(
+                    'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
+                  ),
+              })
+              .describe('Ustawienia slidera projektu'),
 
             // Call to Action
             ctaText: z

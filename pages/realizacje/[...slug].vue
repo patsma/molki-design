@@ -87,6 +87,24 @@ const ctaLink = computed(() => {
   if (data.value?.slug) return `/realizacje/${data.value.slug}`;
   return '/realizacje';
 });
+
+// Normalize images to handle both formats
+const normalizedImages = computed(() => {
+  if (!data.value?.images) return [];
+
+  return data.value.images.map((image) => {
+    if (typeof image === 'string') {
+      return { src: image, alt: `${data.value.title} - Project image` };
+    }
+    return image;
+  });
+});
+
+// Get slider images
+const sliderImages = computed(() => {
+  if (!data.value?.slider?.images) return [];
+  return data.value.slider.images;
+});
 </script>
 
 <template>
@@ -148,7 +166,7 @@ const ctaLink = computed(() => {
                   class="w-full h-full"
                 >
                   <swiper-slide
-                    v-for="(image, index) in data.images"
+                    v-for="(image, index) in sliderImages"
                     :key="index"
                     class="w-full h-full"
                   >

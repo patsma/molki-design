@@ -5,10 +5,15 @@ slug: projekt-wnetrza-mieszkania
 location: Gdańsk
 year: "2024"
 number: "01"
-cover: /projectItem1.jpg
-images:
-  - /projectItem2.jpg
-  - /heroAbout.jpg
+cover:
+  src: /projectItem1.jpg
+  alt: Apartament Premium w Gdańsku - Widok główny
+slider:
+  images:
+    - src: /projectItem2.jpg
+      alt: Apartament Premium - Wnętrze 1
+    - src: /heroAbout.jpg
+      alt: Apartament Premium - Wnętrze 2
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

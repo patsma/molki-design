@@ -1,9 +1,17 @@
 <script setup lang="ts">
+// Define image type
+interface ImageObject {
+  src: string;
+  alt?: string;
+}
+
+type ImageProp = string | ImageObject;
+
 // Define common props for both project and blog items with default values
 const props = withDefaults(
   defineProps<{
     to: string;
-    image: string;
+    image: ImageProp;
     title: string;
     number?: string;
     location?: string;
@@ -32,6 +40,15 @@ const subtitle = computed(() => {
       : props.location || props.year || '';
   }
 });
+
+// Normalize image source and alt text
+const imageSource = computed(() => {
+  return typeof props.image === 'string' ? props.image : props.image.src;
+});
+
+const imageAlt = computed(() => {
+  return typeof props.image === 'string' ? props.title : props.image.alt || props.title;
+});
 </script>
 
 <template>
@@ -45,8 +62,8 @@ const subtitle = computed(() => {
   >
     <!-- Background Image -->
     <nuxt-img
-      :src="image"
-      :alt="title"
+      :src="imageSource"
+      :alt="imageAlt"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       format="webp"
     />

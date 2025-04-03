@@ -299,5 +299,5 @@ odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
 \*Powyższe ceny obowiązują w przypadku nieruchomości o powierzchni ≥ 40 m². Dla mniejszych metraży, a także większej ilości łazienek, kuchni, ew. schody, tarasy, ponadstandardowego stopnia skomplikowania projektu cena przeliczana jest indywidualnie.
 ::
 
-::full-viewport-slider
+::full-viewport-slider{:images="fullViewportSlider.images" :ctaText="fullViewportSlider.ctaText" :ctaLink="fullViewportSlider.ctaLink"}
 ::

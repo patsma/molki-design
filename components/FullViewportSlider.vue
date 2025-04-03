@@ -1,108 +1,51 @@
-<script setup lang="ts">
+<script setup>
 import { register } from 'swiper/element/bundle';
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref } from 'vue';
 
-interface SwiperContainer extends HTMLElement {
-  swiper?: {
-    slidePrev: () => void;
-    slideNext: () => void;
-  };
-  initialize: () => void;
-}
-
-interface PageData {
-  fullViewportSlider?: {
-    images: Array<{ src: string; alt?: string }>;
-    ctaText?: string;
-    ctaLink?: string;
-  };
-}
-
+// Register Swiper web components
 register();
 
-// Get the current route to find the current page
-const route = useRoute();
-
-// Direct props for when the component is used directly with props
-const props = defineProps<{
-  images?: Array<{ src: string; alt?: string }>;
-  ctaText?: string;
-  ctaLink?: string;
-}>();
-
-// Get the current page data from the content collection
-const { data: pageData } = await useAsyncData<PageData | null>(`content-${route.path}`, () =>
-  // @ts-ignore - queryContent is auto-imported by Nuxt Content
-  queryContent(route.path)
-    .find()
-    .then((result: any[]) => result[0] || null)
-);
-
-// Get slider settings with precedence: props > page data > defaults
-const sliderImages = computed(() => {
-  // Direct props take precedence
-  if (props.images && props.images.length > 0) {
-    return props.images;
-  }
-  // Then page settings
-  if (
-    pageData.value?.fullViewportSlider?.images &&
-    pageData.value.fullViewportSlider.images.length > 0
-  ) {
-    return pageData.value.fullViewportSlider.images;
-  }
-  // Fallback to empty array
-  return [];
+// Get data directly from MDC props
+const props = defineProps({
+  images: { type: Array, default: () => [] },
+  ctaText: { type: String, default: 'UMÓW KONSULTACJĘ' },
+  ctaLink: {
+    type: String,
+    default:
+      'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271',
+  },
 });
 
-const sliderCtaText = computed(
-  () => props.ctaText || pageData.value?.fullViewportSlider?.ctaText || 'UMÓW KONSULTACJĘ'
-);
+const swiperRef = ref(null);
 
-const sliderCtaLink = computed(
-  () =>
-    props.ctaLink ||
-    pageData.value?.fullViewportSlider?.ctaLink ||
-    'https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271'
-);
-
-const swiperRef = ref<SwiperContainer | null>(null);
-
-// Custom navigation methods
 const handlePrevSlide = () => {
-  if (swiperRef.value?.swiper) {
-    swiperRef.value.swiper.slidePrev();
-  }
+  swiperRef.value?.swiper?.slidePrev();
 };
 
 const handleNextSlide = () => {
-  if (swiperRef.value?.swiper) {
-    swiperRef.value.swiper.slideNext();
-  }
+  swiperRef.value?.swiper?.slideNext();
 };
 
 onMounted(() => {
-  if (swiperRef.value) {
-    swiperRef.value.initialize();
-  }
+  swiperRef.value?.initialize();
 });
 </script>
 
 <template>
-  <div v-scroll-anim:fadeUp="{ delay: 0.4 }" class="relative h-screen w-full">
+  <div v-if="images?.length > 0" class="relative h-screen w-full">
     <!-- Slider Container -->
     <ClientOnly>
       <swiper-container
         ref="swiperRef"
         class="w-full h-full"
-        :loop="true"
+        :loop="images.length > 1"
         :pagination="true"
         :autoplay="{
           delay: 3000,
           disableOnInteraction: false,
         }"
       >
-        <swiper-slide v-for="(image, index) in sliderImages" :key="index" class="w-full h-full">
+        <swiper-slide v-for="(image, index) in images" :key="index" class="w-full h-full">
           <parallax-img class="w-full h-full object-cover">
             <nuxt-img
               :src="image.src"
@@ -118,6 +61,7 @@ onMounted(() => {
 
     <!-- Navigation Arrows -->
     <button
+      v-if="images.length > 1"
       @click="handlePrevSlide"
       class="absolute left-8 top-1/2 -translate-y-1/2 z-10 text-primary hover:text-primary-dark transition-colors"
       aria-label="Previous slide"
@@ -128,6 +72,7 @@ onMounted(() => {
     </button>
 
     <button
+      v-if="images.length > 1"
       @click="handleNextSlide"
       class="absolute right-8 top-1/2 -translate-y-1/2 z-10 text-primary hover:text-primary-dark transition-colors"
       aria-label="Next slide"
@@ -142,15 +87,12 @@ onMounted(() => {
       class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 w-full max-w-screen-xl mx-auto px-4"
     >
       <div class="relative w-full grid place-items-center">
-        <!-- Decorator Line -->
         <div class="absolute w-screen h-[0.15rem] bg-primary"></div>
-
-        <!-- Button -->
         <NuxtLink
-          :to="sliderCtaLink"
+          :to="ctaLink"
           class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
-          {{ sliderCtaText }}
+          {{ ctaText }}
         </NuxtLink>
       </div>
     </div>

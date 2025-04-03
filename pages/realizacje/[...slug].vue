@@ -43,7 +43,7 @@ try {
       props: {
         title: data.value?.title || 'Molki Design - Realizacje',
         description: data.value?.description || 'Profesjonalne projekty wnętrz w Trójmieście',
-        cover: data.value?.cover || '/og-social-default.jpg',
+        cover: data.value?.cover?.src || '/og-social-default.jpg',
       },
     };
 
@@ -165,6 +165,17 @@ const sliderImages = computed(() => {
                   }"
                   class="w-full h-full"
                 >
+                  <!-- Cover image is always first -->
+                  <swiper-slide v-if="data.cover" class="w-full h-full">
+                    <nuxt-img
+                      :src="data.cover.src"
+                      :alt="data.cover.alt"
+                      class="w-full h-full object-cover"
+                      format="webp"
+                    />
+                  </swiper-slide>
+
+                  <!-- Slider images -->
                   <swiper-slide
                     v-for="(image, index) in sliderImages"
                     :key="index"

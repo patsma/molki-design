@@ -68,6 +68,7 @@ export default defineContentConfig({
                     'Wybierz zdjęcia, które mają się pojawiać w sliderze (zalecane wymiary: 1920x1080px)'
                   ),
               })
+              .optional()
               .describe('Ustawienia slidera projektu'),
 
             // Call to Action

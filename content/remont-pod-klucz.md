@@ -10,7 +10,7 @@ fullViewportSlider:
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 1
     - src: /remonty/slider/Mickiewicza 1920 (28).jpg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 3
-    - src: /remonty/slider/Plik_001.jpeg
+    - src: /premium/Molki Design Gdańsk Apartament Premium34.jpeg.jpeg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 2
     - src: /remonty/slider/71640080_raw.jpg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica

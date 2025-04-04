@@ -6,11 +6,11 @@ description: Projekty wnętrz w Trójmieście
 title: Molki Design
 fullViewportSlider:
   images:
-    - src: /Remonty/1 (4) Medium.jpeg
+    - src: /remonty/slider/Gdansk-Kartuska-07122021_234004.jpg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 1
-    - src: /Remonty/1 (10) Medium.jpeg
+    - src: /remonty/slider/Mickiewicza 1920 (28).jpg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 3
-    - src: /Remonty/1 (23) Medium.jpeg
+    - src: /remonty/slider/Plik_001.jpeg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 2
     - src: /Remonty/1 (18) Medium.jpeg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica

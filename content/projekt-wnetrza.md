@@ -23,7 +23,7 @@ cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/heroInterior.jpg)
+  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/projekty/salon%201_1.effectsResult.jpg)
   :::
 
 #cta
@@ -177,7 +177,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/gridItem1.jpg)
+    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/projekty/Salon%201_4.effectsResult.jpg)
     ::::
   
   #title
@@ -194,7 +194,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/gridItem2.jpg)
+    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/projekty/%C5%82azienk%201_1.effectsResult.jpg)
     ::::
   
   #title
@@ -211,7 +211,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/gridItem3.jpg)
+    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/projekty/Sypialnia%201_4.effectsResult.jpg)
     ::::
   
   #title
@@ -405,7 +405,7 @@ classList: md:hidden
 ---
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/uslugiProjektowe.jpg)
+  ![Interior Design Services](/remonty/slider/Dachy%20Or%C5%82owa5.jpg)
   :::
 
 #title

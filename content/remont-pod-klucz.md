@@ -41,7 +41,7 @@ cta-link: /remont-pod-klucz#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Przykłady zrealizowanych projektów remontowych przez Molki Design](/heroProjects.jpg)
+  ![Przykłady zrealizowanych projektów remontowych przez Molki Design](/remonty/1%20\(5\).jpg)
   :::
 
 #cta
@@ -153,7 +153,7 @@ BASIC
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Basic - przykład podstawowego remontu wnętrza z funkcjonalnym wykończeniem](/itemCard1.jpg)
+  ![Pakiet Basic - przykład podstawowego remontu wnętrza z funkcjonalnym wykończeniem](/remonty/1%20\(10\).jpg)
   :::
 
 #accent-shape
@@ -178,7 +178,7 @@ COMFORT
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Comfort - przykład komfortowego standardu wykończenia wnętrza](/itemCard2.jpg)
+  ![Pakiet Comfort - przykład komfortowego standardu wykończenia wnętrza](/remonty/1%20\(26\).jpg)
   :::
 
 #accent-shape
@@ -203,7 +203,7 @@ PREMIUM
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/itemCard3.jpg)
+  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/remonty/1%20\(37\).jpg)
   :::
 
 #accent-shape

@@ -12,11 +12,11 @@ fullViewportSlider:
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 3
     - src: /remonty/slider/Plik_001.jpeg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 2
-    - src: /Remonty/1 (18) Medium.jpeg
+    - src: /remonty/slider/71640080_raw.jpg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
     - alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
-      src: /Remonty/1 (34) Medium.jpeg
-    - src: /Remonty/1 (37) Medium.jpeg
+      src: /remonty/slider/34348787_925445819_mieszkanie-gdansk-letnica-ul-starowiejska_xlarge.jpg
+    - src: /remonty/slider/71640110_raw.jpg
       alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
   ctaText: UMÓW KONSULTACJĘ
   ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
@@ -41,7 +41,7 @@ cta-link: /remont-pod-klucz#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Przykłady zrealizowanych projektów remontowych przez Molki Design](/remonty/1%20\(5\).jpg)
+  ![Przykłady zrealizowanych projektów remontowych przez Molki Design](/remonty/slider/71639960_raw.jpg)
   :::
 
 #cta
@@ -153,7 +153,7 @@ BASIC
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Basic - przykład podstawowego remontu wnętrza z funkcjonalnym wykończeniem](/remonty/1%20\(10\).jpg)
+  ![Pakiet Basic - przykład podstawowego remontu wnętrza z funkcjonalnym wykończeniem](/remonty/slider/w2.effectsResult.png)
   :::
 
 #accent-shape
@@ -178,7 +178,7 @@ COMFORT
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Comfort - przykład komfortowego standardu wykończenia wnętrza](/remonty/1%20\(26\).jpg)
+  ![Pakiet Comfort - przykład komfortowego standardu wykończenia wnętrza](/remonty/slider/Dachy%20Or%C5%82owa%20kuchnia_pp.jpg)
   :::
 
 #accent-shape
@@ -203,7 +203,7 @@ PREMIUM
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/remonty/1%20\(37\).jpg)
+  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/remonty/slider/w5.effectsResult.png)
   :::
 
 #accent-shape

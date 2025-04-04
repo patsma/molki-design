@@ -3,13 +3,15 @@ headerSpacing: true
 title: Dla biznesu
 fullViewportSlider:
   images:
-    - src: /heroProjects.jpg
+    - src: /nieruchomości inwestycyjne/Subisława 1920px (7).jpg
       alt: Przykłady zrealizowanych projektów remontowych przez Molki Design
-    - src: /heroAbout.jpg
+    - src: /nieruchomości inwestycyjne/Subisława 1920px (14).jpg
       alt: Wnętrza zaprojektowane przez Molki Design
-    - src: /blog/blog-molki-design-008.webp
+    - src: /nieruchomości inwestycyjne/Kopia Zakopiańska (25).jpg
       alt: Tekst Alt
-    - src: /blog/blog-molki-design-019.webp
+    - src: /nieruchomości inwestycyjne/Kopia Zakopiańska (10).jpg
+    - src: /nieruchomości inwestycyjne/Kopia Skarpowa (21).jpg
+    - src: /nieruchomości inwestycyjne/Kopia Skarpowa (5).jpg
   ctaText: UMÓW KONSULTACJĘ
   ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 seo:

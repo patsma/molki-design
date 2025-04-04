@@ -522,7 +522,7 @@ Dodatkowe usługi projektowe
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/uslugiProjektowe.jpg)
+  ![Interior Design Services](/remonty/slider/Dachy%20Or%C5%82owa5.jpg)
   :::
 
 #content

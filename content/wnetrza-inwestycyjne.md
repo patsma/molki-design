@@ -32,7 +32,7 @@ cta-link: /wnetrza-inwestycyjne#realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/gridItem2.jpg)
+  ![Nowoczesne wnętrze inwestycyjne z eleganckim wykończeniem](/Subis%C5%82awa%201920px%20\(1\)%20\(1\).jpg)
   :::
 
 #cta
@@ -58,7 +58,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Przykład profesjonalnego projektu wnętrza inwestycyjnego z wizualizacją 3D](/gridItem4.jpg)
+    ![Przykład profesjonalnego projektu wnętrza inwestycyjnego z wizualizacją 3D](/sypialnia.jpg)
     ::::
   
   #title
@@ -82,7 +82,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Kompleksowy remont wnętrza pod klucz - przykład realizacji](/gridItem5.jpg)
+    ![Kompleksowy remont wnętrza pod klucz - przykład realizacji](/kuchnia.jpg)
     ::::
   
   #title
@@ -106,7 +106,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Profesjonalny home staging wnętrza mieszkania inwestycyjnego](/gridItem6.jpg)
+    ![Profesjonalny home staging wnętrza mieszkania inwestycyjnego](/%C5%82azienka.jpg)
     ::::
   
   #title

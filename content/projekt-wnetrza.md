@@ -177,7 +177,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/projekty/Salon%201_4.effectsResult.jpg)
+    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/Warszawa%20Wysockiego%2025%20m6%20mieszkanie%20na%20sprzedaz%CC%87%20-%20salon%2003%20\(1\).jpg)
     ::::
   
   #title

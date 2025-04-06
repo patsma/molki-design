@@ -1,6 +1,15 @@
+<script setup lang="ts">
+defineProps<{
+  to?: string;
+  aspectRatio?: number; // width/height ratio (e.g., 16/9 = 1.78, 4/3 = 1.33, 1/1 = 1)
+}>();
+
+// Ensure NuxtLink is available
+const NuxtLink = resolveComponent('NuxtLink');
+</script>
 <template>
   <component
-    :is="to ? 'NuxtLink' : 'div'"
+    :is="to ? NuxtLink : 'div'"
     :to="to"
     class="block relative overflow-hidden"
     :class="{ group: to }"
@@ -46,10 +55,3 @@
     </div>
   </component>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-  to?: string;
-  aspectRatio?: number; // width/height ratio (e.g., 16/9 = 1.78, 4/3 = 1.33, 1/1 = 1)
-}>();
-</script>

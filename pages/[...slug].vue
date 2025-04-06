@@ -15,17 +15,16 @@ if (!page.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
 }
 
 const needsHeaderSpacing = computed(() => {
-  // If headerSpacing is explicitly set to false in frontmatter
-  if (page.value?.meta?.headerSpacing === false) {
+  // console.log('Page data:', JSON.stringify(page.value, null, 2));
+  // console.log('Meta data:', JSON.stringify(page.value?.meta, null, 2));
+  // console.log('headerSpacing value:', page.value?.meta?.headerSpacing);
+
+  // If headerSpacing is explicitly set in frontmatter, respect that setting
+  if (page.value?.headerSpacing === false) {
     return false;
   }
 
-  // If headerSpacing is explicitly set to true in frontmatter
-  if (page.value?.meta?.headerSpacing === true) {
-    return true;
-  }
-
-  // Default to true if not specified
+  // Default to true for all pages unless explicitly set to false
   return true;
 });
 

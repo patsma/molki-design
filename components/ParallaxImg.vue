@@ -14,7 +14,7 @@ const props = withDefaults(
     speed?: number;
   }>(),
   {
-    speed: 0.1, // Default parallax speed (15% of scroll)
+    speed: 0.08, // Default parallax speed (15% of scroll)
   }
 );
 
@@ -68,7 +68,7 @@ onMounted(() => {
   // Initialize Intersection Observer
   observer = new IntersectionObserver(handleIntersection, {
     threshold: 0,
-    rootMargin: '10%', // Start observing before element comes into view
+    rootMargin: '5%',
   });
 
   observer.observe(container.value);
@@ -94,10 +94,10 @@ onUnmounted(() => {
 
   .parallax-content {
     position: absolute;
-    top: -5%; // Add extra space for parallax movement
+    top: -10%; // Add extra space for parallax movement
     left: 0;
     width: 100%;
-    height: 125%; // Add extra height to prevent gaps
+    height: 115%; // Add extra height to prevent gaps
     will-change: transform; // Optimize for animations
 
     img {

@@ -97,7 +97,7 @@ onUnmounted(() => {
     top: -10%; // Add extra space for parallax movement
     left: 0;
     width: 100%;
-    height: 115%; // Add extra height to prevent gaps
+    height: 125%; // Add extra height to prevent gaps
     will-change: transform; // Optimize for animations
 
     img {

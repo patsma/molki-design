@@ -23,7 +23,7 @@ cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/projekty/salon%201_1.effectsResult.jpg)
+  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/projekt-wnetrza/salonHero.jpg)
   :::
 
 #cta
@@ -177,7 +177,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/Warszawa%20Wysockiego%2025%20m6%20mieszkanie%20na%20sprzedaz%CC%87%20-%20salon%2003%20\(1\).jpg)
+    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/projekt-wnetrza/salon1.jpg)
     ::::
   
   #title
@@ -194,7 +194,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/projekty/%C5%82azienk%201_1.effectsResult.jpg)
+    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/projekt-wnetrza/salon2.jpg)
     ::::
   
   #title
@@ -211,7 +211,7 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/projekty/Sypialnia%201_4.effectsResult.jpg)
+    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/projekt-wnetrza/salon3.jpg)
     ::::
   
   #title
@@ -405,7 +405,7 @@ classList: md:hidden
 ---
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/remonty/slider/Dachy%20Or%C5%82owa5.jpg)
+  ![Interior Design Services](/projekt-wnetrza/salon4.jpg)
   :::
 
 #title
@@ -474,7 +474,7 @@ overlayColor: bg-white
 ---
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Consultation](/heroPricing.jpg)
+  ![Interior Design Consultation](/projekt-wnetrza/salon4.jpg)
   :::
 
 #title
@@ -522,7 +522,7 @@ Dodatkowe usługi projektowe
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/remonty/slider/Dachy%20Or%C5%82owa5.jpg)
+  ![Interior Design Services](/projekt-wnetrza/salon5.jpg)
   :::
 
 #content

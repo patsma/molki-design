@@ -6,18 +6,18 @@ description: Projekty wnętrz w Trójmieście
 title: Molki Design
 fullViewportSlider:
   images:
-    - src: /remonty/slider/Gdansk-Kartuska-07122021_234004.jpg
-      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 1
-    - src: /remonty/slider/Mickiewicza 1920 (28).jpg
-      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 3
-    - src: /premium/Molki Design Gdańsk Apartament Premium34.jpeg.jpeg
-      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica 2
-    - src: /remonty/slider/71640080_raw.jpg
-      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
-    - alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
-      src: /remonty/slider/34348787_925445819_mieszkanie-gdansk-letnica-ul-starowiejska_xlarge.jpg
-    - src: /remonty/slider/71640110_raw.jpg
-      alt: Molki Design - remont pod klucz Gdańsk Nowa Letnica
+    - src: /remont-pod-klucz/slider/slide1.jpg
+      alt: Molki Design - remont pod klucz Gdańsk 1
+    - src: /remont-pod-klucz/slider/slide2.jpg
+      alt: Molki Design - remont pod klucz Gdańsk 2
+    - src: /remont-pod-klucz/slider/slide3.jpg
+      alt: Molki Design - remont pod klucz Gdańsk 3
+    - src: /remont-pod-klucz/slider/slide4.jpg
+      alt: Molki Design - remont pod klucz Gdańsk 4
+    - src: /remont-pod-klucz/slider/slide5.jpg
+      alt: Molki Design - remont pod klucz Gdańsk 5
+    - src: /remont-pod-klucz/slider/slide6.jpg
+      alt: Molki Design - remont pod klucz Gdańsk 6
   ctaText: UMÓW KONSULTACJĘ
   ctaLink: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 seo:

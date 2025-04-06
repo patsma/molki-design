@@ -15,15 +15,18 @@ if (!page.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
 }
 
 const needsHeaderSpacing = computed(() => {
+  // If headerSpacing is explicitly set to false in frontmatter
   if (page.value?.meta?.headerSpacing === false) {
     return false;
   }
 
+  // If headerSpacing is explicitly set to true in frontmatter
   if (page.value?.meta?.headerSpacing === true) {
     return true;
   }
 
-  return false;
+  // Default to true if not specified
+  return true;
 });
 
 // Only apply SEO if we have page data or we're not in prerender

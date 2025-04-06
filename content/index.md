@@ -53,7 +53,7 @@ Bez stresu i kompromisów
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Przykład luksusowego projektu wnętrza mieszkalnego z indywidualnym charakterem](/home/home1.jpg)
+    ![Przykład luksusowego projektu wnętrza mieszkalnego z indywidualnym charakterem](/home/home11.jpeg)
     ::::
   
   #title
@@ -70,7 +70,7 @@ Bez stresu i kompromisów
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Kompleksowy remont mieszkania pod klucz - przykład realizacji](/home/home2.jpg)
+    ![Kompleksowy remont mieszkania pod klucz - przykład realizacji](/home/home22.jpeg)
     ::::
   
   #title

@@ -15,10 +15,6 @@ export default defineAppConfig({
               link: '/remont-pod-klucz',
             },
             {
-              label: 'Wnętrza Inwestycyjne',
-              link: '/wnetrza-inwestycyjne',
-            },
-            {
               label: 'Todo',
               link: '/todo',
             },

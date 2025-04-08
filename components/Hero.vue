@@ -10,7 +10,7 @@ defineProps<{
     <div class="relative">
       <!-- Background image with overlay -->
       <div class="absolute w-full h-full inset-0 z-0 overflow-hidden">
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="absolute inset-0 bg-black/10 z-10"></div>
         <slot name="heroImage">
           <!-- Default image -->
           <ParallaxImg

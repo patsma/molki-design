@@ -17,7 +17,7 @@ ogImage:
     cover: /heroAbout.jpg
 ---
 
-::hero-interior
+::hero-b
 ---
 cta-link: /realizacje
 ---
@@ -26,11 +26,17 @@ cta-link: /realizacje
   ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/projekt-wnetrza/salonHero.jpg)
   :::
 
-#cta
-ZOBACZ NASZE REALIZACJE
+#heroTitle
+PROJEKT WNĘTRZA
+
+#heroSubtitle
+Jasne podejście do projektowania wnętrz
 
 #title
 PROJEKT WNĘTRZA
+
+#cta
+ZOBACZ NASZE REALIZACJE
 
 #content
 Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu. Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania. Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.

@@ -94,7 +94,7 @@ const defaultServices = [
                   >
                     Podstawowy
                   </div>
-                  <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 0.7 }">od 60 zł/m²</div>
+                  <!-- <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 0.7 }">od 60 zł/m²</div> -->
                 </th>
                 <th
                   class="p-4 text-center bg-primary-light text-neutral-100"
@@ -106,7 +106,7 @@ const defaultServices = [
                   >
                     Premium
                   </div>
-                  <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 0.8 }">od 120 zł/m²</div>
+                  <!-- <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 0.8 }">od 120 zł/m²</div> -->
                 </th>
                 <th
                   class="p-4 text-center bg-primary text-neutral-100"
@@ -118,7 +118,7 @@ const defaultServices = [
                   >
                     Podstawowy
                   </div>
-                  <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 0.9 }">od 180 zł/m²</div>
+                  <!-- <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 0.9 }">od 180 zł/m²</div> -->
                 </th>
                 <th
                   class="p-4 text-center bg-primary text-neutral-100"
@@ -130,7 +130,7 @@ const defaultServices = [
                   >
                     Premium
                   </div>
-                  <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 1 }">od 240 zł/m²</div>
+                  <!-- <div class="text-sm mt-1" v-scroll-anim:fadeUp="{ delay: 1 }">od 240 zł/m²</div> -->
                 </th>
               </tr>
             </thead>

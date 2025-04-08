@@ -448,7 +448,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   Projekt Funkcjonalny
   
   #basicPrice
-  od 60 zł/m²
+  ❤️
   
   #basicFeatures
   - Inwentaryzacja
@@ -458,7 +458,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Układ mebli na wymiar
   
   #premiumPrice
-  od 120 zł/m²
+  ❤️
   
   #premiumFeatures
   - Projekt w 3D
@@ -470,7 +470,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   Projekt Wykonawczy
   
   #basicPrice
-  od 180 zł/m²
+  ❤️
   
   #basicFeatures
   - Wszystkie elementy z Projektu Funkcjonalnego
@@ -485,7 +485,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Doradztwo z wyboru mebli
 
   #premiumPrice
-  od 240 zł/m²
+  ❤️
   
   #premiumFeatures
   - Projekt w 3D

@@ -1,5 +1,4 @@
 ---
-headerSpacing: true
 head:
   title: Design Molki
 description: Projekty wnętrz w Trójmieście
@@ -35,7 +34,7 @@ ogImage:
     cover: /heroAbout.jpg
 ---
 
-::hero-projects
+::hero-c
 ---
 cta-link: /remont-pod-klucz#realizacje
 ---
@@ -43,6 +42,12 @@ cta-link: /remont-pod-klucz#realizacje
   :::parallax-img{.w-full.h-full.object-cover}
   ![Przykłady zrealizowanych projektów remontowych przez Molki Design](/remont-pod-klucz/remont1.jpg)
   :::
+
+#heroTitle
+Od projektu do realizacji - czyli Remont pod Klucz
+
+#heroSubtitle
+Wybierz wariant dopasowany do Twoich potrzeb
 
 #cta
 ZOBACZ NASZE REALIZACJE

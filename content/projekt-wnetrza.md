@@ -1,5 +1,4 @@
 ---
-headerSpacing: true
 head:
   title: Design Molki
 description: Projekty wnętrz w Trójmieście

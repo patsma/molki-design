@@ -382,6 +382,29 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   ---
   :::
 
+
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Doradztwo z wyboru mebli
+  ---
+  :::
+
+  :::service-table-row
+  ---
+  basicExec: true
+  basicFunc: false
+  premiumExec: true
+  premiumFunc: false
+  name: Nadzór autorski
+  ---
+  :::
+
+
   :::service-table-row
   ---
   basicExec: false
@@ -458,7 +481,9 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Projekt listew przypodłogowych, sztukaterii i karniszy
   - Projekt sufitów (malowanie+dodatki)
   - Projekt malowania ścian
-  
+  - Nadzór autorski
+  - Doradztwo z wyboru mebli
+
   #premiumPrice
   od 240 zł/m²
   

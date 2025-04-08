@@ -2,6 +2,7 @@
 defineProps<{
   to?: string;
   aspectRatio?: number; // width/height ratio (e.g., 16/9 = 1.78, 4/3 = 1.33, 1/1 = 1)
+  hoverText?: string; // Optional text to show on hover
 }>();
 
 // Ensure NuxtLink is available
@@ -13,10 +14,6 @@ const NuxtLink = resolveComponent('NuxtLink');
     :to="to"
     class="block relative overflow-hidden"
     :class="{ group: to }"
-    data-scroll-item
-    data-scroll-animation="fadeUp"
-    data-scroll-duration="0.8"
-    data-scroll-stagger="0.2"
   >
     <!-- Image with Overlay -->
     <div class="relative overflow-hidden">
@@ -28,7 +25,15 @@ const NuxtLink = resolveComponent('NuxtLink');
         <div
           v-if="to"
           class="absolute inset-0 bg-primary/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
-        ></div>
+        >
+          <!-- Hover text -->
+          <div
+            v-if="hoverText"
+            class="absolute inset-0 flex items-center justify-center text-white uppercase body-large font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            {{ hoverText }}
+          </div>
+        </div>
         <!-- Image slot with absolute positioning -->
         <div class="absolute inset-0">
           <slot name="image" />

@@ -50,6 +50,7 @@ Bez stresu i kompromisów
   ---
   aspectRatio: 0.75
   to: /projekt-wnetrza
+  hoverText: "Projekt Wnętrza"
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -67,6 +68,7 @@ Bez stresu i kompromisów
   ---
   aspectRatio: 0.75
   to: /remont-pod-klucz
+  hoverText: "Remont Pod Klucz"
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -83,7 +85,8 @@ Bez stresu i kompromisów
   :::project-grid-item
   ---
   aspectRatio: 0.75
-  to: /wnetrza-inwestycyjne
+  to: /realizacje
+  hoverText: "Realizacje"
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

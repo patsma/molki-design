@@ -44,10 +44,10 @@ cta-link: /remont-pod-klucz#realizacje
   :::
 
 #heroTitle
-Od projektu do realizacji - czyli Remont pod Klucz
+[Realizacja projektu]{.h1-style}
 
 #heroSubtitle
-Wybierz wariant dopasowany do Twoich potrzeb
+pod klucz
 
 #cta
 ZOBACZ NASZE REALIZACJE
@@ -59,6 +59,19 @@ Od projektu do realizacji - czyli Remont pod Klucz
 Wybierz wariant dopasowany do Twoich potrzeb
 
 #features
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: fig:terminowosc-wykonania
+    ---
+    ::::
+  
+  #text
+  TERMINOWOŚĆ WYKONANIA
+  :::
+
   :::icon-grid-item
   #icon
     ::::icon-block
@@ -82,7 +95,20 @@ Wybierz wariant dopasowany do Twoich potrzeb
     ::::
   
   #text
-  OPIEKA KOORDYNATORA REMONTU
+  OPIEKA KOORDYNATORA
+  :::
+
+  :::icon-grid-item
+  #icon
+    ::::icon-block
+    ---
+    customClass: w-16 h-16 text-primary mx-auto mb-4
+    name: fig:nadzor-autorski
+    ---
+    ::::
+  
+  #text
+  NADZÓR AUTORSKI
   :::
 
   :::icon-grid-item

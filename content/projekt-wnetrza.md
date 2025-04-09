@@ -56,7 +56,7 @@ Poznaj etapy Procesu Projektowania
     ::::
   
   #text
-  SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
+  KONSULTACJA PRZEDPROJEKTOWA
   :::
 
   :::icon-grid-item

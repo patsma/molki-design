@@ -45,18 +45,51 @@ const handleFormError = (error: any) => {
     </div>
 
     <div class="content-grid relative z-10">
-      <!-- Main Title -->
-      <h2
-        v-if="$slots.title"
-        class="h2-style text-center font-semibold text-primary mb-16"
-        v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02, start: 'top 85%' }"
-      >
-        <slot name="title" mdc-unwrap="p" />
-      </h2>
-
       <div class="breakout1">
-        <!-- Company Information Grid -->
+        <!-- Contact and Form Section -->
         <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Contact Information -->
+          <div class="space-y-6 max-w-xs" v-scroll-anim:fadeUp="{ delay: 0.5, start: 'top 75%' }">
+            <h3
+              v-if="$slots.contactTitle"
+              class="text-xl text-primary font-semibold pb-4 border-gradient"
+            >
+              <slot name="contactTitle" mdc-unwrap="p" />
+            </h3>
+            <div v-if="$slots.contactInfo" class="prose prose-lg max-w-none">
+              <slot name="contactInfo" mdc-unwrap="p" />
+            </div>
+          </div>
+
+          <!-- HubSpot Form -->
+          <ClientOnly>
+            <div v-scroll-anim:scale="{ delay: 0.7, start: 'top 75%' }">
+              <HubspotForm
+                formId="be873485-56f5-42c9-8301-efaa818bdd36"
+                region="eu1"
+                @load="handleFormLoad"
+                @error="handleFormError"
+              />
+            </div>
+            <template #fallback>
+              <div class="animate-pulse" v-scroll-anim:fadeIn>
+                <div class="h-12 bg-gray-200 rounded mb-4"></div>
+                <div class="h-12 bg-gray-200 rounded mb-4"></div>
+                <div class="h-12 bg-gray-200 rounded"></div>
+              </div>
+            </template>
+          </ClientOnly>
+        </div>
+        <!-- Main Title -->
+        <h2
+          v-if="$slots.title"
+          class="h2-style text-center font-semibold text-primary mb-16"
+          v-scroll-anim:splitText="{ type: 'chars', stagger: 0.02, start: 'top 85%' }"
+        >
+          <slot name="title" mdc-unwrap="p" />
+        </h2>
+        <!-- Company Information Grid -->
+        <div class="grid md:grid-cols-2 gap-12">
           <!-- Left Company -->
           <div
             class="grid md:grid-cols-2 gap-8 items-start"
@@ -114,41 +147,6 @@ const handleFormError = (error: any) => {
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Contact and Form Section -->
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Contact Information -->
-          <div class="space-y-6 max-w-xs" v-scroll-anim:fadeUp="{ delay: 0.5, start: 'top 75%' }">
-            <h3
-              v-if="$slots.contactTitle"
-              class="text-xl text-primary font-semibold pb-4 border-gradient"
-            >
-              <slot name="contactTitle" mdc-unwrap="p" />
-            </h3>
-            <div v-if="$slots.contactInfo" class="prose prose-lg max-w-none">
-              <slot name="contactInfo" mdc-unwrap="p" />
-            </div>
-          </div>
-
-          <!-- HubSpot Form -->
-          <ClientOnly>
-            <div v-scroll-anim:scale="{ delay: 0.7, start: 'top 75%' }">
-              <HubspotForm
-                formId="be873485-56f5-42c9-8301-efaa818bdd36"
-                region="eu1"
-                @load="handleFormLoad"
-                @error="handleFormError"
-              />
-            </div>
-            <template #fallback>
-              <div class="animate-pulse" v-scroll-anim:fadeIn>
-                <div class="h-12 bg-gray-200 rounded mb-4"></div>
-                <div class="h-12 bg-gray-200 rounded mb-4"></div>
-                <div class="h-12 bg-gray-200 rounded"></div>
-              </div>
-            </template>
-          </ClientOnly>
         </div>
       </div>
     </div>

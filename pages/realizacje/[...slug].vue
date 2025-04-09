@@ -218,14 +218,11 @@ const ctaLink = computed(() => {
 .fslightbox-open {
   overflow: visible !important;
 }
-.container {
-  max-width: 1920px;
-}
 
 .gallery {
   &-container {
     width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
     padding: 0;
     margin: 0;
   }
@@ -280,8 +277,8 @@ const ctaLink = computed(() => {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 6rem;
-      height: 6rem;
+      width: 8rem;
+      height: 8rem;
       opacity: 0;
       z-index: 2;
       transition: opacity 0.8s ease;
@@ -295,8 +292,8 @@ const ctaLink = computed(() => {
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        width: 6rem;
-        height: 6rem;
+        width: 8rem;
+        height: 8rem;
         border: 0.0625rem solid white;
         background: transparent;
         opacity: 0;
@@ -344,8 +341,8 @@ const ctaLink = computed(() => {
 // Ripple animation
 @keyframes expand {
   0% {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
     border-width: 0.0625rem;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1);
@@ -354,8 +351,8 @@ const ctaLink = computed(() => {
     opacity: 0.6;
   }
   100% {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
     border-width: 0.0625rem;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.8);

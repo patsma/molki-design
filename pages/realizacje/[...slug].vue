@@ -300,8 +300,6 @@ const ctaLink = computed(() => {
         border: 0.0625rem solid white;
         background: transparent;
         opacity: 0;
-        animation: none;
-        animation-iteration-count: infinite !important;
       }
     }
 
@@ -324,15 +322,15 @@ const ctaLink = computed(() => {
 
       .pulse-circle {
         .rim1 {
-          animation: expand 8s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+          animation: expand 3s ease-out infinite;
         }
 
         .rim2 {
-          animation: expand 8s cubic-bezier(0.19, 1, 0.22, 1) 1.6s infinite;
+          animation: expand 3s ease-out infinite 1s;
         }
 
         .rim3 {
-          animation: expand 8s cubic-bezier(0.19, 1, 0.22, 1) 3.2s infinite;
+          animation: expand 3s ease-out infinite 2s;
         }
       }
 

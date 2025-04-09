@@ -1,53 +1,63 @@
 // Base typography styles
 body {
-  @apply text-base text-text-primary;
+  @apply text-base text-text-primary font-sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Heading sizes only (no font-family or weights)
+// Heading styles with Josefin Sans
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-title font-semibold;
+}
+
+// Heading sizes
 .h1-style {
-  @apply text-4xl md:text-5xl lg:text-6xl tracking-widest leading-snug;
+  @apply text-4xl md:text-5xl lg:text-6xl tracking-widest leading-snug font-title font-semibold;
 }
 
 .h2-style {
-  @apply text-3xl md:text-4xl tracking-widest leading-snug;
+  @apply text-3xl md:text-4xl tracking-widest leading-snug font-title font-semibold;
 }
 
 .h3-style {
-  @apply text-2xl md:text-3xl;
+  @apply text-2xl md:text-3xl font-title font-semibold;
 }
 
 .h4-style {
-  @apply text-xl md:text-2xl;
+  @apply text-xl md:text-2xl font-title font-semibold;
 }
 
 .h5-style {
-  @apply text-lg md:text-xl;
+  @apply text-lg md:text-xl font-title font-semibold;
 }
 
 .h6-style {
-  @apply text-base md:text-lg;
+  @apply text-base md:text-lg font-title font-semibold;
 }
 
-// Body text styles
+// Body text styles with Hind
 .body-large {
-  @apply text-lg leading-relaxed;
+  @apply text-lg leading-relaxed font-sans;
 }
 
 .body-default {
-  @apply text-base leading-relaxed;
+  @apply text-base leading-relaxed font-sans;
 }
 
 .body-small {
-  @apply text-sm leading-normal;
+  @apply text-sm leading-normal font-sans;
 }
 
 .body-tiny {
-  @apply text-xs leading-normal;
+  @apply text-xs leading-normal font-sans;
 }
 
 // Default paragraph style
 p {
-  @apply body-default text-text-primary;
+  @apply body-default text-text-primary font-sans;
 }

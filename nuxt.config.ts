@@ -143,16 +143,17 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: 'Montserrat',
+        name: 'Josefin Sans',
         provider: 'google',
-        weights: [300, 400, 500, 600, 700],
-        styles: ['normal', 'italic'],
+        weights: [600],
       },
       {
-        name: 'Spartan',
-        provider: 'none',
+        name: 'Hind',
+        provider: 'google',
+        weights: [400],
       },
     ],
+    provider: 'google',
   },
 
   content: {

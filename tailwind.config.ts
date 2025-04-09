@@ -16,8 +16,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
-        spartan: ['Spartan', 'sans-serif'],
+        sans: ['Hind', 'sans-serif'],
+        title: ['"Josefin Sans"', 'sans-serif'],
       },
       colors: {
         primary: {
@@ -39,12 +39,16 @@ export default {
         },
         text: {
           primary: '#503D32',
+          body: 'rgb(91, 90, 90)',
+          title: 'rgb(0, 0, 0)',
         },
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],
         sm: ['0.875rem', { lineHeight: '1.25rem' }],
         base: ['1rem', { lineHeight: '1.5rem' }],
+        paragraph: ['14px', { lineHeight: '23px' }],
+        title: ['11px', { lineHeight: '22px' }],
         lg: ['1.125rem', { lineHeight: '1.75rem' }],
         xl: ['1.25rem', { lineHeight: '1.75rem' }],
         '2xl': ['1.5rem', { lineHeight: '2rem' }],

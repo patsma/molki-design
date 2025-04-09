@@ -57,32 +57,16 @@ const items = computed(() => {
       <div class="breakout1">
         <!-- Title and Subtitle -->
         <div v-if="$slots.title" class="text-center mb-16">
-          <h2
-            class="h2-style font-semibold text-primary mb-4"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-          >
+          <h2 class="h2-style font-semibold text-primary mb-4">
             <slot name="title" mdc-unwrap="p" />
           </h2>
-          <p
-            v-if="$slots.subtitle"
-            class="text-xl md:text-2xl text-neutral-800"
-            data-scroll-item
-            data-scroll-animation="fadeUp"
-            data-scroll-duration="1"
-          >
+          <p v-if="$slots.subtitle" class="text-xl md:text-2xl text-neutral-800">
             <slot name="subtitle" mdc-unwrap="p" />
           </p>
         </div>
 
         <!-- Portfolio Grid -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
-          data-scroll-item
-          data-scroll-animation="fadeUp"
-          data-scroll-duration="1"
-        >
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           <template v-if="items?.length">
             <slot name="item" v-for="item in items" :key="item.id" :item="item" />
           </template>

@@ -54,6 +54,7 @@ export default defineContentConfig({
             location: z.string().describe('Lokalizacja realizacji (np. Gdańsk)'),
             year: z.string().describe('Rok realizacji'),
             number: z.string().describe('Numer realizacji (np. 01)'),
+            metraz: z.number().describe('Metraż w metrach kwadratowych'),
 
             // Project Images
             cover: mediaPickerSchema.describe(

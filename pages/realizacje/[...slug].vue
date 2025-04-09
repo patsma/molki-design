@@ -16,6 +16,8 @@ const { data } = await useAsyncData(`realizacja-${route.path}`, async () => {
     if (!realizacja && process.server && import.meta.env.NITRO_PRERENDER) {
       return null;
     }
+    console.log('Fetched realizacja data:', realizacja);
+    console.log('Metraz value:', realizacja?.metraz);
     return realizacja;
   } catch (error) {
     console.error('Error fetching realizacja:', error);
@@ -141,10 +143,7 @@ const ctaLink = computed(() => {
           v-scroll-anim:fadeUp="{ delay: 0.2 }"
         >
           <div class="grid grid-flow-col justify-start gap-8">
-            <div class="text-6xl font-bold text-primary" v-scroll-anim:scale="{ delay: 0.3 }">
-              {{ data.number }}
-            </div>
-            <div class="grid">
+            <div class="grid gap-3">
               <h1
                 class="h3-style text-primary"
                 v-scroll-anim:splitText="{ type: 'words', stagger: 0.05, delay: 0.4 }"
@@ -152,7 +151,16 @@ const ctaLink = computed(() => {
                 {{ data.title }}
               </h1>
               <div class="text-xl text-neutral-600" v-scroll-anim:fadeUp="{ delay: 0.5 }">
-                {{ data.location }} | {{ data.year }}
+                <div class="flex items-center gap-4">
+                  <div v-if="data.location" class="flex items-center">
+                    <Icon name="ph:map-pin" class="w-5 h-5 mr-2 text-primary/70" />
+                    {{ data.location }}
+                  </div>
+                  <div v-if="data.metraz" class="flex items-center">
+                    <Icon name="uil:square-full" class="w-5 h-5 mr-2 text-primary/70" />
+                    {{ data.metraz }} m²
+                  </div>
+                </div>
               </div>
             </div>
           </div>

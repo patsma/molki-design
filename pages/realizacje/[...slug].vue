@@ -188,6 +188,7 @@ const ctaLink = computed(() => {
                   @click="openLightbox(index)"
                 >
                   <nuxt-img :src="image.src" :alt="image.alt" class="gallery-image" format="webp" />
+                  <div class="pulse-circle"></div>
                 </div>
               </div>
             </div>
@@ -203,11 +204,16 @@ const ctaLink = computed(() => {
       :toggler="toggler"
       :sources="galleryImages.map((img) => img.src)"
       :slide="currentImageIndex + 1"
+      :initialAnimation="'fslightbox-fade-in-complete'"
+      :slideChangeAnimation="'fslightbox-slide-change-complete'"
     />
   </main>
 </template>
 
 <style scoped>
+.fslightbox-open {
+  overflow: visible !important;
+}
 .container {
   max-width: 1920px;
 }
@@ -222,13 +228,12 @@ const ctaLink = computed(() => {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 4px;
-  padding: 4px;
 }
 
 .gallery-item {
   aspect-ratio: 1;
   cursor: pointer;
+  position: relative;
   overflow: hidden;
 }
 
@@ -236,11 +241,110 @@ const ctaLink = computed(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Hover overlay with text and icon */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.gallery-item::after {
+  content: 'Zobacz';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+/* Pulsating circle */
+.gallery-item .pulse-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+
+.gallery-item .pulse-circle::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hover states */
+.gallery-item:hover::before,
+.gallery-item:hover::after,
+.gallery-item:hover .pulse-circle {
+  opacity: 1;
 }
 
 .gallery-item:hover .gallery-image {
-  transform: scale(1.05);
+  transform: scale(1.2);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Lightbox animations */
+.fslightbox-fade-in-complete {
+  animation: lightboxFadeIn 0.3s ease-out;
+}
+
+.fslightbox-slide-change-complete {
+  animation: lightboxSlideChange 0.3s ease-out;
+}
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lightboxSlideChange {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (min-width: 640px) {

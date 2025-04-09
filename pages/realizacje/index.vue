@@ -77,21 +77,20 @@ const needsHeaderSpacing = computed(() => {
       <template #subtitle>Zobacz wszystkie nasze projekty</template>
     </TitleSection>
 
-    <SquareGrid contentType="realizacje" orderBy="number" orderDirection="ASC">
+    <PortfolioGrid contentType="realizacje" orderBy="number" orderDirection="ASC">
       <template #item="{ item }">
-        <SquareGridItem
+        <PortfolioGridItem
           v-scroll-anim:staggerUp="{ sequence: true, delay: 0.5 }"
           :key="item.id"
           :to="`/realizacje/${item.slug}`"
-          :number="item.number"
           :title="item.title"
           :location="item.location"
-          :year="item.year"
+          :metraz="item.metraz"
           :image="item.cover"
-          type="realizacja"
         />
       </template>
-    </SquareGrid>
+    </PortfolioGrid>
+
     <LayoutPreFooterContent />
     <LayoutFooterContent />
 

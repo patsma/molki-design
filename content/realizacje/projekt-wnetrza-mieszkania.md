@@ -3,6 +3,7 @@ title: "Apartament Premium "
 subtitle: 2024 | Gdańsk
 slug: projekt-wnetrza-mieszkania
 location: Gdańsk
+metraz: 60
 year: "2024"
 number: "01"
 cover:

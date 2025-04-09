@@ -3,6 +3,7 @@ title: Projekt super
 subtitle: 2023 | Sopot
 slug: projekt-super
 location: Gdańsk
+metraz: 120
 year: "2023"
 number: "02"
 cover:

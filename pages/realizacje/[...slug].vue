@@ -188,7 +188,11 @@ const ctaLink = computed(() => {
                   @click="openLightbox(index)"
                 >
                   <nuxt-img :src="image.src" :alt="image.alt" class="gallery-image" format="webp" />
-                  <div class="pulse-circle"></div>
+                  <div class="pulse-circle">
+                    <div class="rim1"></div>
+                    <div class="rim2"></div>
+                    <div class="rim3"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,7 +214,7 @@ const ctaLink = computed(() => {
   </main>
 </template>
 
-<style scoped>
+<style lang="scss">
 .fslightbox-open {
   overflow: visible !important;
 }
@@ -218,111 +222,157 @@ const ctaLink = computed(() => {
   max-width: 1920px;
 }
 
-.gallery-container {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
+.gallery {
+  &-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &-item {
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    // Base states
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    &::after {
+      content: 'ZOBACZ';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+    }
+
+    // Pulse circle
+    .pulse-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6rem;
+      height: 6rem;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.8s ease;
+
+      .rim1,
+      .rim2,
+      .rim3 {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+        border: 0.0625rem solid white;
+        background: transparent;
+        opacity: 0;
+        animation: none;
+        animation-iteration-count: infinite !important;
+      }
+    }
+
+    // Image
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    // Hover states
+    &:hover {
+      &::before,
+      &::after,
+      .pulse-circle {
+        opacity: 1;
+      }
+
+      .pulse-circle {
+        .rim1 {
+          animation: expand 8s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+        }
+
+        .rim2 {
+          animation: expand 8s cubic-bezier(0.19, 1, 0.22, 1) 1.6s infinite;
+        }
+
+        .rim3 {
+          animation: expand 8s cubic-bezier(0.19, 1, 0.22, 1) 3.2s infinite;
+        }
+      }
+
+      .gallery-image {
+        transform: scale(1.2);
+      }
+    }
+  }
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.gallery-item {
-  aspect-ratio: 1;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-/* Hover overlay with text and icon */
-.gallery-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-.gallery-item::after {
-  content: 'Zobacz';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1.125rem;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 2;
-}
-
-/* Pulsating circle */
-.gallery-item .pulse-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  border: 2px solid white;
-  border-radius: 50%;
-  opacity: 0;
-  z-index: 2;
-}
-
-.gallery-item .pulse-circle::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border: 2px solid white;
-  border-radius: 50%;
-  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Hover states */
-.gallery-item:hover::before,
-.gallery-item:hover::after,
-.gallery-item:hover .pulse-circle {
-  opacity: 1;
-}
-
-.gallery-item:hover .gallery-image {
-  transform: scale(1.2);
-}
-
-/* Pulse animation */
-@keyframes pulse {
+// Ripple animation
+@keyframes expand {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.0625rem;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  15% {
+    opacity: 0.6;
   }
   100% {
-    transform: scale(1.5);
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.0625rem;
     opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8);
   }
 }
 
-/* Lightbox animations */
-.fslightbox-fade-in-complete {
-  animation: lightboxFadeIn 0.3s ease-out;
-}
+// Lightbox animations
+.fslightbox {
+  &-fade-in-complete {
+    animation: lightboxFadeIn 0.3s ease-out;
+  }
 
-.fslightbox-slide-change-complete {
-  animation: lightboxSlideChange 0.3s ease-out;
+  &-slide-change-complete {
+    animation: lightboxSlideChange 0.3s ease-out;
+  }
 }
 
 @keyframes lightboxFadeIn {
@@ -339,23 +389,11 @@ const ctaLink = computed(() => {
 @keyframes lightboxSlideChange {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(1.25rem);
   }
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@media (min-width: 640px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 </style>

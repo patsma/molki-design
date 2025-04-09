@@ -6,8 +6,10 @@ onMounted(() => {
   if (!process.client) return;
 
   const handleScroll = () => {
-    // Show button when user has scrolled 60% of viewport height
-    showButton.value = window.scrollY > window.innerHeight * 0.6;
+    // Calculate total scrollable height (total page height minus viewport height)
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    // Show button when user has scrolled 90% of the scrollable height
+    showButton.value = window.scrollY > scrollableHeight * 0.5;
   };
 
   // Add scroll event listener
@@ -43,10 +45,10 @@ const scrollToTop = () => {
     <button
       v-show="showButton"
       @click="scrollToTop"
-      class="fixed bottom-8 left-8 hidden md:flex items-center justify-center w-12 h-12 bg-primary/90 hover:bg-primary text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+      class="fixed bottom-8 z-50 left-8 hidden md:flex items-center justify-center w-12 h-12 bg-primary/90 hover:bg-primary text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
       aria-label="Scroll to top"
     >
-      <Icon name="heroicons:arrow-up" class="w-6 h-6" />
+      <Icon name="uil:arrow-up" class="w-6 h-6" />
     </button>
   </Transition>
 </template>

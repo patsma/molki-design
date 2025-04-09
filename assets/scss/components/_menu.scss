@@ -1,4 +1,5 @@
 .nav-menu {
+  @apply font-title font-semibold;
   display: grid;
   grid-auto-flow: column;
   gap: 2rem;

@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.10.1",
+    "fslightbox-vue": "^2.2.1",
     "gsap": "file:gsap-bonus.tgz",
     "pinia": "^3.0.1",
     "sass": "^1.69.5"

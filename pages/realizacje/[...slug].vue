@@ -1,14 +1,18 @@
 <script setup>
+import FsLightbox from 'fslightbox-vue';
+
 const route = useRoute();
 const fullPath = `/realizacje/${route.params.slug.join('/')}`;
-const swiperRef = ref(null);
+
+// Lightbox state
+const toggler = ref(false);
+const currentImageIndex = ref(0);
 
 const { data } = await useAsyncData(`realizacja-${route.path}`, async () => {
   try {
     const realizacja = await queryCollection('realizacje')
       .where('slug', '=', route.params.slug)
       .first();
-    // During prerendering, return null if realizacja doesn't exist
     if (!realizacja && process.server && import.meta.env.NITRO_PRERENDER) {
       return null;
     }
@@ -22,7 +26,7 @@ const { data } = await useAsyncData(`realizacja-${route.path}`, async () => {
   }
 });
 
-// Only throw 404 during client-side navigation or non-prerender server-side
+// Throw 404 if data not found
 if (!data.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
   throw createError({
     statusCode: 404,
@@ -30,6 +34,42 @@ if (!data.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
     fatal: true,
   });
 }
+
+// Get all images for the gallery
+const galleryImages = computed(() => {
+  if (!data.value) return [];
+
+  const images = [];
+
+  // Add cover image if exists
+  if (data.value.cover) {
+    images.push(data.value.cover);
+  }
+
+  // Add slider images if they exist
+  if (data.value.slider?.images) {
+    images.push(...data.value.slider.images);
+  }
+
+  // Add regular images if they exist
+  if (data.value.images) {
+    images.push(...data.value.images);
+  }
+
+  // Normalize image format
+  return images.map((image) => {
+    if (typeof image === 'string') {
+      return { src: image, alt: 'Gallery image' };
+    }
+    return image;
+  });
+});
+
+// Handle image click
+const openLightbox = (index) => {
+  currentImageIndex.value = index;
+  toggler.value = !toggler.value;
+};
 
 // Apply optimized SEO using the composable
 import { usePageSeo } from '~/composables/usePageSeo';
@@ -89,24 +129,6 @@ const ctaLink = computed(() => {
   if (data.value?.slug) return `/realizacje/${data.value.slug}`;
   return '/realizacje';
 });
-
-// Normalize images to handle both formats
-const normalizedImages = computed(() => {
-  if (!data.value?.images) return [];
-
-  return data.value.images.map((image) => {
-    if (typeof image === 'string') {
-      return { src: image, alt: `${data.value.title} - Project image` };
-    }
-    return image;
-  });
-});
-
-// Get slider images
-const sliderImages = computed(() => {
-  if (!data.value?.slider?.images) return [];
-  return data.value.slider.images;
-});
 </script>
 
 <template>
@@ -146,69 +168,82 @@ const sliderImages = computed(() => {
         </div>
 
         <!-- Project Content -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8"
-          v-scroll-anim:fadeUp="{ delay: 0.7 }"
-        >
-          <!-- Image Slider -->
+        <div class="grid" v-scroll-anim:fadeUp="{ delay: 0.7 }">
+          <!-- Image Grid -->
           <div class="grid">
-            <div
-              class="aspect-video overflow-hidden rounded-lg"
-              v-scroll-anim:scale="{ delay: 0.8 }"
-            >
-              <ClientOnly>
-                <swiper-container
-                  ref="swiperRef"
-                  :loop="true"
-                  :pagination="true"
-                  :autoplay="{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }"
-                  class="w-full h-full"
+            <div class="gallery-container">
+              <div class="gallery-grid">
+                <div
+                  v-for="(image, index) in galleryImages"
+                  :key="index"
+                  class="gallery-item"
+                  @click="openLightbox(index)"
                 >
-                  <!-- Cover image is always first -->
-                  <swiper-slide v-if="data.cover" class="w-full h-full">
-                    <nuxt-img
-                      :src="data.cover.src"
-                      :alt="data.cover.alt"
-                      class="w-full h-full object-cover"
-                      format="webp"
-                    />
-                  </swiper-slide>
-
-                  <!-- Slider images -->
-                  <swiper-slide
-                    v-for="(image, index) in sliderImages"
-                    :key="index"
-                    class="w-full h-full"
-                  >
-                    <nuxt-img
-                      :src="image.src"
-                      :alt="image.alt"
-                      class="w-full h-full object-cover"
-                      format="webp"
-                    />
-                  </swiper-slide>
-                </swiper-container>
-              </ClientOnly>
+                  <nuxt-img :src="image.src" :alt="image.alt" class="gallery-image" format="webp" />
+                </div>
+              </div>
             </div>
-          </div>
-
-          <!-- Project Description -->
-          <div class="grid" v-scroll-anim:fadeLeft="{ delay: 0.9 }">
-            <article class="prose prose-xl max-w-none">
-              <ContentRenderer
-                v-if="data?.meta?.body"
-                :value="{ body: data.meta.body }"
-                :excerpt="false"
-              />
-            </article>
           </div>
         </div>
       </div>
     </div>
     <LayoutPreFooterContent />
     <LayoutFooterContent />
+
+    <!-- Lightbox -->
+    <FsLightbox
+      :toggler="toggler"
+      :sources="galleryImages.map((img) => img.src)"
+      :slide="currentImageIndex + 1"
+    />
   </main>
 </template>
+
+<style scoped>
+.container {
+  max-width: 1920px;
+}
+
+.gallery-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4px;
+  padding: 4px;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+</style>

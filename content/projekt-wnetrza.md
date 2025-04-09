@@ -1,4 +1,5 @@
 ---
+headerSpacing: true
 head:
   title: Design Molki
 description: Projekty wnętrz w Trójmieście
@@ -16,26 +17,20 @@ ogImage:
     cover: /heroAbout.jpg
 ---
 
-::hero-b
+::hero-interior
 ---
 cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/projekt-wnetrza/salonHero.jpg)
+  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/Warszawa%20Wysockiego%2025%20m6%20mieszkanie%20na%20sprzedaz%CC%87%20-%20salon%2001.jpg)
   :::
-
-#heroTitle
-PROJEKT WNĘTRZA
-
-#heroSubtitle
-Jasne podejście do projektowania wnętrz
-
-#title
-PROJEKT WNĘTRZA
 
 #cta
 ZOBACZ NASZE REALIZACJE
+
+#title
+PROJEKT WNĘTRZA
 
 #content
 Projektowanie wnętrz w naszym wykonaniu to partnerska współpraca z każdym klientem oparta na komunikacji, szacunku i zaufaniu. Do każdego projektu podchodzimy z otwartym umysłem, dobrym poczuciem humoru i chęcią wysłuchania. Rezultatem jest wspólna wizja przestrzeni, nad którą wspólnie pracujemy.
@@ -56,7 +51,7 @@ Poznaj etapy Procesu Projektowania
     ::::
   
   #text
-  SPOTKANIE ZAPOZNAWCZE Z PROJEKTANTKĄ
+  KONSULTACJA PRZEDPROJEKTOWA Z PROJEKTANTEM WNĘTRZ
   :::
 
   :::icon-grid-item
@@ -178,11 +173,11 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-
+  to: /projekt-wnetrza#cennik
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/projekt-wnetrza/salon11.jpg)
+    ![Przykład projektu funkcjonalnego - ergonomiczna aranżacja przestrzeni mieszkalnej](/03salon%202.jpg)
     ::::
   
   #title
@@ -195,11 +190,11 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-
+  to: /projekt-wnetrza#cennik
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/projekt-wnetrza/salon22.jpg)
+    ![Projekt wykonawczy z detalami technicznymi i specyfikacją materiałową](/projekty/%C5%82azienk%201_1.effectsResult.jpg)
     ::::
   
   #title
@@ -212,11 +207,11 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-
+  to: /projekt-wnetrza#cennik
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
-    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/projekt-wnetrza/salon3.jpg)
+    ![Konsultacja projektowa - przykład metamorfozy wnętrza](/projekty/Sypialnia%201_4.effectsResult.jpg)
     ::::
   
   #title
@@ -237,7 +232,7 @@ class: hidden md:grid
 id: cennik
 ---
 #title
-Cennik Usług Projektowych
+Zakres Usług Projektowych
 
 #subtitle
 Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoich potrzeb i budżetu.
@@ -382,29 +377,6 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   ---
   :::
 
-
-
-  :::service-table-row
-  ---
-  basicExec: true
-  basicFunc: false
-  premiumExec: true
-  premiumFunc: false
-  name: Doradztwo z wyboru mebli
-  ---
-  :::
-
-  :::service-table-row
-  ---
-  basicExec: true
-  basicFunc: false
-  premiumExec: true
-  premiumFunc: false
-  name: Nadzór autorski
-  ---
-  :::
-
-
   :::service-table-row
   ---
   basicExec: false
@@ -433,11 +405,11 @@ classList: md:hidden
 ---
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/projekt-wnetrza/salon4.jpg)
+  ![Interior Design Services](/remonty/slider/Dachy%20Or%C5%82owa5.jpg)
   :::
 
 #title
-Cennik Usług Projektowych
+Zakres Usług Projektowych
 
 #subtitle
 Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich potrzeb i budżetu
@@ -448,7 +420,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   Projekt Funkcjonalny
   
   #basicPrice
-  ❤️
+  od 60 zł/m²
   
   #basicFeatures
   - Inwentaryzacja
@@ -458,7 +430,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Układ mebli na wymiar
   
   #premiumPrice
-  ❤️
+  od 120 zł/m²
   
   #premiumFeatures
   - Projekt w 3D
@@ -470,7 +442,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   Projekt Wykonawczy
   
   #basicPrice
-  ❤️
+  od 180 zł/m²
   
   #basicFeatures
   - Wszystkie elementy z Projektu Funkcjonalnego
@@ -481,11 +453,9 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Projekt listew przypodłogowych, sztukaterii i karniszy
   - Projekt sufitów (malowanie+dodatki)
   - Projekt malowania ścian
-  - Nadzór autorski
-  - Doradztwo z wyboru mebli
-
+  
   #premiumPrice
-  ❤️
+  od 240 zł/m²
   
   #premiumFeatures
   - Projekt w 3D
@@ -493,7 +463,6 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   :::
 
 #infoText
-\*Powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
 ::
 
 ::pricing-grid
@@ -504,7 +473,7 @@ overlayColor: bg-white
 ---
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Consultation](/projekt-wnetrza/salon4.jpg)
+  ![Interior Design Consultation](/heroPricing.jpg)
   :::
 
 #title
@@ -543,7 +512,6 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
   :::
 
 #infoText
-Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
 ::
 
 ::info-pricing
@@ -552,7 +520,7 @@ Dodatkowe usługi projektowe
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/projekt-wnetrza/salon5.jpg)
+  ![Interior Design Services](/remonty/slider/Dachy%20Or%C5%82owa5.jpg)
   :::
 
 #content

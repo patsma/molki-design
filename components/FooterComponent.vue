@@ -129,11 +129,11 @@ defineSlots<{
               class="space-y-2"
               v-scroll-anim:staggerUp="{ stagger: { amount: 0.3, from: 'start' } }"
             >
-              <div class="flex items-start space-x-2">
-                <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
+              <div class="flex items-center space-x-2">
+                <Icon name="fig:house" class="w-10 h-10 text-primary" />
                 <slot name="contactAddress" mdc-unwrap="p">
-                  <p class="text-neutral-600">
-                    {{ typedConfig.contactInfo?.address || 'ul. Heweliusza 11/811, 80-890 Gdańsk' }}
+                  <p class="text-neutral-600 whitespace-pre-line">
+                    {{ typedConfig.contactInfo?.address || 'ul. Heweliusza 11/811\n80-890 Gdańsk' }}
                   </p>
                 </slot>
               </div>
@@ -374,12 +374,12 @@ defineSlots<{
                 class="space-y-2"
                 v-scroll-anim:staggerUp="{ stagger: { amount: 0.2, from: 'start' } }"
               >
-                <div class="flex items-start space-x-2">
-                  <Icon name="fig:house" class="w-10 h-10 text-primary mt-1" />
+                <div class="flex items-center space-x-2">
+                  <Icon name="fig:house" class="w-10 h-10 text-primary" />
                   <slot name="contactAddress" mdc-unwrap="p">
-                    <p class="text-neutral-600">
+                    <p class="text-neutral-600 whitespace-pre-line">
                       {{
-                        typedConfig.contactInfo?.address || 'ul. Heweliusza 11/811, 80-890 Gdańsk'
+                        typedConfig.contactInfo?.address || 'ul. Heweliusza 11/811\n80-890 Gdańsk'
                       }}
                     </p>
                   </slot>

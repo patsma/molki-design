@@ -42,7 +42,7 @@ export default defineAppConfig({
   contactInfo: {
     email: 'kontakt@molki.pl',
     phone: '+48 572 323 207',
-    address: 'ul. Heweliusza 11/811, 80-890 Gdańsk',
+    address: 'ul. Heweliusza 11/811\n80-890 Gdańsk',
     socialLinks: {
       instagram: 'https://www.instagram.com/molki_design/',
       facebook: 'https://www.facebook.com/molkidesign',

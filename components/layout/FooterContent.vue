@@ -53,7 +53,7 @@ const appConfig = useAppConfig();
     </template>
 
     <template #socialLinks>
-      <div class="flex space-x-4">
+      <div class="flex space-x-4 mt-4">
         <template v-if="appConfig.contactInfo?.socialLinks?.instagram">
           <NuxtLink
             :to="appConfig.contactInfo.socialLinks.instagram"

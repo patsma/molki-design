@@ -64,6 +64,7 @@
       NIP: 957-112-91-57<br />
       ul. Heweliusza 11/811<br />
       80-890 Gdańsk<br />
+
       Tel:
       <a href="tel:+48572323207" class="text-primary hover:text-primary-dark">+48 572 323 207</a
       ><br />
@@ -71,8 +72,12 @@
       <a href="mailto:kontakt@molki.pl" class="text-primary hover:text-primary-dark"
         >kontakt@molki.pl</a
       ><br />
-      Godziny otwarcia:<br />
-      Pon-Pt: 9:00 - 17:00
+
+      <br />
+      <span class="text-xl text-primary font-title font-semibold pb-4 border-gradient">Biuro:</span>
+      <br />
+      ul. Mostowa 1/4 pokój 2<br />
+      80-778 Gdańsk<br />
     </template>
   </PreFooter>
 </template>

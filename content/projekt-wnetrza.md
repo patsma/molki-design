@@ -542,8 +542,7 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
   - Plan działania
   :::
 
-#infoText
-Do porady projektowej oferujemy opcję wykonania wizualizacji pomieszczeń, dostępnych po indywidualnej wycenie
+
 ::
 
 ::info-pricing

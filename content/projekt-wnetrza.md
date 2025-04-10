@@ -487,7 +487,6 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   :::
 
 #infoText
-\*Powyższe kwoty podane są w wartości netto, do ostatecznej wyceny należy doliczyć podatek VAT zgodny z aktualnymi przepisami prawa, minimalna kwota projektu to 2000 zł netto, niezależnie od ilości projektowanych pomieszczeń.
 ::
 
 ::pricing-grid

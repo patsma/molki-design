@@ -36,7 +36,7 @@ ogImage:
 
 ::hero-c
 ---
-cta-link: /remont-pod-klucz#realizacje
+cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}

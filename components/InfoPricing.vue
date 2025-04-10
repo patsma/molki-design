@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section class="py-16">
+  <section class="py-20">
     <div class="content-grid">
       <div class="breakout1">
         <!-- Title -->

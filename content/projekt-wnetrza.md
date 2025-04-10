@@ -504,7 +504,10 @@ overlayColor: bg-white
 Nowe Pomysły na Twoje Wnętrze
 
 #subtitle
-Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271) – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
+Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271){.text-primary} – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
+
+#infoText
+  Spotkanie z projektantem w ramach porady projektowej trwa około 2 godzin.
 
 #columns
   :::pricing-column
@@ -534,11 +537,12 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
   - Pisemne zalecenia
   - Plan działania
   :::
+
+  
 ::
 
 ::info-pricing
-#title
-Dodatkowe usługi projektowe
+
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -546,20 +550,11 @@ Dodatkowe usługi projektowe
   :::
 
 #content
-[Konsultacja przedprojektowa]{.text-primary.h4-style.font-bold} [- 190 zł/h]{.h4-style.font-bold}
+[Inne usługi projektowe]{.text-primary.h2-style.font-bold}
 
 :br
-
 :br
-
-[Dodatkowe Usługi]{.text-primary.h4-style.font-bold} [- wyceny indywidualne]{.h4-style.font-bold}
-
 :br
-
-:br
-
-- **Projekty niestandardowe, konsultacje z zakresu sztuki, zrównoważonego projektowania itp**. – prosimy o kontakt w celu omówienia szczegółów i wyceny.
-- **Doradztwo w zakresie wyboru materiałów i mebli** – stawka godzinowa
-- **Realizacja i Nadzór Autorski** – wyceny indywidualne
+- **Wykonanie wizualizacji bez projektu** – wyceny indywidualne
 - **Inwentaryzacja bez projektu** – wyceny indywidualne
 ::

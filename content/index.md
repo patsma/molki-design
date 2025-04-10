@@ -21,10 +21,10 @@ ogImage:
 cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
-Projekty Wnętrz
+Projekt i wykończenie wnętrza
 
 #subtitle
-I REMONTY "POD KLUCZ"
+w Twoim stylu
 
 #cta
 Umów konsultację
@@ -37,8 +37,8 @@ Umów konsultację
 
 ::project-grid
 ---
-cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 showHeroPath: false
+cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271
 ---
 #title
 Stwórz z nami idealne wnętrze
@@ -50,8 +50,8 @@ Bez stresu i kompromisów
   :::project-grid-item
   ---
   aspectRatio: 0.75
+  hoverText: Projekt Wnętrza
   to: /projekt-wnetrza
-  hoverText: "Projekt Wnętrza"
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -68,8 +68,8 @@ Bez stresu i kompromisów
   :::project-grid-item
   ---
   aspectRatio: 0.75
+  hoverText: Remont Pod Klucz
   to: /remont-pod-klucz
-  hoverText: "Remont Pod Klucz"
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -86,8 +86,8 @@ Bez stresu i kompromisów
   :::project-grid-item
   ---
   aspectRatio: 0.75
+  hoverText: Realizacje
   to: /realizacje
-  hoverText: "Realizacje"
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

@@ -53,7 +53,7 @@ Od pomysłu do realizacji
 ZOBACZ NASZE REALIZACJE
 
 #title
-Od projektu do realizacji - czyli Remont pod Klucz
+Od projektu do realizacji - wnętrza pod klucz
 
 #subtitle
 

@@ -168,10 +168,10 @@ Od projektu do realizacji - czyli Remont pod Klucz
 hasBackground: true
 ---
 #title
-Bezstresowy Remont od A do Z
+Realizacja projektu wnętrz "Pod Klucz"
 
 #subtitle
-Odkryj pakiety remontowe dostosowane do Twoich potrzeb i stylu życia
+Kompleksowo zajmiemy się realizacją projektu wnętrza – zgodnie z Twoimi potrzebami i stylem życia.
 ::
 
 ::item-card

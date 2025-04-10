@@ -56,7 +56,6 @@ ZOBACZ NASZE REALIZACJE
 Od projektu do realizacji - czyli Remont pod Klucz
 
 #subtitle
-Wybierz wariant dopasowany do Twoich potrzeb
 
 #features
   :::icon-grid-item

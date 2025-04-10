@@ -44,10 +44,10 @@ cta-link: /remont-pod-klucz#realizacje
   :::
 
 #heroTitle
-[Realizacja projektu]{.h1-style}
+[Wnętrze z charakterem]{.h1-style}
 
 #heroSubtitle
-pod klucz
+Od pomysłu do realizacji
 
 #cta
 ZOBACZ NASZE REALIZACJE

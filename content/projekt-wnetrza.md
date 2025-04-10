@@ -178,7 +178,6 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -195,7 +194,6 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -212,7 +210,6 @@ Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
   :::project-grid-item
   ---
   aspectRatio: 0.75
-
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}
@@ -237,7 +234,7 @@ class: hidden md:grid
 id: cennik
 ---
 #title
-Cennik Usług Projektowych
+Zakres Usług Projektowych
 
 #subtitle
 Indywidualne podejście i elastyczność – dopasowujemy nasze usługi do Twoich potrzeb i budżetu.
@@ -382,8 +379,6 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   ---
   :::
 
-
-
   :::service-table-row
   ---
   basicExec: true
@@ -403,7 +398,6 @@ infoText: "*powyższe kwoty podane są w wartości netto, do ostatecznej wyceny
   name: Nadzór autorski
   ---
   :::
-
 
   :::service-table-row
   ---
@@ -437,7 +431,7 @@ classList: md:hidden
   :::
 
 #title
-Cennik Usług Projektowych
+Zakres Usług Projektowych
 
 #subtitle
 Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich potrzeb i budżetu
@@ -483,7 +477,7 @@ Indywidualne podejście i elastyczność – dopasujemy nasze usługi do Twoich 
   - Projekt malowania ścian
   - Nadzór autorski
   - Doradztwo z wyboru mebli
-
+  
   #premiumPrice
   ❤️
   
@@ -541,8 +535,6 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
   - Pisemne zalecenia
   - Plan działania
   :::
-
-
 ::
 
 ::info-pricing

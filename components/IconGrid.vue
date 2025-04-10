@@ -14,7 +14,7 @@
 
         <!-- Grid Layout -->
         <div
-          v-scroll-anim:staggerUp="{ stagger: { amount: 2, from: 'start' } }"
+          v-scroll-anim:staggerUp="{ stagger: { amount: 4, from: 'start' } }"
           class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
         >
           <slot name="items" />

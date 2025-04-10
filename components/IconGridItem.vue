@@ -1,11 +1,5 @@
 <template>
-  <div
-    class="text-center"
-    data-scroll-item
-    data-scroll-animation="fadeUp"
-    data-scroll-duration="0.8"
-    data-scroll-stagger="0.2"
-  >
+  <div class="text-center">
     <slot name="icon">
       <Icon name="uil:check-circle" class="w-16 h-16 text-primary mx-auto mb-4" />
     </slot>

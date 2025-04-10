@@ -94,7 +94,7 @@ defineProps<{
             v-scroll-anim:staggerUp="{
               stagger: {
                 amount: 0.4,
-                from: 'center',
+                from: 'auto',
               },
             }"
           >

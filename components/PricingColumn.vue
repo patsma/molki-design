@@ -37,7 +37,7 @@ defineSlots<{
     <div v-else-if="$slots.basicPrice || $slots.premiumPrice" class="p-8 flex-1 flex flex-col">
       <div class="mb-8" v-scroll-anim:fadeUp>
         <div class="text-xl font-semibold mb-2" v-scroll-anim:staggerUp>Pakiet Podstawowy</div>
-        <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale>
+        <div class="text-2xl hidden font-bold text-primary mb-6" v-scroll-anim:scale>
           <slot name="basicPrice" mdc-unwrap="p" />
         </div>
         <div class="prose prose-lg max-w-none" v-scroll-anim:fadeUp>
@@ -52,7 +52,7 @@ defineSlots<{
         >
           Pakiet Premium
         </div>
-        <div class="text-2xl font-bold text-primary mb-6" v-scroll-anim:scale>
+        <div class="text-2xl font-bold hidden text-primary mb-6" v-scroll-anim:scale>
           <slot name="premiumPrice" mdc-unwrap="p" />
         </div>
         <div class="prose prose-lg max-w-none">

@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="90" height="42" fill="none" viewBox="0 0 90 42">
-  <mask id="a" width="90" height="42" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-    <path fill="#fff" d="M0 0h89.317v41.333H0V0Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="none" viewBox="0 0 200 200">
+  <mask id="a" width="192" height="90" x="2" y="55" maskUnits="userSpaceOnUse" style="mask-type:luminance">
+    <path fill="#fff" d="M2 55.574h192v88.852H2V55.574Z"/>
   </mask>
   <g mask="url(#a)">
-    <mask id="c" width="91" height="42" x="-1" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-      <path fill="url(#b)" d="M-.001.003h89.343v41.333H-.001z"/>
+    <mask id="c" width="226" height="104" x="-15" y="48" maskUnits="userSpaceOnUse" style="mask-type:luminance">
+      <path fill="url(#b)" d="M-14.36 48.013h224.772V152H-14.361V48.013Z"/>
     </mask>
     <g mask="url(#c)">
-      <path fill="url(#d)" d="M-.001.002h89.343v41.333H-.001z"/>
+      <path fill="url(#d)" d="M-14.36 48.01h224.772v103.988H-14.361V48.01Z"/>
     </g>
   </g>
   <defs>

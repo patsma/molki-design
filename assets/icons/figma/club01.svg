@@ -4,10 +4,10 @@
   </mask>
   <g mask="url(#a)">
     <mask id="c" width="94" height="152" x="53" y="24" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-      <path fill="url(#b)" d="M53.977 24.817h92.045v150.568H53.977z"/>
+      <path fill="url(#b)" d="M53.977 24.817h92.045v150.568H53.977V24.817Z"/>
     </mask>
     <g mask="url(#c)">
-      <path fill="url(#d)" d="M53.977 24.815h92.045v150.568H53.977z"/>
+      <path fill="url(#d)" d="M53.977 24.815h92.045v150.568H53.977V24.815Z"/>
     </g>
   </g>
   <defs>

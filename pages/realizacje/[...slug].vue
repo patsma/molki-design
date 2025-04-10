@@ -187,7 +187,13 @@ const ctaLink = computed(() => {
                   class="gallery-item"
                   @click="openLightbox(index)"
                 >
-                  <nuxt-img :src="image.src" :alt="image.alt" class="gallery-image" format="webp" />
+                  <nuxt-img
+                    :src="image.src"
+                    :alt="image.alt"
+                    class="gallery-image"
+                    format="webp"
+                    loading="lazy"
+                  />
                   <div class="pulse-circle">
                     <div class="rim1"></div>
                     <div class="rim2"></div>

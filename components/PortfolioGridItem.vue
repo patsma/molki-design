@@ -48,6 +48,7 @@ const formattedMetraz = computed(() => {
       <nuxt-img
         :src="imageSource"
         :alt="imageAlt"
+        loading="lazy"
         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         format="webp"
       />

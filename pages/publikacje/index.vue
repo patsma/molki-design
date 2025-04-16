@@ -3,7 +3,6 @@
 const { error } = await useAsyncData('publikacje-check', async () => {
   try {
     const count = await queryCollection('publikacje').count();
-    console.log('Publications count:', count);
     return null;
   } catch (error) {
     console.error('Error checking publikacje:', error);
@@ -21,34 +20,11 @@ const { data: publications } = await useAsyncData('publikacje-list', async () =>
   }
 });
 
-// Apply optimized SEO using the composable
-import { usePageSeo } from '~/composables/usePageSeo';
-
-const pageData = computed(() => ({
-  title: 'Publikacje',
-  seo: {
-    title: 'Publikacje - Zobacz nasze publikacje',
-    description: 'Przeglądaj nasze publikacje i artykuły w prasie.',
-  },
-}));
-
-// Apply SEO with error handling
-try {
-  usePageSeo(pageData);
-
-  // Define OG image with proper component and props
-  defineOgImage({
-    component: 'Custom',
-    props: {
-      title: pageData.value?.seo?.title || 'Publikacje - Molki Design',
-      description:
-        pageData.value?.seo?.description || 'Przeglądaj nasze publikacje i artykuły w prasie.',
-      cover: pageData.value?.cover || '/og-social-default.jpg',
-    },
-  });
-} catch (e) {
-  console.error('Error applying SEO to publikacje index:', e);
-}
+// Apply basic SEO
+useSeoMeta({
+  title: 'Publikacje - Molki Design',
+  description: 'Przeglądaj nasze publikacje i artykuły w prasie.',
+});
 
 // Get headerSpacing setting from meta if available
 const needsHeaderSpacing = computed(() => {

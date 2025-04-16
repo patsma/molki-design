@@ -51,12 +51,9 @@ const NuxtLink = resolveComponent('NuxtLink');
       </div>
 
       <!-- Mobile-only button -->
-      <button
-        v-if="to"
-        class="md:hidden mt-4 w-full rounded-md bg-primary px-6 py-3 text-sm font-medium text-white"
-      >
+      <BaseButton v-if="to" :to="to" variant="primary" class="md:hidden mt-4 w-full" full-width>
         Zobacz więcej
-      </button>
+      </BaseButton>
     </div>
   </component>
 </template>

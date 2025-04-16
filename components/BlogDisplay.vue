@@ -135,7 +135,7 @@ const formatDate = (dateString: string) => {
           </div>
         </div>
 
-        <!-- View All Button -->
+        <!-- View All Articles Button -->
         <div
           v-if="showButton && posts?.length > 0"
           class="text-center mt-12"
@@ -143,12 +143,9 @@ const formatDate = (dateString: string) => {
           data-scroll-animation="fadeUp"
           data-scroll-duration="1"
         >
-          <NuxtLink
-            to="/blog"
-            class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors duration-300"
-          >
+          <BaseButton to="/blog" variant="primary" size="lg" class="font-bold">
             Zobacz wszystkie artykuły
-          </NuxtLink>
+          </BaseButton>
         </div>
       </div>
     </div>

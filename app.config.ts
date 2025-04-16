@@ -11,8 +11,8 @@ export default defineAppConfig({
               link: '/projekt-wnetrza',
             },
             {
-              label: 'Remont Pod Klucz',
-              link: '/remont-pod-klucz',
+              label: 'Realizacje Pod Klucz',
+              link: '/realizacje-pod-klucz',
             },
             {
               label: 'Todo',

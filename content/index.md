@@ -69,7 +69,7 @@ Bez stresu i kompromisów
   ---
   aspectRatio: 0.75
   hoverText: Remont Pod Klucz
-  to: /remont-pod-klucz
+  to: /realizacje-pod-klucz
   ---
   #image
     ::::parallax-img{.w-full.h-full.object-cover}

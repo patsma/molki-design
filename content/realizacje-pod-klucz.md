@@ -176,7 +176,7 @@ Kompleksowo zajmiemy się realizacją projektu wnętrza – zgodnie z Twoimi pot
 
 ::item-card
 ---
-ctaLink: /remont-pod-klucz#cennik
+ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
 BASIC
@@ -201,7 +201,7 @@ Sprawdź i dowiedz się wiecej
 
 ::item-card
 ---
-ctaLink: /remont-pod-klucz#cennik
+ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
 COMFORT
@@ -226,7 +226,7 @@ Sprawdź i dowiedz się wiecej
 
 ::item-card
 ---
-ctaLink: /remont-pod-klucz#cennik
+ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
 PREMIUM

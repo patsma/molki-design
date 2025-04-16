@@ -135,6 +135,38 @@ export default defineContentConfig({
         })
       )
     ),
+    publikacje: defineCollection(
+      asSitemapCollection(
+        asOgImageCollection({
+          type: 'data',
+          source: 'publikacje/*.md',
+          schema: z.object({
+            title: z.string().describe('Tytuł publikacji'),
+            slug: z.string().describe('URL-friendly nazwa publikacji'),
+            date: z.string().describe('Data publikacji'),
+            cover: mediaPickerSchema.describe(
+              'Zdjęcie okładki publikacji (zalecane wymiary: 1920x1080px)'
+            ),
+            pdfUrl: z.string().describe('Link do pliku PDF publikacji'),
+            description: z.string().optional().describe('Krótki opis publikacji'),
+            seo: z
+              .object({
+                title: z
+                  .string()
+                  .optional()
+                  .describe('Własny tytuł SEO (zostaw puste aby użyć domyślnego)'),
+                description: z
+                  .string()
+                  .optional()
+                  .describe('Własny opis SEO (zostaw puste aby użyć domyślnego)'),
+              })
+              .optional()
+              .describe('Ustawienia SEO'),
+            ogImage: ogImageSchema.optional().describe('Ustawienia obrazu dla social media'),
+          }),
+        })
+      )
+    ),
     content: defineCollection(
       asSitemapCollection(
         asOgImageCollection({

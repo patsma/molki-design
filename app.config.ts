@@ -29,6 +29,10 @@ export default defineAppConfig({
           link: '/realizacje',
         },
         {
+          label: 'Publikacje',
+          link: '/publikacje',
+        },
+        {
           label: 'Blog',
           link: '/blog',
         },

@@ -36,7 +36,6 @@ defineProps<{
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
             <!-- Title -->
-
             <h1
               class="h1-style font-semibold uppercase"
               v-scroll-anim:fadeUp="{ sequence: true }"
@@ -52,14 +51,15 @@ defineProps<{
           </div>
           <!-- CTA Button -->
           <div class="uppercase grid" v-scroll-anim:fadeUp>
-            <NuxtLink
+            <BaseButton
               v-if="$slots.cta"
               :to="ctaLink || '/'"
-              class="rounded-md bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              aria-label="Rozpocznij projekt"
+              variant="primary"
+              size="lg"
+              class="tracking-widest font-spartan font-bold"
             >
               <slot name="cta" mdc-unwrap="p" />
-            </NuxtLink>
+            </BaseButton>
           </div>
         </div>
       </div>

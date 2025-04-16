@@ -9,8 +9,7 @@ defineProps<{
 
 <template>
   <!-- Hero Section -->
-  <section class="full-width relative w-full overflow-hidden">
-    <!-- Hero Container -->
+  <section class="full-width data-scroll-section relative min-h-[100vh] w-full">
     <!-- Full width background container -->
     <div class="relative">
       <!-- Background image with overlay -->
@@ -41,11 +40,10 @@ defineProps<{
             class="grid justify-center items-center content-center font-spartan text-center gap-4"
           >
             <!-- Title -->
-
             <h1
               class="h1-style font-semibold uppercase"
               v-scroll-anim:fadeUp="{ sequence: true }"
-              v-if="$slots.title"
+              v-if="$slots.heroTitle"
             >
               <slot name="heroTitle" mdc-unwrap="p" />
             </h1>
@@ -56,9 +54,17 @@ defineProps<{
             </h2>
           </div>
           <!-- CTA Button -->
-          <FullWidthButton v-if="$slots.cta" :to="ctaLink || '/'" color="primary" padding="pb-16">
-            <slot name="cta" mdc-unwrap="p" />
-          </FullWidthButton>
+          <div class="uppercase grid" v-scroll-anim:fadeUp>
+            <BaseButton
+              v-if="$slots.cta"
+              :to="ctaLink || '/'"
+              variant="primary"
+              size="lg"
+              class="tracking-widest font-spartan font-bold"
+            >
+              <slot name="cta" mdc-unwrap="p" />
+            </BaseButton>
+          </div>
         </div>
       </div>
     </div>
@@ -68,7 +74,6 @@ defineProps<{
       <div class="py-8 pb-10 lg:pb-20 md:py-12 lg:py-16 content-grid">
         <div class="breakout1">
           <!-- Title -->
-
           <h2
             v-if="$slots.title"
             class="h2-style font-semibold text-primary text-center mb-8"

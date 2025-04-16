@@ -147,10 +147,12 @@ export default defineContentConfig({
             cover: mediaPickerSchema.describe(
               'Zdjęcie okładki publikacji (zalecane wymiary: 1920x1080px)'
             ),
-            pdfUrl: z
-              .string()
+            pdfUrl: z.string()
               .startsWith('/')
-              .editor({ input: 'media' })
+              .editor({ 
+                input: 'file',
+                types: ['application/pdf']
+              })
               .describe('Wybierz plik PDF publikacji'),
             description: z.string().optional().describe('Krótki opis publikacji'),
             seo: z

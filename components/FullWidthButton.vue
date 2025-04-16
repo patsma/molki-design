@@ -47,6 +47,23 @@ const props = withDefaults(
     padding: 'py-16',
   }
 );
+
+// Map color prop to BaseButton variant
+const buttonVariant = computed(() => {
+  switch (props.color) {
+    case 'primary':
+      return 'primary';
+    case 'secondary':
+      return 'secondary';
+    case 'neutral':
+    case 'neutral-400':
+      return 'primary'; // Using primary as fallback for neutral tones
+    case 'transparent-white':
+      return 'outline';
+    default:
+      return 'primary';
+  }
+});
 </script>
 
 <template>
@@ -79,24 +96,18 @@ const props = withDefaults(
         ></div>
 
         <!-- Button -->
-        <NuxtLink
+        <BaseButton
           :to="to"
-          class="relative rounded-md cursor-pointer px-8 py-5 tracking-widest text-base font-spartan font-bold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          :variant="buttonVariant"
+          size="lg"
+          class="relative tracking-widest font-spartan font-bold"
           :class="{
-            'bg-primary hover:bg-primary-dark focus:ring-primary text-neutral-100':
-              color === 'primary',
-            'bg-secondary hover:bg-secondary-dark focus:ring-secondary text-neutral-100':
-              color === 'secondary',
-            'bg-neutral-800 hover:bg-neutral-900 focus:ring-neutral-800 text-neutral-100':
-              color === 'neutral',
-            'bg-neutral-400 hover:bg-neutral-500 focus:ring-neutral-400 text-neutral-100':
-              color === 'neutral-400',
-            'bg-white bg-opacity-70 hover:bg-opacity-100 focus:ring-white text-neutral-800':
-              color === 'transparent-white',
+            'text-neutral-100': ['primary', 'secondary', 'neutral', 'neutral-400'].includes(color),
+            'text-neutral-800': color === 'transparent-white',
           }"
         >
           <slot mdc-unwrap="p" />
-        </NuxtLink>
+        </BaseButton>
       </div>
     </div>
   </div>

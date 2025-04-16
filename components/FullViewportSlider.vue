@@ -97,12 +97,14 @@ onMounted(() => {
     >
       <div class="relative w-full grid place-items-center">
         <div class="absolute w-screen h-[0.15rem] bg-primary"></div>
-        <NuxtLink
+        <BaseButton
           :to="ctaLink"
-          class="relative rounded-md cursor-pointer bg-primary px-8 py-5 tracking-widest text-base font-spartan font-bold text-neutral-100 transition-colors duration-200 hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          variant="primary"
+          size="lg"
+          class="relative tracking-widest font-spartan font-bold"
         >
           {{ ctaText }}
-        </NuxtLink>
+        </BaseButton>
       </div>
     </div>
   </div>

@@ -49,7 +49,8 @@ Bez stresu i kompromisów
 #projects
   :::project-grid-item
   ---
-  hoverText: Projekt wnętrza – dopasowany do Ciebie
+  aspectRatio: 0.75
+  hoverText: Projekt wnętrza <br> dopasowany do Ciebie
   to: /projekt-wnetrza
   ---
   #image
@@ -66,7 +67,8 @@ Bez stresu i kompromisów
 
   :::project-grid-item
   ---
-  hoverText: Realizacja projektu Pod Klucz
+  aspectRatio: 0.75
+  hoverText: Realizacja projektu <br> Pod Klucz
   to: /realizacje-pod-klucz
   ---
   #image
@@ -83,6 +85,7 @@ Bez stresu i kompromisów
 
   :::project-grid-item
   ---
+  aspectRatio: 0.75
   hoverText: Nasze realizacje
   to: /realizacje
   ---

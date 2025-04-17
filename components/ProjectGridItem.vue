@@ -29,10 +29,9 @@ const NuxtLink = resolveComponent('NuxtLink');
           <!-- Hover text -->
           <div
             v-if="hoverText"
-            class="absolute inset-0 flex items-center justify-center text-white uppercase text-2xl font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            {{ hoverText }}
-          </div>
+            class="absolute text-center inset-0 flex items-center justify-center text-white uppercase text-2xl font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            v-html="hoverText"
+          ></div>
         </div>
         <!-- Image slot with absolute positioning -->
         <div class="absolute inset-0">

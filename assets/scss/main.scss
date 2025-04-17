@@ -76,6 +76,10 @@ body {
   overflow-x: hidden;
   // background-color: var(--color-neutral-200);
 }
+li {
+  list-style: disc;
+  margin-left: 2rem;
+}
 
 .nav__item:not(#themeSwitch) {
   display: grid;

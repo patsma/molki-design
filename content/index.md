@@ -86,7 +86,7 @@ Bez stresu i kompromisów
   :::project-grid-item
   ---
   aspectRatio: 0.75
-  hoverText: Nasze realizacje
+  hoverText: Nasze realizacje <br>
   to: /realizacje
   ---
   #image

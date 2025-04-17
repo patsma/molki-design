@@ -171,7 +171,7 @@ hasBackground: true
 Realizacja projektu wnętrz "Pod Klucz"
 
 #subtitle
-Kompleksowo zajmiemy się realizacją projektu wnętrza – zgodnie z Twoimi potrzebami i stylem życia.
+Urządzimy dla Ciebie wymarzony dom!
 ::
 
 ::item-card
@@ -179,7 +179,7 @@ Kompleksowo zajmiemy się realizacją projektu wnętrza – zgodnie z Twoimi pot
 ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
-BASIC
+Planujesz zakup mieszkania? Chciałbyś wprowadzić się do nowego, gotowego wnętrza?
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -193,10 +193,19 @@ BASIC
   :::
 
 #content
-Podstawowy remont wnętrza – idealne rozwiązanie dla tych, którzy szukają solidnego, funkcjonalnego i estetycznego wykończenia bez zbędnych dodatków. Oferujemy pełen zakres prac remontowych, które zapewnią świeżość i wygodę Twojej przestrzeni w korzystnej cenie.
+**Skorzystaj z usługi MOLKI projekt pod klucz**, która pozwoli zrealizować marzenia o funkcjonalnej i pięknej przestrzeni. 
+
+W ramach kompletnej usługi otrzymasz projekt oraz wykończenie mieszkania:
+
+- w założonym budżecie,
+- na podstawie indywidualnego, stworzonego dla Ciebie projektu wnętrza,
+- zrealizowane przez sprawdzone i doświadczone ekipy remontowe,
+- z gwarancją na wszystkie wykonane prace.
+
+Usługa realizacja projektu pod klucz to przede wszystkim spokój podczas prac, gwarancja efektu i wygoda.
 
 #cta
-Sprawdź i dowiedz się wiecej
+Dowiedz się więcej
 ::
 
 ::item-card
@@ -204,7 +213,7 @@ Sprawdź i dowiedz się wiecej
 ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
-COMFORT
+Dlaczego warto?
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -218,10 +227,12 @@ COMFORT
   :::
 
 #content
-Komfortowy standard wykończenia – ten pakiet łączy w sobie funkcjonalność i estetykę na wyższym poziomie, z możliwością większej personalizacji. Wybierając Comfort, zyskujesz wnętrze dopracowane pod kątem detali, które idealnie odpowiada Twoim potrzebom i stylowi życia.
+Podczas remontu trzeba podjąć szereg trudnych decyzji, przy których łatwo popełnić błąd, który może kosztować dodatkowy czas i pieniądze. Czy na pewno chcesz brać na siebie to ryzyko?
+
+Angażujemy Ciebie tylko na etapie projektu - ponieważ chcemy mieć pewność, że będziesz czuł się dobrze w swoim nowym domu.
 
 #cta
-Sprawdź i dowiedz się wiecej
+Dowiedz się więcej
 ::
 
 ::item-card
@@ -229,7 +240,7 @@ Sprawdź i dowiedz się wiecej
 ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
-PREMIUM
+Ile mnie będzie kosztować gotowe wnętrze?
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -243,13 +254,74 @@ PREMIUM
   :::
 
 #content
-Luksusowe wykończenie wnętrza – dla najbardziej wymagających klientów oferujemy kompleksowy remont, który zapewni najwyższą jakość materiałów i wykonania. Pakiet Premium to gwarancja prestiżu, komfortu i dopracowania każdego szczegółu, tworząc przestrzeń na miarę Twoich marzeń.
+Wiemy, że budżet na realizację wnętrza to, zaraz po cenie zakupu mieszkania, koszt najważniejszy dla inwestora. Dlatego ustalany jest na początku – to Ty decydujesz, ile chcesz wydać na wykończenie domu pod klucz. Doświadczeni projektanci i pracownicy MOLKI Design zadbają o to, by realizacja zmieściła się w założonym budżecie, który obejmuje:
+
+- przygotowanie projektu wykonawczego,
+- zakup i dostawę materiałów budowlanych,
+- zakup i dostawę materiałów wykończeniowych,
+- realizację wszystkich elementów projektu wnętrz,
+- pełne wsparcie i kontrolę ekspertów MOLKI Design
 
 #cta
-Sprawdź i dowiedz się wiecej
+Dowiedz się więcej
 ::
 
+::item-card
+---
+ctaLink: /realizacje-pod-klucz#cennik
+---
+#title
+Projekt pod klucz – co zawiera?
 
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/remont-pod-klucz/remont4.jpg)
+  :::
+
+#accent-shape
+  :::div{.absolute.top-[20%].left-0.overflow-hidden.z-20.pointer-events-none}
+    ::::hero-path-7{.h-screen}
+    ::::
+  :::
+
+#content
+Usługa projektu pod klucz obejmuje wszystkie etapy – od projektu aż po oddanie gotowego mieszkania do użytku jego mieszkańcom. Może zacząć się jeszcze zanim kupisz mieszkanie – skontaktuj się z nami, a pomożemy Ci przeprowadzić proces jego zakupu.
+
+Podpisujemy z Tobą umowę, która ustala budżet, zakres oraz termin wykonania prac. Podczas wykończenia mieszkania pod klucz koszt jest przez nas kontrolowany. W trakcie prac zapewniamy zakupy materiałów i wszelkie procesy logistyczne. 
+
+Po zakończeniu prac w usłudze projekt pod klucz oddajemy Ci wnętrze gotowe do zamieszkania.
+
+#cta
+Dowiedz się więcej
+::
+
+::item-card
+---
+ctaLink: /realizacje-pod-klucz#cennik
+---
+#title
+Kiedy warto skorzystać z kompleksowej usługi Projekt Pod Klucz?
+
+#image
+  :::parallax-img{.w-full.h-full.object-cover}
+  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/remont-pod-klucz/remont4.jpg)
+  :::
+
+#accent-shape
+  :::div{.absolute.top-[20%].left-0.overflow-hidden.z-20.pointer-events-none}
+    ::::hero-path-7{.h-screen}
+    ::::
+  :::
+
+#content
+Budujesz dom, planujesz jego zakup lub generalny remont
+
+- Potrzebujesz niestandardowych rozwiązań, odpowiadających potrzebom mieszkańców – skorzystaj z naszych projektantów, którzy wdrożą je w projekt.
+- Potrzebujesz zindywidualizowanych rozwiązań oraz elementów wykończeniowych takich jak meble, zabudowy, smart home - zrealizują je nasze firmy partnerskie, pod naszym nadzorem.
+
+#cta
+Dowiedz się więcej
+::
 
 ::full-viewport-slider
 ---

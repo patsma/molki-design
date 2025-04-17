@@ -22,7 +22,7 @@ cta-link: /realizacje
 ---
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/projekt-wnetrza/salonHero.jpg)
+  ![Eleganckie wnętrze mieszkania zaprojektowane przez Molki Design](/zdjecia-na-strone/Molki%20Design%20projekt00003.webp)
   :::
 
 #heroTitle
@@ -497,7 +497,7 @@ overlayColor: bg-white
 ---
 #backgroundImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Consultation](/projekt-wnetrza/salon4.jpg)
+  ![Interior Design Consultation](/zdjecia-na-strone/Molki%20Design%20projekt00011.webp)
   :::
 
 #title
@@ -507,7 +507,7 @@ Nowe Pomysły na Twoje Wnętrze
 Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz pełnego projektu? Skorzystaj z naszej [Porady Projektowej](https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9e-9c23-633477ef3271){.text-primary} – projektantka odwiedzi Cię w domu i doradzi, jak udoskonalić przestrzeń.
 
 #infoText
-  Spotkanie z projektantem w ramach porady projektowej trwa około 2 godzin.
+Spotkanie z projektantem w ramach porady projektowej trwa około 2 godzin.
 
 #columns
   :::pricing-column
@@ -537,24 +537,23 @@ Czujesz, że Twoje wnętrze nie spełnia Twoich oczekiwań, ale nie potrzebujesz
   - Pisemne zalecenia
   - Plan działania
   :::
-
-  
 ::
 
 ::info-pricing
-
-
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Interior Design Services](/projekt-wnetrza/salon5.jpg)
+  ![Interior Design Services](/zdjecia-na-strone/Molki%20Design%20projekt00013.webp)
   :::
 
 #content
 [Inne usługi projektowe]{.text-primary.h2-style.font-bold}
 
 :br
+
 :br
+
 :br
+
 - **Wykonanie wizualizacji bez projektu** – wyceny indywidualne
 - **Inwentaryzacja bez projektu** – wyceny indywidualne
 ::

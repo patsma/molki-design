@@ -95,10 +95,10 @@ Bez stresu i kompromisów
     ::::
   
   #title
-  Planujesz zakup nieruchomości pod inwestycję?
+  Zastanawiasz się, jak może wyglądać Twoja przyszła nieruchomość?
   
   #description
-  Zaprojektujemy wnętrze, które przyciągnie kupujących lub najemców i zwiększy wartość Twojej nieruchomości.
+  Zobacz nasze realizacje — zaprojektowane z myślą o stylu, funkcjonalności i maksymalnym zysku z inwestycji. Przekonaj się, jak wyglądają wnętrza, które przyciągają najemców i kupujących.
   :::
 
 #cta

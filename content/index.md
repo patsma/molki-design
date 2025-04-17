@@ -49,8 +49,7 @@ Bez stresu i kompromisów
 #projects
   :::project-grid-item
   ---
-  aspectRatio: 0.75
-  hoverText: Projekt Wnętrza
+  hoverText: Projekt Wnętrza Test
   to: /projekt-wnetrza
   ---
   #image

@@ -151,10 +151,11 @@ export default defineContentConfig({
               .string()
               .startsWith('/')
               .editor({
-                input: 'media',
-                types: ['application/pdf', 'pdf'],
+                component: 'PdfPicker',
+                label: 'Wybierz plik PDF',
+                baseDirectory: '/pdf',
               })
-              .describe('Wybierz plik PDF publikacji z biblioteki mediów'),
+              .describe('Wybierz plik PDF publikacji'),
             description: z.string().optional().describe('Krótki opis publikacji'),
             seo: z
               .object({

@@ -150,12 +150,7 @@ export default defineContentConfig({
             pdfUrl: z
               .string()
               .startsWith('/')
-              .editor({
-                component: 'PdfPicker',
-                label: 'Wybierz plik PDF',
-                baseDirectory: '/pdf',
-              })
-              .describe('Wybierz plik PDF publikacji'),
+              .describe('Ścieżka do pliku PDF (np. /pdf/nazwa-pliku.pdf)'),
             description: z.string().optional().describe('Krótki opis publikacji'),
             seo: z
               .object({

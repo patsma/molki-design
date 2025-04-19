@@ -103,12 +103,12 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: fig:wybor-mebli
+    name: fig:dobor-materialow
     ---
     ::::
   
   #text
-  WYBÓR MEBLI I DODATKÓW
+  DOBÓR MATERIAŁÓW
   :::
 
   :::icon-grid-item
@@ -116,12 +116,12 @@ Poznaj etapy Procesu Projektowania
     ::::icon-block
     ---
     customClass: w-20 h-20 text-primary mx-auto mb-4
-    name: fig:dobor-materialow
+    name: fig:wybor-mebli
     ---
     ::::
   
   #text
-  DOBÓR MATERIAŁÓW
+  WYBÓR MEBLI I DODATKÓW
   :::
 
   :::icon-grid-item

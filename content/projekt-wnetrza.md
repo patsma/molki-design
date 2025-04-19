@@ -26,13 +26,13 @@ cta-link: /realizacje
   :::
 
 #heroTitle
-PROJEKT WNĘTRZA
+PROJEKTY WNĘTRZ
 
 #heroSubtitle
 Jasne podejście do projektowania wnętrz
 
 #title
-PROJEKT WNĘTRZA
+PROJEKTY WNĘTRZ
 
 #cta
 ZOBACZ NASZE REALIZACJE
@@ -172,7 +172,7 @@ cta-link: https://meetings-eu1.hubspot.com/wioletta-retko?uuid=91bf4e62-5e59-4f9
 Od Koncepcji do Realizacji
 
 #subtitle
-Funkcjonalne i wykonawcze projekty, które zamieniają wizje w rzeczywistość
+Funkcjonalne i piękne projekty, które zamieniają wizje w rzeczywistość
 
 #projects
   :::project-grid-item

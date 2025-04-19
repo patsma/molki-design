@@ -1,29 +1,38 @@
 ---
-title: Projekt super
-subtitle: 2023 | Sopot
-slug: projekt-super
-location: Gdańsk
-metraz: 120
-year: "2023"
-number: "02"
+title: Dachy Orłowa
+subtitle: 2023 | Gdynia
+slug: dachy-orlowa
+location: Gdynia
+metraz: 55
+year: ""
+number: "01"
 cover:
-  src: /blog/blog-molki-design-002.webp
-  alt: Projekt Super - Widok główny
+  src: /realizacje/Dachy Orłowa/Dachy Orłowa9.jpg
+  alt: Dachy Orłowa- Widok główny
 slider:
   images:
-    - src: /blog/blog-molki-design-004.webp
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa kuchnia_pp.jpg
       alt: Projekt Super - Wnętrze 1
-    - src: /blog/blog-molki-design-008.webp
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 3.jpg
       alt: Projekt Super - Wnętrze 2
-    - src: /projectItem2.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 4.jpg
       alt: Wnętrze projektu super
-    - src: /heroAbout.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 10.jpg
       alt: Dodatkowe zdjęcie projektu
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa kuchnia.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa1.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa1.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa5.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa6.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 4.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa9.jpg
+    - src: /realizacje/Dachy Orłowa/Dachy Orłowa11.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:
   title: Projekt Super w Sopocie - Molki Design
-  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja przestrzeni z nowoczesnymi rozwiązaniami.
+  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja
+    przestrzeni z nowoczesnymi rozwiązaniami.
 ogImage:
   component: Custom
   props:

@@ -179,7 +179,7 @@ Urządzimy dla Ciebie wymarzony dom!
 ctaLink: /realizacje-pod-klucz#cennik
 ---
 #title
-Planujesz zakup mieszkania? Chciałbyś wprowadzić się do nowego, gotowego wnętrza?
+Planujesz zakup mieszkania? Chcesz wprowadzić się do nowego, gotowego wnętrza?
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
@@ -193,7 +193,7 @@ Planujesz zakup mieszkania? Chciałbyś wprowadzić się do nowego, gotowego wn�
   :::
 
 #content
-**Skorzystaj z usługi MOLKI projekt pod klucz**, która pozwoli zrealizować marzenia o funkcjonalnej i pięknej przestrzeni. 
+**Skorzystaj z usługi MOLKI projekt pod klucz**, która pozwoli zrealizować Twoje marzenia o funkcjonalnej i pięknej przestrzeni. 
 
 :br
 

@@ -22,7 +22,7 @@ POZNAJ ZESPÓŁ MOLKI DESIGN!
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Zespół Molki Design w nowoczesnym biurze projektowym](/heroAboutCropped.jpg)
+  ![Zespół Molki Design w nowoczesnym biurze projektowym](/molki%20zespol-min.jpg)
   :::
 
 #description
@@ -91,7 +91,6 @@ Moja podstawowa zasada to urządzanie wnętrz zgodnie z tym jak chcesz żyć, ki
   :::
 ::
 
-
 ::team-member
 #section-title
 PASJA PROJEKTOWANIA
@@ -147,7 +146,6 @@ Dzięki temu mogę zapewnić unikalne i funkcjonalne wnętrza, które cieszą ok
   Zadowolonych klientów
   :::
 ::
-
 
 ::team-member
 #section-title

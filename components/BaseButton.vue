@@ -24,13 +24,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  // Simplified link relationship handling
   rel: {
     type: String,
     default: '',
-  },
-  noRel: {
-    type: Boolean,
-    default: false,
   },
   activeClass: {
     type: String,
@@ -134,38 +131,42 @@ const btnClasses = [
           : 'cursor-pointer bg-transparent text-primary border border-primary hover:bg-primary hover:text-neutral-100'),
 ];
 
-// NuxtLink props that should be passed
-const nuxtLinkProps = {
-  to: props.to,
-  activeClass: props.activeClass,
-  exactActiveClass: props.exactActiveClass,
-  replace: props.replace,
-  ariaCurrentValue: props.ariaCurrentValue,
-  external: props.external,
-  prefetch: props.prefetch,
-  noPrefetch: props.noPrefetch,
-  prefetchedClass: props.prefetchedClass,
-  rel: props.rel,
-  noRel: props.noRel,
-  target: props.target,
-};
-
-// External link props
-const externalLinkProps = {
-  href: props.href,
-  target: props.target || '_blank',
-  rel: props.rel || (props.noRel ? undefined : 'noopener noreferrer'),
-};
+// Compute link props based on context
+const computedLinkProps = computed(() => {
+  if (props.to) {
+    // Internal link props (NuxtLink)
+    return {
+      to: props.to,
+      activeClass: props.activeClass,
+      exactActiveClass: props.exactActiveClass,
+      replace: props.replace,
+      ariaCurrentValue: props.ariaCurrentValue,
+      external: props.external,
+      prefetch: props.prefetch,
+      noPrefetch: props.noPrefetch,
+      prefetchedClass: props.prefetchedClass,
+      rel: props.rel || undefined,
+    };
+  } else if (props.href) {
+    // External link props
+    return {
+      href: props.href,
+      target: props.target || '_blank',
+      rel: props.rel || 'noopener noreferrer',
+    };
+  }
+  return {};
+});
 </script>
 
 <template>
   <!-- Render as NuxtLink for internal routes -->
-  <NuxtLink v-if="to" v-bind="nuxtLinkProps" :class="btnClasses" @click="handleClick">
+  <NuxtLink v-if="to" v-bind="computedLinkProps" :class="btnClasses" @click="handleClick">
     <slot></slot>
   </NuxtLink>
 
   <!-- Render as anchor for external links -->
-  <a v-else-if="href" v-bind="externalLinkProps" :class="btnClasses" @click="handleClick">
+  <a v-else-if="href" v-bind="computedLinkProps" :class="btnClasses" @click="handleClick">
     <slot></slot>
   </a>
 

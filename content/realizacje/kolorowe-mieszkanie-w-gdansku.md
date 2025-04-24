@@ -1,20 +1,26 @@
 ---
-title: "Apartament Premium "
-subtitle: 2024 | Gdańsk
-slug: projekt-wnetrza-mieszkania
+title: Kolorowe Mieszkanie w Gdańsku
+subtitle: 2022 | Gdańsk
+slug: kolorowe mieszkanie w Gdańsku
 location: Gdańsk
-metraz: 60
-year: "2024"
+metraz: 50
+year: "2022"
 number: "01"
 cover:
-  src: /projectItem1.jpg
+  src: /realizacje/GDL21/IMG_2919.jpg
   alt: Apartament Premium w Gdańsku - Widok główny
 slider:
   images:
-    - src: /projectItem2.jpg
+    - src: /realizacje/GDL21/IMG_2914.jpg
       alt: Apartament Premium - Wnętrze 1
-    - src: /heroAbout.jpg
+    - src: /realizacje/GDL21/IMG_2919.jpg
       alt: Apartament Premium - Wnętrze 2
+    - src: /realizacje/GDL21/IMG_2921.jpg
+    - src: /realizacje/GDL21/IMG_2923.jpg
+    - src: /realizacje/GDL21/IMG_2926.jpg
+    - src: /realizacje/GDL21/IMG_2934.jpg
+    - src: /realizacje/GDL21/IMG_2935.jpg
+    - src: /realizacje/GDL21/IMG_2941.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

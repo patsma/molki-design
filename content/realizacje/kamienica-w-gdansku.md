@@ -25,8 +25,6 @@ slider:
     - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233922.jpg
     - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233941.jpg
     - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234055 - 630-310 masonry.jpg
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234055 - 630-310 masonry.jpg
     - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234148.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje

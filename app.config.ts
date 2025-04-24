@@ -14,23 +14,25 @@ export default defineAppConfig({
               label: 'Realizacje Pod Klucz',
               link: '/realizacje-pod-klucz',
             },
-            {
-              label: 'Todo',
-              link: '/todo',
-            },
           ],
         },
         {
           label: 'O nas',
           link: '/o-nas',
-        },
-        {
-          label: 'Realizacje',
-          link: '/realizacje',
-        },
-        {
-          label: 'Publikacje',
-          link: '/publikacje',
+          children: [
+            {
+              label: 'Zespół',
+              link: '/o-nas',
+            },
+            {
+              label: 'Realizacje',
+              link: '/realizacje',
+            },
+            {
+              label: 'Publikacje',
+              link: '/publikacje',
+            },
+          ],
         },
         {
           label: 'Blog',

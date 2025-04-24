@@ -1,7 +1,7 @@
 ---
 title: Gdańsk Subisława
 subtitle: 2022 | Gdańsk
-slug: gdansk subislawa
+slug: projekt-wnetrza-gdansk-subislawa
 location: Gdańsk
 metraz: 55
 year: "2022"

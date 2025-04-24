@@ -1,23 +1,23 @@
 ---
-title: Przytulne mieszkanie w Gdańsku
+title: Wizualizacja Apartament Premium
 subtitle: 2023 | Gdańsk
-slug: "apartament premium "
-location: Gdańsk
-metraz: 45
+slug: wizualizacja-wnetrza-projekt-premium
+location: Gdynia
+metraz: 60
 year: "2022"
 number: "01"
 cover:
-  src: /realizacje/GDP74/Piastowska 800px (7).jpg
+  src: /realizacje/dachy-orlowa/Dachy Orłowa kuchnia_pp.jpg
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/GDP74/Piastowska 800px (2).jpg
+    - src: /realizacje/dachy-orlowa/Dachy Orłowa 3.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/GDP74/Piastowska 800px (6).jpg
+    - src: /realizacje/dachy-orlowa/Dachy Orłowa 4.jpg
       alt: Gdansk kamienica - kuchnia
-    - src: /realizacje/GDP74/Piastowska 800px (9).jpg
+    - src: /realizacje/dachy-orlowa/Dachy Orłowa 8.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/GDP74/Piastowska 800px (15).jpg
+    - src: /realizacje/dachy-orlowa/Dachy Orłowa 10.jpg
       alt: Gdansk kamienica - lazienka
     - src: /realizacje/dachy-orlowa/Dachy Orłowa kuchnia.jpg
       alt:

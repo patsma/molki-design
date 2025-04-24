@@ -1,5 +1,5 @@
 ---
-title: Przytulne mieszkanie w Gdańsku
+title: Gdańsk Piastowska
 location: Gdańsk
 metraz: 40
 cover:
@@ -15,6 +15,7 @@ slider:
     - src: /realizacje/GDP74/Piastowska 800px (22).jpg
     - src: /realizacje/GDP74/Piastowska 800px (27).jpg
     - src: /realizacje/GDP74/Piastowska 800px (28).jpg
+slug: projekt-wnetrza-gdansk-piastowska
 ---
 
 # Przytulne Wnętrze page

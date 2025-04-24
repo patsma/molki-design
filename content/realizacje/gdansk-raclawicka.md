@@ -1,31 +1,27 @@
 ---
-title: Kamienica w Gdańsku
-subtitle: 2022 | Gdańsk
-slug: kamienica w gdansku
+title: Gdańsk Racławicka
+subtitle: ""
+slug: projekt-wnetrza-gdansk-raclawicka
 location: Gdańsk
-metraz: 50
+metraz: 55
 year: "2022"
 number: "01"
 cover:
-  src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
+  src: /realizacje/GDR1/deMOLKI-Racawicka-1-deMOLKI-Raclawicka(7).jpg
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233202.jpg
+    - src: /realizacje/GDR1/deMOLKI-Racawicka-1-deMOLKI-Raclawicka.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233103.jpg
+    - src: /realizacje/GDR1/deMOLKI-Racawicka-1-deMOLKI-Raclawicka(3).jpg
       alt: Gdansk kamienica - kuchnia
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233740.jpg
+    - src: /realizacje/GDR1/deMOLKI-Racawicka-1-deMOLKI-Raclawicka(6).jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233808.jpg
+    - src: /realizacje/GDR1/deMOLKI-Racawicka-1-deMOLKI-Raclawicka(9).jpg
       alt: Gdansk kamienica - lazienka
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233852.jpg
+    - src: /realizacje/GDR1/deMOLKI-Racawicka-1-deMOLKI-Raclawicka(11).jpg
       alt:
         key-26: ""
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233922.jpg
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233941.jpg
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
-    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234148.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

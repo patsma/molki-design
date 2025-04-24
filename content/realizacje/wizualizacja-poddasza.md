@@ -1,26 +1,19 @@
 ---
-title: Wizualizacja Poddasza w kamienicy
+title: Wizualizacja poddasza
 subtitle: 2025 | Gdańsk
-slug: "Wizualizacja Domu "
+slug: wizualizacja-wnetrza-poddasze
 location: Gdańsk
-metraz: 45
+metraz: 40
 year: "2022"
 number: "01"
 cover:
-  src: /realizacje/dom-na-wzgorzu/salon-min.jpg
+  src: /projekt-wnetrza/salon2.jpg
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/dom-na-wzgorzu/salon2-min.jpg
+    - src: /projekt-wnetrza/salon1.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/dom-na-wzgorzu/salon3-min.jpg
-      alt: Gdansk kamienica - kuchnia
-    - src: /realizacje/dom-na-wzgorzu/salon4-min.jpg
-      alt: Gdansk kamienica - salon
-    - src: /blog/blog-molki-design-022.webp
-      alt: Gdansk kamienica - lazienka
-    - src: /home/home1.jpg
-    - src: /home/home3.jpg
+    - src: /projekt-wnetrza/salon3.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

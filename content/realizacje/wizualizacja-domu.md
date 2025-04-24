@@ -1,8 +1,8 @@
 ---
 title: "Wizualizacja Domu "
 subtitle: 2023 | Gdańsk
-slug: "apartament premium "
-location: Gdynia
+slug: wizualizacja-wnetrza-warszawa
+location: Warszawa
 metraz: 80
 year: "2023"
 number: "01"
@@ -11,12 +11,6 @@ cover:
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/dom-na-wzgorzu/salon2-min.jpg
-      alt: Gdansk kamienica - salon
-    - src: /realizacje/dom-na-wzgorzu/salon3-min.jpg
-      alt: Gdansk kamienica - kuchnia
-    - src: /realizacje/dom-na-wzgorzu/salon4-min.jpg
-      alt: Gdansk kamienica - salon
     - src: /blog/blog-molki-design-022.webp
       alt: Gdansk kamienica - lazienka
     - src: /home/home1.jpg

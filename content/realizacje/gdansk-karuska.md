@@ -1,36 +1,31 @@
 ---
-title: "Apartament Premium "
-subtitle: 2023 | Gdańsk
-slug: "apartament premium "
-location: Gdynia
-metraz: 60
+title: Gdańsk Kartuska
+subtitle: 2022 | Gdańsk
+slug: projekt-wnetrza-gdansk-kartuska
+location: Gdańsk
+metraz: 50
 year: "2022"
 number: "01"
 cover:
-  src: /realizacje/dachy-orlowa/Dachy Orłowa kuchnia_pp.jpg
+  src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa 3.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233202.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa 4.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233103.jpg
       alt: Gdansk kamienica - kuchnia
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa 8.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233740.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa 10.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233808.jpg
       alt: Gdansk kamienica - lazienka
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa kuchnia.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233852.jpg
       alt:
         key-26: ""
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa1.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa2.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa5.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa6.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa7.jpg
-      alt:
-        key-58: ""
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa9.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa11.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233922.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233941.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234148.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

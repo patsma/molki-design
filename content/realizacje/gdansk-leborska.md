@@ -1,26 +1,28 @@
 ---
-title: Przytulne mieszkanie w Gdańsku
+title: Gdańsk Lęborska
 subtitle: 2023 | Gdańsk
-slug: "apartament premium "
+slug: projekt-wnetrza-gdansk-le
 location: Gdańsk
 metraz: 45
 year: "2022"
 number: "01"
 cover:
-  src: /realizacje/GDP74/Piastowska 800px (7).jpg
+  src: /realizacje/GDL21/IMG_2908.jpg
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/GDP74/Piastowska 800px (2).jpg
+    - src: /realizacje/GDL21/IMG_2914.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/GDP74/Piastowska 800px (6).jpg
+    - src: /realizacje/GDL21/IMG_2919.jpg
       alt: Gdansk kamienica - kuchnia
-    - src: /realizacje/GDP74/Piastowska 800px (9).jpg
+    - src: /realizacje/GDL21/IMG_2923.jpg
       alt: Gdansk kamienica - salon
-    - src: /realizacje/GDP74/Piastowska 800px (15).jpg
+    - src: /realizacje/GDL21/IMG_2921.jpg
       alt: Gdansk kamienica - lazienka
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa1.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa2.jpg
+    - src: /realizacje/GDL21/IMG_2926.jpg
+    - src: /realizacje/GDL21/IMG_2934.jpg
+    - src: /realizacje/GDL21/IMG_2935.jpg
+    - src: /realizacje/GDL21/IMG_2941.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

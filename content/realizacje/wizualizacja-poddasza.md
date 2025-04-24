@@ -1,6 +1,6 @@
 ---
-title: "Wizualizacja Domu "
-subtitle: 2024 | Gdańsk
+title: Wizualizacja Poddasza w kamienicy
+subtitle: 2025 | Gdańsk
 slug: "Wizualizacja Domu "
 location: Gdańsk
 metraz: 45

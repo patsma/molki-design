@@ -19,18 +19,8 @@ slider:
       alt: Gdansk kamienica - salon
     - src: /realizacje/GDP74/Piastowska 800px (15).jpg
       alt: Gdansk kamienica - lazienka
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa kuchnia.jpg
-      alt:
-        key-26: ""
     - src: /realizacje/dachy-orlowa/Dachy Orłowa1.jpg
     - src: /realizacje/dachy-orlowa/Dachy Orłowa2.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa5.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa6.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa7.jpg
-      alt:
-        key-58: ""
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa9.jpg
-    - src: /realizacje/dachy-orlowa/Dachy Orłowa11.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

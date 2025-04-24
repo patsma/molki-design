@@ -5,13 +5,13 @@ description: Projekty wnętrz w Trójmieście
 title: Molki Design
 fullViewportSlider:
   images:
-    - src: /remont-pod-klucz/slider/slide1.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
       alt: Molki Design - remont pod klucz Gdańsk 1
-    - src: /remont-pod-klucz/slider/slide2.jpg
+    - src: /realizacje/GDL21/IMG_2914.jpg
       alt: Molki Design - remont pod klucz Gdańsk 2
-    - src: /remont-pod-klucz/slider/slide3.jpg
+    - src: /realizacje/GDS23/Subisława 1920px (1).jpg
       alt: Molki Design - remont pod klucz Gdańsk 3
-    - src: /remont-pod-klucz/slider/slide4.jpg
+    - src: /realizacje/GDP74/Piastowska 800px (7).jpg
       alt: Molki Design - remont pod klucz Gdańsk 4
     - src: /remont-pod-klucz/slider/slide5.jpg
       alt: Molki Design - remont pod klucz Gdańsk 5

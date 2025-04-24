@@ -7,13 +7,25 @@ metraz: 40
 year: "2022"
 number: "01"
 cover:
-  src: /projekt-wnetrza/salon2.jpg
+  src: /realizacje/gd-poddasze/01salon.jpg
   alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /projekt-wnetrza/salon1.jpg
+    - src: /realizacje/gd-poddasze/01lazienka.jpg
       alt: Gdansk kamienica - salon
-    - src: /projekt-wnetrza/salon3.jpg
+    - src: /realizacje/gd-poddasze/01salon.jpg
+      alt:
+        key-135: ""
+    - src: /realizacje/gd-poddasze/02lazienka.jpg
+    - src: /realizacje/gd-poddasze/02pokój.jpg
+    - src: /realizacje/gd-poddasze/02salon.jpg
+      alt:
+        key-76: ""
+    - src: /realizacje/gd-poddasze/02sypialnia.jpg
+    - src: /realizacje/gd-poddasze/03pokój.jpg
+    - src: /realizacje/gd-poddasze/03salon.jpg
+    - src: /realizacje/gd-poddasze/04salon.jpg
+    - src: /realizacje/gd-poddasze/05salon.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:

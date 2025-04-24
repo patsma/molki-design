@@ -22,7 +22,7 @@ POZNAJ ZESPÓŁ MOLKI DESIGN!
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Zespół Molki Design w nowoczesnym biurze projektowym](/molki%20zespol-min.jpg)
+  ![Zespół Molki Design w nowoczesnym biurze projektowym](/team/molki_zespol.jpg)
   :::
 
 #description

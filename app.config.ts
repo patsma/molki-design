@@ -62,9 +62,10 @@ export default defineAppConfig({
       email: 'kontakt@molki.pl',
       openingHours: 'Pon. - Pt.: 9:00 - 17:00',
     },
+    showMap: true,
     preferredContact: 'Email',
   },
-  settings: {
+  studio: {
     title: 'Molki Design',
   },
 });

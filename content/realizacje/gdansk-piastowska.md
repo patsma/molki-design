@@ -16,6 +16,8 @@ slider:
     - src: /realizacje/GDP74/Piastowska 800px (27).jpg
     - src: /realizacje/GDP74/Piastowska 800px (28).jpg
 slug: projekt-wnetrza-gdansk-piastowska
+ctaLink: /realizacje
+ctaText: ZOBACZ WIĘCEJ
 ---
 
 # Przytulne Wnętrze page

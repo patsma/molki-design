@@ -193,7 +193,7 @@ Planujesz zakup mieszkania? Chcesz wprowadzić się do nowego, gotowego wnętrza
   :::
 
 #content
-**Skorzystaj z usługi MOLKI projekt pod klucz**, która pozwoli zrealizować Twoje marzenia o funkcjonalnej i pięknej przestrzeni. 
+Skorzystaj z usługi MOLKI projekt pod klucz, która pozwoli zrealizować Twoje marzenia o funkcjonalnej i pięknej przestrzeni. 
 
 :br
 

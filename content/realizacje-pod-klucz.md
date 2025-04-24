@@ -146,7 +146,7 @@ Od projektu do realizacji - wnętrza pod klucz
     ::::
   
   #text
-  NIŻSZY PODATEK - TYLKO 8% VAT
+  OSZCZĘDZASZ 15% NA PODATKU VAT
   :::
 
   :::icon-grid-item

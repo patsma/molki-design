@@ -1,44 +1,45 @@
 ---
-title: Dachy Orłowa
-subtitle: 2023 | Gdynia
-slug: dachy-orlowa
-location: Gdynia
-metraz: 55
-year: ""
+title: Kamienica w Gdańsku
+subtitle: 2022 | Gdańsk
+slug: kamienica w gdansku
+location: Gdańsk
+metraz: 50
+year: "2022"
 number: "01"
 cover:
-  src: /realizacje/Dachy Orłowa/Dachy Orłowa9.jpg
-  alt: Dachy Orłowa- Widok główny
+  src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
+  alt: Gdansk kamienica sypialnia
 slider:
   images:
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa kuchnia_pp.jpg
-      alt: Projekt Super - Wnętrze 1
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 3.jpg
-      alt: Projekt Super - Wnętrze 2
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 4.jpg
-      alt: Wnętrze projektu super
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 10.jpg
-      alt: Dodatkowe zdjęcie projektu
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa kuchnia.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa1.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa1.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa5.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa6.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa 4.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa9.jpg
-    - src: /realizacje/Dachy Orłowa/Dachy Orłowa11.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233202.jpg
+      alt: Gdansk kamienica - salon
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233103.jpg
+      alt: Gdansk kamienica - kuchnia
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233740.jpg
+      alt: Gdansk kamienica - salon
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233808.jpg
+      alt: Gdansk kamienica - lazienka
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233852.jpg
+      alt:
+        key-26: ""
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233922.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_233941.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234055 - 630-310 masonry.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234055 - 630-310 masonry.jpg
+    - src: /realizacje/GDK40/Gdansk-Kartuska-07122021_234148.jpg
 ctaText: ZOBACZ WIĘCEJ
 ctaLink: /realizacje
 seo:
-  title: Projekt Super w Sopocie - Molki Design
-  description: Nowoczesny projekt wnętrza w Sopocie. Kompleksowa aranżacja
-    przestrzeni z nowoczesnymi rozwiązaniami.
+  title: Kamienica w Gdańsku - Molki Design
+  description: Projekt wnętrza mieszkania w stylu nowojorskim stworzony w
+    kamienicy w Gdańsku
 ogImage:
   component: Custom
   props:
-    title: Projekt Super w Sopocie
-    description: Nowoczesny projekt wnętrza w nadmorskim klimacie
-    cover: /projectItem1.jpg
+    title: Kamienica w Gdańsku
+    description: Nowoczesny projekt wnętrza w nowojorskim stylu
+    cover: /realizacje/GDK40/Gdansk-Kartuska-07122021_234037.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.

@@ -21,6 +21,19 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
   ],
 
+  // Enable debug options for development
+  debug: {
+    enabled: process.env.NODE_ENV === 'development',
+  },
+
+  // Configure experimental features
+  experimental: {
+    // Enable delayed hydration features
+    componentIslands: true,
+    // Prepare for Nuxt 4
+    compatibilityVersion: '3.16.2',
+  },
+
   cookieControl: {
     barPosition: 'bottom-full',
     closeModalOnClickOutside: true,
@@ -104,17 +117,16 @@ export default defineNuxtConfig({
     isCookieIdVisible: true,
   },
 
-  app: {
-    head: {
-      link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'icon', href: '/favicon.ico' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        { rel: 'manifest', href: '/site.webmanifest' },
-      ],
-    },
+  // Configure head meta
+  head: {
+    link: [
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
+    ],
   },
   icon: {
     customCollections: [

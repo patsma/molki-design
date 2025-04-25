@@ -209,5 +209,53 @@ export default defineContentConfig({
         })
       )
     ),
+    appConfig: defineCollection({
+      type: 'data',
+      source: 'nuxt.schema.ts',
+      schema: z
+        .object({
+          contactInfo: z
+            .object({
+              email: z.string().optional(),
+              phone: z.string().optional(),
+              companyInfo: z.string().optional(),
+              officeInfo: z.string().optional(),
+              socialLinks: z
+                .object({
+                  instagram: z.string().optional(),
+                  facebook: z.string().optional(),
+                  linkedin: z.string().optional(),
+                })
+                .optional(),
+            })
+            .optional(),
+          companies: z
+            .object({
+              wlasciwyKurs: z
+                .object({
+                  url: z.string().optional(),
+                  title: z.string().optional(),
+                  subtitle: z.string().optional(),
+                  description: z.string().optional(),
+                })
+                .optional(),
+              molkiInvest: z
+                .object({
+                  url: z.string().optional(),
+                  title: z.string().optional(),
+                  subtitle: z.string().optional(),
+                  description: z.string().optional(),
+                })
+                .optional(),
+            })
+            .optional(),
+          studio: z
+            .object({
+              title: z.string().optional(),
+            })
+            .optional(),
+        })
+        .passthrough(),
+    }),
   },
 });

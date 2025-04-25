@@ -5,8 +5,8 @@ const { data: page } = await useAsyncData('page-' + route.path, () => {
   return queryCollection('content').path(route.path).first();
 });
 
-// Only throw 404 during client-side navigation or non-prerender server-side
-if (!page.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
+// Only throw 404 during client-side navigation
+if (!page.value && process.client) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Strona nie została odnaleziona',
@@ -15,12 +15,11 @@ if (!page.value && (!process.server || !import.meta.env.NITRO_PRERENDER)) {
 }
 
 const needsHeaderSpacing = computed(() => {
-  // console.log('Page data:', JSON.stringify(page.value, null, 2));
-  // console.log('Meta data:', JSON.stringify(page.value?.meta, null, 2));
-  // console.log('headerSpacing value:', page.value?.meta?.headerSpacing);
+  // If page doesn't exist yet, default to true
+  if (!page.value) return true;
 
-  // If headerSpacing is explicitly set in frontmatter, respect that setting
-  if (page.value?.headerSpacing === false) {
+  // If headerSpacing is explicitly set in meta, respect that setting
+  if (page.value.meta?.headerSpacing === false) {
     return false;
   }
 
@@ -28,8 +27,9 @@ const needsHeaderSpacing = computed(() => {
   return true;
 });
 
-// Only apply SEO if we have page data or we're not in prerender
-if (page.value || !import.meta.env.NITRO_PRERENDER) {
+// Only apply SEO if we have page data and we're on the client
+// or if we're not in prerender mode
+if ((page.value && process.client) || !import.meta.env.NITRO_PRERENDER) {
   useSeoMeta({
     title: page.value?.seo?.title,
     description: page.value?.seo?.description,

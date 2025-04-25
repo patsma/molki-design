@@ -214,6 +214,30 @@ export default defineContentConfig({
       source: 'nuxt.schema.ts',
       schema: z
         .object({
+          navigation: z
+            .object({
+              main: z
+                .object({
+                  items: z
+                    .array(
+                      z.object({
+                        label: z.string(),
+                        link: z.string(),
+                        children: z
+                          .array(
+                            z.object({
+                              label: z.string(),
+                              link: z.string(),
+                            })
+                          )
+                          .optional(),
+                      })
+                    )
+                    .optional(),
+                })
+                .optional(),
+            })
+            .optional(),
           contactInfo: z
             .object({
               email: z.string().optional(),

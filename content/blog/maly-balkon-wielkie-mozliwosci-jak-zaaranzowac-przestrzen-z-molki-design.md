@@ -21,8 +21,17 @@ ogImage:
   cover: /blog/maly-balkon-wielkie-mozliwosci-jak-zaaranzowac-przestrzen-z-molki-design.webp
 ---
 
+
+
+
 Mały Balkon, Wielkie Możliwości: Jak Zaaranżować Przestrzeń z MOLKI DESIGN?
 Witajcie, wszyscy miłośnicy przytulnych zakątków na świeżym powietrzu! Dzisiaj w MOLKI DESIGN chcemy Was zainspirować do przekształcenia małego balkonu w piękną i funkcjonalną przestrzeń. Nawet najmniejszy balkon może stać się miejscem relaksu, odpoczynku i spotkań w gronie najbliższych. Jak to osiągnąć? Przedstawiamy kilka pomysłów, które pomogą Wam wykorzystać każdy centymetr Waszego balkonu.
+
+<!-- TODO: Remove form from the page -->
+::content-hubspot-form{formId="be873485-56f5-42c9-8301-efaa818bdd36"}
+
+::
+
 
 Wybierz meble z myślą o przestrzeni
 Kluczem do stworzenia przytulnego balkonu jest odpowiedni dobór mebli. Wybierajcie składane lub wielofunkcyjne meble, które możecie łatwo przechowywać lub przekształcać, zapewniając sobie dodatkową przestrzeń, gdy jest potrzebna. Mały stolik i kilka krzeseł, które można złożyć, to doskonały wybór.

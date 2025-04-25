@@ -52,3 +52,9 @@ MOLKI DESIGN i Twój balkon
 W MOLKI DESIGN wierzymy, że każda przestrzeń, niezależnie od jej rozmiaru, ma ogromny potencjał. Naszym celem jest pomoc Wam w odkryciu i wykorzystaniu tego potencjału. Jeśli szukacie inspiracji lub pomocy w aranżacji Waszego balkonu, jesteśmy tutaj, aby Wam pomóc.
 
 Pamiętajcie, że nawet najmniejszy balkon może stać się Waszą prywatną przestrzenią do relaksu i cieszenia się pięknem na zewnątrz. Niech te pomysły staną się pierwszym krokiem do stworzenia balkonu marzeń!
+
+::content-video{src="https://vimeo.com/226053498" title="My Vimeo Video"}
+::
+
+::content-video{src="https://www.youtube.com/watch?v=YE7VzlLtp-4" title="My YouTube Video"}
+::

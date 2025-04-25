@@ -51,24 +51,31 @@ export default defineNuxtSchema({
           title: 'Email Address',
           description: 'Primary contact email',
           icon: 'i-mdi-email',
-          default: 'contact@example.com',
+          default: 'kontakt@molki.pl',
         }),
         phone: field({
           type: 'string',
           title: 'Phone Number',
           description: 'Main phone number',
           icon: 'i-mdi-phone',
-          default: '+48 123 456 789',
+          default: '+48 572 323 207',
         }),
-        address: field({
+        companyInfo: field({
           type: 'string',
-          title: 'Company Address',
-          description: 'Physical location',
-          icon: 'i-mdi-map-marker',
-          default: 'Warsaw, Poland',
+          title: 'Company Information',
+          description: 'Company details like name, NIP, and registered address',
+          icon: 'i-mdi-office-building-marker',
           multiline: true,
+          default: 'Molki Sp. z o.o.\nNIP: 957-112-91-57\nul. Heweliusza 11/811\n80-890 Gdańsk',
         }),
-        // Testing array of simple items
+        officeInfo: field({
+          type: 'string',
+          title: 'Office Address',
+          description: 'Physical office location details',
+          icon: 'i-mdi-office-building',
+          multiline: true,
+          default: 'ul. Mostowa 1/4 pokój 2\n80-778 Gdańsk',
+        }),
         socialLinks: field({
           type: 'object',
           title: 'Social Media Links',
@@ -93,66 +100,82 @@ export default defineNuxtSchema({
               description: 'LinkedIn profile URL',
               icon: 'i-mdi-linkedin',
             }),
-            pinterest: field({
+          },
+        }),
+      },
+    }),
+    companies: group({
+      title: 'Company Links',
+      description: 'Related company information and links',
+      icon: 'i-mdi-domain',
+      fields: {
+        wlasciwyKurs: field({
+          type: 'object',
+          title: 'Właściwy Kurs',
+          description: 'Właściwy Kurs company details',
+          icon: 'i-mdi-school',
+          fields: {
+            url: field({
               type: 'string',
-              title: 'Pinterest',
-              description: 'Pinterest profile URL',
-              icon: 'i-mdi-pinterest',
+              title: 'Website URL',
+              description: 'Company website link',
+              default: 'https://wlasciwykurs.com/',
+            }),
+            title: field({
+              type: 'string',
+              title: 'Company Name',
+              description: 'Display name of the company',
+              default: 'WŁAŚCIWY KURS',
+            }),
+            subtitle: field({
+              type: 'string',
+              title: 'Company Subtitle',
+              description: 'Brief description of company services',
+              default: 'Kursy, szkolenia, poradniki, wzory dokumentów.',
+            }),
+            description: field({
+              type: 'string',
+              title: 'Company Description',
+              description: 'Detailed company description',
+              multiline: true,
+              default:
+                'Zapraszamy po więcej wiedzy, przydatnych informacji oraz gotowych rozwiązań dla wszystkich zainteresowanych inwestycjami w nieruchomości, obsługą wynajmu oraz projektowaniem wnętrz, a także wymianą doświadczenia i budowaniem sieci kontaktów wśród ludzi z branży.',
             }),
           },
         }),
-        // Testing array of objects with nested arrays (like menu items with children)
-        locations: field({
+        molkiInvest: field({
           type: 'object',
-          title: 'Main Office',
-          description: 'Main office location details',
+          title: 'Molki Invest',
+          description: 'Molki Invest company details',
           icon: 'i-mdi-office-building',
           fields: {
-            city: field({
+            url: field({
               type: 'string',
-              title: 'City',
-              description: 'City name',
+              title: 'Website URL',
+              description: 'Company website link',
+              default: 'https://molkiinvest.pl/',
             }),
-            fullAddress: field({
+            title: field({
               type: 'string',
-              title: 'Full Address',
-              description: 'Complete address of the office',
+              title: 'Company Name',
+              description: 'Display name of the company',
+              default: 'MOLKI INVEST',
+            }),
+            subtitle: field({
+              type: 'string',
+              title: 'Company Subtitle',
+              description: 'Brief description of company services',
+              default: 'Nieruchomości inwestycyjne przygotowane do efektywnego wynajmu.',
+            }),
+            description: field({
+              type: 'string',
+              title: 'Company Description',
+              description: 'Detailed company description',
               multiline: true,
-            }),
-            phone: field({
-              type: 'string',
-              title: 'Office Phone',
-              description: 'Office phone number',
-            }),
-            email: field({
-              type: 'string',
-              title: 'Office Email',
-              description: 'Office email address',
-            }),
-            openingHours: field({
-              type: 'string',
-              title: 'Opening Hours',
-              description: 'Office opening hours',
-              multiline: true,
+              default:
+                'Inwestycje w nieruchomości dla Inwestorów Pasywnych. Pomagamy chronić i pomnażać kapitał oraz uzyskiwać dochód pasywny poprzez gotowce inwestycyjne przygotowane do efektywnego wynajmu. Zarządzamy najmem długoterminowym, krótkoterminowym oraz kwaterami pracowniczymi.',
             }),
           },
-        }),
-        // Testing boolean fields
-        showMap: field({
-          type: 'boolean',
-          title: 'Show Map',
-          description: 'Display a map on the contact page',
-          icon: 'i-mdi-map',
-          default: true,
-        }),
-        // Testing select field with options
-        preferredContact: field({
-          type: 'string',
-          title: 'Preferred Contact Method',
-          description: 'How clients should contact you primarily',
-          icon: 'i-mdi-contact-mail',
-          options: ['Email', 'Phone', 'Form', 'In Person'],
-          default: 'Email',
         }),
       },
     }),

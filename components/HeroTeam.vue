@@ -9,7 +9,7 @@ import FrameCorner from '~/components/FrameCorner.vue';
       <div class="relative flex-1 flex flex-col">
         <!-- Image Section -->
         <div
-          class="grid relative min-h-[25vh] sm:min-h-[30vh] md:min-h-[50vh] lg:min-h-[65vh] overflow-hidden"
+          class="grid relative min-h-[35vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[90vh] overflow-hidden"
           v-scroll-anim:fadeIn="{ duration: 1.2 }"
         >
           <div class="absolute bottom-0 -left-[10rem] overflow-hidden z-10 pointer-events-none">

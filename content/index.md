@@ -31,7 +31,7 @@ Umów konsultację
 
 #heroImage
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Profesjonalne usługi projektowania wnętrz - nowoczesne i funkcjonalne przestrzenie mieszkalne](/heroHome.jpg)
+  ![Profesjonalne usługi projektowania wnętrz - nowoczesne i funkcjonalne przestrzenie mieszkalne](/home-2.jpg)
   :::
 ::
 
@@ -104,5 +104,3 @@ Bez stresu i kompromisów
 #cta
 UMÓW KONSULTACJĘ
 ::
-
-

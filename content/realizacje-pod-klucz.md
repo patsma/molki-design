@@ -195,9 +195,7 @@ Planujesz zakup mieszkania? Chcesz wprowadzić się do nowego, gotowego wnętrza
 #content
 Skorzystaj z usługi MOLKI projekt pod klucz, która pozwoli zrealizować Twoje marzenia o funkcjonalnej i pięknej przestrzeni. 
 
-:br
-
-:br
+\:br\:br
 
 W ramach kompletnej usługi otrzymasz projekt oraz wykończenie mieszkania:
 
@@ -234,9 +232,7 @@ Dlaczego warto?
 #content
 Podczas remontu trzeba podjąć szereg trudnych decyzji, przy których łatwo popełnić błąd, który może kosztować dodatkowy czas i pieniądze. Czy na pewno chcesz brać na siebie to ryzyko?
 
-:br
-
-:br
+\:br\:br
 
 Angażujemy Ciebie tylko na etapie projektu - ponieważ chcemy mieć pewność, że będziesz czuł się dobrze w swoim nowym domu.
 
@@ -268,9 +264,7 @@ Wiemy, że budżet na realizację wnętrza to, zaraz po cenie zakupu mieszkania,
 
 Dlatego ustalany jest na początku – to Ty decydujesz, ile chcesz wydać na wykończenie domu pod klucz.
 
-:br
-
-:br
+\:br\:br
 
 Doświadczeni projektanci i pracownicy MOLKI Design zadbają o to, by realizacja zmieściła się w założonym budżecie, który obejmuje:
 
@@ -304,15 +298,11 @@ Projekt pod klucz – co zawiera?
 #content
 Usługa projektu pod klucz obejmuje wszystkie etapy – od projektu aż po oddanie gotowego mieszkania do użytku jego mieszkańcom. Może zacząć się jeszcze zanim kupisz mieszkanie – skontaktuj się z nami, a pomożemy Ci przeprowadzić proces jego zakupu.
 
-:br
-
-:br
+\:br\:br
 
 Podpisujemy z Tobą umowę, która ustala budżet, zakres oraz termin wykonania prac. Podczas wykończenia mieszkania pod klucz koszt jest przez nas kontrolowany. W trakcie prac zapewniamy zakupy materiałów i wszelkie procesy logistyczne. 
 
-:br
-
-:br
+\:br\:br
 
 Po zakończeniu prac w usłudze projekt pod klucz oddajemy Ci wnętrze gotowe do zamieszkania.
 
@@ -328,7 +318,7 @@ Kiedy warto skorzystać z kompleksowej usługi Projekt Pod Klucz?
 
 #image
   :::parallax-img{.w-full.h-full.object-cover}
-  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/zdjecia-na-strone/Molki%20Design%20projekt00016.webp)
+  ![Pakiet Premium - przykład luksusowego wykończenia wnętrza z najwyższej jakości materiałami](/obrazek.jpg)
   :::
 
 #accent-shape
@@ -344,12 +334,4 @@ Budujesz dom, planujesz jego zakup lub generalny remont
 - Potrzebujesz zindywidualizowanych rozwiązań oraz elementów wykończeniowych takich jak meble, zabudowy, smart home - zrealizują je nasze firmy partnerskie, pod naszym nadzorem.
 
 #cta
-::
-
-::full-viewport-slider
----
-:cta-link: fullViewportSlider.ctaLink
-:cta-text: fullViewportSlider.ctaText
-:images: fullViewportSlider.images
----
 ::

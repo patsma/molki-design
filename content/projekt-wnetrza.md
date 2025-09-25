@@ -548,11 +548,7 @@ Spotkanie z projektantem w ramach porady projektowej trwa około 2 godzin.
 #content
 [Inne usługi projektowe]{.text-primary.h2-style.font-bold}
 
-:br
-
-:br
-
-:br
+\:br\:br\:br
 
 - **Wykonanie wizualizacji bez projektu** – wyceny indywidualne
 - **Inwentaryzacja bez projektu** – wyceny indywidualne

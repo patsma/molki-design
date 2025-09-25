@@ -20,9 +20,7 @@ Skontaktuj się z nami
 #description
 Ciekawi Cię temat projektowania wnętrz? Chcesz poznać najnowsze trendy, uzyskać porady i inspiracje?
 
-:br
-
-:br
+:br:br
 
 Zapisz się do naszego newslettera i bądź ze wszystkim na bieżąco!
 
